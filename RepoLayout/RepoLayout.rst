@@ -55,8 +55,8 @@ to the $REPO tree.
 $REPO
    * CoreDocs
    * Programs
-+ AIML
-	-PYTH
+    +AIML
+    -PYTH
 	 -PYES100
      -PYBA100
 	 -PYPK100
@@ -71,9 +71,8 @@ $REPO
 	-BUAN
 	 -TSRM100
 	    
-+ CDS
-
-	-PYTH
+    +CDS
+    -PYTH
 	 -PYES100
      -PYBA100
 	 -PYPK100
