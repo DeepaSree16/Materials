@@ -56,43 +56,45 @@ $REPO
    * CoreDocs
    * Programs
       + AIML
-	-PYTH
+	
+    -PYTH
 	 - PYES100
-         - PYBA100
+     - PYBA100
 	 - PYPK100
 	-MATH
-	 -MAES100
-	 -MATH101
+	 - MAES100
+	 - MATH101
 	-MLAI
 	 - AIPR100
-         - CLML100
+     - CLML100
 	 - DLNN100
 	 - DLAD100
 	-BUAN
-	 -TSRM100
+	 - TSRM100
 	    
       + CDS
+
 	-PYTH
 	 - PYES100
-         - PYBA100
+     - PYBA100
 	 - PYPK100
 	-MATH
-	 -MAES100
-	 -STAT100
-	 -PROB100
-	 -LINA100
-	 -CALC100
+	 - MAES100
+	 - STAT100
+	 - PROB100
+	 - LINA100
+	 - CALC100
 	-CDSP
-	 -CDSP100
-        -MLAI
-	 -CLML100
-         -DLNN100
-         -DLAD100
+	 - CDSP100
+    -MLAI
+	 - CLML100
+     - DLNN100
+     - DLAD100
 	-DENG
-	 -DENG100
+	 - DENG100
 	-BUAN
-	 -TSRM100
-	 -FINP100
+	 - TSRM100
+	 - FINP100
 
 $STORE
    * PYTH
