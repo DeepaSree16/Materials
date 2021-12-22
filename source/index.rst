@@ -43,9 +43,9 @@ $REPO
    * Programs
       + AIML
 	-PYTH
-	 - PYES100
-         - PYBA100
-	 - PYPK100
+	 -PYES100
+         -PYBA100
+	 -PYPK100
 	-MATH
 	 -MAES100
 	 -MATH101
