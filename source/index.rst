@@ -6,7 +6,7 @@
 Welcome to the TS Central Repository's documentation!
 ====================================
 
-.. image:: images/TS_Logo.png
+.. image:: Repository_Design_Docs/images/TS_Logo.png
   :width: 200
 
 .. toctree::
@@ -42,43 +42,46 @@ $REPO
    * CoreDocs
    * Programs
       + AIML
-	-PYTH
-	 -PYES100
-         -PYBA100
-	 -PYPK100
-	-MATH
-	 -MAES100
-	 -MATH101
-	-MLAI
+
+	- PYTH
+	 - PYES100
+         - PYBA100
+	 - PYPK100
+	- MATH
+	 - MAES100
+	 - MATH101
+	- MLAI
 	 - AIPR100
          - CLML100
 	 - DLNN100
 	 - DLAD100
-	-BUAN
-	 -TSRM100
+	- BUAN
+	 - TSRM100
 	    
       + CDS
-	-PYTH
+      
+	- PYTH
 	 - PYES100
          - PYBA100
 	 - PYPK100
-	-MATH
-	 -MAES100
-	 -STAT100
-	 -PROB100
-	 -LINA100
-	 -CALC100
-	-CDSP
-	 -CDSP100
-        -MLAI
-	 -CLML100
-         -DLNN100
-         -DLAD100
-	-DENG
-	 -DENG100
-	-BUAN
-	 -TSRM100
-	 -FINP100
+
+	- MATH
+	 - MAES100
+	 - STAT100
+	 - PROB100
+	 - LINA100
+	 - CALC100
+	- CDSP
+	 - CDSP100
+        - MLAI
+	 - CLML100
+         - DLNN100
+         - DLAD100
+	- DENG
+	 - DENG100
+	- BUAN
+	 - TSRM100
+	 - FINP100
 
 $STORE
    * PYTH
