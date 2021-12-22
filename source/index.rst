@@ -32,12 +32,11 @@ Welcome to the TS Central Repository's documentation!
 
 The TS Central Repository provides a centralized content storage and management system.
 
-| This repository is focused on courses and modules 
+- This repository is focused on courses and modules 
 
-| This repository is created as a combination of two approaches. The public $REPO is organized program-wise.
+- This repository is created as a combination of two approaches: the public $REPO is organized program-wise;
 Duplication is avoided by linking directories and files from the $STORE tree to the $REPO tree.
 
-| 
 $REPO
    * CoreDocs
    * Programs
