@@ -35,7 +35,7 @@ The TS Central Repository provides a centralized content storage and management 
 - This repository is focused on courses and modules 
 
 - This repository is created as a combination of two approaches: the public $REPO is organized program-wise;
-Duplication is avoided by linking directories and files from the $STORE tree to the $REPO tree.
+- Duplication is avoided by linking directories and files from the $STORE tree to the $REPO tree.
 
 $REPO
    * CoreDocs
