@@ -1,0 +1,1 @@
+This directory contains program wise folders with module and session details in it
