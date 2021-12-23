@@ -6,7 +6,7 @@
 Welcome to the TS Central Repository's documentation!
 ====================================
 
-.. image:: Repository_Design_Docs/images/TS_Logo.png
+.. image:: Core_Docs/images/TS_Logo.png
   :width: 200
 
 .. toctree::
