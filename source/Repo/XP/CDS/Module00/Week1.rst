@@ -115,6 +115,6 @@ Faculty Resources
 Participants Resources 
 -----------------------
 
-    `Python Practice Problems <https://gitlab.com/SUROBHI/ts-central-repository/-/blob/main/source/Store/Python/Euler_Problems/CDS-M0-01-PDF-11.pdf>`_
+    `Python Practice Problems <https://gitlab.com/SUROBHI/ts-central-repository/-/blob/main/source/Store/Python/Euler_Problems/CDS-M0-01-QB-11.pdf>`_
 
     `Project Euler Practice Problem's solutions <https://gitlab.com/SUROBHI/ts-central-repository/-/tree/main/source/Store/Python/Euler_Problems>`_ 
