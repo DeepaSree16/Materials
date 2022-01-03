@@ -13,9 +13,9 @@
 * Add LMS links of latest cohorts (current cohort and most recent previous cohort) into respective Program folders in Repo directory -- by 20 Jan
 
 * Push content from existing Individual Program repositories into the respective content module folders of the Store directory. Process to be followed: Commit content additions from individual repository and send merge request to designated development managers as follows: (-- by 1 Mar)
-FS - Repository Manager1 
-GP - Repository Manager2 
-XP - Repository Manager3
+- FS - Repository Manager1 
+- GP - Repository Manager2 
+- XP - Repository Manager3
 
 * Develop complete documentation, add metadata -- by 20 Apr
 
