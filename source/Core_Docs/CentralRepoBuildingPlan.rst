@@ -25,9 +25,9 @@
 +        +             + content additions from individual repository and send   +
 +        +             + merge request to designated development managers as     +
 +        +             + follows:                                                +
-+        +             + a.  FS - Repository Manager1                            +                           
-+        +             + b.  GP - Repository Manager2                            +
-+        +             + c.  XP - Repository Manager3                            +
++        +                  a. FS - Repository Manager1                          +                           
++        +             +    b. GP - Repository Manager2                          +
++        +             +    c. XP - Repository Manager3                          +
 +--------+-------------+---------------------------------------------------------+
 + 7      + 20 Apr 2022 + Develop complete documentation, add metadata            +
 +--------+-------------+---------------------------------------------------------+
