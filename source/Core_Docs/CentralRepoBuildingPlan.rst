@@ -25,7 +25,7 @@
 +        +             + content additions from individual repository and send   +
 +        +             + merge request to designated development managers as     +
 +        +             + follows:                                                +
-+        +                  a. FS - Repository Manager1                          +                           
++        +             +    a. FS - Repository Manager1                          +                           
 +        +             +    b. GP - Repository Manager2                          +
 +        +             +    c. XP - Repository Manager3                          +
 +--------+-------------+---------------------------------------------------------+
