@@ -97,8 +97,6 @@ STORE
       + **TSRM100** TimeSeriesModels
       + **FINP100** FinancePortfolio
 
-   * BEC [BUSINESS ENGLISH COMMUNICATION]
-	  
 
 Artefact Naming Scheme
 ++++++++++++++++++++++
