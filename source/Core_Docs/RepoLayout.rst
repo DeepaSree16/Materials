@@ -1,4 +1,4 @@
-.. image:: images/TS_Logo.png
+.. image:: https://cdn.extras.talentsprint.com/CentralRepo/images/TS_updated_logo.png
   :width: 200
 
 =================
