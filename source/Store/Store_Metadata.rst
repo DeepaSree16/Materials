@@ -118,6 +118,8 @@ STORE
    * BA [BUSINESS ANALYTICS]
       + **TSM** TimeSeriesModels
       + **FPO** FinancePortfolio
+   
+   * IO [IoT]
 
 
 Artefact Naming Scheme
