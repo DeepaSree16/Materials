@@ -6,7 +6,7 @@
 Welcome to the TS Central Repository's documentation!
 ====================================
 
-.. image:: Core_Docs/images/TS_Logo.png
+.. image:: https://cdn.extras.talentsprint.com/CentralRepo/images/TS_updated_logo.png
   :width: 200
 
 .. toctree::
