@@ -99,8 +99,15 @@ STORE
    * AI [ARTIFICIAL INTELLIGENCE]
       + **AIF** AIFundamentals
       + **CML** ClassicalML
+         - Supervised
+         - Unsupervised
       + **DLN** DeepLearning
+         - Speech & Audio
+         - Computer Vision
+         - Natural Language processing
       + **DLA** DeepLearningAdvanced
+         - Deep Reinforcement Learning
+      + **RLN** ReinforcementLearning
       + **MLA** MachineLearning201
       + **MLB** MachineLearning202
       + **MLC** MachineLearning203
