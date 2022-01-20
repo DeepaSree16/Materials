@@ -58,13 +58,13 @@ STORE
 
    * BIZC [BUSINESS COMMUNICATION]
       + **RENG100** RemedialEnglish
-        --Alpha
-        --Beta
+	- Alpha
+        - Beta
       + **BENG100** BusinessEnglish
-        --ProfessionalCommunication
-        --Expositions+Discussions
-	--Presentations
-	--WritingSkills
+        - ProfessionalCommunication
+        - Expositions+Discussions
+	- Presentations
+	- WritingSkills
       + **INOR100** IndustryOrientation
       + **INPR100** InterviewPreparation
 
