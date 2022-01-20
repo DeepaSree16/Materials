@@ -37,88 +37,80 @@ Structure
 The Store folder contains the following Content Modules and Content sub-modules, based within the scope of content in the FS, GP and XP programs in TalentSprint.
 
 STORE
-   * PYTH [PYTHON PROGRAMMING]
-      + **PYES100** PythonEssentials
-      + **PYBA100** PythonBasics
-      + **PYPK100** PythonPackages
-      + **PY100**
-      + **PY101**
-      + **PY103**
 
-   * JAVA [JAVA PROGRAMMING]
-      + **JAPL100** JavaProgrammingLanguage
-      + **COJA100** CoreJava
-      + **WEBS100** HTML+CSS+JS
-      + **SQLD100** SimpleDatabase
-      + **WJEE100** WebAppDevelopmentWithJEE
-      + **SPNG100** SpringFramework
-   
-   * CPRO [PROFESSIONAL C PROGRAMMING]
+   * CP [PROFESSIONAL C PROGRAMMING]
       + **PCP** ProfessionalCProgramming
+
+   * JP [JAVA PROGRAMMING]
+      + **ECC** EveryoneCanCode
+      + **COJ** CoreJava
+      + **WTW** WeavingTheWebHTML+CSS+JS
+      + **SQL** SimpleDatabase
+      + **WJE** WebAppDevelopmentWithJEE
+      + **SPF** SpringFramework
    
-   * WEBD [WEB DEVELOPMENT]
-      + **MMST** Mean&MernStack
-         - WD301
-         - WD302
-         - WD303
-      + **JAST** JavaStack
-         - ECC
-         - COJ
-         - WTW
-         - ADJ
+   * WD [WEB DEVELOPMENT MEAN & MERN STACK]
+      + **WDA** WebDevelopment301
+      + **WDB** WebDevelopment302
+      + **WDC** WebDevelopment303
 
-   * TEST [TESTING]
+   * TE [TESTING]
    
-   * ANDR [ANDROID]
+   * AN [ANDROID]
 
-   * DOTN [DOTNET]
+   * DN [DOTNET]
 
-   * BIZC [BUSINESS COMMUNICATION]
-      + **RENG100** RemedialEnglish
+   * BC [BUSINESS COMMUNICATION]
+      + **REN** RemedialEnglish
          - Alpha
          - Beta
-      + **BENG100** BusinessEnglish
+      + **BEN** BusinessEnglish
          - ProfessionalCommunication
          - Expositions+Discussions
          - Presentations
          - WritingSkills
-      + **INOR100** IndustryOrientation
-      + **INPR100** InterviewPreparation
+      + **IOR** IndustryOrientation
+      + **IPR** InterviewPreparation
 
-   * APTD [APTITUDE]
-      + **VRSK** VerbalSkills
-         - WVA
-      + **REAS** Reasoning
-         - WRA
-      + **QUAB** QuantitativeAbility
-         - WQA
+   * AP [APTITUDE]
+      + **WVA** VerbalAbility
+      + **WRA** ReasoningAbility
+      + **WQA** QuantitativeAbility
 
-   * MATH [MATHS]
-      + **MAES100** MathEssentials
-      + **MATH101** MathBasics
-      + **STAT200** Statistics
-      + **PROB200** Probability 
-      + **LINA200** LinearAlgebra
-      + **CALC200** Calculus
+   * PY [PYTHON PROGRAMMING]
+      + **PES** PythonEssentials
+      + **PBA** PythonBasics
+      + **PPK** PythonPackages
+      + **PYA** Python101
+      + **PYB** Python102
+      + **PYC** Python103
 
-   * CDSP [COMPUTATIONAL DATA SCIENCE IN PRACTICE]
-      + **CDSP100** ComputationalDataScPractice
+   * MT [MATHS]
+      + **MES** MathEssentials
+      + **MBA** MathBasics
+      + **STA** Statistics
+      + **PRB** Probability 
+      + **LIN** LinearAlgebra
+      + **CAL** Calculus
 
-   * MLAI [MACHINE LEARNING AND ARTIFICIAL INTELLIGENCE]
-      + **AIPR100** AIPrinciples
-      + **CLML100** ClassicalML
-      + **DLNN100** DeepLearning
-      + **DLAD100** DeepLearningAdvanced
-      + **ML201**
-      + **ML202**
-      + **ML203**
+   * DS [DATA SCIENCE]
+      + **CDP** ComputationalDataScienceInPractice
 
-   * DENG [DATA ENGINEERING]
-      + **DENG100** DataEngineering
+   * AI [ARTIFICIAL INTELLIGENCE]
+      + **AIF** AIFundamentals
+      + **CML** ClassicalML
+      + **DLN** DeepLearning
+      + **DLA** DeepLearningAdvanced
+      + **MLA** MachineLearning201
+      + **MLB** MachineLearning202
+      + **MLC** MachineLearning203
 
-   * BUAN [BUSINESS ANALYTICS]
-      + **TSRM100** TimeSeriesModels
-      + **FINP100** FinancePortfolio
+   * DE [DATA ENGINEERING]
+      + **DEN** DataEngineering
+
+   * BA [BUSINESS ANALYTICS]
+      + **TSM** TimeSeriesModels
+      + **FPO** FinancePortfolio
 
 
 Artefact Naming Scheme
@@ -143,14 +135,14 @@ Each artefact will be named with a prefix as follows:
 
 Examples
 ^^^^^^^^
-:AIML-BUAN-03-VDO-1-2.mp4: 
+:AIML-CML-03-VDO-1-2.mp4: 
     * AIML Course
-    * Business Analytics Module
+    * Classical ML Module
     * Session 3
     * Video 1 of 2
 
-:CDS-MLAI-02-DECK-1-1.pdf:
+:CDS-CDP-02-DECK-1-1.pdf:
     * CDS Course
-    * Machine Learning & AI Module
+    * Computational DataScience In Practice Module
     * Session 2
     * Presentation Deck 1 of 1
