@@ -54,7 +54,7 @@ STORE
       + **SPNG100** SpringFramework
    
    * CPRO [PROFESSIONAL C PROGRAMMING]
-      + **PCP**
+      + **PCP** ProfessionalCProgramming
    
    * WEBD [WEB DEVELOPMENT]
       + **MMST** Mean&MernStack
