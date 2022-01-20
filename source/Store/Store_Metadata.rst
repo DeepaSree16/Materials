@@ -41,6 +41,9 @@ STORE
       + **PYES100** PythonEssentials
       + **PYBA100** PythonBasics
       + **PYPK100** PythonPackages
+      + **PY100**
+      + **PY101**
+      + **PY103**
 
    * JAVA [JAVA PROGRAMMING]
       + **JAPL100** JavaProgrammingLanguage
@@ -49,6 +52,20 @@ STORE
       + **SQLD100** SimpleDatabase
       + **WJEE100** WebAppDevelopmentWithJEE
       + **SPNG100** SpringFramework
+   
+   * CPRO [PROFESSIONAL C PROGRAMMING]
+      + **PCP**
+   
+   * WEBD [WEB DEVELOPMENT]
+      + **MMST** Mean&MernStack
+         - WD301
+         - WD302
+         - WD303
+      + **JAST** JavaStack
+         - ECC
+         - COJ
+         - WTW
+         - ADJ
 
    * TEST [TESTING]
    
@@ -68,10 +85,13 @@ STORE
       + **INOR100** IndustryOrientation
       + **INPR100** InterviewPreparation
 
-    * APTD [APTITUDE]
+   * APTD [APTITUDE]
       + **VRSK** VerbalSkills
+         - WVA
       + **REAS** Reasoning
-      + **ARIT** Arithmetic
+         - WRA
+      + **QUAB** QuantitativeAbility
+         - WQA
 
    * MATH [MATHS]
       + **MAES100** MathEssentials
@@ -89,6 +109,9 @@ STORE
       + **CLML100** ClassicalML
       + **DLNN100** DeepLearning
       + **DLAD100** DeepLearningAdvanced
+      + **ML201**
+      + **ML202**
+      + **ML203**
 
    * DENG [DATA ENGINEERING]
       + **DENG100** DataEngineering
