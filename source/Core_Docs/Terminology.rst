@@ -145,3 +145,9 @@ Artefact Codes
 :OS: Observation Sheet
 :MM: Mindmap
 :PA: Project Abstract
+:MH: Mini-Hackathon
+:HA: Hackathon
+:MP: Mini-project
+:SMP: Solution of Mini-Project
+:AN: Additional Notebook
+:CS: Case Study
