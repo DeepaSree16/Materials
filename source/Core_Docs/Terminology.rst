@@ -151,3 +151,4 @@ Artefact Codes
 :SMP: Solution of Mini-Project
 :AN: Additional Notebook
 :CS: Case Study
+:CRC: Class Recording
