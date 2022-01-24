@@ -147,7 +147,7 @@ Artefact Codes
 :CD: Course Design Document
 :MD: Module Design Document
 :SD: Session Design Document
-:DECK:Presentation
+:DECK: Presentation
 :VDO: Video
 :QB: Question Bank
 :TN: Trainer Notes
