@@ -154,6 +154,8 @@ Each artefact will be named with a prefix as follows:
     * DOT
     * Extension -- pdf, mp4 ...
 
+:Refer to the Terminology.rst file in the Core_Docs to obtain the Artefact codes and Course Name codes
+
 Examples
 ^^^^^^^^
 :AIML-CML-03-VDO-1-2.mp4: 
