@@ -97,14 +97,26 @@ STORE
       + **CDP** ComputationalDataScienceInPractice
 
    * AI [ARTIFICIAL INTELLIGENCE]
-      + **AIF** AIFundamentals
       + **CML** ClassicalML
-         - Supervised
-         - Unsupervised
+         - LinearRegression
+         - LinearClassifier
+	 - LogisticRegression
+	 - PrinciplesofML
+         - k-NearestNeighbours
+	 - DataVisualization
+	 - PrincipalComponentAnalysis
+	 - DecisionTree
+	 - Clustering
+	 - PerformanceMetrics
+	 - SupportVectorMachines
+	 - EnsembleMethods
+	 - GradientDescent
+	 
       + **DLN** DeepLearning
-         - Speech & Audio
-         - Computer Vision
-         - Natural Language processing
+	 - DeepLearningArchitectures
+         - SpeechandAudio
+         - ComputerVision
+         - NaturalLanguageProcessing
       + **DLA** DeepLearningAdvanced
          - Deep Reinforcement Learning
       + **RLN** ReinforcementLearning

@@ -1,0 +1,115 @@
+\documentclass{article}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\includegraphics[width=5cm, height=0.9cm]{logo}}
+\lhead{Ungraded Beginner Math Problems - Module 1}
+\lfoot{COPYRIGHT ©TALENTSPRINT, 2020. ALL RIGHTS RESERVED.}
+\rfoot{\thepage}
+
+\begin{document}
+\begin{description}[style=nextline]
+\item[Question 1: Perform the indicated function evaluations for $f(x) = 3 - 5x - 2x^2.$]
+$(a) f(4) \ \ \ \ \ \ \ \ \ \ \ \ \ (b) f(0) \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (c) f(-3)$
+  
+$(d) f(6-t) \ \ \ \ \ \ \ \ (e) f(7-4x) \ \ \ \ \ \ \ \ (f) f(x+4)$
+
+Answer: 
+
+$(a)\ \ \ \ f(4) = 3 - 5(4) - 2(4)^2 = -49$
+
+$(b)\ \ \ \ f(0) = 3 - 5(0) - 2(0)^2 = 3$
+
+$(c)\ \ \ \ f(-3) = 3 - 5(-3) - 2(-3)^2 = 0$
+
+$(d)\ \ \ \ f(6 - t) = 3 - 5(6 - t) - 2(6 - t)^2$
+
+$\ \ \ \ \ \ \ \ \ \ \ \  \ \ \ \ \ \ \  = 3 - 5(6 - t) - 2(36 - 12t + t^2)$
+
+$\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  = 3 - 30 + 5t - 72 + 24t - 2t^2$
+
+$\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  = -99 + 29t -2t^2$
+
+$(e)\ \ \ \ f(7 - 4x) = 3 - 5(7 - 4x) - 2(7 - 4x)^2$
+
+$\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  = 3 - 5(7 - 4x) - 2(49 - 56x + 16x^2)$
+
+$\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ = 3 - 35 + 20x - 98 + 112x - 32x^2$
+
+$\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  = -130 + 132x - 32x^2$
+
+$(f)\ \ \ \ f(x + h) = 3 - 5(x + h) - 2(x + h)^2$
+
+$\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \   = 3 - 5(x + h) - 2(x^2 + 2xh + h^2)$
+
+$\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \   = 3 - 5x - 5h - 2x^2 - 4xh - 2h^2$
+
+%==============================================================================
+\item[Question 2: Determine all the roots of $f(x) = x^5 - 4x^4 - 32x^3.$] 
+Answer: Set the function equal to zero and factor the left side.
+$$x^5 - 4x^4 - 32x^3 = x^3(x^2 - 4x - 32) = x^3(x - 8)(x + 4) = 0$$
+
+After factoring we can see that the three roots of this function are 
+$$x = -4,\ x = 0\ , x = 8.$$
+
+%==============================================================================
+\item[Question 3: Determine all the roots of $h(t) = 18 - 3t - 2t^2.$]
+Answer: Set the function equal to zero and because the left side will not factor we'll need to use the quadratic formula to find the roots of the function.
+$$18 - 3t - 2t^2 = 0$$
+$$t = \frac{3 \pm \sqrt{(-3)^2 - 4(-2)(18)}}{2(-2)} = \frac{3 \pm \sqrt{153}}{-4} = \frac{3 \pm \sqrt{(9)(17)}}{-4} =\frac{3 \pm 3\sqrt{17}}{-4} = \frac{-3}{4}(1 \pm \sqrt{17})$$
+
+So the quadratic formula gives the following two roots of the function,
+$$\frac{-3}{4}(1 + \sqrt{17}) = -3.842329, \ \ \ \ \ \ \ \frac{-3}{4}(1 - \sqrt{17}) = 2.342329.$$
+
+%==============================================================================
+\item[Question 4: Determine the exact value of]
+$(a) log_381$
+
+$(b) log_{\frac{1}{4}}16$
+
+$(c) ln\ e^4.$
+
+Answer: 
+
+(a) Converting the logarithm to exponential form gives, $$log_381 = ? \ \ \  \rightarrow \ \ \  3^{?} = 81$$
+From this we can see that $3^4 = 81$ and so we must have, $$log_381 = 4.$$
+
+(b) Converting the logarithm to exponential form gives,
+$$log_{\frac{1}{4}}16 = ? \ \ \  \rightarrow \ \ \  \big(\frac{1}{4}\big)^? = 16$$
+
+Now, we know that if we raise a fraction to a power and get an integer out, we must have had a negative exponent. Now, we also know that $4^2 = 16.$ Therefore we can see that 
+
+$$\big(\frac{1}{4}\big)^{-2} = \big(\frac{1}{4}\big)^2 = 16$$
+$$log_{\frac{1}{4}}16 = -2.$$
+
+(c) Recalling that the base for a natural logarithm is \textbf{e} and converting the logarithm to exponential form gives,
+$$ln\ e^4 = log_e e^4 = ?$$
+$$e^? = e^4$$
+
+From this we can quickly see that $e^4 = e^4$ and we must have,
+$$ln\ e^4 = 4.$$
+
+%==============================================================================
+\item[Question 5: Write the following in terms of simpler logarithms.]
+$(a) log(3x^4 y^{-7})$
+
+$(b) log_4 \big( \frac{x - 4}{y^2 z^{\frac{1}{5}}}\big)$
+
+Answer: 
+
+(a) $$log(3x^4 y^{-7}) = log(3) + log(x^4) + log(y^{-7})$$
+$$\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ = log(3) + 4log(x) - 7log(y)$$
+
+(b) $$log_4 \big( \frac{x - 4}{y^2 z^{\frac{1}{5}}}\big) = log_4(x-4) - log_4(y^2 z^{\frac{1}{5}})$$
+$$\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  = log_4(x-4) - (log_4(y^2) + log_4(z^{\frac{1}{5}}))$$
+$$\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  = log_4(x-4) - 2log_4(y) - \frac{1}{5}log_4(z)$$
+
+\end{description}
+\end{document}

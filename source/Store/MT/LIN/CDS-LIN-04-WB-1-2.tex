@@ -1,0 +1,366 @@
+\documentclass{article}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\includegraphics[width=5cm, height=0.9cm]{logo}}
+\lhead{Ungraded Math Problems II - Module 1}
+\lfoot{COPYRIGHT ©TALENTSPRINT, 2020. ALL RIGHTS RESERVED.}
+\rfoot{\thepage}
+
+\begin{document}
+\begin{description}[style=nextline]
+\item[Question 1: Add the following matrices, if possible.]
+$$A = \left[ \begin{array}{ccc} 1 & 2 & 3 \\ 1 & 0 & 4 \end{array} \right], B = \left[ \begin{array}{rrr} 5 & 2 & 3 \\ -6 & 2 & 1 \end{array} \right]$$
+
+Answer: Notice that both A and B are of size 2×3. Since A and B are of the same size, the addition is possible.
+
+$A + B = \left[ \begin{array}{rrr} 1 & 2 & 3 \\ 1 & 0 & 4 \end{array} \right] + \left[ \begin{array}{rrr} 5 & 2 & 3 \\ -6 & 2 & 1 \end{array} \right] = \left[ \begin{array}{rrr} 1+5 & 2+2 & 3+3 \\ 1+ -6 & 0+2 & 4+1 \end{array} \right] = \left[ \begin{array}{rrr} 6 & 4 & 6 \\ -5 & 2 & 5 \end{array} \right]$
+
+%===============================================================================
+\item[Question 2: Find the result of multiplying the following matrix $A$ by 7.] 
+$$A=\left[ \begin{array}{rr} 2 & 0 \\ 1 & -4 \end{array} \right]$$
+Answer: Here we need to multiply each element of $A$ by 7.
+$$7A = 7\left[ \begin{array}{rr} 2 & 0 \\ 1 & -4 \end{array} \right] = \left[ \begin{array}{rr} 7(2) & 7(0) \\ 7(1) & 7(-4) \end{array} \right] = \left[ \begin{array}{rr} 14 & 0 \\ 7 & -28 \end{array} \right]$$
+
+%===============================================================================
+\item[Question 3: Compute the product $AX$ for]
+$$A = \left[ \begin{array}{rrrr} 1 & 2 & 1 & 3 \\ 0 & 2 & 1 & -2 \\ 2 & 1 & 4 & 1 \end{array} \right], X = \left[ \begin{array}{r} 1 \\ 2 \\ 0 \\ 1 \end{array} \right]$$
+
+Answer: We compute the product AX as follows:
+$$1 \left[ \begin{array}{r} 1 \\ 0 \\ 2 \end{array} \right] + 2 \left[ \begin{array}{r} 2 \\ 2 \\ 1 \end{array} \right] + 0\left[ \begin{array}{r} 1 \\ 1 \\ 4 \end{array} \right] + 1 \left[ \begin{array}{r} 3 \\ -2 \\ 1 \end{array} \right]$$
+$$ = \left[ \begin{array}{r} 1 \\ 0 \\ 2 \end{array} \right] + \left[ \begin{array}{r} 4 \\ 4 \\ 2 \end{array} \right] + \left[ \begin{array}{r} 0 \\ 0 \\ 0 \end{array} \right] + \left[ \begin{array}{r} 3 \\ -2 \\ 1 \end{array} \right]$$
+$$ = \left[ \begin{array}{r} 8 \\ 2 \\ 5 \end{array} \right]$$
+
+%===============================================================================
+\item[Question 4: Find the product $AB$ if possible]
+$$A = \left[ \begin{array}{ccc} 1 & 2 & 1 \\ 0 & 2 & 1 \end{array} \right], B = \left[ \begin{array}{rrr} 1 & 2 & 0 \\ 0 & 3 & 1 \\ -2 & 1 & 1 \end{array} \right]$$
+Answer: The first thing we need to verify when calculating a product is whether the multiplication is possible. The first matrix has size 2×3 and the second matrix has size 3×3. The inside numbers are equal, so A and B are conformable matrices. According to the above discussion AB will be a 2×3 matrix. We calculate each column of AB, as follows:
+$$\left[ \overbrace{\left[ \begin{array}{rrr} 1 & 2 & 1 \\ 0 & 2 & 1 \end{array} \right] \left[ \begin{array}{r} 1 \\ 0 \\ -2 \end{array} \right]}, \overbrace{\left[ \begin{array}{rrr} 1 & 2 & 1 \\ 0 & 2 & 1 \end{array} \right] \left[ \begin{array}{r} 2 \\ 3 \\ 1 \end{array} \right]}, \overbrace{\left[ \begin{array}{rrr} 1 & 2 & 1 \\ 0 & 2 & 1 \end{array} \right] \left[ \begin{array}{r} 0 \\ 1 \\ 1 \end{array} \right]} \right]$$
+$$\left[ \begin{array}{rrr} 1 & 2 & 1 \\ 0 & 2 & 1 \end{array} \right] \left[ \begin{array}{rrr} 1 & 2 & 0 \\ 0 & 3 & 1 \\ -2 & 1 & 1 \end{array} \right] = \ \left[ \begin{array}{rrr} -1 & 9 & 3 \\ -2 & 7 & 3 \end{array} \right]$$
+
+%===============================================================================
+\item[Question 5: Find BA if possible.]
+$$B = \left[ \begin{array}{ccc} 1 & 2 & 0 \\ 0 & 3 & 1 \\ -2 & 1 & 1 \end{array} \right], A = \left[ \begin{array}{ccc} 1 & 2 & 1 \\ 0 & 2 & 1 \end{array} \right]$$
+Answer: First check if it is possible. This product is of the form (3×3)(2×3). The inside numbers do not match and so you can’t do this multiplication.
+
+%===============================================================================
+\item[Question 6: Compute AB if possible. If it is, find the (3,2)-entry of AB.]
+$$A = \left[ \begin{array}{cc} 1 & 2 \\ 3 & 1 \\ 2 & 6 \end{array} \right], B = \left[ \begin{array}{ccc} 2 & 3 & 1 \\ 7 & 6 & 2 \end{array} \right]$$
+
+Answer: First check if the product is possible. It is of the form (3×2)(2×3) and since the inside numbers match, it is possible to do the multiplication. The result should be a 3×3 matrix. We can first compute AB:
+$$\left[ \left[ \begin{array}{rr} 1 & 2 \\ 3 & 1 \\ 2 & 6 \end{array} \right] \left[ \begin{array}{r} 2 \\ 7 \end{array} \right] ,\left[ \begin{array}{rr} 1 & 2 \\ 3 & 1 \\ 2 & 6 \end{array} \right] \left[ \begin{array}{r} 3 \\ 6 \end{array} \right] ,\left[ \begin{array}{rr} 1 & 2 \\ 3 & 1 \\ 2 & 6 \end{array} \right] \left[ \begin{array}{r} 1 \\ 2 \end{array} \right] \right]$$
+
+where the commas separate the columns in the resulting product. Thus the above product equals
+$\left[ \begin{array}{rrr} 16 & 15 & 5 \\ 13 & 15 & 5 \\ 46 & 42 & 14 \end{array} \right]$
+
+which is a 3×3 matrix as desired. Thus, the (3,2)-entry equals 42.
+
+Also, we can find that the (3,2)-entry equals
+$$\sum_{k=1}^{2}a_{3k}b_{k2} = a_{31}b_{12}+a_{32}b_{22} = 2\times 3+6\times 6=42.$$
+
+%===============================================================================
+\item[Question 7: Determine if the product AB is defined. If it is, find the (2,1)-entry of the product.]
+$$A= \left[ \begin{array}{rrr} 2 & 3 & 1 \\ 7 & 6 & 2 \\ 0 & 0 & 0 \end{array} \right], B =\left[ \begin{array}{rr} 1 & 2 \\ 3 & 1 \\ 2 & 6 \end{array} \right]$$
+Answer: This product is of the form (3×3)(3×2). The middle numbers match so the matrices are conformable and it is possible to compute the product.
+We want to find the (2,1)-entry of AB, that is, the entry in the second row and first column of the product.
+$$(AB)_{ij}=\sum_{k=1}^{n}a_{ik}b_{kj}$$
+
+In this case, n=3, i=2 and j=1. Hence the (2,1)-entry is found by computing
+$$(AB)_{21} = \sum_{k=1}^{3}a_{2k}b_{k1} = \left[ \begin{array}{ccc} a_{21} & a_{22} & a_{23} \end{array} \right] \left[ \begin{array}{c} b_{11} \\ b_{21} \\ b_{31} \end{array} \right]$$
+
+Substituting in the appropriate values, this product becomes
+$$\left[ \begin{array}{ccc} a_{21} & a_{22} & a_{23} \end{array} \right] \left[ \begin{array}{c} b_{11} \\ b_{21} \\ b_{31} \end{array} \right] = \left[ \begin{array}{ccc} 7 & 6 & 2 \end{array} \right] \left[ \begin{array}{c} 1 \\ 3 \\ 2 \end{array} \right] = 1 \times 7 + 3 \times 6 + 2 \times 2 = 29$$
+
+Hence, $(AB)_{21}=29$.
+We can find a few other entries of AB and multiply the matrices to check that if answers are correct. The product AB is given by
+$$AB = \left[ \begin{array}{cc} 13 & 13 \\ 29 & 32 \\ 0 & 0 \end{array} \right].$$
+
+%===============================================================================
+\item[Question 8: Show that A is skew symmetric.]
+$$A=\left[ \begin{array}{rrr} 0 & 1 & 3 \\ -1 & 0 & 2 \\ -3 & -2 & 0 \end{array} \right] \nonumber$$
+Answer: An n×n matrix A is said to be symmetric if $A=A^{T}$. It is said to be skew symmetric if $A=-A^{T}$.
+$$A^{T} = \left[ \begin{array}{rrr} 0 & -1 & -3\\ 1 & 0 & -2\\ 3 & 2 & 0 \end{array} \right] \nonumber$$
+
+We can see that each entry of $A^{T}$ is equal to -1 times the same entry of A. Hence, $A^{T} = -A$ and so A is a skew symmetric.
+
+%===============================================================================
+\item[Question 9: Let] 
+$A=\left[ \begin{array}{rr} 1 & 1 \\ 1 & 2 \end{array} \right]$. \textbf{Show $\left[ \begin{array}{rr} 2 & -1 \\ -1 & 1 \end{array} \right]$ is the inverse of A.}
+
+Answer: To check this, multiply
+$$\left[ \begin{array}{rr} 1 & 1 \\ 1 & 2 \end{array} \right] \left[ \begin{array}{rr} 2 & -1 \\ -1 & 1 \end{array} \right] = \ \left[ \begin{array}{rr} 1 & 0 \\ 0 & 1 \end{array} \right] = I$$
+
+and
+$$\left[ \begin{array}{rr} 2 & -1 \\ -1 & 1 \end{array} \right] \left[ \begin{array}{rr} 1 & 1 \\ 1 & 2 \end{array} \right] = \ \left[ \begin{array}{rr} 1 & 0 \\ 0 & 1 \end{array} \right] = I$$
+
+showing that this matrix is indeed the inverse of A.
+
+%===============================================================================
+\item[Question 10: Let]
+$A=\left[ \begin{array}{rrr} 1 & 2 & 2 \\ 1 & 0 & 2 \\ 3 & 1 & -1 \end{array} \right]$. \textbf{Find $A^{-1}$ if it exists.}
+
+Answer: Set up the augmented matrix
+$$\left[ A|I\right] = \left[ \begin{array}{rrr|rrr} 1 & 2 & 2 & 1 & 0 & 0 \\ 1 & 0 & 2 & 0 & 1 & 0 \\ 3 & 1 & -1 & 0 & 0 & 1 \end{array} \right]$$
+
+Now we row reduce, with the goal of obtaining the  3×3  identity matrix on the left hand side. First, take -1 times the first row and add to the second followed by -3 times the first row added to the third row. This yields
+
+$$\ \left[ \begin{array}{rrr|rrr} 1 & 2 & 2 & 1 & 0 & 0 \\ 0 & -2 & 0 & -1 & 1 & 0 \\ 0 & -5 & -7 & -3 & 0 & 1 \end{array} \right]$$
+
+Then take 5 times the second row and add to -2 times the third row.
+$$\left[ \begin{array}{rrr|rrr} 1 & 2 & 2 & 1 & 0 & 0 \\ 0 & -10 & 0 & -5 & 5 & 0 \\ 0 & 0 & 14 & 1 & 5 & -2 \end{array} \right]$$
+
+Next take the third row and add to -7 times the first row. This yields
+$$\left[ \begin{array}{rrr|rrr} -7 & -14 & 0 & -6 & 5 & -2 \\ 0 & -10 & 0 & -5 & 5 & 0 \\ 0 & 0 & 14 & 1 & 5 & -2 \end{array} \right]$$
+
+Now take  $\frac{-7}{5}$  times the second row and add to the first row.
+$$\left[ \begin{array}{rrr|rrr} -7 & 0 & 0 & 1 & -2 & -2 \\ 0 & -10 & 0 & -5 & 5 & 0 \\ 0 & 0 & 14 & 1 & 5 & -2 \end{array} \right]$$
+
+Finally divide the first row by -7, the second row by -10 and the third row by 14 which yields
+$$\left[ \begin{array}{rrr|rrr} 1 & 0 & 0 & - \ \frac{1}{7} & \ \frac{2}{7} & \ \frac{2}{7} \\ 0 & 1 & 0 & \ \frac{1}{2} & - \ \frac{1}{2} & 0 \\ 0 & 0 & 1 & \ \frac{1}{14} & \ \frac{5}{14} & - \ \frac{1}{7} \end{array} \right]$$
+
+Notice that the left hand side of this matrix is now the  3×3  identity matrix  $I_3$ . Therefore, the inverse is the  3×3  matrix on the right hand side, given by
+$$\left[ \begin{array}{rrr} - \ \frac{1}{7} & \ \frac{2}{7} & \ \frac{2}{7} \\ \ \frac{1}{2} & - \ \frac{1}{2} & 0 \\ \ \frac{1}{14} & \ \frac{5}{14} & - \ \frac{1}{7} \end{array} \right]$$
+
+%===============================================================================
+\item[Question 11: Let]
+$A=\left[ \begin{array}{rrr} 1 & 2 & 2 \\ 1 & 0 & 2 \\ 2 & 2 & 4 \end{array} \right]$. \textbf{Find $A^{-1}$ if it exists.}
+
+Answer: Write the augmented matrix  [A|I] 
+$$\left[ \begin{array}{rrr|rrr} 1 & 2 & 2 & 1 & 0 & 0 \\ 1 & 0 & 2 & 0 & 1 & 0 \\ 2 & 2 & 4 & 0 & 0 & 1 \end{array} \right]$$
+
+and proceed to do row operations attempting to obtain  [I|A-1].  Take -1 times the first row and add to the second. Then take -2 times the first row and add to the third row.
+$$\left[ \begin{array}{rrr|rrr} 1 & 2 & 2 & 1 & 0 & 0 \\ 0 & -2 & 0 & -1 & 1 & 0 \\ 0 & -2 & 0 & -2 & 0 & 1 \end{array} \right]$$
+
+Next add -1 times the second row to the third row.
+$$\left[ \begin{array}{rrr|rrr} 1 & 2 & 2 & 1 & 0 & 0 \\ 0 & -2 & 0 & -1 & 1 & 0 \\ 0 & 0 & 0 & -1 & -1 & 1 \end{array} \right]$$
+
+At this point, you can see there will be no way to obtain  I  on the left side of this augmented matrix. Hence, there is no way to complete this algorithm, and therefore the inverse of  A  does not exist. In this case, we say that  A  is not invertible.
+
+%===============================================================================
+\item[Question 12: Consider the following system of equations. Use the inverse of a suitable matrix to give the solutions to this system.]
+$$\begin{array}{c} x+z=1 \\ x-y+z=3 \\ x+y-z=2 \end{array}$$
+
+Answer: First, we can write the system of equations in matrix form
+$$AX = \left[ \begin{array}{rrr} 1 & 0 & 1 \\ 1 & -1 & 1 \\ 1 & 1 & -1 \end{array} \right] \left[ \begin{array}{r} x \\ y \\ z \end{array} \right] =\left[ \begin{array}{r} 1 \\ 3 \\ 2 \end{array} \right] = B \label{inversesystem1}$$
+
+The inverse of the matrix
+$$A = \left[ \begin{array}{rrr} 1 & 0 & 1 \\ 1 & -1 & 1 \\ 1 & 1 & -1 \end{array} \right]$$
+
+is
+$$A^{-1} = \left[ \begin{array}{rrr} 0 & \ \frac{1}{2} & \ \frac{1}{2} \\ 1 & -1 & 0 \\ 1 & - \ \frac{1}{2} & - \ \frac{1}{2} \end{array} \right]$$
+
+Verifying this inverse is left as an exercise.
+
+From here, the solution to the given system is found by
+$$\left[ \begin{array}{r} x \\ y \\ z \end{array} \right] = A^{-1}B = \left[ \begin{array}{rrr} 0 & \ \frac{1}{2} & \ \frac{1}{2} \\ 1 & -1 & 0 \\ 1 & - \ \frac{1}{2} & - \ \frac{1}{2} \end{array} \right] \left[ \begin{array}{r} 1 \\ 3 \\ 2 \end{array} \right] =\left[ \begin{array}{r} \ \frac{5}{2} \\ -2 \\ - \ \frac{3}{2} \end{array} \right]$$
+
+%===============================================================================
+\item[Question 13: Find det(A) for the matrix A given below.]
+$$A = \left[ \begin{array}{rr} 2 & 4 \\ -1 & 6 \end{array} \right]$$
+
+Answer: $\det \left( A\right) = \left( 2\right) \left( 6\right) -\left( -1\right) \left( 4\right) = 12 + 4 = 16.$
+
+%===============================================================================
+\item[Question 14: Let]
+$A = \left[ \begin{array}{rrr} 1 & 2 & 3 \\ 4 & 3 & 2 \\ 3 & 2 & 1 \end{array} \right]$. \textbf{Find minor$(A)_{12}$ and minor$(A)_{23}$.}
+
+Answer: First we will find minor$(A)_{12}$. This is the determinant of the 2×2 matrix which results when we delete the first row and the second column. This minor is given by
+$$minor \left(A\right)_{12} = \det \left[ \begin{array}{rr} 4 & 2 \\ 3 & 1 \end{array} \right]$$
+
+we see that 
+$$\det \left[ \begin{array}{rr} 4 & 2 \\ 3 & 1 \end{array} \right] = \left(4\right)\left(1\right) - \left(3\right)\left(2\right) = 4 - 6 = -2$$
+
+Therefore minor$(A)_{12}=-2$. Similarly, minor$(A)_{23}$ is the determinant of the 2×2 matrix which results when we delete the second row and the third column. This minor is therefore
+$$minor \left(A\right)_{23} = \det \left[ \begin{array}{rr} 1 & 2 \\ 3 & 2 \end{array} \right] = -4$$
+
+%===============================================================================
+\item[Question 15: Consider the matrix]
+$A = \left[ \begin{array}{rrr} 1 & 2 & 3 \\ 4 & 3 & 2 \\ 3 & 2 & 1 \end{array} \right]$. \textbf{Find cof$(A)_{12}$ and cof$(A)_{23}$.}
+
+Answer: First, we will compute cof$(A)_{12}$. Therefore, we need to find minor$(A)_{12}$. This is the determinant of the 2×2 matrix which results when we delete the first row and the second column. Thus minor$(A)_{12}$ is given by
+$$\det \left[ \begin{array}{rr} 4 & 2 \\ 3 & 1 \end{array} \right] = -2$$
+$$cof(A)_{12} = (-1)^{1+2} minor(A)_{12} = (-1)^{1+2}(-2) = 2$$
+
+Hence, cof$(A)_{12}$ = 2.
+
+Similarly, we can find cof$(A)_{23}$. First, find minor$(A)_{23}$, which is the determinant of the 2×2 matrix which results when we delete the second row and the third column. This minor is therefore
+$$\det \left[ \begin{array}{rr} 1 & 2 \\ 3 & 2 \end{array} \right] = -4$$
+$$cof(A)_{23} = (-1)^{2+3} minor(A)_{23} = (-1)^{2+3}(-4) = 4$$
+
+%===============================================================================
+\item[Question 16: Let]
+$A=\left[ \begin{array}{rrr} 1 & 2 & 3 \\ 4 & 3 & 2 \\ 3 & 2 & 1 \end{array} \right]$. \textbf{Find det(A) using the method of Laplace Expansion.}
+
+Answer: First, we will calculate det(A) by expanding along the first column. We take the 1 in the first column and multiply it by its cofactor,
+$$1 \left( -1\right) ^{1+1}\left| \begin{array}{rr} 3 & 2 \\ 2 & 1 \end{array} \right| = (1)(1)(-1) = -1$$
+
+Similarly, we take the 4 in the first column and multiply it by its cofactor, as well as with the 3 in the first column. Finally, we add these numbers together, as given in the following equation.
+$$det(A) = 1 \left( -1\right) ^{1+1}\left| \begin{array}{rr} 3 & 2 \\ 2 & 1 \end{array} \right| + 4 \left( -1\right) ^{2+1}\left| \begin{array}{rr} 2 & 3 \\ 2 & 1 \end{array} \right| + 3 \left( -1\right) ^{3+1}\left| \begin{array}{rr} 2 & 3 \\ 3 & 2 \end{array} \right|$$
+
+Calculating each of these, we obtain
+$$\det \left(A\right) = 1 \left(1\right)\left(-1\right) + 4 \left(-1\right)\left(-4\right) + 3 \left(1\right)\left(-5\right) = -1 + 16 + -15 = 0$$
+
+Hence, det(A)=0.
+
+%===============================================================================
+\item[Question 17: Let]
+$A = \left[ \begin{array}{rr} 3 & 6 \\ 2 & 4 \end{array} \right], B = \left[ \begin{array}{rr} 2 & 3 \\ 5 & 1 \end{array} \right]$. \textbf{For each matrix, determine if it is invertible. If so, find the determinant of the inverse.}
+
+Answer: Consider the matrix A first. We find the determinant as follows:
+$$\det \left( A \right) = 3 \times 4 - 2 \times 6 = 12 - 12 = 0$$
+
+Therefore, A is not invertible.
+Now consider the matrix B. We have
+$$\det \left( B \right) = 2 \times 1 - 5 \times 3 = 2 - 15 = -13$$
+
+Therefore, B is invertible and the determinant of the inverse is given by
+$$\det \left( A^{-1} \right) = \frac{1}{\det(A)} = -\frac{1}{13}.$$
+
+%===============================================================================
+\item[Question 18: Find the inverse of a matrix $A$ using its adjoint.]
+$$A=\left[ \begin{array}{rrr} 1 & 2 & 3 \\ 3 & 0 & 1 \\ 1 & 2 & 1 \end{array} \right].$$
+
+Answer: Inverse of a matrix can be given as
+$$A^{-1} = \frac{1}{\det \left(A\right)} {adj}\left(A\right)$$
+
+First we will find the determinant of this matrix.
+$$det(A) = 1\times(0-2) - 2\times(3-1) + 3\times(6-0) = -2 - 4 + 18 = 12$$
+
+Now, we need to find  $adj(A)$. To do so, first we will find the cofactor matrix of  A . This is given by
+$$\mathrm{cof}\left( A\right) = \left[ \begin{array}{rrr} -2 & -2 & 6 \\ 4 & -2 & 0 \\ 2 & 8 & -6 \end{array} \right]$$
+
+Here, the $ij^{th}$ entry is the $ij^{th}$ cofactor of the original matrix A. Therefore, the inverse of A is given by
+$$A^{-1} = \frac{1}{12}\left[ \begin{array}{rrr} -2 & -2 & 6 \\ 4 & -2 & 0 \\ 2 & 8 & -6 \end{array} \right] ^{T}= \left[ \begin{array}{rrr} -\frac{1}{6} & \frac{1}{3} &  \frac{1}{6} \\ -\frac{1}{6} & -\frac{1}{6} &  \frac{2}{3} \\ \frac{1}{2} & 0 & -\frac{1}{2} \end{array} \right]$$
+
+We can verify the answer for $A^{-1}$. Compute the product  $AA^{-1}$ and $A^{-1}A$ and make sure each product is equal to  I .
+
+Compute $A^{-1}A$ as follows:
+$$A^{-1}A =  \left[ \begin{array}{rrr} -\frac{1}{6} & \frac{1}{3} &  \frac{1}{6} \\ -\frac{1}{6} & -\frac{1}{6} &  \frac{2}{3} \\ \frac{1}{2} & 0 & -\frac{1}{2} \end{array} \right] \left[ \begin{array}{rrr} 1 & 2 & 3 \\ 3 & 0 & 1 \\ 1 & 2 & 1 \end{array} \right] = \left[ \begin{array}{rrr} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{array} \right] = I$$
+
+We can verify that  $AA^{-1}=I$ .
+
+%===============================================================================
+\item[Question 19: Find the distance between the points P and Q in ${R}^{4}.$, where P and Q are given by]
+$$P = (1, 2, -4, 6) \ \ \ \ and \ \ \ \ Q = (2, 3, -1, 0)$$
+
+Answer: Using the distance formula:
+$$C'(x) = 0.5 - \frac{10000}{x^2}$$
+
+The marginal costs for each value of $x$ is then,
+$$d(P,Q)= \left( \left( 1-2\right) ^{2}+\left( 2-3\right) ^{2}+\left( -4-\left( -1\right) \right) ^{2}+\left( 6-0\right)^{2}\right) ^{\frac{1}{2}} = \sqrt{47}$$
+
+Therefore, $d(P,Q)= \sqrt{47}$.
+
+%===============================================================================
+\item[Question 20: Let $\vec{v}$ be given by]
+$$\vec{v} = [1\ \ -3\ \ 4]^T$$
+
+\textbf{Find the unit vector $\vec{u}$ which has the same direction as $\vec{v}$.}
+
+Answer: We need to find the length of $\vec{v}$ which is given by
+$$\| \vec{v} \| = \sqrt{ v_{1}^2 + v_{2}^2+ v_{3}^2}$$
+
+Using the corresponding values we find that
+$$\| \vec{v} \| = \sqrt{ 1^2 + \left(-3 \right)^2 + 4^2}$$
+$$ = \sqrt{ 1 + 9 + 16} \ \ $$
+$$ = \sqrt{26} \ \ \ \ \ \ \ \ \ \ \ \ $$
+
+In order to find $\vec{u}$, we divide $\vec{v}$ by $\sqrt{26}$. The result is
+$$\vec{u} = \frac{1}{\| \vec{v} \|} \vec{v} \ \ \ \ \ \ \ \ \ \ $$
+$$\ \ \ \ \ \ \ \ \ \ \  = \frac{1}{\sqrt{26}} \left[ \begin{array}{rrr} 1 & -3 & 4 \end{array} \right]^T$$
+$$\ \ \ \ \ \ \ \ \ \ \ \ \ \ \  = \left[ \begin{array}{rrr} \frac{1}{\sqrt{26}} & -\frac{3}{\sqrt{26}} & \frac{4}{\sqrt{26}} \end{array} \right]^T$$
+
+%===============================================================================
+\item[Question 21: Find the dot product of $\vec{u}$ and $\vec{v}$ for]
+$$\vec{u} = \left[ \begin{array}{r} 1 \\ 2 \\ 0 \\ -1 \end{array} \right], \vec{v} = \left[ \begin{array}{r} 0 \\ 1 \\ 2 \\ 3 \end{array} \right]$$
+
+Answer: We must compute
+$$\vec{u}\bullet \vec{v} = \sum_{k=1}^{4}u_{k}v_{k}$$
+
+This is given by
+$$\vec{u} \bullet \vec{v} = (1)(0) + (2)(1) + (0)(2) + (-1)(3)$$
+$$ = 0 + 2 + 0 + -3 \ \ \ \ \ \ \ \ \ \ \ \ \ \ $$
+$$ = -1 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ $$
+
+%===============================================================================
+\item[Question 22: Find the length of $\vec{u}$, i.e, find $\| \vec{u} \|$.]
+$$\vec{u} = \left[ \begin{array}{r} 2 \\ 1 \\ 4 \\ 2 \end{array} \right]$$
+
+Answer: We have $\| \vec{u} \| ^{2} = \vec{u} \bullet \vec{u}$. Therefore, $\| \vec{u} \| = \sqrt {\vec{u} \bullet \vec{u}}$.
+
+First, compute $\vec{u} \bullet \vec{u}$.
+$$\vec{u} \bullet \vec{u} = (2)(2) + (1)(1) + (4)(4) + (2)(2)$$
+$$ = 4 + 1 + 16 + 4$$
+$$ = 25$$
+
+Then, $$\| \vec{u} \| = \sqrt {\vec{u} \bullet \vec{u}} = \sqrt{25} = 5.$$
+
+%===============================================================================
+\item[Question 23: Find the angle between the vectors given by]
+$$\vec{u} = \left[ \begin{array}{r} 2 \\ 1 \\ -1 \end{array} \right], \vec{v} = \left[ \begin{array}{r} 3 \\ 4 \\ 1 \end{array} \right]$$
+
+Answer: We have $$\vec{u}\bullet \vec{v}=\| \vec{u}\| \| \vec{v} \| \cos \theta$$
+
+Hence, $$\cos \theta =\frac{\vec{u}\bullet \vec{v}}{\| \vec{u}\| \| \vec{v} \|}$$
+
+First, we can compute $\vec{u}\bullet \vec{v}$.
+$$\vec{u}\bullet \vec{v} = (2)(3) + (1)(4)+(-1)(1) = 9$$
+
+Then, 
+$$\| \vec{u} \| = \sqrt{(2)(2)+(1)(1)+(1)(1)}=\sqrt{6}$$
+$$\| \vec{v} \| = \sqrt{(3)(3)+(4)(4)+(1)(1)}=\sqrt{26}$$
+
+Therefore, the cosine of the included angle equals
+$$\cos \theta =\frac{9}{\sqrt{26}\sqrt{6}}=0.7205766...$$
+
+With the cosine known, the angle can be determined by computing the inverse cosine of that angle, giving approximately  $\theta = 0.76616$    radians.
+
+%===============================================================================
+\item[Question 24: Let $\vec{u}, \vec{v}$ be vectors with $\| \vec{u} \| = 3$ and $\| \vec{v} \| = 4$. Suppose the angle between $\vec{u}$ and $\vec{v}$ is $\pi / 3$. Find $\vec{u}\bullet \vec{v}$.]
+
+Answer: From the geometric description of the dot product
+$$\vec{u}\bullet \vec{v}=(3)(4) \cos \left( \pi / 3\right) =3\times 4\times 1/2=6.$$
+
+%===============================================================================
+\item[Question 25: Find the projection of $\vec{v}$ on $\vec{u}$ i.e, $proj_{\vec{u}}(\vec{v})$ if ]
+$$\vec{u}= \left[ \begin{array}{r} 2 \\ 3 \\ -4 \end{array} \right], \vec{v}= \left[ \begin{array}{r} 1 \\ -2 \\ 1 \end{array} \right].$$
+
+Answer: First, compute $\vec{v} \bullet \vec{u}$. This is given by
+$$\left[ \begin{array}{r} 1 \\ -2 \\ 1 \end{array} \right] \bullet \left[ \begin{array}{r} 2 \\ 3 \\ -4 \end{array} \right] = (2)(1) + (3)(-2) + (-4)(1) = 2 - 6 - 4 = -8$$
+
+Similarly, $\vec{u} \bullet \vec{u}$ is given by
+$$\left[ \begin{array}{r} 2 \\ 3 \\ -4 \end{array} \right] \bullet \left[ \begin{array}{r} 2 \\ 3 \\ -4 \end{array} \right] = (2)(2) + (3)(3) + (-4)(-4) = 4 + 9 + 16 = 29$$
+
+Therefore, the projection is equal to
+$$\mathrm{proj}_{\vec{u}}\left( \vec{v}\right) =\left( \frac{\vec{v}\bullet \vec{u}}{\vec{u}\bullet \vec{u}}\right) \vec{u} = \frac{\vec{v}\bullet \vec{u}}{\| \vec{u}\| ^{2}}\vec{u}$$
+$$\mathrm{proj}_{\vec{u}}\left( \vec{v}\right) =-\frac{8}{29} \left[ \begin{array}{r} 2 \\ 3 \\ -4 \end{array} \right] \\ = \left[ \begin{array}{r} - 16/29 \\ - 24/29 \\ 32/29 \end{array} \right].$$
+
+%===============================================================================
+
+\end{description}
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

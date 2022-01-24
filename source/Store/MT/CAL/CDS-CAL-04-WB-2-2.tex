@@ -1,0 +1,344 @@
+\documentclass{article}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\includegraphics[width=5cm, height=0.9cm]{logo}}
+\lhead{Ungraded Math Problems I - Module 1}
+\lfoot{COPYRIGHT ©TALENTSPRINT, 2020. ALL RIGHTS RESERVED.}
+\rfoot{\thepage}
+
+\begin{document}
+\begin{description}[style=nextline]
+%==============================================================================
+\item[Question 1: Find the domain and range of $Y(t) = 3t^2 - 2t + 1.$]
+Answer: This is a polynomial (a $2^{nd}$ degree polynomial in fact) and so we know that we can plug any value of t into the function and so the domain is all real numbers or, 
+
+Domain : $ -\infty < t < \infty\ or\ (-\infty, \infty)$
+
+The graph of this $2^{nd}$ degree polynomial (or quadratic) is a parabola that opens upwards (because the coefficient of the $t^2$ is positive) and so we know that the vertex will be the lowest point on the graph. This also means that the function will take on all values greater than or equal to the y-coordinate of the vertex which will in turn give us the range.
+
+So, we need the vertex of the parabola. As the vertex is an extrema point, the derivative should be zero. Therefore, the t-coordinate is,
+$$3(2)t - 2 = 0$$
+$$t = \frac{2}{2(3)} = \frac{1}{3}$$
+
+and the y-coordinate is then, 
+$$Y(\frac{1}{3}) = \frac{2}{3}.$$
+
+The range is then,
+
+Range: $\big[ \frac{2}{3}, \infty\big)$
+
+%==============================================================================
+\item[Question 2: Compute $(f$ o $g)(x)$ and $(g$ o $f)(x)$ for $f(x) = 5x + 2,\ g(x) = x^2 - 14x.$]
+Answer: 
+
+$(f$ o $g)(x) = f[g(x)] = f[x^2 - 14] = 5(x^2 - 14x) + 2 = 5x^2 - 70x + 2$
+
+$(g$ o $f)(x) = g[f(x)] = g[5x + 2] = (5x + 2)^2 - 14(5x + 2) = 25x^2 - 50x - 24$
+
+%==============================================================================
+\item[Question 3: Find the inverse for $f(x) = 6x + 15.$ Verify your inverse by computing one or both of the composition]
+$$y = 6x + 15$$
+$$x = 6y + 15$$
+
+Answer: Consider $$x = 6y + 15$$
+$$x - 15 = 6y$$
+$$y = \frac{1}{6}(x - 15) \ \ \  \rightarrow \ \ \ f^{-1}(x) = \frac{1}{6}(x - 15)$$
+Finally, compute either $(f$ o $f^{-1})(x)$ or $(f^{-1}$ o $f)(x)$ to verify our work.
+
+Either composition can be done so let's do $(f$ o $f^{-1})(x)$ in this case.
+$$(f\ o\ f^{-1})(x) = f[f^{-1}(x)]$$
+$$\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ = 6 \big[ \frac{1}{6}(x - 15) \big] + 15$$
+$$\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ = x - 15 + 15$$
+$$\ \ \ \ \ \ = x$$
+
+So, we got X out of the composition and so we know we've done our work correctly.
+
+%==============================================================================
+\item[Question 4: Differentiate:]
+
+(a) $f(x) = (6x^2 + 7x)^4$
+
+(b) $g(t) = (4t^2 - 3t + 2)^{-2}$
+
+Answer: 
+
+(a) $$f'(x) = 4(6x^2 + 7x)^3 (12x + 7)$$
+$$\ \ \ \ \ \ \ = 4(12x + 7)(6x^2 + 7x)^3$$
+
+(b) $$g'(t) = -2(4t^2 - 3t + 2)^{-3}(8t - 3)$$
+$$\ \ \ \ \ \ = -2(8t - 3)(4t^2 - 3t + 2)^{-3}$$
+
+%==============================================================================
+\item[Question 5: Find the L1, L2 and L-inf norms of the vector $\vec{u} = (2, -2, 3, -4)$.]
+Answer: Since $\vec{u} \ \epsilon \ R^4$, we will use the formula
+
+L1- norm: 
+$$||x||_1 = \sum |x_i| = 2 + 2 + 3 + 4 = 11$$
+
+L2-norm: 
+$$||x||_2 = \sqrt{\sum x_i^2} = \sqrt{(4 + 4  + 9 + 16)} = \sqrt{33}$$
+
+L-inf norm:
+$$||x||_{\infty} = max (|x_i|) = 4$$
+%==============================================================================
+\item[Question 6: Answer the following questions about the function $W (z) = 4z^2 - 9z.$]
+
+(a) Is the function increasing or decreasing at $z = -1$?
+
+(b) Is the function increasing or decreasing at $z = 2$?
+
+(c) Does the function ever stop changing? If yes, at what value(s) of z does the function stop changing?
+
+Answer: Derivative of function: $W'(z) = 8z - 9$
+
+Now, we need to compute: $W'(-1) = -17$. This is negative and so we know that the function must be \textbf{decreasing} at $z = -1.$
+
+(b) Again, we need to compute: $W'(2) = 7$. This is positive and so we know that the function must be \textbf{increasing} at $z = 2$.
+
+(c) Here, we need to find where the derivative is zero. So, we need to solve,
+$$W'(z) = 0 \ \ \ \rightarrow \ \ \ 8z - 9 = 0$$
+$$z = \frac{9}{8}$$
+
+So, the function will stop changing at $z = 9/8.$
+
+%==============================================================================
+\item[Question 7: The position of an object at any time \emph{t} is given by $s(t) = \frac{t+1}{t+4}.$]
+
+(a) Determine the velocity of the object at any time \emph{t}.
+
+(b) Does the object ever stop moving? If yes, at what time(s) does the object stop moving?
+
+Answer: We know that the derivative of a function gives the velocity of the object and so we'll first need the derivative of this function.
+
+$$s'(t) = \frac{d}{dt} ((t+1)(t+4)^{-1})$$
+$$\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  = (t+4)^{-1} - 1(t+4)^{-2}(t+1)$$
+$$\ \ = \frac{1}{t+4} - \frac{(t+1)}{(t+4)^2}$$
+$$ = \frac{3}{(t+4)^2} \ \ \ \ \ \ \ \ \ $$
+
+(b) We know that the object will stop moving if the velocity (i.e, the derivative) is zero. In this case, the derivative is a rational expression and clearly the numerator will never be zero. Therefore, the derivative will not be zero and therefore the object \textbf{never stops moving}.
+
+%==============================================================================
+\item[Question 8: Suppose that the volume of water in a tank for $ 0 \le t \le 6$ is given by $Q(t) = 10 + 5t - t^2$.]
+
+(a) Is the volume of water increasing or decreasing at t = 0?
+
+(b) Is the volume of water increasing or decreasing at t = 6?
+
+(c) Does the volume of water ever stop changing? If yes, at what time(s) does the volume stop changing?
+
+Answer:
+
+(a) The derivative of a function gives us the rate of change of the function, so we need the derivative of this function.
+
+$$Q'(t) = \frac{d}{dt} (10 + 5t - t^2) = 5 - 2t$$
+
+Now all that we need to do is to compute: $Q'(0) = 5.$ this is positive and so we know that the column of water in the tank must be \textbf{increasing} at t = 0.
+
+(b) Again, we need to compute: $Q'(6) = -7$. This is negative and so we know that the volume of water in the tank must be \textbf{decreasing} at t = 6.
+
+(c) Here all that we're really asking is if the derivative is ever zero. So we need to solve,
+$$Q'(t) = 0 \ \ \rightarrow \ \ 5 - 2t = 0\ \ \rightarrow \ \ t = \frac{5}{2}$$
+
+So, the volume of water will stop changing at 5/2.
+
+%==============================================================================
+\item[Question 9: For a certain rectangle the length of one side is always three times the length of the other side.]
+
+(a) If the shorter side is decreasing at a rate of 2 inches/minute at what rate is the longer side decreasing?
+
+(b) At what rate is the enclosed area decreasing when the shorter side is 6 inches long and is decreasing at a rate of 2 inches/minute?
+
+Answer: 
+
+(a) Let's call the shorter side $x$ and the longer side $y$. We know that $x' = -2$ and want to find $y'$.
+
+Now all we need is an equation that relates these two quantities and from the problem statement we know the longer side is three times shorter side and so the equation is, $$y = 3x.$$
+
+Next step is to simply differentiate the equation with respect to \emph{t}.
+$$y' = 3x'$$
+
+Finally, plug in the known quantity and solve: $$y' = -6$$ 
+
+(b) Again, we'll call the shorter side $x$ and the longer side $y$ as with the last part. We know that $x = 6,\ x' = -2$ and want to find $A'$.
+
+The equation we'll need is the area formula for a rectangle: ([$A = xy$])
+
+At this point we can either leave the equation as is and differentiate it or we can plug in $y = 3x$ to simplify the equation down to a single variable then differentiate. Doing this gives, 
+$$A(x) = 3x^2$$
+
+Now we need to differentiate with respect to \emph{t}.
+
+$$A' = 6xx'$$
+
+Substituting the known quantities, 
+$$A' = 6(6)(-2) = -72.$$
+
+%==============================================================================
+\item[Question 10: A thin sheet of ice is in the form of a circle. If the ice is melting in such a way that the area of the sheet is decreasing at a rate of $0.5\ m^2/sec$ at what rate is the radius decreasing when the area of the sheet is $12\ m^2$?]
+Answer: We'll call the area of the sheet $A$ and the radius $r$ and we know that the area of a circle is given by,
+$$A = \pi r^2$$
+
+We know that $A' = -0.5$ and want to determine $r'$ when $A = 12$.
+
+Next step is to simply differentiate the equation with respect to $t$.
+$$A' = 2\pi rr'$$
+
+Now, we need to go back to the equation of the area and use the fact that we know the area at the point we are interested in and determine the radius at that time.
+
+$$12 = \pi r^2 \ \ \ \ \rightarrow \ \ \ \ r = \sqrt{\frac{12}{\pi}} = 1.954$$
+
+The rate of change of the radius is then,
+$$-0.5 = 2\pi (1.9544)r' \ \ \ \ \rightarrow \ \ \ \ r' = -0.0407$$
+
+%==============================================================================
+\item[Question 11: Determine the absolute extrema of $f(x) = 8x^3 + 81x^2 - 42x - 8$ on $\{-8, 2\}$.]
+Answer: First, notice that we are working with a polynomial and this is continuous everywhere and so will be continuous on the given interval. Recall that this is important because we now know that absolute extrema will in fact exist by the Extreme Value Theorem!
+
+Now that we know that absolute extrema will in fact exist on the given interval we'll need to find the critical points of the function.
+
+Here are the critical points for this function.
+
+$$f'(x) = 24 x^2 + 162x - 42 = 6(4x-1)(x+7) = 0$$
+$$\rightarrow \ \ x = -7,\ x = \frac{1}{4}$$
+
+Now, recall that we actually are only interested in the critical points that are in the given interval and so, in this case, the critical points that we need are,
+$$x = -7,\ x = \frac{1}{4}$$
+
+The next step is to evaluate the function at the critical points from the second step and at the end points of the given interval. Here are those function evaluations.
+$$f(-8) = 1416, \ \ f(-7) = 1511, \ \ f\big(\frac{1}{4}\big) = -13.3125, \ \ f(2) = 296$$
+
+The final step is to identify the absolute extrema.
+
+Absolute Maximum: 1511 at $x = -7$
+
+Absolute Minimum: -13.3125 at $x = \frac{1}{4}.$
+
+%==============================================================================
+\item[Question 12: Find two positive numbers whose sum is 300 and whose product is a maximum.]
+Answer: Let's call the two numbers $x$ and $y$ and we are told that the sum is 300 (this is the constraint for the problem) or, 
+$$x + y = 300$$
+
+We are being asked to maximize the product,
+$$A = xy$$
+
+We now need to solve the constraint for $x$ or $y$ and plug this into the product equation.
+
+$$y = 300 - x \ \ \ \ \rightarrow \ \ \ \ A(x) = x(300 - x) = 300x - x^2$$
+
+The next step is to determine the critical points for this equation.
+$$A'(x) = 300 - 2x \ \ \ \ \rightarrow \ \ \ \ 300 - 2x = 0 \ \ \ \ \rightarrow \ \ \ \ x = 150$$
+
+Just because we got a single value we can’t just assume that this will give a maximum product. We need to do a quick check to see if it does give a maximum.
+$$A''(x) = -2$$
+
+From the above we can see that the second derivative is always negative and so $A(x)$ will always be concave down and so the single critical point we got must be a relative maximum and hence must be the value that gives a maximum product.
+
+We need to give both values. We already have $x$ so we need to determine $y$,
+$$x = 150, \ \ \ \ y = 300 - x = 150.$$
+
+%==============================================================================
+\item[Question 13: A company can produce a maximum of 1500 widgets in a year. If they sell $x$ widgets during the year then their profit, in dollars, is given by,]
+$$P(x) = 30,000,000 - 360,000x + 750x^2 - \frac{1}{3}x^3$$
+
+\textbf{How many widgets should they try to sell in order to maximize their profit?}
+
+Answer: All we need to do here is determine the absolute maximum of the profit function and the value of $x$ that will give the absolute maximum.
+
+The derivative of the profit function and the critical point(s) since we'll need those for this problem.
+$$P'(x) = -360,000 + 1500x - x^2 = -(x-1200)(x-300) = 0$$
+$$\rightarrow \ \ x = 300, x = 1200$$
+
+From the problem statement we can see that we only want points that are in the interval [0, 1500]. As we can see both of the critical points from the above step are in this interval and so we'll need both of them.
+
+The next step is to evaluate the profit function at the critical points from the second step and at the end points of the given interval. Here are those function evaluations.
+
+$P(0) = 30,000,000 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  P(300) = -19,500,000$
+
+$P(1200) = 102,000,000 \ \ \ \ \ \ \ \ \ \ \ \ P(1500) = 52,500,000$
+
+From these evaluations we can see that they will need to sell 1200 widgets to maximize the profits.
+
+%==============================================================================
+\item[Question 14: A management company is going to build a new apartment complex. They know that if the complex contains x apartments the maintenance costs for the building, landscaping etc. will be,]
+$$C(x) = 4000 + 14x - 0.04x^2$$
+
+\textbf{The land they have purchased can hold a complex of at most 500 apartments. How many apartments should the complex have in order to minimize the maintenance costs?}
+
+Answer: Here we need to determine the absolute minimum of the maintenance function and the value of x that will give the absolute minimum.
+
+The derivative of the maintenance function and the critical point(s) are,
+$$C'(x) = 14 - 0.08x = 0 \ \ \ \ \rightarrow \ \ \ \ x = 175$$
+
+From the problem statement we can see that we only want critical points that are in the interval [0,500]. As we can see the critical points from the above step are in this interval and so we’ll need them.
+
+The next step is to evaluate the maintenance function at the critical points from the second step and at the end points of the given interval. Here are those function evaluations.
+$$C(0) = 4000 \ \ \ \ \ \ C(175) = 5225 \ \ \ \ \ \ C(500) = 1000$$
+
+From these evaluations we can see that the complex should have 500 apartments to minimize the maintenance costs.
+
+%==============================================================================
+\item[Question 15: The production costs, in dollars, per day of producing $x$ widgets is given by]
+$$C(x) = 1750 + 6x - 0.04x^2 + 0.0003x^3$$
+
+\textbf{What is the marginal cost when $x=175$ and $x=300$? What do your answers tell you about the production costs?}
+
+Answer: We know that the marginal cost is simply the derivative of the cost function:
+$$C'(x) = 6 - 0.08x + 0.0009x^2$$
+
+The marginal costs for each value of $x$ is then,
+$$C'(175) = 19.5625 \ \ \ \ \ \ \ C'(300) = 63$$
+
+From these computations we can see that it will cost approximately \$19.56 to produce the $176^{th}$ widget and approximately \$63 to produce the $301^{st}$ widget.
+
+%==============================================================================
+\item[Question 16: The production costs, in dollars, per month of producing $x$ widgets is given by,]
+$$C(x) = 200 + 0.5x + \frac{10000}{x}$$
+
+\textbf{What is the marginal cost when $x = 200$ and $x = 500$? What do your answers tell you about the production costs?}
+
+Answer: We know that the marginal cost is simply the derivative of the cost function:
+$$C'(x) = 0.5 - \frac{10000}{x^2}$$
+
+The marginal costs for each value of $x$ is then,
+$$C'(200) = 0.25 \ \ \ \ \ \ \ \ C'(500) = 0.46$$
+
+From these computations we can see that it will cost approximately 25 cents to produce the $201^{st}$ widget and approximately 46 cents to produce the $501^{st}$ widget.
+
+%==============================================================================
+\item[Question 17: The production costs, in dollars, per week of producing $x$ widgets is given by,]
+$$C(x) = 4000 - 32x + 0.08x^2 + 0.00006x^3$$
+
+\textbf{and the demand function for the widgets is given by,}
+$$p(x) = 250 + 0.02x - 0.001x^2$$
+
+\textbf{What is the marginal cost, marginal revenue and marginal profit when $x = 200$ and $x = 400$? What do these numbers tell you about the cost, revenue and profit?}
+
+Answer: The revenue and profit functions are,
+$$Revenue: R(x) = x p(x) = 250x + 0.02x^2 - 0.001x^3$$
+$$Profit: P(x) = R(x) - C(x) = -4000 + 282x - 0.06x^2 - 0.00106x^3$$
+
+Also the marginal cost, marginal revenue and marginal profit functions are simply the derivative of the cost, revenue and profit functions.
+$$C'(x) = -32 + 0.16x + 0.00018x^2$$
+$$R'(x) = 250 + 0.04x - 0.003x^2$$
+$$P'(x) = 282 - 0.12x - 0.00318x^2$$
+
+The marginal cost, marginal revenue and marginal profit for each value of $x$ is then,
+$$C'(200) = 7.2 \ \ \ \ \ \ R'(200) = 138 \ \ \ \ \ \ P'(200) = 130.8$$
+$$C'(400) = 60.8 \ \ \ \ \ \ R'(400) = -214 \ \ \ \ \ \ P'(400) = -274.8$$
+
+From these computations we can see that producing the $201^{st}$ widget will cost approximately \$7.2 and will add approximately \$138 in revenue and \$130.8 in profit.
+
+Likewise, producing the $401^{st}$ widget will cost approximately \$60.8 and will see a decrease of approximately \$214 in revenue and a decrease of \$274.8 in profit.
+
+%==============================================================================
+
+\end{description}
+\end{document}
