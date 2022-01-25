@@ -172,10 +172,10 @@ Course Name Codes
 :DLFA: Deep Learning Foundations and Applications: Partner: IISc 
 :ADSMI: Advanced Certification in Data Science and Machine Intelligence: Partner-IIT Madras
 :IoT & Smart Analytics: Internet of Things & Smart Analytics: Partner-IIIT Hyderabad
-:BRM: Bridge Module: TalentSprint Hyderabad
-:WISE: Women In Software Engineering: TalentSprint Hyderabad
+:BRM: Bridge Module: TalentSprint 
+:WISE: Women In Software Engineering: TalentSprint 
 :WE: Women Engineer: Partner-Google
-:FSDJ: Full Stack Developer - Java: TalentSprint Hyderabad
-:PEGA: Certified System Architects Program: TalentSprint Hyderabad
-
+:FSDJ: Full Stack Developer - Java: TalentSprint 
+:PEGA: Certified System Architects Program: TalentSprint 
+:CDSE: Certified Data Science Engineer: TalentSprint
 
