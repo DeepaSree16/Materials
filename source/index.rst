@@ -34,79 +34,12 @@ The TS Central Repository provides a centralized content storage and management 
 
 - This repository is focused on courses and modules 
 
-- This repository is created as a combination of two approaches: the public $REPO is organized program-wise;
-- Duplication is avoided by linking directories and files from the $STORE tree to the $REPO tree.
+- This repository is created as a combination of two approaches: 
+      * the public $REPO is organized program-wise
+      * the content files from all programs are physically stored in the $STORE
 
-$REPO
-   * CoreDocs
-   * Programs
-      + AIML
+- More details on the repository components are provided below
 
-	- PYTH
-	 - PYES100
-         - PYBA100
-	 - PYPK100
-	- MATH
-	 - MAES100
-	 - MATH101
-	- MLAI
-	 - AIPR100
-         - CLML100
-	 - DLNN100
-	 - DLAD100
-	- BUAN
-	 - TSRM100
-	    
-      + CDS
-      
-	- PYTH
-	 - PYES100
-         - PYBA100
-	 - PYPK100
-
-	- MATH
-	 - MAES100
-	 - STAT100
-	 - PROB100
-	 - LINA100
-	 - CALC100
-	- CDSP
-	 - CDSP100
-        - MLAI
-	 - CLML100
-         - DLNN100
-         - DLAD100
-	- DENG
-	 - DENG100
-	- BUAN
-	 - TSRM100
-	 - FINP100
-
-$STORE
-   * PYTH
-      + **PYES100** PythonEssentials
-      + **PYBA100** PythonBasics
-      + **PYPK100** PythonPackages
-   * MATH
-      + **MAES100** MathEssentials
-      + **MATH101** MathBasics
-      + **STAT200** Statistics
-      + **PROB200** Probability 
-      + **LINA200** LinearAlgebra
-      + **CALC200** Calculus
-   * CDSP
-      + **CDSP100** ComputationalDataScPractice
-   * MLAI
-      + **AIPR100** AIPrinciples
-      + **CLML100** ClassicalML
-      + **DLNN100** DeepLearning
-      + **DLAD100** DeepLearningAdvanced
-   * DENG
-      + **DENG100** DataEngineering
-   * BUAN
-      + **TSRM100** TimeSeriesModels
-      + **FINP100** FinancePortfolio	
-  
 CoreDocs
 ++++++++
 This directory is meant for meta-documents -- that is documents about
