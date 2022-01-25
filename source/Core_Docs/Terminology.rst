@@ -175,4 +175,7 @@ Course Name Codes
 :BRM: Bridge Module: TalentSprint Hyderabad
 :WISE: Women In Software Engineering: TalentSprint Hyderabad
 :WE: Women Engineer: Partner-Google
+:FSDJ: Full Stack Developer - Java: TalentSprint Hyderabad
+:PEGA: Certified System Architects Program: TalentSprint Hyderabad
+
 
