@@ -38,7 +38,7 @@ The TS Central Repository provides a centralized content storage and management 
       * the public $REPO is organized program-wise
       * the content files from all programs are physically stored in the $STORE
 
-More details on the repository components are provided below
+Further details on the repository components are provided below:
 
 CoreDocs
 ++++++++
