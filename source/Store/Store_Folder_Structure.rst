@@ -18,7 +18,7 @@ Purpose
 +++++++
     This document specifies the following:
     
-    1. Folder Structure of the 'Store' Folder in the Central Content Respository
+    Folder Structure of the 'Store' Folder in the Central Content Respository
 
 Scope
 +++++
