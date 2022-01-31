@@ -40,14 +40,13 @@ An example of the REPO and STORE folders organization is provided below:
 
 $REPO
    * Program LMS Links
-      + PRO-Java
          - AIML
          - WISE
          - FSD
          - CDS
          - WE
          - DLFA
-	     - ADSMI
+         - ADSMI
                    
 $STORE
    * Java
