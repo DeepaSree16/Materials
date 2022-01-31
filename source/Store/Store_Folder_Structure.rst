@@ -10,20 +10,15 @@ property of TalentSprint Private Limited.
 
 Metadata
 --------
-
-:Document Code: TS-LD-iPEARL-000
-
 :Description: Structure and Layout of the Store Folder in the Central Content Repository
 
 :Author: Surobhi Lahiri
-
-:Version: 1.0.0
 
 Purpose
 +++++++
     This document specifies the following:
     
-    1. Directory Structure of the Store Folder in the Central Content Respository
+    1. Folder Structure of the 'Store' Folder in the Central Content Respository
 
 Scope
 +++++
@@ -32,9 +27,21 @@ Scope
 Structure
 +++++++++
 
-:Store Root: http://iPearl.talentsprint.com/store Referred to as $STORE
+I. The Store folder contains the following 3-level folders, based within the scope of content in the FS, GP and XP programs in TalentSprint. It is the physical location of all TS program contents. The Store folder structure is as described below:
 
-The Store folder contains the following Content Modules and Content sub-modules, based within the scope of content in the FS, GP and XP programs in TalentSprint.
+* Folder level 1: Topic folder: This is a broad topic category which exists as part of any TS program's content
+  - The folder name consists of a 2 letter code in capitals
+  - For example: 'AI' (Artificial Intelligence) is a level 1 folder title
+* Folder level 2: Sub-topic folder: This is a sub-topic within a broad topic category
+  - The folder name consists of a 3 letter code in capitals
+  - For example: In the AI folder, 'CML' (ClassicalMachineLearning) is a level 2 folder title
+  - It is not necessary that a Folder level 2 be always created in a Folder level 1.
+* Folder level 3: Sub-sub topic folder: This is a single specific topic within a sub-topic category
+  - The folder name consists of the complete name of the topic, without abbreviation, with initial letters capitalized and no space between subsequent words in the topic
+  - For example: In AI, under the CML folder, 'LinearRegression' is a level 3 folder title
+  - It is not necessary that a Folder level 3 be always created in a Folder level 2.
+
+II. Folder titles in the Store folder are as listed below:
 
 STORE
 
@@ -97,7 +104,7 @@ STORE
       + **CDP** ComputationalDataScienceInPractice
 
    * AI [ARTIFICIAL INTELLIGENCE]
-      + **CML** ClassicalML
+      + **CML** ClassicalMachineLearning
          - LinearRegression
          - LinearClassifier
 	 - LogisticRegression
@@ -159,13 +166,13 @@ Each artefact will be named with a prefix as follows:
 Examples
 ^^^^^^^^
 :AIML-CML-03-VDO-1-2.mp4: 
-    * AIML Course
+    * AIML Program
     * Classical ML Module
     * Session 3
     * Video 1 of 2
 
 :CDS-CDP-02-DECK-1-1.pdf:
-    * CDS Course
+    * CDS Program
     * Computational DataScience In Practice Module
     * Session 2
     * Presentation Deck 1 of 1
