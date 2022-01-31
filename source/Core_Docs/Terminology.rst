@@ -63,9 +63,6 @@ Terminology
 
 :Session:    Unit of training delivery; currently 90 minutes.
 
-For explanation of the nature of sessions see `Training Model`_.
-
-
 Content Artefacts
 -----------------
 :Program Design: These are standard instruction design documents detailing
