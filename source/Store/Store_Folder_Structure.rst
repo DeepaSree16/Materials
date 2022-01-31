@@ -30,15 +30,25 @@ Structure
 I. The Store folder contains the following 3-level folders, based within the scope of content in the FS, GP and XP programs in TalentSprint. It is the physical location of all TS program contents. The Store folder structure is as described below:
 
 * Folder level 1: Topic folder: This is a broad topic category which exists as part of any TS program's content
+
   - The folder name consists of a 2 letter code in capitals
+
   - For example: 'AI' (Artificial Intelligence) is a level 1 folder title
+
 * Folder level 2: Sub-topic folder: This is a sub-topic within a broad topic category
+
   - The folder name consists of a 3 letter code in capitals
+
   - For example: In the AI folder, 'CML' (ClassicalMachineLearning) is a level 2 folder title
+
   - It is not necessary that a Folder level 2 be always created in a Folder level 1.
+
 * Folder level 3: Sub-sub topic folder: This is a single specific topic within a sub-topic category
+
   - The folder name consists of the complete name of the topic, without abbreviation, with initial letters capitalized and no space between subsequent words in the topic
+
   - For example: In AI, under the CML folder, 'LinearRegression' is a level 3 folder title
+  
   - It is not necessary that a Folder level 3 be always created in a Folder level 2.
 
 II. Folder titles in the Store folder are as listed below:
