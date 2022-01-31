@@ -11,22 +11,13 @@ property of TalentSprint Private Limited.
 Metadata
 --------
 
-:Document Code: TS-LD-iPEARL-001
-
 :Description: Standards, Definitions and Terminology
 
 :Author: Asokan Pichai
 
 :Version: 1.9.1
 
-:Location: http://iPearl.talentsprint.com/repo/CoreDocs/Terminology.html
-
-:See also: TS-LD-iPEARL-000 `Repository Layout`_
-
-  TS-LD-iPEARL-002 `Training Model`_
-
-..  _`Repository Layout`: http://iPearl.talentsprint.com/repo/CoreDocs/RepoLayout.html
-..  _`Training Model`: http://iPearl.talentsprint.com/repo/CoreDocs/TrainingModel.html
+:See also: Core_Docs --> RepoLayout
 
 Purpose
 -------
