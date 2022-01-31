@@ -11,19 +11,11 @@ property of TalentSprint Private Limited.
 Metadata
 --------
 
-:Document Code: TS-LD-iPEARL-000
-
 :Description: Structure and Layout of the Content Repository
 
 :Author: Asokan Pichai
 
 :Version: 1.9.2
-
-:Location: http://iPearl.talentsprint.com/repo/CoreDocs/RepoLayout.html
-
-:See also: TS-LD-iPEARL-001 `Standards and Terminology`_
-
-..  _`Standards and Terminology`: http://iPearl.talentsprint.com/repo/CoreDocs/Terminology.html
 
 Purpose
 +++++++
@@ -37,9 +29,6 @@ Scope
 
 Structure
 +++++++++
-:Repository Root: http://iPearl.talentsprint.com/repo Referred to as $REPO
-
-:Store Root: http://iPearl.talentsprint.com/store Referred to as $STORE
 
 Creating a directory for each program is the most convenient for faculty, as
 the batch is the standard basis for logistics. But this can lead to duplication,
@@ -49,28 +38,18 @@ For production and review the easiest way is based on specialization and
 technology oriented structure, focusing on courses and modules.
 
 We combine these two approaches. The public $REPO is organized program-wise.
-Duplication is avoided by linking directories and files from the $STORE tree
-to the $REPO tree.
 
 $REPO
-   * CoreDocs
-   * Programs
+   * Program LMS Links
       + PRO-Java
-         - JPL
-         - COJ
-         - WEB
-         - SQL
-         - JEE
-	     - SPNG
-         - RE
-         - BE
-         - IO
-         - IP
-         - QA
-         - RA
-         - VA
-      + PRO-Testing
-
+         - AIML
+         - WISE
+         - FSD
+         - CDS
+         - WE
+	     - DLFA
+         - ADSMI
+    
 $STORE
    * Java
       + **JPL** JavaProgrammingLanguage
