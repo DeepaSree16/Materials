@@ -46,9 +46,9 @@ $REPO
          - FSD
          - CDS
          - WE
-	     - DLFA
-         - ADSMI
-    
+         - DLFA
+	     - ADSMI
+                   
 $STORE
    * Java
       + **JPL** JavaProgrammingLanguage
@@ -142,13 +142,13 @@ Each artefact will be named with a prefix as follows:
 
 Examples
 ^^^^^^^^
-:BE-PC-03-VDO-12.mp4: 
+:BE-PC-03-VDO-1-2.mp4: 
     * Business English Program
     * Professional Communications Module
     * Session 3
     * Video 1 of 2
 
-:COJ-CS-02-DECK-11.pdf:
+:COJ-CS-02-DECK-1-1.pdf:
     * Core Java Program
     * Conditional Statements Module
     * Session 2
