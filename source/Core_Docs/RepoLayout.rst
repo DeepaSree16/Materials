@@ -17,11 +17,13 @@ Metadata
 
 :Version: 1.9.2
 
+:See also: source --> Repo, source --> Store
+
 Purpose
 +++++++
     This document specifies the following:
     
-    1. Directory Structure of the Content Respository
+    Directory Structure of the Content Respository
 
 Scope
 +++++
@@ -125,7 +127,7 @@ Artefact Naming Scheme
 ++++++++++++++++++++++
 Each artefact will be named with a prefix as follows:
 
-    * Course Code
+    * Program Code
     * Hyphen
     * Module Code
     * Hyphen
@@ -134,7 +136,7 @@ Each artefact will be named with a prefix as follows:
     * Hyphen
     * Artefact Code
     * Hyphen
-    * Two character Sequence Code - 13, 23, 33 etc. Mostly useful for
+    * Two character Sequence Code with a hypen in between: 1-3, 2-3, 3-3 etc. Mostly useful for
       videos as there are multiple videos for a session. So will be
       11 in all other cases. The first character is the sequence and
       the second identifies how many are there.
@@ -144,13 +146,13 @@ Each artefact will be named with a prefix as follows:
 Examples
 ^^^^^^^^
 :BE-PC-03-VDO-12.mp4: 
-    * Business English Course
+    * Business English Program
     * Professional Communications Module
     * Session 3
     * Video 1 of 2
 
 :COJ-CS-02-DECK-11.pdf:
-    * Core Java Course
+    * Core Java Program
     * Conditional Statements Module
     * Session 2
     * Presentation Deck 1 of 1
