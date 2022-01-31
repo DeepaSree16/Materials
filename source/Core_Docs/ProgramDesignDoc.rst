@@ -41,7 +41,7 @@ Template
 :Coverage: List of courses that comprise the program. If any course is part of more than
            one program, any specifics for this program are to be mentioned here.
 
-:Assessment Strategies: Self-eplanatory.
+:Assessment Strategies: Self-explanatory.
 
 :Certification: Processes, norms and specific exams, if any.
 
