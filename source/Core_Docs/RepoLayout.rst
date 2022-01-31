@@ -32,14 +32,11 @@ Scope
 Structure
 +++++++++
 
-Creating a directory for each program is the most convenient for faculty, as
-the batch is the standard basis for logistics. But this can lead to duplication,
-with attendant version related problems. 
+The public REPO is organized program-wise and contains LMS (Learning management system) Platform links of TS programs 
 
-For production and review the easiest way is based on specialization and
-technology oriented structure, focusing on courses and modules.
+The internal STORE is organized content topic-wise and contains all the content files 
 
-We combine these two approaches. The public $REPO is organized program-wise.
+An example of the REPO and STORE folders organization is provided below:
 
 $REPO
    * Program LMS Links
