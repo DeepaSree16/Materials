@@ -38,7 +38,7 @@ The internal STORE is organized content topic-wise and contains all the content 
 
 An example of the REPO and STORE folders organization is provided below:
 
-$REPO
+REPO
    * Program LMS Links
          - AIML
          - WISE
@@ -48,7 +48,7 @@ $REPO
          - DLFA
          - ADSMI
                    
-$STORE
+STORE
    * Java
       + **JPL** JavaProgrammingLanguage
       + **COJ** CoreJava 
