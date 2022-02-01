@@ -1,0 +1,23 @@
+Central Repo Updates
+==================================================
+**Feb 1, 2022**
+
+1. Store_metadata.rst 
+   * Renamed as Store_Directory_Structure.rst
+   * Added information on creation and codes of directories, sub-directories and sub-sub directories within Store
+   * Within the document, all entries as 'Folder' changed to 'Directory'
+   * 'Course' changed to 'Program' in Example section 
+2. Program_LMS_Links.rst added to Repo Directory, README file updated
+3. Added Preview videos links (CDS)
+4. Added 25-01-2022 presentation as LaTeX file in source-->Project_Status.rst
+5. Removed iPearl location references from Core_Docs files
+6. AIML ready to add DL module content with specified nomenclature to Central Repo (will be pushed to Central Repo today)
+
+
+**Jan 25, 2022**
+1. Store_metadata.rst created, directory, sub-directory, sub-sub directory names specified by content topics
+2. Content added to Store, with specified nomenclature:
+   * AIML: Classical Machine Learning (CML) module topics done
+   * CDS: All modules done
+   * DLFA: All modules for which content already prepared, is done
+
