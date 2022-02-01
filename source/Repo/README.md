@@ -1,7 +1,6 @@
-This is ReadMe file for Repo
+This is a ReadMe file for the Repo Directory
 
-Repo is organized program-wise is the standard basis for logistics. Repo contains all programs arranged in below categories.
-
-- FS - Finishing school
-- GP - Graduate programs
-- XP - Executive programs
+* Repo is the logical organization of the content
+* It consists of the Program wise Learning Management System (LMS) access links in the Program_LMS_Links.rst file
+* Access to the LMS links is through the central.repo@talentsprint.com id
+* Access through central.repo@talentsprint.com is managed by Surobhi/Raghava
