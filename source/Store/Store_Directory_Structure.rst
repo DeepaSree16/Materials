@@ -155,7 +155,7 @@ Artefact Naming Scheme
 ++++++++++++++++++++++
 Each artefact will be named with a prefix as follows:
 
-    * Course Code
+    * Program Code
     * Hyphen
     * Module Code
     * Hyphen
@@ -171,7 +171,7 @@ Each artefact will be named with a prefix as follows:
     * DOT
     * Extension -- pdf, mp4 ...
 
-:Refer to the Terminology.rst file in the Core_Docs to obtain the Artefact codes and Course Name codes
+:Refer to the Terminology.rst file in the Core_Docs to obtain the Artefact codes and Program Name codes
 
 Examples
 ^^^^^^^^
