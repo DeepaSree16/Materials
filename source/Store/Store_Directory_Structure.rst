@@ -29,13 +29,13 @@ Structure
 
 I. The Store directory contains the following 3-level directories, based within the scope of content in the FS, GP and XP programs in TalentSprint. It is the physical location of all TS program contents. The Store directory structure is as described below:
 
-* directory level 1: Topic directory: This is a broad topic category which exists as part of any TS program's content
+* Directory level 1: Topic directory: This is a broad topic category which exists as part of any TS program's content
 
   - The directory name consists of a 2 letter code in capitals
 
   - For example: 'AI' (Artificial Intelligence) is a level 1 directory title
 
-* directory level 2: Sub-topic directory: This is a sub-topic within a broad topic category
+* Directory level 2: Sub-topic directory: This is a sub-topic within a broad topic category
 
   - The directory name consists of a 3 letter code in capitals
 
@@ -43,7 +43,7 @@ I. The Store directory contains the following 3-level directories, based within 
 
   - It is not necessary that a directory level 2 be always created in a directory level 1.
 
-* directory level 3: Sub-sub topic directory: This is a single specific topic within a sub-topic category
+* Directory level 3: Sub-sub topic directory: This is a single specific topic within a sub-topic category
 
   - The directory name consists of the complete name of the topic, without abbreviation, with initial letters capitalized and no space between subsequent words in the topic
 
