@@ -2,7 +2,7 @@
   :width: 200
 
 ====================
-Store Folder Layout
+Store Directory Layout
 ====================
 This is part of the official standard documentation of TalentSprint.
 Except when explicitly specified, the contents are copyrighted intellectual
@@ -10,7 +10,7 @@ property of TalentSprint Private Limited.
 
 Metadata
 --------
-:Description: Structure and Layout of the Store Folder in the Central Content Repository
+:Description: Structure and Layout of the Store Directory in the Central Content Repository
 
 :Author: Surobhi Lahiri
 
@@ -18,40 +18,40 @@ Purpose
 +++++++
     This document specifies the following:
     
-    Folder Structure of the 'Store' Folder in the Central Content Respository
+    Directory Structure of the 'Store' directory in the Central Content Respository
 
 Scope
 +++++
-    The Store folder of the Central Content Repository
+    The Store directory of the Central Content Repository
 
 Structure
 +++++++++
 
-I. The Store folder contains the following 3-level folders, based within the scope of content in the FS, GP and XP programs in TalentSprint. It is the physical location of all TS program contents. The Store folder structure is as described below:
+I. The Store directory contains the following 3-level directories, based within the scope of content in the FS, GP and XP programs in TalentSprint. It is the physical location of all TS program contents. The Store directory structure is as described below:
 
-* Folder level 1: Topic folder: This is a broad topic category which exists as part of any TS program's content
+* directory level 1: Topic directory: This is a broad topic category which exists as part of any TS program's content
 
-  - The folder name consists of a 2 letter code in capitals
+  - The directory name consists of a 2 letter code in capitals
 
-  - For example: 'AI' (Artificial Intelligence) is a level 1 folder title
+  - For example: 'AI' (Artificial Intelligence) is a level 1 directory title
 
-* Folder level 2: Sub-topic folder: This is a sub-topic within a broad topic category
+* directory level 2: Sub-topic directory: This is a sub-topic within a broad topic category
 
-  - The folder name consists of a 3 letter code in capitals
+  - The directory name consists of a 3 letter code in capitals
 
-  - For example: In the AI folder, 'CML' (ClassicalMachineLearning) is a level 2 folder title
+  - For example: In the AI directory, 'CML' (ClassicalMachineLearning) is a level 2 directory title
 
-  - It is not necessary that a Folder level 2 be always created in a Folder level 1.
+  - It is not necessary that a directory level 2 be always created in a directory level 1.
 
-* Folder level 3: Sub-sub topic folder: This is a single specific topic within a sub-topic category
+* directory level 3: Sub-sub topic directory: This is a single specific topic within a sub-topic category
 
-  - The folder name consists of the complete name of the topic, without abbreviation, with initial letters capitalized and no space between subsequent words in the topic
+  - The directory name consists of the complete name of the topic, without abbreviation, with initial letters capitalized and no space between subsequent words in the topic
 
-  - For example: In AI, under the CML folder, 'LinearRegression' is a level 3 folder title
+  - For example: In AI, under the CML directory, 'LinearRegression' is a level 3 directory title
   
-  - It is not necessary that a Folder level 3 be always created in a Folder level 2.
+  - It is not necessary that a directory level 3 be always created in a directory level 2.
 
-II. Folder titles in the Store folder are as listed below:
+II. Directory titles in Store are as listed below:
 
 STORE
 
