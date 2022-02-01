@@ -51,7 +51,7 @@ I. The Store directory contains the following 3-level directories, based within 
   
   - It is not necessary that a directory level 3 be always created in a directory level 2.
 
-II. Directory titles in Store are as listed below:
+II. Directories within Store are as listed below:
 
 STORE
 
