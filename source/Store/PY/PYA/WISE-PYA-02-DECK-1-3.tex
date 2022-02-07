@@ -1,0 +1,103 @@
+\documentclass[14pt]{beamer}
+\title{Python 101 :: Unit 2}
+\subtitle{Session 1}
+\date{}
+\author[TS]{TalentSprint}
+\usefonttheme{serif}
+\usepackage{bookman}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usecolortheme{orchid}
+\beamertemplateballitem
+
+\usepackage{listings}
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth]{logo}}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\small,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  %escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+  showstringspaces=false,
+}
+   
+
+\begin{document}
+    \begin{frame}
+        \titlepage
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Topics for this Session}
+        \begin{itemize}
+            \item Vim Editor
+            \item Creating, running Python files
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{What is Vim?}
+        \begin{itemize}
+            \item It's a ``modal" text editor based on the vi editor written by Bill Joy in the 1970s for a version of UNIX 
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Modes of Vim}
+        Vim has two basic modes. They are 
+        \begin{itemize}
+            \item \textbf{Insert mode} in which you write text as if in normal text editor.
+            \item \textbf{Normal mode} which provides you efficient ways to navigate and manipulate text.
+        \end{itemize}
+        \textbf{Note:} To change between modes, use \emph{Esc} for normal mode and \emph{i} for insert mode
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{How to use Vim?}
+        \begin{itemize}
+            \item Go to Terminal. To open an existing file or to create a new file use the below command: \\
+                \begin{lstlisting}
+                    vim filename.py
+                \end{lstlisting}
+            \item To enter Insert Mode simply type: \emph{i} and you write your code in the file
+            \item To save the file and to quit from the vim use below command:
+                \begin{lstlisting}
+                    :wq
+                \end{lstlisting}
+            \item If you want to quit from the vim without saving the file name then use below command
+                \begin{lstlisting}
+                    :q!
+                \end{lstlisting}
+        \end{itemize}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Creating, Running Python files}
+        \begin{itemize}
+            \item Open the file using \emph{vim HelloWorld.py} and type the following line and save the file.
+                \begin{lstlisting}[language=Python]
+                    print("HelloWorld!!")
+		        \end{lstlisting}
+            \item Now type the below command in terminal and press Enter Key to Execute.
+		        \begin{lstlisting}
+                    python HelloWorld.py
+		        \end{lstlisting}
+        \end{itemize}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Problems}
+        \begin{itemize}
+            \item Write a program which takes two numbers as input and displays sum of those numbers
+            \item Write a program to calculate area of circle
+            \item Write a program to calculate area of triangle
+            \item Write a program to calculate area of rectangle
+        \end{itemize}
+    \end{frame}
+\end{document}

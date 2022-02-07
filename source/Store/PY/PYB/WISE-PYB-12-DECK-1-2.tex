@@ -1,0 +1,65 @@
+\documentclass[14pt]{beamer}
+\title{Python 102 :: Week 12}
+\date{}
+\author[TS]{TalentSprint}
+\usefonttheme{serif}
+\usepackage{bookman}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usecolortheme{orchid}
+\beamertemplateballitem
+
+\usepackage{listings}
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth]{logo}}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\small,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  %escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+  showstringspaces=false,
+}
+   
+\begin{document}
+    \begin{frame}
+        \titlepage
+    \end{frame}
+    \begin{frame}
+        \frametitle{Topics for the Session}
+        \begin{itemize}
+            \item Python UI Library - PySimpleGUI
+        \end{itemize}
+    \end{frame}
+    \begin{frame}
+        \frametitle{What is PySimpleGUI?}
+        \begin{itemize}
+            \item Wrapper for tkinter
+            \item Removes the requirement for object-oriented programming
+            \item Simple, beautiful and elegant
+            \item Optimizes the lines of code
+        \end{itemize}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Installing PySimpleGUI}
+        \begin{lstlisting}
+            pip install pysimplegui
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Working of PySimpleGUI}
+        \begin{itemize}
+            \item Placement of graphic objects is done as rows and columns
+            \item Where the objects are placed according to the order and 
+            position we want to display those objects in the window
+        \end{itemize}
+    \end{frame}
+
+\end{document}

@@ -1,0 +1,182 @@
+\documentclass[14pt]{beamer}
+\title{Python 102 :: Week 7}
+\date{}
+\author[TS]{TalentSprint}
+\usefonttheme{serif}
+\usepackage{bookman}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usecolortheme{orchid}
+\beamertemplateballitem
+
+\usepackage{listings}
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth]{logo}}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\small,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  %escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+  showstringspaces=false,
+}
+   
+\begin{document}
+    \begin{frame}
+        \titlepage
+    \end{frame}
+    \begin{frame}
+        \frametitle{Topics for the Session}
+        \begin{itemize}
+            \item Odometer Problem
+            \item Functional and Generic or Object Oriented Way
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{What is our odometer problem?}
+        \begin{itemize}
+        \item This odometer can only show digits 1 to 9
+        \item Only the reading that are in ascending order are valid
+        \item The odometer rolls over to the first valid reading after the last
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Examples}
+        \begin{itemize}
+        \item Valid 4 digit readings, 
+        \item First is 1234 and last is 6789
+        \item Not valid reading example 2314
+        \end{itemize}
+    \end{frame}
+ 
+    \begin{frame}[containsverbatim]
+        \frametitle{What would be the functionality needed?}
+        \begin{itemize}
+        \item If you know the size of the odometer, we would know everything about odometer
+        \item Start reading is 123
+        \item End reading is 789
+        \item Next reading to 789 is 123
+        \item Previous reading of 123 is 789
+        \item Next reading of 149 is 156
+        \item Previous reading of 149 is 148
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Set of functions needed}
+        \begin{itemize}
+        \item Prerequisite - Knowing size of odometer
+        \item \alert {First Reading} 
+        \item Function name as first\_reading()
+        \item \alert {Last Reading}
+        \item Function name as last\_reading()
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Functionality needed - Continued}
+        \begin{itemize}
+        \item \alert {Next Reading}
+        \item[] next\_reading()
+        \item \alert {Previous Reading}
+        \item[] prev\_reading()
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Functionality needed - Continued}
+        \begin{itemize}
+        \item \alert {Next kth Reading}
+        \item[] next\_kth\_reading()
+        \item \alert {Previous kth Reading}
+        \item[] prev\_kth\_reading()
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Functionality needed - Continued}
+        \begin{itemize}
+        \item \alert {Is particular reading valid?}
+        \item[] is\_reading()
+        \item \alert {Difference between two given readings} 
+        \item[] diff()
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Functionalities Implemented}
+        \begin{itemize}
+        \item Ideally this odometer problem is nothing but implementation of following:
+        \item Partition of numbers or 
+        \item Combinations of probability.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Sample - 2 Digits Odometer}
+        \begin{itemize}
+        \item Two digits odometer valid readings are 
+        \item[] 12, 13, 14, 15, 16, 17, 18, 19
+        \item[]     23, 24, 25, 26, 27, 28, 29
+        \item[]         34, 35, 36, 37, 38, 39
+        \item[]             45, 46, 47, 48, 49
+        \item[]                 56, 57, 58, 59
+        \item[]                     67, 68, 69
+        \item[]                         78, 79
+        \item[]                             89
+        \item So, total 8 + 7 + ... + 1 = 36 or through combinations 9c2, which is 36.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{What if we need to implement multiple odometers?}
+        \begin{itemize}
+        \item Say, we need to implement 3 odometers each maintaining its own readings. 
+        \item Each odometer can be any digit odometers
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{How to do this?}
+        \begin{itemize}
+        \item Use class or object oriented methodology
+        \item Defining behaviour and state for the functionality
+        \item Defining our own data type called odometer
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{What are the advantages?}
+        \begin{itemize}
+        \item Storing first and last reading eliminates use of 2 functions for first reading and last reading
+        \item Maintaining first, current and last reading for every required odometer
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{What are the advantages?}
+        \begin{itemize}
+        \item Next reading and next pth reading can be clubbed by passing default value (1)
+        \item Using built-in functions can maintain required functionalities say size of odometer (using len method)
+        \item Adding operations such as +1 or -1 or any number for next or previous reading gives valid reading
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{What are the advantages?}
+        \begin{itemize}
+        \item Restrict wrong usage say adding value to the reading or
+        \item Assigning certain values to odometer reading
+        \end{itemize}
+    \end{frame}
+
+\end{document}  

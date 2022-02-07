@@ -1,0 +1,78 @@
+\documentclass[14pt]{beamer}
+\title{Python 101 :: Week 4}
+\date{}
+\author[TS]{TalentSprint}
+\usefonttheme{serif}
+\usepackage{bookman}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usecolortheme{orchid}
+\beamertemplateballitem
+
+\usepackage{listings}
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth]{logo}}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\small,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  %escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+  showstringspaces=false,
+}
+   
+\begin{document}
+    \begin{frame}
+        \titlepage
+    \end{frame}
+    \begin{frame}
+	\frametitle{Topics for the Session}
+	\begin{itemize}
+	    \item Code reading and writing
+	\end{itemize}
+    \end{frame}
+    \begin{frame}
+	\frametitle{Problem 1}
+	\begin{description}
+	    \item [Pythogorean Triad:] Three integers a, b, c that represent the sides of a right-angled triangle. The most famous example is 3, 4, 5.
+	    \item [Problem Statement:] Generate primitive pythogorean triads. Either a given number, say 100 triads or all triads with the sides below a limit say 100.
+	\end{description} 
+    \end{frame}
+    \begin{frame}
+	\frametitle{Problem 2}
+	\begin{description}
+	    \item [Problem Statement:] Write a program to convert number to words.
+	    \item [Input:] 4015
+	    \item [Output:] Four thousand fifteen
+	\end{description}
+    \end{frame}
+    \begin{frame}
+	\frametitle{Problem 3}
+	\begin{description}
+	    \item [Problem Statement:] Write a program to convert roman to arabic
+	    \item [Input:] V
+	    \item [Output:] 5
+	\end{description}
+    \end{frame}
+    \begin{frame}
+	\frametitle{Problem 4}
+	\begin{description}
+	    \item [Problem Statement:] Given a string consisting of only 0, 1, A, B, C where (A = AND, B = OR,C = XOR). Write a function to calculate the value of the string assuming no order of precedence and evaluation is done from left to right.
+	    \item [Note:] Return -1, if the length of the string is odd or if string is not a valid string. For example, \emph{'1AA0'} is not a valid string and \emph{'1C1B1B0A0'} is a valid string. 
+	\end{description}
+    \end{frame}
+    \begin{frame}
+	\frametitle{Problem 5}
+	\begin{description}
+	    \item [Background:] Kaprekar constant, or 6174, is a constant that arises when we take a 4-digit integer, form the largest and smallest numbers from its digits, and then subtract these two numbers. Continuing with this process of forming and subtracting, we will always arrive at the number 6174.
+	     \item [Problem Statement:] Implement a program that returns Kaprekar Constant for a four-digit given number.
+	\end{description}
+    \end{frame}
+\end{document}

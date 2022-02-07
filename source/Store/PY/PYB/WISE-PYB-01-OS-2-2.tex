@@ -1,0 +1,85 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\lstset{language=python,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+\usepackage{array}
+\usepackage{enumitem}
+
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+\usepackage{fancyhdr}
+ 
+\pagestyle{fancy}
+\renewcommand\headrule{}
+\rhead {\includegraphics[scale=.5]{../images/logo.png}}
+\begin{document}
+\section*{Strings}
+
+\subsection*{Code Reading}
+
+\begin{itemize}
+    \item Write the expected output, or errors if any, for each of the following programs in the box provided below each program.
+    \item Then execute the programs and check your answers.
+    \item Also answer the questions given below.
+\end{itemize}
+
+\begin{enumerate}[label=\bfseries Program \arabic*:]
+
+    \item ~
+    \begin{lstlisting}
+        def maps(x):
+            k = []
+            for i in x:
+                k.append(len(i))
+            print(max(k))
+    \end{lstlisting}
+    \AnswerBox
+    \item ~
+    \begin{lstlisting}
+        def song():
+        print('99 bottles of beer on the wall, 99 bottles of beer')
+        for i in range(99)[::-1]:
+            print('Take one down, pass it around,' + str(i) +   ' bottles of beer on the wall.')
+    \end{lstlisting}
+    \AnswerBox
+    \item ~
+    \begin{lstlisting}
+        n = int(input())
+        total = 0
+        for i in range(1, n + 1):
+            total += i / (i + 1)
+        print(round(total, 2))
+    \end{lstlisting}
+    \AnswerBox
+    \item ~
+    \begin{lstlisting}
+        def translate(x):
+            s = ''
+            for i in x:
+                if i not in ('aeiou'):
+                    s += i + "o" + i
+                else:
+                    s += i 
+        print(s) 
+    \end{lstlisting}
+    \AnswerBox
+\end{enumerate}
+\subsection*{Additional Exercises}
+\begin{itemize}
+    \item Create a function that calculates what percentage of the box is filled in. Give your answer as a string percentage rounded to the nearest integer.
+    \begin{lstlisting}
+        percent_filled([
+            "####",
+            "#  #",
+            "#o #",
+            "####"
+        ]) ➞ "25%"
+    \end{lstlisting}
+    \item Write a function to create a Christmas tree based on height h.
+    \begin{lstlisting}
+        tree(2) ➞ [
+                " # ",
+                "###"
+        ]
+    \end{lstlisting}
+\end{itemize}
+\end{document}

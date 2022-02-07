@@ -1,0 +1,191 @@
+\documentclass{exam}
+\usepackage[utf8]{inputenc}
+\begin{document}
+\begin{questions}
+    \question What is the output of the below code?
+    
+    \begin{verbatim}
+        s = 'foo'
+        t = 'bar'
+        print('barf' in 2 * (s + t))
+    \end{verbatim}
+
+    \begin{oneparchoices}
+        \choice \textbf{True} \\
+        \choice False
+    \end{oneparchoices}
+
+    \question All of the following expressions produce the same result except one. Which one?
+    \begin{verbatim}
+        s = 'foobar'
+    \end{verbatim}
+
+    \begin{oneparchoices}
+        \choice s[::5] \\
+        \choice \textbf{s[::-5]} \\
+        \choice s[0] + s[-1]
+    \end{oneparchoices}
+
+    \question What is the output of the below code?
+
+    \begin{verbatim}
+        print('$100 $200 $300'.count('$'),
+              '$100 $200 $300'.count('$', 5, 10),
+              '$100 $200 $300'.count('$', 5)
+        )
+    \end{verbatim}
+
+    \begin{oneparchoices}
+        \choice \textbf{3 1 2} \\
+        \choice 3 2 1 \\
+        \choice 3 1 1 \\
+        \choice 3 1 0
+    \end{oneparchoices}
+
+    \question A while loop in Python is used for what type of iteration?
+
+    \begin{oneparchoices}
+        \choice discriminant \\
+        \choice definite \\
+        \choice \textbf{indeterminate} \\
+        \choice indefinite
+    \end{oneparchoices}
+
+    \question Which of the following is a valid way to start a function in Python?
+
+    \begin{oneparchoices}
+        \choice \textbf{def someFunction():} \\
+        \choice function someFunction() \\
+        \choice def someFunction() \\
+        \choice function someFunction()
+    \end{oneparchoices}
+
+    \question Which of the following is a valid way to start a while loop in Python?
+
+    \begin{oneparchoices}
+        \choice while loop $a < 10$ \\
+        \choice \textbf{while $a < 10:$} \\
+        \choice while $(a < 10)$ \\
+        \choice while loop $a < 10:$ 
+    \end{oneparchoices}
+
+    \question What is the output of the below code?
+
+    \begin{verbatim}
+        i = 5
+        while False:
+            if i % 0O11 == 0:
+                print(i)
+            i = i +  1
+        print(i)
+    \end{verbatim}
+
+    \begin{oneparchoices}
+        \choice 5 6 7 8 9 10 \\ 
+        \choice 5 6 7 8 \\
+        \choice \textbf{5} \\ 
+        \choice error
+    \end{oneparchoices}
+
+    \question What is the output of the below code?
+
+    \begin{verbatim}
+        num = 1
+        LIMIT = 10
+        while num < LIMIT:
+            if num % 2 == 0:
+                print(num)
+            num = num + 2
+        print(num)
+    \end{verbatim}
+
+    \begin{oneparchoices} 
+        \choice \textbf{11} \\
+        \choice 2 4 6 8 10 \\ 
+        \choice 1 2 3 4 5 6 \\
+        \choice 1 3 5 7 9 11 
+    \end{oneparchoices}
+
+    \question What is the output of the below code?
+
+    \begin{verbatim}
+        print('Ab!2'.swapcase())
+    \end{verbatim}
+
+    \begin{oneparchoices}
+        \choice AB!@ \\
+        \choice ab12 \\
+        \choice \textbf{aB!2} \\
+        \choice aB1@  
+    \end{oneparchoices}
+
+    \question What is the output of the below code?
+
+    \begin{verbatim}
+        def change(num):
+            num = 0
+            num = num + 1
+            return num
+        print(change(1))
+    \end{verbatim}
+
+    \begin{oneparchoices}
+        \choice 0 \\
+        \choice \textbf{1} \\
+        \choice 2
+        \choice error
+    \end{oneparchoices}
+
+    \question What is the output of the below code?
+
+    \begin{verbatim}
+        def display(b, n):
+            while n > 0:
+                print(b, end="")
+                n = n - 1
+        display('z',3)
+    \end{verbatim}
+
+    \begin{oneparchoices}
+        \choice \textbf{zzz} \\
+        \choice zz \\
+        \choice error \\
+        \choice Infinite loop   
+    \end{oneparchoices}
+    
+    \question What is the output of the below code?
+
+    \begin{verbatim}
+        print('abc'.islower())
+    \end{verbatim}
+    \begin{oneparchoices}
+        \choice \textbf{True} \\
+        \choice False \\
+        \choice error \\
+        \choice none
+    \end{oneparchoices}
+
+    \question What is the output of the below code?
+
+    \begin{verbatim}
+        def test1(param):
+            return param
+        def test2(param): 
+            return param * 2
+        def test3(param):
+            return param + 3
+        result = test1(test2(test3(1)))
+        print(result)
+    \end{verbatim}
+
+    \begin{oneparchoices}
+        \choice error \\
+        \choice result \\
+        \choice 1 4 8 \\
+        \choice 8 \\
+        \choice \textbf{1}
+    \end{oneparchoices}
+
+
+\end{questions}
+\end{document}

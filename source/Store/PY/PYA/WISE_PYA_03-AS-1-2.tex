@@ -1,0 +1,320 @@
+\documentclass{exam}
+\usepackage[utf8]{inputenc}
+\begin{document}
+\begin{questions}
+    \question  In Python, a decision can be made by using if else statement.
+
+    \begin{oneparchoices}
+        \choice \textbf{True} \\
+        \choice False
+    \end{oneparchoices}
+    \question Checking multiple conditions in Python requires elif statements.
+
+    \begin{oneparchoices}
+        \choice \textbf{True} \\
+        \choice False
+    \end{oneparchoices}
+
+    \question If the condition is evaluated to true, the statement(s) of if block will be executed, otherwise the statement(s) in else block(if else is specified) will be executed.
+
+    \begin{oneparchoices}
+        \choice \textbf{True} \\
+        \choice False
+    \end{oneparchoices}
+
+    \question What will be output of the below code?
+
+    \begin{verbatim}
+        if True & False & True | False:
+            print("Hurray!!")
+        else:
+            print("Oops")
+    \end{verbatim}
+
+    \begin{oneparchoices}
+        \choice It will throw an Error \\
+        \choice It will display Hurray!  \\
+        \choice \textbf{It will display Oops} \\
+        \choice  Nothing will be displayed
+    \end{oneparchoices}
+
+    \question What is the output of the below code?
+
+    \begin{verbatim}
+        if bool(10):
+            print("Ten")
+        else:
+            print("Zero")
+    \end{verbatim}
+    \begin{oneparchoices}
+        \choice \textbf{It will display Ten} \\
+        \choice It will display Zero \\
+        \choice It will throw an Error \\
+        \choice Nothing gets displayed 
+    \end{oneparchoices}
+    
+      \question What is the output of the below code?
+
+      \begin{verbatim}
+        print("hello" "world")
+      \end{verbatim}
+
+      \begin{oneparchoices}
+          \choice \textbf{It will display helloworld} \\
+          \choice It will display hello world \\
+          \choice It will throw an Error \\
+          \choice Nothing gets displayed 
+      \end{oneparchoices}
+
+      \question What is the output of the below code?
+
+      \begin{verbatim}
+        print(0xB + 0xC + 0xD)
+      \end{verbatim}
+
+      \begin{oneparchoices}
+          \choice \textbf{36} \\
+          \choice 33 \\
+          \choice 30 \\
+          \choice 38
+      \end{oneparchoices}
+
+
+      \question What is the output of the below code?
+
+      \begin{verbatim}
+        age = 9
+        if 0 < age < 10:
+            print("kid")
+        else:
+            print("You are not a kid anymore")
+      \end{verbatim}
+
+      \begin{oneparchoices}
+          \choice It will throw an Error \\
+          \choice It will display You are not a kid anymore \\
+          \choice \textbf{It will display kid} \\
+          \choice Nothing gets displayed
+      \end{oneparchoices}
+
+      \question What is the output of the below code?
+
+      \begin{verbatim}
+        if (6 * 2 < 20):
+            a = "Hello" * 2
+        else:
+            a = "Hello" * 5
+        print(a)
+      \end{verbatim}
+
+      \begin{oneparchoices}
+          \choice It will throw an Error \\
+          \choice Nothing gets displayed \\
+          \choice It will display Hello \\
+          \choice  \textbf{It will display HelloHello}
+      \end{oneparchoices}
+
+      \question What is the output of the below code?
+
+      \begin{verbatim}
+        age = 14
+        if age < 18:
+            print("You are not eligible to Vote")
+        print("Hey You are eligible to Vote")
+      \end{verbatim}
+
+      \begin{oneparchoices}
+          \choice It will throw an Error \\
+          \choice It will display Hey You are not eligible to Vote \\
+          \choice \textbf{It will display You are not eligible to Vote} \\
+          \choice Nothing will be displayed
+      \end{oneparchoices}
+
+      \question What is the output of the below code?
+
+      \begin{verbatim}
+        a = 4
+        b = 6
+        if a % b:
+            print("Equal")
+        print("Not Equal")
+      \end{verbatim}
+
+      \begin{oneparchoices}
+          \choice It will throw an Error \\
+          \choice \textbf{It will display Equal} \\
+          \choice  Nothing gets displayed \\
+          \choice It will display Not Equal
+      \end{oneparchoices}
+
+      \question What is the output of the below code?
+
+      \begin{verbatim}
+        length = 4
+        breadth = 4
+        if length == breadth:
+            print("It's a square")
+        print(It's a Rectangle)
+      \end{verbatim}
+
+      \begin{oneparchoices}
+          \choice It will throw an Error \\
+          \choice Nothing is displayed \\
+          \choice It will display It's a Rectangle \\
+          \choice \textbf{It will display It's a Square}
+      \end{oneparchoices}
+
+      \question What is the output of the below code?
+
+      \begin{verbatim}
+        a = 4
+        b = 6
+        if a % b == 0:
+            print("Equal")
+        print("Not Equal")
+      \end{verbatim}
+
+      \begin{oneparchoices}
+          \choice It will throw an Error \\
+          \choice \textbf{It will display Not Equal} \\
+          \choice  Nothing gets displayed \\
+          \choice It will display Equal
+      \end{oneparchoices}
+
+      \question What is the output of the below code?
+
+      \begin{verbatim}
+        celsius = 42
+        f = (celsius * 1.8) + 32
+        print(round(f,2))
+      \end{verbatim}
+
+      \begin{oneparchoices}
+        \choice \textbf{107.6} \\
+        \choice 107.601 \\
+        \choice 42.0 \\
+        \choice 42.78
+      \end{oneparchoices}
+
+      \question What is the output of the below code?
+
+      \begin{verbatim}
+        a = 6
+        if 0 < a < 10:
+            a = a ^ 7
+            a = a ** 3
+            print(a)
+      \end{verbatim}
+    
+      \begin{oneparchoices}
+          \choice \textbf{1} \\
+          \choice 0 \\
+          \choice 343 \\
+          \choice 216
+      \end{oneparchoices}
+
+      \question What is the output of the below code?
+
+      \begin{verbatim}
+        number1 = 88
+        number2 = 99
+        number1, number2 = number2, number1
+        number3 = number1 ** 3
+        number4 = number3 % 5
+        print(number4)
+      \end{verbatim}
+
+      \begin{oneparchoices}
+        \choice \textbf{4} \\
+        \choice 2 \\
+        \choice 1 \\
+        \choice 3
+      \end{oneparchoices}
+
+      \question The character that must be at the end of the line if.
+
+      \begin{oneparchoices}
+          \choice \textbf{:} \\
+          \choice ; \\
+          \choice . \\
+          \choice ,
+      \end{oneparchoices}
+
+      \question What does If statement do?
+
+      \begin{oneparchoices}
+          \choice \textbf{makes decision} \\
+          \choice repeat statements \\
+          \choice stores the value in a variable
+      \end{oneparchoices}
+
+      \question An if statement can be executed multiple times.
+
+      \begin{oneparchoices}
+          \choice \textbf{False} \\
+          \choice True
+      \end{oneparchoices}
+
+      \question Is it possible to execute both the statements under if and else at the same time
+
+      \begin{oneparchoices}
+          \choice True \\
+          \choice \textbf{False}
+      \end{oneparchoices}
+
+      \question The \emph{else} is option in python if statements
+
+      \begin{oneparchoices}
+          \choice \textbf{True} \\
+          \choice False
+      \end{oneparchoices}
+
+      \question The relational operators cannot be used within a if condition
+      
+      \begin{oneparchoices}
+          \choice True \\
+          \choice \textbf{False}
+      \end{oneparchoices}
+
+      \question The code inside \emph{if} statement is executed only once
+
+      \begin{oneparchoices}
+          \choice \textbf{True}\\
+          \choice False
+      \end{oneparchoices}
+
+      \question There can be an \emph{else} statement without an if statement
+
+      \begin{oneparchoices}
+          \choice True\\
+          \choice \textbf{False}
+      \end{oneparchoices}
+
+      \question When the if condition is false, it exists the program
+
+      \begin{oneparchoices}
+          \choice True \\
+          \choice \textbf{False}
+      \end{oneparchoices}
+
+      \question The program generates an error message if the \emph{else} statement is not defined
+
+      \begin{oneparchoices}
+          \choice True \\
+          \choice \textbf{False}
+      \end{oneparchoices}
+
+      \question What is the syntax error with the below code?
+
+      \begin{verbatim}
+        print("Welcome!!!");
+      \end{verbatim}
+
+      \begin{oneparchoices}
+          \choice \textbf{Colon is not needed} \\
+          \choice print is spelt incorrectly \\
+          \choice No brackets around "Welcome" \\
+          \choice p should be capital 
+      \end{oneparchoices}
+\end{questions}
+\end{document}

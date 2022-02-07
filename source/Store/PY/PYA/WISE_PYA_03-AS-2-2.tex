@@ -1,0 +1,280 @@
+\documentclass{exam}
+\usepackage[utf8]{inputenc}
+\begin{document}
+\begin{questions}
+    \question What is the output of the below code?
+
+    \begin{verbatim}
+        number = 5
+        while number > 0:
+            number = number - 1 
+            print(number)
+    \end{verbatim}
+    \begin{oneparchoices}
+        \choice 4 \\ 3 \\ 2 \\ 1 \\ 0\\
+        \choice 4 3 2 1 0 \\
+        \choice 5 4 3 2 1 \\
+        \choice 5 \\ 4 \\ 3\\ 2\\ 1
+    \end{oneparchoices}
+    \question What is the output of the below code?
+
+    \begin{verbatim}
+        number = 10
+        while number != 0:
+            print(number, end=" ")
+            number = number - 2
+    \end{verbatim}
+    \begin{oneparchoices}
+        \choice 10 8 6 4 2 \\
+        \choice 10 9 8 7 6 5 4 3 2 1 \\
+        \choice 2 4 6 8 10 \\
+        \choice 1 2 3 4 5 6 7 8 9 10
+    \end{oneparchoices}
+
+    \question What is the output of the below code?
+    
+    \begin{verbatim}
+        while True:
+            print("Hi")
+    \end{verbatim}
+
+    \begin{oneparchoices}
+        \choice Error \\
+        \choice Hi \\
+        \choice Hi \\ Hi\\ Hi ...(repeated continuously)
+    \end{oneparchoices}
+
+    \question What is the output of the below code?
+
+    \begin{verbatim}
+        more = True
+        while more == True:
+            print("Hurray")
+            more = False
+    \end{verbatim}
+
+    \begin{oneparchoices}
+        \choice Error \\
+        \choice Hurray \\
+        \choice Hurray\\ Hurray\\ Hurray \\...(repeated continuously)
+        \choice Nothing gets displayed
+    \end{oneparchoices}
+
+    \question How many lines will be printed out when you run the program?
+
+    \begin{verbatim}
+        number = 0
+        while number > 0:
+            print("First Line")
+            print("Second Line")
+        print("Third Line")
+    \end{verbatim}
+    \begin{oneparchoices}
+        \choice 0 
+        \choice 1
+        \choice 2
+        \choice 3
+    \end{oneparchoices}
+
+    \question How many times "tree" gets printed when you run the program?
+
+    \begin{verbatim}
+        number = 500
+        while number > 200:
+            print("tree")
+            number = number - 50
+    \end{verbatim}
+
+    \begin{oneparchoices}
+        \choice 0
+        \choice 7
+        \choice 6
+        \choice 9
+    \end{oneparchoices}
+
+    \question What is the output of the below code?
+
+    \begin{verbatim}
+        i = 1
+        while True:
+            if i % 3 == 0:
+                break
+            print(i)
+            i += 1
+    \end{verbatim}
+
+    \begin{oneparchoices}
+        \choice Error
+        \choice 1 2
+        \choice 1 2 3
+        \choice nothing gets printed
+    \end{oneparchoices}
+
+    \question What will be the output of the below code?
+
+    \begin{verbatim}
+        str = False
+        while True:
+            print(True)
+            break
+    \end{verbatim}
+
+    \begin{oneparchoices}
+        \choice Error
+        \choice True
+        \choice Nothing gets printed
+    \end{oneparchoices}
+    
+    \question What is the output of the below code?
+
+    \begin{verbatim}
+        x = "abcdef"
+        i = "i"
+        while i in x:
+            print(i, end=" ")
+    \end{verbatim}
+    
+    \begin{oneparchoices}
+        \choice nothing get printed
+        \choice a b c d e f
+        \choice a b c
+        \choice d e f
+    \end{oneparchoices}
+
+    \question What is the output of the below code?
+
+    \begin{verbatim}
+        x = "abcdef"
+        i = "a"
+        while i in x:
+            x = x[:-1]
+            print(i, end = " ")
+    \end{verbatim}
+
+    \begin{oneparchoices}
+        \choice a a a a a a
+        \choice i i i i i i
+        \choice a a a a a
+        \choice nothing gets printed
+    \end{oneparchoices}
+
+    \question What is the output of the below code?
+
+    \begin{verbatim}
+        word = "Hello"
+        word[3] = "H"
+        print(word)
+    \end{verbatim}
+
+    \begin{oneparchoices}
+        \choice Hello
+        \choice HelHo
+        \choice Error
+    \end{oneparchoices}
+
+    \question what is the output of the below code?
+
+    \begin{verbatim}
+        word = "Hello"
+        print(word.count('l'))
+    \end{verbatim}
+
+    \begin{oneparchoices}
+        \choice 5
+        \choice 2
+        \choice 1
+        \choice Error
+    \end{[oneparchoices}
+
+    \question What is the output of the below code?
+
+    \begin{verbatim}
+        word = "Python"
+        print(word.find("o"))
+    \end{verbatim}
+
+    \begin{oneparchoices}
+        \choice 4
+        \choice 1
+        \choice True
+        \choice False
+    \end{oneparchoices}
+
+    \question What is the output of the below code?
+
+    \begin{verbatim}
+        print("Hello" + 1 + 2 + 3)
+    \end{verbatim}
+
+    \begin{oneparchoices}
+        \choice Hello123
+        \choice Error
+        \choice Hello
+        \choice Nothing gets printed
+    \end{oneparchoices}
+
+    \quetsion What is the output of the below code?
+
+    \begin{verbatim}
+        word = "python"
+        print(word.capitalize())
+    \end{verbatim}
+
+    \begin{oneparchoices}
+        \choice Python
+        \choice python
+        \choice PYTHON
+    \end{oneparchoices}
+
+    \question What is the output of the below code?
+
+    \begin{verbatim}
+        word = "python"
+        print(word.islower())
+    \end{verbatim}
+
+    \begin{oneparchoices}
+        \choice True
+        \choice False
+        \choice Error
+        \choice Nothing gets printed
+    \end{oneparchoices}
+
+    \question What is the output of the below code?
+
+    \begin{verbatim}
+        print("xyyzxyzxzxyy".endswith("xyy", 0, 2))
+    \end{verbatim}
+
+    \begin{oneparchoices}
+        \choice 0
+        \choice 1
+        \choice True
+        \choice False
+    \end{oneparchoices}
+
+    \question Which keyword is used for function?
+
+    \begin{oneparchoices}
+        \choice Def
+        \choice def
+        \choice function
+        \choice defn
+    \end{oneparchoices}
+
+    \question What is the output of the below code?
+
+    \begin{verbatim}
+        def say(message, times = 1):
+            print(message * times)
+        say("Good Morning!!")
+    \end{verbatim}
+
+    \begin{oneparchoices}
+        \choice Good Morning!!
+        \choice Error
+        \choice Nothing gets printed
+        \choice Good Morning
+    \end{oneparchoices}
+\end{questions}
+\end{document}

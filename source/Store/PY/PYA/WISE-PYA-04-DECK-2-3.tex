@@ -1,0 +1,154 @@
+\documentclass[14pt]{beamer}
+\title{Python 101 :: Unit 4}
+\subtitle{Session 2}
+\date{}
+\author[TS]{TalentSprint}
+\usefonttheme{serif}
+\usepackage{bookman}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usecolortheme{orchid}
+\beamertemplateballitem
+
+\usepackage{listings}
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth]{logo}}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\small,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  %escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+  showstringspaces=false,
+}
+   
+\begin{document}
+    \begin{frame}
+        \titlepage
+    \end{frame}
+    \begin{frame}
+        \frametitle{Topics for the session}
+        \begin{itemize}
+            \item List and for Loop
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+       \frametitle{List}
+       \begin{itemize}
+        \item List is an ordered collection of items
+        \item Items could be any sequential or non sequential data types
+        \item \alert{Example:}
+       \end{itemize}
+       \begin{lstlisting}[language=Python]
+        mix = ['Red', 1, 2, 45, -678, 'Pink'] 
+       \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Creating a List}
+        \begin{lstlisting}[language=Python]
+            mix = ['Red', 1, 2, 45, -678, 'Pink']
+            # Creats a empty list
+            mix = [] # or
+            mix = list()
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Accessing List Elements}
+        \begin{lstlisting}[language=Python]
+            mix = ['Red', 1, 2, 45, -678, 'Pink']
+            # prints third element from the list
+            print(mix[2])
+            # prints last element from the list
+            print(mix[-1])
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Accessing List Elements}
+        \textbf{Note:} Lists are mutable. So we can modify an element of a list by assigning a new value. For example:
+
+        \begin{lstlisting}[language=Python]
+            mix = ['Red', 1, 2, 45, -678, 'Pink']
+            # changing value of fourth element in the list as 67
+            mix[3] = 67
+            print(mix) # outputs ['Red', 1, 2, 67, -678, 'Pink']
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Accessing List Elements - Slicing and striding}
+        \begin{lstlisting}[language=Python]
+            mix = ['Red', 1, 2, 45, -678, 'Pink']
+            # Prints all the elements from the list
+            print(mix[0:]) # or
+            print(mix[:])
+            # Prints second and third elements from the list
+            print(mix[1:3])
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Accessing List Elements - for loop}
+        \begin{lstlisting}[language=Python]
+            mix = [3, 66, -99, "hello", "k", 5]
+            for element in mix:
+                print(element)
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{List Methods}
+        \textbf {append(value)}: appends a new element to the end of the list.
+        
+        \alert{Example:} 
+        \begin{lstlisting}[language=Python]
+            mix = []
+            # Appending 65, 866, 7
+            mix.append(65)
+            mix.append(866)
+            mix.append(7)
+            # Appending Hello
+            mix.append("Hello")
+            print(mix) # Outputs: [65, 866, 7, "Hello"]
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{List Methods}
+        \textbf{extend(enumerable):} extends the list by appending elements from another enumerable.
+
+        \alert{Example:}
+        \begin{lstlisting}[language=Python]
+            mix = [1, 355, 88, -5]
+            # Extend list by appending hello, 77
+            mix.extend("hello")
+            mix.extend(77) # outputs [1, 355, 88, -5, "hello", 77]
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{List Methods}
+        \textbf{remove(value)} : removes the first occurrence of the specified value. If the provided value cannot be found, a ValueError is raised.
+
+        \alert{Example:}
+        \begin{lstlisting}[language=Python]
+            mix = [1, 12, 1, 77, 99, -11]
+            #remove 11
+            mix.remove(1)
+            print(mix) #Outputs- [12, 1, 77, 99, -11]
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}
+        \frametitle{List methods}
+        \begin{itemize}
+            \item \textbf{mix.sort()} : sorts the elements of the list in place. That is it mutates the list.
+            \item \textbf{mix.reverse()} : reverses the order of elements in the list. Again mutates the list.
+            \item \textbf{mix.count(x)} : returns the number of times the value x occurs in the list.
+        \end{itemize}
+    \end{frame}
+\end{document}

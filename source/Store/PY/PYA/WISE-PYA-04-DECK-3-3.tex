@@ -1,0 +1,137 @@
+\documentclass[14pt]{beamer}
+\title{Python 101 :: Unit 4}
+\subtitle{Session 3}
+\date{}
+\author[TS]{TalentSprint}
+\usefonttheme{serif}
+\usepackage{bookman}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usecolortheme{orchid}
+\beamertemplateballitem
+
+\usepackage{listings}
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth]{logo}}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\small,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  %escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+  showstringspaces=false,
+}
+   
+\begin{document}
+    \begin{frame}
+        \titlepage
+    \end{frame}
+    \begin{frame}
+        \frametitle{Topics for the session}
+        \begin{itemize}
+            \item Code reading and writing
+        \end{itemize}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Problem 1}
+        \alert{Write a program that prints the numbers below 1000. But for multiples of three print "Fizz" instead of the number and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz".}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 1 :: Solution 1}
+        \begin{lstlisting}[language=Python]
+            for n in range(1, 1000):
+                if n % 15 == 0:
+                    output = "FIZZBUZZ"
+                elif n % 3 == 0:
+                    output = "FIZZ"
+                elif n % 5 == 0:
+                    output = "BUZZ"
+                else:
+                    output = str(n)
+                print(output)
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 1 :: Solution 2}
+        \begin{lstlisting}[language=Python]
+            for n in range(1, 1000):
+                output = ''
+                if n % 3 == 0:
+                    output = "FIZZ"
+                if n % 5 == 0:
+                    output += "BUZZ"
+                if len(output) == 0:
+                    output = str(n)
+                print(output)
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 1 :: Solution 3}
+        \begin{lstlisting}[language=Python]
+            def fizzbuzz(n):    
+                if n % 15 == 0:
+                    return "FIZZBUZZ"
+                elif n % 3 == 0:
+                    return "FIZZ"
+                elif n % 5 == 0:
+                    return "BUZZ"
+                else:
+                    return str(n)
+            
+            for n in range(1, 1000):
+                print(fizzbuzz(n))
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Problem 2}
+        A pandigital number contains all digits (0-9) at least once. 
+
+        \alert{Write a function that takes an integer, returns True if the integer is pandigital, and False otherwise.}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 2 :: Solution }
+        \begin{lstlisting}[language=Python]
+            def is_pandigital(n):
+                for i in range(10):
+                    if set(str(i)) not in set(str(n)):
+                        return False
+                return True
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Problem 3}
+        \alert{Create a function that takes an array of hurdle heights and a jumper's jump height, and determine whether or not the hurdler can clear all the hurdles.}
+
+        A hurdler can clear a hurdle if their jump height is greater than or equal to the hurdle height.
+
+        \alert{Example:} hurdle\_jump([1, 2, 3, 4, 5], 5) - True
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 3 :: Solution 1}
+        \begin{lstlisting}[language=Python]
+            def hurdle_jump(hurdles, jump_height):
+                for i in hurdles:
+                    if i > jump_height:
+                        return False
+                return True
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 3 :: Solution 2}
+        \begin{lstlisting}[language=Python]
+            def hurdle_jump(hurdles, jump_height):
+                if len(hurdles) == 0:
+                    return True
+                return max(hurdles) <= jump_height
+        \end{lstlisting}
+    \end{frame}
+\end{document}

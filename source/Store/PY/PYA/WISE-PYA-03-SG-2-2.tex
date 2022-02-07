@@ -1,0 +1,148 @@
+\documentclass{book}
+\title{Strings}
+\date{}
+\author{TS}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\addtolength{\headheight}{1.5cm} % make more space for the header
+\pagestyle{fancyplain} % use fancy for all pages except chapter start
+\rhead{\includegraphics[height=1.3cm]{TS.png}} % right logo
+\renewcommand{\headrulewidth}{0pt} % remove rule below header
+
+\begin{document}
+
+\section*{Functions}
+
+\hrulefill
+
+\paragraph{A function is a block of organized, reusable code that is used to perform a single, related action.
+Functions provide better modularity for your application and a high degree of code reuse.}
+\paragraph{As you already know, Python gives you many built-in functions like \textit{print()}. You can also
+create your own functions. These functions are called \textit{user-defined} functions.}
+
+\subsection*{Defining a Funcion}
+\paragraph{You can define functions to provide the required functionality. Here are simple rules to define a
+function in Python.}
+
+\begin{itemize}
+\item Function blocks begin with the keyword \textit{def} followed by the function name and parentheses ().
+\item Any input parameters or arguments should be placed within these parentheses.
+\item The code block within every function starts with a colon (:) and is indented.
+\item The statement \textit{return [expression]} exits a function, optionally passing back an expression to the
+caller. A \textit{return} statement with no arguments is the same as return None.
+\end{itemize}
+\paragraph{Syntax}
+\begin{verbatim}
+def functionName():
+    statement1
+    statement2
+    return [expression]
+\end{verbatim}
+
+\subsection*{Calling a Function}
+\paragraph{Defining a function only gives it a name, specifies the parameters that are to be included in the
+function and structures the blocks of code.}
+\paragraph{Once the basic structure of a function is finalized, you can execute it by calling it from another
+function or directly from the Python prompt.}
+\begin{verbatim}
+>>> functionName()
+\end{verbatim}
+
+\paragraph{Example 1: Function to print the sum of all even numbers in a given range.}
+
+\begin{verbatim}
+def isEven(num):
+    return (num % 2 == 0)
+
+def sumOfEvenNumbers(st_val, limit):
+    sumEvenNums = 0
+    for num in range(st_val, limit+1):
+        if (isEven(num)):
+            sumEvenNums += num
+    return sumEvenNums
+    
+print(sumOfEvenNumbers(100, 999))
+\end{verbatim}
+
+\begin{figure}[h!]
+  \includegraphics[width=\linewidth]{sumOfEvenNumbers.png}
+  \caption{sumOfEvenNumbers program output}
+  \label{fig:sumOfEvenNumbers}
+\end{figure}
+
+\paragraph{Example 2: Function to print all palindromes with all even digits in a given range}
+
+\begin{verbatim}
+def reverse(num):
+    rev_num = 0
+    while (num > 0):
+        rem = num % 10
+        rev_num = (rev_num * 1 0 ) + rem
+        num //= 10
+    return rev_num
+
+#functio n to check the number is palindrome 
+def isPalindrome(num):
+    return(reverse(num) == num)
+
+#function to check all digits are even
+def allEvenDigits(num):
+    while(num > 0):
+        rem = num % 10
+        if (rem % 2 != 0):
+            return False
+        num //= 10
+    return True
+
+def allPalindromes(n1,n2):
+    for num in range(n1, n2 + 1):
+        if (isPalindrome(num) and allEvenDigits(num)):
+            print(num)
+
+# function call
+allPalindromes (100 ,999)
+\end{verbatim}
+
+\begin{figure}[h!]
+  \includegraphics[width=\linewidth]
+   {allEvenDigitPalindromes.png}
+  \caption{allEvenDigitPalindromes program output}
+  \label{fig:allEvenDigitPalindromes output}
+\end{figure}
+
+
+\subsection *{Returning Multiple Values}
+\paragraph{A function can return exactly one value, or we should better say one object. An object can be a value of any type, integer, float or boolean. A function can also return a list or a tuple. So, if we have to return more than one value, we can use list or tuple for returning multiple values.}
+\paragraph{Example:}
+\paragraph{A program to print all two digit perfect square numbers.}
+
+\begin{verbatim}
+def isPerfectSquare(n):
+    ’’’ This function returns
+      a number and a boolean value’’’
+      f = 1
+    while f * f < n :
+        f += 1
+    return f, f * f == n
+    
+def generatePerfectSquares(LO, HI):
+    for num in range(LO, HI):
+        val, status = isPerfectSquare(num)
+        if status :
+            print(num)
+
+generatePerfectSquares(10, 100)
+\end{verbatim}
+
+\begin{figure}[h!]
+  \includegraphics[width=\linewidth]
+   {perfectSquares.png}
+  \caption{perfectSquares program output}
+  \label{fig:perfectSquaresoutput}
+\end{figure}
+
+\end{document}

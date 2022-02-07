@@ -1,0 +1,50 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\lstset{language=python,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+\usepackage{array}
+\usepackage{enumitem}
+
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+\usepackage{fancyhdr}
+ 
+\pagestyle{fancy}
+\renewcommand\headrule{}
+\rhead {\includegraphics[scale=.5]{../images/logo.png}}
+\begin{document}
+\section*{List Comprehension}
+
+\subsection*{Code Reading}
+
+\begin{itemize}
+    \item Write the expected output, or errors if any, for each of the following programs in the box provided below each program.
+    \item Then execute the programs and check your answers.
+    \item Also answer the questions given below.
+\end{itemize}
+
+\begin{enumerate}[label=\bfseries Program \arabic*:]
+
+    \item ~
+    \begin{lstlisting}
+        [print(i) for i in my_string if i not in "aeiou"]
+    \end{lstlisting}
+    \AnswerBox
+    \item ~
+    \begin{lstlisting}
+        a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+        print([i for i in a if i % 2 == 0])
+    \end{lstlisting}
+    \AnswerBox
+    \item ~
+    \begin{lstlisting}
+        l=[[1 ,2, 3], [4, 5, 6], [7, 8, 9]]
+        [[row[i] for row in l] for i in range(3)]
+    \end{lstlisting}
+    \AnswerBox
+\end{enumerate}
+\subsection*{Additional Exercices}
+\begin{itemize}
+    \item Given a list of points, a central point, and an integer k, write a function which returns the nearest k points from the central point. For example, given the list of points [(0, 0), (5, 4), (3, 1)], the central point (1, 2), and k = 2, return [(0, 0), (3, 1)].
+    \item Write a function which will check whether a given number N is a Prime or Not. If the Number N is a Prime, then function should return it’s square root as floating point number with exactly 2 decimal precision otherwise function should return 0.00.
+\end{itemize}
+\end{document}

@@ -1,0 +1,117 @@
+\documentclass[14pt]{beamer}
+\title{Python 102 :: Week 7}
+\date{}
+\author[TS]{TalentSprint}
+\usefonttheme{serif}
+\usepackage{bookman}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usecolortheme{orchid}
+\beamertemplateballitem
+
+\usepackage{listings}
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth]{logo}}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\small,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  %escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+  showstringspaces=false,
+}
+   
+\begin{document}
+    \begin{frame}
+        \titlepage
+    \end{frame}
+    \begin{frame}
+        \frametitle{Topics for the Session}
+        \begin{itemize}
+            \item File Handling
+        \end{itemize}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Introduction to Files}
+        \begin{itemize}
+            \item A file is an object on a computer that stores data, information, settings, or instructions used inside the computer programs.
+            \item Two types of files:
+                \begin{itemize}
+                    \item Text - Stores data in the form of strings
+                    \item Binary - Stores data in the form of bytes 
+                \end{itemize}
+        \end{itemize}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{File Operations :: Reading}
+        \alert{Opening an existing file}
+        \begin{lstlisting}[language=Python]
+        fileExample = open("FileExample.txt", "r")
+        print(fileExample)
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{File Operations :: Reading}
+        \alert{Reading it}
+        \begin{lstlisting}[language=Python]
+        fileExample.read()
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{File Operations :: Reading}
+        \alert{Closing a file}
+        \begin{lstlisting}[language=Python]
+            fileExample.close()
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{File Operations :: Writing}
+        \alert{Opening a new file}
+        \begin{lstlisting}[language=Python]
+            fileExample = open("FileExample.txt", "w")
+            print(fileExample)
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{File Operations :: Writing}
+        \alert{Writing to it}
+        \begin{lstlisting}[language=Python]
+            fileExample.write("Hello, message is written into the file")
+            fileExample.close()
+        \end{lstlisting}
+        \textbf{Note:} Only after calling close() the changes appears in file.
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{File Operations :: Appending}
+        \begin{lstlisting}[language=Python]
+            fileExample = open("FileExample.txt", "ab")
+            print(fileExample)
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{File Operations :: Appending}
+        \begin{lstlisting}[language=Python]
+            fileExample.write("Hello, I am back again!!")
+            fileExample.close()
+        \end{lstlisting}
+        \textbf{Note:} In append mode the file pointer is set to the end of the opened file
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Files :: with statement}
+        \begin{itemize}
+            \item Can be used while opening a file
+            \item It will take of closing a file without using file.close()
+        \end{itemize}
+        \begin{lstlisting}[language=Python]
+            with open("FileExample.txt", "r") as f:
+                f.read()
+        \end{lstlisting}
+    \end{frame}
+\end{document}

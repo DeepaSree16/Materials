@@ -1,0 +1,450 @@
+\documentclass[14pt]{beamer}
+\title{Python 101 :: Week 5}
+\date{}
+\author[TS]{TalentSprint}
+\usefonttheme{serif}
+\usepackage{bookman}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usecolortheme{orchid}
+\beamertemplateballitem
+
+\usepackage{listings}
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth]{logo}}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\small,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  %escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+  showstringspaces=false,
+}
+   
+\begin{document}
+    \begin{frame}
+        \titlepage
+    \end{frame}
+    \begin{frame}
+        \frametitle{Topics for the Session}
+        \begin{itemize}
+            \item Higher Order Functions
+            \item Comprehensions
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{What does this function do?}
+        \begin{itemize}
+        \item Function's code
+        \end{itemize}
+        \begin{lstlisting}[language=Python]
+        r = 0
+        while r * r < n:
+                r += 1
+        return r * r == n
+        \end{lstlisting}
+        \begin{itemize}
+        \item \alert {What does this function do?}
+        \item is\_perfect\_square
+        \end{itemize}
+    \end{frame}
+ 
+    \begin{frame}[containsverbatim]
+        \frametitle{What does this function do?}
+        \begin{itemize}
+        \item Function's code
+        \end{itemize}
+        \begin{lstlisting}[language=Python]
+        r = 0
+        while r * r * r < n:
+                r += 1
+        return r * r * r == n
+        \end{lstlisting}
+        \begin{itemize}
+        \item \alert {How would you name the function?}
+        \item is\_perfect\_cube
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{What does this function do?}
+        \begin{itemize}
+        \item Function's code
+        \end{itemize}
+        \begin{lstlisting}[language=Python]
+        r = 0
+        while 3 ** r < n:
+                r += 1
+        return 3 ** r == n
+        \end{lstlisting}
+        \begin{itemize}
+        \item \alert {How would you name the function?}
+        \item is\_power\_of3
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{What does this function do?}
+        \begin{itemize}
+        \item Function's code
+        \end{itemize}
+        \begin{lstlisting}[language=Python]
+        r = 0
+        while r * (r + 1) < n * 2:
+                r += 1
+        return r * (r + 1) == n * 2
+        \end{lstlisting}
+        \begin{itemize}
+        \item \alert {How would you name the function?}
+        \item is\_triangular
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{What does this function do?}
+        \begin{itemize}
+        \item Function's code
+        \end{itemize}
+        \begin{lstlisting}[language=Python]
+        r = 0
+        while r * (3 * r - 1) < n * 2:
+                r += 1
+        return r * (3 * r - 1) == n * 2
+        \end{lstlisting}
+        \begin{itemize}
+        \item \alert {How would you name the function?}
+        \item is\_pentagon
+        \end{itemize}
+    \end{frame}
+    
+    \begin{frame}[containsverbatim]
+        \frametitle{What are the observations?}
+        \begin{itemize}
+            \item \alert{In general:}
+            \item Duplication in structure of code
+            \item \alert{How do we fix this?}
+            \item Move the duplication code to function
+            \item Call this as function to required mathematical function      
+        \end{itemize}
+    \end{frame}
+	
+    \begin{frame}[containsverbatim]
+        \frametitle{Higher Order Function}
+        \begin{itemize}
+            \item \alert{Call as}
+            \item isTriangular(15) for True
+            \item isTriangular(12) for False
+        \begin{lstlisting}[language=Python]
+def triangular(r: int):
+        return (r * (r + 1)) // 2
+
+def is_f(f, n: int) -> bool:
+        r = 0
+        while f(r) < n:
+                r += 1
+        return f(r) == n
+
+def isTriangular(n: int) -> bool:
+        return is_f(triangular, n)
+        \end{lstlisting}
+        \end{itemize}
+    \end{frame}
+    
+    \begin{frame}[containsverbatim]
+        \frametitle{Higher Order Functions}
+        \begin{itemize}
+            \item Passing function as argument to another function or
+            \item Return function as the result
+        \end{itemize}
+	\end{frame}
+	
+    \begin{frame}[containsverbatim]
+        \frametitle{How to add certain value to each item in any iterator?}
+        \begin{itemize}
+            \item Say marks of students in an iterator, say list and want to add 3, say grace marks to all
+            \item \alert{Syntax: Usual way}
+        \end{itemize}
+        \begin{lstlisting}[language=Python]
+>>> marks = [70, 60, 65, 80, 55]
+>>> newmarks = []
+>>> for mark in marks:
+...     newmarks.append(mark + 3)
+>>> newmarks
+[73, 63, 68, 83, 58]
+>>>
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{How to do this in simpler way?}
+        \begin{itemize}
+            \item \alert{Use Higher Order Function: map}
+            \item map(f, l) -> f(l[0]), f(l[1]), .... f(l[-1])
+            \item Applying the same rule for all elements 
+            \item Returns same size as input size
+            \item Return data type is same as return type of function 
+            \item Map returns map object, need to type cast to required data type (say list) to view
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Let us check}
+		\begin{itemize}
+		\item Using Higher order function - Map
+		\end{itemize}
+        \begin{lstlisting}[language=Python]
+def grace_marks(x: int) -> int:
+        return x + 3
+newmarks = list(map(grace_marks, marks))
+print (newmarks)
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{How to remove certain items?}
+        \begin{itemize}
+            \item How to remove items from an iterator which does not satisfy given condition?
+            \item Say we have list of marks in a list and want to have only more than pass marks, say 40
+            \item \alert{Syntax: Usual way}
+        \end{itemize}
+        \begin{lstlisting}[language=Python]
+>>> marks = [50, 60, 35, 39, 70, 75, 85, 30]
+>>> newmarks = []
+>>> for mark in marks:
+...     if mark > 40:
+...             newmarks.append(mark)
+>>> newmarks
+[50, 60, 70, 75, 85]
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{How to do this in simpler way?}
+        \begin{itemize}
+            \item \alert{Use Higher Order Function: filter}
+            \item filter(f, l) -> f(l[x]), say, item x, which satisfies given condition 
+            \item Returns subset or part of provided iterator or container
+            \item Filter returns map object, need to type cast to required data type (say list) to view
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Let us check this out}
+		\begin{itemize}
+		\item Using Higher order function - Filter
+		\end{itemize}
+        \begin{lstlisting}[language=Python]
+def pass_marks(x: int) -> bool:
+        return x > 40
+
+marks = [50, 60, 35, 39, 70, 75, 85, 30]
+newmarks = list(filter(pass_marks, marks))
+print (newmarks)
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Armstrong Number check and range}
+		\begin{itemize}
+		\item Using Higher Order Functions
+		\end{itemize}
+        \begin{lstlisting}[language=Python]
+def cube(x):
+        return x ** 3
+def armstrong(n: int) -> int:
+        return sum(map(cube, map(int, str(n))))
+def is_armstrong(n: int) -> bool:
+    return n == armstrong(n)
+def make_armstrong(start: int, limit: int) -> [int]:
+        return filter(is_armstrong, range(start, limit))
+
+print(make_armstrong(100, 999))
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Continued}
+		\begin{itemize}
+		\item Clubbing armstrong to is\_armstrong function
+		\end{itemize}
+        \begin{lstlisting}[language=Python]
+def cube(x):
+        return x ** 3
+def is_armstrong(n: int) -> bool:
+    return n == sum(map(cube, map(int, str(n))))
+def make_armstrong(start: int, limit: int) -> [int]:
+        return filter(is_armstrong, range(start, limit))
+
+print(make_armstrong(100, 999))
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Generalized and Optimized}
+		\begin{itemize}
+		\item Let us generalize armstrong check for any numbers and avoiding use cube function
+		\end{itemize}
+        \begin{lstlisting}[language=Python]
+def is_armstrong(n: int) -> bool:
+        digits = list(map(int, str(n)))
+        return n == sum(map(lambda r: r ** len(digits), map(int, str(n))))
+
+def make_armstrong(start: int, limit: int) -> [int]:
+        return filter(is_armstrong, range(start, limit))
+
+print(make_armstrong(1, 100000))
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{How it is done?}
+		\begin{itemize}
+		\item Removing need of function cube to include in higher order function itself as inline function using lambda
+		\item Using lambda which is anonymuous function, which only purpose here is to perform simple arithmetic
+		\item Lambda can be used for use of say expressions and can't be used for complex functionality
+		\end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Let us check this out}
+		\begin{itemize}
+		\item Take 2 iterators
+		\item How to take even numbers from f and add 1 to each element
+		\item \alert {Club map and filter}
+		\end{itemize}
+        \begin{lstlisting}[language=Python]
+>>> f = [0, 1, 1, 2, 3, 5, 8]
+>>> p = [2, 3, 5, 7, 11, 13, 17]
+>>> list(map(lambda x: x + 1, filter(lambda x: x % 2 == 0, f)))
+[1, 3, 9]
+>>> list(filter(lambda x: x % 2 == 0, f))
+[0, 2, 8]
+>>> 
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{How to do this in any other way?}
+		\begin{itemize}
+		\item \alert {Comprehensions}
+		\end{itemize}
+        \begin{lstlisting}[language=Python]
+>>> [x + 1 for x in f if x % 2 == 0]
+[1, 3, 9]
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{What is comprehension?}
+		\begin{itemize}
+		\item Comprehension or List Comprehension
+		\item Generalizes use of map and filter to use either or one of them
+		\item In order words, it is set builder
+		\item You can use \_ instead of variables as variables are not performing any other purpose than storing temporary values
+		\end{itemize}
+        \begin{lstlisting}[language=Python]
+[f(x) for x in l]
+[ x for x in l if P(x)]
+
+>>> [_ + 1 for _ in f if _ % 2 == 0]
+[1, 3, 9]
+>>> 
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Armstrong using Comprehensions}
+		\begin{itemize}
+		\item Code
+		\end{itemize}
+        \begin{lstlisting}[language=Python]
+def is_armstrong(n: int) -> bool:
+        digits = [int(x) for x in str(n)]
+        return n == sum([x ** len(digits) for x in digits])
+
+def make_armstrong(start: int, limit: int) -> [int]:
+        return [x for x in range(start, limit) if is_armstrong(x)]
+
+print(make_armstrong(1, 100000))
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Adding two lists}
+		\begin{itemize}
+		\item Say we have 2 lists and how to add each element of list 1 to list 2
+		\end{itemize}
+        \begin{lstlisting}[language=Python]
+>>> zip(f, p)
+<zip object at 0x7f6c372194c8>
+>>> list(zip(f, p))
+[(0, 2), (1, 3), (1, 5), (2, 7), (3, 11), (5, 13), (8, 17)]
+>>> list(map(sum, zip(f, p)))
+[2, 4, 6, 9, 14, 18, 25]
+>>> 
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Using zip}
+		\begin{itemize}
+		\item Clubs values in order for 2 or more lists
+		\end{itemize}
+        \begin{lstlisting}[language=Python]
+>>> list(zip(f, p, range(100, 120)))
+[(0, 2, 100), (1, 3, 101), (1, 5, 102), (2, 7, 103), (3, 11, 104), (5, 13, 105), (8, 17, 106)]
+>>> 
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{How to add resultant list}
+		\begin{itemize}
+		\item How to add the elements of resultant list
+		\item \alert {Use Reduce functionality}
+		\end{itemize}
+        \begin{lstlisting}[language=Python]
+>>> import functools
+>>> functools.reduce(lambda x, y: x + y, list(map(sum, zip(f, p))))
+78
+>>>
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{What is reduce functionality?}
+        \begin{itemize}
+		\item Processes elements in order to make single value result
+		\end{itemize}
+        \begin{lstlisting}[language=Python]
+reduce(f, [a0, a1, a2, a3....])
+reduce(f, [f(a0, a1), a2, ....])
+reduce(f, [f(a01), a3, ....])
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Making into dictionary}
+        \begin{itemize}
+		\item Using f and p lists
+		\end{itemize}
+        \begin{lstlisting}[language=Python]
+>>> {x:y for x, y in zip(f, p)}
+{0: 2, 1: 5, 2: 7, 3: 11, 5: 13, 8: 17}
+>>> {x[0]:x[1] for x in zip(f, p)}
+{0: 2, 1: 5, 2: 7, 3: 11, 5: 13, 8: 17}
+>>> dict(zip(f, p))
+{0: 2, 1: 5, 2: 7, 3: 11, 5: 13, 8: 17}
+>>>
+   \end{lstlisting}
+    \end{frame}
+
+\end{document}  

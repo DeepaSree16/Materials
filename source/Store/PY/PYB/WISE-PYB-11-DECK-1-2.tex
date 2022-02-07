@@ -1,0 +1,94 @@
+\documentclass[14pt]{beamer}
+\title{Python 102 :: Week 11}
+\date{}
+\author[TS]{TalentSprint}
+\usefonttheme{serif}
+\usepackage{bookman}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usecolortheme{orchid}
+\beamertemplateballitem
+
+\usepackage{listings}
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth]{logo}}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\small,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  %escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+  showstringspaces=false,
+}
+   
+\begin{document}
+    \begin{frame}
+        \titlepage
+    \end{frame}
+    \begin{frame}   
+        \frametitle{Topics for the Session}
+        \begin{itemize}
+            \item Python UI Libraries - Curses
+        \end{itemize}
+    \end{frame}
+    \begin{frame}
+        \frametitle{What is a Curses?}
+        \begin{itemize}
+            \item The curses library supplies a terminal-independent screen-painting and keyboard-handling facility for text-based terminals
+            \item The curses library was originally written for BSD Unix; the later System V versions of Unix from AT\&T added many enhancements and new functions. 
+            \item This is a python port of a popular C library \emph{ncurses}.
+        \end{itemize}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Example :: Hello World}
+        \begin{itemize}
+            \item Open the terminal
+            \item Create a \emph{CursesHelloWorld.py} file and open it using text editor in insert mode
+            \item Import curses into the program by writing the following code:
+        \end{itemize}
+        \begin{lstlisting}[language=Python]
+            # Importing curses
+            import curses
+            # Initialization of curses
+            stdscr = curses.initscr() 
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Example :: Hello World}
+        \begin{itemize}
+            \item Now save the file and exit from the text editor by pressing ``esc" button. Then write ``:wq" and press enter.
+            \item Virtually, whenever you initialize Curses, a default window called ``stdscr" is created, which has the same height and width as the terminal.
+            \item Write the below code in ``CursesHelloWorld.py"
+        \end{itemize}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Example :: Hello World}
+        \begin{lstlisting}[language=Python]
+        # enable or disable special Key values such as curses.KEY\_LEFT etc
+        scr.keypad(0)
+        # turn off auto echoing of keypress on to screen
+        curses.noecho() 
+        # takes a Python string or bytestring as the value to be displayed.
+        # Performing an action with screen
+        scr.addstr("hello world") 
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Example :: Hello World}
+        \begin{lstlisting}[language=Python]
+        #  to update the physical screen display.
+        scr.refresh() 
+        # To get input from the window
+        scr.getch()  
+        # Terminating a curses
+        curses.endwin()
+        \end{lstlisting}
+    \end{frame}
+\end{document}

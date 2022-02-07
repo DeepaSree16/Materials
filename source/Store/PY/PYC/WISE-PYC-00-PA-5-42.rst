@@ -1,0 +1,39 @@
+Bee Breeding 
+=============
+
+Description
+------------
+
+Professor B. Heif is conducting experiments with a species of South American bees that he found during an expedition to the Brazilian rain forest. The honey produced by these bees is of superior quality compared to the honey from European and North American honey bees. Unfortunately,
+the bees do not breed well in captivity. Professor Heif thinks the reason is that the placement of the different maggots (for workers, queens, etc.) within the honeycomb depends on environmental conditions, which are different in his laboratory and the rain forest.
+As a first step to validate his theory, Professor Heif wants to quantify the difference in maggot placement. For this he measures the distance between the cells of the comb into which the maggots are placed. To this end, the professor has labeled the cells by marking an arbitrary cell as number 1, and then labeling the remaining cells in a clockwise fashion, as shown in the following figure.
+
+
+.. image:: images/BeeBreeding.png
+
+
+For example, two maggots in cells 19 and 30 are 5 cells apart. One of the shortest paths connecting the two cells is via the cells 19 - 7 - 6 -5 - 15 - 30, so you must move five times to adjacent cells to get from 19 to 30.
+Professor Heif needs your help to write a program that computes the distance, defined as the number of cells in a shortest path, between any pair of cells.
+
+Input
+------
+
+The input consists of several lines, each containing two integers a and b (a, b ≤ 10000), denoting numbers of cells. The integers are always positive, except in the last line where a = b = 0 holds. This last line terminates the input and should not be processed.
+
+Output
+-------
+
+For each pair of numbers (a, b) in the input file, output the distance between the cells labeled a
+and b. The distance is the minimum number of moves to get from a to b.
+
+Sample Input
+-------------
+
+19 30
+
+0 0
+
+Sample Output
+--------------
+
+The distance between cells 19 and 30 is 5.

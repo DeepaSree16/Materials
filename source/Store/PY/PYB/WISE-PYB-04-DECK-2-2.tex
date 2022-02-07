@@ -1,0 +1,310 @@
+\documentclass[14pt]{beamer}
+\title{Python 102 :: Week 4}
+\date{}
+\author[TS]{TalentSprint}
+\usefonttheme{serif}
+\usepackage{bookman}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usecolortheme{orchid}
+\beamertemplateballitem
+
+\usepackage{listings}
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth]{logo}}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\small,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  %escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+  showstringspaces=false,
+}
+   
+\begin{document}
+    \begin{frame}
+        \titlepage
+    \end{frame}
+    \begin{frame}
+        \frametitle{Topics for the Session}
+        \begin{itemize}
+            \item Higher Order Functions
+            \item Comprehensions
+        \end{itemize}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Higher Order Functions}
+        \begin{itemize}
+            \item Takes function as argument or returns function as a result
+            \item They are often used to abstract common iteration operations.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Taking function as argument}
+        \begin{itemize}
+            \item How to pass function name as argument?
+            \item How to call the passed function? 
+            \item \alert {Example - Calling function square with argument 9}
+        \end{itemize}
+        \begin{lstlisting}[language=Python]
+def call_square_9(square):
+        return (square(9))
+        \end{lstlisting}
+	\end{frame}
+	
+    \begin{frame}[containsverbatim]
+        \frametitle{Taking function as argument - Continued}
+        \begin{itemize}
+		\item Returns square of given number		
+        \item \alert {Example}
+        \end{itemize}
+        \begin{lstlisting}[language=Python]
+def square(num):
+        return (num * num)
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Taking function as argument - Continued}
+        \begin{itemize}
+		\item How you would call square function as function argument?
+        \item \alert {Calling square() through call\_square\_9()}
+        \end{itemize}
+        \begin{lstlisting}[language=Python]
+	print ("Square of number {} is {}".format(9, call_square_9(square)))
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Taking function as argument - Generalized}
+        \begin{itemize}
+		\item How to make call\_square\_9() a generalized function?
+        \item \alert {Pass Argument}
+        \end{itemize}
+        \begin{lstlisting}[language=Python]
+def call_square(square, num):
+        return(square(num))
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Taking function as argument - Generalized}
+        \begin{itemize}
+		\item How to call the generalized function?
+        \item \alert {Pass Argument}
+        \end{itemize}
+        \begin{lstlisting}[language=Python]
+	print (call_square(square, 6))
+	print (call_square(square, 7))
+	print (call_square(square, 8))
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Taking function as argument - Generalized}
+        \begin{itemize}
+		\item How to call the function with an iterable?
+        \item \alert {Use List}
+        \end{itemize}
+        \begin{lstlisting}[language=Python]
+numbers = [6, 7, 8, 9]
+for num in numbers:
+        print (call_square(square, num))
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Make it simple - How?}
+        \begin{itemize}
+        \item Isn't the process is complicated?
+        \item How to make it simple?
+		\item Use Higher Order Functions 
+        \item \alert {Such as map, filter, reduce}
+        \end{itemize}
+    \end{frame}
+    
+    \begin{frame}[containsverbatim]
+        \frametitle{What is map function?}
+        \begin{itemize}
+            \item Takes an input iterable of values (like list or tuple) and return a list of results. 
+            \item Same order, same length, but mapped via a function.
+            \item \alert{Syntax:}
+        \end{itemize}
+        \begin{lstlisting}[language=Python]
+	map(function, iterable)    
+        \end{lstlisting}
+    \end{frame}
+    
+    \begin{frame}[containsverbatim]
+        \frametitle{map - Continued}
+        \begin{itemize}
+            \item Define a function, say square()
+            \item \alert{Example:}
+        \end{itemize}
+        \begin{lstlisting}[language=Python]
+	def square(number):
+		return number ** 2
+        \end{lstlisting}
+
+        \begin{itemize}        
+        \item \alert {Take a list of numbers}
+        \end{itemize}        
+        \begin{lstlisting}[language=Python]
+	numbers = [1, 2, 3, 4]
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{map - Continued}
+        \begin{itemize}
+            \item How to calculate square of numbers in list using map?
+            \item \alert{Example:}
+        \end{itemize}
+        \begin{lstlisting}[language=Python]
+	print(map(square, numbers))
+        \end{lstlisting}
+
+        \begin{itemize}
+            \item What is the output from above statement?
+            \item \alert{Map Object}
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{map - Continued}
+        \begin{itemize}
+            \item How to get the output instead of object address?
+            \item \alert{Get Result:}
+        \end{itemize}
+        \begin{lstlisting}[language=Python]
+	print(list(map(calculate_square, numbers)))
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{What is filter function?}
+        \begin{itemize}
+            \item Filter takes a function and an iterable to produce an output list of every item on the input list that passes a test.
+            \item \alert{Syntax:}
+        \end{itemize}
+        \begin{lstlisting}[language=Python]
+            filter(function, iterable)
+        \end{lstlisting}
+    \end{frame}
+    
+    \begin{frame}[containsverbatim]
+        \frametitle{filter - Continued}
+		\begin{itemize}
+		\item Take a function that checks whether passed number is even or not.
+        \item \alert{Example:}
+        \end{itemize}
+        \begin{lstlisting}[language=Python]
+	def is_even(number):
+		return (number % 2 == 0)
+        \end{lstlisting}
+		\begin{itemize}
+		\item Print results
+        \item \alert{Example:}
+        \end{itemize}
+        \begin{lstlisting}[language=Python]
+print(list(filter(is_even, [2,3,4,5,6])))
+        \end{lstlisting}
+
+    \end{frame}
+    
+    \begin{frame}[containsverbatim]
+        \frametitle{What is reduce function?}
+        \begin{itemize}
+            \item Reduce takes an iterable of input data and to produce a single value output.
+            \item \alert{Syntax:}
+        \end{itemize}
+        \begin{lstlisting}[language=Python]
+	reduce(function, iterable)
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{reduce - Continued}
+		\begin{itemize}
+		\item Take a function that takes 2 inputs, returns the result after subtraction.
+        \item \alert{Example:}
+        \end{itemize}
+        \begin{lstlisting}[language=Python]
+	def subtract(num1, num2):
+		return num1 - num2
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{reduce - Continued}
+		\begin{itemize}
+		\item Let us call with reduce
+        \item \alert{Example:}
+        \end{itemize}
+        \begin{lstlisting}[language=Python]
+print(reduce(subtract,[1, -23, 3, 45, 5]))
+        \end{lstlisting}
+		\begin{itemize}
+		\item What happens?
+        \item \alert{Error: reduce not defined}
+        \item \alert{How to fix this?}
+        \item \alert {Include reduce from functools module}
+        \end{itemize}
+        \begin{lstlisting}[language=Python]
+from functools import reduce
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{reduce - Continued}
+		\begin{itemize}
+		\item Why is no mention of iterable list with reduce?
+        \item \alert{Reason:}
+        \item Reduce - Single value output 
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{What is Comprehension?}
+		\begin{itemize}
+		\item Comprehension or list Comprehension?
+        \item \alert{Meaning:}
+        \item Used to construct lists in a very
+natural and easy way
+		\item List Comprehensions have the form
+		
+		[ expression for expr in sequence1 \\
+		  for expr2 in sequence2 ... \\
+		  for exprN in sequenceN \\
+		  if condition ] \\
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Comprehension - Continued}
+		\begin{itemize}
+		\item Define an iterable, 
+		\item Say, nums = [5, 6, 7, 8, 9]
+		\item Write a function to calculate squares using comprehension
+        \item \alert{Example}
+        \item nums = [ num * num for num in nums]
+		\item print (nums)
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Comprehension - Continued}
+		\begin{itemize}
+		\item Print even numbers for given iterable
+		\item Say, [5, 6, 7, 8, 9, 10, 20, 25]
+        \item \alert{Example}
+        \item print ([ num for num in nums if num \% 2 == 0 ])
+        \end{itemize}
+    \end{frame}
+    
+\end{document}  

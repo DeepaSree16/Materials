@@ -1,0 +1,156 @@
+\documentclass[14pt]{beamer}
+\title{Python 101 :: Week 1}
+\date{}
+\author[TS]{TalentSprint}
+\usefonttheme{serif}
+\usepackage{bookman}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usecolortheme{orchid}
+\beamertemplateballitem
+
+\usepackage{listings}
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth]{logo}}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\small,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  %escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+  showstringspaces=false,
+}
+   
+\begin{document}
+\begin{frame}
+  \titlepage
+\end{frame}
+    
+\begin{frame}
+  \frametitle{Topics for the Session}
+  \begin{itemize}
+  \item Set up your environment
+  \item Review: Lists and Strings
+  \item Review: Loops
+  \item Review: Functions
+  \end{itemize}
+\end{frame}
+\begin{frame}{Environment}
+  \begin{itemize}
+      \item Terminal set up
+      \pause
+      \item What is ssh?
+      \pause
+      \item Login into Rollno@wise.talentsprint.com
+  \end{itemize}
+\end{frame}
+\begin{frame}{Environment}
+  \begin{itemize}
+  \item what version of python?
+	  \pause
+  \item Run the interpreter
+  \item keep the docs open in the browser
+  \item CTRL + SHIFT + T
+  \item ALT + 1
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Relook at Strings}
+  \begin{itemize}
+  \item What is a string?
+    \pause
+  \item What are string delimiters?
+    \pause
+  \item What is the difference?
+    \pause
+  \item How to combine two strings?
+    \pause
+  \item How to repeat a string?
+    \pause
+  \item How to get a specific character? 
+	  \pause
+  \item How to get part of the string?
+  \end{itemize}
+\end{frame}
+    
+\begin{frame}
+  \frametitle{String Methods}
+  \begin{itemize}
+  \item Case conversion: \textbf{\texttt{capitalize, title, upper, lower, swapcase}}
+    \pause
+  \item Search: \textbf{\texttt{index, find, startswith, endswith}}
+    \pause
+  \item Format: \textbf{\texttt{center, strip, just, zfill, format}} 
+    \pause
+  \item Type: \textbf{\texttt{isalpha, isnum, \ldots}}
+    \pause
+  \item Tokenize: \textbf{\texttt{split, partition, join}}
+  \end{itemize}
+  And many more \ldots 
+  
+  https://docs.python.org/3/library/
+\end{frame}
+
+\begin{frame}
+  \frametitle{Relook at Lists}
+  \begin{itemize}
+  \item What is a list?
+    \pause
+  \item What can it contain?
+    \pause
+  \item How to combine two lists?
+    \pause
+  \item How to select an item? a sub-list?
+    \pause
+  \item How to check the number of elements? if an element is present? 
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{List Methods}
+  \begin{itemize}
+  \item Stats: \textbf{\texttt{max, min, sum, count}}
+    \pause
+  \item Mutators: \textbf{\texttt{append, insert, extend, sort, reverse, remove, clear}}
+    \pause
+  \item Slice: Access as well as modify
+  \end{itemize}
+  More in the docs.
+\end{frame}
+
+\begin{frame}{Common Sequence Types}
+  Strings, Lists, Tuples are all common sequence types.
+
+ More on slicing and striding
+\end{frame}
+
+\begin{frame}{Relook at functions}
+    \begin{block}{Classical Syntax}
+      \texttt{\textbf{def} square(p):}
+      
+      \texttt{~~~~\textbf{return} p * p}
+    \end{block}
+    \pause
+    \begin{block}{Modern syntax: 3.5+}
+      \texttt{\textbf{def} square(p:int) -> int:}
+
+      \texttt{~~~~\textbf{return} p * p}
+    \end{block}
+  \end{frame}
+  
+\begin{frame}{return}    
+  \begin{itemize}
+  \item	\textbf{\texttt{return}} statement: What can be returned?
+    \pause
+  \item Why functions?
+  \end{itemize}
+\end{frame}
+
+\end{document}
