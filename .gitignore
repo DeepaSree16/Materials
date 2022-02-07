@@ -1,0 +1,10 @@
+# WISE
+**/.DS_Store
+build/*
+*snm
+*aux
+*log
+*toc
+*pdf
+*nav
+*out
