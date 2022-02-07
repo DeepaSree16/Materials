@@ -1,0 +1,325 @@
+% Fundamentals of Programming
+% Python Quick Reference
+% (c) TalentSprint, Chennai
+%
+%
+\documentclass{article}
+\usepackage[landscape]{geometry}
+\usepackage[pdftex]{color}
+\usepackage{url}
+\usepackage{multicol}
+\usepackage{listings}
+\usepackage[T1]{fontenc}
+\usepackage[sfdefault]{AlegreyaSans} 
+\newcommand{\code}[1]{{\color{blue}#1}}
+\newcommand{\inl}[1]{\emph{\color{blue}#1}}
+\newcommand{\warn}[1]{{\color{red}#1}}
+\advance\topmargin-.8in
+\advance\textheight2in
+\advance\textwidth3.0in
+\advance\oddsidemargin-1.45in
+\advance\evensidemargin-1.45in
+\parindent0pt
+\parskip2pt
+
+\newcounter{parnum}
+\newcommand{\N}{%
+   \noindent\refstepcounter{parnum}
+    %\makebox[1.5em][l]
+    {\textbf{\arabic{parnum}. }}}
+
+% Section break, dictates column widths?
+\newcommand{\hr}{\centerline{\rule{3.5in}{1pt}}}
+% Adjust gap to affect spacing, page count
+%\newcommand{\sect}[1]{\hr\par\ vspace*{2pt}\textbf{#1}\par}
+\newcommand{\sect}[1]{\hr\par\textbf{\N #1}\par}
+% Mandatory indentation on subsidiary lines
+\newcommand{\skipin}{\hspace*{12pt}}
+% \newcommand{\inp}[1]{\color{blue}{\textbf{$>$$>$$>$ #1}}}
+% \newcommand{\out}[1]{\color{blue}{\textbf{#1}}}
+
+\begin{document}
+\begin{multicols*}{3}
+\begin{center}
+\textbf{Quick Reference} \\
+\textbf{Python-3.x}\\
+\end{center}
+
+% backup over center environment gap
+\vspace{-2ex}
+
+%\begin{enumerate}
+%*********************************************
+\sect{Storing values in variables}
+\code{x = 5} stores the integer \inl{5} in \inl{x}\\
+\code{y = 2.5} stores the float \inl{2.5} in \inl{y}\\
+\code{s = ``Hello World''} stores string \inl{Hello World} in {\inl s}\\\\
+%*********************************************
+\sect{Boolean Constants}
+The Boolean constants are \inl{True} and \inl{False}.\\
+\warn{Note the capitalization.}\\\\
+%*************************************************
+\sect{Arithmetic Operations}
+\code{x + y} computes the sum of \inl{x} and \inl{y}\\
+\code{x - y} computes the value of \inl{y} subtracted from \inl{x}\\
+\code{x * y} computes the product of \inl{x} and \inl{y}\\
+\code{x ** y} computes \inl{x} raised to \inl{y}\\
+\code{x \% y} computes the remainder when \inl{x} is divided by \inl{y}\\
+\code{x / y} computes the float value of \inl{x} divided by \inl{y}.\\
+\warn{17 / 4 gives 4.25}\\
+\code{x // y} computes the quotient when \inl{x} is divided by \inl{y}\\
+\warn{17 // 4 gives 4}\\\\
+%*********************************************
+\sect{Comparison Operations}
+\skipin Returns Boolean values \code{True} or \code{False}\\
+\code{x == y} checks if \inl{x} is equal to \inl{y}\\
+%\code{x == y} checks if the values in \inl{x} and \inl{y} are equal\\
+\code{x != y} checks if \inl{x} is not equal to \inl{y}\\
+\code{x $>$ y} checks if value in \inl{x} is greater than \inl{y}\\
+\code{x $>$ y} checks if value in \inl{x} is greater than that in \inl{y}\\
+\code{x $\geq$ y} checks if \inl{x} is greater than or equal to 
+\inl{y}\\
+\code{x $<$ y} checks if value in \inl{x} is less than that in \inl{y}\\
+\code{x $\leq$ y} checks if value in \inl{x} is less than or equal to \inl{y}\\
+%\code{x $<$ 6 $>$ y} checks if the value is in between \inl{x} and \inl{y}\\
+\code{x $<$ y $<$ z} checks if \inl{y} is in between \inl{x} and \inl{z}\\\\
+%*********************************************
+\sect{Logical Operations}
+\code{x == 5 and y != 7} returns \code{True} if both conditions are \code{True}\\
+\code{x == 5 or y != 7} returns \code{True} if either condition is \code{True}\\
+\code{not x $>$ 7} \code{not} negates the condition\\
+%****************************************************
+\\\\\\
+\sect{Membership Operators}
+\code{x in y } results in \code{True} if x is a member of sequence y.\\
+\code{x not in y} results in \code{True} if x is not a member of sequence y.\\
+%****************************************************
+\sect{Identity Operators}
+\code{x is y} Evaluates to \code{True} if the variables on either side of the operator point to the same object.\\
+\code{x is not y} Evaluates to \code{False} if the variables on either side of the operator point to the same object.\\
+%****************************************************
+\sect{Conversions}
+\code{int(``65'')} gives the integer \inl{65}\\
+\code{int(65.75)} gives the integer \inl{65}\\
+\code{float(``65.75'')} gives the float \inl{65.75}\\
+\code{float(65)} gives the float \inl{65.0}\\
+\code{str(65)} gives the string \inl{``65''}\\
+\code{str(65.75)} gives the string \inl{``65.75''}\\
+\warn{ int(``65.75'') gives an error}\\
+%*********************************************
+\sect{Indentation}
+{\color{blue}\begin{lstlisting}
+In Python blocks are identified by 
+indentation.
+statement 1:
+    statement 2
+    statement 3
+\end{lstlisting}}
+\warn{ statement 1 must end in a colon. It can be an \emph{if statement}, \emph{while statement}, \emph{for statement} or a \emph{def statement}}
+
+Similarly,
+{\color{blue}\begin{lstlisting}
+statement 1
+    statement 2
+        statement 3
+        statement 4
+        statement 5
+    statement 6
+\end{lstlisting}}
+\warn{Use only 4 spaces for an indent.}\\\\
+%*********************************************
+\sect{Simple Input}
+\code{x = input()} for taking input.\\
+\code{x = input("Enter number: ")} display a prompt while taking input.\\
+\warn{The value given by input is always a string.}\\\\\\
+%*********************************************
+\sect{Simple Output}
+\code{print(x)} print the value in \inl{x} and a new line.\\
+\code{prin(x, y)} print the value in \inl{x} and a space.\\
+\code{print(x,y, sep=``...'')} prints the values of \inl{x}, \inl{y} separated by ``...'' instead of the default space.
+\code{print(x, y, sep=``\t'', end = ``::'')} prints the values of \inl{x}, \inl{y} seperated by a tab and instead of ending with a newline\\\\
+%*********************************************
+\sect{if statement}
+{\color{blue}\begin{lstlisting}
+if x > 0:
+    print(``positive'')
+\end{lstlisting}}
+
+%*********************************************
+\sect{if...else statement}
+{\color{blue}\begin{lstlisting}
+if x > 0:
+    print(``positive'')
+else:
+    print(''not positive'')
+\end{lstlisting}}
+
+%*********************************************
+\sect{if...elif statement}
+{\color{blue}\begin{lstlisting}
+if x > 0:
+    print(``positive'')
+elif x < 0:
+    print(``negative)
+else:
+    print(``Zero'')
+\end{lstlisting}}
+
+%*********************************************
+\sect{while statement}
+{\color{blue}\begin{lstlisting}
+x = 1
+while x < 10:
+    print(``The value of x is'', x)
+    x += 1
+\end{lstlisting}}
+Prints \inl{x} value from 1 to 9\\
+%*********************************************
+\sect{Defining Strings}
+\code{s = "I am a string"}\\
+\skipin enclosed in double quotes.\\
+\code{s = 'He said "Good Morning", to the class'}\\
+\skipin use single quotes if there is a double quote in the string.\\
+\code{s = "It's time"}\\
+\skipin use double quotes if there is a single quote in the string.\\\\\\
+%*********************************************
+\sect{Accessing characters in strings}
+\code{s[0]} accesses the first character in the string \inl{s}.\\
+\code{s[4]} accesses the fifth character in the string \inl{s}.\\
+\warn{Indexing starts with 0 for the first character.}\\
+\code{s[-1]} accesses the last character in the string \inl{s}.\\
+\code{s[-2]} accesses the last but one character in \inl{s}.\\
+%\code{s[-5]} accesses the fifth character from the last.\\
+\warn{Negative indexing starts with -1 from last.}\\\\
+%*********************************************
+\sect{Slicing strings}
+\code{s = ``Hello World''}\\
+\code{s[3:]} returns \inl{``lo World''}\\
+\skipin substring from character with index 3 to end.\\
+\code{s[:7]} returns \inl{``Hello W''}\\
+\skipin substring from start to character with index 6.\\
+\code{s[3:7]} returns \inl{``lo W''}\\
+\skipin substring from character with index 3 to character with index 6.\\
+\code{s[2:-2]} returns ``llo Wor''\\
+\skipin substring from third character to the third character from the end.\\\\
+%*********************************************
+\sect{string methods}
+\code{s = ``Hello'' + `World''} stores \inl{HelloWorld} in \inl{s}.\\
+\code{len(s)} length of the string \inl{s}\\
+\code{"ell" in s} checks for the presence of \inl{``ell''} in \inl{s}.\\
+\code{s.lower()} returns \inl{``helloworld''}\\
+\skipin a new string with characters of \inl{s}, in lower case.\\
+\code{s.upper()} returns \inl{``HELLOWORLD''}\\
+\skipin a new string with characters of \inl{s}, in upper case.\\
+\code{s.replace(``l'', ``m'')} returns \inl{``Hemmo Wormd''}\\
+\skipin a new string with all the \inl{l}  replaced with \inl{m}.\\
+\code{s.split()} returns \inl{[``Hello'', ``World'']} \\
+\skipin a list of words in the string.\\
+%\code{s.split(";")} returns a list of strings obtained by splitting \inl{s} on semicolon\\
+\warn{All the above operations return new strings. The original
+string remains unaltered.}\\
+%*********************************************
+\\
+\sect{range function}
+\code{range(8)} returns list of numbers from \inl{0} to \inl{7}.\\
+%\code{range(3, 13)} returns a list of numbers from \inl{3} to \inl{12}.\\
+\code{range(3, 13, 2)} returns odd numbers from \inl{3} to \inl{12}.\\
+\warn{range returns a ``generator'', convert it to list to see the values,\\   Example: \code{print(list(range(8)))}}\\\\
+%*********************************************
+\sect{Defining functions}
+{\color{blue}\begin{lstlisting}
+def add_one(x):
+    return x + 1
+\end{lstlisting}}
+defines the \inl{add\_one} function that takes one argument and 
+returns the value of argument plus one.
+
+{\color{blue}\begin{lstlisting}
+def getMax(x, y):
+    if x > y:
+        return x
+    return y
+\end{lstlisting}}
+defines the \inl{getMax} function that takes two arguments and returns the
+greater one from them.\\\\
+%*********************************************
+\sect{Calling functions}
+\code{add\_one(5)} returns 6.\\
+\code{x = add\_one(8)} stores the value 9 in x.\\
+\code{x = add\_one(x)} increments x by one.\\
+\code{y = getMax(4, 8)} stores the return value \inl{8} in \inl{y}.\\
+\code{biggest = getMax(biggest, currentValue)}\\\\
+%*********************************************
+\sect{lists}
+\code{pr = [2, 3, 5, 7, 11, 13]} creates the list \inl{pr}.\\
+\code{len(pr)} returns the length of the list, \inl{6}\\
+\code{15 in pr} checks for the presence of \inl{15} in the list \inl{pr}.\\
+\code{pr + [17, 19, 23]} adds the lists and returns a new list.\\
+%*********************************************
+\sect{slicing lists}
+\code{pr[0]} accesses the first item, \inl{2}.\\
+\code{pr[-4]} accesses the fourth item from end, \inl{5}.\\
+\code{pr[2:]} accesses \inl{[5, 7, 11, 13]}\\
+\skipin list of items from third to last.\\
+\code{pr[:4]} accesses \inl{[2, 3, 5, 7]}\\
+\skipin list of items from first to fourth.\\
+\code{pr[2:4]} accesses \inl{[5, 7]}\\
+\skipin list of items from third to fifth.\\
+\code{pr[1::2]} accesses \inl{[3, 7, 13]}\\
+\skipin alternate items, starting from the second item.\\
+%*********************************************
+\\\\\\\\\\\\
+\sect{list methods}
+\code{pr.append(17)} adds \inl{17} at the end of the list \inl{pr}.\\
+\skipin \inl{pr} becomes \inl{[2, 3, 5, 7, 11, 13, 17]}\\
+\code{pr.extend([17, 19, 21])} appends \inl{17}, \inl{19}, \inl{21}\\
+\skipin \inl{pr} becomes \inl{[2, 3, 5, 7, 11, 13, 17, 19, 21]}\\
+\warn{Operations mentioned above modify the list itself.}\\
+%*********************************************
+\sect{for loop}
+{\color{blue}\begin{lstlisting}
+for i in pr:
+    print(i)
+\end{lstlisting}}
+iterates over the list \inl{pr} one item at a time.\\
+%*********************************************
+\sect{dictionaries}
+\code{mm2num = \{``jan'': 1, ``feb'': 2, ``mar'': 4\}}\\
+\skipin creates the dictionary \inl{mm2num}\\
+\code{mm2num[``feb'']} gives the corresponding value, \inl{2}\\
+\code{mm2num[``mar''] = 3} \\
+\skipin changes the value for the key \inl{`mar''} to \inl{3}\\
+\code{mm2num[``apr''] = 4} \\
+\skipin creates the key \inl{``apr''} with \inl{4} as the value\\
+\code{mm2num.values()} returns list of values, \inl{[1, 2, 3, 4]}\\
+\code{mm2num.keys()} returns list of keys,\\
+\skipin \inl{[``jan'', ``feb'', ``mar'', ``apr'']}\\
+%*********************************************
+\sect{sets}
+\code{prs = set([2, 3, 2, 5, 3, 7, 7, 2, 3])}\\
+\skipin creates the set \inl{set([2, 3, 5, 7])} and stores in \inl{prs}.\\
+\code{ods = set([1, 3, 5, 9, 3, 7, 7, 9, 3])}\\
+\skipin creates the set \inl{set([1, 3, 5, 7, 9])} and stores in \inl{ods}.\\
+\code{prs $|$ ods} gives the union of the sets, \inl{set([1, 2, 3, 5, 7, 9])}\\
+\code{prs \& ods} gives the intersection of the sets, \inl{set([3, 5, 7])}\\
+\code{ods - prs} gives the difference of sets\\
+\skipin items in \inl{ods} that are not in \inl{prs}, which is 
+\inl{set([1, 9])}\\
+\code{ods \^{} prs} gives the symmetric difference\\
+\skipin items in \inl{ods} or in \inl{prs} but not in both, 
+\inl{set([1, 2, 9])}\\
+%*********************************************
+\sect{Reading from files}
+{\color{blue}\begin{lstlisting}
+fileLoc = ``/home/tsprint/primes.txt''
+for line in open(fileLoc):
+    prime = int(line)
+    print(prime * prime)
+\end{lstlisting}}
+\warn{Data in the file is read as a {\bf string} line by line.}\\
+%*********************************************
+\hr
+%\end{enumerate}
+\end{multicols*}
+
+\end{document}

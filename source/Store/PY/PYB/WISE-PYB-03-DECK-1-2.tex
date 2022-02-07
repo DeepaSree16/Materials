@@ -1,0 +1,165 @@
+\documentclass[14pt]{beamer}
+\title{Python 101 :: Week 2}
+\date{}
+\author[TS]{TalentSprint}
+\usefonttheme{serif}
+\usepackage{bookman}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usecolortheme{orchid}
+\beamertemplateballitem
+
+\usepackage{listings}
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth]{logo}}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\small,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  %escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+  showstringspaces=false,
+}
+   
+\begin{document}
+
+    \begin{frame}
+        \titlepage
+    \end{frame}
+    \begin{frame}
+	\frametitle{Topic for the Session}
+	\begin{itemize}
+		\item Dictionaries
+	\end{itemize}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Introduction}
+	\begin{itemize}
+	\item Capital
+		\begin{itemize}
+			\item State is associated with it is capital
+		\end{itemize}
+	\item Student
+		\begin{itemize}
+			\item Student is associated with an id
+			\item Student can take up number of courses
+		\end{itemize}
+	\pause
+	\item \alert{How to capture such relationships?}
+	\end{itemize}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+	\frametitle{What is a dictionary?}
+	\begin{itemize}
+		\item Connects pieces of related information
+		\item Related information is stored as a key-value pair
+	\end{itemize}
+	\begin{lstlisting}[language=python]
+	capitals = {"Bihar": "Patna", "Goa": "Panaji", "Haryana": "chandigarh"}
+	print(capitals)
+	\end{lstlisting}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+	\frametitle{Accessing values of a dictionary}
+	\begin{lstlisting}[language=python]
+	print(capitals["Goa"])
+	\end{lstlisting}
+	\begin{itemize} \item What gets printed? \end{itemize}
+     \end{frame}
+     \begin{frame}[containsverbatim]
+	\frametitle{Accessing values of a dictionary}
+	\begin{lstlisting}[language=python]
+	print(capitals.get("Goa"))
+	\end{lstlisting}
+	\begin{itemize} \item What gets printed? \end{itemize}
+    \end{frame} 
+    \begin{frame}[containsverbatim]
+	\frametitle{Modifying values in an dictionary}
+	\begin{lstlisting}[language=Python]
+	capitals["Assam"] = "Dispur"
+	print(capitals)
+	\end{lstlisting}
+	\begin{itemize}
+		\item What gets printed?
+		\item How many capitals are present in \emph{capitals} dictionary?
+	\end{itemize}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+	\frametitle{Modifying values in an dictionary}
+        \begin{lstlisting}[language=Python]
+	capitals["Haryana"] = "Chandigarh"
+	\end{lstlisting}
+	\begin{itemize}
+		\item  How many capitals are present in \emph{capitals} dictionary?
+	\end{itemize}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+	\frametitle{Dictionary Methods}
+	\begin{lstlisting}[language=python]
+	for key in capitals.keys():
+            print(key)
+	\end{lstlisting}
+	\begin{itemize}
+		\item What gets printed?
+		\item What gets printed if you use capitals.values () instead of capitals.keys()? 
+	\end{itemize}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+	\frametitle{Dictionary Methods}
+	\begin{lstlisting}[language=python]
+	for key, value in capitals.items():
+            f"{value} is capital of {key} "
+	\end{lstlisting}
+	\begin{itemize}
+		\item What gets printed?
+		\item What is difference between items(), values() and keys()?
+	\end{itemize}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+	\frametitle{Dictionary Methods}
+	\begin{lstlisting}[language=python]
+	capitals.popitem()
+	\end{lstlisting}
+	\begin{itemize}
+		\item What will be the output of above code snippet?
+		\item What happens if you use the \emph{pop()} instead of \emph{popitem()}?
+		\item What happens if you use the \emph{clear()} instead of \emph{popitem()}?
+
+	\end{itemize}
+    \end{frame}
+    \begin{frame}
+	\frametitle{Overview of Dictionary Methods}
+	\begin{itemize}
+	\item \textbf{Accessing key and values} - items(), keys(), values(), get(), fromkeys()
+	\item \textbf{Removing elements} - pop(), popitem(), clear()
+	\item \textbf{Updating values} - update()
+	\end{itemize}
+    \end{frame}
+    \begin{frame}
+	\frametitle{Interview Question}
+	\begin{itemize}
+		\item Can we use list as key in the dictionary?
+	\end{itemize}
+    \end{frame}
+    \begin{frame}
+	\frametitle{Let's Solve}
+	\begin{description}
+		\item [Problem Statement:] If the numbers 1 to 5 are written out in words: one, two, three, four, five, then there are 3 + 3 + 5 + 4 + 4 = 19 letters used in total.
+
+		If all the numbers from 1 to 1000 (one thousand) inclusive were written out in words, how many letters would be used?
+	\end{description}
+    \end{frame}
+    \begin{frame}
+	\frametitle{Let's Solve}
+	\begin{description}
+		\item {Note:} Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20 letters. The use of "and" when writing out numbers is in compliance with British usage.
+	\end{description}
+    \end{frame}
+\end{document}

@@ -1,0 +1,80 @@
+\documentclass[14pt]{beamer}
+\title{Python 102 :: Week 14}
+\date{Asokan - 10-04-2020}
+\author[TS]{TalentSprint}
+\usefonttheme{serif}
+\usepackage{bookman}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usecolortheme{orchid}
+\beamertemplateballitem
+
+\usepackage{listings}
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth]{logo}}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\small,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  %escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+  showstringspaces=false,
+}
+   
+\begin{document}
+ 
+    \begin{frame}
+        \titlepage
+    \end{frame}
+    \begin{frame}
+        \frametitle{Topics for the Session}
+        \begin{itemize}
+            \item Files
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{File Access Modes}
+        \begin{itemize}
+        	\item Text file or Binary File
+        	\item Modes such as r, w, a, r+, w+, a+
+        	\item rb, wb, ab, a+b, r+b, rb+, wb+, w+b, b+w, a+b, ab+
+        	\item rt, wt, at, a+t, r+t, rt+, wt+, w+t, t+w, a+t, at+
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{File Operations}
+        \begin{itemize}
+        	\item Open
+        	\item Read
+        	\item Write
+        	\item Close
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Code Snippets demonstrating}
+        \begin{itemize}
+        	\item Read Operations (read(), read(5))
+        	\item Write Operations (write(), writeline(), writelines()
+        	\item With block
+        	\item File traversal methods (tell(), seek())
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Assignment}
+        \begin{itemize}
+        	\item Using code snippets as base develop fibonacci series (using previous week module) with files
+        \end{itemize}
+    \end{frame}
+
+\end{document}  

@@ -1,0 +1,211 @@
+\documentclass[14pt]{beamer}
+\title{Python 102 :: Week 8}
+\date{}
+\author[TS]{TalentSprint}
+\usefonttheme{serif}
+\usepackage{bookman}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usecolortheme{orchid}
+\beamertemplateballitem
+
+\usepackage{listings}
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth]{logo}}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\small,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  %escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+  showstringspaces=false,
+}
+   
+\begin{document}
+    \begin{frame}
+        \titlepage
+    \end{frame}
+    \begin{frame}
+        \frametitle{Topics for the Session}
+        \begin{itemize}
+            \item Continuation of Object Orientation
+            \item More on Odometer problem
+            \item Fibonacci Series using Object Orientation
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{How to handle the allowed size of odometer?}
+        \begin{itemize}
+        \item Check the size of required odometer, supported 2 to 8 digits both inclusive
+        \item If required size is not in between 1 to 9 (exclusive of 1 and 9) raise ValueError
+        \end{itemize}
+        \begin{lstlisting}[language=Python]
+if not (1 < SIZE < 9):
+	raise ValueError
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Better way of coding}
+        \begin{itemize}
+        \item Every time you display only current reading instead of start, current and last readings
+        \item Define method, say DEBUG() to have all the required information
+        \item You can use this until required or tested fine and remove in production as in real projects
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Why are we not returning?}
+        \begin{itemize}
+        \item We are not returning like in functional way because specific object contains all the required information        
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Is there no need to return any thing from method?}
+        \begin{itemize}
+        \item There is no rule to return or not to return from objects method
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{When to return?}
+        \begin{itemize}
+        \item Return something a value or object
+        \item Should not return value that modifies state
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Any example to return from method?}
+        \begin{itemize}
+        \item Need to return in methods such as to calculate distance between 2 odometer readings
+        \item Ofcourse, one can restrict calculating distance between two same digit odometers or can implement distance between two different digits odometer readings
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Any example to return from method?}
+        \begin{itemize}
+        \item Methods like distance does not need to modify or update the current state then it is supposed to return required result        
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Any more example to return from method?}
+        \begin{itemize}
+        \item If implementing + or - (built-in \_\_add\_\_() or \_\_sub\_\_() methods) on objects like odometer, you can return object (self)
+        \item Not only applicable arithmetic but also other operators like relational operators or any other operators can return.
+        \item Relational operators would return boolean
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Any points to note?}
+        \begin{itemize}
+        \item Need to be cautious when processing object properties (instance variables)
+        \item If manipulating with properties the object would have what ever last manipulated values
+        \end{itemize}
+	\end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Any points to note?}
+        \begin{itemize}
+        \item In case of finding distance between two odometers, usually we check with current reading property
+        \item After processing now current reading of current object changes to that of other object
+
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{What to do then?}
+        \begin{itemize}
+        \item Nothing much, just to store the current state 
+        \item Process as required
+        \item Restore to previous state 
+        \item In case of our distance method, store current reading and restore it after processing
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Any other way to test our program?}
+        \begin{itemize}
+        \item We know usual way of testing program \$ python3 odo.py, any other way
+        \item Enter interpreter mode and perform required steps
+        \end{itemize}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Our odometer problem sample}
+        \begin{lstlisting}[language=Python]
+$ python3
+>>> import odo
+>>> o = odo.Odometer(3)
+>>> o.next_reading()
+>>> o
+124
+>>> o.next_reading(6)
+>>> o
+134
+>>> CTRL + D 
+$
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{How to design class?}
+        \begin{itemize}
+        \item How do you want to design say, fibonacci class?
+        \item Think about API's to your class
+        \item What are public methods people would use?
+        \item Say, need next\_fibo() or prev\_fibo() or
+        \item Need to generate given n fibo numbers
+        \item Method show allow to manipulate state
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Fibonacci Series - Case 1 - Example}
+        \begin{itemize}
+        \item Generate default series
+        \item If user asks more than default generate and provide as required 
+        \item Example, say we have 50 fibo numbers and user needs 100th number then generate remaining 50 and send the result to user 
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Fibonacci Series - Case 2 - Example}
+        \begin{itemize}
+        \item Generate default series with given limit or default limit (say 100)
+        \item If user asks more than default then throw exception indicating can't support more than our limit
+        \item Example, say we have fibo numbers upto 100, if users asks below 100 then support that and if user asks value more than 100 (index more than 11) throw exception indicating it can handle values until 100 (or LIMIT)        
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Fibonacci Series - Case 3 - Example}
+        \begin{itemize}
+        \item Generate default series
+        \item If user asks more than default then throw exception indicating can't support more than our limit
+        \item Example, say we have 50 fibo numbers, if users asks below 50 then support that and if user asks more than 50 throw exception indicating can't handle above 50        
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Assignment}
+        \begin{itemize}
+        \item Design a date class to supports as follows:
+        \item Date("12/2/2002")
+        \item Date(12, 2, 2002)
+        \item What are methods you can provide?
+        \end{itemize}
+    \end{frame}
+
+\end{document}  

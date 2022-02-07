@@ -1,0 +1,112 @@
+\documentclass[14pt]{beamer}
+\title{Python 102 :: Week 9}
+\date{23-03-2020}
+\author[TS]{TalentSprint}
+\usefonttheme{serif}
+\usepackage{bookman}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usecolortheme{orchid}
+\beamertemplateballitem
+
+\usepackage{listings}
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth]{logo}}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\small,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  %escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+  showstringspaces=false,
+}
+   
+\begin{document}
+    \begin{frame}
+        \titlepage
+    \end{frame}
+    \begin{frame}
+        \frametitle{Topics for the Session}
+        \begin{itemize}
+            \item Problem Statement - Date
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Date Input}
+        \begin{itemize}
+        \item String such as "21/03/2020"
+        \item Day, month and year as integers such as 21, 03, 2020 respectively
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Date Operations}
+        \begin{itemize}
+        \item Given a date, get next date
+        \item Given a date, get previous date
+        \item Given a date, print day of the year
+        \item Ex: If date given is 21-03-2020 it is 81st day of 366 days
+        \item Ex: If date given is 21-03-2019 it is 80th day of 365 days
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Date Validations}
+        \begin{itemize}
+        \item Check for valid month (to be between 1 to 12 both inclusive), otherwise raise exception (ValueError)
+        \item Check for valid day (to be between 1 and 31 both inclusive as per provided month and year), otherwise raise exception
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{How to know leap year or not?}
+        \begin{itemize}
+        \item If year is divisible by 4 (remainder 0) and not divisible by 100, it is leap year
+        \item If year is divisible by 4 and divisible by 100, it should be divisible by 400 to be leap year
+        \item Leap years ex: 2000, 2020, non-leap years 1800, 1900, 2019 etc
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Possible Methods for Date Class}
+        \begin{itemize}
+        \item Initialization (\_\_init\_\_())
+        \item is\_leap\_year()
+        \item tomorrow(), to update next day as per provided date
+        \item next\_day(), default step = 1 to provide next date or that many days as per provided step (say 5 means 5 days after provided date) by using tomorrow()
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Possible Methods for Date Class - Continued}
+        \begin{itemize}
+        \item yesterday(), to update previous day as per provided date
+        \item prev\_day(), default step = 1 to provide previous date or that many prior days as per provided step (say 5 means 5 days before provided date) by using yesterday()
+        \item Displaying date object (\_\_repr\_\_())
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Possible Methods for Date Class - Continued}
+        \begin{itemize}
+        \item day\_of\_year(), to display day of year
+        \item Any other methods to support above interfaces or methods
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Additional methods to work on}
+        \begin{itemize}
+        \item Finding days between two provided dates
+        \end{itemize}
+    \end{frame}
+
+\end{document}  

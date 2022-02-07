@@ -1,0 +1,178 @@
+\documentclass[14pt]{beamer}
+\title{Python 101 :: Unit 1}
+\subtitle{Session 3}
+\date{}
+\author[TS]{TalentSprint}
+\usefonttheme{serif}
+\usepackage{bookman}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usecolortheme{orchid}
+\beamertemplateballitem
+
+\usepackage{listings}
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth]{logo}}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\small,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  %escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+  showstringspaces=false,
+}
+   
+
+\begin{document}
+    \begin{frame}
+        \titlepage
+    \end{frame}
+    \begin{frame}
+        \frametitle{Topics for this Session}
+        \begin{itemize}
+            \item Datatypes
+            \item Building Blocks of Python
+        \end{itemize}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Datatypes}
+        \begin{itemize}
+            \item Classification:
+                \begin{itemize}
+                    \item Mutable
+                    \item Immutable
+                \end{itemize}
+            \item Numeric
+            \item Boolean
+            \item String
+        \end{itemize}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Mutable Verus Immutable}
+        \begin{itemize}
+            \item Everything in Python is a object
+            \item A mutable object can change its state or contents and immutable objects cannot.
+        \end{itemize}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Numeric Types}
+        Python supports four different numeric types:
+        \begin{itemize}
+            \item int (signed integers)
+                \begin{description}
+                    \item [Example:]  0, 3, 567, -666
+                \end{description}
+            \item long (can also be represented in octal and hexadecimal)
+                \begin{description}
+                    \item [Example:] 5555555555555555555555555555L
+                \end{description}
+            \item float (floating point real numbers)
+                \begin{description}
+                    \item [Example:] 1.0, 455.78, 888888.888
+                \end{description}
+            \item complex
+                \begin{description}
+                    \item [Example:] 3 + 4j, 5J
+                \end{description}
+        \end{itemize}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Boolean Types}
+        \begin{itemize}
+            \item Type of built-in values true, false
+            \item \textbf{Example: } $14 == 2$
+        \end{itemize}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Strings}
+        \begin{itemize}
+            \item Strings are enclosed in single or double quotation marks.
+            \item \textbf{Example:}  "apple", 'hello'
+        \end{itemize}
+    \end{frame}
+    \begin{frame}
+      \frametitle{Building Blocks of Python}
+      \begin{itemize}
+                    \item Variables and Naming convention rules
+                    \item Keywords
+                    \item Operators
+                    \item Statements
+                    \item Comments
+                \end{itemize}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Variables and Naming convention rules}
+        \begin{itemize}
+            \item Must start with a alphabet (a-z A-Z) or underscore (\_)
+            \item Other characters can be alphabets, digits or underscores
+            \item Very case sensitive
+            \item Meaningful and readable names for identifiers
+        \end{itemize}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Keywords}
+        \begin{itemize}
+            \item Reserved identifiers
+            \item Cannot be used as identifiers in program
+            \item Some of them are
+                \begin{itemize}
+                    \item and, as, assert, break, class, continue, def, del
+                    \item elif, else, except, finally, for, from, global
+                    \item if, import, in, is, lambda, not, or, pass, raise, return
+                    \item try, while, with, yeild, True, False, None
+                \end{itemize}
+        \end{itemize}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Operators}
+        \begin{itemize}
+            \item Arithmetic
+            \item Logical
+            \item Comparison
+        \end{itemize}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Operators}
+        \begin{itemize}
+            \item Chaining comparison - a$<$b$>$c
+            \item Membership
+                \begin{itemize}
+                    \item a is b / a is not b
+                    \item a in b / a not in b
+                \end{itemize}
+            \item Logical and membership
+                \begin{itemize}
+                    \item a and b
+                    \item a or b
+                    \item a not b
+                \end{itemize}
+        \end{itemize}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Statements}
+        \begin{itemize}
+            \item Assigning Values
+            \item Storing result of any operations
+            \item Conversions
+        \end{itemize}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Comments}
+        \begin{itemize}
+            \item \emph{\#} - for single line comments
+            \item \emph{```comment```} - for multi-line comments
+        \end{itemize}
+    \end{frame}
+    \begin{frame}
+        \begin{center}
+            \emph{Let's Practice!!!}
+        \end{center}
+    \end{frame}
+\end{document}

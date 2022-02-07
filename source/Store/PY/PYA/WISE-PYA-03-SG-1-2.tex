@@ -1,0 +1,223 @@
+\documentclass{book}
+\title{Strings}
+\date{}
+\author{TS}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{graphicx}
+
+\usepackage{fancyhdr}
+\addtolength{\headheight}{1.5cm} % make more space for the header
+\pagestyle{fancyplain} % use fancy for all pages except chapter start
+\rhead{\includegraphics[height=1.3cm]{TS.png}} % right logo
+\renewcommand{\headrulewidth}{0pt} % remove rule below header
+
+
+\begin{document}
+\section*{Strings}
+
+\hrulefill
+
+\paragraph{
+A string in Python is a sequence of characters. For Python to recognize a sequence of characters, like \textit{hello}, as a string, it must be enclosed in quotes. The string can be enclosed in single or double quotes. }
+
+\paragraph{Example: }
+
+\begin{verbatim}
+>>> ‘‘Hello World’’ 
+‘Hello World’ 
+>>> ‘Hello World’ 
+‘Hello World’ 
+\end{verbatim}
+
+\paragraph{Note: Python interpreter displays the string with single quotes.}
+
+\paragraph{Having two sorts of quotes can be useful in certain circumstances. If you want text itself to include quotes of one type you can define it surrounded by other type. }
+
+\paragraph{Example: }
+
+\begin{verbatim}
+>>> print(‘‘This is ‘Use of Single Quotes’.’’) 
+This is ‘Use of Sungle Quotes’. 
+>>> print(‘This is ‘‘Use of Double Quotes’’.’) 
+This is ‘‘Use of Double Quotes’’. 
+\end{verbatim}
+
+\subsection*{Triple Quoted String Literals}
+
+\paragraph{
+Strings delimited by single or double quote character are required to lie within a single line. It is sometimes convenient to have a multi-line string, which can be delimited with triple quotes}
+
+\paragraph{Example: }
+
+\begin{verbatim}
+>>> str1 = ’’’Hello
+... "Good Morning!!!"
+... Have a cup of coffee.’’’
+>>> print(str1)
+Hello
+"Good Morning!!!"
+Have a cup of coffee.
+\end{verbatim}
+
+\section-*{String Operations}
+
+\subsection*{Concatenation}
+
+\paragraph{The plus operation with strings means concatenate the strings. Python looks at the type of operands before deciding what operation is associated with the +.}
+
+\paragraph{ The plus ( + ) sign is the string concatenation operator which is used to combine number of
+strings and returns the new string.}
+
+\paragraph{Example:}
+
+\begin{verbatim}
+>>> str1 = "Hello World"
+>>> print(str1 + " ’Can Be Joined’") # Prints concatenated string
+Hello World ’Can Be Joined’
+\end{verbatim}
+
+\subsection*{Repetition Operator}
+
+\paragraph{The asterisk( * ) sign is the repetition operator which is use to repeat the string as many times as specified.}
+
+\paragraph{Example:}
+
+\begin{verbatim}
+>>> str1 = "Hello World"
+>>> print(str1 * 3)   # Prints string 3 times
+Hello WorldHello WorldHello World
+\end{verbatim}
+
+\subsection*{Accessing Characters In String}
+
+\paragraph{We can access a character from the string by specifying the index of the character. Index starts from
+’0’ indicates the beginning of the string and working their way from -1 at the end.}
+
+\paragraph{For Example:}
+
+\begin{verbatim}
+>>> str1 = "Strings In Python"
+>>> print(str1)     # Prints complete string
+Strings In Python
+>>> print(str1[0])  # Prints first character of the string
+S
+>>> print(str1[5])  # Prints sixth character of the string
+g
+>>> print(str1[-1]) # Prints the last character of the string
+n
+>>> print(str1[-3]) # Prints the third character from the last
+h
+>>> print(str1[-8]) # Prints the eigth character from the last
+n
+\end{verbatim}
+
+\subsection*{Slicing the String}
+
+\paragraph{We can access the subsets of a string using slice operator ([:]) with indexes starting at 0 in the
+beginning of the string and working their way from -1 at the end.}
+
+\paragraph{For Example:}
+
+\begin{verbatim}
+>>> str2 = "Slicing the String"
+>>> print(str2[4:])  # Prints string starting from the 5th character 
+ing the String
+>>> print(str2[:4])  # Prints the first four characters
+Slic
+>>> print(str2[2:8]) # Prints characters starting from 3rd to 7th
+icing
+>>> printt(str2[4:-3]) # Prints characters from 5th to 3rd character from last
+ing the Str
+\end{verbatim}
+
+\section*{String Methods}
+
+\paragraph{Strings have their own set of functions. In this section we will go through few of them:}
+
+\subsection*{len()}
+
+\paragraph{The \textit{len()} function returns the length of a string as an integer. \texttt{len("String")}}
+
+\paragraph{Example}
+
+\begin{verbatim}
+>>> len("Hello World") # This returns the value as 11.
+>>>
+>>> name = "TalentSprint"
+>>> len(name) # 12
+\end{verbatim}
+
+\subsection*{lower()}
+
+\paragraph{The \textit{lower()} function converts all uppercase letters in string to lowercase and return the new string.}
+
+\begin{verbatim}
+>>> s1 = "PYTHON"
+>>> s1.lower()
+’python’
+\end{verbatim}
+
+\subsection*{upper()}
+
+\paragraph{The \textit{upper()} function converts lowercase letters in string to uppercase and return the new string.}
+
+\begin{verbatim}
+>>> s2 = "python"
+>>> s2 = name.upper()
+>>> print(s2)
+’PYTHON’
+\end{verbatim}
+
+\subsection*{replace()}
+
+\paragraph{The function \textit{replace()} returns a copy of the string with all occurrences of substring old replaced by new.}
+
+\paragraph{Syntax:}
+
+\paragraph{
+str.replace(old, new)
+old - This is the old substring to be replaced
+new - This is new substring, which would replace old substring.}
+
+\paragraph{Example:}
+
+\begin{verbatim}
+>>> str = "This is example for replace function"
+>>> str.replace(’is’, ’was’)
+’Thwas was example for replace function’
+\end{verbatim}
+
+\subsection*{split()}
+
+\paragraph{The function \textit{split()} is used to split on the whitespaces (blanks, newline) and returns the list of sub strings as items.}
+
+\paragraph{Example:}
+
+\begin{verbatim}
+>>> str1 = "Engineering Student"
+>>> str1.split()
+[’Engineering’, ’Student’]
+>>> str1.split("i")
+[’Eng’, ’neer’, ’ng Student’]
+\end{verbatim}
+
+\subsection*{strip()}
+
+\paragraph{By using \textit{strip()} function, It returns a copy of the string with the leading and trailing characters removed.}
+
+\paragraph{Example:}
+
+\paragraph{As it treats the argument as a set of characters. In this example, we specify all digits, and some punctuation chars.}
+
+\begin{verbatim}
+>>> value = "543210=Data,123"
+# strip all digits
+# Also remove equals sign and comma.
+>>> result = value.strip("0123456789=,")
+>>> print(result)
+Data
+\end{verbatim}
+
+\end{document}
+

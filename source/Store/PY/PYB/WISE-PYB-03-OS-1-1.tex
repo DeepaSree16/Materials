@@ -1,0 +1,174 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\lstset{language=python,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+\usepackage{array}
+\usepackage{enumitem}
+
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+\usepackage{fancyhdr}
+ 
+\pagestyle{fancy}
+\renewcommand\headrule{}
+\rhead {\includegraphics[scale=.5]{../images/logo.png}}
+\begin{document}
+\section*{Dictionary}
+%\section*{WorkBook - 07}\
+\subsection*{Review Questions}
+\begin{enumerate}\itemsep10pt
+    \item Dictionary is a mapping between a \underline{\hspace{3cm}} and \underline{\hspace{3cm}}.
+    \item \underline{\hspace{3cm}} function is used to create a new dictionary with no items.     
+    \item Dictionaries define \underline{\hspace{3cm}} relationship between keys and values.
+    \item Dictionaries do not normally have any notion of order. (True or False)
+    \item Write a statement to create an empty dictionary \underline{\hspace{3cm}}. 
+    \item The symbol used to separate the \texttt{key} and \texttt{value} in a dictionary is \underline{\hspace{3cm}}.    
+    \item The \texttt{values} of a dictionary can be of any data type. (True / False)
+    \item \underline{\hspace{3cm}} are unique within a dictionary.
+    \item The function used to find the size of a dictionary is \underline{\hspace{3cm}}.
+    \item The function used to clear all the items in a dictionary is \underline{\hspace{3cm}}.
+    \item The items in a dictionary can be accessed with an index. State True / False.
+    \item The \underline{\hspace{3cm}} function returns a list of all the values available in a dictionary.
+    \item Write a statement to delete a dictionary \texttt{``d1''} \underline{\hspace{3cm}}.
+    \item The operator used to check whether a  particular \texttt{key} exist in a dictionary is \underline{\hspace{3cm}}.
+\end{enumerate}
+\subsection*{Code Reading Exercises}
+\begin{itemize}
+    \item Write the expected output, or errors if any, for each of the following programs in the box provided below each program.
+    \item Then execute the programs and check your answers.
+    \item Also answer the questions given below.
+\end{itemize}
+
+\begin{enumerate}[label=\bfseries Program \arabic*:]
+
+    \item ~
+    \begin{lstlisting}
+     def fun1():
+         d1 = {}
+         for i in range(1, n + 1):
+             d1[i] = i * i
+         return d1
+
+     print(fun1(5))
+    \end{lstlisting}
+    \AnswerBox
+    \begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+         \item What will be the output if line 4 is replaced with \texttt{d1[i] = i ** i}?
+    \end{enumerate}
+
+    \item ~
+    \begin{lstlisting}
+    d1 = {``1'': ``One'', ``2'': ``Two'', ``3'': ``Three'',
+          ``4'': ``Four'', ``5'': ``Five'', ``6'': ``Six'',
+          ``7'': ``Seven'', ``8'': ``Eight'',
+          ``9'': ``Nine'', ``0'': ``Zero''}
+    x = input(``Enter The Number'')# Let x be 2576 
+    for let in x:
+        print(d1[let], end = `');
+    \end{lstlisting}
+    \AnswerBox 
+    \begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+         \item What will be the output if the value of \texttt{x} is 23234?
+         \item What will be the output if the value of \texttt{x} is 304?
+    \end{enumerate}
+    \item ~
+    \begin{lstlisting}
+    def fun2(val):
+        d1 = {1: ``One'', 2: ``Two'', 3: ``Three'',
+              4: ``Four'', 5: ``Five'', 6: ``Six'', 
+              7: ``Seven'', 8: ``Eight'', 9: ``Nine''}
+        return d1[len(val)] + `` Digit Number''
+    
+    print(fun2(``45254'')) 
+    \end{lstlisting}
+    \AnswerBox
+    \begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+         \item What will be the output if argument value is 352?
+         \item What will be the output if argument value is 5427?
+         \item What will be the output if argument value is 5637835?   
+    \end{enumerate}
+    \item ~
+    \begin{lstlisting}
+    def XYZ(mon):
+        d1 = {``JAN'' : 31, ``FEB'' : 28, ``MAR'' : 31, 
+              ``APR'' : 30, ``MAY'' : 31, ``JUN'' : 30, 
+              ``JUL'' : 31, ``AUG'' : 31, ``SEP'' : 30, 
+              ``OCT'' : 31, ``NOV'' : 30, ``DEC'' : 31}
+        if mon in d1:
+            return d1[mon]
+        return -1
+
+    print(XYZ(``FEB''))
+    \end{lstlisting}
+    \AnswerBox
+
+    \begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+         \item What will be the output if the argument value is ``MAY''?
+         \item What will be the output if the argument value is ``APRIL''?
+         \item What will be the output if the argument value is ``January''?
+         \item What will be the output if the argument value is ``may''?
+    \end{enumerate}
+    \item ~
+    \begin{lstlisting}
+    def char_frequency(string):
+        dcount = {}
+        for ch in string:
+            if ch is not ` ':
+                if ch in dcount.keys():
+                    dcount[ch] += 1
+                else:
+                    dcount[ch] = 1 
+        return dcount
+
+    print(char_frequency(``TRY IT BY YOURSELF''))
+    \end{lstlisting}
+    \AnswerBox
+
+    \item ~
+    \begin{lstlisting}
+     def count(s):
+         dcount = {}
+         s = s.lower()
+         for ch in s:
+             if ch in 'aeiou':
+                 if ch in dcount.keys():
+                     dcount[ch] += 1
+                 else:
+                     dcount[ch] = 1
+         return len(dcount)
+
+    print(count(``EDUCATION''))    
+    \end{lstlisting}
+    \AnswerBox
+    \begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+         \item What will be the output if the argument value is ``REVOLUTIONARIES''?
+         \item What will be the output if the argument value is ``CRYPT''?
+    \end{enumerate}
+    \end{enumerate}
+    
+\subsection*{Coding Exercises}
+\begin{enumerate}
+    \item Write a program to display all anagram strings.
+
+    \emph{Note: An anagram of a word, is a new word got by rearranging the letters of a given word. SILENT and LISTEN are anagrams.}
+     \begin{description}
+     \item [Input :]  ``pest step ball palm heat listen post enlist silent stop lamp''
+     \item [Output :]\
+
+           pest step\\
+           listen enlist silent\\
+           post stop
+     \end{description} 
+     \item Write a program to implement Rock Paper Scissors game.
+      The winner of Rock Paper Scissors is determined as follows:
+
+       Rock defeats (breaks) Scissors.
+
+       Scissors defeats (cuts) Paper.
+
+       Paper defeats (covers) Rock.
+    
+       If both players choose the same item, the game is a tie and they play again.
+
+       \emph{Note: For further information please visit: http://en.wikipedia.org/wiki/Rock-paper-scissors}
+\end{enumerate}
+\end{document}

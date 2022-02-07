@@ -1,0 +1,75 @@
+\documentclass[]{book}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\includegraphics[width=2cm, height=1cm]{logo}}
+\lhead{Python Programming :: Unit 1}
+\lfoot{COPYRIGHT ©TALENTSPRINT, 2020. ALL RIGHTS RESERVED.}
+\rfoot{\thepage}
+\begin{document}
+    \section*{Datatypes}
+    The data type of a variable or object determines which operations can be applied to it. Once a variable is assigned a data type, it can be used for computations in the program.
+
+    The best thing about Python is that the data type doesn’t need to be defined when declaring a variable. Python sets the variable type based on the value that is assigned to it. Unlike other languages, Python will change the variable type if the variable value is set to another value. For example:
+    \begin{verbatim}
+        var = 56789 # This will create a integer type variable
+        var = 'hello world' # now the type of variable ``var" is string
+    \end{verbatim}
+
+    Python has several datatypes like Numeric, Boolean and String
+    \subsection*{Numeric Types}
+    Python supports four different numeric types
+    \begin{itemize}
+        \item int
+        \item float
+        \item complex
+        \item long (can be represented using octal or hexadecimal)
+    \end{itemize}
+    \subsection*{Boolean Types}
+    \begin{itemize}
+        \item The type of built-in values true, false
+        \item Useful in conditional expressions
+        \item Interchangeable with 1 and 0 respectively
+    \end{itemize}
+    \subsection*{Strings}
+    \begin{itemize}
+        \item Strings in Python are identified as a contiguous set of characters in between quotation marks.
+    \end{itemize}
+    \section*{Building Block of Python}
+    In order to understand the functioning of a program, we need to understand the role of the following elements. It should be noted that this perspective is in no way intended as describing the structure of a program.
+    \paragraph{Functions} Functions are the main building blocks of any programming language. Unlike C, python does not have a main() function to begin. We will discuss functions in detail later.
+    \paragraph {Variables} Variables are very flexible. You do not have to declare them first, like in other languages like C . You can assign any value to them, even if they already have a value of a different type.
+    \paragraph {Expressions} An expression is a combination of variables, operators and values which represents a single result value.
+    \paragraph {Statements} Statements can be expressions, assignments, function calls, or control flow statements which make up python program.
+    \paragraph [Block] A block is a lexical grouping of statements and can be thought of as one logical statement. A block in python is delimited by indentation.
+    \paragraph {Comments} Comments start with the hash character `\#', and extend to end of the line. A comment may appear at the start of the line or following white space or code, but not within a string literal. A hash character within a string literal is just a hash character. Since comments are to clarify code and are not interpreted by Python, they can be omitted.
+    \subsection*{Naming Convention Rules}
+    There are a few set of rules for choosing variable names:
+    \begin{itemize}
+        \item Must begin with a alphabet(a - z, A - Z) or underscore(\_).
+        \item Other characters can be alphabets, digits or underscore(\_ ).
+        \item Python is case sensitive; uppercase and lower case alphabets are treated as distinct
+    \end{itemize}
+    \emph{You should ensure that you use meaningful names for your identifiers. Please note meaningful does not necessarily mean long. The goal is to make the program easier to read and be self-documenting.}
+    \paragraph{Note} Though the logo is a stylized representation of the reptile, the language is NOT named after a snake, but a famous British comedian Monty Python – Guido is a great fan!
+ \section*{Keywords}
+    Keywords are reserved identifiers that have strict meaning which cannot be used as identifiers in the program. Note that some of the keywords are capitalized.
+
+    \begin{center}
+        \begin{tabular}{c c c c}
+            
+            and & elif & import & return\\ 
+            as & else & in & try \\
+            assert & except & is & while \\
+            break & finally & lambda & with \\
+            class & for & not & yield \\
+            continue & from & or & True\\
+            def & global & pass & False \\
+            del & if & raise & None
+            \end{tabular}
+        
+    \end{center}
+\end{document}

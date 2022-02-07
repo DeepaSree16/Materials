@@ -1,0 +1,299 @@
+\documentclass[14pt]{beamer}
+\title{Python 101 :: Unit 3}
+\subtitle{Session 1}
+\date{}
+\author[TS]{TalentSprint}
+\usefonttheme{serif}
+\usepackage{bookman}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usecolortheme{orchid}
+\beamertemplateballitem
+
+\usepackage{listings}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\small,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  %escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+  showstringspaces=false,
+}
+   
+\begin{document}
+    \begin{frame}
+        \titlepage
+    \end{frame}
+    \begin{frame}
+        \frametitle{Topics for the Session}
+        \begin{itemize}
+            \item While Loop
+            \item Strings
+            \item Code Reading
+        \end{itemize}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{While Loop}
+        \begin{itemize}
+            \item While loops are known as indefinite or conditional loops.
+            \item They will keep reiterating a block of code defined inside it until the desired condition is met.
+        \end{itemize}
+	\begin{block}{}
+        \begin{lstlisting}[language=Python]
+            while <Expression>:
+                statements
+        \end{lstlisting}
+	\end{block}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 1}
+        \begin{lstlisting}[language=Python]
+            i = 1
+            while i <= 10:
+                print(i)
+                i = i + 1
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Problem 1 :: Solution}
+        Prints first 10 natural numbers
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 2}
+        \begin{lstlisting}[language=Python]
+            a, b = 0, 1
+            print(a)
+            print(b)
+            while b < 10:
+                a, b = b, a + b
+                print(b)
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Problem 2 :: Solution}
+        Prints a fibonacci series
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 3}
+        \begin{lstlisting}[language=Python]
+            num = 10
+            count = 0
+            while num != 0:
+                count = count + 1
+                num = num // 10
+            print(count)
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Problem 3 :: Solution}
+        Program to count total digits in a given integer / number
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 4}
+        \begin{lstlisting}[language=Python]
+            number = 1
+            limit = 10
+            while number <= limit :
+                if number % 2 == 0:
+                    print (number)
+            number = number + 1
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Problem 4 :: Solution}
+        Program to print even numbers from 1 to the given limit
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 5}
+        \begin{lstlisting}[language=Python]
+            i = 1
+            while i <= 4:
+                print ("*" * i)
+                i = i + 1
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Problem 5 :: Solution}
+        Prints the following pattern
+
+        * 
+
+        **
+
+        ***
+
+        ****
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 6}
+        \begin{lstlisting}[language=Python]
+            i = 1
+            while i <= 10:
+                print (24 * i)
+                i = i + 1
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Problem 6 :: Solution}
+        Print multiplication table of 24
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{What is a String?}
+        \begin{itemize}
+            \item A sequence of characters represented in single or double quotes
+            \item Strings are Immutable
+            \item \alert{Example:}  
+        \end{itemize}
+	    \begin{lstlisting}[language=Python]
+            greet = "Hello, Everyone" 
+            greet = 'Hello, Everyone'
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Why strings are made immutable in Python?}
+        \begin{description}
+            \item [Performance] Takes less time to allocate the memory for Immutable objects, since their memory size is fixed
+            \item [Security] Any attempt to modify the string will lead to the creation of the new object in memory and hence ID changes will be tracked easily.
+        \end{description}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Length of a String}
+        \alert{Example:}  
+        \begin{lstlisting}[language=Python]
+            greet = 'Hello, Everyone'
+            print(len(greet))
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Triple quoted Strings}
+        \begin{itemize}
+            \item In somecases, when you need to include really long string using triple quoted string is useful.
+            \item \alert{Example:}
+        \end{itemize}
+        \begin{lstlisting}[language=Python]
+            message = ''' Example for triple quote '''
+        \end{lstlisting}
+        \textbf{Note:} Triple quoted strings are also used as Docstrings.
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Access a Character from a String}
+        \textbf{Approach 1} Using While Loop
+        
+        \alert{Example:} 
+        \begin{lstlisting}[language=Python]
+            greet = 'Hello, Everyone'
+            lengthofstring = len(greet)
+            i = 0
+            while i < lengthofstring:
+                print(greet[i], end=" ")
+                i = i + 1
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Access a Character from a String}
+        \textbf{Approach 2} Using Slicing
+        \begin{itemize}
+            \item Both positive and negative indexing is possible in Python
+            \item \alert{Example:}
+        \end{itemize}
+        \begin{lstlisting}[language=Python]
+            greet = 'Hello, Everyone'
+            # Prints first character from a string
+            print(greet[0]) 
+            # Prints last character from a string
+            print(greet[-1]) 
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Slicing the Strings}
+        \begin{lstlisting}[language=Python]
+            word = 'Python Course'
+            # Prints the word
+            word[: :]
+            # Access the string from 0th to 8th Element
+            word[0: :9 1]
+            # Access the entire string in the step size of 2
+            word[: : 2]
+            # Access the character from string -6 index to 
+            # the end of the string
+            word[-6: :]
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Concatenation of Strings}
+        \begin{itemize}
+            \item \emph{+} is used as a concatenation operator
+            \item \alert{Example:}
+                
+        \end{itemize}
+	    \begin{lstlisting}[language=Python]
+            course = 'Python'
+            print(course + 'Programming')
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Repeating the Strings}
+        \begin{itemize}
+            \item \emph{*} is used a repetition operater
+            \item \alert{Example:}
+               
+        \end{itemize}
+        \begin{lstlisting}[language=Python]
+            course = 'Python'
+            print(course * 2)
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Removing Spaces from a String}
+        \begin{lstlisting}[language=Python]
+            course = "   Python    "
+            # Removes spaces from the left side
+            print(course.lstrip())
+            # Removes spaces from the right side
+            print(course.rstrip())
+            # Removes spaces from both the sides
+            print(course.strip())
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 7}
+        \begin{lstlisting}[language=Python]
+            word = "Python is easy programming language"
+            middleIndex = len(word) // 2
+            middleThree = word[middleIndex-1:middleIndex+2]
+            print(middleThree)
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Problem 7 :: Solution}
+        Given a string of odd length greater 7, creates a new string made of the middle three chars of a given String
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 8}
+        \begin{lstlisting}[language=Python]
+            word = "Hello, welcome to Python 101!!!"
+            word = word.lower()
+            word = word.capitalize()
+            print(word.endswith('!'))
+            print(word.startswith('H'))
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Problem 8 :: Solution}
+        Problem checks whether given string is ending with  \emph{!} and starting with \emph{H}.
+    \end{frame}
+\end{document}

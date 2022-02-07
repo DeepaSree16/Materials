@@ -1,0 +1,68 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\lstset{language=python,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+\usepackage{array}
+\usepackage{enumitem}
+
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+\usepackage{fancyhdr}
+ 
+\pagestyle{fancy}
+\renewcommand\headrule{}
+\rhead {\includegraphics[scale=.5]{../images/logo.png}}
+\begin{document}
+\section*{Higher Order Functions}
+
+\subsection*{Code Reading}
+\begin{itemize}
+    \item Write the expected output, or errors if any, for each of the following programs in the box provided below each program.
+    \item Then execute the programs and check your answers.
+    \item Also answer the questions given below.
+\end{itemize}
+
+\begin{enumerate}[label=\bfseries Program \arabic*:]
+    \item ~
+    \begin{lstlisting}
+        elements = [0, 1, 2]
+        def decr(x):
+            return x - 1
+        print(list(map(elements, decr)))
+    \end{lstlisting}
+    \AnswerBox
+    \item ~
+    \begin{lstlisting}
+        elements = [0, 1, 2]
+        def decr(x):
+            return x - 1
+        print(list(map(decr,elements)))
+    \end{lstlisting}
+    \AnswerBox
+    \item ~
+    \begin{lstlisting}
+        x = [96, 22, 11]
+        print(len(''.join(list(map(str, x)))))
+    \end{lstlisting}
+    \AnswerBox
+    \item ~
+    \begin{lstlisting}
+        def change(i = 1, j = 2):
+            i = i * j
+            j = j - 1
+            print(i, j)
+        change(j = 1, i = 2)
+    \end{lstlisting}
+    \AnswerBox
+    \item ~
+    \begin{lstlisting}
+    x = abcd
+    print(list(map(list, x)))
+    \end{lstlisting}
+    \AnswerBox
+\end{enumerate}
+\subsection*{Additional Exercises}
+\begin{itemize}
+    \item Project Euler Problem 6
+    \item Project Euler Problem 22
+\end{itemize}
+\end{document}

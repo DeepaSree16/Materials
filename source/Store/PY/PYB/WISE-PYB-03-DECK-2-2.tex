@@ -1,0 +1,146 @@
+\documentclass[14pt]{beamer}
+\title{Python 101 :: Week 3}
+\date{}
+\author[TS]{TalentSprint}
+\usefonttheme{serif}
+\usepackage{bookman}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usecolortheme{orchid}
+\beamertemplateballitem
+
+\usepackage{listings}
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth]{logo}}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\small,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  %escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+  showstringspaces=false,
+}
+   
+\begin{document}
+    \begin{frame}
+        \titlepage
+    \end{frame}
+    \begin{frame}
+	\frametitle{Topics for the Session}
+	\begin{itemize}
+	    \item Sets
+	\end{itemize}
+    \end{frame}
+    \begin{frame}
+	\frametitle{Introduction}
+	\begin{itemize}
+	    \item \alert{How do you remove duplicates from a list? }
+	    \pause
+	    \item Solution : One way is to use Sets
+	\end{itemize}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+	\frametitle{What is a Set?}
+	\begin{itemize}
+	    \item Set is a unordered collection of elements
+            \item Set can't have duplicate elements 
+	    \item Set is Immutable
+	    \item \alert{Example:}
+	\end{itemize}
+	\begin{lstlisting}[language=python]
+	    primes = {2, 3, 5, 7, 11, 13}
+            print(type(primes))
+	\end{lstlisting}
+	\textbf{Note:} Set is represented using \{ \}	
+    \end{frame}
+    \begin{frame}[containsverbatim]
+	\frametitle{Accessing elements from a Set}
+	\begin{lstlisting}[language=python]
+	    print(primes[0])
+	\end{lstlisting}
+	\begin{itemize}
+	    \item What gets printed?
+	    \item Can we perform slicing on the sets?
+	\end{itemize}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+	\frametitle{Accessing elements from a Set}
+	\begin{lstlisting}[language=python]
+	    for prime in primes:
+	        print(prime)
+	\end{lstlisting}
+	\begin{itemize}
+	    \item What gets printed?
+	\end{itemize}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+	\frametitle{Set Methods}
+	\begin{lstlisting}[language=python]
+	    primes.add(17)
+	    print(primes)
+	\end{lstlisting}
+	\begin{itemize}
+	   \item What gets printed?
+	   \item How many elements are present in \emph{primes} set?
+	\end{itemize}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Set Methods}
+	\begin{lstlisting}[language=python]
+	    primes.update(17)
+ 	    print(primes)
+	\end{lstlisting}
+	\begin{itemize}
+	   \item What gets printed?
+	   \item How many elements are present in \emph{primes} set?
+	\end{itemize}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+	\frametitle{Set Methods}
+	\begin{lstlisting}[language=python]
+	    primes.pop()
+	    print(primes)
+	\end{lstlisting}
+	\begin{itemize}
+	   \item What gets printed?
+	   \item What gets printed if you use remove() instead of pop()?
+	   \item What gets printed if you use discard() instead of pop()?
+	   \item What gets printed if you use clear() instead of pop()?
+	\end{itemize}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+	\frametitle{Set Methods}
+	\begin{lstlisting}[language=python]
+	    A = {2, 4, 6}
+            B = {6, 8, 10, 12, 2}
+            print(A.union(B))
+	\end{lstlisting}
+	\begin{itemize}
+	    \item What gets printed?
+	    \item What gets printed if you use intersection() instead of union()?
+	    \item What gets printed if you use difference() instead of union()?
+	    \item What gets printed if you use symmetric\_difference() instead of union()?
+	\end{itemize}
+    \end{frame}
+    \begin{frame}
+	\frametitle{Set Methods}
+	\begin{itemize}
+	    \item What gets printed if you use issubset() instead of union()?
+	    \item What gets printed if you use issuperset() instead of union()?
+	    \item What gets printed if you use isdisjoint() instead of union()?
+	\end{itemize}
+    \end{frame}
+    \begin{frame}
+	\frametitle{Let's Solve}
+	\begin{description}
+	    If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23. Find the sum of all the multiples of 3 or 5 below 1000.
+	\end{description}
+    \end{frame}
+\end{document}

@@ -1,0 +1,183 @@
+\documentclass{book}
+\title{Strings: Workbook}
+\date{}
+\author{TS}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage[table,dvipsnames]{xcolor}
+\definecolor{orangets}{rgb}{0.998, 0.188, 0.018}
+\usepackage[utf8]{inputenc}
+\usepackage[left=2.2cm,right=1.7cm, top=3cm, bottom=6cm]{geometry}
+%\setlength{\textwidth}{450pt}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0.51pt}
+\renewcommand{\footrulewidth}{0.51pt}
+\headsep = 0.45 in
+\headheight = 0.95 in
+\voffset = -0.5 in
+\fancyhead[LE,RO]{\includegraphics[width=5cm, height=1.7cm]{TSlogo.png}}
+\fancyhead[LO,LE]{\textcolor{orangets}{\bfseries{\textbf{\LARGE{\sffamily\bfseries{Strings: Workbook}}}}}}
+\fancyfoot[LE,LO]{COPYRIGHT ©TALENTSPRINT,2020. ALL RIGHTS RESERVED.}
+\fancyfoot[RE,RO]{Page \thepage}
+\usepackage{amsmath}
+\date{}
+\usepackage{tabularx}
+\newcounter{example}[section]
+\newenvironment{example}[1][]{\refstepcounter{example}\par\medskip
+  \noindent \textbf{Example~\theexample. #1} \rmfamily}{\medskip}
+\sffamily{
+
+\begin{document}
+\chapter{Strings: Workbook}
+
+\section{Review Questions}
+
+\begin{enumerate}
+\item{The string value can be enclosed in \rule{1cm}{0.15mm} and \rule{1cm}{0.15mm} quotes.}
+
+\item{Write a statement to store \textit{I don’t understand!} in a variable \texttt{message}. \\ 
+\rule{4cm}{0.15mm}.}
+
+\item{Multi line string has to be enclosed in \rule{1cm}{0.15mm} quotes.}
+
+\item{str1 = "Good" str2 = "Morning"\\
+Write the statement to concatenate \textit{str1} and \textit{str2}. \\
+\rule{4cm}{0.15mm}.}
+
+\item{a = 101 and b = 102 \\
+Write a statement which prints ‘101102’ as output\\ \rule{4cm}{0.15mm}.}
+
+\item{The return type of the \textit{split()} function is \rule{2cm}{0.15mm}.}
+
+\item{The function used to convert number to string is
+\rule{2cm}{0.15mm}.}
+
+\item{Write a statement to check whether string \textit{s1} contains \textit{s2} \rule{2cm}{0.15mm}.}
+\end{enumerate}
+
+\section{Exercises}
+\begin{itemize}
+\item{Write the expected output, or errors if any, for each of the following programs in the box provided below each program.}
+\item{Then execute the programs and check your answers.}
+\item{Also answer the questions given below.}
+\end{itemize}
+
+\subsection{Program}
+\begin{verbatim}
+1  str1 = "Hello World!"
+2  print(len(str1))
+\end{verbatim}
+
+\framebox(400,50){}
+
+\subsection{Program}
+\begin{verbatim}
+1 a = 10
+2 b = 20
+3 c = str(a) + str(b)
+4 print(c)
+\end{verbatim}
+\framebox(400,50){}
+
+\subsection{Program}
+\begin{verbatim}
+1 Name1 = "Vinod"
+2 Name2 = "Kumar"
+3 fullname = Name1 + ‘ ’ + Name2
+4 print ( fullname )
+\end{verbatim}
+\framebox(400,50){}
+
+\begin{enumerate}
+\item{Q: What will be the output if line 4 is replaced with print(len(fullname))?}
+\end{enumerate}
+
+\subsection{Program}
+\begin{verbatim}
+1 wish = "WELCOME"
+2 print (wish[ ::-1 ])
+\end{verbatim}
+\framebox(400,50){}
+
+\subsection{Program}
+\begin{verbatim}
+1 s = "TalentSprint"
+2 print(s[:6])
+\end{verbatim}
+\framebox(400,50){}
+
+\begin{enumerate}
+\item{Q: What will be the output, if line 2 is replaced by print(s[6]) ?}
+\item{Q: What will be the output, if line 2 is replaced by print(s[6:]) ?}
+\end{enumerate}
+
+\subsection{Program}
+\begin{verbatim}
+1 str1 = "madam"
+2 print(str1 == str1[::-1])
+\end{verbatim}
+\framebox(400,50){}
+
+\begin{enumerate}
+\item{Q: Explain your understanding on the above code.}
+\item{Q: What will be the output if line 1 is replaced with str1 = ‘‘Madam’’?}
+\end{enumerate}
+
+\subsection{Program}
+\begin{verbatim}
+1 str1 = "hello"
+2 new_str = str1.replace("l", "e")
+3 print(new_str)
+\end{verbatim}
+\framebox(400,50){}
+
+\begin{enumerate}
+\item{Q: What will be the output if line 1 is replaced with str1 = ‘‘HELLO’’?}
+\end{enumerate}
+
+\subsection{Program}
+\begin{verbatim}
+1 colors = "red, blue , green , white , yellow, purple"
+2 list_colors = colors.split(",")
+3 print(list_colors[1]))
+\end{verbatim}
+\framebox(400,50){}
+
+\begin{enumerate}
+\item{Q: What will be the output if line 4 is replaced by print(len(list{\_}colors))?}
+\item{Q: What will be the output if line 4 is replaced by print(list{\_}colors[-1])?}
+\item{Q: What will be the output if line 4 is replaced by print(list{\_}colors)?}
+\end{enumerate}
+
+\subsection{Program}
+\begin{verbatim}
+1 str1 = " Hello Good Morning "
+2 print(len(str1))
+\end{verbatim}
+\framebox(400,50){}
+\begin{enumerate}
+\item{Q: What will be the output if line 2 is replaced with print(len(str1.strip()))?}
+\end{enumerate}
+
+\section{Additional Exercises}
+
+\begin{enumerate}
+\item{Write a program that accepts the month in the form of string and display the number of days in that month.}
+\item{Write a program to print the character frequency of the given string.}
+\item{Write a program to calculate the score for a given string.}
+\par{\hspace*{15pt}\textit{Score: The sum of alphabetical value of each character in the given string.}}
+\par{\hspace*{15pt}\textit{Alphabetical Value: The position of the alphabet in an alphabetical order. Eg: A - 1, B - 2, .. Z - 26}}\\
+\par{\texttt{Input: TEST}}
+\par{\texttt{Output: 20 + 5 + 19 + 20 = 64}}
+\item{Given the date in the form of DD-MM-YYYY, write a program to find the day of the year.}
+\par{\texttt{Input: 21-02-2013}}
+\par{\texttt{Output: 52}}
+\end{enumerate}
+
+\end{document}
+

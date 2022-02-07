@@ -1,0 +1,125 @@
+\documentclass{exam}
+\usepackage[utf8]{inputenc}
+\begin{document}
+\begin{questions}
+    \question Python is named after \_\_\_\_\_
+
+    \begin{oneparchoices}
+        \choice I know! A famous fish!
+        \choice I think it is named after a type of snake that ate the inventor.
+        \choice I think it is something to do with a British comedy group in the 80s...
+    \end{oneparchoices}
+    \question What is the output of the following code?
+
+    \begin{verbatim}
+        print("Hello", "World!!")
+    \end{verbatim}
+    \begin{oneparchoices}
+        \choice HelloWorld!!
+        \choice Hello world!!
+        \chocie Hello World!!
+    \end{oneparchoices}
+
+    \question What is the output of the following code?
+
+    \begin{verbatim}
+        word = "Notebook"
+        print(word[4])
+    \end{verbatim}
+    \begin{oneparchoices}
+        \choice b
+        \choice e
+        \choice o
+        \choice N
+    \end{oneparchoices}
+
+    \question stores a piece of data, and gives it a specific name
+
+    \begin{oneparchoices}
+        \choice variable
+        \choice whitespace
+        \choice interpreter
+        \choice modulo
+    \end{oneparchoices}
+   \question What is the output of the following code?
+
+    \begin{verbatim}
+        fruits = ['apple', 'mango', 'grapes']
+        atribs = ['big', 'tasty', 'red']
+        for fruit in fruits[::-1]:
+            for atri in atribs:
+                print(atri, fruit)
+    \end{verbatim}
+    \begin{oneparchoices}
+        \choice error
+        \choice atri, fruit
+        \choice big grapes \\
+           tasty grapes \\
+           red grapes \\
+           big mango \\
+           tasty mango \\
+           red mango \\
+           big apple\\ 
+           tasty apple \\
+           red apple
+    \end{oneparchoices}
+
+   \question What is the output of the following code?
+
+    \begin{verbatim}
+        def select(x):
+            return x % 3 == 0 or x % 5 == 0
+        LIMIT = 10
+        total = 0
+        for n in range(LIMIT):
+            if select(n):
+                total = total + n
+                print(total)
+    \end{verbatim}
+    \begin{oneparchoices}
+        \choice 23
+        \choice 2323
+        \chocie 44
+        \choice error
+    \end{oneparchoices}
+
+   \question What is the output of the following code?
+
+    \begin{verbatim}
+        word = "Python Programming"
+        print(list(word))
+    \end{verbatim}
+    \begin{oneparchoices}
+        \choice Error
+        \choice Python Programming
+        \choice ['P', 'y', 't', 'h', 'o', 'n', ' ', 'P', 'r', 'o', 'g', 'r', 'a', 'm', 'm', 'i', 'n', 'g']
+    \end{oneparchoices}
+
+   \question What is the output of the following code?
+
+    \begin{verbatim}
+        fruits = ['apple', 'orange', 'grapes']
+        print(fruits[-1][-1])
+    \end{verbatim}
+    \begin{oneparchoices}
+        \choice grapes
+        \choice s
+        \choice Error
+    \end{oneparchoices}
+
+   \question What is the output of the following code?
+
+    \begin{verbatim}
+        veggies = ['carrot', 'broccoli', 'potato', 'asparagus']
+        print(sorted(veggies))
+
+    \end{verbatim}
+    \begin{oneparchoices}
+        \choice ['carrot', 'broccoli', 'potato', 'asparagus']
+        \choice ['asparagus']
+        \choice Error
+        \choice ['asparagus', 'broccoli', 'carrot', 'potato']
+    \end{oneparchoices}
+
+\end{questions}
+\end{document}

@@ -1,0 +1,253 @@
+\documentclass{book}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\includegraphics[width=2cm, height=1cm]{logo}}
+\lhead{Python Programming :: Unit 2}
+\lfoot{COPYRIGHT ©TALENTSPRINT, 2020. ALL RIGHTS RESERVED.}
+\rfoot{\thepage}
+
+\begin{document}
+
+\section*{Conditional Statements}
+
+\hrule
+
+\paragraph{We need to execute different sections of code under different circumstanes. For example, in a
+billing situation a credit card may attract additional charges or a bill amount higher than a fixed
+amount may get discount. In order to check different conditions and execute different code we need
+conditional execution. This is almost always achieved using \texttt{if} in all programming languages. Python
+is no different.}
+\subsection*{Booleans: Overview}
+\paragraph{A boolean expression is an expression that is either true or false. One way to write the boolean
+expression is to use the operator ==, which compares two values and produces a boolean value:}
+\begin{verbatim}
+>>> 6 == 6
+True
+>>> 5 == 6
+False
+\end{verbatim}
+
+\paragraph{In the first statement,the two operands are equal, so the value of the expression is \texttt{True}, in the second statement, 5 is not equal to 6, so we get \texttt{False}. \texttt{True} and \texttt{False} are special values that are built into Python.}
+
+\paragraph{The == operator is one of the comparision operators; the others are:}
+
+\begin{table}[h!]
+  \begin{center}
+    \label{tab:table1}
+    \begin{tabular}{|c|c|} 
+      \toprule
+      \textbf{Expression} & \textbf{Description}\\
+      \hline
+      x != y & x is not equal to y \\
+      x \textgreater  y  & x is greater than y \\
+      x \textless	y  & x is less than y \\
+      x \textgreater = y & x is greater than or equal to y \\
+      x \textless = y & x is less than or equal to y \\
+       \bottomrule
+    \end{tabular}
+  \end{center}
+  \caption{Boolean Operators.}
+\end{table}
+
+\paragraph{Although these operations are probably familiar to you, the Python symbols are different from the
+mathematical symbols. A common error is to use a single equal sign(=) instead of a double equal sign(==). Remember that = is an assignment operator and == is a comparision operator.}
+
+\subsection *{Simple if statement}
+\paragraph{The simplest form of if statement is one where a piece of code is executed if a condition exists
+otherwise nothing is done. For example:}
+
+\begin{verbatim}
+if x > 0:
+    print("x is positive")
+\end{verbatim}
+
+\paragraph{The boolean expression after the if statement is called the condition. If it is true, then the indented
+statement gets executed, If not, nothing happens.}
+\paragraph{\textbf{Example:} Program to check whether the number is even or odd.}
+
+\begin{verbatim}
+n = 10
+if n % 2 == 0:
+    print(n, ”is Even”)
+if n % 2 != 0:
+    print(n,” is Odd”)
+\end{verbatim}
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{if_example.png}
+  \caption{if program output}
+  \label{fig:if output}
+\end{figure}
+
+Figure \ref{fig:if program output} shows an if program output.
+
+
+\subsection *{Blocks in Python}
+\paragraph{Like other compound statements, the \texttt{if} statement is made up of a header and a block of statements:}
+
+\begin{verbatim}
+HEADER:
+    FIRST STATEMENT
+    ...........
+    ...........
+    LAST STATEMENT
+\end{verbatim}
+
+\paragraph{The header begins on a new line and ends with a colon(:). The indented statements that follow are called block. The first unindented statement marks the end of the block. A statement block inside a compound statement is called the body of the statement.}
+
+\subsection *{if ... else}
+\paragraph{This is another form of if statement, in which there are two possibilities and the condition determines
+which one gets executed. Compare this to the simple \texttt{if}, where if the condition is not true nothing is
+done. We look at the program to understand how \texttt{if ... else} works:}
+\begin{verbatim}
+if x % 2 == 0:
+    print(x, "is Even")
+else:
+    print(x, "is Odd")
+\end{verbatim}
+
+\paragraph{If the remainder of the condition is “Zero”, then we know that x is Even, and the program displays
+a message. If the condition is false, the second set of statements is executed. Since the condition must be true or false, exactly one of the alternative will be executed. The alternatives are called branches, because they are branches in the flow of execution.}
+
+\paragraph{\textbf{Example} Given marks of a student, check if the student passed or failed in a test.}
+
+\begin{verbatim}
+marks = 76
+if marks >= 4 5 :
+    print(” Passed ”)
+    print(”Congratulations!!”)
+else :
+    print(”Failed”)
+    print(”Good luck in the retest”)
+\end{verbatim}
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{ifelse_example.png}
+  \caption{if ... else program output}
+  \label{fig:if ... else program output}
+\end{figure}
+
+Figure \ref{fig:if else program output} shows an if else program output.
+
+
+\subsection*{Nested if}
+
+\paragraph{One \texttt{if} statement within an another \texttt{if}, such a conditional statement inside a branch of another conditional statement is termed as nested if. Let us look at the program to understand how nested if
+works:}
+\paragraph{Example: Check whether the number is even or odd, if it is positive.}
+
+\begin{verbatim}
+x = 56
+if x >= 0:   # Outer if
+    if x % 2 == 0:    # Inner if
+         print(x, " is Even Number")
+    else:
+         print(x, " is Odd Number")
+else:
+    print(x, " is Negative")
+\end{verbatim}
+
+\paragraph{The outer condition \texttt{x >= 0} is evaluated first. Since, the condition is true, it gets into the block and evaluates an inner condition \texttt{x \% 2 == 0}. Since, this condition also evaluates to true, it executes \texttt{print(x, " is Even Number”}.}
+\paragraph{If the condition \texttt{x \% 2 == 0} fails, else block \texttt{print(x, " is an Odd Number”)} gets executed. If the outer condition \texttt{x >= 0} itself evaluates to false, it executes \texttt{print (x, "The Number is Negative”).}}
+
+\subsection*{Compound Conditions}
+\paragraph{Compound conditions are formed by combining multiple conditions in a statement. We use logical
+operators to form compound conditions.}
+
+\paragraph{Example 01: Given three sides of a triangle, find out, if it is equilateral.}
+
+\begin{verbatim}
+if a == b and b == c:
+    print("Equilateral triangle")
+else:
+    print("Not an equilateral triangle")
+\end{verbatim}
+
+\paragraph{We used logical operator \texttt{and} in the above example to combine two conditions. If the value of three variables a, b and c are equal then the condition evaluates to true and prints “Equilateral Triangle”.}
+
+\paragraph{Example 02: Given three angles of a triangle,  check whether it is right-angled triangle.}
+
+\begin{verbatim}
+if x == 90 or y == 90 or z == 90:
+    print("Right Angled Triangle")
+else:
+    print("Not a Right Angled Triangle")
+\end{verbatim}
+
+\paragraph{We use logical operator \texttt{or} in the above example to combine multiple conditions. If any of the value is equal to 90 then the condition evaluates to true and prints “Right Angled Triangle”.}
+
+\paragraph{Logical operators often provide a way to simplify nested conditional statements.}
+\paragraph{For example, we can rewrite the following code using a single condition:}
+
+\begin{verbatim}
+if 0 < x:
+    if x < 10:
+        print(x, "is a positive single digit.”)
+\end{verbatim}
+
+\paragraph{The print() statement is executed only if we make it past both the conditionals, so we can use the
+and operator \texttt{and} to combine both conditions:}
+
+\begin{verbatim}
+if 0 < x and x < 10:
+    print(x, " is a positive single digit.”)
+\end{verbatim}
+
+\paragraph{These type of conditions are commonly used, so Python provides an alternative syntax that is similar
+to mathematical notation:}
+
+\begin{verbatim}
+if 0 < x < 10:
+    print(x, " is a positive single digit.”)
+\end{verbatim}
+
+\paragraph{This condition is semantically the same as the compound condition and the nested condition.}
+
+\subsection*{if ... elif ... else}
+\paragraph{Sometimes there are more than two possibilities and we need more than two branches. One way to express a computation like that is a series of conditions. In such cases we use \texttt{if ...elif ...else}.}
+
+\paragraph{\texttt{elif} is an abbreviation of “else if”. The conditions are checked one after another. The state-
+ment associated with the first true condition is executed. There is no limit of the number of \texttt{elif}
+statements, but the last branch has to be an else statement:}
+
+\begin{verbatim}
+if x < y:   # Condition 1
+    print(x, "is less than", y)
+elif x > y:  # Condition 2
+    print(x, "is greater than", y)
+else:
+    print(x, " and ", y, " are equal")
+\end{verbatim}
+
+\paragraph{In the above example, Condition 1 is evaluated first, if it is true it executes the associated block of
+statements. If it fails, Condition 2 is evaluated and if it is true it executes the associated block of
+statements otherwise it executes the else block of statements.}
+
+\paragraph{\textbf{Example} Find the grade of a student based on the marks given.}
+
+\begin{verbatim}
+marks = 75
+if marks >= 80 :
+    print(”Grade A”)
+elif marks >= 60:
+    print(”Grade B”)
+elif marks >= 40:
+    print(”Grade C”)
+else :
+    print(”Failed ”)
+\end{verbatim}
+
+\begin{figure}[h!]
+  \includegraphics[width=\linewidth]{ifelif_example.png}
+  \caption{if ... elif program output}
+  \label{fig:if ... elif program output}
+\end{figure}
+
+
+\end{document}

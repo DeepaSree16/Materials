@@ -1,0 +1,74 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\lstset{language=python,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+\usepackage{array}
+\usepackage{enumitem}
+
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+\usepackage{fancyhdr}
+ 
+\pagestyle{fancy}
+\renewcommand\headrule{}
+\rhead {\includegraphics[scale=.5]{../images/logo.png}}
+\begin{document}
+\section*{Strings}
+
+\subsection*{Code Reading}
+\begin{itemize}
+    \item Write the expected output, or errors if any, for each of the following programs in the box provided below each program.
+    \item Then execute the programs and check your answers.
+    \item Also answer the questions given below.
+\end{itemize}
+\begin{enumerate}[label=\bfseries Program \arabic*:]
+    \item ~
+    \begin{lstlisting}
+    def overlapping(list1,list2):
+        for i in list1:
+            for j in list2:
+                if i == j:
+                    return True
+        return False
+    \end{lstlisting}
+    \AnswerBox
+    \item  ~
+    \begin{lstlisting}
+        def is_member(item,list_var):
+            length = len(list_var)
+            i = 0
+            while i < length:
+                if item == list_var[i-1]:
+                    return True
+                i += 1
+            return False
+    \end{lstlisting}
+    \AnswerBox
+    \item ~
+    \begin{lstlisting}
+    def generate_n_chars(n,c):
+        s = ''
+        for i in range(n):
+            s += c
+        return s
+    \end{lstlisting}
+    \AnswerBox
+\end{enumerate}
+\subsection*{Additional Exercies}
+\begin{itemize}
+    \item Write a function that counts how many concentric layers a rug.
+    \begin{lstlisting}
+        count_layers([
+          "AAAA",
+          "ABBA",
+          "AAAA"
+        ]) -> 2
+    \end{lstlisting}
+    \item Write a function that returns True if you can partition a list into one element and the rest, such that this element is equal to the product of all other elements excluding itself.
+    \item A number can eat the number to the right of it if it's smaller than itself. After eating that number, it becomes the sum of itself and that number. Your job is to create a function that returns the final list after the leftmost element has finished "eating".
+    \begin{lstlisting}
+        [5, 3, 7] -> [15]
+        # 5 eats 3 to become 8
+        # 8 eats 7 to become 15
+    \end{lstlisting}
+\end{itemize}
+\end{document}

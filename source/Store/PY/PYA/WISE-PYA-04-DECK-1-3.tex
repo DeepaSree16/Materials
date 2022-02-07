@@ -1,0 +1,129 @@
+\documentclass[14pt]{beamer}
+\title{Python 101 :: Unit 4}
+\subtitle{Session 1}
+\date{}
+\author[TS]{TalentSprint}
+\usefonttheme{serif}
+\usepackage{bookman}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usecolortheme{orchid}
+\beamertemplateballitem
+
+\usepackage{listings}
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth]{logo}}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\small,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  %escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+  showstringspaces=false,
+}
+   
+\begin{document}
+    \begin{frame}
+        \titlepage
+    \end{frame}
+    \begin{frame}
+        \frametitle{Topics for the session}
+        \begin{itemize}
+            \item Code Writing
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Problem 1}
+        \alert{Write a function that converts hours into seconds.}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 1 ::  Solution}
+        \begin{lstlisting}[language=Python]
+            def how_many_seconds(hours):
+                return hours * 3600
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Problem 2}
+        In this challenge, a farmer is asking you to tell him how many legs can be counted among all his animals. The farmer breeds three species:
+        \begin{itemize}
+            \item \textbf{chickens} = 2 legs
+            \item \textbf{cows} = 4 legs
+            \item \textbf{pigs} = 4 legs
+        \end{itemize}
+        The farmer has counted his animals and he gives you a subtotal for each species. \alert{You have to implement a function that returns the total number of legs of all the animals.}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 2 :: Solution}
+        \begin{lstlisting}[language=Python]
+            def animals(chicken,cow,pig):
+                return chicken * 2 + (cow + pig) * 4
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Problem 3}
+        \alert{Create a function that takes two strings as arguments and return either True or False depending on whether the total number of characters in the first string is equal to the total number of characters in the second string.}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 3 :: Solution}
+        \begin{lstlisting}[language=Python]
+            def comp(txt1, txt2):
+                return len(txt1) == len(txt2)
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Problem 4}
+        A pair of strings form a strange pair if both of the following are true:
+        \begin{itemize}
+            \item The 1st string's first letter = 2nd string's last letter.
+            \item The 1st string's last letter = 2nd string's first letter.
+        \end{itemize}
+        \alert{Create a function that returns True if a pair of strings constitutes a strange pair, and False otherwise.}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 4 :: Solution 1}
+        \begin{lstlisting}[language=Python]
+            def is_strange_pair(txt1, txt2):
+                if (txt1 == "") or (txt2 == ""):
+                    return (txt1 == "") and (txt2 == ""):
+                return (txt1[0] == txt2[-1]) & (txt1[-1] == txt2[0])
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 4 :: Solution 2}
+        \begin{lstlisting}[language=Python]
+            def is_strange_pair(txt1, txt2):
+                return txt1[0:1] == txt2[-1:] and txt1[-1:] == txt2[0:1]
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Problem 5}
+        \alert{Given two strings s1 and s2, write a function which checks if both the strings are anagrams of each other.}
+
+        Anagrams are words or phrases you spell by rearranging the letters of another word or phrase.
+    \end{frame}
+
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 5 :: Solution}
+        \begin{lstlisting}[language=Python]
+            def isAnagram(word1, word2):
+                return sorted(word1) == sorted(word2)
+        \end{lstlisting}
+    \end{frame}
+\end{document}

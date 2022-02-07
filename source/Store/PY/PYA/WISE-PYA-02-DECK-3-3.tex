@@ -1,0 +1,144 @@
+\documentclass[14pt]{beamer}
+\title{Python 101 :: Unit 2}
+\subtitle{Session 3}
+\date{}
+\author[TS]{TalentSprint}
+\usefonttheme{serif}
+\usepackage{bookman}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usecolortheme{orchid}
+\beamertemplateballitem
+
+\usepackage{listings}
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth]{logo}}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\small,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  %escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve}, % string literal style
+  showstringspaces=false,
+}
+   
+   
+\begin{document}
+    \begin{frame}
+        \titlepage
+    \end{frame}
+    \begin{frame}
+        \frametitle{Topics for the Session}
+        \begin{itemize}
+            \item Code Reading and Writing
+        \end{itemize}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 1}
+        \begin{lstlisting}[language=Python]
+            miles = float(input())
+            kilometers = miles * 1.609344
+            print(kilometers)
+        \end{lstlisting} 
+    \end{frame}
+    \begin{frame}
+        \frametitle{Problem 1 :: Solution}
+        \small Convert miles to kilometers
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 2}
+        \begin{lstlisting}[language=Python]
+            mass1 = float(input())
+            mass2 = float(input())
+            r = float(input())
+            G = 6.673 * (10 ** -11)
+            force =(G * mass1 * mass2) / (r ** 2)
+            print(round(force, 5),"N")
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Problem 2 :: Solution}
+        \small Compute gravitational force between two objects
+        \begin{center}
+        $F = G\; \frac{Mm}{r^{2}}$, Where G is $6.674 \; 10^{-11} N(m/kg)^{2}$
+        \end{center}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 3}
+        \begin{lstlisting}[language=Python]
+            num = 1122
+            if 9 < num < 99:
+                print("Two digit number")
+            elif 99 < num < 999:
+                print("Three digit number")
+            elif 999 < num < 9999:
+                print("Four digit number")
+            else:
+                print("number is <= 9 or >= 9999")
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Problem 3 :: Solution}
+        The program checks whether given number is two or three or four digit number.
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 4}
+        \begin{lstlisting}[language=Python]
+            year = int(input())
+            if year % 4 == 0 and year % 100 != 0:
+                print("Hurray")
+            elif year % 100 == 0:
+                print("Oops")
+            elif year % 400 ==0:
+                print("Hurray")
+            else:
+                print("Oops")
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Problem 4 :: Solution}
+        The program prints "Hurray" if the given year is leap year otherwise prints "Oops"
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 5}
+        \begin{lstlisting}[language=Python]
+        cp = int(input())
+        sp = int(input())
+        if sp > cp:
+            print(sp - cp)
+        elif cp > sp:
+            print(cp - sp)
+        else:
+            print(0)
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Problem 5 :: Solution}
+        Calculate profit or loss
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 6}
+        \begin{lstlisting}[language=Python]
+            side1 = int(input())
+            side2 = int(input())
+            side3 = int(input())
+            if (side1 == side2) & (side2 == side3):
+                print("Equal")
+            elif (side1 == side2) | (side1 == side3) | (side2 == side3):
+                print("Isosceles")
+            else:
+                print("Scalene")
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Problem 6 :: Solution}
+        The program to checks whether a triangle is Equilateral, Isosceles or Scalene
+    \end{frame}
+\end{document}

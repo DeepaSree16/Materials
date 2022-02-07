@@ -1,0 +1,110 @@
+\documentclass[14pt]{beamer}
+\title{Python 101 :: Unit 3}
+\subtitle{Session 1}
+\date{}
+\author[TS]{TalentSprint}
+\usefonttheme{serif}
+\usepackage{bookman}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usecolortheme{orchid}
+\beamertemplateballitem
+
+\usepackage{listings}
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth]{logo}}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\small,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  %escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+  showstringspaces=false,
+}
+   
+\begin{document}
+    \begin{frame}
+        \titlepage
+    \end{frame}
+    \begin{frame}
+        \frametitle{Topics for the session}
+        \begin{itemize}
+            \item Code Reading and Writing
+        \end{itemize}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Problem 1}
+            Create a function that removes the first and last characters from a string.
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 1 :: Solution}
+        \begin{lstlisting}[language=Python]
+            def remove_first_last(string):
+                return string if len(string) < 3 else string[1:-1]
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Problem 2}
+        Create a function that takes the height and radius of a cone as arguments and returns the volume of the cone.
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 2 :: Solution}
+        \begin{lstlisting}[language=Python]
+            import math
+            def cone_volume(h, r):
+                return round(math.pi * (r ** 2) * (h / 3),2)
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Problem 3}
+        Zip codes consist of 5 consecutive digits. Given a string, write a function to determine whether the input is a valid zip code. A valid zip code is as follows:
+        \begin{itemize}
+            \item Must only contain numbers (no non-digits allowed).
+            \item Must not contain any spaces.
+            \item Must not be greater than 5 digits in length.
+        \end{itemize}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 3 :: Solution}
+        \begin{lstlisting}[language=Python]
+            def is_valid(zip_code):
+                return zip_code.isnumeric() and len(zip_code) == 5
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Problem 4}
+        Write a function that takes a credit card number and only displays the last four characters. The rest of the card number must be replaced by $************$
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 4 :: Solution}
+        \begin{lstlisting}[language=Python]
+            def card_hide(card):
+                return "*" * (len(card) - 4) + card[-4:]
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Problem 5}
+        A number n is automorphic if {n ** 2} ends in n. Write a function which checks whether given number is automorphic or not
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 5 :: Solution 1}
+        \begin{lstlisting}[language=Python]
+            def is_automorphic(n):
+                return str(n ** 2)[-len(str(n)):] == str(n)
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 5 :: Solution 2}
+        \begin{lstlisting}[language=Python]
+            def is_automorphic(n):
+                return str(n ** 2).endswith(str(n))
+        \end{lstlisting}
+    \end{frame}
+\end{document}

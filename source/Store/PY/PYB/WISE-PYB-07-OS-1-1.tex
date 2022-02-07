@@ -1,0 +1,145 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\lstset{language=python,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+\usepackage{array}
+\usepackage{enumitem}
+
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+\usepackage{fancyhdr}
+ 
+\pagestyle{fancy}
+\renewcommand\headrule{}
+\rhead {\includegraphics[scale=.5]{../images/logo}}
+\begin{document}
+\section*{Workbook 5 - Files}
+%\section*{Workbook - 08}\
+\subsection*{Review Questions}
+
+\begin{enumerate}\itemsep10pt
+    \item The \underline{\hspace{3cm}} function is used to open the text file. 
+    \item Write a statement to open \texttt{data.txt} file in read mode \underline{\hspace{3cm}}.      
+    \item The function used to read data from a file line by line is \underline{\hspace{4cm}}.
+    \item The function used to write data into the file is \underline{\hspace{3cm}}.
+    \item The \underline{\hspace{3cm}} mode opens the file for both reading and writing.  
+\end{enumerate}
+
+\subsection*{Code Reading Exercises}
+\begin{itemize}
+    \item Write the expected output, or errors if any, for each of the following programs in the box provided below each program.
+    \item Then execute the programs and check your answers.
+    \item Also answer the questions given below.
+\end{itemize}
+
+\begin{enumerate}[label=\bfseries Program \arabic*:]
+
+    \item ~
+    \begin{lstlisting}
+    def isPrime(num):
+        limit = num // 2;
+        for i in range(2, limit + 1):
+            if num % i == 0:
+                return False
+        return True
+
+    def getPrimes(n1, n2):
+        fp = open(``primes.txt'', ``w'')
+        for i in range(n1, n2 + 1):
+            if isPrime(i):
+                fp.writelines(str(i) + ``\n'' )
+
+    getPrimes(10, 50)
+
+    \end{lstlisting}
+    \AnswerBox
+    \begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+         \item Write your understanding.\vspace{1cm}
+    \end{enumerate}
+
+    \item ~
+    \begin{lstlisting}
+    def Count():
+        clines = 0
+        for x in open(``primes.txt''):
+            clines += 1
+        return clines
+
+    print(Count())
+    \end{lstlisting}
+    \AnswerBox 
+    \begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+         \item Write your understanding.\vspace{1cm}
+    \end{enumerate}
+    \item ~
+    \begin{lstlisting}
+    def fun2():
+        l_count = 0
+        w_count = 0 
+        for line in open(``Data.txt''):
+            l_count += 1
+            l_words = line.split()
+            w_count += len(l_words)
+        return l_count, w_count
+
+    print(fun2())
+    \end{lstlisting}
+    \AnswerBox
+    \begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+         \item Write your understanding.\vspace{2cm}
+    \end{enumerate} 
+
+
+   \item ~
+    \begin{lstlisting}
+    str1 = ``1, 34, 2, 23, 8, 74, 34, 45, 23, 2, 74, 8, 9''
+    str1 = str1.replace(`,',` ')
+    lst1 = str1.split()
+    print(set(lst1))
+    \end{lstlisting}
+    \AnswerBox
+
+    \item ~
+    \begin{lstlisting}
+     def XYZ(string):
+         return `'.join(c for c in sorted(set(string)))
+
+     def ABC1():
+         str1 = ``Integer,Header,Delete,Camera,
+                  Boolean,Namespace,Online,Partition''
+         f = open(``File1.txt'',``w'')
+         for word in str1.split(``,''):
+             f.writelines(word + `` --> '' + XYZ(word) + ``\n'')
+    
+     ABC1()
+    \end{lstlisting}
+    \AnswerBox
+    \item ~
+    \begin{lstlisting}
+     def cv(word):
+         vowels = ``aeiou''
+         word = word.lower()
+         count = 0
+         for ch in vowels:
+             count += word.count(ch)
+         return count
+
+     str1 = ``education,grandchildren,regulation,rhythm,
+              strength,government,authorize,instruction''
+     f = open(``vowels.txt``, ``w'')
+     for word in str1.split(``,''):
+         f.writelines(word + `` : '' + str(cv(word)) + ``\n'');  
+
+    \end{lstlisting}
+    \AnswerBox
+\end{enumerate}
+\subsection*{Coding Exercises}
+\begin{enumerate}
+    \item Write a program to store all three digit amicable pair numbers  in to a file \texttt{A\_pairs.txt}.
+    \item Write a program to store armstrong numbers with in the given range in to a file \texttt{A\_nums.txt}.
+    \item Write a program which reads the words from a file \texttt{names.txt} and prints all anagrams.
+    \begin{enumerate}
+     \item Change the program such that it prints all anagrams which have more than 5 occurrences.
+    \end{enumerate}
+    \emph{Note: Copy words into the file ``names.txt'', from\\ https://code.google.com/p/wfuzz/source/browse/trunk/wordlist/others/names.txt?r=2}
+\end{enumerate}
+\end{document}

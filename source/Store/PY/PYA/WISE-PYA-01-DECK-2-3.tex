@@ -1,0 +1,69 @@
+\documentclass[14pt]{beamer}
+\title{Python 101 :: Unit 1}
+\subtitle{Session 2}
+\date{}
+\author[TS]{TalentSprint}
+\usefonttheme{serif}
+\usepackage{bookman}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usecolortheme{orchid}
+\beamertemplateballitem
+
+\usepackage{listings}
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth]{logo}}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\small,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  %escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+  showstringspaces=false,
+}
+   
+
+\begin{document}
+    \begin{frame}
+        \titlepage
+    \end{frame}
+    \begin{frame}
+        \frametitle{Topics for this Session}
+        \begin{itemize}
+            \item Tool Chain
+            \item Hello World Program
+        \end{itemize}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Tool Chain}
+        \begin{itemize}
+            \item Interactive Interpreter
+                \begin{itemize}
+                    \item You can start the interpreter just by giving the name python3
+                    \item Once Python has started, you will see the interpreter startup message indicating version and platform and be given the interpreter prompt \emph{$>>>$} to enter commands.
+                \end{itemize}
+        \end{itemize}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Hello World Program}
+        \begin{itemize}
+            \item Launch Interpreter
+            \item Understand the tool and help provided
+            \item At the \emph{$>>>$} prompt type the line (and hit ENTER).
+		    \begin{lstlisting}[language=Python]
+                print("Welcome to the World Of Python")
+		    \end{lstlisting}
+            \item It produces the following result:
+
+                \emph{Welcome to the World of Python}
+
+        \end{itemize}
+    \end{frame}
+\end{document}

@@ -1,0 +1,114 @@
+\documentclass{article}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\includegraphics[width=2cm, height=1cm]{logo}}
+\lhead{Python Programming :: Unit 2}
+\lfoot{COPYRIGHT ©TALENTSPRINT, 2020. ALL RIGHTS RESERVED.}
+\rfoot{\thepage}
+\begin{document}
+
+\section{ifElse: Workbook}
+
+\subsection{Exercises}
+\paragraph{• Write the expected output, or errors if any, for each of the following programs in the box provided below each program.}
+\paragraph{• Then execute the programs and check your answers.}
+\paragraph{• Also answer the questions given below.}
+
+\subsubsection{Program 1}
+\begin{verbatim}
+1  num = int(input(‘‘Enter The Number:’’))
+2  if num % 2 == 0 :
+3      print(‘‘Even Number’’)
+4  else:
+5      print(‘ ‘Odd Number’’)
+\end{verbatim}
+
+\framebox(400,50){}
+
+\paragraph{Q1: What will be the output for a value 33?}
+\paragraph{Q2: What will be the output for a value 56?}
+
+\subsubsection{Program 2}
+\begin{verbatim}
+1  a = int (input(‘ ‘ Enter the First Number: ’ ’))
+2  b = int (input(‘ ‘ Enter the Second Nummber: ’ ’ ))
+3  c = int (input(‘ ‘ Enter the Third Number: ’ ’ ))
+4  if a > b and a > c :
+5      print ( ‘ ‘A is Greater’’)
+6  elif b > c:
+7      print (‘ ‘B is Greater’’)
+8  else:
+9      print ( ‘‘C is Greater’‘)
+\end{verbatim}
+\framebox(400,50){}
+
+\paragraph{Q1: What will be the output if the value of a, b and c are 10, 20 and 30?}
+\paragraph{Q2: What will be the output if the value of a, b and c are equal to 55?}
+\paragraph{Q3: Modify the if statement without using the and operator.}
+
+\subsubsection{Program 3}
+\begin{verbatim}
+1  num = 1
+2  limit = 20
+3  sum_num = 0
+4  while num <= limit:
+5      if num % 3 == 0:
+6          sum_num += num
+7      num += 1
+8  print(sum_num)
+\end{verbatim}
+
+\framebox(400,50){}
+
+\subsubsection{Program 4}
+\begin{verbatim}
+1  num = 0
+2  limit = 20
+3  sum_d = 0
+4  while num <= limit:
+5      num += 1
+6      if num % 2 == 0:
+7          continue
+8      sum_d += num
+9  print(sum_d)
+\end{verbatim}
+
+\framebox(400,50){}
+
+\subsubsection{Program 5}
+\begin{verbatim}
+1 nums = [22, 33, 44, 55, 66, 77, 88, 99]
+2 n = int(input(‘‘Enter The Number:’’))
+3 if n in nums:
+4     print(‘‘Element Exists’’)
+5 else:
+6     print(‘‘Element Does Not Exist’’)
+\end{verbatim}
+
+\framebox(400,50){}
+
+\paragraph{Q1: What will be the output if the input value is 33?}
+\paragraph{Q2: What will be the output if the input value is 100?}
+
+\subsubsection{Additional Exercises}
+\paragraph{1. Given a year, write a program to check if the year is a leap year or not.}
+\paragraph{2. Given a month, write a program to find number of days in that month.}
+\paragraph{3. Write a program to print the greatest value amoung three values.}
+\paragraph{4. Write a program to check if a given number is a palidrome number.}
+\paragraph{5. Write a program to print the collatz sequence for a given number.\\
+\textit{Note: To get a Collatz sequence from a number, if it’s even, divide
+it by two, and if it’s odd, multiply it by three and add one. Continue
+the operation on the result of the previous operation until the number
+becomes 1.}}
+\paragraph{6. Write a program to find the product of two given numbers using Russian multiplication.}
+\paragraph{7. Write a program to check if the given number is perfect number or not.}
+\paragraph{8. Write a program to check if the given number is an prime number or not.}
+\paragraph{9. Write a program to print the sum of all even digits in a given number.}
+
+\end{document}

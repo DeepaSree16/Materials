@@ -1,0 +1,157 @@
+\documentclass[14pt]{beamer}
+\title{Python 101 :: Unit 3}
+\subtitle{Session 2}
+\date{}
+\author[TS]{TalentSprint}
+\usefonttheme{serif}
+\usepackage{bookman}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usecolortheme{orchid}
+\beamertemplateballitem
+
+\usepackage{listings}
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth]{logo}}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\small,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  %escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+  showstringspaces=false,
+}
+   
+\begin{document}
+    \begin{frame}
+        \titlepage
+    \end{frame}
+    \begin{frame}
+        \frametitle{Topics for the Session}
+        \begin{itemize}
+            \item Functions
+            \item Code Reading
+        \end{itemize}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Functions}
+        \begin{itemize}
+            \item A function is a group of statements that exist within a
+program for the purpose of performing a specific task.
+            \item \alert{Syntax}
+        \end{itemize}
+        \begin{lstlisting}[language=Python]
+            def functionname (arguments):
+                body
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Functions \& Arguments}
+        \begin{itemize}
+            \item Defined using \alert{def} keyword
+            \item Function naming
+            \item Input parameters
+            \item Function body - as block of statements
+            \item Docstring - First line of the block
+            \item Return statement
+            \begin{itemize}
+                \item May return value
+                \item Python None value is returned by default
+                \item May return multiple values
+            \end{itemize}    
+    \end{itemize}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Example}
+        \begin{lstlisting}[language=Python]
+            def greet(name):
+                """This function greets to
+                the person passed in as
+                parameter"""
+                return "Hello, " + name + ". Good morning!"
+            # Function Call
+            print(greet("World"))
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 1}
+        \begin{lstlisting}[language=Python]
+            def k_to_k(n, k):
+                return n == k ** k
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Problem 1 :: Solution}
+        Program returns \emph{True} if k ** k == n for input (n, k).
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 2}
+        \begin{lstlisting}[language=Python]
+            def is_plural(word):
+                word = word.lower()
+                return word.endswith('s')
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Problem 2 :: Solution}
+        Program check whether given word is plural or not. A plural word is one that ends in "s".
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 3}
+        \begin{lstlisting}[language=Python]
+            def digitLetterCount (word):
+                lettercount = 0
+                digitcount = 0
+                i = 0
+                while i < len(word):
+                    if word[i].isdigit():
+                        digitcount = digitcount + 1
+                    else:
+                        lettercount = lettercount + 1
+                    i = i + 1
+                return lettercount, digitcount
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Problem 3 :: Solution}
+        Program calculates the number of letters and digits
+    \end{frame}
+    \begin{frame}
+        \frametitle{Problem 4}
+        Create a function that takes in three arguments (prob, prize, pay) and returns true if $prob * prize > pay$; otherwise return false.
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 4 :: Solution}
+        \begin{lstlisting}[language=Python]
+            def profitable_gamble(prob, prize, pay):
+                return prob * prize > pay
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Problem 5}
+        Tom is a very methodic guy that loves geometry and pizza: he loves them so much that, before eating a pizza, he calculates its radius and its height. Now, he wants to know from you the total volume of pizza that he swallowed!
+
+        You are given the two parameters that Tom measured: Radius and Height.
+    \end{frame}
+    \begin{frame}
+        \frametitle{Problem 5}
+        He tells you that if you multiply the height for the square of the radius and multiply the result for the mathematical constant $\pi$ (Pi), you will obtain the total volume of the pizza. 
+        
+        \emph{Implement a function that returns the volume of the pizza as a whole number, rounding it to the nearest integer.}
+    \end{frame}
+    \begin{frame}[containsverbatim]
+        \frametitle{Problem 5 :: Solution}
+        \begin{lstlisting}[language=Python]
+            import math
+            def vol_pizza(radius, height):
+                return round(radius ** 2 * height * math.pi)
+        \end{lstlisting}
+    \end{frame}
+\end{document}

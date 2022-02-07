@@ -1,0 +1,100 @@
+\documentclass{book}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\includegraphics[width=2cm, height=0.5cm]{../images/logo}}
+\lhead{Python Programming}
+\lfoot{COPYRIGHT ©TALENTSPRINT, 2020. ALL RIGHTS RESERVED.}
+\rfoot{\thepage}
+
+\begin{document}
+\section*{File I/O}
+Using Python we can read data from a text file or write data into text file.
+It is very easy to do with Python.
+
+\section*{Create or open the file}
+A text file can be opened in Python by using the built-in function \emph{open()} function. To read a data from the file first we need to open the file.
+\texttt{open()} returns a file object, and is most commonly used with two arguments:
+\begin{verbatim}
+file_obj = open(filename, mode)
+\end{verbatim}
+The first argument is a string containing the filename. The second argument is another string containing a few characters describing the way in which the file will be used.
+
+\begin{description}
+\item [`r'] Opens the file in read mode, to read the data from a specified file.
+\item [`w'] Opens the file in write mode, to wirte the data into the file if the file exists with the same name will be erased.
+\item [`a'] Opens the file for appending, any data written to the file is automatically added to the end of the existing file if it exist else creates the new file.
+\item [`r+'] Opens the file for both reading and writing.
+\end{description}
+
+\section*{Methods of File Objects}
+Once the file is created or opened we can use the below listed methods to write or to read data from the file. All these methods need to be accessed with the file object refering to the file.
+\begin{description}
+\item [read(size)] reads some quantity of data and returns it as a string. size is an optional numeric argument. When size is omitted the entire contents of the file will be read and returned. If the end of the file has been reached, \texttt{read()} will return an empty string. 
+\item [readline()] The method \texttt{readline()} reads one entire line from the file. A trailing newline character is kept in the string.
+\item [readlines()] The method \texttt{readlines()} reads all the lines of a file ane returns the list.
+\item [write(string)] writes the given string into the file.
+\item [close()] The method \texttt{close()} will close the file and free up any system resources taken up by the open file.
+\end{description}
+
+we can use \texttt{for} loop over the file object to read the text from a file line by line. This is memory efficient, fast, and leads to simple code. 
+
+\emph{Note: In this chapter we will use for loop to read the data from the file.}
+
+\section*{Reading Data from a file}
+
+\begin{description}
+\item[Example-01 ]\ Reading Data from the text\_file.txt
+
+First create a text file with \texttt{text\_file.txt} and write the data as follows:
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.5]{../images/Reading_Data.png}
+\caption{Input Text File}
+\label{Input Text File}
+\end{center}
+\end{figure}
+
+\lstinputlisting{../Code/Program-12-2.py}
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.5]{../images/Output-12-2.png}
+\caption{Reading data}
+\label{Reading data}
+\end{center}
+\end{figure}
+
+\item [Example-02 ] Write a program to count the number of line and number of word exist in the file.
+
+\lstinputlisting{../Code/Program-12-3.py}
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.5]{../images/Output-12-3.png}
+\caption{Reading data}
+\label{Reading data}
+\end{center}
+\end{figure}
+\end{description}
+
+\section{Writing to File}
+We can write data into the file as follows:
+\begin{description}
+\item[Example ]\ Writing data into the textfile \texttt{Write\_text.txt}
+
+\lstinputlisting{../Code/Program-12-1.py}
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.5]{../images/Output-12-1.png}
+\caption{Writing data}
+\label{Writing data}
+\end{center}
+\end{figure}
+\end{description}
+

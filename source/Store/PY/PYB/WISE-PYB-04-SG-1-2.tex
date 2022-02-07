@@ -1,0 +1,56 @@
+\documentclass{book}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\includegraphics[width=2cm, height=0.5cm]{../images/logo}}
+\lhead{Python Programming}
+\lfoot{COPYRIGHT ©TALENTSPRINT, 2020. ALL RIGHTS RESERVED.}
+\rfoot{\thepage}
+
+\begin{document}
+    \section*{Higher Order Functions}
+    According to Wikipedia, a higher-order function is a function that does at least one of the following:
+    \begin{itemize}
+        \item takes one or more functions as arguments
+        \item returns a function as its result.
+    \end{itemize}
+
+    \subsection*{Map}
+    Map applies a function over an iterable to produce a new iterable.
+    \paragraph{Example:} ~
+    \begin{verbatim}
+        def square (number):
+            return number ** 2
+        numbers = [1, 2, 3, 4]
+        print(list(map(square, numbers)))
+    \end{verbatim}
+
+    \subsection*{Reduce}
+    Reduce applies a function of two arguments cumulatively to the elements of an iterable, optionally starting with an initial argument.
+    \paragraph{Example:} ~
+
+    \begin{verbatim}
+        from functools import reduce
+        import operator
+        numbers = [4, 77, 888, 9]
+        reduce(operator.add, numbers)
+    \end{verbatim}
+
+    \subsection*{Filter}
+    Filter is a higher-order function that processes a data structure (usually a list) in some order to produce a new data structure containing exactly those elements of the original data structure for which a given predicate returns the boolean value true.
+    
+    \paragraph{Example:} ~
+
+    \begin{verbatim}
+        def is_odd (number):
+            return number % 2 != 0
+        numbers = [1, 44, 2, 77, 3, 55, 8, 20]
+        print(list(filter(is_odd, numbers)))
+    \end{verbatim}
+
+\end{document}
