@@ -7,7 +7,7 @@ Central Repo Updates
 
    * AIML preview videos added (Amulya)
 
-   * WISE Python module contents added (262 files) (Chandra)
+   * WISE Python module contents added (Chandra)
 
 2. PDF, PPT File conversions to LaTeX:
 
