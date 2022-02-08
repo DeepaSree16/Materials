@@ -8,9 +8,9 @@
 + 3      + 5 Jan 2022  + Designate Content Administrative Head, Repository       +   Surobhi,                +
 +        +             + managers                                                +   All Program leads       +        
 +--------+-------------+---------------------------------------------------------+---------------------------+
-+ 4      + 16 Jan 2022 + Set up sub-directories within Repo (Program wise, eg.   +   Store - content topic   +
-+        +             + AIML, CDS, DLFA) and Store (Broad content topic wise,   +   based folders placed.   +
-+        +             + eg. MATH, PYTH, CDSP)                                   +   Store Metadata added.   +
++ 4      + 16 Jan 2022 + Set up sub-directories within Repo (Program wise, eg.   +   Done                    +
++        +             + AIML, CDS, DLFA) and Store (Broad content topic wise,   +                           +
++        +             + eg. MATH, PYTH, CDSP)                                   +                           +
 +--------+-------------+---------------------------------------------------------+---------------------------+
 + 5      + 20 Jan 2022 + Add LMS links of latest cohorts (current cohort and most+   Done                    +
 +        +             + recent previous cohort) into respective Program folders +                           +
