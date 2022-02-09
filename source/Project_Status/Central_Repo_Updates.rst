@@ -1,5 +1,18 @@
 Central Repo Updates
 ==================================================
+
+**Feb 8, 2022**
+
+1. Store Directory updates: 
+
+   * AIML preview videos added (Amulya)
+
+   * WISE Python module contents added (Chandra)
+
+2. PDF, PPT File conversions to LaTeX:
+
+   * Muzakkir (intern with Indira) identified as resource for IoT and FSD file conversions work
+
 **Feb 1, 2022**
 
 1. Store_metadata.rst 
