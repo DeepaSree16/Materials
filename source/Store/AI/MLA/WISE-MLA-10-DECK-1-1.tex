@@ -1,0 +1,147 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+\usepackage{amsmath}
+\usepackage{ragged2e}
+
+
+\title{Introduction to Hypothesis Testing}
+\author{by Talentsprint Pvt.Ltd.}
+\centering
+\date{July 2020}
+
+\begin{document}
+\maketitle
+\begin{frame}{Content}
+	\begin{itemize}
+		\item What is Hypothesis Testing?
+		\item Use of Hypothesis testing
+		\item Basics of Hypothesis
+		\item Important Parameters of Hypothesis testing
+		\item Hypothesis Testing Types
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{What is Hypothesis Testing?}
+\begin{flushleft}
+	Hypothesis testing is a statistical method that is used in making statistical decisions using experimental data. Hypothesis Testing is basically an assumption that we make about the population parameter.
+\\
+\vspace{10pt}
+	Ex : Average student in class is 40 or a boy is taller than girls.
+\vspace{10pt}
+
+All those example we assume need some statistic way to prove those. we need some mathematical conclusion what ever we are assuming is true.
+
+\end{flushleft}
+\end{frame}
+
+\begin{frame}{Use of Hypothesis Testing}
+	\begin{flushleft}
+		Hypothesis testing is an essential procedure in statistics. A hypothesis test evaluates two mutually exclusive statements about a population to determine which statement is best supported by the sample data. When we say that a finding is statistically significant, it’s after proving hypothesis test.
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Basics of Hypothesis}
+	\begin{flushleft}
+		The basic of hypothesis is normalisation and standard normalisation. all our hypothesis is revolve around basic of these 2 terms.
+\\
+\vspace{10pt}
+\textbf{Normal distribution}
+\\
+\vspace{10pt}
+				A variable is said to be normally distributed or have a normal distribution if its distribution has the shape of a normal curve — a special bell-shaped curve. … The graph of a normal distribution is called the normal curve, which has all of the following properties: 1. The mean, median, and mode are equal.
+	\end{flushleft}
+	$x_{new} = \frac{x-x_{min}}{x_{max} - x_{min}}$
+\end{frame}
+
+\begin{frame}{Contd..}
+\begin{flushleft}
+	\textbf{Standardised Normal distribution}
+\\
+\vspace{10pt}
+				A standard normal distribution is a normal distribution with mean 0 and standard deviation 1.
+	\end{flushleft}
+	$x_{new} = \frac{x-\mu}{\sigma}$
+\end{frame}
+
+\begin{frame}{Important Parameters of Hypothesis Testing}
+\begin{flushleft}
+	\textbf{Null hypothesis}
+	In inferential statistics, the null hypothesis is a general statement or default position that there is no relationship between two measured phenomena, or no association among groups
+\\
+\vspace{10pt}
+				In other words it is a basic assumption or made based on domain or problem knowledge.
+	\\
+\vspace{10pt}			
+Example : a company production is = 50 unit/per day etc.
+	\\
+\vspace{10pt}	
+	\textbf{Alternative hypothesis}
+	The alternative hypothesis is the hypothesis used in hypothesis testing that is contrary to the null hypothesis. It is usually taken to be that the observations are the result of a real effect (with some amount of chance variation superposed).
+\\
+\vspace{10pt}
+				Example : a company production is !=50 unit/per day etc.
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Contd..}
+	\begin{flushleft}
+	\textbf{Level of Significance}
+	Refers to the degree of significance in which we accept or reject the null-hypothesis. 100\% accuracy is not possible for accepting or rejecting a hypothesis, so we therefore select a level of significance that is usually 5\%.
+\\
+\vspace{10pt}
+				This is normally denoted with alpha(maths symbol ) and generally it is 0.05 or 5\% , which means your output should be 95\% confident to give similar kind of result in each sample.
+	\\
+\vspace{10pt}			
+
+\textbf{Type I error}
+	When we reject the null hypothesis, although that hypothesis was true. Type I error is denoted by alpha. In hypothesis testing, the normal curve that shows the critical region is called the alpha region.
+\\
+\vspace{10pt}
+\textbf{Type II errors}
+				When we accept the null hypothesis but it is false. Type II errors are denoted by beta. In Hypothesis testing, the normal curve that shows the acceptance region is called the beta region.
+
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Contd..}
+\begin{flushleft}
+	\textbf{One Tailed Test}
+A test of a statistical hypothesis , where the region of rejection is on only one side of the sampling distribution , is called a one-tailed test.
+\\
+\vspace{10pt}
+Example :- a college has ≥ 4000 student or data science ≤ 80\% org adopted.
+\\
+\vspace{10pt}
+
+\textbf{Two Tailed Test}
+				A two-tailed test is a statistical test in which the critical area of a distribution is two-sided and tests whether a sample is greater than or less than a certain range of values. If the sample being tested falls into either of the critical areas, the alternative hypothesis is accepted instead of the null hypothesis.
+\\
+\vspace{10pt}
+	Example : a college != 4000 student or data science != 80\% org adopted.
+\end{flushleft}
+\end{frame}
+
+\begin{frame}{Contd..}
+\begin{flushleft}
+	\textbf{p value:}
+P-value – measures how compatible your data are with the null hypothesis.
+\\
+\vspace{10pt}
+High P-Values: Your data are likely with a true null
+\\
+Low P-Values: Your data are unlikely with a true null
+\\
+\vspace{10pt}
+
+\textbf{Degrees of freedom:}
+	The number of degrees of freedom is the number of values in the final calculation of a statistic that are free to vary. 
+\\
+\vspace{10pt}
+So if a data set has 10 values, the sum of the 10 values must equal the mean x 10. If the mean of the 10 values is 3.5 (you could pick any number), this constraint requires that the sum of the 10 values must equal 10 x 3.5 = 35. With that constraint, the first value in the data set is free to vary. Whatever value it is, it’s still possible for the sum of all 10 numbers to have a value of 35. The second value is also free to vary, because whatever value you choose, it still allows for the possibility that the sum of all the values is 35.
+\end{flushleft}
+\end{frame}
+
+\begin{frame}
+\huge{\centerline{The End}}
+\end{frame}
+\end{document}

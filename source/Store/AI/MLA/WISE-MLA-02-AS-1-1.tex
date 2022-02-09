@@ -1,0 +1,80 @@
+\documentclass{book}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage[english]{babel}
+\pagestyle{fancy}
+\fancyhf{}
+\headheight = 0.95 in
+%\rhead{\includegraphics[width=2cm, height=1cm]{logo}}
+\lhead{\textbf{\Large{SYSTEM OF LINEAR EQUATIONS USING MATRICES}}}
+\lfoot{COPYRIGHT ©TALENTSPRINT, 2020. ALL RIGHTS RESERVED.}
+\rfoot{\thepage}
+
+\begin{document}
+
+Solve the system of linear equations using matrices.
+\begin{align*}
+  x - y + z &= 8 \\
+  2x + 3y - z &= -2 \\
+  3x - 2y - 9z &= 9
+\end{align*}
+\textbf{SOLUTION:}
+First, we write the augmented matrix.
+\begin{equation*}
+	\begin{bmatrix}
+	1 & -1 & 1 & 8\\
+	2 & 3 & -1 & -2\\
+	3 & -2 & -9 & 9
+	\end{bmatrix}
+\end{equation*}
+Next, we perform row operations to obtain row-echelon form.
+\begin{equation*}
+	-2R1 + R2 = R2 \rightarrow
+	\begin{bmatrix}
+	1 & -1 & 1 & 8\\
+	2 & 3 & -1 & -2\\
+	3 & -2 & -9 & 9
+	\end{bmatrix}
+\end{equation*}
+\begin{equation*}
+	-3R1 + R3 = R3 \rightarrow
+	\begin{bmatrix}
+	1 & -1 & 1 & 8\\
+	2 & 3 & -1 & -2\\
+	3 & -2 & -9 & 9
+	\end{bmatrix}
+\end{equation*}
+The easiest way to obtain a 1 in row 2 of column 1 is to interchange ${R_2}$ and ${R_3}$.
+\begin{equation*}
+	\text{Interchange}{R}_{2}\text{and}{R}_{3}\to \left[\begin{array}{rrrrrrr}\hfill 1& \hfill & \hfill -1& \hfill & \hfill 1& \hfill & \hfill 8\\ \hfill 0& \hfill & \hfill 1& \hfill & \hfill -12& \hfill & \hfill -15\\ \hfill 0& \hfill & \hfill 5& \hfill & \hfill -3& \hfill & \hfill -18\end{array}\right]
+\end{equation*}
+
+Then
+\begin{equation*}
+	-5R2 + R3 = R3 \rightarrow
+	\begin{bmatrix}
+	1 & -1 & 1 & 8\\
+	0 & 1 & -12 & -15\\
+	0 & 0 & -57 & 57
+	\end{bmatrix}
+\end{equation*}
+\begin{equation*}
+	-\frac{1}{57}R3 = R3 \rightarrow
+	\begin{bmatrix}
+	1 & -1 & 1 & 8\\
+	0 & 1 & -12 & -15\\
+	0 & 0 & 1 & 1
+	\end{bmatrix}
+\end{equation*}
+he last matrix represents the equivalent system.
+\begin{equation*}
+\begin{array}{l}\text{ }x-y+z=8\hfill \\ \text{ }y - 12z=-15\hfill \\ \text{ }z=1\hfill \end{array}
+\end{equation*}
+Using back-substitution, we obtain the solution as (4,-3,1).
+\end{document}

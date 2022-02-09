@@ -1,0 +1,77 @@
+\documentclass{book}
+%\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{color}
+\usepackage{graphicx}
+%\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\pagestyle{fancy}
+\fancyhf{}
+%\rhead{\includegraphics[width=2cm, height=0.5cm]{logo}}
+\lhead{Chain Rule}
+\lfoot{COPYRIGHT ©TALENTSPRINT, 2020. ALL RIGHTS RESERVED.}
+\rfoot{\thepage}
+\begin{document}
+
+\section*{Chain Rule} 
+
+The product rule tells us how to find the derivative of a product of functions like f (x) · g(x). The composition or “chain” rule tells us how to find the derivative of a composition of functions like f (g(x)). Composition of functions is about substitution – you substitute a value forx into the formula for g, then you substitute the result into the formula for f . An example of a composition of two functions is $y = (\sin t)10$ (which is usually written as $y = \sin 10 t$).
+
+
+
+One way to think about composition of functions is to use new variable names. For example, for the function
+$y = \sin^{10} t$
+we can say
+$x = \sin^t$ 
+and then 
+$y = x^{10}$
+.Notice that if you plug 
+$x = \sin^t$ 
+in to the formula for y you get back to 
+$y = \sin^{10} t$
+. It’s good practice to introduce new variables when they’re convenient, and this is one place where it’s very convenient. \par
+
+So, how do we find the derivative of a composition of functions? We’re trying to find the slope of a tangent line; to do this we take a limit of slopes
+$\frac{\Delta.y}{\Delta.t}$ 
+of secant lines. Here y is a function of x, x is a function of t, and we want to know how y changes with respect to the original variable t. Here again using that intermediate variable x is a big help: \par
+
+  
+   $$\frac{\Delta.y}{\Delta.t}  = \frac{\Delta.y}{\Delta.x} \frac{\Delta.x}{\Delta.y}$$
+
+because when we perform the multiplication, the small change $\delta x$ cancels.  The derivative of y with respect to t is
+
+   $$\lim_{\Delta.x \to\infty}\frac{\Delta.y}{\Delta.t}$$
+
+what happens when $\Delta t$ gets small? Because $x =\sin t$ is a continuous function, as $\Delta t$ approaches 0, $\Delta x$ also approaches zero.
+It turns out that:
+
+   $$\lim_{\Delta.x \to\infty}\frac{\Delta.y}{\Delta.t} = \frac{dy}{dt} = \frac{dy}{dx}\frac{dx}{dt}   \leftarrow  This is the Chain Rule $$   
+
+                              
+The derivative of a composition of functions is a product. In the example
+$y = \sin t^{10}$
+, we have the “inside function” $x = \sin t$ and the “outside function”
+$y = x^{10}$
+The chain rule tells us to take the derivative of y with respect to x and multiply it by the derivative of x with respect to t. \par
+The derivative of
+$y = x^{10}$
+is
+$\frac{dy}{dx} = y = 10x^9$
+The derivative of $x = \sin t$ is
+$\frac{dx}{dt} = \cos.t$
+The chain rule tells us that
+$\frac{d}{dt}.\sin^{10}.t = 10.x^9.\cos.t$
+This is correct,but if a friend asked you for the derivative of
+$\sin^{10}.t$ 
+and you answered
+$10x^9.\cos.t$
+your friend wouldn’t know what x stood for. The last step in this process is to rewrite x in terms of t:
+   
+    $$\frac{d}{dt}.\sin^{10}.t  =  10\sin t^9.\cos.t = 10\sin ^9.t.\cos.t$$
+
+Here is another way of writing the chain rule:
+ 
+    $$\frac{d}{dx}.f(g(x)) = (f'(g(x))g'(x))$$
+
+\end{document}

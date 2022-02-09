@@ -1,0 +1,48 @@
+\documentclass{book}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage[english]{babel}
+\usepackage{amssymb}
+\pagestyle{fancy}
+\fancyhf{}
+\headheight = 0.1 in
+%\rhead{\includegraphics[width=2cm, height=1cm]{logo}}
+\lhead{\textbf{\Large{Problem in Probability Distribution}}}
+\lfoot{COPYRIGHT ©TALENTSPRINT, 2020. ALL RIGHTS RESERVED.}
+\rfoot{\thepage}
+
+\begin{document}
+During a bad economy, a graduating ECE student goes to career fair booths in the technology
+sector (e.g., Google, Apple, Qualcomm, Texas Instruments, Motorola, etc) - and his/her
+likelihood of receiving an off-campus interview invitation after a career fair booth visit depends
+on how well he/she did in ECE 313. Specifically, an A in 313 results in a probability $p = 0.95$ of obtaining an invitation, whereas a C in 313 results in a probability of $p = 0.15$ of an invitation.
+\begin{enumerate}
+	\item Give the pmf for the random variable $Y$ that denotes the number of career fair booth visits a student must make before his/her first invitation including the visit that results in the invitation. Express your answer in terms of $p$.
+	
+\textbf{Solution:} $p_Y(k) = p(1 − p)^{k−1} for \hspace{4pt}k \geq 1.$
+	\item On average, how many booth visits must an $A$ student make before getting an off-campus interview invitation? How about a $C$ student?
+
+\textbf{Solution:} $E[Y] = \frac{1}{p} = \left\{ \begin{array}{ll}
+			1.0526 & \mbox{A student}\\
+			6.6667 & \mbox{C student}
+		\end{array} \right.$
+
+\item Assuming that each student visits 5 booths during a typical career fair, find the probability that an A student in 313 \textbf{will not} get an off-campus interview invitation. Similarly, find the probability that a C student in 313 \textbf{will} get an invitation during a typical career fair.
+	
+\textbf{Solution:} 
+P(an A student does not get an invitation in 5 trials) = $\sum_{k=6}^{\infty}{p(1 - p)^{k-1}} = (1 - p)^5 \sum_{k'=0}^{\infty}{p(1 - p)^{k'}} = (1 - p)^5 = (1 - 0.95)^5 = 3.125 \times 10^{-7}.$
+\\
+\\
+It can also be observed directly that P(an A student does not get an invitation in 5 trials) = $(1 - p)^5$ by the independence of each trial.
+\\
+\\
+P(C gets an invitation in 5 trials) = $1 - (1 - p)^5 = 1 - (1 - 0.15)^5 = 0.5563$.
+\end{enumerate}
+\end{document}

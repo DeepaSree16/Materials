@@ -1,0 +1,117 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+\usepackage{physics}
+\usepackage{amsmath}
+\usepackage{ragged2e}
+\usepackage{xcolor}
+\usepackage{mathtools}% http://ctan.org/pkg/mathtools
+\graphicspath{ {./images/} }
+
+\newcommand\myheading[1]{%
+  \par\bigskip
+  {\large\bfseries#1}\par\smallskip}
+
+\title{Introduction to N-grams}
+\author{by Talentsprint Pvt. Ltd.}
+\centering
+\date{September 2020}
+
+\begin{document}
+\maketitle
+\begin{frame}{Content}
+	\begin{itemize}
+		\item What is a Language model?
+		\item Types of Language models
+		\item N-grams
+		\item Working of N-gram model
+		\item Challenges
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{What is a Language model?}
+\begin{flushleft}
+\begin{itemize}
+	\item A language model learns to predict the probability of a sequence of words.
+	\item In Machine Translation, you take in a bunch of words from a language and convert these words into another language. Now, there can be many potential translations that a system might give you and you will want to compute the probability of each of these translations to understand which one is the most accurate.\\
+	\vspace{10pt}
+\end{itemize}
+\textbf{Word Ordering:} p(The boy is cute) $>$ p(cute the is boy)\\
+\vspace{10pt}
+\begin{itemize}
+	\item This ability to model the rules of a language as a probability gives great power for NLP related tasks. 
+	\item Language models are used in speech recognition, machine translation, part-of-speech tagging, parsing, Optical Character Recognition, handwriting recognition, information retrieval, and many other daily tasks.
+	\end{itemize}
+\end{flushleft}
+\end{frame}
+
+\begin{frame}{Types of Language Models}
+	\begin{flushleft}
+		There are primarily two types of Language Models:
+		\begin{enumerate}
+			\item \textbf{Statistical Language Models:} These models use traditional statistical techniques like N-grams, Hidden Markov Models (HMM) and certain linguistic rules to learn the probability distribution of words.
+			\item \textbf{Neural Language Models:} These are new players in the NLP town and have surpassed the statistical language models in their effectiveness. They use different kinds of Neural Networks to model language. 
+		\end{enumerate}
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{N-grams}
+\begin{flushleft}
+An N-gram means a sequence of N tokens or words. Let’s understand N-gram with an example. Consider the following sentence:\\
+\vspace{10pt}
+\end{flushleft}
+"I love reading blogs about space science on the internet."\\
+\vspace{10pt}
+\begin{flushleft}
+A 1-gram (or unigram) is a one-word sequence. For the above sentence, the unigram would simply be: “I”, “love”, “reading”, “blogs”, “about”, “space”, “science”, “on”, “the”, “internet”.\\
+\vspace{10pt}
+A 2-gram (or bigram) is a two-word sequence of words, like "I love", "love reading, or about space”. And a 3-gram (or trigram) is a three-word sequence of words like "I love reading", "about space science" or "on the internet".
+\end{flushleft}
+\end{frame}
+
+\begin{frame}{Working of N-gram Model}
+\[
+	\underbracket{\textbf{\large Can you please come}}_{History} \overbracket{\textbf{\textcolor{red}{here}}}^{Word being predicted}\textbf{?}
+\]
+\begin{flushleft}
+An N-gram language model predicts the probability of a given N-gram within any sequence of words in the language. If we have a good N-gram model, we can predict p(w | h) – what is the probability of seeing the word w given a history of previous words h – where the history contains n-1 words.\\
+We can compute this probability in two steps:
+\begin{enumerate}
+	\item Apply the chain rule of probability.
+	\item We then apply a very strong simplification assumption to allow us to compute p(w1…ws) in an easy manner.
+\end{enumerate}
+\end{flushleft}
+\end{frame}
+
+\begin{frame}{Contd...}
+\begin{flushleft}
+The chain of probability is:\\
+\end{flushleft}
+$p(w1...ws) = p(w1) . p(w2|w1) . p(w3|w1w2) ..... p(wn | w1...wn-1) $\\
+\begin{flushleft}
+This compute the joint probability of a sequence by using the conditional probability of a word given previous words.
+\end{flushleft}
+	$p(wk | w1...wk-1) = p(wk | wk-1)$
+\begin{flushleft}
+	Here, we approximate the history (the context) of the word wk by looking only at the last word of the context. This assumption is called the Markov assumption. (We used it here with a simplified context of length 1 – which corresponds to a bigram model – we could use larger fixed-sized histories in general).
+\end{flushleft}
+\end{frame}
+
+\begin{frame}{Challenges}
+\begin{flushleft}
+\myheading {Sensitivity to the training corpus:}
+	\item The N-gram model, lis significantly dependent on the training corpus. As a result, the probabilities often encode particular facts about a given training corpus. The closed vocabulary assumption assumes there are no unknown words, which is unlikely in practical scenarios.
+\myheading{Smoothing:} 
+A notable problem with the MLE approach is sparse data. This is because we build the model based on the probability of words co-occurring. It will give zero probability to all the words that are not present in the training corpus.
+\myheading{Computational power:}
+	\item The higher the N, the better is the model usually. But this leads to lots of computation overhead that requires large computation power (RAM).
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}
+\huge{\centerline{Demo}}
+\end{frame}
+
+\begin{frame}
+\huge{\centerline{The End}}
+\end{frame}
+\end{document}

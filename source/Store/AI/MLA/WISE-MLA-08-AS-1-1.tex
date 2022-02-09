@@ -1,0 +1,38 @@
+\documentclass{book}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage[english]{babel}
+\usepackage{amssymb}
+\pagestyle{fancy}
+\fancyhf{}
+\headheight = 0.1 in
+%\rhead{\includegraphics[width=2cm, height=1cm]{logo}}
+\lhead{\textbf{\Large{Central Limit Theorem - Problems}}}
+\lfoot{COPYRIGHT ©TALENTSPRINT, 2020. ALL RIGHTS RESERVED.}
+\rfoot{\thepage}
+
+\begin{document}
+    A bank teller serves customers standing in the queue one by one. Suppose that the service time $X_i$ for customer $i$ has mean $E[X_i]=2$ (minutes) and $Var(X_i)=1$. We assume that service times for different bank customers are independent. Let $Y$ be the total time the bank teller spends serving $50$ customers. Find $P(90<Y<110)$.\\\\
+    \textbf{Solution:}\\
+    \begin{equation*}
+        Y = X_1 + X_2 + ... + X_n,
+    \end{equation*}
+    where $n=50$, $E[X_i]=\mu=2$, and $Var(X_i)=\sigma^2=1$. Thus, we can write
+    \begin{align*}
+        P(90<Y<110) &= P\Bigg(\frac{90-n\mu}{\sqrt{n}\sigma} < \frac{Y-n\mu}{\sqrt{n}\sigma} < \frac{110-n\mu}{\sqrt{n}\sigma}\Bigg)\\
+        &= P\Bigg(\frac{90-100}{\sqrt{50}} < \frac{Y-n\mu}{\sqrt{n}\sigma} < \frac{110-100}{\sqrt{50}}\Bigg)\\
+        &= P\Bigg(-\sqrt{2} < \frac{Y-n\mu}{\sqrt{n}\sigma} < \sqrt{2}\Bigg)
+    \end{align*}
+    By the Central Limit Theorem, $\frac{Y-n\mu}{\sqrt{n}\sigma}$ is approximately standard normal, so we can write
+    \begin{align*}
+        P(90<Y<110) &\approx \Phi(\sqrt{2}) - \Phi(-\sqrt{2})\\
+        &= 0.8427
+    \end{align*}
+\end{document}

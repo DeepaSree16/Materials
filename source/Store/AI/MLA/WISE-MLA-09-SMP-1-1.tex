@@ -1,0 +1,61 @@
+\documentclass{book}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage[english]{babel}
+\usepackage{amssymb}
+\usepackage{textcomp}
+\usepackage{xfrac}
+\pagestyle{fancy}
+\fancyhf{}
+\headheight = 0.1 in
+%\rhead{\includegraphics[width=2cm, height=1cm]{logo}}
+\lhead{\textbf{\Large{Assignment Solutions - Confidence Intervals}}}
+\lfoot{COPYRIGHT ©TALENTSPRINT, 2020. ALL RIGHTS RESERVED.}
+\rfoot{\thepage}
+
+\begin{document}
+    \begin{enumerate}
+        \item 
+        $n=62\\
+        \Bar{x}=1014\\
+        \sigma=25\\
+        \alpha=0.02\\
+        Z_{\sfrac{0.02}{2}}=Z_{0.01}=2.33\\$\\
+        The Confidence Interval can be calculated using,
+        \begin{equation*}
+            \Bar{x}-\frac{Z_{\sfrac{\alpha}{2}}\sigma}{\sqrt{n}} \leq \mu \leq \Bar{x}+\frac{Z_{\sfrac{\alpha}{2}}\sigma}{\sqrt{n}}
+        \end{equation*}
+        \begin{equation*}
+            1014-\frac{2.33(25)}{\sqrt{62}} \leq \mu \leq 1014+\frac{2.33(25)}{\sqrt{62}}
+        \end{equation*}
+        Thus the C.I. is,
+        \begin{equation*}
+            1006.6 \leq \mu \leq 1021.4
+        \end{equation*}
+        
+        \item
+        $n=42\\
+        \Bar{x}=759\\
+        \sigma=20\\
+        \alpha=0.01\\
+        Z_{\sfrac{0.01}{2}}=Z_{0.005}=2.575\\$\\
+        The Confidence Interval can be calculated using,
+        \begin{equation*}
+            \Bar{x}-\frac{Z_{\sfrac{\alpha}{2}}\sigma}{\sqrt{n}} \leq \mu \leq \Bar{x}+\frac{Z_{\sfrac{\alpha}{2}}\sigma}{\sqrt{n}}
+        \end{equation*}
+        \begin{equation*}
+            759-\frac{2.575(20)}{\sqrt{42}} \leq \mu \leq 759+\frac{2.575(20)}{\sqrt{42}}
+        \end{equation*}
+        Thus the C.I. is,
+        \begin{equation*}
+            751.05 \leq \mu \leq 766.95
+        \end{equation*}
+    \end{enumerate}
+\end{document}

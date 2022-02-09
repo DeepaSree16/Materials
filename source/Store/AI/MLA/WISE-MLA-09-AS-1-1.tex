@@ -1,0 +1,42 @@
+\documentclass{book}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage[english]{babel}
+\usepackage{amssymb}
+\usepackage{textcomp}
+\usepackage{xfrac}
+\pagestyle{fancy}
+\fancyhf{}
+\headheight = 0.9 in
+%\rhead{\includegraphics[width=2cm, height=1cm]{logo}}
+\lhead{\textbf{\Large{Confidence Intervals Problems}}}
+\lfoot{COPYRIGHT ©TALENTSPRINT, 2020. ALL RIGHTS RESERVED.}
+\rfoot{\thepage}
+
+\begin{document}
+A manufacturer produces piston rings for an automobile engine. It is known that the ring diameter is approximately normally distributed and has a standard deviation $\sigma = 0.03 mm$. A random sample of $32$ piston rings has a mean diameter, $\Bar{x} = 74.036 mm$. Construct a $90\%$ confidence interval around the true population mean for piston ring diameter.\\\\
+    \textbf{Solution:}\\
+    $n=32,\\
+    \Bar{x}=74.036,\\
+    \sigma=0.03,\\
+    \alpha=0.10,\\
+    Z_{\sfrac{10}{2}}=Z_{0.05}=1.645$\\\\
+    The Confidence Interval can be calculated using,
+    \begin{equation*}
+        \Bar{x}-\frac{Z_{\sfrac{\alpha}{2}}\sigma}{\sqrt{n}} \leq \mu \leq \Bar{x}+\frac{Z_{\sfrac{\alpha}{2}}\sigma}{\sqrt{n}}
+    \end{equation*}
+    \begin{equation*}
+        74.036 - \frac{1.645(0.03)}{\sqrt{32}} \leq \mu \leq 74.036 + \frac{1.645(0.03)}{\sqrt{32}}
+    \end{equation*}
+    Thus the Confidence Interval is,
+    \begin{equation*}
+        74.0273 \leq \mu \leq 74.0447
+    \end{equation*}
+\end{document}

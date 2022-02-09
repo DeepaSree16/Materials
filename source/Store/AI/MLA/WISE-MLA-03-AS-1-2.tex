@@ -1,0 +1,36 @@
+\documentclass{book}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage[english]{babel}
+\pagestyle{fancy}
+\fancyhf{}
+\headheight = 0.1 in
+%\rhead{\includegraphics[width=2cm, height=1cm]{logo}}
+\lhead{\textbf{\Large{Problem 1 - Image Reduction}}}
+\lfoot{COPYRIGHT ©TALENTSPRINT, 2020. ALL RIGHTS RESERVED.}
+\rfoot{\thepage}
+
+\begin{document}
+\begin{figure}[h!]
+	\centering
+		\includegraphics[width=\linewidth]{image.png}
+\end{figure}
+The following 3x3 matrix represents the 3x3 pixel values of the top left corner of the above image.
+\begin{equation*}
+	\begin{bmatrix}
+		170 & 238 & 85\\
+		68 & 136 & 17\\
+		221 & 0 & 238
+	\end{bmatrix}
+\end{equation*}
+To reduce the dimension of the actual image, we need its corresponding eigenvalues and eigenvectors. \\
+Before finding the eigenvalues and eigenvectors of the whole image, try to find the eigenvalues and eigenvectors of this corner part of the image.
+
+\end{document}

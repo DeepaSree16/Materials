@@ -1,0 +1,238 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+\usepackage{physics}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{ragged2e}
+\usepackage{xcolor}
+\usepackage{mathtools}% http://ctan.org/pkg/mathtools
+\graphicspath{ {./images/} }
+
+\newcommand\heading[1]{%
+  \par\bigskip
+  {\Large\bfseries#1}\par\smallskip}
+
+\newcommand\myheading[1]{%
+  \par\bigskip
+  {\large\bfseries#1}\par\smallskip}
+
+\title{Introduction to Support Vector Machines}
+\author{by Talentsprint Pvt. Ltd.}
+\centering
+\date{January 2021}
+
+\begin{document}
+\maketitle
+\begin{frame}{Content}
+	\begin{itemize}
+		\item Introduction
+		\item Goal of Support Vector Machines
+		\item What is seperating hyperplane?
+		\item What is the optimal seperating hyperplane?
+		\item What is the margin?
+		\item Linearly separable vs Non linearly separable
+		\item Math in SVM
+		\item Kernel Trick
+		\item Tuning Parameters
+		\item Pros
+		\item Cons
+		\item Applications
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Introduction}
+	\begin{flushleft}
+		\begin{itemize}
+			\item A Support Vector Machine (SVM) is a very powerful and versatile Machine Learning
+model, capable of performing linear or nonlinear classification, regression, and even
+outlier detection. 
+			\item It is one of the most popular models in Machine Learning.
+			\item SVMs are particularly well suited for classification of complex but small- or medium-sized datasets.
+		\end{itemize}
+	\end{flushleft}
+	\includegraphics[scale=0.3]{img1}
+\end{frame}
+
+\begin{frame}{Goal of Support Vector Machines}
+\begin{flushleft}
+\begin{itemize}
+	\item The goal of a support vector machine is to find  the optimal separating hyperplane which maximizes the margin of the training data.
+\end{itemize}
+\end{flushleft}
+\includegraphics[scale=0.35]{img2}
+\end{frame}
+
+\begin{frame}{What is a seperating hyperplane?}
+\begin{flushleft}
+	Just by looking at the plot, we can see that it is possible to separate the data.  For instance, we could trace a line and then all the data points representing men will be above the line, and all the data points representing women will be below the line.
+
+\vspace{10pt}
+Such a line is called a \textbf{separating hyperplane} and is depicted below:
+\end{flushleft}
+	\includegraphics[scale=0.35]{img3}
+\end{frame}
+
+\begin{frame}{What is the optimal separating hyperplane?}
+	\includegraphics[scale=0.6]{img4}
+\end{frame}
+
+\begin{frame}{What is the margin?}
+	\begin{flushleft}
+		Given a particular hyperplane, we can compute the distance between the hyperplane and the closest data point. Once we have this value, if we double it we will get what is called the margin.
+	\end{flushleft}
+	\includegraphics[scale=0.45]{img5}
+\end{frame}
+
+\begin{frame}{Contd...}
+\begin{flushleft}
+	For another hyperplane, the margin will look like this :
+\end{flushleft}
+	\includegraphics[scale=0.28]{img6}
+	\begin{flushleft}
+	\begin{itemize}
+		\item Margin B is smaller than Margin A.  
+		\item If an hyperplane is very close to a data point, its margin will be small. The further an hyperplane is from a data point, the larger its margin will be.
+	\end{itemize}
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Linearly seperable vs Non linearly seperable}
+\includegraphics[scale=0.5]{img7}
+\end{frame}
+
+\begin{frame}{Math in SVM:}
+	\textbf{SVM Decision Boundary:}
+	\begin{equation*}
+		\min_\theta C \sum_{i=1}^{m}{\bigg[y^{(i)} cost_1(\theta^Tx^{(i)} + (1-y^{(i)} cost_0(\theta^Tx^{(i)})\bigg]} + \frac{1}{2}\sum_{i=1}^{n}{\theta_j^{2}}
+	\end{equation*}
+	where $cost_1(\theta^Tx^{(i)}) = -\log(\frac{1}{1+e^{-z}})$\\
+\vspace{10pt}
+	where $cost_0(\theta^Tx^{(i)}) = -\log (1 -\frac{1}{1+e^{-z}})$\\
+\vspace{10pt}
+	s.t. $\theta^Tx^{(i)} \geq 1$, if $y^{(i)} = 1$\\
+	\vspace{10pt}
+	$\theta^Tx^{(i)} \leq -1$, if $y^{(i)} = 0$\\
+\vspace{10pt}
+	$\min_\theta \frac{1}{2}\sum_{i=1}^{n}{\theta_j^{2}} = \frac{1}{2}||\theta||^2$
+	s.t. $p^{(i)}.||\theta|| \geq 1$, if $y^{(i)} = 1$\\
+	\vspace{10pt}
+	$p^{(i)}.||\theta|| \leq -1$, if $y^{(i)} = 0$
+\end{frame}
+
+\begin{frame}{Kernel Trick}
+	\begin{flushleft}
+		This type of situation comes very often in machine learning world as raw data are always non-linear here. So adding one extra dimension to the data points makes it separable.\\
+\vspace{10pt}
+In $Z = X^2 + Y^2$, we can see that data points are still linearly seperable.
+	\end{flushleft}
+	\includegraphics[scale=0.3]{img8}
+	\begin{flushleft}
+	The above process of making non-linearly separable data point to linearly separable data point is also known as Kernel Trick
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Tuning Parameters}
+	\begin{flushleft}
+		\begin{itemize}
+			\item Kernel
+			\item Regularization
+			\item Gamma
+			\item Margin
+		\end{itemize}
+		\myheading{Margin:}
+		Margin is the perpendicular distance between the closest data points and the Hyperplane (on both sides)\\
+		\vspace{10pt}
+		The best optimised line with maximum margin is termed as Margin Maximal Hyperplane.\\
+		\vspace{10pt}
+		The closest points where the margin distance is calculated are considered as the support vectors. 
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Contd...}
+	\includegraphics[scale=0.5]{img9}
+\end{frame}
+
+\begin{frame}{Contd...}
+	\begin{flushleft}
+	\myheading{Regularization:}
+	\begin{itemize}
+		\item Also the 'C' parameter in Python's Sklearn library is regularization content.
+		\item Optimizes SVM classifier to avoid misclassifying the data.
+		\item C $\rightarrow$ large (Margin of hyperplane $\rightarrow$ small)
+		\item C $\rightarrow$ small (Margin of hyperplane $\rightarrow$ large)
+	\end{itemize}
+	\begin{enumerate}
+		\item C $\rightarrow$ large, chance of overfit.
+		\item C $\rightarrow$ small, chance of underfitting. 
+	\end{enumerate}
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Contd...}
+	\includegraphics[scale=0.6]{img10}
+\end{frame}
+
+\begin{frame}{Contd...}
+	\begin{flushleft}
+		\myheading{Gamma:}
+		\begin{itemize}
+			\item Defines how far influences the calculation of plausible line of separation.
+			\item Low gamma $\rightarrow$ points far from plausible line are considered for caluculation.
+			\item High gamma $\rightarrow$ points close to plausible line are considered for calculation.
+		\end{itemize}
+	\end{flushleft}
+	\includegraphics[scale=0.45]{img11}
+\end{frame}
+
+\begin{frame}{Contd...}
+	\begin{flushleft}
+		\myheading{Kernels:}
+		\begin{itemize}
+			\item Mathematical functions for transforming data using linear algebra.
+			\item Differnt SVM algorithms use different types of kernel functions.
+		\end{itemize}
+		\myheading{Various kernels available:}
+		\begin{enumerate}
+			\item Linear kernel
+			\item Non - Linear kernel
+			\item Radial Basis Function (RBF)
+			\item Sigmoid
+			\item Polynomial
+			\item Exponential
+		\end{enumerate}
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Pros:}
+	\begin{itemize}
+		\item It works really well with clear margin of separation.
+		\item It is effective in high dimensional spaces.
+		\item It is effective in cases where number of dimensions is greater than the number of samples.
+		\item It uses a subset of training points in the decision function (called support vectors), so it is also memory efficient.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Cons:}
+	\begin{itemize}
+		\item It doesn't perform well, when we have large dataset because the required time is higher.
+		\item It also doesn't perform very well, when the dataset has more noise i.e. target classes are overapping.
+		\item SVM doesn't directly provide probability estimates, these are calculated using an expensive five-fold Cross-validation.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Applications:}
+	\begin{enumerate}
+		\item Face detection
+		\item Text and hypertext categorization.
+		\item Classification of images.
+		\item Bioinformatics
+		\item Handwriting recognition
+		\item Protein fold and remote homology detection.
+		\item Generalized predictive control (GPC)
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\huge{\centerline{The End}}
+\end{frame}
+\end{document}

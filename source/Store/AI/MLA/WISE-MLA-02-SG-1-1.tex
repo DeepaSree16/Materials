@@ -1,0 +1,500 @@
+\documentclass{book}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage[english]{babel}
+\pagestyle{fancy}
+\fancyhf{}
+\headheight = 0.95 in
+%\rhead{\includegraphics[width=2cm, height=1cm]{logo}}
+\lhead{\textbf{\Large{Introduction to Matrices}}}
+\lfoot{COPYRIGHT ©TALENTSPRINT, 2020. ALL RIGHTS RESERVED.}
+\rfoot{\thepage}
+
+\begin{document}
+\section*{1. Introduction to Matrices}
+\subsection*{Definition of a Matrix}
+\textbf{Definition 1.1.1 (Matrix)} A rectangular array of numbers is called a \textcolor{red}{matrix}.
+
+\par{We shall mostly be concerned with matrices having real numbers as entries. The horizontal arrays of a matrix are called its rows and the vertical arrays are called its columns. A matrix having \textit{m} rows and \textit{n} columns is said to have the order\textit{m × n}. A matrix A of order \textit{m × n} can be represented in the following form:}
+
+
+$$A =  \begin{bmatrix}
+	a_{11} & a_{12} & \cdots & a_{1n} \\
+	a_{21} & a_{22} & \cdots & a_{2n} \\
+	\vdots & \vdots & \ddots & a_{mn} \\
+	a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{bmatrix} $$
+where $a_{ij}$ is the entry at the intersection of the $i^{th}$ row and $j^{th}$ column.
+
+
+In a more concise manner, we also denote the matrix \textit{A} by $\small[a_{ij}\small]$ by suppressing its order.
+
+\textbf{Remark 1.1.2} Matrix can also be represented as $ \begin{pmatrix} 
+	a_{11} & a_{12} & \cdots & a_{1n} \\
+	a_{21} & a_{22} & \cdots & a_{2n} \\
+	\vdots & \vdots & \ddots & \vdots \\
+	a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{pmatrix}$
+
+Let A = $ \begin{bmatrix} 
+	1 & 3 & 7 \\
+	4 & 5 & 6 
+\end{bmatrix}$. Then $a_{11} = 1$, $a_{12} = 3$, $a_{13} = 7$, $a_{21} = 4$, $a_{22} = 5$, $a_{23} = 6. $
+
+
+A matrix having only one column is called a \textcolor{red}{column vector}; and a matrix with only one row is called a \textcolor{red}{row vector}.
+
+Whenever a vector is used, it should be understood from the context whether it is a row vector or a column vector.
+
+\textbf{Definition 1.1.3 (Equality of two Matrices)} Two matrices A = $\small[a_{ij}\small]$  and B = $\small[b_{ij}\small]$  having the same order  m $\times$ n are equal if $a_{ij}$ = $b_{ij}$ for each i = 1, 2, $\cdots$, m and j = 1, 2, $\cdots$, n. 
+
+In other words, two matrices are said to be equal if they have the same order and their corresponding
+entries are equal.
+
+\textbf{Example 1.1.4} The linear system of equations 2x + 3y = 5 and 3x + 2y = 5 can be identified with the matrix $ \begin{bmatrix}
+	2 & 3 & : & 5 \\
+	3 & 2 & : & 5
+\end{bmatrix} $
+
+\subsection*{1.1.1 Special Matrices} 
+
+\textbf{Definition 1.1.5}
+\begin{enumerate}
+	\item A matrix in which each entry is zero is called a \textcolor{red}{zero-matrix}, denoted by 0. For example, 
+
+		\begin{center}$0_{2\times 2} = \begin{bmatrix} 
+		0 & 0 \\
+		0 & 0 
+	\end{bmatrix} $ and $0_{2\times 3} = \begin{bmatrix}
+		0 & 0 & 0 \\
+		0 & 0 & 0
+		\end{bmatrix} $ \end{center}
+	\item  A matrix having the number of rows equal to the number of columns is called a \textcolor{red}{square matrix}. Thus, its order is $m × m$ (for some m) and is represented by $m$ only.
+
+	\item In a square matrix, $A$ = $\small[a_{ij}\small$, of order $n$, the entries $a_{12}$, $a_{22}$, $\cdots$, $a_{nn}$ are called the \textcolor{red}{diagonal entries} and form the principal diagonal of $A$.
+\item A square matrix $A$ = $\small[a_{ij}$, is said to be a diagonal matrix if $a_{ij} = 0$ for $i$ $\neq$ $j$. In other words, the non-zero entries appear only on the principal diagonal. For example, the zero matrix $0_n$ and $\begin{bmatrix}
+4 & 0 \\
+0 & 1 \end{bmatrix}$ are a few diagonal matrices.
+
+A diagonal matrix $D$ of order $n$ with the diagonal entries $d_1$ , $d_2$ , . . . , $d_n$ is denoted by $D$ = diag($d_1$ , . . . ,$d_n$).
+		\\If $d_i$ $d$ for all $i$ = 1, 2, $\cdots$, $n$ then the diagonal matrix $D$ is called a \textcolor{red}{scalar matrix}.
+\item A square matrix $A$ = $\small[a_{ij}\small]$ with $a_ij$ = $\begin{cases}  1 & if $ $ i = j\\
+0 &if $ $i \neq j \end{cases} $ is called the identity matrix, denoted by $I_n$.
+		
+For example, $I_2$ = $ \begin{bmatrix} 
+	1 & 0 \\
+	0 & 1
+	\end{bmatrix}$, and $I_3$ = $\begin{bmatrix} 
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \end{bmatrix}$ 
+
+The subscript $n$ is suppressed in case the order is clear from the context or if no confusion arises.
+\item A square matrix $A$ = $\small[a_{ij}\small]$ is said to be an upper triangular matrix if $\small[a_{ij}\small]$ = 0 for $i$ $>$  $j$.
+
+A square matrix $A$ = $\small[a_{ij} \small]$ is said to be an lower triangular matrix if $a_{ij}$ = 0 for $i$ $<$ $j$.
+
+A square matrix $A$ is said to be triangular if it is an upper or a lower triangular matrix.
+
+For example $\begin{bmatrix} 
+	2 & 1 & 4 \\
+	0 & 3 & -1 \\
+	0 & 0 & -2 
+	\end{bmatrix}$ is an upper triangular matrix. An upper triangular matrix will be represented by $\begin{bmatrix}
+		a_{11} & a_{12} & \cdots &a_{1n} \\
+		0 & a_{22} & \cdots& a_{2n} \\
+		\vdots & \vdots & \ddots & \vdots \\
+		0 & 0 & \cdots & a_{nn}
+\end{bmatrix}$.
+\end{enumerate}
+
+
+\section*{1.1.2 Examples of matrices}
+A $matrix$ is a rectangular array of numbers and/or variables. For instance
+
+$$ \begin{bmatrix} 
+4 & -2 & 0 & -3 & 1 \\
+5 & 1.2 & -0.7 & x & 3 \\
+\pi & -3 & 4 & 6 & 27 \end{bmatrix} $$
+
+is a matrix with 3 rows and 5 columns (a 3 $\times$ 5 matrix). The 15 $entries$ of the matrix are referenced by the row and column in which they sit: the (2,3) entry of $A$ is −0.7. We may also write $a_{23}$ = −0.7, $a_{24}$ = x, etc. We indicate the fact that $A$ is 3 × 5 (this is read as \lq three by five \rq) by writing $A_{3×5}$ . Matrices can also be enclosed in square brackets as well as
+large parentheses. That is, both 
+
+$$ \begin{pmatrix} 
+2 & 4 \\
+	1 & -6\end{pmatrix} and \begin{pmatrix} 
+2 & 4 \\
+1 & -6\end{pmatrix}$$
+
+are perfectly good ways to write this 2 × 2 matrix.
+
+Real numbers are 1 × 1 matrices. A vector such as
+$$ v = \begin{pmatrix} x \\ y \\ z \end{pmatrix} $$
+
+is a 3 $\times$ 1 matrix. We will generally use upper case Latin letters as symbols for matrices, boldface lower case letters for vectors, and ordinary lower case letters for real numbers.
+
+\textcolor{red}{Definition:} Real numbers, when used in matrix computations, are called $scalars$.
+
+Matrices are ubiquitous in mathematics and the sciences. Some instances include:
+
+\begin{itemize}
+	\item Systems of linear algebraic equations (the main subject matter of this course) are normally written as simple matrix equations of the form Ax = y.
+	\item The $derivative$ of a function $f$ : $R^3$ $\rightarrow$ $R^2$ is a 2 $\times$ 3 matrix.
+	\item First order systems of linear differential equations are written in matrix form.
+	\item The symmetry groups of mathematics and physics, which we’ll look at later, are groups of matrices.
+	\item Quantum mechanics can be formulated using infinite-dimensional matrices.
+\end{itemize}
+\section*{1.2 Operations with matrices}
+\begin{itemize}
+	\item $\textcolor{red}{Addition}$: matrices of the same size can be added or subtracted by adding or subtracting the corresponding entries:
+		$$ \begin{pmatrix} 2 & 1 \\
+		-3 & 4 \\
+			7 & 0\end{pmatrix} + \begin{pmatrix} 6 & -1.2 \\
+		\pi & x \\
+			1 & -1\end{pmatrix} = \begin{pmatrix} 8 & -0.2 \\
+		\pi - 3 & 4 + x \\
+		8 & -1\end{pmatrix} $$
+
+		\textcolor{red}{Definition:} If the matrices $A$ and $B$ have the same size, then their $sum$ is the matrix A + B defined by
+
+		$$ (A + B)_{ij} = a_{ij} + b_{ij}. $$
+
+Their $difference$ is the matrix $A − B$ defined by
+		$$ (A − B)_{ij} = a_{ij} − b_{ij} $$
+
+	\item \textcolor{red}{Definition:} A matrix $A$ can be multiplied by a scalar $c$ to obtain the matrix $cA$, where	
+$$ (cA) ij = ca ij . $$
+
+This is called $scalar$ $multiplication$. We just multiply each entry of $A$ by $c$. For example
+
+		$$ -3\begin{pmatrix} 1 & 2 \\
+		3 & 4 \end{pmatrix} = \begin{pmatrix} -3 & -6 \\
+		-9 & -12 \end{pmatrix}$$
+	\item \textcolor{red}{Definition:} The $m$ $\times$ $n$ matrix whose entries are all 0 is denoted $0_{mn}$ (or, more often, just by 0 if the dimensions are obvious from context). It’s called the $zero$ matrix.
+	\item \textcolor{red}{Definition:} Two matrices $A$ and $B$ are $equal$ if all their corresponding entries are equal:
+
+		\begin{center}		$A = B \leftrightarrow a_{ij} = b_{ij}$for all i, j.\end{center}
+		\item \textcolor{red}{Definition:} If the number of columns of $A$ equals the number of rows of $B$, then the $product$ $AB$ is defined by
+
+			$$ (AB)_{ij} = \sum\limits_{s=1}^k a_{is}b_{sj}.$$
+
+			Here $k$ is the number of columns of $A$ or rows of $B$.	
+
+			\textbf{Example:}
+
+			$$\begin{pmatrix}1 & 2 & 3 \\
+				-1 & 0 & 4\end{pmatrix} \begin{pmatrix} -1 & 0 \\
+			4 & 2 \\
+				1 & 3\end{pmatrix} = \begin{pmatrix} 1.-1+2.4+3.1 & 1.0+2.2+3.3 \\
+-1.-1+0.4+4.1 & -1.0+0.2+4.3\end{pmatrix} = \begin{pmatrix} 10 & 13 \\
+			5 & 12\end{pmatrix} $$
+
+If $AB$ is defined, then the number of rows of $AB$ is the same as the number of rows of $A$, and the number of columns is the same as the number of columns of $B$:
+		$$ A_{m×n} B_{n \times p} = (AB)_{m \times p}. $$
+
+Why define multiplication like this? The answer is that this is the definition that corresponds to what shows up in practice.
+
+		\textbf{Example:} Recall from calculus that if a point ($x$, $y$) in the plane is rotated counterclockwise about the origin through an angle $\theta$ to obtain a new point $(x^\prime ,y^\prime)$, then \\
+		\begin{center}	$ x^\prime = x \cos\theta$ - $y \sin\theta$ \end{center} 
+			\begin{center}$y^\prime = x \sin\theta + y \cos\theta$ \end{center}. 
+
+In matrix notation, this can be written
+
+		$$ \begin{pmatrix}x^\prime \\
+			y^\prime \end{pmatrix}	 = \begin{pmatrix} \cos\theta & -\sin\theta \\
+				\sin\theta & \cos\theta \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} $$
+
+
+					If the new point $(x^\prime , y^\prime)$ is now rotated through an additional angle $\theta$ to get ($x^{\prime\prime} , y^{\prime\prime}$), then
+
+			\hspace{3cm}$\begin{pmatrix} x^{\prime\prime} \\
+y^{\prime\prime}\end{pmatrix} = \begin{pmatrix} \cos\phi & -\sin\phi \\
+\sin\phi & \cos\phi \end{pmatrix} \begin{pmatrix} x^\prime \\
+y^\prime \end{pmatrix}$
+
+
+			\hspace{4cm} =$ \begin{pmatrix} \cos\phi & -\sin\phi \\
+\sin\phi & \cos\phi \end{pmatrix} \begin{pmatrix} \cos\theta & -\sin\theta \\
+\sin\theta & \cos\theta \end{pmatrix} \begin{pmatrix} x \\
+y \end{pmatrix}$
+
+			\hspace{4cm}			= $\begin{pmatrix} \cos\theta\cos\phi-\sin\theta\sin\phi & -(\cos\theta\sin\phi + \sin\theta + \cos\phi)\\
+				\cos\theta\sin\phi + \sin\theta\cos\phi & \cos\theta\cos\phi - \sin\theta\sin\phi \end{pmatrix} \begin{pmatrix} x \\ y\end{pmatrix} $
+
+					\hspace{4cm}	= $\begin{pmatrix} \cos(\theta + \phi) &-\sin(\theta + \phi) \\
+						\sin(\theta + \phi) & \cos(\theta + \phi) \end{pmatrix} \begin{pmatrix} x \\ y\end{pmatrix}$
+
+
+
+This is obviously the correct answer, since it shows that the point has been
+rotated through the total angle of $\theta + \phi$. The correct answer is given by
+matrix multiplication as we’ve defined it, and not some other way.
+
+\item \textbf{Matrix multiplication is not commutative:} in English, $AB$ $\neq$ $BA$, for arbitrary matrices $A$ and $B$. For instance, if A is 3 $\times$ 5 and $B$ is 5 $\times$ 2, then $AB$ is 3 $\times$ 2, but $BA$ is not defined. Even if both matrices are square and of the same size, so that both $AB$ and $BA$ are defined and have the same size, the two products are not generally equal.
+
+	\textbf{Exercise:} Write down two 2 $\times$ 2 matrices and compute both products. Unless you’ve been very selective, the two products won’t be equal. Can you think of cases in which they are equal?
+
+\textbf{Another example:} If 
+
+						\begin{center} $A$ = $\begin{pmatrix} 2 \\ 3 \end{pmatrix}$, and $B$ = $\begin{pmatrix} 1 \\ 2 \end{pmatrix}$, \end{center} 
+
+\begin{center} $AB$ =$ \begin{pmatrix} 2 & 4 \\ 3 & 6 \end{pmatrix}$, while $BA$ = (8) \end{center}
+
+\item Two properties of matrix multiplication: 
+	\begin{enumerate} 
+		\item If $AB$ and $AC$ are defined, then $A(B + C)$ = $AB$ + $AC$.
+		\item If AB is defined, and $c$ is a scalar, then $A(cB)$ = $c(AB)$.
+
+(Although we won’t do it here, both these properties can be proven by showing that, in each equation, the$ (i, j)$ entry on the right hand side of the equation is equal to the $(i, j)$ entry on the left.)
+	\end{enumerate}
+
+\item \textbf{Definition:} The $transpose$ of the matrix $A$, denoted $A^t$ , is obtained from $A$ by making the first row of A into the first column of $A^t$ , the second row of $A$ into the second column of $A^t$ , and so on. Formally,
+
+	$$a^t_{ij} = a_{ji} . $$
+
+So
+
+						$$\begin{pmatrix} 1 & 2 \\ 3 & 4 \\ 5 & 6 \end{pmatrix}^t = \begin{pmatrix} 1 & 3 & 5 \\ 2 & 4 & 6 \end{pmatrix}$$
+
+Here\rq s a standard consequence of the non-commutatitivity of matrix multiplication: If $AB$ is defined, then $(AB)^t$ = $B^tA^t$ (not $A^tB^t$ as you might expect).
+
+						\textbf{Example:} If
+
+						$$A = \begin{pmatrix} 2 & 1 \\ 3 & 0 \end{pmatrix}, and B = \begin{pmatrix} -1 & 2 \\ 4 & 3\end{pmatrix}, $$
+
+then
+
+						$$ AB = \begin{pmatrix} 2 & 7 \\ -3 & 6 \end{pmatrix}, so (AB)^t = \begin{pmatrix} 2 & -3 \\ 7 & 6 \end{pmatrix}. $$
+
+And
+
+	$$ B^tA^t = \begin{pmatrix}-1 & 4 \\ 2 & 3 \end{pmatrix} \begin{pmatrix} 2 & 3 \\ 1 & 0 \end{pmatrix} = \begin{pmatrix} 2 & -3 \\ 7 & 6\end{pmatrix} $$
+
+as advertised.
+
+\item \textbf{Definition:} $A$ is $square$ if it has the same number of rows and columns. An important instance is the $identity matrix$ $I_n$ , which has ones on the main diagonal and zeros
+
+elsewhere:
+
+Example:
+
+						$$ I_3 = \begin{pmatrix} 1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1\end{pmatrix}. $$
+
+Often, we\rq ll just write I without the subscript for an identity matrix, when the dimension is clear from the context. The identity matrices behave, in some sense, like the number 1. If $A$ is $n \times m$, then I n $A$ = $A$, and $AI$ $m = A$.
+
+\item \textbf{Definition:} Suppose $A$ and $B$ are square matrices of the same dimension, and suppose that $AB$ = $I$ = $BA$. Then $B$ is said to be the inverse of $A$, and we write this as $B$ = $A^{-1}$ . Similarly, $B^{-1}$ = $A$. For instance, you can easily check that
+
+$$\begin{pmatrix}2 & 1 \\ 1 & 1 \end{pmatrix} \begin{pmatrix} 1 & -1 \\ -1 & 2\end{pmatrix} = \begin{pmatrix} 1 & 0 \\ 0 & 1\end{pmatrix}  $$
+
+and so these two matrices are inverses of one another:
+$$\begin{pmatrix} 2 & 1 \\ 1 & 1\end{pmatrix}^{-1}  = \begin{pmatrix} 1 & -1 \\ -1 & 2  \end{pmatrix}  and \begin{pmatrix} 1 & -1 \\ -1 & 2\end{pmatrix}^{-1} = \begin{pmatrix}2 & 1 \\ 1 & 1 \end{pmatrix} $$
+
+	\textbf{Example:} Not every square matrix has an inverse. For instance
+
+$$ A = \begin{pmatrix}3 & 1 \\ 3 & 1 \end{pmatrix} $$
+
+
+has no inverse.
+
+\textbf{Exercise:} Show that the matrix A in the above example has no inverse. Hint: Suppose that
+
+$$ B = \begin{pmatrix} a & b \\ c & d \end{pmatrix} $$
+
+is the inverse of $A$. Then we must have $BA$ = $I$. Write this out and show that the equations for the entries of $B$ are inconsistent.
+
+\textbf{Exercise:} Which 1 $\times$ 1 matrices are invertible, and what are their inverses?
+
+\textbf{Exercise:} Show that if
+
+$ A = \begin{pmatrix} a & b \\ c & d \end{pmatrix},$ and $ad - bc \neq 0 $, then $A^{-1}$ = $\frac{1}{ad -bc} $ $\begin{pmatrix}d & -b \\ -c & a \end{pmatrix}$
+
+If $ad - bc$ = 0, then the matrix is not invertible. You should probably memorize this formula.
+\end{itemize}
+
+
+\section*{1.3 Matrices and systems of linear equations}
+
+You have all seen systems of linear equations such as
+
+
+\begin{equation} \label{eq1} 
+3x + 4y = 5
+\end{equation} 
+
+
+\begin{equation} \label{eq2} 
+2x - y = 0.
+\end{equation} 
+
+This system can easily be solved: just multiply the 2nd equation by 4, and add the two resulting equations to get 11$x$ = 5 or $x$ = 5/11. Substituting this into either equation gives $y$ = 10/11. In this case, a solution exists (obviously) and is unique (there\rq s just one solution, namely (5/11, 10/11).
+
+We can write this system as a matrix equation, that is in the form $Ax = y$.
+
+\begin{equation} \label{eq3} 
+	\begin{pmatrix} 3 & 4 \\ 2 & -1\end{pmatrix} \begin{pmatrix}x \\ y \end{pmatrix} = \begin{pmatrix} 5 \\ 0 \end{pmatrix}
+\end{equation}
+
+Here 
+
+\begin{equation} \label{eq}
+	x = \begin{pmatrix} x \\ y \end{pmatrix}, y = \begin{pmatrix} 5 \\ 0 \end{pmatrix} . \nonumber
+\end{equation}
+
+This works because if we multiply the two matrices on the left, we get the 2 $\times$ 1 matrix equation
+
+\begin{equation} \label{eq}
+	\begin{pmatrix} 3x + 4y \\ 2x - y\end{pmatrix} = \begin{pmatrix} 5 \\ 0\end{pmatrix}. \nonumber
+\end{equation} 
+
+And the two matrices are equal if both their entries are equal, which gives us the two equations in (1).
+
+Of course, rewriting the system in matrix form does not, by itself, simplify the way in which we solve it. The simplification results from the following observation: the variables $x$ and $y$ can be eliminated from the computation by simply writing down a matrix in which the coefficients of $x$ are in the first column, the coefficients of $y$ in the second, and the right hand side of the system is the third column:
+
+\begin{equation}\label{eq}
+	\begin{pmatrix} 3 & 4 & 5 \\ 2 & -1 & 0 \end{pmatrix}. 
+\end{equation}
+
+We are using the columns as \lq place markers \rq instead of $x$, $y$ and the = sign. That is, the first column consists of the coefficients of $x$, the second has the coefficients of $y$, and the third has the numbers on the right hand side of (1).
+
+\textbf{Definition:} The matrix in (2) is called the $augmented matrix$ of the system, and can be written in matrix shorthand as $(A|y)$.
+
+We can do exactly the same operations on this matrix as we did on the original $system^1$ :
+
+\hspace{1cm} $\begin{pmatrix} 3 & 4 & 5 \\ 8 & -4 & 0\end{pmatrix}$ : Multiply the 2nd eqn by 4
+
+	\hspace{1cm}$ \begin{pmatrix} 3 & 4 & 5 \\ 11 & 0 & 5\end{pmatrix} $ : Add the 1st eqn to the 2nd
+
+		\hspace{1cm} $\begin{pmatrix} 3 & 4 & 5 \\ 1 & 0 & \frac{5}{11} \end{pmatrix}$ : Divide the 2nd eqn by 11
+
+			The second equation now reads 1 · $x$ + 0 · $y$ = $\frac{5}{11}$, and we\rq ve solved for $x$; we can now substitute for $x$ in the first equation to solve for $y$ as above.
+
+Even though the solution to the system of equations is unique, it can be solved in many different ways (all of which, clearly, must give the same answer). Here are two other ways to solve it, both using the augmented matrix. As before, start with
+
+
+\hspace{1cm} $\begin{pmatrix} 3 & 4 & 5 \\ 2 & -1 & 0 \end{pmatrix}$,
+
+	\hspace{1cm}	$\begin{pmatrix} 1 & 5 & 5 \\ 2 & -1 & 0 \end{pmatrix}$ : Replace eqn 1 with eqn 1 - eqn 2 
+
+		\hspace{1cm} $\begin{pmatrix} 1 & 5 & 5 \\ 0 & -11 & -10 \end{pmatrix}$ : Subtract 2 times eqn 1 from eqn 2 
+
+			\hspace{1cm} $\begin{pmatrix} 1 & 5 & 5 \\ 0 & 1 & \frac{10}{11} \end{pmatrix}$ : Divide eqn 2 by 11 to get $y = \frac{10}{11}$ 
+
+
+				Now the second equation tells us that $y$ = $\frac{10}{11}$, and we can substitute this into the first equation $x$ + 5$y$ = 5 to get $x$ = $\frac{5}{11}$. We could even take this one step further:
+
+\hspace{1cm} 	$\begin{pmatrix} 1 & 0 & \frac{5}{11} \\ 0 & 1 & \frac{10}{11} \end{pmatrix}$ : We added -$5^*$ eqn 5 to eqn 1
+
+Now the complete solution can just be read off from the matrix. What we’ve done is to eliminate $x$ from the second equation, (the 0 in position (2,1)) and $y$ from the first (the 0 in position (1,2)).
+
+\textbf{Exercise:} What’s wrong with writing the final matrix as 
+
+$\begin{pmatrix} 1 & 0 & 0.45 \\ 0 & 1 & 0.91 \end{pmatrix} ?$ 
+
+	\textbf{Exercise:} (Do this BEFORE continuing with the text!) The system we just looked at consisted of two linear equations in two unknowns. Each equation, by itself, is the equation of a line in the plane and so has infinitely many solutions. To solve both equations simultaneously, we need to find the points, if any, which lie on both lines. There are 3 possibilities:(a) there\rq s just one (the usual case), (b) there is no solution (if the two lines are parallel and distinct), or (c) there are an infinite number of solutions (if the two lines coincide).
+
+Given all this food for thought, what are the possibilities for 2 equations in 3 unknowns? That is, what geometric object does each equation represent, and what are the possibilities for solution(s)?
+
+Let\rq s throw another variable into the mix and consider two equations in three unknowns:
+
+\begin{equation} \label{eq}
+2x − 4y + z = 1
+\end{equation}
+
+\begin{equation} \label{eq}
+4x + y − z = 3 \nonumber
+\end{equation}
+
+Rather than solving this directly, we\rq ll work with the augmented matrix for the system which
+
+$$ \begin{pmatrix} 2 & -4 & 1 & 1 \\ 4 & 1 & -1 & 3 \end{pmatrix} $$
+
+We proceed in more or less the same manner as above - that is, we try to eliminate $x$ from the second equation, and y from the first by doing simple operations on the matrix. Before we start, observe that each time we do such an \lq operation\rq , we are, in effect, replacing the original system of equations by an equivalent system which has the same solutions. For instance, if we multiply equation 1 by the number 2, we get a \lq new \rq equation 1 which has exactly the same solutions as the original. This is also true if we replace, say, equation 2 with equation 2 plus some multiple of equation 1. (Can you see why?) 
+
+So, to business:
+
+\hspace{2cm} $\begin{pmatrix} 1 & -2 & \frac{1}{2} & \frac{1}{2}\\ 4 & 1 & -1 & 3  \end{pmatrix}$ : Mult eqn 1 by $\frac{1}{2}$
+
+	\hspace{2cm}    $\begin{pmatrix} 1 & -2 & \frac{1}{2} & \frac{1}{2}\\ 0 & 9 & -3 & 1 \end{pmatrix}$ : Mult eqn 1 by -4 and add it to eqb 2
+
+\begin{equation} \label{eq} \begin{pmatrix} 1 & -2 & \frac{1}{2} & \frac{1}{2} \\ 0 & -1 & -\frac{1}{3} & \frac{1}{9}\end{pmatrix}: Mult \,\, eqn\,\, 2\,\, by\,\, \frac{1}{9} \end{equation} 
+
+\begin{equation}\label{eq}\begin{pmatrix} 1 & 0 & -\frac{1}{6} & \frac{13}{18} \\ 0 & 1 & \frac{1}{3} & \frac{1}{9}\end{pmatrix} : Add \,\,-2^*\,\,  eqn\,\, 2\, to\,\, eqn\,\, 2\,\, \end{equation}
+
+
+
+The matrix (4) is called an $echelon form$ of the augmented matrix. The matrix (5) is called the $reduced echelon form$. (Precise definitions of these terms will be given in the next lecture.) Either one can be used to solve the system of equations. Working with the echelon form in(4), the two equations now read
+
+\begin{equation}\label{eq}
+	x - 2y + \frac{z}{2} = \frac{1}{2} \nonumber
+\end{equation}
+\begin{equation}\label{eq}
+	y - \frac{z}{3} = \frac{1}{9} \nonumber
+\end{equation}
+
+
+So $y$ =$\frac{z}{3}$ + $\frac{1}{9}$. Substituting this into the first equation gives
+
+\begin{equation}\label{eq}
+	x = 2y - \frac{z}{2} + \frac{1}{2} \nonumber
+\end{equation}
+
+
+\begin{equation}\label{eq}
+	= 2(\frac{z}{3} + \frac{1}{9}) - \frac{z}{2} + \frac{1}{2} \nonumber
+\end{equation}
+
+\begin{equation}\label{eq}
+	= \frac{z}{6} + \frac{13}{18} \nonumber
+			\end{equation}
+
+
+\textbf{Exercise:} Verify that the reduced echelon matrix (5) gives exactly the same solutions. This is as it should be. All \lq equivalent \rq systems of equations have the same solutions.
+
+We see that for any choice of $z$, we get a solution to (3). If we take $z$ = 0, then the solution is $x$ = $\frac{13}{18}$, $y$ = $\frac{1}{9}$. But if $z$ = 1, then $x$ = $\frac{8}{9}$, $y$ = $\frac{4}{9}$ is the solution. Similarly for any other choice of $z$ which for this reason is called a free variable. If we write $z$ = $t$, a more familiar expression for the solution is
+
+\begin{equation}\label{eq}
+	\begin{pmatrix} x \\ y \\ z\end{pmatrix} = \begin{pmatrix} \frac{t}{6}+ \frac{13}{18} \\[2pt] \frac{t}{3} + \frac{1}{9} \\[2pt] t \end{pmatrix} = t \begin{pmatrix} \frac{1}{6} \\[2pt] \frac{1}{3} \\[2pt] 1 \end{pmatrix} + \begin{pmatrix} \frac{13}{18} \\[2pt] \frac{1}{9} \\[2pt] 0 \end{pmatrix} .
+\end{equation}
+
+This is of the form $r(t)$ = $tv$ + $a$, and you will recognize it as the (vector) parametric form of a line in R 3 . This (with t a free variable) is called the $general solution$ to the system (3). If we choose a particular value of $t$, say $t$ = 3$π$, and substitute into (6), then we have a $particular$ $solution$.
+
+\textbf{Exercises:} Write down the augmented matrix and solve these. If there are free variables, write your answer in the form given in (6) above. Also, give a geometric interpretation of the solution set (e.g., the common intersection of three planes in $R^3$.)
+
+\begin{enumerate} 
+	\item $$ 3x + 2y - 7z = 3 $$  
+		\begin{center} $-x - 2y + 3z = 4$ \end{center}
+	\item $$ 2x − 4y = 3 $$ 
+		\begin{center} $ 3x + 2y = −1 $ \end{center} 
+			\begin{center}$ x − y = 10$ \end{center}
+
+			\item $$ x + y + 3z = 4 $$
+\end{enumerate}
+
+It is now time to put on our mathematician\rq s hats and think about what we\rq ve just been doing:
+
+\begin{itemize}
+	\item Can we formalize the algorithm we\rq ve been using to solve these equations?
+	\item Can we show that the algorithm always works? That is, are we guaranteed to get all the solutions if we use the algorithm?
+\end{itemize}
+
+To begin with, let\rq s write down the different \lq operations \rq we\rq ve been using on the systems of equations and on the corresponding augmented matrices:
+
+\begin{enumerate}
+	\item We can multiply any equation by a $non-zero$ real number (scalar). The corresponding matrix operation consists of multiplying a row of the matrix by a scalar. 
+	\item We can replace any equation by the original equation plus a scalar multiple of another equation. Equivalently, we can replace any row of a matrix by that row plus a multiple of another row.
+	\item We can interchange two equations (or two rows of the augmented matrix); we haven\rq t needed to do this yet, but sometimes it\rq s necessary, as we\rq ll see in a bit.
+\end{enumerate}
+
+\textbf{Definition:} These three operations are called $elementary$ $row$ $operations$.
+
+In the next lecture, we\rq ll assemble the solution algorithm, and show that it can be reformulated in terms of matrix multiplication.
+		
+
+
+\end{document}

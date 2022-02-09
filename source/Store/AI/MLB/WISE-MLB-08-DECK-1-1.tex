@@ -1,0 +1,171 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+\usepackage{physics}
+\usepackage{amsmath}
+\usepackage{ragged2e}
+\usepackage{xcolor}
+\usepackage{mathtools}% http://ctan.org/pkg/mathtools
+\graphicspath{ {./images/} }
+
+\newcommand\heading[1]{%
+  \par\bigskip
+  {\Large\bfseries#1}\par\smallskip}
+
+\newcommand\myheading[1]{%
+  \par\bigskip
+  {\large\bfseries#1}\par\smallskip}
+
+\title{Bagging \& Boosting - Web Scraping - Introduction to NLTK - Random Forest}
+\author{by Talentsprint Pvt. Ltd.}
+\centering
+\date{December 2020}
+
+\begin{document}
+\maketitle
+\begin{frame}{Content}
+	\begin{itemize}
+		\item Introduction
+		\item Bagging
+		\item Boosting
+		\item Random Forest
+		\item Web Scraping
+		\item Introduction to NLTK
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Introduction}
+	\begin{flushleft}
+		\begin{itemize}
+			\item Ensemble is a machine learning concept in which multiple models are trained using the same learning algorithm.
+			\item Bagging is a way to decrease the variance in the prediction by generating additional data for training from dataset using combinations with repetitions to produce multi-sets of the original data. 
+			\item Boosting is an iterative technique which adjusts the weight of an observation based on the last classification. Boosting in general builds strong predictive models.
+			\item Web scraping is about downloading structured data from the web, selecting some of that data, and passing along what you selected to another process.
+			\item NLTK is a leading platform for building programs to work with human language data. It provides easy-to-use interfaces with a suite of text processing libraries for classification, tokenization, stemming, tagging, parsing, and semantic reasoning.
+		\end{itemize}
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Bagging: Bootstrap Aggregation}
+\begin{flushleft}
+\begin{itemize}
+	\item Take repeated bootstrap samples from training set D.
+	\item \textbf{Bootstrap sampling:} Given set D containing N training examples, create D' by drawing N examples at random with replacement from D.
+	\item Bagging:
+	\begin{enumerate}
+		\item Create k bootstrap samples $D_1 ... D_k$.
+		\item Train distinct classifier on each $D_i$.
+		\item Classify new instance by majority vote/average.
+	\end{enumerate}
+	\item Bagging reduces variance by averaging.
+	\item Bagging has little effect on bias.
+\end{itemize}
+\end{flushleft}
+\end{frame}
+
+\begin{frame}{Contd...}
+	\myheading{Bagging example:}
+	\includegraphics[scale=0.5]{img1}
+\end{frame}
+
+\begin{frame}{Contd...}
+	\includegraphics[scale=0.65]{img2}
+\end{frame}
+
+\begin{frame}{Contd...}
+	\includegraphics[scale=0.65]{img3}
+\end{frame}
+
+\begin{frame}{Boosting}
+	\begin{flushleft}
+		\begin{itemize}
+			\item boosting = general method of converting rough rules of thumb into highly accurate prediction rule.
+			\item technically:\\
+			- assume given "weak" learning algorithm that can consistently find classifiers ("rules of thumb") at least slightly better than random, say, accuracy $\geq$ 55\% \\
+			- given sufficient data, a boosting algorithm can probably construct single classifier with very high accuracy, say, 99\%
+(in two-class setting) [ “weak learning assumption” ]
+		\end{itemize}
+		\vspace{10pt}
+\textbf{Examples:} Gradient Tree Boosting, AdaBoost, XGBoost.
+	\end{flushleft}
+\end{frame}
+\begin{frame}{Boosting Approach}
+	\begin{flushleft}
+		\begin{itemize}
+			\item Devise computer program for deriving rough rules of thumb.
+			\item Apply procedure to subset of examples.
+			\item Obtain rule of thumb.
+			\item Apply to 2nd subset of examples.
+			\item Obtain 2nd rule of thumb.
+			\item Repeat T times.
+		\end{itemize}
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Random Forest}
+\begin{flushleft}
+	\begin{itemize}
+		\item Random forest is a supervised learning algorithm which is used for both classification as well as regression. But however, it is mainly used for classification problems.
+		\item As we know that a forest is made up of trees and more trees means more robust forest. Similarly, random forest algorithm creates decision trees on data samples and then gets the prediction from each of them and finally selects the best solution by means of voting.
+		\item It is an ensemble method which is better than a single decision tree because it reduces the over-fitting by averaging the result.
+	\end{itemize}
+\end{flushleft}
+\end{frame}
+
+\begin{frame}{Contd...}
+	\begin{flushleft}
+		\myheading{Working:}
+		\begin{itemize}
+			\item \textbf{Step 1} - First, start with the selection of random samples from a given dataset.
+			\item \textbf{Step 2} - Next, this algorithm will construct a decision tree for every sample. Then it will get the prediction result from every decision tree.
+			\item \textbf{Step 3} - In this step, voting will be performed for every predicted result.
+			\item \textbf{Step 4} - At last, select the most voted prediction result as the final prediction result.
+		\end{itemize}
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Contd...}
+	\begin{flushleft}
+		\myheading{Working Diagram:}
+	\end{flushleft}
+		\includegraphics[scale=0.7]{img4}
+\end{frame}
+
+\begin{frame}{Contd...}
+	\begin{flushleft}
+	\myheading{Pros:}
+	\begin{itemize}
+		\item It overcomes the problem of overfitting by averaging or combining the results of different decision trees.
+		\item Random forests work well for a large range of data items than a single decision tree does.
+		\item Random forest has less variance then single decision tree.
+		\item Random forests are very flexible and possess very high accuracy.
+		\item Scaling of data does not require in random forest algorithm. It maintains good accuracy even after providing data without scaling.
+		\item Random Forest algorithms maintains good accuracy even a large proportion of the data is missing.
+	\end{itemize}
+	\myheading{Cons:}
+	\begin{itemize}
+		\item Computational and time complexity is too high.
+		\item It is less intuitive in case when we have a large collection of decision trees.
+	\end{itemize}
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Web Scraping}
+\begin{flushleft}
+	\begin{itemize}
+		\item Some websites offer data sets that are downloadable in CSV format, or accessible via an Application Programming Interface (API). But many websites with useful data don't offer these convenient options.
+		\item Consider, for example, the National Weather Service's website. It contains up-to-date weather forecasts for every location in the US, but that weather data isn't accessible as a CSV or via API. It has to be viewed on the NWS site.
+		\item If we wanted to analyze this data, or download it for use in some other app, we wouldn't want to painstakingly copy-paste everything. Web scraping is a technique that lets us use programming to do the heavy lifting. We'll write some code that looks at the NWS site, grabs just the data we want to work with, and outputs it in the format we need.
+	\end{itemize}
+\end{flushleft}
+\end{frame}
+
+\begin{frame}{Introduction to NLTK}
+	\begin{flushleft}
+		\huge{\centerline{Refer Notebook}}
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}
+\huge{\centerline{The End}}
+\end{frame}
+\end{document}

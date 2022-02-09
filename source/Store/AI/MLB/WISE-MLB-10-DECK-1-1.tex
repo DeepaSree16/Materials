@@ -1,0 +1,264 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+\usepackage{physics}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{ragged2e}
+\usepackage{xcolor}
+\usepackage{mathtools}% http://ctan.org/pkg/mathtools
+\graphicspath{ {./images/} }
+
+\newcommand\heading[1]{%
+  \par\bigskip
+  {\Large\bfseries#1}\par\smallskip}
+
+\newcommand\myheading[1]{%
+  \par\bigskip
+  {\large\bfseries#1}\par\smallskip}
+
+\title{Unsupervised Learning}
+\author{by Talentsprint Pvt. Ltd.}
+\centering
+\date{January 2021}
+
+\begin{document}
+\maketitle
+\begin{frame}{Content}
+	\begin{itemize}
+		\item Introduction
+		\item Clustering
+		\item Types of Clustering
+		\item K Means Clustering
+		\item Choosing K
+		\item Pros and Cons
+		\item Hierarchical Clustering
+		\item Similarity
+		\item Limitations of Hierarchical clustering
+		\item Applications of clustering
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Introduction}
+	\begin{flushleft}
+		Unsupervised learning is a set of statistical tools for scenarios in which there is only a set of features and no targets. Therefore, we cannot make predictions, since there are no associated responses to each observation. Instead, we are interested in finding an interesting way to visualize data or in discovering subgroups of similar observations.
+		\begin{itemize}
+			\item Clustering
+			\item Association rule
+		\end{itemize}
+	\end{flushleft}
+	\includegraphics[scale=0.25]{img1}
+\end{frame}
+
+\begin{frame}{Clustering}
+\begin{flushleft}
+\begin{itemize}
+	\item Clustering refers to a broad set of techniques for finding subgroups or clusters in a dataset. This helps us partition observations into distinct groups so that each group contains observations that are similar to each other.
+	\item There are many clustering methods, but we will focus on \textbf{k-means clustering} and \textbf{hierarchical clustering}. In k-means clustering, we wish to partition the data into a pre-specified number K of clusters. On the other hand, with hierarchical clustering, we do not know how many clusters we want. Instead, we want a dendrogram that allows us to view all the clusters obtained for each possible number of clusters.
+\end{itemize}
+\end{flushleft} 
+\end{frame}
+
+\begin{frame}{Types of Clustering}
+\begin{flushleft}
+	\begin{itemize}
+		\item \textbf{Connectivity models:} These are based on the notion that the data points closer in data space exhibit more similarity to each other than the data points lying farther away. These models are very easy to interpret but lacks scalability for handling big datasets. Example: Hierarchical clustering and its variants.
+		\item \textbf{Centroid models:} These are iterative clustering algorithms in which the notion of similarity is derived by the closeness of a data point to the centroid of the clusters. Example: K-Means clustering algorithm.
+		\item \textbf{Distribution models:} These clustering models are based on the notion of how probable is it that all data points in the cluster belong to the same distribution. Example: Expectation-maximization algorithm which uses multivariate normal distributions.
+		\item \textbf{Density models:} These models search the data space for areas of varied density of data points in the data space. It isolates various different density regions and assign the data points within these regions in the same cluster. Example: DBSCAN, OPTICS.
+	\end{itemize}
+\end{flushleft}
+\end{frame}
+
+\begin{frame}{K-Means Clustering}
+	\begin{flushleft}
+		K means is an iterative clustering algorithm that aims to find local maxima in each iteration.
+		\begin{enumerate}
+			\item Randomly assign a number, from 1 to K, to each of the observations. These serves as initial cluster assignments for the observations.
+			\item Iterate until the cluster assignments stop changing:
+			\begin{itemize}
+				\item For each of the K clusters, compute the cluster centroid. The kth cluster centroid is the vector of the p feature means for the observations in the kth cluster.
+				\item Assign each observation to the cluster whose centroid is closest (shortest Euclidean distance).
+			\end{itemize}
+		\end{enumerate}
+		Note that the algorithm above will find a local minimum. Therefore, the obtained results will depend on the initial random cluster assignment. Therefore, it is important to run the algorithm multiple times.
+\end{flushleft}
+\end{frame}
+
+\begin{frame}{Contd...}
+	\begin{flushleft}
+		\myheading{Proximity measures:}
+		For clustering, we need to define a proximity measure for two data points. Proximity here means how similar/dissimilar the samples are with respect to each other.
+		\begin{itemize}
+			\item Similarity measure is large if features are similar.
+			\item Dissimilarity measure is small if features are similar.
+		\end{itemize}
+		\myheading{Data in Euclidean Space:}
+	\end{flushleft}
+		\includegraphics[scale=0.7]{img2}	
+\end{frame}
+
+\begin{frame}{Contd...}
+\begin{flushleft}
+	\myheading{Document Data:}
+\end{flushleft}
+	\includegraphics[scale=0.7]{img2}	
+	\begin{flushleft}
+		\myheading{Parameters to tune:}
+		\begin{itemize}
+			\item n\_clusters
+			\item max\_iter
+			\item algorithm
+		\end{itemize}
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Choosing K}
+	\begin{flushleft}
+		There are methods to determine the optimal value of k for convergence of the algorithm and to make clear distinction between clusters or different classes in a dataset.
+	\myheading{Elbow Method:}
+	It plots the various values of cost with changing k. The point where this distortion declines the most is the elbow point, which works as an optimal value of k.
+	\end{flushleft}
+	\includegraphics[scale=0.2]{img4}
+\end{frame}
+
+\begin{frame}{Contd...}
+	\begin{flushleft}
+	\myheading{Silhouette Method:}
+	Assume that the data has already been clustered into k clusters by k-means clustering. Then for each data point, we define the following:
+	\begin{itemize}
+		\item $C(i)$: The cluster assigned to the ith data point
+		\item $|C(i)|$: The number of data points in the cluster assigned to the ith data point
+		\item $a(i)$: Gives a measure of how well assigned the ith data point is to it’s cluster
+	\end{itemize}
+	\end{flushleft}
+	\includegraphics[scale=0.3]{img5}
+	\begin{flushleft}
+		\begin{itemize}
+			\item b(i): Defined as the average dissimilarity to the closest cluster which is not it’s cluster
+		\end{itemize}
+	\end{flushleft}
+	\includegraphics[scale=0.3]{img6}\\
+	\vspace{10pt}
+	\includegraphics[scale=0.3]{img7}
+\end{frame}
+
+\begin{frame}{Pros and Cons}
+	\begin{flushleft}
+		\myheading{Pros:}
+		\begin{itemize}
+			\item K-means clustering is relatively simple to implement, and can be implemented without using framework.
+			\item The algorithm is known to easily adapt to new examples.
+			\item It guarantees convergence by trying to minimize the total SSE as an objective function over a number of iterations.
+			\item The algorithm is fast and efficient in terms of computational cost, which is typically O(K*n*d).
+		\end{itemize}
+		\myheading{Cons:}
+		\begin{itemize}
+			\item Choosing k manually.
+			\item Clustering data of varying sizes and density.
+			\item Being dependent on initial values
+			\item Clustering Outliers
+			\item Scaling with number of dimensions.
+		\end{itemize}
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Hierarchical Clustering}
+	\begin{flushleft}
+		A potential disadvantage of k-means clustering is that it requires human input to specify the number of clusters. Hierarchical clustering, on the other hand, does not require an initial number of clusters.This clustering technique is divided into two types:
+		\begin{itemize}
+			\item Bottom-up or Agglomerative clustering
+			\item Top-down or Divisive clustering
+		\end{itemize}
+		\myheading{Agglomerative Clustering:}
+		In this technique, initially each data point is considered as an individual cluster. At each iteration, the similar clusters merge with other clusters until one cluster or K clusters are formed.\\
+		\vspace{10pt}
+		\begin{itemize}
+			\item Compute the proximity matrix
+			\item Let each data point be a cluster
+			\item Repeat: Merge the two closest clusters and update the proximity matrix
+			\item Until only a single cluster remains
+		\end{itemize}
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Contd...}
+	\includegraphics[scale=0.5]{img8}
+\end{frame}
+
+\begin{frame}{Contd...}
+	\begin{flushleft}
+		The Hierarchical clustering Technique can be visualized using a \textbf{Dendrogram}. A Dendrogram is a tree-like diagram that records the sequences of merges or splits.
+		\includegraphics[scale=0.4]{img9}
+		\myheading{Divisive Clustering}
+		Divisive clustering Technique is not much used in the real world. As we’re dividing a single cluster into n clusters, it is named as Divisive clustering.
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Similarity}
+	\begin{flushleft}
+		Calculating the similarity between two clusters is important to merge or divide the clusters. There are certain approaches which are used to calculate the similarity between two clusters:
+		\begin{itemize}
+			\item MIN
+			\item MAX
+			\item Group average
+			\item Distance between centroids
+			\item Ward's method
+		\end{itemize}
+		\myheading{MIN:} Also known as single-linkage algorithm can be defined as the similarity of two clusters $C_1$ and $C_2$ is equal to the minimum of the similarity between points $P_i$ and $P_j$ such that $P_i$ belongs to $C_1$ and $P_j$ belongs to $C_2$.\\			
+	\end{flushleft}
+	$Sim(C_1,C_2)$ = Min $Sim(P_i,P_j)$ such that $P_i \in C_1$ \& $P_j \in C_2$
+\end{frame}
+
+\begin{frame}{Contd...}
+	\includegraphics[scale=0.35]{img10}
+	\begin{flushleft}
+	\myheading{MAX:}
+		Also known as complete-linkage algorithm, this is exactly opposite to the MIN approach. The similarity of two clusters $C_1$ and $C_2$ is equal to the maximum of the similarity between points $P_i$ and $P_j$ such that $P_i$ belongs to $C_1$ and $P_j$ belongs to $C_2$.\\			
+	\end{flushleft}
+	$Sim(C_1,C_2)$ = Max $Sim(P_i,P_j)$ such that $P_i \in C_1$ \& $P_j \in C_2$
+\end{frame}
+
+\begin{frame}{Contd...}
+	\includegraphics[scale=0.35]{img11}
+	\begin{flushleft}
+		\myheading{Group Average:}
+		Take all the pairs of points and compute their similarities and calculate the average of the similarities.
+	\end{flushleft}
+	$sim(C_1, C_2) = \sum sim(P_i, P_j)/|C_1|*|C_2|$ \\
+	\vspace{10pt}
+	where, $P_i \in C_1 \& P_j \in C_2$
+\end{frame}
+
+\begin{frame}{Contd...}
+	\includegraphics[scale=0.35]{img12}
+	\begin{flushleft}
+		\myheading{Ward’s Method:}
+		This approach of calculating the similarity between two clusters is exactly the same as Group Average except that Ward’s method calculates the sum of the square of the distances $P_i$ and $P_j$.
+		\end{flushleft}
+		$sim(C_1, C_2) = \sum (dist(P_i, P_j))^2/|C_1|*|C_2|$ \\
+\end{frame}
+
+\begin{frame}{Limitations of Hierarchical Clustering}
+	\begin{itemize}
+		\item There is no mathematical objective for Hierarchical clustering.
+		\item All the approaches to calculate the similarity between clusters has its own disadvantages.
+		\item High space and time complexity for Hierarchical clustering. Hence this clustering algorithm cannot be used when we have huge data.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Applications of Clustering}
+	\begin{enumerate}
+		\item Recommendation engines
+		\item Market segmentation
+		\item Social network analysis
+		\item Search result grouping
+		\item Medical imaging
+		\item Image segmentation
+		\item Anomaly detection
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\huge{\centerline{The End}}
+\end{frame}
+\end{document}

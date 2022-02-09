@@ -1,0 +1,210 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+\usepackage{amsmath}
+
+\title{Introduction to Derivatives}
+\author{by Talentsprint Pvt.Ltd.}
+\centering
+\date{May 2020}
+\begin{document}
+\maketitle
+\begin{frame}{Content}
+	\begin{enumerate}
+		\item What is Calculus? 
+		\item Derivatives
+		\item Geometric Definition.
+		\item Taking the Derivative.
+		\item Steps in Calculation.
+		\item Machine Learning use cases.
+		\item Gradients.
+		\item Partial derivatives
+		\item Properties
+	\end{enumerate}
+\end{frame}
+\begin{frame}{What is Calculus?}
+\begin{itemize}
+    \item Calculus is used in order to understand how functions change over time (derivatives), and to calculate the total amount of a quantity that accumulates over a time period (integrals). 
+\vspace{10pt}
+    \item The language of calculus will allow you to speak precisely about the properties of functions and better understand their behaviour.\\
+\vspace{10pt}
+    \item It’s a huge field of study that has made an impact on other fields, such as engineering and science. Thankfully, we don’t need to know the breadth and depth of the field of Calculus in order to improve our understanding and application of machine learning.\\
+\end{itemize}
+\end{frame}
+\begin{frame}{Derivatives}
+	\begin{flushleft}
+		A derivative can be defined in two ways:
+	\end{flushleft}
+\vspace{-10pt}
+	\begin{itemize}
+		\item Instantaneous rate of change (Physics).
+		\item Slope of a line at a specific point (Geometry).
+	\end{itemize}
+	\begin{flushleft}
+		Both represent the same principle, but for our purposes it’s easier to explain using the geometric definition.
+	\end{flushleft}
+\end{frame}
+\begin{frame}{Geometric Definition}
+	\begin{flushleft}
+		In geometry slope represents the steepness of a line. It answers the question: how much does $y$ or $f(x)$ change given a specific change in $x$?
+	\end{flushleft}
+   \includegraphics[height=3cm, width=12cm]{image.png}
+   \begin{flushleft}
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																															A derivative outputs an expression we can use to calculate the instantaneous rate of change, or slope, at a single point on a line. After solving for the derivative you can use it to calculate the slope at every other point on the line.																
+   \end{flushleft}
+\end{frame}
+
+\begin{frame}{Taking the Derivative}
+\begin{flushleft}
+	Consider the graph below, where $f(x)=x2+3$.
+\end{flushleft}
+	\includegraphics[height=4cm, width=8cm]{image1.png}
+	\begin{flushleft}
+		The slope between (1,4) and (3,12) would be: \\
+	\end{flushleft}
+\vspace{5pt}
+\begin{equation*}
+	slope = \frac{y2 - y1}{x2 - x1} = \frac{12 - 4}{3 - 1} = 4
+\end{equation*}
+\end{frame}
+
+\begin{frame}
+	\begin{flushleft}
+		\textbf{But how do we calculate the slope at point (1,4) to reveal the change in slope at that specific point?} \\
+\vspace{5pt}
+		One way would be to find the two nearest points, calculate their slopes relative to x and take the average. But calculus provides an easier, more precise way: compute the derivative. Computing the derivative of a function is essentially the same as our original proposal, but instead of finding the two closest points, we make up an imaginary point an infinitesimally small distance away from x and compute the slope between x and the new point. \\
+\vspace{5pt}
+		Derivatives help estimate the slope between two points that are an infinitesimally small distance away from each other. A very, very, very small distance, but large enough to calculate the slope. \\ 
+\vspace{5pt}
+		In math language we represent this infinitesimally small increase using a limit. A limit is defined as the output value a function approaches as the input value approaches another value. In our case the target value is the specific point at which we want to calculate slope.
+	\end{flushleft}
+\end{frame}
+	
+\begin{frame}{Step by Step}
+	\begin{flushleft}
+		Calculating the derivative is the same as calculating normal slope, however in this case we calculate the slope between our point and a point infinitesimally close to it. We use the variable h to represent this infinitesimally distance. Here are the steps:
+	\end{flushleft}
+		\begin{enumerate}
+			\item Given the function:
+				\begin{equation*}
+					f(x) = x^2
+				\end{equation*}
+			\item Increment $x$ by a very small value $h(h=Δx)$
+				\begin{equation*}
+					f(x+h) = (x+h)^2
+				\end{equation*}
+			\item Apply the slope formula
+				\begin{equation*}
+					\frac{f(x + h) - f(x)}{h}
+				\end{equation*}
+			\item Simplify the equation
+				\begin{equation*}
+					\frac{x^2 + 2xh + h^2 - x^2}{h} = 
+					\frac{2xh + h^2}{h} = 2x + h
+				\end{equation*}
+		\end{enumerate}
+	\end{frame}
+\begin{frame}
+	\begin{enumerate}
+		\item Set h to 0 (the limit as h heads toward 0)
+			\begin{equation*}
+				2x + 0 = 2x
+			\end{equation*}
+	\end{enumerate}
+	\begin{flushleft}
+		It means for the function $f(x)=x2$, the slope at any point equals $2x$. The formula is defined as:
+		\begin{equation*}
+			\lim_{h \to 0} \frac{f(x + h) - f(x)}{h} = 5
+		\end{equation*}
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Machine Learning Use Cases}
+\begin{itemize}
+    \item Machine learning uses derivatives in optimization problems. Optimization algorithms like gradient descent use derivatives to decide whether to increase or decrease weights in order to maximize or minimize some objective (e.g. a model’s accuracy or error functions). 
+    \item Derivatives also help us approximate nonlinear functions as linear functions (tangent lines), which have constant slopes. With a constant slope we can decide whether to move up or down the slope (increase or decrease our weights) to get closer to the target value (class label).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Gradients}
+\begin{itemize}
+    \item A gradient is a vector that stores the partial derivatives of multivariable functions.
+    \item It helps us calculate the slope at a specific point on a curve for functions with multiple independent variables.
+    \item In order to calculate this more complex slope, we need to isolate each variable to determine how it impacts the output on its own.
+    \item To do this we iterate through each of the variables and calculate the derivative of the function after holding all other variables constant.
+    \item Each iteration produces a partial derivative which we store in the gradient.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Partial Derivatives}
+	\begin{flushleft}
+		In functions with 2 or more variables, the partial derivative is the derivative of one variable with respect to the others. If we change $x$, but hold all other variables constant, how does $f(x,z)$ change? That’s one partial derivative. The next variable is z. If we change z but hold x constant, how does f(x,z) change? We store partial derivatives in a gradient, which represents the full derivative of the multivariable function.
+	\end{flushleft}
+		\begin{enumerate}
+			\item Given a multivariable function:
+				\begin{equation*}
+					f(x,z) = 2z^3x^2
+				\end{equation*}
+			\item Calculate the derivative with respect to $x$
+				\begin{equation*}
+					\frac{df}{dx}(x,z)
+				\end{equation*}
+			\item Swap $2z^3$ with a constant value $b$
+				\begin{equation*}
+					f(x,z) = bx^2
+				\end{equation*}
+		\end{enumerate}
+\end{frame}
+
+\begin{frame}
+    \begin{enumerate}
+		\item Calculate the derivative with $b$ constant
+		\begin{align*}
+			\frac{df}{dx} &= \lim_{h \to 0}\frac{f(x + h) - f(x)}{h} \\
+			&= \lim_{h \to 0}\frac{b(x + h)^2 - b(x^2)}{h} \\
+			&= \lim_{h \to 0}\frac{b((x + h)(x + h)) - b(x^2)}{h} \\
+			&= \lim_{h \to 0}\frac{bx^2 + 2bxh + bh^2 - bx^2}{h} \\
+			&= \lim_{h \to 0}\frac{2bxh + bh^2}{h} \\
+			&= \lim_{h \to 0}2bx + bh 	
+		\end{align*}
+	As $h \to 0$ \\
+	2bx + 0
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}
+	\begin{enumerate}
+		\item Swap $2z^3$ back into the equation, to find the derivative with respect to $x$.
+		\begin{align*}
+			\frac{df}{dx}(x, z) &= 2(2z^3)x \\
+			&= 4z^3x
+		\end{align*}
+		\item Repeat the above steps to calculate the derivative with respect to $z$
+		\begin{equation*}
+			\frac{df}{dz}(x, z) = 6x^2z^2
+		\end{equation*}
+		\item Store the partial derivatives in a gradient
+		\begin{equation*}
+			\nabla(x,z) = \begin{bmatrix}
+							\frac{df}{dx} \\
+							\frac{df}{dz}
+						  \end{bmatrix} = \begin{bmatrix}
+											4z^3x \\
+											6x^2z^2
+										  \end{bmatrix}
+		\end{equation*}
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Properties}
+	\begin{flushleft}
+		There are two additional properties of gradients that are especially useful in deep learning. The gradient of a function:
+	\end{flushleft}
+		\begin{enumerate}
+			\item Always points in the direction of greatest increase of a function.
+			\item Is zero at a local maximum or local minimum.	
+		\end{enumerate}
+\end{frame}
+\begin{frame}
+\huge{\centerline{The End}}
+\end{frame}
+\end{document}
