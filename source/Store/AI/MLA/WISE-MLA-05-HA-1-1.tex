@@ -1,0 +1,70 @@
+\documentclass{book}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage[english]{babel}
+\pagestyle{fancy}
+\fancyhf{}
+\headheight = 0.1 in
+%\rhead{\includegraphics[width=2cm, height=1cm]{logo}}
+\lhead{\textbf{\Large{Problem 1 - Chain Rule Quiz}}}
+\lfoot{COPYRIGHT ©TALENTSPRINT, 2020. ALL RIGHTS RESERVED.}
+\rfoot{\thepage}
+
+\begin{document}
+In the following quiz, you will practice how to use the chain rule. Some
+questions look tricky, but just stick to the rules you know!
+\begin{enumerate}
+	\item If $f(x) = g(h(x))$, what is the differential of $f$ with respect to $x$, in terms of $g$ and $h$?
+	\begin{enumerate}
+		\item $f'(x) = g'(h'(x))$
+		\item $f'(x) = g'(h'(x))h'(x)$
+		\item $f'(x) = g'(h(x))$
+		\item $f'(x) = g'(h(x))h'(x)$
+	\end{enumerate}
+\textbf{Answer : d} 
+\\
+	\item Differentiate with respect to $x$ the function
+	$f(x) = \sqrt{x^3 - 2x = (x^3 - 2x)^\frac{1}{2}}$
+	\begin{enumerate}
+		\item $f'(x) = \frac{1}{2\sqrt{x^3 - 2x}}$
+		\item $f'(x) = \frac{3x^2 - 2}{2\sqrt{x^3 - 2x}}$
+		\item $f'(x) = \frac{x^3 - 2x}{2\sqrt{x^3 - 2x}}$
+		\item $f'(x) = \sqrt{(3x^2 - 2)}$
+	\end{enumerate}
+\textbf{Answer : b} 
+\\
+	\item Differentiate with respect to $x$ the function $f(x) = e^{x^3-3}$
+	\begin{enumerate}
+		\item $f'(x) = 3x^2e^{x^3-3}$
+		\item $f'(x) = e^{3x^2}$
+		\item $f'(x) = (x^3-3)e^{3x^2}$
+		\item $f'(x) = (x^3-3)e^{x^3-3}$
+	\end{enumerate}
+\textbf{Answer : a} 
+\\
+	\item Differentiate with respect to $x$ the function $f(x) = \sqrt{e^{x+2}}$
+	\begin{enumerate}
+		\item $f'(x) = \frac{\sqrt{e^{x+2}}}{2}$
+		\item $f'(x) = \sqrt{e^{x+2}}$
+		\item $f'(x) = \frac{1}{2e^{x+2}}$
+		\item $f'(x) = \frac{1}{\sqrt{e^{x+2}}}$
+	\end{enumerate}
+\textbf{Answer : a} 
+\\
+	\item If $f{t} = f(y(x(t)))$, what is the diferential of $f$ with respect to $t$, in terms of $f$, $y$, $x$ and $t$?
+	\begin{enumerate}
+		\item $f'(t) = f'(y'(x'(t))).y'(x'(t)).x'(t)$
+		\item $f'(t) = f'(y(x(t))).y'(x(t))$
+		\item $f'(t) = f'(y'(x'(t)))$
+		\item $f'(t) = f'(y(x(t))).y'(x(t)).x'(t)$
+	\end{enumerate}
+\textbf{Answer : d} 
+\end{enumerate}
+\end{document}

@@ -1,0 +1,253 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+\usepackage{physics}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{ragged2e}
+\usepackage{xcolor}
+\usepackage{environ} 
+\usepackage{mathtools}% http://ctan.org/pkg/mathtools
+\graphicspath{ {./images/} }
+
+\NewEnviron{SMALL}{% 
+    \scalebox{1}{$\BODY$} 
+} 
+
+\newcommand\heading[1]{%
+  \par\bigskip
+  {\Large\bfseries#1}\par\smallskip}
+
+\newcommand\myheading[1]{%
+  \par\bigskip
+  {\large\bfseries#1}\par\smallskip}
+
+\title{Recommender Systems}
+\author{by Talentsprint Pvt. Ltd.}
+\centering
+\date{February 2021}
+
+\begin{document}
+\maketitle
+\begin{frame}{Content}
+	\begin{itemize}
+		\item What are Recommendations?
+		\item Terminologies
+		\item Components of Recommendation Systems
+		\item Content Based Filtering System
+		\item Content based filtering - Advantages \& Disadvantages
+		\item Collaborative Filtering System
+		\item Types of Collaborative Recommender Systems
+		\item Collaborative filtering - Advantages \& Disadvantages
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{What are Recommendations?}
+	\begin{flushleft}
+		How does YouTube know what video you might want to watch next? How does the Google Play Store pick an app just for you? No, in both cases, an ML-based recommendation model determines how similar videos and apps are to other things you like and then serves up a recommendation. Two kinds of recommendations are commonly used:
+		\begin{itemize}
+			\item Home page recommendations
+			\item Related item recommendations
+		\end{itemize}
+	\end{flushleft}
+	\includegraphics[height=3.5cm, width=6.5cm]{img1}
+\end{frame}
+
+\begin{frame}{Contd...}
+\begin{flushleft}
+\myheading{Home page recommendations:}
+	Homepage recommendations are personalized to a user based on their known interests. Every user sees different recommendations.
+\myheading{Related item recommendations:}
+	As the name suggests, related items are recommendations similar to a particular item. In the Google Play apps example, users looking at a page for a math app may also see a panel of related apps, such as other math or science apps.
+\myheading{Why Recommendations?}
+A recommendation system helps users find compelling content in a large corpora. For example, the Google Play Store provides millions of apps, while YouTube provides billions of videos. More apps and videos are added every day. However, a recommendation engine can display items that users might not have thought to search for on their own.
+\end{flushleft} 
+\end{frame}
+
+\begin{frame}{Terminologies}
+\begin{flushleft}
+	\myheading{Items or Documents:}
+		The entities a system recommends. Playstore - apps to install. YouTube - videos.
+	\myheading{Query of Context:}
+	The information a system uses to make recommendations.
+	\begin{itemize}
+		\item user information
+		\begin{itemize}
+			\item the id of the user
+			\item items that users previously interacted with
+		\end{itemize}
+		\item additional context
+		\begin{itemize}
+			\item time of day
+			\item the user's device
+		\end{itemize}
+	\end{itemize}
+	\myheading{Embedding:}
+	A mapping from a discrete set to a vector space called the embedding space. Many recommendation systems rely on learning an appropriate embedding representation of the queries and items.
+\end{flushleft}
+\end{frame}
+
+\begin{frame}{Components of Recommendation Systems}
+	\begin{flushleft}
+		One common architecture for recommendation systems consists of the following components:
+		\begin{itemize}
+			\item candidate generation
+			\item scoring
+			\item re-ranking
+		\end{itemize}
+\end{flushleft}
+\includegraphics[scale=0.32]{img2}
+\end{frame}
+
+\begin{frame}{Contd...}
+	\begin{flushleft}
+		\myheading{Candidate Generation:}
+		This method is responsible for generating smaller subsets of candidates to recommend to a user, given a huge pool of thousands of items.
+		\myheading{Scoring:}
+		Candidate Generations can be done by different Generators, so, we need to standardize everything and try to assign a score to each of the items in the subsets. This is done by the Scoring system.
+		\myheading{Re-ranking:}
+		After the scoring is done, along with it the system takes into account other additional constraints to produce the final rankings.
+		\myheading{Types of Candidate generation systems:}
+		\begin{enumerate}
+			\item Content Based Filtering System
+			\item Collaborative Filtering System
+		\end{enumerate}
+	\end{flushleft}	
+\end{frame}
+
+\begin{frame}{Content Based Filtering System}
+\begin{flushleft}
+	Content-Based recommender system tries to guess the features or behavior of a user given the item’s features, he/she reacts positively to.
+\end{flushleft}
+	\includegraphics[scale=0.4]{img3}	
+	\begin{flushleft}
+		Once, you know the likings of the user you can embed user in an embedding space using the feature vector generated and recommend user according to the choice. During recommendation, the similarity metrics are calculated from the item’s feature vectors and the user’s preferred feature vectors from the previous records. Then, the top few are recommended.
+This filtering does not require other users data during recommendations to one user.
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Content based filtering - Advantages \& Disadvantages}
+	\begin{flushleft}
+		\myheading{Advantages:}
+		\begin{itemize}
+			\item The model doesn't need any data about other users, since the recommendations are specific to this user. This makes it easier to scale to a large number of users.
+			\item The model can capture the specific interests of a user, and can recommend niche items that very few other users are interested in.
+		\end{itemize}
+		\myheading{Disadvantages:}
+		\begin{itemize}
+			\item Since the feature representation of the items are hand-engineered to some extent, this technique requires a lot of domain knowledge. Therefore, the model can only be as good as the hand-engineered features.
+			\item The model can only make recommendations based on existing interests of the user. In other words, the model has limited ability to expand on the users' existing interests.
+		\end{itemize}
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Collaborative Filtering System}
+	\begin{flushleft}
+		Collaborative does not need the features of the items to be given. Every user and item is described by a feature vector or embedding.\\
+		\vspace{10pt}
+		It creates embedding for both users and items on its own. It embeds both users and items in the same embedding space.\\
+		\vspace{10pt}
+		It considers other users’ reactions while recommending a particular user. It notes which items a particular user likes and also the items that the users with behavior and likings like him/her likes, to recommend items to that user.\\
+		\vspace{10pt}
+		It collects user feedbacks on different items and uses them for recommendations.
+		\myheading{Sources of user-item interactions:}
+		\begin{itemize}
+			\item Implicit feedback -  only positive feedback and no negative feedback.
+			\item Explicit feedback -  both positive and negative feedback.
+		\end{itemize}
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Types of Collaborative Recommender Systems}
+	\begin{flushleft}
+	\myheading{Memory-based collaborative filtering:}
+		Done mainly remembering the user-item interaction matrix, and how a user reacts to it, i.e, the rating that a user gives to an item.\\
+		\vspace{10pt}
+		\textbf{User-User Filtering:}
+		If a user A’s characteristics are similar to some other user B then, the products that B liked are recommended to A. As a statement, we can say, “the users who like products similar to you also liked those products”. So here we recommend using the similarities between two users.
+		\begin{equation*}
+			R_{xu} = (\sum_{i=0}^{n} R_i) / n
+		\end{equation*}
+		Where Rxu is the rating given to x by user u and i=0 to n are the users who have shown behavior similar to u. Now, all the n users are not an equal amount similar to the user u. So, we find a weighted sum to provide the rank.
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Contd...}
+	\begin{flushleft}
+		\begin{equation*}
+			R_{xu} = (\sum_{i=0}^{n} R_iW_i) / \sum_{i=0}^{n} W_i
+		\end{equation*}
+		The weights here are the similarity metrics used.\\
+		\vspace{10pt}
+		Now, users show some differences in behaviors while rating. Some are generous raters, others are not, i.e, maybe one user rates in range 3 to 5, while other user rates 1 to 3. So, we calculate the average of all the ratings that the user has provided, and subtract the value from Ri in order to normalize the ratings by each user.\\
+		\vspace{10pt}
+		\textbf{Item-Item Filtering:}
+		Here, if user A likes an item x, then, the items y and z which are similar to x in property, then y and z are recommended to the user. As a statement, it can be said, “Because you liked this, you may also like those”.
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Contd...}
+	\begin{flushleft}
+		\begin{equation*}
+			R_{xu} = (\sum_{i=0}^{n} R_i) / n
+		\end{equation*}
+		Where R is the rating user u gives to the product x, and it is the average of the ratings u gave to products like x. Here also, we take a weighted average
+		\begin{equation*}
+			R_{xu} = (\sum_{i=0}^{n} R_iW_i) / \sum_{i=0}^{n} W_i
+		\end{equation*}
+		Where the Weight is the similarity between the products.
+		\myheading{Similarity Metrics:}
+		They are mathematical measures which are used to determine how similar is a vector to a given vector.
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Contd...}
+	\begin{enumerate}
+		\item Cosine Similarity: The Cosine angle between the vectors.
+		\begin{equation*}
+			\SMALL{cos(\theta) = \frac{\sum_{i=1}^{n} A_i . B_i}{\sqrt{\sum_{i=1}^{n}A_i^2}\sqrt{\sum_{i=1}^{n}B_i^2}}}
+		\end{equation*}
+		\item Dot Product: The cosine angle and magnitude of the vectors also matters.
+		
+		\begin{equation*}
+			\SMALL{\sum_{i=1}^{n} A_i . B_i = \sqrt{\sum_{i=1}^{n}A_i^2}\sqrt{\sum_{i=1}^{n}B_i^2} cos(\theta)}
+		\end{equation*}
+		\item Euclidian Distance: The elementwise squared distance between two vectors
+		\item Pearson Similarity: It is a coefficient given by:
+		\begin{equation*}
+			r = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n}(x_i - \bar{x})^2 \sum_{i=1}^{n}(y_i - \bar{y})^2}}
+		\end{equation*}
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}{Contd...}
+	\begin{flushleft}
+		\myheading{Model based Collaborative Filtering:}
+			Remembering the matrix is not required here. From the matrix, we try to learn how a specific user or an item behaves. We compress the large interaction matrix using dimensional Reduction or using clustering algorithms. In this type, We fit machine learning models and try to predict how many ratings will a user give a product. There are several methods:
+			\begin{enumerate}
+				\item Clustering algorithms - K Nearest neighbours
+				\item Matrix Factorization based algorithm - SVD, PMF, NMF
+				\item Deep learning methods - 
+			\end{enumerate}
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Collaborative filtering - Advantages \& Disadvantages}
+	\begin{flushleft}
+		\myheading{Advantages:}
+		\begin{itemize}
+			\item We don't need domain knowledge because the embeddings are automatically learned.
+			\item The model can help users discover new interests. In isolation, the ML system may not know the user is interested in a given item, but the model might still recommend it because similar users are interested in that item.
+			\item Great starting point
+		\end{itemize}
+		\myheading{Disadvantages:}
+		\begin{itemize}
+			\item Cannot handle fresh items.
+			\item Hard to include side features for query/item.
+		\end{itemize}
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}
+\huge{\centerline{The End}}
+\end{frame}
+\end{document}

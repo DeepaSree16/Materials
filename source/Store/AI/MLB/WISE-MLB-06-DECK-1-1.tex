@@ -1,0 +1,255 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+\usepackage{physics}
+\usepackage{amsmath}
+\usepackage{ragged2e}
+\usepackage{xcolor}
+\usepackage{mathtools}% http://ctan.org/pkg/mathtools
+\graphicspath{ {./images/} }
+
+\newcommand\heading[1]{%
+  \par\bigskip
+  {\Large\bfseries#1}\par\smallskip}
+
+\newcommand\myheading[1]{%
+  \par\bigskip
+  {\large\bfseries#1}\par\smallskip}
+
+\title{Introduction to Visual Bag of Words and Eigenfaces}
+\author{by Talentsprint Pvt. Ltd.}
+\centering
+\date{September 2020}
+
+\begin{document}
+\maketitle
+\begin{frame}{Content}
+	\begin{itemize}
+		\item What is Bag of Visual Words (BOVW)?
+		\item Bag of Features - Origin: Texture recognition
+		\item Bag of Visual Words Model
+		\item Bag of Features for image classification
+		\item Steps in Visual BOW
+		\item Face Recognition System
+		\item Types of Face Recognition
+		\item Eigenfaces
+		\item PCA
+		\item Recognition Process
+		\item Steps in Eigenfaces
+		\item Pros and Limitations of Eigenfaces
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{What is Bag of Visual Words (BOVW)?}
+	\begin{flushleft}
+		\begin{itemize}
+			\item Bag of visual words (BOVW) is commonly used in image classification.
+			\item Its concept is adapted from information retrieval and NLP’s bag of words (BOW). In bag of words (BOW), we count the number of each word appears in a document, use the frequency of each word to know the keywords of the document, and make a frequency histogram from it. We treat a document as a bag of words (BOW)
+			\item We have the same concept in bag of visual words (BOVW), but instead of words, we use image features as the “words”. Image features are unique pattern that we can find in an image.
+			\item The general idea of bag of visual words (BOVW) is to represent an image as a set of features.
+			\item  Features consists of keypoints and descriptors.
+		\end{itemize}
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Contd...}
+	\begin{flushleft}
+		\begin{itemize}
+			\item Keypoints are the “stand out” points in an image, so no matter the image is rotated, shrink, or expand, its keypoints will always be the same.
+			\item Descriptor is the description of the keypoint. 
+			\item  We use the keypoints and descriptors to construct vocabularies and represent each image as a frequency histogram of features that are in the image. From the frequency histogram, later, we can find another similar images or predict the category of the image.
+		\end{itemize}
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Contd...}
+\begin{flushleft}
+	\includegraphics[height=8cm, width=12cm]{img1}
+\end{flushleft}
+\end{frame}
+
+\begin{frame}{Bag of Features - Origin: Texture recognition}
+\begin{flushleft}
+Texture is characteried by the repetition of basic elements or textons.
+\end{flushleft}
+\includegraphics[scale=0.6]{img2}
+\end{frame}
+
+\begin{frame}{Contd...}
+	\includegraphics[scale=0.6]{img3}
+\end{frame}
+
+\begin{frame}{Bag of Words Model}
+	\includegraphics[scale=0.55]{img4}
+\end{frame}
+
+\begin{frame}{Bag of Visual Words Model}
+	\includegraphics[scale=0.7]{img5}
+\end{frame}
+
+\begin{frame}{Contd...}
+	\includegraphics[scale=0.6]{img6}
+\end{frame}
+
+\begin{frame}{Contd...}
+	\includegraphics[scale=0.57]{img7}
+\end{frame}
+
+\begin{frame}{Bag of Features for image classification}
+	\includegraphics[height=7cm, width=12cm]{img8}
+\end{frame}
+
+\begin{frame}{Steps}
+	\begin{flushleft}
+		\myheading{Step:1 Feature Extraction}
+		\begin{itemize}
+			\item Detect interest points
+			\begin{itemize}
+				\item[--] SIFT
+				\item[--] Harris
+				\item[--] Dense
+				\item[--] ORB
+				\item[--] HOG
+			\end{itemize}
+			\item Compute Descriptor around each points
+		\end{itemize}
+	\end{flushleft}
+	\includegraphics[scale=0.4]{img9}
+\end{frame}
+
+\begin{frame}{Contd...}
+	\begin{flushleft}
+		\myheading{Step:2 Quantization}
+		\begin{itemize}
+			\item Cluster Descriptors
+			\begin{itemize}
+				\item[--] K-Means
+			\end{itemize}
+			\item Assign eah visual word to a cluster
+			\item Build Frequency Histogram
+		\end{itemize}
+	\end{flushleft}
+	\includegraphics[height=5cm, width=10cm]{img10}
+\end{frame}
+
+\begin{frame}{Face Recognition System}
+\begin{flushleft}
+	\begin{itemize}
+		\item Face recognition is a biometric process of identifying an individual by comparing live capture or digital image with the stored record for that person.
+		\item Face Detection
+		\begin{itemize}
+			\item[--] Face Verification
+			\item[--] Face or No Face decision
+		\end{itemize}
+		\item Face Recognition
+		\begin{itemize}
+			\item[--] Face Identification
+			\item[--] Identify who's image amo	ng all images
+		\end{itemize}
+	\end{itemize}
+\end{flushleft}
+\end{frame}
+
+\begin{frame}{Types of Face Recognition}
+\begin{flushleft}
+	\begin{itemize}
+		\item Based on Local Regions
+		\begin{itemize}
+			\item[--] Local Feature Analysis (LFA)
+			\item[--] Gabor Wavelet
+		\end{itemize}
+		\item Based on Global Appearance	
+		\begin{itemize}
+			\item[--] Principal Component Analysis (PCA) 
+			\item[--] Independent Component Analysis (ICA)
+		\end{itemize}
+	\end{itemize}
+\end{flushleft}
+\end{frame}
+
+\begin{frame}{Eigenfaces}
+\begin{flushleft}
+	\begin{itemize}
+		\item Eigenfaces are the Eigenvectors of Covariance Matrix of the dataset.
+		\item Eigenfaces are also referred to as Ghostly images.	
+		\item To represent the input data efficiently-each individual face can be represented in terms of linear combination of eigenfaces.
+		\item Need to reduce dimensionality - PCA
+	\end{itemize}
+\end{flushleft}
+\end{frame}
+
+\begin{frame}{Principal Component Analysis}
+\begin{flushleft}
+	\begin{itemize}
+		\item Used to remove information which is not useful, therefore it reduces the dimension of the data and accurately decompose the face structure into orthgonal principal components which we know as "Eigenfaces".
+		\item Face space forms a cluster - PCA gives suitable representation.
+		\item To represent the input data efficiently-each individual face can be represented in terms of linear combination of eigenfaces.
+		\item Need to reduce dimensionality - PCA
+	\end{itemize}
+\end{flushleft}
+\includegraphics[scale=0.5]{img11}
+\end{frame}
+
+\begin{frame}{Recognition Process}
+	\includegraphics[height=3.8cm, width=12.4cm]{img12}
+\end{frame}
+
+\begin{frame}{Steps in Eigenfaces}
+	\begin{flushleft}
+		\myheading{Step:1 Obtain and align images}
+		Obtain a set of images which forms a dataset and will be considered for the face recognition process.
+		\myheading{Step:2 Compute the Mean Image}
+		Calculate the mean image $\Psi$ by:
+	\end{flushleft}
+		$ \Psi = \frac{1}{M} \sum_{n=1}^{M}\Gamma_i$
+	\begin{flushleft}
+		\myheading{Step:3 Compute the difference image}
+		Find the deviation between the input images and the mean image by:
+	\end{flushleft}
+		$ \Phi_i = \Gamma_i - \Psi $
+	\begin{flushleft}
+		Then the centroid image matrix is found based on this difference.
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Contd...}
+	\begin{flushleft}
+		\myheading{Step:4 Compute Eigenfaces}
+		Covariance matrix is found using the centered image by the formulae:
+	\end{flushleft}
+		$ C = \frac{1}{M} \sum_{n=1}^{M}\Phi_n\Phi_n^T$
+	\begin{flushleft}
+		The eigen values are then found for this Covariance matrix and hence eigenvectors are computed.\\
+		\vspace{10pt}
+		And eigenvectors that are less than a specific threshold value are eliminated by PCA.\\
+		\vspace{10pt}
+		When the eigenvectors are projected on face space set of 'Ghostly' images i.e eigenfaces are formed.
+		\myheading{Step:5 Recognize an image}
+		Image that needs to be recognized is fed into the program and the eigencomponents of the image are obtained.
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Contd...}
+	\begin{flushleft}
+		\myheading{Step:6 Compute Euclidean Distance}
+		The Euclidean distance between the eigenvalue of the test image and the previous computed eigenfaces are evalueated.
+	\end{flushleft}
+	\includegraphics[scale=0.7]{img13}
+\end{frame}
+
+\begin{frame}{Pros and Limitations of Eigenfaces}
+	\begin{flushleft}
+		\heading{Pros:}
+		\begin{itemize}
+			\item Non-iterative, globally optimal solution
+		\end{itemize}
+		\heading{Limitations:}
+		\begin{itemize}
+			\item PCA projection is optimal for reconstruction from a low dimensional basis, but may NOT be optimal for discrimination...
+		\end{itemize}
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}
+\huge{\centerline{The End}}
+\end{frame}
+\end{document}

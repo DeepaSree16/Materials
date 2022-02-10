@@ -1,0 +1,151 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+\usepackage{amsmath}
+
+\title{Introduction to Integrals}
+\author{by Talentsprint Pvt.Ltd.}
+\centering
+\date{May 2020}
+\begin{document}
+\maketitle
+\begin{frame}{Content}
+	\begin{itemize}
+		\item Chain Rule
+		\item Example - Chain Rule 
+		\item Integrals.
+		\item Types of Integrals.
+		\item Computing Integrals.
+		\item Applications of Integrals.
+		\item Properties
+	\end{itemize}
+\end{frame}
+\begin{frame}{Chain Rule}
+\begin{itemize}
+    \item The chain rule is a formula for calculating the derivatives of composite functions. Composite functions are functions composed of functions inside other functions.
+\vspace{10pt}
+    \item Given a composite function $f(x) = A(B(x))$, the derivative of $f(x)$ equals the product of the derivative of $A$ with respect to $B(x)$ and the derivative of $B$ with respect to $x$.
+	$$composite \hspace{2pt}derivative = outer \hspace{2pt}derivative * inner \hspace{2pt}derivative$$ \\
+For example, given a composite function f(x), where:
+	$$f(x) = h(g(x))$$
+The chain rule tells us that the derivative of f(x) equals:
+\begin{equation*}
+	\frac{df}{dx} = \frac{dh}{dg} \cdot \frac{dg}{dx}
+\end{equation*}
+\end{itemize}
+\end{frame}
+\begin{frame}{Example - Chain Rule}
+\begin{flushleft} 
+	Let $f(x)$ is composed of two functions $h(x) = x^3$ and $g(x) = x^2$.
+		$$f(x) = h(g(x))$$
+		$$f(x) = (x^2)^3$$
+	The derivative of f(x) would equal:
+	\begin{equation*}
+		\frac{df}{dx}  =  \frac{dh}{dg} \frac{dg}{dx}  =  \frac{dh}{d(x^2)} \frac{dg}{dx}
+	\end{equation*}
+
+	\textbf{Steps}\\
+	\begin{itemize}
+		\item Solve for the inner derivative of $g(x) = x^2$
+		$$\frac{dg}{dx} = 2x$$
+	\end{itemize}
+\end{flushleft}
+\end{frame}
+
+\begin{frame}{Contd..}
+	\begin{itemize}
+		\item Solve for the inner derivative of $g(x) = x^2$
+		$$\frac{dg}{dx} = 2x$$
+		\item Solve for the outer derivative of $h(x) = x^3$, using a placeholder $b$ to represent the inner function $x^2$
+		$$\frac{dh}{db} = 3b^2$$
+		\item  Swap out the placeholder variable for the inner function
+		$$3x^4$$
+		\item Return the product of the two derivatives
+		$$3x^4 \cdot 2x = 6x^5$$
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Integrals}
+	\begin{flushleft}
+		The integral of $f(x)$ corresponds to the computation of the area under the graph of $f(x)$. The area under $f(x)$ between the points $x=a$ and $x=b$ is denoted as follows:
+	\end{flushleft}
+	$$A(a,b) =\int_{a}^{b} f(x)dx$$
+	\includegraphics[height=4cm, width=5cm]{image.png}
+\end{frame}
+
+\begin{frame}{Contd..}
+	\begin{flushleft}
+		The area $A(a,b)$ is bounded by the function $f(x)$ from above, by the x-axis from below, and by two vertical lines at $x=a$ and $x=b$. The points $x=a$ and x=b are called the limits of integration. The $\int_{}^{}$ sign comes from the Latin word summa. The integral is the “sum” of the values of $f(x)$ between the two limits of integration. \\
+\vspace{10pt}
+		The integral function $F(c)$ corresponds to the area calculation as a function of the upper limit of integration:
+		$$F(c) \equiv \int_{0}^{c}f(x) dx$$
+		There are two variables and one constant in this formula. The input variable c describes the upper limit of integration. The integration variable $x$ performs a sweep from $x=0$ until $x=c$. The constant 0 describes the lower limit of integration. Note that choosing $x=0$ for the starting point of the integral function was an arbitrary choice.
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Contd..}
+	\begin{flushleft}
+		The area under $f(x)$ between $x=a$ and $x=b$ is obtained by calculating the change in the integral function as follows:
+		$$A(a,b) = \int_{a}^{b}f(x)dx = F(b) - F(a)$$
+	\end{flushleft}
+    \includegraphics[height=3.5cm, width=12cm]{image1.png}
+\end{frame}
+\begin{frame}{Types of Integrals}
+	\begin{flushleft}
+	There are two forms of the integrals. \\ 
+	\begin{itemize}
+		\item \textbf{Indefinite Integrals}: It is an integral of a function when there is no limit for integration. It contains an arbitrary constant.
+		\item \textbf{Definite Integrals}: An integral of a function with limits of integration. There are two values as the limits for the interval of integration.
+	\end{itemize}
+	\end{flushleft}
+\end{frame}
+\begin{frame}{Computing Integrals}
+\begin{flushleft}
+	We can approximate the total area under the function $f(x)$ between $x=a$ and $x=b$ by splitting the region into tiny vertical strips of width $h$, then adding up the areas of the rectangular strips. The figure below shows how to compute the area under $f(x)=x^2$ between $x=1$ and $x=3$ by approximating it as four rectangular strips of width $h=0.5$.
+\end{flushleft}
+	\includegraphics[height=5cm, width=7cm]{image2.png}
+\end{frame}
+\begin{frame}{Contd..}
+	\begin{flushleft}
+		To find an integral function of the function $f(x)$, we must find a function $F(x)$ such that $F'(x)=f(x)$. Suppose you’re given a function $f(x)$ and asked to find its integral function $F(x)$:
+
+$$F(x)=\int_{}^{}f(x)dx$$
+This problem is equivalent to finding a function $F(x)$ whose derivative is $f(x)$:
+
+$$F'(x)=f(x)$$
+For example, suppose you want to find the indefinite integral $\int_{}^{}x^2dx$. We can rephrase this problem as the search for some function $F(x)$ such that
+
+$$F'(x)=x^2$$
+Remembering the derivative formulas, guess that $F(x)$ must contain an $x^3$ term. Taking the derivative of a cubic term results in a quadratic term.
+\end{flushleft}
+\end{frame}
+\begin{frame}{Contd..}
+\begin{flushleft}
+Therefore, the function you are looking for has the form $F(x)=cx3$, for some constant $c$. Pick the constant $c$ that makes this equation true:
+
+$$F'(x)=3cx^2=x^2$$.
+Solving $3c=1$, we find $c=\frac{1}{3}$ and so the integral function is
+
+$$F(x)=\int_{}{}x^2dx = \frac{1}{3}x^3+C$$
+You can verify that $\frac{d}{dx}[\frac{1}{3}x^3+C]=x^2$.
+	\end{flushleft}
+\vspace{5pt}
+\end{frame}
+
+\begin{frame}{Applications of Integrals}
+	\begin{flushleft}
+		Integral calculations have widespread applications to more areas of science than are practical to list here. Let’s explore a few examples related to probabilities. \\
+		\begin{itemize}
+			\item The notion of integration is central to probability theory with continuous random variables.
+			\item We also use integration to compute the \textbf{expected value} and the \textbf{variance} which are two properties of any random variable $X$.
+		\end{itemize}	
+\vspace{5pt}
+		In machine learning, maximum likelihood estimation and Bayesian inference problems are solved by expectation maximization and variational Bayesian inference. \\ 
+\vspace{5pt}
+In former, we take an expectation which is an integral and in later, we maximize a lower bound on the marginal log-likelihood, and this decomposes into an expected log-likelihood with respect to variational distribution, and a Kullback–Leibler divergence, both of which are again integrals.
+	\end{flushleft}
+\end{frame}
+	
+\begin{frame}
+\huge{\centerline{The End}}
+\end{frame}
+\end{document}

@@ -1,0 +1,140 @@
+\documentclass{book}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage[english]{babel}
+\pagestyle{fancy}
+\fancyhf{}
+\headheight = 0.1 in
+%\rhead{\includegraphics[width=2cm, height=1cm]{logo}}
+\lhead{\textbf{\Large{EIGENVALUES AND EIGENVECTORS}}}
+\lfoot{COPYRIGHT ©TALENTSPRINT, 2020. ALL RIGHTS RESERVED.}
+\rfoot{\thepage}
+
+\begin{document}
+
+Find the corresponding eigenvalues and eigenvectors for the below problem.
+\begin{equation*}
+	\begin{pmatrix}
+	-2 & -4 & 2\\
+	-2 & 1 & 2\\
+	4 & 2 & 5
+	\end{pmatrix}
+\end{equation*}
+The characteristic equation is
+\begin{equation*}
+det
+	\begin{pmatrix}
+	-2-\lambda & -4 & 2\\
+	-2 & 1-\lambda & 2\\
+	4 & 2 & 5-\lambda
+	\end{pmatrix} = 0 
+\end{equation*}
+Expanding the determinant,
+\begin{equation*}
+	(-2-\lambda)([1-\lambda)(5-\lambda)-2 * 2] + 4 [(-2)*(5-\lambda) - 4 * 2] + 2[(-2) * 2 - 4(1-\lambda)] = 0
+\end{equation*}
+Expanding the brackets and simplifying:
+\begin{equation*}
+	-\lambda^3 + 4\lambda^2 - 27\lambda - 90 = 0,
+\end{equation*}
+or equivalently
+\begin{equation*}
+	\lambda^3 - 4\lambda^2 + 27\lambda + 90 = 0,
+\end{equation*}
+By trial and error, we find that
+\begin{equation*}
+	3^3 - 4 * 3^2 - 27 * 3 + 90 = 0,
+\end{equation*}
+and it follows from the Factor Theorem that $(\lambda¸-3)$  is a factor. Indeed,
+\begin{equation*}
+	\lambda^3 - 4\lambda^2 + 27\lambda + 90 = (\lambda - 3)(\lambda^2 - \lambda - 30)
+\end{equation*}
+and 
+\begin{equation*}
+	(\lambda - 3)(\lambda^2 - \lambda - 30) = (\lambda - 3)(\lambda + 5)(\lambda - 6)
+\end{equation*}
+meaning that the eigenvalues are 3, -5  and 6.\\
+\\
+We now go on to solve
+\begin{equation*}
+	\begin{pmatrix}
+	-2-\lambda & -4 & 2\\
+	-2 & 1-\lambda & 2\\
+	4 & 2 & 5-\lambda
+	\end{pmatrix}
+	\begin{pmatrix}
+	X\\
+	Y\\
+	Z
+	\end{pmatrix}  = 
+	\begin{pmatrix}
+	0\\
+	0\\
+	0
+	\end{pmatrix}
+\end{equation*}
+for each eigenvalue ¸. Now, every such system will have infinitely many solutions, because if e is an eigenvector, so is any multiple of e. So our strategy will be to try to find the eigenvector with X=1, and then if necessary scale up. (If there is no such eigenvector, we know that X must in fact be zero, and we instead look for the eigenvector with Y=1, and so on.)
+\\
+\\
+\\
+\\
+\textbf{Eigenvector corresponding to eigenvalue 3}\\ \\
+In the case ¸=3, we have
+\begin{equation*}
+	\begin{pmatrix}
+	-5 & -4 & 2\\
+	-2 & -2 & 2\\
+	4 & 2 & 2
+	\end{pmatrix}
+	\begin{pmatrix}
+	X\\
+	Y\\
+	Z
+	\end{pmatrix}  = 
+	\begin{pmatrix}
+	0\\
+	0\\
+	0
+	\end{pmatrix}
+\end{equation*}
+Setting X=1 gives, as our first two equations,
+\begin{equation*}
+	-5 - 4Y + 2Z = 0,
+\end{equation*}
+\begin{equation*}
+	-2 - 2Y + 2Z = 0
+\end{equation*}
+Subtracting the first from the second:
+\begin{equation*}
+	3 + 2Y = 0,
+\end{equation*}
+and thus Y = $-\frac{3}{2}$.
+\\
+\\
+Substituting back into the second equation,
+\begin{equation*}
+	-2 + 3 + 2Z = 0,
+\end{equation*}
+giving Z=$-\frac{1}{2}$.
+\\
+\\
+Checking in the third equation,
+\begin{equation*}
+	4 - 3 - 1 = 0,
+\end{equation*}
+which works. This gives us the eigenvector
+\begin{equation*}
+	(1, -\frac{3}{2}, -\frac{1}{2}).
+\end{equation*}
+Once again, we can scale up by a factor of 2, to get
+\begin{equation*}
+	(2, -3, -1).
+\end{equation*}
+In the same way eigenvector corresponding to eigenvalue -5 is $(2, -1, 1)$ and to eigenvalue 6 is $(1, 6, 16)$.
+\end{document}

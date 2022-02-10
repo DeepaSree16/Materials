@@ -1,0 +1,138 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+\usepackage{amsmath}
+\usepackage{ragged2e}
+
+
+\title{Introduction to Percentiles, Bootstrap and Confidence Intervals}
+\author{by Talentsprint Pvt.Ltd.}
+\centering
+\date{July 2020}
+
+\begin{document}
+\maketitle
+\begin{frame}{Content}
+	\begin{itemize}
+		\item Quantiles, Percentiles and Quartiles
+		\item Bootstrap Method
+		\item Configuration of Bootstrap
+		\item Example - Bootstrap
+		\item Confidence Intervals
+		\item Interval for Classification Accuracy
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Quantiles, Percentiles and Quartiles}
+\begin{flushleft}
+	Quantiles are the "cut points" to divide a distribution into continous intervals with equal probabilities. For example a quantile to divide a distribution into equal two parts, which means 50\% on each side. Thus, such quantile will be called Median. In similar way, based on number of equal partition a set of quantiles make they are collectively called
+\\
+\end{flushleft}
+	\begin{enumerate}
+		\item Quantile which partition distribution into 2 equal groups is called Median.
+		\item Quantiles for 3 equal partitions are called Tertiles or Terciles.
+		\item Quartiles for 4 equal partitions where we call them 1st(25 percentile), 2nd(next 25th percentile), 3rd(another 25th percentile) and last/4th Quartile(last or top 25th ).
+		\item Quintiles(5), Sextiles(6), Septiles(7), Octiles(9), Deciles(10) and so on.
+		\item Percentile for 100-Quantiles.
+	\end{enumerate}
+\begin{flushleft}
+	
+\end{flushleft}
+\end{frame}
+
+\begin{frame}{Bootstrap Method}
+	\begin{itemize}
+		\item The bootstrap method is a resampling technique used to estimate statistics on a population by sampling a dataset with replacement.
+		\item In other words, it is a statistical technique for estimating quantities about a population by averaging estimates from multiple small data samples.
+		\item The process for bulding one sample can be
+		\begin{enumerate}
+			\item Choose the size of the sample.
+			\item While the size of the sample is less than the chosen size
+			\begin{enumerate}	
+				\item Randomly select an observation from the dataset
+				\item Add it to the sample
+			\end{enumerate} 
+		\end{enumerate}
+		\item The bootstrap method can be used to estimate a quantity of a population. This is done by repeatedly taking small samples, calculating the statistic, and taking the average of the calculated statistics.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Contd..}
+	\begin{enumerate}
+			\item Choose a number of bootstrap samples to perform.
+			\item Choose a sample size.
+			\item For each bootstrap sample
+			\begin{enumerate}	
+				\item Draw a sample with replacement with the chosen size.
+				\item Calculate the statistic on the sample.
+			\end{enumerate} 
+			\item Calculate the mean of the calculated sample statistics.
+	\end{enumerate}
+	\begin{itemize}
+		\item This procedure of using the bootstrap method to estimate the skill of the model can be summarized as follows:
+		\begin{enumerate}
+			\item Choose a number of bootstrap samples to perform.
+			\item Choose a sample size.
+			\item For each bootstrap sample
+			\begin{enumerate}	
+				\item Draw a sample with replacement with the chosen size.
+				\item Fit a model on the data sample.
+				\item Estimate the skill of the model on the out-of-bag sample.
+			\end{enumerate} 
+			\item Calculate the mean of the sample of model skill estimates.
+		\end{enumerate}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Configuration of Bootstrap}
+\begin{flushleft}
+	There are two parameters that must be chosen when performing the bootstrap: \\
+\vspace{10pt}
+\textbf{Sample Size:}
+	\begin{itemize}
+		\item In machine learning, it is common to use a sample size that is the same as the original dataset.
+		\item If the dataset is enormous and computational efficiency is an issue, smaller samples can be used, such as 50\% or 80\% of the size of the dataset.
+	\end{itemize}
+	\textbf{Repetitions:}
+
+	\begin{itemize}
+		\item The number of repetitions must be large enough to ensure that meaningful statistics, such as the mean, standard deviation, and standard error can be calculated on the sample.
+		\item A minimum might be 20 or 30 repetitions. Smaller values can be used will further add variance to the statistics calculated on the sample of estimated values.
+	\end{itemize}
+\end{flushleft}
+\end{frame}
+
+\begin{frame}{Example - Bootstrap}
+	\huge{\centerline{Refer IPython Notebook}}
+\end{frame}
+
+\begin{frame}{Confidence Intervals}
+	\begin{itemize}
+		\item Confidence intervals are a way of quantifying the uncertainty of an estimate. They can be used to add a bounds or likelihood on a population parameter, such as a mean, estimated from a sample of independent observations from the population.
+		\item In other words, it is a bounds on the estimate of a population variable. It is an interval statistic used to quantify the uncertainty on an estimate.
+		\item In applied machine learning, we may wish to use confidence intervals in the presentation of the skill of a predictive model.
+		\item For example, a confidence interval could be used in presenting the skill of a classification model, which could be stated as:
+
+Given the sample, there is a 95\% likelihood that the range x to y covers the true model accuracy.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Contd..}
+	\begin{itemize}
+		\item The choice of 95\% confidence is very common in presenting confidence intervals, although other less common values are used, such as 90\% and 99.7\%. In practice, you can use any value you prefer.
+		\item Often, the larger the sample from which the estimate was drawn, the more precise the estimate and the smaller (better) the confidence interval.
+		\begin{enumerate}
+			\item \textbf{Smaller Confidence Interval:} A more precise estimate.
+			\item \textbf{Larger Confidence Interval:} A less precise estimate.
+		\end{enumerate}
+		\item Confidence intervals belong to a field of statistics called estimation statistics that can be used to present and interpret experimental results instead of, or in addition to, statistical significance tests.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Interval for Classification Accuracy}
+	\huge{\centerline{Refer Notebook}}
+\end{frame}
+
+\begin{frame}
+\huge{\centerline{The End}}
+\end{frame}
+\end{document}

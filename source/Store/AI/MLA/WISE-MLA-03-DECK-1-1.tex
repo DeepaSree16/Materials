@@ -1,0 +1,110 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+\usepackage{amsmath}
+\usepackage[utf8x]{inputenc} 
+
+\title{Introduction to Eigendecomposition}
+\author{by Talentsprint Pvt.Ltd.}
+\centering
+\date{May 2020}
+\begin{document}
+\maketitle
+\begin{frame}{Content}
+	\begin{itemize}
+		\item What is Eigendecomposition? 
+		\item Eigendecomposition of a matrix.
+		\item Eigenvectors and Eigenvalues.
+		\item Calculation of Eigendecomposition.
+		\item Confirm an Eienvector and Eigenvalue.
+		\item Reconstruct Matrix.
+		\item Properties of Eigendecomposition
+	\end{itemize}
+\end{frame}
+\begin{frame}{What is Eigendecomposition?}
+\begin{itemize}
+    \item Matrix decompositions are a useful tool for reducing a matrix to their constituent parts in order to simplify a range of more complex operations.
+\vspace{10pt}
+    \item Perhaps the most used type of matrix decomposition is the eigen decomposition that decomposes a matrix into eigenvectors and eigenvalues. \\
+\vspace{10pt}
+    \item This decomposition also plays a role in methods used in machine learning, such as in the Principal Component Analysis method or PCA.\\\
+\end{itemize}
+\end{frame}
+\begin{frame}{Eigendecomposition of a matrix}
+		\begin{flushleft}
+			Eigendecomposition of a matrix is a type of decomposition that involves decomposing a square matrix into a set of eigenvectors and eigenvalues. \\
+	\vspace{10pt}
+			A vector is an eigenvector of a matrix if it satisfies the following equation.
+		\end{flushleft}
+	\vspace{-10pt}
+		\begin{equation*}
+			A.v = \lambda.v
+		\end{equation*}
+		\begin{flushleft}
+		This is called the eigenvalue equation, where A is the parent square matrix that we are decomposing, v is the eigenvector of the matrix, and λ is the lowercase Greek letter lambda and represents the eigenvalue scalar. \\
+	\vspace{10pt}
+		A matrix could have one eigenvector and eigenvalue for each dimension of the parent matrix. Not all square matrices can be decomposed into eigenvectors and eigenvalues. The parent matrix can be shown to be a product of the eigenvectors and eigenvalues.
+		\end{flushleft}
+		\begin{equation*}
+			A = Q.\Lambda.Q^T
+		\end{equation*}
+\end{frame}
+\begin{frame}{Contd..}
+	\begin{flushleft}
+		Where Q is a matrix comprised of the eigenvectors, $\Lambda$ is the uppercase Greek letter lambda	and is the diagonal matrix comprised of the eigenvalues, and $Q^T$ is the transpose of the matrix comprised of the eigenvectors. \\ 
+\vspace{10pt}
+	A decomposition operation does not result in a compression of the matrix; instead, it breaks down into constituent parts to make certain operations on the matrix easier to perform. Eigendecomposition is used as an element to simplify the calculation of other more complex matrix operations. \\
+\vspace{10pt}
+	Almost all vectors change direction, when they are multiplied by $A$. Certain exceptional vectors $x$ are in the same direction as $Ax$. Those are the “eigenvectors”. Multiply an eigenvector by $A$, and the vector $Ax$ is the number $\lambda$ times the original $x$. The eigenvalue $\lambda$ tells whether the special vector x is stretched or shrunk or reversed or left unchanged — when it is multiplied by $A$.
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Eigenvectors and Eigenvalues}
+   \begin{itemize}
+		\item Eigenvectors are unit vectors, which means that their length or magnitude is equal to 1.0.
+		\item They
+are often referred as right vectors, which simply means a column vector (as opposed to a row vector or a left vector).
+		\item Eigenvalues are coefficients applied to eigenvectors that give the vectors their length or magnitude.
+		\item For example, a negative eigenvalue may reverse the direction of the eigenvector as part of scaling it.
+		\item A matrix that has only positive eigenvalues is referred to as a positive definite matrix, whereas if the eigenvalues are all negative, it is referred to as a negative definite matrix.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Calculation of Eigendecomposition}
+	Refer Notebook file
+\end{frame}
+\begin{frame}{Confirm an Eigenvector and Eigenvalue}
+\begin{itemize}
+	\item We can confirm that a vector is indeed an eigenvector of a matrix. We do this by multiplying the candidate eigenvector by the value vector and comparing the result with the eigenvalue.
+	\item First, we will define a matrix, then calculate the eigenvalues and eigenvectors.
+	\item We will then test whether the first vector and value are in fact an eigenvalue and eigenvector for the matrix.
+	\item The eigenvectors are returned as a matrix with the same dimensions as the parent matrix, where each column is an eigenvector, e.g. the first eigenvector is vectors[:, 0].
+	\item Eigenvalues are returned as a list, where value indices in the returned array are paired with eigenvectors by column index, e.g. the first eigenvalue at values[0] is paired with the first eigenvector at vectors[:, 0].
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Reconstruct Matrix}
+\begin{itemize}
+    \item We can reverse the process and reconstruct the original matrix given only the eigenvectors and eigenvalues.
+    \item First, the list of eigenvectors must be taken together as a matrix, where each vector becomes a row.
+    \item The eigenvalues need to be arranged into a diagonal matrix.
+    \item Next, we need to calculate the inverse of the eigenvector matrix.
+    \item Finally, these elements need to be multiplied together with the dot() function.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Properties of Eigendecomposition}
+\begin{itemize}
+    \item Not every matrix can be decomposed into eigenvalues and eigenvectors.
+    \item A matrix is singular if any of the eigenvalues are zero.
+    \item A matrix whose eigenvalues are all positive is called positive definite.
+	\item A matrix whose eigenvalues are all positive or zero is called positive semidefinite.
+	\item A matrix whose eigenvalues are all negative is called negative definite.
+	\item A matrix whose eigenvalues are all negative or zero is called negative semidefinite.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\huge{\centerline{The End}}
+\end{frame}
+
+\end{document}

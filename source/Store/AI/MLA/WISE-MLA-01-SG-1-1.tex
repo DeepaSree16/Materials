@@ -1,0 +1,73 @@
+\documentclass{book}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage[english]{babel}
+\pagestyle{fancy}
+\fancyhf{}
+\headheight = 0.95 in
+%\rhead{\includegraphics[width=2cm, height=1cm]{logo}}
+\lhead{\textbf{\Large{Google Colaboratory User Guide}}}
+\lfoot{COPYRIGHT ©TALENTSPRINT, 2020. ALL RIGHTS RESERVED.}
+\rfoot{\thepage}
+
+\begin{document}
+
+Getting started with Google Colaboratory (herein referred to as Colab) is a free Jupyter notebook environment which doesn\rq t require any setup and runs entirely on the cloud.
+
+You will be working on your own Google Drives. Step by step details of this are given below:
+
+\begin{enumerate}
+\item \textbf{Setting Up Google Drive:}
+	\begin{itemize}
+		\item  Create a folder with a name of your choice. Eg:\lq Colab-docs\rq
+	\end{itemize}
+\item \textbf{Colab into your drive:}
+	\begin{itemize}
+\item Go to the folder \lq Colab-docs \rq (The folder you created)
+\item Go to New \textgreater More \textgreater Connect More apps \textgreater Colab
+\item Add the app into your drive by pressing connect button
+	\end{itemize}
+\item \textbf{Creating a new notebook:}
+	\begin{itemize}
+		\item Go to the folder \lq Colab-docs\rq (The folder you created)
+		\item Then Right click \textgreater More \textgreater Colaboratory
+		\item Rename notebook by means of clicking the file name
+		\item Save the notebook
+	\end{itemize}
+\item \textbf{Using existing Experiment notebooks:} (To upload the notebook)
+	\begin{itemize}
+		\item Go to the link (\url{https://goo.gl/o5LJo8})
+		\item Download the folder from the given link (Eg: ``Week\_0")
+		\item Upload the downloaded folder to your drive
+		\item Once uploaded Go to \textgreater folder \textgreater file \textgreater right click \textgreater open with \textgreater Colaboratory
+	\end{itemize}
+\item \textbf{Setting up GPU :} By default, all Experiments run on CPU. To run the Experiments on GPU, we need to change the runtime type to GPU using the following steps:
+	\begin{itemize}
+		\item Go to Edit \textgreater Notebook settings or Runtime \textgreater Change runtime type
+		\item Select GPU as Hardware accelerator
+	\end{itemize}
+\item \textbf{To interrupt the execution:}
+	\begin{itemize}
+		\item Go to Runtime \textgreater interrupt execution
+	\end{itemize}
+\item \textbf{To mount your drive :}
+
+ Run these codes first in order to install the necessary libraries and perform authorization. \\
+			\begin{center} from google.colab import drive \end{center} 
+				\begin{center}drive.mount('/content/drive/') \end{center}
+					When you run the code, you will get a link. \textbf{Click} the link, \textbf{copy} verification code and \textbf{paste} it to text box. 
+
+
+\end{enumerate}
+
+
+
+
+
+\end{document}

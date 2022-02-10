@@ -1,0 +1,184 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+\usepackage{amsmath}
+\usepackage{ragged2e}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\title{Introduction to Regression and Gradients}
+\author{by Talentsprint Pvt.Ltd.}
+\centering
+\date{July 2020}
+
+\begin{document}
+\maketitle
+\begin{frame}{Content}
+	\begin{itemize}
+		\item What is Regression Analysis?
+		\item Why do we use Regression Analysis?
+		\item Types of Regressions
+		\item How to select the right regression model?
+		\item Gradient Descent
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{What is Regression Analysis?}
+\begin{flushleft}
+	Regression analysis is a form of predictive modelling technique which investigates the relationship between a dependent (target) and independent variable (s) (predictor). This technique is used for forecasting, time series modelling and finding the causal effect relationship between the variables. 
+\\
+\vspace{10pt}
+	Ex : Relationship between rash driving and number of road accidents by a driver is best studied through regression.
+\vspace{10pt}
+
+Regression analysis is an important tool for modelling and analyzing data. Here, we fit a curve / line to the data points, in such a manner that the differences between the distances of data points from the curve or line is minimized.  
+
+\end{flushleft}
+\end{frame}
+
+\begin{frame}{Why do we use Regression Analysis?}
+	\begin{flushleft}
+		You want to estimate growth in sales of a company based on current economic conditions. You have the recent company data which indicates that the growth in sales is around two and a half times the growth in the economy. Using this insight, we can predict future sales of the company based on current \& past information.
+\vspace{10pt}
+There are multiple benefits of using regression analysis. They are as follows:
+	\begin{itemize}
+	\item It indicates the significant relationships between dependent variable and independent variable.
+	\item It indicates the strength of impact of multiple independent variables on a dependent variable.
+\end{itemize}
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Types of Regression}
+	\begin{itemize}
+	\item Linear Regression
+	\item Logistic Regression
+	\item Polynomial Regression
+	\item Stepwise Regression
+	\item Ridge Regression
+	\item Lasso Regression
+	\item Elasticnet Regression
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Contd..}
+\begin{flushleft}
+	\textbf{Linear Regression:}
+\\
+\vspace{10pt}
+				It is one of the most widely known modeling technique. Linear regression is usually among the first few topics which people pick while learning predictive modeling. In this technique, the dependent variable is continuous, independent variable(s) can be continuous or discrete, and nature of regression line is linear.
+\\
+\vspace{10pt}	
+Linear Regression establishes a relationship between dependent variable (Y) and one or more independent variables (X) using a best fit straight line (also known as regression line).
+\\
+\vspace{10pt}	
+It is represented by an equation Y=a+b*X + e, where a is intercept, b is slope of the line and e is error term. This equation can be used to predict the value of target variable based on given predictor variable(s).	
+	\end{flushleft}
+
+\end{frame}
+
+\begin{frame}{Contd...}
+\begin{flushleft}
+	\textbf{Logistic Regression:}
+	Logistic regression is used to find the probability of event=Success and event=Failure. We should use logistic regression when the dependent variable is binary (0/ 1, True/ False, Yes/ No) in nature. Here the value of Y ranges from 0 to 1 and it can represented by following equation.
+\\
+\vspace{10pt}
+\textbf{Polynomial Regression:}
+				A regression equation is a polynomial regression equation if the power of independent variable is more than 1. The equation below represents a polynomial equation: $y=a+b*x^2$
+\\
+\vspace{10pt}			
+\textbf{Stepwise Regression:}
+				This form of regression is used when we deal with multiple independent variables. In this technique, the selection of independent variables is done with the help of an automatic process, which involves no human intervention.
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Contd..}
+	\begin{flushleft}
+	It is achieved by observing statistical values like R-square, t-stats and AIC metric to discern significant variables. Stepwise regression basically fits the regression model by adding/dropping co-variates one at a time based on a specified criterion. Some of the most commonly used Stepwise regression methods are listed below:
+\begin{itemize}
+\item Standard stepwise regression does two things. It adds and removes predictors as needed for each step.
+\item Forward selection starts with most significant predictor in the model and adds variable for each step.
+\item Backward elimination starts with all predictors in the model and removes the least significant variable for each step.
+\end{itemize}
+\vspace{10pt}
+The aim of this modeling technique is to maximize the prediction power with minimum number of predictor variables. It is one of the method to handle higher dimensionality of data set.
+
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Contd..}
+\begin{flushleft}
+	\textbf{Ridge Regression:}
+Ridge Regression is a technique used when the data suffers from multicollinearity (independent variables are highly correlated). In multicollinearity, even though the least squares estimates (OLS) are unbiased, their variances are large which deviates the observed value far from the true value. By adding a degree of bias to the regression estimates, ridge regression reduces the standard errors.
+\\
+\vspace{10pt}
+\begin{equation*}
+	y=a+b*x+e (error)
+\end{equation*}
+\\
+\vspace{10pt}
+- error is the value needed to correct for a prediction error between the observed and predicted value]
+\\
+\vspace{10pt}
+	In a linear equation, prediction errors can be decomposed into two sub components. First is due to the biased and second is due to the variance. Prediction error can occur due to any one of these two or both components.
+\end{flushleft}
+\end{frame}
+
+\begin{frame}{Contd..}
+\begin{flushleft}
+Ridge regression solves the multicollinearity problem through shrinkage parameter $\lambda$ (lambda). 
+
+First one is least square term and other one is lambda of the summation of $\beta^2$ (beta- square) where $\beta$ is the coefficient. This is added to least square term in order to shrink the parameter to have a very low variance.
+\\
+\vspace{10pt}
+	\textbf{Lasso Regression:}
+Similar to Ridge Regression, Lasso (Least Absolute Shrinkage and Selection Operator) also penalizes the absolute size of the regression coefficients. In addition, it is capable of reducing the variability and improving the accuracy of linear regression models.  Look at the equation below: Lasso regression differs from ridge regression in a way that it uses absolute values in the penalty function, instead of squares. This leads to penalizing values which causes some of the parameter estimates to turn out exactly zero. Larger the penalty applied, further the estimates get shrunk towards absolute zero. This results to variable selection out of given n variables.
+
+\end{flushleft}
+\end{frame}
+
+\begin{frame}{Contd..}
+\begin{flushleft}
+	\textbf{Elasticnet Regression:}
+ElasticNet is hybrid of Lasso and Ridge Regression techniques. It is trained with L1 and L2 prior as regularizer. Elastic-net is useful when there are multiple features which are correlated. Lasso is likely to pick one of these at random, while elastic-net is likely to pick both.
+\\
+\vspace{10pt}
+A practical advantage of trading-off between Lasso and Ridge is that, it allows Elastic-Net to inherit some of Ridge’s stability under rotation.
+\end{flushleft}
+\end{frame}
+\begin{frame}{How to select the right regression model?}
+\begin{enumerate}
+	\item Data exploration is an inevitable part of building predictive model. It should be you first step before selecting the right model like identify the relationship and impact of variables.
+	\item Cross-validation is the best way to evaluate models used for prediction. Here you divide your data set into two group (train and validate). A simple mean squared difference between the observed and predicted values give you a measure for the prediction accuracy.
+	\item If your data set has multiple confounding variables, you should not choose automatic model selection method because you do not want to put these in a model at the same time.
+	\item It’ll also depend on your objective. It can occur that a less powerful model is easy to implement as compared to a highly statistically significant model.
+	\item Regression regularization methods(Lasso, Ridge and ElasticNet) works well in case of high dimensionality and multicollinearity among the variables in the data set.
+\end{enumerate}
+\end{frame}
+\begin{frame}{Gradient Descent}
+	
+\end{frame}
+\begin{frame}{Contd..}
+	\textbf{Linear Hypothesis Equation}
+	\begin{equation*}
+		h_\theta(x) = \theta_0 + \theta_1x_1 + \theta_2x_2
+	\end{equation*}
+	(or)
+	\begin{equation*}
+		h(x) = \sum_{i=0}^{n}\theta_ix_i = \theta^Tx
+	\end{equation*}
+	\textbf{Cost Function Equation}
+	\begin{equation*}
+		J(\theta) = \frac{1}{2}(\sum_{i=0}^{m}h_\theta(x^{(i)}) - y^{(i)})^2
+	\end{equation*}
+	\textbf{Gradient Descent Equation}
+	\begin{equation*}
+		\theta_j := \theta_j - \alpha \frac{\partial}{\partial \theta_j}J(\theta)
+	\end{equation*}
+	\begin{equation*}
+		\theta_j := \theta_j + \alpha (y^{(i)} - h_\theta(x^{(i)}))x_j^{(i)}
+	\end{equation*}
+\end{frame}
+\begin{frame}
+\huge{\centerline{The End}}
+\end{frame}
+\end{document}

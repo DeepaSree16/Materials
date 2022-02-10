@@ -1,0 +1,112 @@
+\documentclass{book}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\includegraphics[width=2cm, height=0.8cm]{../Images/logo}}
+\lhead{Apriori Algorithm}
+\lfoot{COPYRIGHT ©TALENTSPRINT, 2020. ALL RIGHTS RESERVED.}
+\rfoot{\thepage}
+
+\begin{document}
+    The Apriori algorithm is an influential algorithm for searching a series of frequent sets of items in the dataset or database. It's mainly used for Association Rule mining. So, what exactly is Association Rule mining?
+
+Alex goes to buy a chips from the bakery. He also grabs a Pepsi as well. The shop manager analyses that, not only Alex, people often tends to buy chips and Pepsi together. After finding out the pattern, the shop manager arranges these items together and notices an increase in sales. This process of identifying the relationship between items is called association rule mining.
+
+The key concept in the aprior algorithm is that it assumes
+
+\begin{itemize}
+    \item All subsets of frequent itemset must be frequent
+    \item If an itemset is infrequent, all its supersets will be infrequent.
+\end{itemize}
+
+\section*{Important Definations}
+
+\paragraph{Itemset:} A set of items is referred as itemset and an itemset containing \emph{n} items is called \emph{n-itemset.}
+\paragraph{SupportCount:} Number of transactions in  which the itemset apperas.
+\paragraph{MinimumSupportCount:} The minimum frequency of itemset in the dataset or database.
+\paragraph{Frequent Itemset:} If an itemset satisfies minimum support, then it is a frequent itemset.
+\paragraph{Support:} the percentage of transactions in the database follow the rule.
+
+    \begin{center}$Support(A -> B) = SupportCount(A U B)$\end{center}
+
+\paragraph{Confidence:} the percentage of customers who bought A also bought B.
+    \begin{center}$Confidence(A -> B) = [SupportCount(A U B) / SupportCount(A)] * 100 $\end{center}
+
+\section*{Example}
+
+Let the database of transactions consist of following itemsets:
+
+\begin{center}
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Transaction ID} & \textbf{itemset}\\
+        \hline
+          1 & \{1, 2, 3, 4\} \\
+          2 & \{1, 2, 4\} \\
+          3 & \{1, 2\} \\
+          4 & \{2, 3, 4\} \\
+          5 & \{2, 3\} \\
+          6 & \{3, 4\} \\
+          7 & \{2, 4\} \\
+        \hline
+    \end{tabular}
+\end{center}
+
+Before applying Apriori algorithm to determine the frequent item sets of the above database, we will make a assume that an item set is frequent if it appears in at least 3 transactions of the database i.e. support threshold value is 3.
+
+\paragraph{Step 1:} Build a table that contains the number of occurrences, called the support, of each item separately.
+
+\begin{center}
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{item} & \textbf{Support} \\
+        \hline
+        \{1\} & 3 \\
+        \{2\} & 6 \\
+        \{3\} & 4 \\
+        \{4\} & 5 \\
+        \hline
+    \end{tabular}
+\end{center}
+
+From the above table we can infer that all the itemsets of size 1 have a support of aleast 3, so they are all frequent.
+
+\paragraph{Step 2:} Generate a table of all pair of the frequent items.
+
+\begin{center}
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{item} & \textbf{Support} \\
+        \hline
+        \{1, 2 \} & 3 \\
+        \{1, 3 \} & 1 \\
+        \{1, 4 \} & 2 \\
+        \{2, 3 \} & 3 \\
+        \{2, 4 \} & 4\\
+        \{3, 4 \} & 3 \\
+        \hline
+    \end{tabular}
+
+    The pairs \{1, 2\}, \{2, 3\}, \{2, 4\}, and \{3, 4\} all meet or exceed the minimum support of 3, so they are frequent. The pairs \{1, 3\} and \{1, 4\} are not frequent, any larger sets which contains this pairs cannot be frequent. In this way we can prune the sets.
+\end{center}
+
+\paragraph{Step 3:} Generate frequent triples in the database.
+
+\begin{center}
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{item} & \textbf{support} \\
+        \hline
+        \{2, 3, 4 \} & 2 \\
+        \hline
+    \end{tabular}
+\end{center}
+
+In this example, there are no frequent triplets. \{2, 3, 4 \} is below minimal threshold, and the other triplets were excluded because they were super sets of pairs that were already below the threshold. Thus we have determined the frequent sets of items in the database.
+
+\end{document}

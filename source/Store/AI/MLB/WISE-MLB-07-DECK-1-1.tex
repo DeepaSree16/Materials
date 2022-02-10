@@ -1,0 +1,250 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+\usepackage{physics}
+\usepackage{amsmath}
+\usepackage{ragged2e}
+\usepackage{xcolor}
+\usepackage{mathtools}% http://ctan.org/pkg/mathtools
+\graphicspath{ {./images/} }
+
+\newcommand\heading[1]{%
+  \par\bigskip
+  {\Large\bfseries#1}\par\smallskip}
+
+\newcommand\myheading[1]{%
+  \par\bigskip
+  {\large\bfseries#1}\par\smallskip}
+
+\title{Performance Metrics in Machine Learning}
+\author{by Talentsprint Pvt. Ltd.}
+\centering
+\date{December 2020}
+
+\begin{document}
+\maketitle
+\begin{frame}{Content}
+	\begin{itemize}
+		\item Introduction
+		\item Types of Predictive models
+		\item Types of Performance Metrics
+		\item Classification Metrics
+		\item Regression Metrics
+		\item Statistical Metrics
+		\item Other Metrics
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Introduction}
+	\begin{flushleft}
+		\begin{itemize}
+			\item Evaluating a model is a core part of building an effective machine learning model.
+			\item There are several macchine learning metrics like Confusion matrix, Cross-validation, AUC-ROC curve, etc.
+			\item Different evaluation metrics are used for different kinds of problems.
+			\item The idea of building machine learning models works on a constructive feedback principle. You build a model, get feedback from metrics, make improvements and continue until you achieve a desirable accuracy.
+			\item Evaluation metrics explains the performance of a model.
+			\item Simply building a predictive model is not the motive, its about creating and selecting a model which gives high accuracy on out of sample data.
+			\item The choice of model completely depends on the type of model and the implementation plan of the model.
+		\end{itemize}
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Classification Metrics}
+\begin{flushleft}
+	We have two types of predictive models. One is \textbf{Regression model} and the other is \textbf{Classification Model.} The evaluation metrics used in each of these models are different. \\
+\vspace{5pt}
+In classification problems, we use two types of algorithms (dependent on the kind of output it creates):
+\begin{itemize}
+	\item \textbf{Class output:} Algorithms like SVM and KNN create a class output. For instance, in a binary classification problem, the outputs will be either 0 or 1. However, today we have algorithms which can convert these class outputs to probability. But these algorithms are not well accepted by the statistics community.
+	\item \textbf{Probability output:} Algorithms like Logistic Regression, Random Forest, Gradient Boosting, Adaboost etc. give probability outputs. Converting probability outputs to class output is just a matter of creating a threshold probability.
+\end{itemize}
+In regression problems, we do not have such inconsistencies in output. The output is always continuous in nature and requires no further treatment.
+\end{flushleft}
+\end{frame}
+
+\begin{frame}{Types of Performance Metrics}
+	\begin{flushleft}
+		\begin{itemize}
+			\item Classification Metrics
+			\begin{enumerate}
+				\item Confusion Matrix
+				\item Classification Accuracy
+				\item Classification Report - Precision, Recall/Sensitivity, Specificity
+				\item F1 score
+				\item AUC - ROC
+				\item Log Loss
+			\end{enumerate}
+			\item Regression Metrics
+			\begin {enumerate}
+				\item Mean Squared Error
+				\item Mean Absolute Error
+				\item Root Mean Squared Error
+				\item Mean Absolute Percentage Error
+				\item Root Mean Squared Logarithmic Error
+			\end{enumerate}
+			\item Gain and Lift Charts
+			\item Support
+			\item Kolmogorov Smirnov Charts
+			\item Concordant - Discordant Ratio
+		\end{itemize}
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Classification Metrics}
+\begin{flushleft}
+	\myheading {1 . Confusion Matrix:}
+	A confusion matrix is an N X N matrix, where N is the number of classes being predicted. For the problem in hand, we have N=2, and hence we get a 2 X 2 matrix. Here are a few definitions, you need to remember for a confusion matrix :
+	\begin{itemize}
+		\item Accuracy : the proportion of the total number of predictions that were correct.
+		\item Positive Predictive Value or Precision : the proportion of positive cases that were correctly identified.
+		\item Negative Predictive Value : the proportion of negative cases that were correctly identified.
+		\item Sensitivity or Recall : the proportion of actual positive cases which are correctly identified.
+		\item Specificity : the proportion of actual negative cases which are correctly identified.
+	\end{itemize}
+\end{flushleft}
+\end{frame}
+
+\begin{frame}{Contd...}
+	\includegraphics[height=6cm, width=12cm]{img1}
+\end{frame}
+
+\begin{frame}{Contd...}
+	\begin{flushleft}
+		\myheading{2. Classification Accuracy:}
+		It is most common performance metric for classification algorithms. It may be defined as the number of correct predictions made as a ratio of all predictions made. We can easily calculate it by confusion matrix with the help of following formula:\\
+		\begin{equation*}
+			Accuracy = \frac{TP + TN}{TP + FP + FN + TN}
+		\end{equation*}
+		\myheading{3. Classification Report:}
+		This report consists of the scores of Precisions, Recall, Specificity. They are explained as follows:
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Contd...}
+\begin{flushleft}
+	\textbf{Precision:} Precision is a measure that tells us what proportion of patients that we diagnosed as having cancer, actually had cancer. The predicted positives (People predicted as cancerous are TP and FP) and the people actually having a cancer are TP.
+	\begin{equation*}
+		Precison = \frac{TP}{TP + FP}
+	\end{equation*}
+	\textbf{Recall or Sensitivity:} Recall is a measure that tells us what proportion of patients that actually had cancer was diagnosed by the algorithm as having cancer. The actual positives (People having cancer are TP and FN) and the people diagnosed by the model having a cancer are TP. (Note: FN is included because the Person actually had a cancer even though the model predicted otherwise).
+	\begin{equation*}
+		Recall = \frac{TP}{TP + FN}
+	\end{equation*}
+\end{flushleft}
+\end{frame}
+
+\begin{frame}{Contd...}
+	\begin{flushleft}
+	\textbf{Specificity:} Specificity is a measure that tells us what proportion of patients that did NOT have cancer, were predicted by the model as non-cancerous. The actual negatives (People actually NOT having cancer are FP and TN) and the people diagnosed by us not having cancer are TN. (Note: FP is included because the Person did NOT actually have cancer even though the model predicted otherwise).
+	\begin{equation*}
+		Precison = \frac{TN}{TN + FP}
+	\end{equation*}
+	\myheading{4. F1 Score:}
+	This score will give us the harmonic mean of precision and recall. Mathematically, F1 score is the weighted average of the precision and recall. The best value of F1 would be 1 and worst would be 0. We can calculate F1 score with the help of following formula:
+	\begin{equation*}
+		F1 = 2 \times \frac{Precision \times Recall}{Precision + Recall}
+	\end{equation*}
+F1 score is having equal relative contribution of precision and recall.
+\end{flushleft}
+\end{frame}
+
+\begin{frame}{Contd...}
+	\begin{flushleft}
+		\myheading{5. AUC - ROC:}
+		AUC - ROC is a performance metric, based on varying threshold values. ROC is a probability curve and AUC measure the separability. AUC-ROC metric will tell us about the capability of model in distinguishing the classes. Higher the AUC, better the model. Mathematically, it can be created by plotting TPR vs FPR, at various threshold values. Following is the graph showing ROC, AUC having TPR at y-axis and FPR at x-axis.
+	\end{flushleft}
+	\includegraphics[height=4cm, width=8.5cm]{img2}
+\end{frame}
+
+\begin{frame}{Contd...}
+	\begin{flushleft}
+	\myheading{6. Logloss:}
+	It is also called Logistic regression loss or cross-entropy loss. It basically defined on probability estimates and measures the performance of a classification model where the input is a probability value between 0 and 1. It can be understood more clearly by differentiating it with accuracy. As we know that accuracy is the count of predictions (predicted value = actual value) in our model whereas Log Loss is the amount of uncertainty of our prediction based on how much it varies from the actual label. With the help of Log Loss value, we can have more accurate view of the performance of our model.
+	\begin{equation*}
+		Logarithmic Loss = \frac{-1}{N}\sum_{i=1}^{N}\sum_{j=1}^{M}y_{ij}*\log(p_{ij})
+	\end{equation*}
+	$y_{ij}$, indicates whether sample i belongs to class j or not\\
+	$p_{ij}$, indicates the probability of sample i belonging to class j
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Regression metrics}
+\begin{flushleft}
+	\myheading{1. Mean Squared Error:}
+	Mean Squared Error(MSE) is quite similar to Mean Absolute Error, the only difference being that MSE takes the average of the square of the difference between the original values and the predicted values. The advantage of MSE being that it is easier to compute the gradient, whereas Mean Absolute Error requires complicated linear programming tools to compute the gradient. As, we take square of the error, the effect of larger errors become more pronounced then smaller error, hence the model can now focus more on the larger errors.
+	\begin{equation*}
+		MSE = \frac{1}{N}\sum_{j=1}^{N}(y_j - \hat{y_j})^2
+	\end{equation*}
+\end{flushleft}
+\end{frame}
+
+\begin{frame}{Steps}
+	\begin{flushleft}
+		\myheading{2. Mean Absolute Error:}
+		Mean Absolute Error is the average of the difference between the Original Values and the Predicted Values. It gives us the measure of how far the predictions were from the actual output. However, they don’t gives us any idea of the direction of the error i.e. whether we are under predicting the data or over predicting the data. Mathematically, it is represented as:
+	\begin{equation*}
+		MAE = \frac{1}{N}\sum_{j=1}^{N}|y_j - \hat{y_j}|
+	\end{equation*}
+	\myheading{3. Root Mean Squared Error:}
+	\begin{equation*}
+		RMSE = \sqrt{\frac{1}{N}\sum_{j=1}^{N}(y_j - \hat{y_j})^2}
+	\end{equation*}
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Contd...}
+	\begin{flushleft}
+		\myheading{4. Mean Absolute Percentage Error:}
+		\begin{equation*}
+			MAPE = \frac{100\%}{N}\sum_{j=1}^{N}{\bigg{|}\frac{y_j - \hat{y_j}}{y_j}\bigg{|}}
+		\end{equation*}
+		\myheading{5. Root Mean Squared Logarithmic Error:}
+		\begin{equation*}
+			RMSE = \sqrt{\frac{1}{N}\sum_{j=1}^{N}((\log(y_j + 1) - \log(\hat{y_j} + 1))^2}
+		\end{equation*}
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Statistical Metrics}
+\begin{flushleft}
+	\myheading{1. R-squared:}
+	R Squared is used to determine the strength of correlation between the predictors and the target. In simple terms it lets us know how good a regression model is when compared to the average. R Squared is the ratio between the residual sum of squares and the total sum of squares.
+	\begin{equation*}
+		R^2 = 1 - \frac{SSR}{SST}
+	\end{equation*}
+	where,\\
+	SSR (Sum of Squares of Residuals) is the sum of the squares of the difference between the actual observed value (y) and the predicted value ($\hat y$).\\
+	SST (Total Sum of Squares) is the sum of the squares of the difference between the actual observed value (y) and the average of the observed y value ($y_{avg}$).
+\end{flushleft}
+\end{frame}
+
+\begin{frame}{Contd...}
+\begin{flushleft}
+	\myheading{Adjusted R-Squared:}
+	R Squared has no relation to express the effect of a bad or least significant independent variable on the regression. Thus even if the model consists of a less significant variable say, for example, the person’s Name for predicting the Salary, the value of R squared will increase suggesting that the model is better. This is where Adjusted R Squared comes to the rescue.\\
+\vspace{5pt}
+Compared to R Squared which can only increase, Adjusted R Squared has the capability to decrease with the addition of less significant variables, thus resulting in a more reliable and accurate evaluation.\\
+\vspace{5pt}
+Adjusted R Squared, however, makes use of the degree of freedom to compensate and penalize for the inclusion of a bad variable. Adjusted R Squared can be expressed as:
+\begin{equation*}
+	Adj. R^2 = 1 - (1 - R^2) \frac{n - 1}{d.o.f} = 1 - (1 - R^2) \frac{n - 1}{n - k - 1}
+\end{equation*}
+\end{flushleft}
+\end{frame}
+
+\begin{frame}{Other metrics}
+\begin{flushleft}
+	\begin{itemize}
+		\item Apart from these we have various other metrics for model evaluation such as:
+		\item Gain and Lift Charts	
+		\item Kolomogorov Smirnov chart
+		\item Support
+		\item Gini Coefficient
+		\item Concordant - Discordant ratio
+	\end{itemize}
+\end{flushleft}
+\end{frame}
+
+\begin{frame}
+\huge{\centerline{The End}}
+\end{frame}
+\end{document}

@@ -1,0 +1,442 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+\usepackage{amsmath}
+
+\title{Introduction to Linear Algebra}
+\author{by Talentsprint Pvt.Ltd.}
+\centering
+\date{May 2020}
+\begin{document}
+\maketitle
+\begin{frame}{Content}
+	\begin{itemize}
+		\item What is Linear Algebra? 
+		\item Applications of Linear Algebra.
+		\item Examples of Linear Algebra in Machine Learning.
+		\item Vectors and Vector Arithmetics.
+		\item Matrices and Matrix Arithmetic.
+		\item Types of Matrices.
+		\item Matrix Operations
+	\end{itemize}
+\end{frame}
+\begin{frame}{What is Linear Algebra?}
+\begin{itemize}
+    \item Linear algebra is a sub-field of mathematics concerned with vectors, matrices, and operations on these data structures. It is absolutely key to machine learning.
+\vspace{10pt}
+And a more engineering-oriented one:
+    \item As a machine learning practitioner, you must have an understanding of linear algebra.\\
+\vspace{10pt}
+    \item It’s a huge field of study that has made an impact on other fields, such as statistics, as well as engineering and physics. Thankfully, we don’t need to know the breadth and depth of the field of linear algebra in order to improve our understanding and application of machine learning.\\\
+\end{itemize}
+\end{frame}
+\begin{frame}{Applications of Linear Algebra}
+	\begin{flushleft}
+		As linear algebra is the mathematics of data, the tools of linear algebra are used in many domains.
+	\end{flushleft}
+\vspace{-10pt}
+	\begin{itemize}
+		\item Matrices in Engineering, such as a line of springs.
+		\item Graphs and Networks, such as analyzing networks.
+		\item Markov Matrices, Population, and Economics, such as population growth.
+		\item Linear Programming, the simplex optimization method.
+		\item Fourier Series: Linear Algebra for functions, used widely in signal processing.
+		\item Linear Algebra for statistics and probability, such as least squares for regression.
+		\item Computer Graphics, such as the various translation, rescaling and rotation of images.
+	\end{itemize}
+\end{frame}
+\begin{frame}{Examples of Linear Algebra in Machine Learning}
+   \begin{itemize}
+		\item Dataset and Data Files
+		\item Images and Photographs
+		\item One Hot Encoding
+		\item Linear Regression
+		\item Regularization
+		\item Principal Component Analysis
+		\item Singular-Value Decomposition
+		\item Latent Semantic Analysis
+		\item Recommender Systems
+		\item Deep Learning
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Vectors and Vector Arithmetics}
+\begin{flushleft}
+	\begin{enumerate}
+		\item What is a Vector
+		\item Defining a Vector
+		\item Vector Arithmetic
+		\item Vector Dot Product and Scalar Multiplication
+	\end{enumerate}
+\end{flushleft}
+\begin{block}{What is a Vector ?}
+A vector is a tuple of one or more values called scalars. Vectors are built from components, which are ordinary numbers. You can think of a vector as a list of numbers, and vector algebra as operations performed on the numbers in the list. \\
+\vspace{5pt}
+Vectors are often represented using a lowercase character such as $v$; for example:
+\begin{equation*}
+	v = (v1, v2, v3) 
+	\qquad or \qquad 
+	v = \begin{pmatrix}
+    		v1 \\
+    		v2 \\
+    		v3
+  		\end{pmatrix}
+\end{equation*}
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{Defining a Vector}
+	We can represent a vector in Python as a NumPy array. A NumPy array can be created from a list of numbers. For example, below we define a vector with the length of 3 and the integer values 1, 2 and 3.\\
+	\vspace{10pt}
+	\includegraphics[height=2cm, width=12cm]{image.png}
+	The example defines a vector with 3 elements. Running the example prints the  defined vector. \\
+	\vspace{10pt}
+	\includegraphics[height=1cm, width=12cm]{image1.png}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Vector Arithmetic}
+Simple vector-vector arithmetic operations are as follows:
+\begin{itemize}
+    \item \textbf{Vector Addition}\\
+    Two vectors of equal length can be added together to create a new third vector.
+    	\begin{equation*}
+    		c = a + b
+    	\end{equation*}
+    The new vector has the same length as the other two vectors. Each element of the new vector is calculated as the addition of the elements of the other vectors at the same index; for example:
+    	\begin{equation*}
+    		c = (a1 + b1, a2 + b2, a3 + b3)
+    	\end{equation*}
+    	(or)
+    	\begin{equation*}
+			\begin{split}
+				c[0] = a[0] + b[0] \\
+				c[1] = a[1] + b[1] \\
+				c[2] = a[2] + b[2] 
+			\end{split}
+		\end{equation*}
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Contd..}
+\begin{itemize}
+    \item \textbf{Vector Subtraction}\\
+    One vector can be subtracted from another vector of equal length to create a new third vector.
+    	\begin{equation*}
+    		c = a - b
+    	\end{equation*}
+    As with addition, the new vector has the same length as the parent vectors and each element of the new vector is calculated as the subtraction of the elements at the same indices.
+    	\begin{equation*}
+    		c = (a1 - b1, a2 - b2, a3 - b3)
+    	\end{equation*}
+    	(or)
+    	\begin{equation*}
+			\begin{split}
+				c[0] = a[0] - b[0] \\
+				c[1] = a[1] - b[1] \\
+				c[2] = a[2] - b[2] 
+			\end{split}
+		\end{equation*}
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Vector Dot Product}
+We can calculate the sum of the multiplied elements of two vectors of the same length to give a scalar. This is called the dot product, named because of the dot operator used when describing the operation.
+    	\begin{equation*}
+    		c = a.b
+    	\end{equation*}
+    The operation can be used in machine learning to calculate the weighted sum of a vector. The dot product is calculated as follows:
+    	\begin{equation*}
+    		c = (a1 \times b1 + a2 \times b2 + a3 \times b3)
+    	\end{equation*}
+    	(or)
+    	\begin{equation*}
+			c = (a1b1 + a2b2 + a3b3)
+		\end{equation*}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Vector-Scalar Multiplication}
+    A vector can be multiplied by a scalar, in effect scaling the magnitude of the vector. To keep notation simple, we will use lowercase s to represent the scalar value.
+    	\begin{equation*}
+    		c = s \times v \qquad or \qquad c = sv
+    	\end{equation*}
+    The multiplication is performed on each element of the vector to result in a new scaled vector of the same length.
+    	\begin{equation*}
+    		c = (s \times v1, s \times v2, s \times v3)
+    	\end{equation*}
+    	(or)
+    	\begin{equation*}
+			\begin{split}
+				c[0] = v[0] \times s \\
+				c[1] = v[1] \times s \\
+				c[2] = v[2] \times s
+			\end{split}
+		\end{equation*}
+\end{block}
+\end{frame}
+
+\begin{frame}{Matrices and Matrix Arithmetic}
+\begin{flushleft}
+	\begin{enumerate}
+		\item What is a Matrix
+		\item Defining a Matrix
+		\item Matrix Arithmetic
+		\item Matrix-Matrix Multiplication
+		\item Matrix-Vector Multiplication
+		\item Matrix-Scalar Multiplication
+	\end{enumerate}
+\end{flushleft}
+\begin{block}{What is a Matrix ?}
+A matrix is a two-dimensional array of scalars with one or more columns and one or more rows.\\
+\vspace{5pt}
+The notation for a matrix is often an uppercase letter, such as $A$, and entries are referred to by their two-dimensional subscript of row ($i$	) and column ($j$), such as $a_{i,j}$ . For example:
+\vspace{-17pt}
+\begin{equation*}
+	A = ((a_{1,1}, a_{1,2}),(a_{2,1}, a_{2,2}),(a_{3,1}, a_{3,2}))
+	\qquad or \qquad 
+	A = \begin{pmatrix}
+    		a_{1,1} & a_{1,2} \\
+    		a_{2,1} & a_{2,2} \\
+    		a_{3,1} & a_{3,2}
+  		\end{pmatrix}
+\end{equation*}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Defining a Matrix}
+	We can represent a matrix in Python using a two-dimensional NumPy array. A NumPy array can be constructed given a list of lists. For example, below is a 2 row, 3 column matrix. \\
+	\vspace{10pt}
+	\includegraphics[height=2cm, width=12cm]{image3.png}
+	The example defines a vector with 3 elements. Running the example prints the  defined vector. \\
+	\vspace{10pt}
+	\includegraphics[height=1cm, width=12cm]{image4.png}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Matrix Arithmetic}
+Simple matrix-matrix arithmetic operations are as follows:
+\begin{itemize}
+    \item \textbf{Matrix Addition}\\
+    Two matrices with the same dimensions can be added together to create a new third matrix.
+    	\begin{equation*}
+    	C = A + B
+    	\end{equation*}
+    The scalar elements in the resulting matrix are calculated as the addition of the elements in each of the matrices being added.
+    	\begin{equation*}
+    		c = \begin{pmatrix}
+    				a_{1,1}+b_{1,1}  & a_{1,2}+b_{1,2} \\
+    				a_{2,1}+b_{2,1}  & a_{2,2}+b_{2,2} \\
+    				a_{3,1}+b_{3,1}  & a_{3,2}+b_{3,2} 
+    			\end{pmatrix}
+    	\end{equation*}
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Contd..}
+\begin{itemize}
+    \item \textbf{Matrix Subtraction}\\
+    Similarly, one matrix can be subtracted from another matrix with the same dimensions.
+    	\begin{equation*}
+    	C = A - B
+    	\end{equation*}
+		The scalar elements in the resulting matrix are calculated as the subtraction of the elements in each of the matrices.
+    	\begin{equation*}
+    		c = \begin{pmatrix}
+    				a_{1,1}-b_{1,1}  & a_{1,2}-b_{1,2} \\
+    				a_{2,1}-b_{2,1}  & a_{2,2}-b_{2,2} \\
+    				a_{3,1}-b_{3,1}  & a_{3,2}-b_{3,2} 
+    			\end{pmatrix}
+    	\end{equation*}
+    
+    \item \textbf{Matrix Multiplication (Hadamard Product)}\\
+	Two matrices with the same size can be multiplied together, and this is often called element-wise matrix multiplication or the Hadamard product. It is therefore denoted by operator such as a circle $\circ$.
+    	\begin{equation*}
+    	C = A \circ B
+    	\end{equation*}
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Contd..}
+		The scalar elements in the resulting matrix are calculated as the subtraction of the elements in each of the matrices.
+		
+    	\begin{equation*}
+    		C = \begin{pmatrix}
+    				a_{1,1} \times b_{1,1}  & a_{1,2} \times b_{1,2} \\
+    				a_{2,1} \times b_{2,1}  & a_{2,2} \times b_{2,2} \\
+    				a_{3,1} \times b_{3,1}  & a_{3,2} \times b_{3,2} 
+    			\end{pmatrix}
+    	\end{equation*}
+    \begin{itemize}
+    	\item \textbf{Matrix Division}\\
+	One matrix can be divided by another matrix with the same dimensions.
+    	\begin{equation*}
+    	C = A/B
+    	\end{equation*}
+    	The scalar elements in the resulting matrix are calculated as the division of the elements in each of the matrices.
+    	\begin{equation*}
+    		C = \begin{pmatrix}
+    				a_{1,1}/b_{1,1}  & a_{1,2}/b_{1,2} \\
+    				a_{2,1}/b_{2,1}  & a_{2,2}/b_{2,2} \\
+    				a_{3,1}/b_{3,1}  & a_{3,2}/b_{3,2} 
+    			\end{pmatrix}
+    	\end{equation*}
+    \end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Matrix-Matrix Multiplication}
+    Matrix multiplication, also called the matrix dot product is more complicated than the previous operations and involves a rule as not all matrices can be multiplied together.
+    	\begin{equation*}
+    		C = A \cdot B \qquad or \qquad C = AB
+    	\end{equation*}
+    The rule for matrix multiplication is as follows:
+    \begin{itemize}
+    	\item The number of columns ($n$) in the first matrix ($A$) must equal the number of rows ($m$) in the second matrix ($B$).
+    \end{itemize}
+    For example, matrix $A$ has the dimensions $m$ rows and $n$ columns and matrix $B$ has the dimensions $n$ and $k$. The $n$ columns in $A$ and $n$ rows in $B$ are equal. The result is a new matrix with $m$ rows and $k$ columns.
+    	\begin{equation*}
+    		C(m, k) = A(m, n) \cdot B(n, k)
+    	\end{equation*}
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{Contd..}
+This rule applies for a chain of matrix multiplications where the number of columns in one matrix in the chain must match the number of rows in the following matrix in the chain.
+    \begin{equation*}
+   		A = \begin{pmatrix}
+   				a_{1,1} & a_{1,2} \\
+   				a_{2,1} & a_{2,2} \\
+   				a_{3,1} & a_{3,2} 
+   			\end{pmatrix}
+   	\end{equation*}
+   	\begin{equation*}
+   		B = \begin{pmatrix}
+   				b_{1,1} & b_{1,2} \\
+   				b_{2,1} & b_{2,2} 
+   			\end{pmatrix}
+   	\end{equation*}\\
+   	\begin{equation*}
+   		C_{(3, 2)} = A_{(3, 2)} \cdot B_{(2, 2)}
+   	\end{equation*}\\
+   	\begin{equation*}
+   		C = \begin{pmatrix}
+   				a_{1,1} \times b_{1,1} + a_{1,2} \times b_{2,1} & a_{1,1} \times b_{1,2} + a_{1,2} \times b_{2,2}  \\
+    			a_{2,1} \times b_{1,1} + a_{2,2} \times b_{2,1} & a_{2,1} \times b_{1,2} + a_{2,2} \times b_{2,2}  \\
+    			a_{3,1} \times b_{1,1} + a_{3,2} \times b_{2,1} & a_{3,1} \times b_{1,2} + a_{3,2} \times b_{2,2}  \\ 
+   			\end{pmatrix}
+   	\end{equation*}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Matrix-Vector Multiplication}
+    A matrix and a vector can be multiplied together as long as the rule of matrix multiplication is observed. Specifically, that the number of columns in the matrix must equal the number of items in the vector. As with matrix multiplication, the operation can be written using the dot notation. Because the vector only has one column, the result is always a vector.
+    	\begin{equation*}
+    		C = A \cdot v \qquad or \qquad C = Av
+    	\end{equation*}
+    \begin{equation*}
+   		A = \begin{pmatrix}
+   				a_{1,1} & a_{1,2} \\
+   				a_{2,1} & a_{2,2} \\
+   				a_{3,1} & a_{3,2} 
+   			\end{pmatrix}
+   	\end{equation*}
+   	\begin{equation*}
+   		v = \begin{pmatrix}
+   				v_{1} \\
+   				v_{2} 
+   			\end{pmatrix}
+   	\end{equation*}\\
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{Contd..}
+   	\begin{equation*}
+   		c = \begin{pmatrix}
+   				a_{1,1} \times v_{1} + a_{1,2} \times v_{2} \\
+    			a_{2,1} \times v_{1} + a_{2,2} \times v_{2} \\
+    			a_{3,1} \times v_{1} + a_{3,2} \times v_{2}
+   			\end{pmatrix}
+   	\end{equation*}
+   	(or)
+   	\begin{equation*}
+   		c = \begin{pmatrix}
+   				a_{1,1}v_{1} + a_{1,2}v_{2} \\
+    			a_{2,1}v_{1} + a_{2,2}v_{2} \\
+    			a_{3,1}v_{1} + a_{3,2}v_{2}
+   			\end{pmatrix}
+   	\end{equation*}
+\end{block}
+\begin{block}{Matrix-Scalar Multiplication}
+    A matrix can be multiplied by a scalar. This can be represented using the dot notation between the matrix and the scalar.
+    	\begin{equation*}
+    		C = A \cdot b \qquad or \qquad C = Ab
+    	\end{equation*}
+    The result is a matrix with the same size as the parent matrix where each element of the matrix is multiplied by the scalar value.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Contd..}
+	\begin{equation*}
+   		A = \begin{pmatrix}
+   				a_{1,1} & a_{1,2} \\
+   				a_{2,1} & a_{2,2} \\
+   				a_{3,1} & a_{3,2} 
+   			\end{pmatrix}
+   	\end{equation*}
+   	\begin{equation*}
+   		C = \begin{pmatrix}
+   				a_{1,1} \times b + a_{1,2} \times b \\
+    			a_{2,1} \times b + a_{2,2} \times b \\
+    			a_{3,1} \times b + a_{3,2} \times b
+   			\end{pmatrix}
+   	\end{equation*}
+   	(or)
+   	\begin{equation*}
+   		C = \begin{pmatrix}
+   				a_{1,1}b + a_{1,2}b \\
+    			a_{2,1}b + a_{2,2}b \\
+    			a_{3,1}b + a_{3,2}b
+   			\end{pmatrix}
+   	\end{equation*}
+\end{block}
+\end{frame}
+
+\begin{frame}{Types of Matrices}
+	\begin{enumerate}
+		\item Square matrix
+		\item Symmetric matrix
+		\item Triangular matrix
+		\item Diagonal matrix
+		\item Identity matrix
+		\item Orthogonal matrix
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}{Matrix Operations}
+	\begin{enumerate}
+		\item Transpose
+		\item Inverse
+		\item Trace
+		\item Determinant
+		\item Rank
+	\end{enumerate}
+\end{frame}
+\begin{frame}
+\huge{\centerline{The End}}
+\end{frame}
+\end{document}

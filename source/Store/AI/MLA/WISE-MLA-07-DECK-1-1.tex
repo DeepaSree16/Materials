@@ -1,0 +1,152 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+\usepackage{amsmath}
+\usepackage{ragged2e}
+
+
+\title{Introduction to Statistic Distribution}
+\author{by Talentsprint Pvt.Ltd.}
+\centering
+\date{June 2020}
+\begin{document}
+\maketitle
+\begin{frame}{Content}
+	\begin{itemize}
+		\item Distribution Statistics
+		\item Density Functions
+		\item t-Distribution
+		\item Chi-Squared distribution
+		\item ML Pipeline
+		\item Stages
+		\item Central tendency and Variations measure
+	\end{itemize}
+\end{frame}
+\begin{frame}{Distribution Statistics}
+\begin{itemize}
+    \item The distribution provides a parameterized mathematical function that can be used to calculate the probability for any individual observation from the sample space. 
+\vspace{10pt}
+    \item This distribution describes the grouping or the density of the observations, called the probability density function. 
+\vspace{10pt}
+	\item We can also calculate the likelihood of an observation having a value equal to or lesser than a given value. A summary of these relationships between observations is called a cumulative density function.
+\end{itemize}
+\end{frame}
+\begin{frame}{Density Functions}
+	\begin{itemize}
+		\item Distributions are often described in terms of their density or density functions.
+		\item Density functions are functions that describe how the proportion of data or likelihood of the proportion of observations change over the range of the distribution.
+	\end{itemize}
+\justify
+	Two types of density functions are probability density functions and cumulative density functions.
+	\begin{itemize}
+		\item \textbf{Probability Density function:} Calculates the probability of observing a given value.
+		\item \textbf{Cumulative Density function:} Calculates the probability of an observation equal or less than a value.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{t-Distribution}
+	\begin{itemize}
+		\item It is a distribution that arises when attempting to estimate the mean of a normal distribution with different sized samples. 
+		\item As such, it is a helpful shortcut when describing uncertainty or error related to estimating population statistics for data drawn from Gaussian distributions when the size of the sample must be taken into account.
+	\end{itemize}
+	\justify
+		The distribution can be described using a single parameter:
+		\begin{itemize}
+			\item \textbf{number of degrees of freedom:} denoted with the lowercase Greek letter $\nu$, denotes the number degrees of freedom.
+		\end{itemize}
+	\justify
+		The number of degrees of freedom describes the number of pieces of information used to describe a population quantity.
+	\end{frame}
+
+\begin{frame}{Chi-Squared Distribution}
+	\begin{itemize}
+		\item The chi-squared distribution is denoted as the lowercase Greek letter $\chi^2$.
+		\item Like the Student’s t-distribution, the chi-squared distribution is also used in statistical methods on data drawn from a Gaussian distribution to quantify the uncertainty.
+		\item  For example, the chi-squared distribution is used in the chi-squared statistical tests for independence. In fact, the chi-squared distribution is used in the derivation of the Student’s t-distribution.
+	\end{itemize}
+	\justify
+		The chi-squared distribution has one parameter:
+		\begin{itemize}
+			\item degrees of freedom, denoted k.
+		\end{itemize}	
+\end{frame}
+
+\begin{frame}{ML - What is it?}
+	\begin{flushleft}
+			ML enables computers to find patterns in data and then use those to make decisions rather than being explicitly programmed to carry out a certain task.
+	\end{flushleft}
+\justify
+The workflow is pretty simple:
+	\begin{itemize}
+		\item You have data which contains patterns.
+		\item You supply it to a ML algorithm which finds the patterns and generates a model.
+		\item The model recognises these patterns when presented with new data.
+	\end{itemize}
+\justify
+	\textbf{Examples:} Medical diagnosis, Customer’s ability to pay back a loan, Market analysis / Stock trading, Credit card fraud detection, Customer segmentation, Spam emails.
+\end{frame}
+
+\begin{frame}{ML Pipeline}
+	\justify
+		We define a pipeline for data as it flows through the ML solution. Each step of the pipeline is fed data processed from its preceding step. The term ‘pipeline’ is slightly misleading as it implies a one-way flow of data; instead the ML pipelines are cyclical and iterative as every step is repeated to finally achieve a successful algorithm.\\
+\vspace{10pt}
+	The key stages are described below:
+	\begin{enumerate}
+		\item Problem Definition
+		\item Data Ingestion
+		\item Data Preparation
+		\item Data Segregation
+		\item Model Training
+		\item Candidate Model Evaluation
+		\item Model Deployment
+		\item Performance Monitoring
+	\end{enumerate}
+\end{frame}
+\begin{frame}{Stages}
+	\begin{enumerate}
+		\item \textbf{Problem Definition}: Define the business problem you require an answer for.
+		\item \textbf{Data Ingestion}: Identify and gather the data you want to work with.
+		\item \textbf{Data Preparation}:  Since the data is raw and unstructured, it is rarely in the correct form to be processed. It usually involves filling missing values or removing duplicate records or normalising and correcting other flaws in data, like different representations of the same values in a column for instance. This is where the feature extraction, construction and selection takes place too.
+		\item \textbf{Data Segregation}: Split subsets of data to train the model, test it and further validate how it performs against new data.
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}{Contd...}
+	\begin{enumerate}\addtocounter{enumi}{4}
+		\item \textbf{Model Training}: Use the training subset of data to let the ML algorithm recognise the patterns in it.
+		\item \textbf{Candidate Model Evaluation}: Assess the performance of the model using test and validation subsets of data to understand how accurate the prediction is. This is an iterative process and various algorithms might be tested until you have a Model that sufficiently answers your question.
+		\item \textbf{Model Deployment}: Once the chosen model is produced, it is typically exposed via some kind of API and embedded in decision-making frameworks as a part of an analytics solution.
+		\item \textbf{Performance Monitoring}: The model is continuously monitored to observe how it behaved in the real world and calibrated accordingly. New data is collected to incrementally improve it.
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}{Measure of Central tendency}
+\justify
+	It is a value that represents a typical, or central, entry of a data set. The most common measures of central tendency are:
+	\begin{itemize}
+		\item \textbf{Mean(Average)}: The sum of all the data entries divided by the number of entries.
+		
+			$\hspace{20 pt} Population \hspace{2 pt}Mean: \mu = \frac{\sum x}{N} \hspace{30pt} Sample \hspace{2 pt}Mean: \bar{x} = \frac{\sum x}{n}$
+		\item \textbf{Median}: The value that lies in the middle of the data when the data set is ordered. If the data has an even number of entries, then the median is obtained by adding the two numbers in the middle and dividing result by two.
+		\item \textbf{Mode}: The data entry that occurs with the greatest frequency. A data set may have one mode, more than one mode, or no mode. If no entry is repeated the data set has no mode.
+		\item \textbf{Outliers}: These are not just greatest and least values, but values that are very different from the pattern established by the rest of the data. Outliers affect the mean. When outliers are present it is best to use the median as the measure of central tendency.
+	\end{itemize}
+\end{frame}
+\begin{frame}{Measure of Variation}
+	\begin{itemize}
+		\item \textbf{Range}:  The difference between the maximum and minimum data entries in the set. 
+		
+		$Range = (Max. data entry) - (Min. data entry)$
+		\item \textbf{Standard Deviation)}: The standard deviation measure variability and consistency of the sample or population. In most real-world applications, consistency is a great advantage. In statistical data analysis, less variation is often better.
+		
+			$Population \hspace{2 pt}SD: \sigma = \sqrt{\frac{\sum (x_i - \mu)^2}{N}} \hspace{25pt} Sample \hspace{2 pt}SD: s = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n - 1}}$
+		\item \textbf{Variance)}: It is the expectation of the squared deviation of a random variable from its mean. Informally, it measures how far a set of numbers are spread out from their average value.
+		
+			$Population \hspace{2 pt}Variance: \sigma^2 = \frac{\sum (x_i - \mu)^2}{N}$\\
+			$Sample \hspace{2 pt}Variance: S^2 = \frac{\sum (x_i - \bar{x})^2}{n - 1}$
+	\end{itemize}
+\end{frame}
+	
+\begin{frame}
+\huge{\centerline{The End}}
+\end{frame}
+\end{document}

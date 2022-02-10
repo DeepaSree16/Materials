@@ -1,0 +1,36 @@
+\documentclass{book}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage[english]{babel}
+\usepackage{amssymb}
+\pagestyle{fancy}
+\fancyhf{}
+\headheight = 0.1 in
+%\rhead{\includegraphics[width=2cm, height=1cm]{logo}}
+\lhead{\textbf{\Large{Probability Distribution - 	Assignment Solution}}}
+\lfoot{COPYRIGHT ©TALENTSPRINT, 2020. ALL RIGHTS RESERVED.}
+\rfoot{\thepage}
+
+\begin{document}
+	\begin{enumerate}
+		\item On average, $E[X] = 105 \times 0.9 = 94.5$ passengers show up for the flight.
+		\item $P\{X \leq 100\} = 1 - P\{X > 100\}$\\\\
+		= $1 - P\{X = 101\} - P\{X = 102\} - P\{X = 103\} - P\{X = 104\} - P\{X = 105\}$ \\ \\
+		= $1 - \begin{pmatrix}105\\101\end{pmatrix}(0.9)^{101}(0.1)^4 - \begin{pmatrix}105\\102\end{pmatrix}(0.9)^{102}(0.1)^3 - \begin{pmatrix}105\\103\end{pmatrix}(0.9)^{103}(0.1)^2 - \begin{pmatrix}105\\104\end{pmatrix}(0.9)^{104}(0.1)^1 - \begin{pmatrix}105\\105\end{pmatrix}(0.9)^{105}(0.1)^0$ \\ \\ \\
+		= $1 - \begin{pmatrix}105\\4\end{pmatrix}(0.9)^{101}(0.1)^4 - \begin{pmatrix}105\\3\end{pmatrix}(0.9)^{102}(0.1)^3 - \begin{pmatrix}105\\2\end{pmatrix}(0.9)^{103}(0.1)^2 - \begin{pmatrix}105\\1\end{pmatrix}(0.9)^{104}(0.1)^1 - \begin{pmatrix}105\\0\end{pmatrix}(0.9)^{105}(0.1)^0$ \\ \\
+		= 0.9832...
+		\item Let x be the random variable that represents the length of time. It has a mean of 50 and a standard deviation of 15. We have to find the probability that x is between 50 and 70 or $P( 50< x < 70)$\\\\
+For x = 50 , z = (50 - 50) / 15 = 0 \\\\
+For x = 70 , z = (70 - 50) / 15 = 1.33 (rounded to 2 decimal places) \\\\
+$P( 50< x < 70) = P( 0< z < 1.33)$ = [area to the left of z = 1.33] - [area to the left of z = 0] \\\\
+= 0.9082 - 0.5 = 0.4082 \\\\
+The probability that John's computer has a length of time between 50 and 70 hours is equal to 0.4082.
+	\end{enumerate}
+\end{document}

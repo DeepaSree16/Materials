@@ -1,0 +1,47 @@
+\documentclass{book}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage[english]{babel}
+\usepackage{amssymb}
+\usepackage{textcomp}
+\pagestyle{fancy}
+\fancyhf{}
+\headheight = 0.1 in
+%\rhead{\includegraphics[width=2cm, height=1cm]{logo}}
+\lhead{\textbf{\Large{Assignment Solutions}}}
+\lfoot{COPYRIGHT ©TALENTSPRINT, 2020. ALL RIGHTS RESERVED.}
+\rfoot{\thepage}
+
+\begin{document}
+\begin{enumerate}
+	\item Let us define $X_i$ as the indicator random variable for the $i$th bit in the packet. That is, $X_i=1$ if the $i$th bit is received in error, and $X_i=0$ otherwise. Then the $X_i$'s are i.i.d. and $X_i \sim Bernoulli(p=0.1)$. If $Y$ is the total number of bit errors in the packet, we have
+\begin{equation*}
+        Y = X_1 + X_2 + ... + X_n,
+\end{equation*}
+Since $X_i \sim Bernoulli(p=0.1)$, we have
+\begin{equation*}
+    E[X_i] = \mu = p = 0.1, \hspace{20pt} Var(X_i) = \sigma^2 = p(1-p) = 0.09
+\end{equation*}
+Using the Central Limit Theorem, we have,
+\begin{align*}
+    P(Y>120) &= P\Bigg(\frac{Y-n\mu}{\sqrt{n}\sigma} > \frac{120-n\mu}{\sqrt{n}\sigma}\Bigg)\\
+    &= P\Bigg(\frac{Y-n\mu}{\sqrt{n}\sigma} > \frac{120-100}{\sqrt{90}}\Bigg)\\
+    &\approx 1 - \Phi\bigg(\frac{20}{\sqrt{90}}\bigg)\\
+    &= 0.0175
+\end{align*}
+	\item We draw a rough picture of the normal distribution curve:\\
+	\begin{center}
+		\includegraphics[width=8cm, height=4cm]{image.png}
+	\end{center}
+	Thus 2.5\% are expected to fail within 12 months, and 2.5\% of 5000\\\\
+	$= 0.025 \times 5000\\\\
+	= 125$  
+\end{enumerate}
+\end{document}
