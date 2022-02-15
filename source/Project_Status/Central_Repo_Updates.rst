@@ -6,7 +6,7 @@ Central Repo Updates
 1. Store Directory updates: 
 
    * WISE ML module contents added to Store (Chandra)
-   * FSD - Videos (links) added to Store (Ashok)
+   * FSD - Videos (links) will be added to Store today (Ashok)
 
 2. PDF, PPT File conversions to LaTeX:
 
