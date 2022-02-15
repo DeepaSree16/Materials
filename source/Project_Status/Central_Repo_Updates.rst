@@ -1,6 +1,21 @@
 Central Repo Updates
 ==================================================
 
+**Feb 15, 2022**
+
+1. Store Directory updates: 
+
+   * WISE ML module contents added to Store (Chandra)
+   * FSD - Videos (links) added to Store (Ashok)
+
+2. PDF, PPT File conversions to LaTeX:
+
+   * Ganesh and Ashok were given demo on latex file creation by Amulya
+
+3. Sphinx Documentation plans made
+
+   * Documentation layout to be confirmed with Asokan
+
 **Feb 8, 2022**
 
 1. Store Directory updates: 
