@@ -15,13 +15,13 @@
    :header: "S.No","Topic","CDN Link"
    :widths: 10, 62, 28
    
-   "1","Introduction ","`AP-AVG-01-VDO-1-7 <https://cdn.talentsprint.com/talentsprint/aptitude/quant/english/lcm_and_hcf/int_1.mp4>`_"
-   "2","Model 1: Basic Average ","`AP-AVG-01-VDO-2-7 <https://cdn.talentsprint.com/talentsprint/aptitude/quant/english/lcm_and_hcf/int_2.mp4>`_"
-   "3","Model 2: Weighted Average ","`AP-AVG-01-VDO-3-7 <https://cdn.talentsprint.com/talentsprint/aptitude/quant/english/lcm_and_hcf/int_3.mp4>`_"
-   "4","Model 3: Average of Remaining Group ","`AP-AVG-01-VDO-4-7 <https://cdn.talentsprint.com/talentsprint/aptitude/quant/english/lcm_and_hcf/int_4.mp4>`_"
-   "5","Model 4: Average When a Member Is Excluded/Included From/Into a Group ","`AP-AVG-01-VDO-5-7 <https://cdn.talentsprint.com/talentsprint/aptitude/quant/english/lcm_and_hcf/m1.mp4>`_"
-   "6","Model 5: Discrepancy in Average Due to a Wrong Entry ","`AP-AVG-01-VDO-6-7 <https://cdn.talentsprint.com/talentsprint/aptitude/quant/english/lcm_and_hcf/m2.mp4>`_"
-   "7","Model 6: Average of Consecutive Numbers ","`AP-AVG-01-VDO-7-7 <https://cdn.talentsprint.com/talentsprint/aptitude/quant/english/lcm_and_hcf/m3.mp4>`_"
+   "1","Introduction ","`AP-AVG-01-VDO-1-7 <https://cdn.talentsprint.com/talentsprint/aptitude/quant/english/average/int.mp4>`_"
+   "2","Model 1: Basic Average ","`AP-AVG-01-VDO-2-7 <https://cdn.talentsprint.com/talentsprint/aptitude/quant/english/average/m1.mp4>`_"
+   "3","Model 2: Weighted Average ","`AP-AVG-01-VDO-3-7 <https://cdn.talentsprint.com/talentsprint/aptitude/quant/english/average/m2.mp4>`_"
+   "4","Model 3: Average of Remaining Group ","`AP-AVG-01-VDO-4-7 <https://cdn.talentsprint.com/talentsprint/aptitude/quant/english/average/m3.mp4>`_"
+   "5","Model 4: Average When a Member Is Excluded/Included From/Into a Group ","`AP-AVG-01-VDO-5-7 <https://cdn.talentsprint.com/talentsprint/aptitude/quant/english/average/m4.mp4>`_"
+   "6","Model 5: Discrepancy in Average Due to a Wrong Entry ","`AP-AVG-01-VDO-6-7 <https://cdn.talentsprint.com/talentsprint/aptitude/quant/english/average/m5.mp4>`_"
+   "7","Model 6: Average of Consecutive Numbers ","`AP-AVG-01-VDO-7-7 <https://cdn.talentsprint.com/talentsprint/aptitude/quant/english/average/m6.mp4>`_"
 
 
 
