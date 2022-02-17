@@ -1,0 +1,300 @@
+
+\documentclass{article}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[english]{babel} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{txfonts}
+\usepackage{mathdots}
+\usepackage[classicReIm]{kpfonts}
+\usepackage{graphicx}
+\usepackage[margin=1.0in]{geometry}
+
+
+
+\begin{document}
+
+\noindent \textbf{Props}
+
+\noindent \\
+Props means properties in react, props are the arguments which are passed to the react components. Props are passed to the components using the HTML attributes. These are like function arguments in JavaScript and attributes in HTML. To send the props (properties) to a component we use the same syntax as HTML attributes.
+
+\noindent 
+
+\noindent \\
+So in simple words we are passing arguments to react components just like we are passing arguments to the function parameters in java or other languages.
+
+\noindent 
+
+\noindent \\
+In the previous example we used Header and Footer components to print the values. What if we provide the Header component for multiple time in the App.js file, which means reusing the Header component in our App.js, let us see
+
+\noindent 
+
+\noindent \\
+Modifying the \textbf{Header.js} as:
+
+\begin{center}
+	\noindent \includegraphics*[width=3.98in, height=2.83in]{IMG-08-01}
+\end{center}
+
+\newpage
+
+\noindent \\
+Now under App.js, calling the Header component for multiple times
+
+\begin{center}
+	\noindent \includegraphics*[width=3.65in, height=3.62in]{IMG-08-02}
+\end{center}
+
+\noindent \\
+You can the above output in the browser.
+
+\begin{center}
+	\noindent \includegraphics*[width=3.56in, height=3.30in]{IMG-08-03}
+\end{center}
+
+\noindent 
+
+\noindent \\
+As you see the output, here the Header component is provided for three times and it is getting executed for three time. The content of the Header component is static. That's why it is not getting changed every time. We should be in a position to change the values dynamically.
+
+\noindent 
+
+\noindent \\
+How can we change the values of the component dynamically, it can be possible if we are able to send the values from one component to another component. To achieve this, we are using parameters and arguments. So in the above example we need to send the values from the $\mathrm{<}$Header$\mathrm{>}$ element in the App.js to the Header.js.
+
+\noindent 
+
+\noindent \\
+\textbf{Example1:}
+
+\noindent \\
+To send the values from App.js, in the $\mathrm{<}$Header$\mathrm{>}$ element we are using the ``\textbf{name}'' attribute:
+
+\begin{center}
+	\noindent \includegraphics*[width=3.79in, height=3.75in]{IMG-08-04}
+\end{center}
+
+\noindent 
+\newpage
+\noindent \\
+And now in the Header.js we need to accept the arguments.
+
+\begin{center}
+	\noindent \includegraphics*[width=4.45in, height=3.39in]{IMG-08-05}
+\end{center}
+
+\noindent 
+
+\noindent \\
+You can see the output in the browser.
+
+\begin{center}
+	\noindent \includegraphics*[width=4.10in, height=4.00in]{IMG-08-06}
+\end{center}
+
+\noindent 
+
+\noindent 
+
+\noindent 
+\newpage
+\noindent \\
+\textbf{Example2: }Now let's send more than one argument from App.js to Header.js
+
+\noindent \textbf{}
+
+\noindent \\
+\textbf{Header.js:} Modify Header.js to receive the arguments
+
+\begin{center}
+	\noindent \includegraphics*[width=3.76in, height=2.64in]{IMG-08-07}
+\end{center}
+
+\noindent 
+
+\noindent \\
+\textbf{App.js:} Modify the App.js to send the arguments
+
+\begin{center}
+	\noindent \includegraphics*[width=3.96in, height=3.10in]{IMG-08-08}
+\end{center}
+
+\noindent 
+\newpage
+\noindent \\
+You can see the output in the browser.
+
+\begin{center}
+	\noindent \includegraphics*[width=2.63in, height=3.05in]{IMG-08-09}
+\end{center}
+
+\noindent \\
+In the above example we have seen, we are using multiple parameter to send the data. Can we use one single parameter to send all the data, yes it is possible using props (or properties).
+
+\noindent \\
+Props is internal component which is passed to the functional/class component by default.
+
+\noindent 
+\\
+\\
+
+\noindent \\
+\textbf{Example3:} Let's use props to send multiple values as a single argument.\textbf{}
+
+\noindent\\
+ \textbf{App.js:} send multiple values to Header.js file.
+
+\begin{center}
+	\noindent \includegraphics*[width=3.71in, height=3.02in]{IMG-08-10}
+\end{center}
+
+\noindent 
+
+\noindent \\
+\textbf{Header.js: }let us receive multiple attributes using the props in Header.js file
+
+\begin{center}
+	\noindent \includegraphics*[width=3.80in, height=2.77in]{IMG-08-11}
+\end{center}
+
+\noindent 
+
+\noindent\\
+You can see output in the browser
+
+\begin{center}
+	\noindent \includegraphics*[width=1.85in, height=2.36in]{IMG-08-12}
+\end{center}
+
+\noindent \\
+Till now we have seen example on using the props in a functional component. Now let us see how to use props in a class component.
+
+\noindent 
+\newpage
+\noindent \\
+\textbf{Example4:}
+
+\noindent 
+Create new file under the src folder as ``Welcome.js''
+
+\begin{center}
+	\noindent \includegraphics*[width=3.40in, height=2.39in]{IMG-08-13} 
+	\noindent \includegraphics*[width=3.41in, height=2.57in]{IMG-08-14}
+\end{center}
+
+\noindent 
+
+\noindent 
+Under Welcome.js add the following class component as:
+
+\begin{center}
+	\noindent \includegraphics*[width=5.23in, height=2.54in]{IMG-08-15}
+\end{center}
+
+\noindent 
+\textbf{Note:} Here providing ``this'' keyword for using the props in the class component. But in the latest versions, it is optional.
+
+\noindent \\
+\textbf{App.js:} Here we are using the same code which we have done in the earlier example, but our component is Welcome.js.
+
+\begin{center}
+	\noindent \includegraphics*[width=4.94in, height=3.83in]{IMG-08-16}
+\end{center}
+
+\noindent 
+
+\noindent 
+You can see the output in the browser.
+
+\begin{center}
+	\noindent \includegraphics*[width=3.22in, height=3.85in]{IMG-08-17}
+\end{center}
+
+\noindent 
+
+\noindent 
+If we want to send any message to children, you can send it as children props.
+
+\noindent 
+
+\noindent \\
+\textbf{Example5:}
+
+\noindent \\
+Here I want to send a specific argument to pasha. To do this, under \textbf{App.js}
+
+\begin{center}
+	\noindent \includegraphics*[width=4.90in, height=3.99in]{IMG-08-18}
+\end{center}
+
+\noindent 
+
+\noindent \\
+Under \textbf{Welcome.js}, add the following code to access the children props.
+
+\begin{center}
+	\noindent \includegraphics*[width=4.91in, height=2.88in]{IMG-08-19}
+\end{center}
+
+\noindent 
+\newpage
+\noindent 
+Children props are optional to all elements, so in the above example, where ever you see the children props provided to a particular element, that property will be passed to the respective parent component. And for the remaining elements, only the respective message will be displayed without any children props value.
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent \\
+You can see the output in the web browser.
+
+\begin{center}
+	\noindent \includegraphics*[width=2.79in, height=4.07in]{IMG-08-20}
+\end{center}
+
+\noindent 
+
+\noindent 
+
+\noindent \\
+Here let us do some modification, as I don't want to display the default message if the corresponding elements does not have any children props.
+
+\noindent 
+\newpage
+\noindent 
+\textbf{App.js:} Modify the App.js code as:
+
+\begin{center}
+	\noindent \includegraphics*[width=4.59in, height=3.97in]{IMG-08-21}
+\end{center}
+
+\noindent \\
+\textbf{Welcome.js:} Modify the Welcome.js file as:
+
+\begin{center}
+	\noindent \includegraphics*[width=4.70in, height=3.22in]{IMG-08-22}
+\end{center}
+
+\noindent 
+\newpage
+\noindent
+You can see the output of this example in the browser.
+
+\begin{center}
+	\noindent \includegraphics*[width=4.05in, height=4.91in]{IMG-08-23}
+\end{center}
+
+\noindent 
+
+\noindent \\
+So here you can see, the children prop is displayed only for the first element and not for other elements.
+
+
+\end{document}

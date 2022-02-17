@@ -1,0 +1,91 @@
+
+
+\documentclass{article}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[english]{babel} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{txfonts}
+\usepackage{mathdots}
+\usepackage[classicReIm]{kpfonts}
+\usepackage{graphicx}
+\usepackage[margin=1.0in]{geometry}
+
+
+
+\begin{document}
+\noindent \textbf{React-redux}
+
+\noindent \textbf{}
+
+\noindent 
+\\
+React is one of the most popular JavaScript libraries~which is used for front-end development. It has made our application development easier and faster by providing the component based approach.
+
+\noindent 
+\\
+As you might know, it's not the complete framework but just the view part of the MVC (Model-View-Controller) framework. So, how do you keep track of the data and handle the events in the applications developed using React? Well, this is where Redux comes as a savior and handles the data flow of the application from the backend.
+
+\noindent \\
+\textbf{Why Redux with React}
+
+\noindent \\
+As we know that React follows the component based approach, where the data flows through the components.~In-fact, the data in React always flows from parent to child components which makes it~\textit{unidirectional}. This surely keeps our data organized and helps us in controlling the application better. Because of this, the application's state is contained in specific stores and as a result, the rest of the components remain loosely coupled. This makes our application more flexible leading to increased efficiency. That's why the~communication from a parent component to a child component~is convenient.
+
+\noindent 
+
+\noindent 
+
+\noindent \\
+But what happens when we try to communicate from a non-parent component?
+
+\noindent\\
+A child component can never pass data back up to the parent component. React does not provide any way for direct component-to-component communication. Even though React has features to support this approach, it is considered to be a poor practice. It is prone to errors and leads to~spaghetti code. So, how can two non-parent components pass data to each other?
+
+\noindent \\
+This is where the React fails to provide a solution and Redux comes into the picture.
+
+\noindent \\
+Redux provides a ``\textbf{store}'' as a solution to this problem. A store~is a place where~you~can store~all your application state together. Now the components can ``\textit{dispatch}'' state changes to the store and not directly to the other components.~Then the components that need the updates about the state changes can ``\textit{subscribe}'' to the store.
+
+\noindent \\
+Thus, with Redux, it becomes clear where the components get their state from as well as where should they send their states to. Now the~component initiating the change does not have to worry about the list of components needing the state change and can simply dispatch~the change to the store. This is how Redux makes the~\textit{data flow}~easier.
+
+\noindent 
+
+\noindent \\
+Install redux and react-redux in the project as below.
+
+\noindent \textbf{}
+
+\begin{center}
+	\noindent \includegraphics*[width=6.23in, height=1.62in]{IMG-11-05}\textbf{}
+\end{center}
+\newpage
+\noindent \textbf{Example:}
+
+\noindent \textbf{}
+
+\begin{center}
+	\noindent \includegraphics*[width=6.24in, height=4.35in]{IMG-11-06}\textbf{}
+
+	\noindent \includegraphics*[width=6.24in, height=4.35in]{IMG-11-07}\textbf{}
+\end{center}
+
+\noindent 
+
+\begin{center}
+	\noindent \includegraphics*[width=6.25in, height=4.65in]{IMG-11-08}
+\end{center}
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\begin{center}
+	\noindent \includegraphics*[width=6.22in, height=2.53in]{IMG-11-09}
+\end{center}
+\end{document}

@@ -1,0 +1,777 @@
+
+\documentclass{article} 
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{txfonts}
+\usepackage{mathdots}
+\usepackage[classicReIm]{kpfonts}
+\usepackage{graphicx}
+\usepackage[margin=1.0in]{geometry}
+ 
+
+
+\begin{document}
+
+
+
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent 
+\begin{center}
+	\noindent {\Huge \underline{\textbf{Module-3}}}
+	\noindent \\ {\huge  (Angular Pipes)}
+\end{center}
+
+
+\noindent \textbf{}
+
+\noindent \\ {\LARGE \textbf{Module Overview}}
+
+\noindent \\ {\large \textbf{CODING EXERCISE}}
+
+\noindent 
+
+\noindent In this module, you will learn to design a dynamic web page using Angular4 with features mentioned below:
+
+\noindent 
+
+\begin{enumerate}
+	\item Built-in pipes 
+	\item Custom pipes
+	\item Custom Search Filter Pipes
+\end{enumerate}
+
+ {\large \noindent \\ \textbf{OBJECTIVES} \\ }
+
+\noindent 
+
+\begin{enumerate}
+	\item By designing the web page, you will be able to learn: 
+	\item Changing data formats using Pipes
+	\item Creating own pipes using Pipe Component transform method
+	\item Parameterized and Non- parameterized pipes
+	\item Custom Search Filter pipes
+\end{enumerate}
+
+\noindent \\ \textbf{SCRIPTING-CONSTRUCTS}
+
+\noindent 
+
+\noindent To designing the web page, you will require the following scripting constructs: 
+
+\begin{enumerate}
+	\item Currency Pipe
+	\item Date Pipe 
+	\item Angular
+	\item Pipes
+	\item Decimal Pipe
+	\item UpperCasePipe
+	\item LowerCasePipe
+	\item JsonPipe
+	\item SlicePipe
+\end{enumerate}
+\newpage
+\noindent {\LARGE \textbf{Built-in Pipes}} \\
+
+\noindent \textbf{}
+
+\noindent \\ {\large \textbf{Pipes}}
+
+\noindent 
+
+\noindent Every application starts out with what seems like a simple task: get data, transform them, and show them to users. Getting data could be as simple as creating a local variable or as complex as streaming data over a WebSocket.
+
+\noindent Once data arrives, you could push their raw toString values directly to the view, but that rarely makes for a good user experience. For example, in most use cases, users prefer to see a date in a simple format like April 15, 1988rather than the raw string format Fri Apr 15 1988 00:00:00 GMT- 0700 (Pacific Daylight Time).
+
+\noindent 
+
+\noindent \\ {\large \textbf{CurrencyPipe}}
+
+\noindent This pipe is used for formatting currencies. Its first argument is an abbreviation of the currency type (e. g. "EUR", "USD", and so on), like so: \\ 
+
+  
+
+\noindent Copy $\mathrm{\{}$$\mathrm{\{}$1234.56 {\textbar} currency:'CAD'$\mathrm{\}}$$\mathrm{\}}$ 
+
+\noindent 
+
+\noindent The above prints out CA\$1,234.56.
+
+\noindent \\ If instead of the abbreviation of CA\$ we want the currency symbol to be printed out we pass as a second parameter the string symbol-narrow, like so: \\
+
+  
+
+\noindent Copy $\mathrm{\{}$$\mathrm{\{}$1234.56 {\textbar} currency:"CAD":"symbol-narrow"$\mathrm{\}}$$\mathrm{\}}$ 
+
+\noindent 
+
+\noindent The above prints out \$1,234.56.
+
+\begin{center}
+	\noindent \includegraphics*[width=5.46in, height=2.39in, trim=1.49in 1.67in 0.50in 0.05in]{IMG-03-01}
+\end{center}
+
+\noindent Copy$\mathrm{<}$\textbf{div} class="card card-block"$\mathrm{>}$
+
+\noindent $\mathrm{<}$\textbf{h4} class="card-title"$\mathrm{>}$Currency$\mathrm{<}$/\textbf{h4}$\mathrm{>}$
+
+\noindent $\mathrm{<}$\textbf{div} class="card-text"$\mathrm{>}$
+
+\noindent $\mathrm{<}$\textbf{p} ngNonBindable$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$1234.56 {\textbar} currency:'CAD'$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+\noindent $\mathrm{<}$\textbf{p}$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$1234.56 {\textbar} currency:"CAD"$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+\noindent $\mathrm{<}$\textbf{p} ngNonBindable$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$1234.56 {\textbar} currency:'CAD':'code'$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+\noindent $\mathrm{<}$\textbf{p}$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$1234.56 {\textbar} currency:'CAD':'code'$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/p$\mathrm{>}$
+
+\noindent $\mathrm{<}$\textbf{p} ngNonBindable$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$1234.56 {\textbar} currency:'CAD':'symbol'$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+\noindent $\mathrm{<}$\textbf{p}$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$1234.56 {\textbar} currency:'CAD':'symbol'$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+\noindent $\mathrm{<}$\textbf{p} ngNonBindable$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$1234.56 {\textbar} currency:'CAD':'symbol-narrow'$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+\noindent $\mathrm{<}$\textbf{p}$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$1234.56 {\textbar} currency:'CAD':'symbol-narrow'$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+\noindent $\mathrm{<}$/\textbf{div}$\mathrm{>}$
+
+\noindent $\mathrm{<}$/\textbf{div}$\mathrm{>}$
+
+\noindent 
+
+\noindent \\ \\ {\large \textbf{DatePipe}}
+
+\noindent \textbf{}
+
+\noindent This pipe is used for the transformation of dates. The first argument is a format string, like so:
+
+\begin{center}
+	\noindent \includegraphics*[width=5.43in, height=3.06in]{IMG-03-02}
+\end{center}
+
+\noindent 
+
+\noindent 
+
+\noindent \\ Copy$\mathrm{<}$\textbf{div} class="card card-block"$\mathrm{>}$
+
+$\mathrm{<}$\textbf{h4} class="card-title"$\mathrm{>}$Date$\mathrm{<}$/\textbf{h4}$\mathrm{>}$
+
+$\mathrm{<}$\textbf{div} class="card-text"$\mathrm{>}$
+
+$\mathrm{<}$\textbf{p} ngNonBindable$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$dateVal {\textbar} date: 'shortTime'$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+$\mathrm{<}$\textbf{p}$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$dateVal {\textbar} date: 'shortTime'$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+$\mathrm{<}$\textbf{p} ngNonBindable$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$dateVal {\textbar} date:'fullDate'$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+$\mathrm{<}$\textbf{p}$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$dateVal {\textbar} date: 'fullDate'$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+$\mathrm{<}$\textbf{p} ngNonBindable$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$dateVal {\textbar} date: 'd/M/y'$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+$\mathrm{<}$\textbf{p}$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$dateVal {\textbar} date: 'd/M/y'$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+$\mathrm{<}$/\textbf{div}$\mathrm{>}$
+
+\noindent \textbf{$\boldsymbol{\mathrm{<}}$/div$\boldsymbol{\mathrm{>}}$}
+
+\noindent 
+
+\noindent dateVal is an instance of new 
+
+\noindent Date ().
+
+\noindent 
+\newpage
+\noindent \\ \\ {\large \textbf{DecimalPipe}}
+
+\noindent This pipe is used for transformation of decimal numbers.
+
+\noindent The first argument is a format string of the form "$\mathrm{\{}$minIntegerDigits$\mathrm{\}}$. $\mathrm{\{}$minFractionDigits$\mathrm{\}}$-
+
+\noindent $\mathrm{\{}$maxFractionDigits$\mathrm{\}}$", like so:
+
+\noindent 
+
+\begin{center}
+	\noindent \textbf{\includegraphics*[width=5.31in, height=3.11in]{IMG-03-03}}
+\end{center}
+
+\noindent Copy$\mathrm{<}$\textbf{div} class="card card-block"$\mathrm{>}$
+
+$\mathrm{<}$\textbf{div} class="card-text"$\mathrm{>}$
+
+$\mathrm{<}$\textbf{h4} class="card-title"$\mathrm{>}$DecimalPipe$\mathrm{<}$/\textbf{h4}$\mathrm{>}$
+
+$\mathrm{<}$\textbf{p} ngNonBindable$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$3.14159265 {\textbar} number: '3.1-2'$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+$\mathrm{<}$\textbf{p}$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$3.14159265 {\textbar} number: '3.1-2'$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+$\mathrm{<}$\textbf{p} ngNonBindable$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$3.14159265 {\textbar} number: '1.4-4'$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+$\mathrm{<}$\textbf{p}$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$3.14159265 {\textbar} number: '1.4-4'$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+$\mathrm{<}$/\textbf{div}$\mathrm{>}$
+
+\noindent $\mathrm{<}$/\textbf{div}$\mathrm{>}$
+
+\noindent 
+\newpage
+\noindent  \\ \\ {\large \textbf{JsonPipe}}
+
+\noindent This transforms a JavaScript object into a JSON string, like so:
+
+\begin{center}
+	\noindent \includegraphics*[width=5.81in, height=3.24in]{IMG-03-04}
+\end{center}
+
+\noindent 
+
+\noindent 
+
+\noindent Copy$\mathrm{<}$\textbf{div} class="card card-block"$\mathrm{>}$
+
+$\mathrm{<}$\textbf{h4} class="card-title"$\mathrm{>}$JsonPipe$\mathrm{<}$/\textbf{h4}$\mathrm{>}$
+
+$\mathrm{<}$\textbf{div} class="card-text"$\mathrm{>}$
+
+$\mathrm{<}$\textbf{p} ngNonBindable$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$jsonVal$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+$\mathrm{<}$\textbf{p}$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$jsonVal$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+$\mathrm{<}$\textbf{p} ngNonBindable$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$jsonVal {\textbar} json$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+$\mathrm{<}$\textbf{p}$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$jsonVal {\textbar} json$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+$\mathrm{<}$/\textbf{div}$\mathrm{>}$
+
+\noindent $\mathrm{<}$/\textbf{div}$\mathrm{>}$
+
+\noindent 
+
+\noindent jsonVal is an object declared as $\mathrm{\{}$moo: 'foo', goo:
+
+\noindent $\mathrm{\{}$too: 'new'$\mathrm{\}}$$\mathrm{\}}$.
+
+\noindent  
+
+\noindent 
+\\ \\ 
+\newpage
+{\large \noindent \textbf{LowerCasePipe}}
+
+\noindent \textbf{}
+
+\noindent This transforms a string to lowercase, like so:
+
+\begin{center}
+	\noindent \includegraphics*[width=5.61in, height=2.79in]{IMG-03-05}
+\end{center}
+
+\noindent 
+
+\noindent Copy$\mathrm{<}$\textbf{div} class="card card-block"$\mathrm{>}$
+
+$\mathrm{<}$\textbf{h4} class="card-title"$\mathrm{>}$LowerCasePipe$\mathrm{<}$/\textbf{h4}$\mathrm{>}$
+
+$\mathrm{<}$\textbf{div} class="card-text"$\mathrm{>}$
+
+$\mathrm{<}$\textbf{p} ngNonBindable$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$'ASIM' {\textbar} lowercase$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+$\mathrm{<}$\textbf{p}$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$'ASIM' {\textbar} lowercase$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+$\mathrm{<}$/\textbf{div}$\mathrm{>}$
+
+\noindent $\mathrm{<}$/\textbf{div}$\mathrm{>}$
+
+\noindent 
+
+\noindent 
+\\ \\
+\newpage
+\noindent {\large \textbf{UpperCasePipe}}
+
+\noindent This transforms a string to uppercase, like so: \\
+
+\noindent 
+
+\noindent \includegraphics*[width=5.25in, height=2.16in]{IMG-03-06}
+
+\noindent  Copy$\mathrm{<}$\textbf{div} class="card card-block"$\mathrm{>}$
+
+$\mathrm{<}$\textbf{h4} class="card-title"$\mathrm{>}$UpperCasePipe$\mathrm{<}$/\textbf{h4}$\mathrm{>}$
+
+$\mathrm{<}$\textbf{div} class="card-text"$\mathrm{>}$
+
+$\mathrm{<}$\textbf{p} ngNonBindable$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$'asim' {\textbar} uppercase$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+$\mathrm{<}$\textbf{p}$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$'asim' {\textbar} uppercase$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+$\mathrm{<}$/\textbf{div}$\mathrm{>}$
+
+\noindent $\mathrm{<}$/\textbf{div}$\mathrm{>}$
+
+\noindent 
+\\ \\
+\noindent{\large  \textbf{PercentPipe}}
+
+\noindent Formats a number as a percent, like so:
+
+\begin{center}
+	\noindent \includegraphics*[width=4.12in, height=2.34in]{IMG-03-07}
+\end{center}
+
+\noindent Copy$\mathrm{<}$\textbf{div} class="card card-block"$\mathrm{>}$
+
+$\mathrm{<}$\textbf{h4} class="card-title"$\mathrm{>}$PercentPipe$\mathrm{<}$/\textbf{h4}$\mathrm{>}$
+
+$\mathrm{<}$\textbf{div} class="card-text"$\mathrm{>}$
+
+$\mathrm{<}$\textbf{p} ngNonBindable$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$0.123456 {\textbar} percent$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+$\mathrm{<}$\textbf{p}$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$0.123456 {\textbar} percent$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+$\mathrm{<}$\textbf{p} ngNonBindable$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$0.123456 {\textbar} percent: '2.1-2'$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+$\mathrm{<}$\textbf{p}$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$0.123456 {\textbar} percent: '2.1-2'$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+$\mathrm{<}$\textbf{p} ngNonBindable$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$42 {\textbar} percent: '10.4-4'$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+$\mathrm{<}$\textbf{p}$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$0.123456 {\textbar} percent: "10.4-4"$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+$\mathrm{<}$/\textbf{div}$\mathrm{>}$
+
+\noindent $\mathrm{<}$/\textbf{div}$\mathrm{>}$
+
+\noindent Percent can be passed a format string similar to the format passed to the DecimalPipe.
+
+\noindent 
+
+\noindent 
+\newpage
+\noindent {\large \textbf{SlicePipe}}
+
+\noindent This returns a slice of an array. The first argument is the start index of the slice and the second argument is the end index.
+
+\noindent If either of the indexes are not provided it assumes the start or the end of the array and we can use negative indexes to indicate an offset from the end, like so:
+
+\begin{center}
+	\noindent \includegraphics*[width=5.27in, height=3.51in]{IMG-03-08}
+\end{center}
+
+\noindent 
+
+\noindent Copy$\mathrm{<}$\textbf{div} class="card card-block"$\mathrm{>}$
+
+$\mathrm{<}$\textbf{h4} class="card-title"$\mathrm{>}$SlicePipe$\mathrm{<}$/\textbf{h4}$\mathrm{>}$
+
+$\mathrm{<}$\textbf{div} class="card-text"$\mathrm{>}$
+
+$\mathrm{<}$\textbf{p} ngNonBindable$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$[1,2,3,4,5,6] {\textbar} slice:1:3$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+$\mathrm{<}$\textbf{p}$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$[1,2,3,4,5,6] {\textbar} slice:1:3$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/p$\mathrm{>}$
+
+$\mathrm{<}$\textbf{p} ngNonBindable$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$[1,2,3,4,5,6] {\textbar} slice:2$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+$\mathrm{<}$\textbf{p}$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$[1,2,3,4,5,6] {\textbar} slice:2$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+$\mathrm{<}$\textbf{p} ngNonBindable$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$[1,2,3,4,5,6] {\textbar} slice:2: -1$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+$\mathrm{<}$\textbf{p}$\mathrm{>}$ $\mathrm{\{}$$\mathrm{\{}$[1,2,3,4,5,6] {\textbar} slice:2: -1$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+$\mathrm{<}$\textbf{pre} ngNonBindable$\mathrm{>}$
+
+\noindent \&lt;ul\&gt;
+
+\noindent \&lt;li  *ngFor=\&quot;let  v  of  [1,2,3,4,5,6]  {\textbar} slice:2:-1\&quot;\&gt;
+
+$\mathrm{\{}$$\mathrm{\{}$v$\mathrm{\}}$$\mathrm{\}}$
+
+\&lt;/li\&gt; \&lt;/ul\&gt;
+
+$\mathrm{<}$/\textbf{pre}$\mathrm{>}$
+
+$\mathrm{<}$\textbf{ul}$\mathrm{>}$
+
+$\mathrm{<}$\textbf{li} *ngFor="let v of [1,2,3,4,5,6] {\textbar} slice:2: -1"$\mathrm{>}$
+
+$\mathrm{\{}$$\mathrm{\{}$v$\mathrm{\}}$$\mathrm{\}}$
+
+$\mathrm{<}$/\textbf{li}$\mathrm{>}$
+
+$\mathrm{<}$/\textbf{ul}$\mathrm{>}$
+
+$\mathrm{<}$/\textbf{div}$\mathrm{>}$
+
+\noindent $\mathrm{<}$/\textbf{div}$\mathrm{>}$
+
+\noindent \\ slice:1: 3 means return the items from the 1st to the 3rd index inclusive (indexes start at 0).
+
+\noindent \\ slice:2 means return the items from the 2nd index to the end of the array.
+
+\noindent \\ slice:2: - 1 means return the items from the 2nd index to one from the end of the array.
+
+\noindent We can use slice inside for loops to only loop over a subset of the array items.
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent 
+\\ \\ 
+\noindent {\large \textbf{Custom Pipes}}
+
+\noindent \textbf{}
+
+\noindent \\ Pipes in Angular 2+ are a great way to transform and format data right from your templates. Out of the box you get pipes for dates, currency, percentage and character cases, but you can also easily define custom pipes of your own. Here, for an example we create a pipe that takes a string and reverses the order of the letters. Here's the code that would go into a reverse-str.pipe.ts file inside of your app folder: \\
+
+\noindent 
+
+\noindent import $\mathrm{\{}$Pipe, PipeTransform$\mathrm{\}}$ from '@angular/core';
+
+\noindent 
+
+\noindent @Pipe ($\mathrm{\{}$name: 'reverseStr'$\mathrm{\}}$)
+
+\noindent export class ReverseStr implements PipeTransform $\mathrm{\{}$transform (value: string): string $\mathrm{\{}$
+
+let newStr: string = "";
+
+for (var i = value.length - 1; i $\mathrm{>}$= 0; i--) $\mathrm{\{}$ 
+
+newStr += value.charAt(i);
+
+$\mathrm{\}}$
+
+return newStr;
+
+$\mathrm{\}}$
+
+\noindent $\mathrm{\}}$
+
+\noindent 
+
+\noindent \\ Then you'd include the custom pipe as a declaration in your app module: 
+
+\noindent import $\mathrm{\{}$BrowserModule$\mathrm{\}}$ from '@angular/platform-browser';
+
+\noindent import $\mathrm{\{}$NgModule$\mathrm{\}}$ from '@angular/core'; 
+
+\noindent import $\mathrm{\{}$FormsModule$\mathrm{\}}$ from '@angular/forms'; 
+
+\noindent import $\mathrm{\{}$HttpModule$\mathrm{\}}$ from '@angular/http';
+
+\noindent 
+
+\noindent import $\mathrm{\{}$AppComponent$\mathrm{\}}$ from './app.component'; 
+
+\noindent import $\mathrm{\{}$ReverseStr$\mathrm{\}}$ from './reverse-str.pipe.ts';
+
+\noindent 
+
+\noindent 
+
+\noindent @NgModule ($\mathrm{\{}$
+
+declarations: [
+
+AppComponent, 
+
+ReverseStr
+
+\noindent ],
+
+\noindent imports: [ 
+
+BrowserModule, 
+
+FormsModule, 
+
+HttpModule
+
+\noindent ],
+
+  providers: [],
+
+ bootstrap: [AppComponent]
+
+\noindent $\mathrm{\}}$)
+
+\noindent export class AppModule $\mathrm{\{}$$\mathrm{\}}$
+
+\noindent 
+
+\noindent And finally in your templates this is how you would use this custom pipe:
+
+\noindent $\mathrm{\{}$$\mathrm{\{}$user.name {\textbar} reverseStr$\mathrm{\}}$$\mathrm{\}}$
+
+\noindent 
+\\ \\
+\newpage
+\noindent {\large \textbf{Pipe with parameters}}
+
+\noindent You can also define any amounts of parameters in the pipe, which enables you to pass parameters to
+
+\noindent it. For example, here's a pipe that adds a string before and after our provided string:
+
+\noindent @Pipe ($\mathrm{\{}$name: 'uselessPipe'$\mathrm{\}}$)
+
+ export class uselessPipe implements PipeTransform $\mathrm{\{}$
+
+  transform (value: string, before: string, after: string): string $\mathrm{\{}$
+
+  let newStr = `\$$\mathrm{\{}$before$\mathrm{\}}$ \$$\mathrm{\{}$value$\mathrm{\}}$ \$$\mathrm{\{}$after$\mathrm{\}}$`;
+
+  return newStr;
+
+ $\mathrm{\}}$
+
+\noindent $\mathrm{\}}$
+
+ And you would call it like that:
+
+ $\mathrm{\{}$$\mathrm{\{}$user.name {\textbar} uselessPipe:"Mr.":"the great"$\mathrm{\}}$$\mathrm{\}}$
+
+\noindent \\ \\ \textbf{Creating Custom Search Filter Pipe } \\
+
+\noindent 
+
+\noindent Create a new pipe with the following command ng g pipe filterdata \\
+
+\noindent 
+
+\noindent ng g pipe filterdata
+
+\noindent 
+
+\noindent Copy the following code in filterdata.pipe.ts
+
+\noindent import $\mathrm{\{}$Pipe, PipeTransform $\mathrm{\}}$ from '@angular/core';
+
+\noindent @Pipe ($\mathrm{\{}$
+
+name: 'filterdata'
+
+\noindent $\mathrm{\}}$)
+
+\noindent export class FilterdataPipe implements PipeTransform $\mathrm{\{}$
+
+transform (items: any [], value: string, label:string): any[] $\mathrm{\{}$ 
+
+if (! items) return [];
+
+if (! value) return items;
+
+if (value == '' {\textbar}{\textbar} value == null) return [];
+
+return items.filter(e =$\mathrm{>}$ e[label].toLowerCase().indexOf(value) $\mathrm{>}$ -1 );
+
+$\mathrm{\}}$
+
+\noindent $\mathrm{\}}$
+
+\noindent import $\mathrm{\{}$Pipe, PipeTransform$\mathrm{\}}$ from '@angular/core'; @Pipe ($\mathrm{\{}$
+
+\noindent name: 'filterdata'
+
+\noindent $\mathrm{\}}$)
+
+\noindent export class FilterdataPipe implements PipeTransform $\mathrm{\{}$ 
+
+transform (items: any [], value: string, label:string): any[] $\mathrm{\{}$
+
+if (! items) return [];
+
+if (! value) return items;
+
+if (value == '' {\textbar}{\textbar} value == null) return [];
+
+return items.filter(e =$\mathrm{>}$ e[label].toLowerCase().indexOf(value) $\mathrm{>}$ -1 );
+
+$\mathrm{\}}$
+
+\noindent $\mathrm{\}}$
+
+\noindent 
+
+\noindent \\ Do not forget to import the above pipe in app.module.ts (If you use ng-cli generator, pipe automatically added to app.module.ts) \\
+
+\noindent 
+
+\noindent import $\mathrm{\{}$BrowserModule$\mathrm{\}}$ from '@angular/platform-browser'; 
+
+\noindent import $\mathrm{\{}$NgModule$\mathrm{\}}$ from '@angular/core';
+
+\noindent import $\mathrm{\{}$AppComponent$\mathrm{\}}$ from './app.component';
+
+\noindent import $\mathrm{\{}$FilterdataPipe$\mathrm{\}}$ from './filterdata.pipe';      
+
+\noindent @NgModule ($\mathrm{\{}$      
+
+declarations: [      
+
+  FilterdataPipe      
+
+ ],      
+
+ imports: [],      
+
+ providers: [],      
+
+ bootstrap: [AppComponent]      
+
+\noindent $\mathrm{\}}$)      
+
+\noindent export class AppModule $\mathrm{\{}$$\mathrm{\}}$       
+
+\noindent import $\mathrm{\{}$BrowserModule$\mathrm{\}}$ from '@angular/platform-browser';    
+
+\noindent import $\mathrm{\{}$NgModule$\mathrm{\}}$ from '@angular/core';      
+
+\noindent import $\mathrm{\{}$AppComponent$\mathrm{\}}$ from './app.component';      
+
+\noindent import $\mathrm{\{}$FilterdataPipe$\mathrm{\}}$ from './filterdata.pipe';      
+
+\noindent @NgModule ($\mathrm{\{}$      
+
+ declarations: [      
+
+  FilterdataPipe      
+
+ ],      
+
+ imports: [],      
+
+ providers: [],      
+
+ bootstrap: [AppComponent]      
+
+\noindent $\mathrm{\}}$)      
+
+\noindent export class AppModule $\mathrm{\{}$$\mathrm{\}}$      
+
+\noindent \\ Example of using pipe above, please add new object and copy the following code in
+
+\noindent app.component.ts      
+
+\noindent listofstudent = [      
+
+ $\mathrm{\{}$id:"1", name:"icha", age:"20"$\mathrm{\}}$,      
+
+ $\mathrm{\{}$id:"2", name:"denok", age:"23"$\mathrm{\}}$,      
+
+ $\mathrm{\{}$id:"3", name:"sri utami", age:"10"$\mathrm{\}}$,
+
+\noindent $\mathrm{\{}$id:"4", name:"mbok darmi", age:"40"$\mathrm{\}}$,
+
+\noindent $\mathrm{\{}$id:"5", name:"jeniffer", age:"30"$\mathrm{\}}$,
+
+\noindent $\mathrm{\{}$id:"6", name:"limbuk", age:"22"$\mathrm{\}}$];
+
+\noindent 
+
+\noindent \\ Add the following html script in app.component.html \\
+
+\noindent $\mathrm{<}$table border =1$\mathrm{>}$
+
+$\mathrm{<}$thead$\mathrm{>}$
+
+$\mathrm{<}$tr$\mathrm{>}$
+
+$\mathrm{<}$th colspan="4"$\mathrm{>}$Search:
+
+$\mathrm{<}$input type="text" [(ngModel)] = "queryString"$\mathrm{>}$
+
+$\mathrm{<}$/th$\mathrm{>}$
+
+$\mathrm{<}$/tr$\mathrm{>}$
+
+$\mathrm{<}$tr$\mathrm{>}$
+
+$\mathrm{<}$th style="width:40px; max-width:40px;"$\mathrm{>}$\#$\mathrm{<}$/th$\mathrm{>}$
+
+$\mathrm{<}$th style="width:60px; max-width:100px;"$\mathrm{>}$Name$\mathrm{<}$/th$\mathrm{>}$
+
+$\mathrm{<}$th style="width:60px; max-width:50px;"$\mathrm{>}$Age$\mathrm{<}$/th$\mathrm{>}$
+
+$\mathrm{<}$/tr$\mathrm{>}$
+
+$\mathrm{<}$/thead$\mathrm{>}$
+
+$\mathrm{<}$tbody$\mathrm{>}$
+
+$\mathrm{<}$tr *ngFor="let ex of listofstudent{\textbar} filterdata: queryString: 'name'; let i = index "$\mathrm{>}$
+
+$\mathrm{<}$td$\mathrm{>}$$\mathrm{\{}$$\mathrm{\{}$i+1$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/td$\mathrm{>}$
+
+$\mathrm{<}$td$\mathrm{>}$$\mathrm{\{}$$\mathrm{\{}$ex.name$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/td$\mathrm{>}$
+
+$\mathrm{<}$td$\mathrm{>}$$\mathrm{\{}$$\mathrm{\{}$ex.age$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/td$\mathrm{>}$
+
+$\mathrm{<}$/tr$\mathrm{>}$
+
+$\mathrm{<}$/tbody$\mathrm{>}$
+
+\noindent $\mathrm{<}$/table$\mathrm{>}$
+
+\noindent $\mathrm{<}$table border =1$\mathrm{>}$
+
+$\mathrm{<}$thead$\mathrm{>}$
+
+$\mathrm{<}$tr$\mathrm{>}$
+
+$\mathrm{<}$th colspan="4"$\mathrm{>}$ Search:
+
+$\mathrm{<}$input type="text" [(ngModel)] = "queryString"$\mathrm{>}$
+
+$\mathrm{<}$/th$\mathrm{>}$
+
+  $\mathrm{<}$/tr$\mathrm{>}$
+
+$\mathrm{<}$tr$\mathrm{>}$
+
+$\mathrm{<}$th style="width:40px; max-width:40px;"$\mathrm{>}$\#$\mathrm{<}$/th$\mathrm{>}$
+
+$\mathrm{<}$th style="width:60px; max-width:100px;"$\mathrm{>}$Name$\mathrm{<}$/th$\mathrm{>}$
+
+\noindent $\mathrm{<}$th style="width:60px; max-width:50px;"$\mathrm{>}$Age$\mathrm{<}$/th$\mathrm{>}$
+
+$\mathrm{<}$/tr$\mathrm{>}$
+
+$\mathrm{<}$/thead$\mathrm{>}$
+
+\noindent $\mathrm{<}$tbody$\mathrm{>}$
+
+$\mathrm{<}$tr *ngFor="let ex of listofstudent{\textbar} filterdata: queryString : 'name' ; let i = index "$\mathrm{>}$
+
+$\mathrm{<}$td$\mathrm{>}$$\mathrm{\{}$$\mathrm{\{}$i+1$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/td$\mathrm{>}$
+
+$\mathrm{<}$td$\mathrm{>}$$\mathrm{\{}$$\mathrm{\{}$ex.name$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/td$\mathrm{>}$
+
+$\mathrm{<}$td$\mathrm{>}$$\mathrm{\{}$$\mathrm{\{}$ex.age$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/td$\mathrm{>}$
+
+$\mathrm{<}$/tr$\mathrm{>}$
+
+\noindent $\mathrm{<}$/tbody$\mathrm{>}$
+
+\noindent $\mathrm{<}$/table$\mathrm{>}$
+
+\noindent The result of custom search filter pipe angular 4 above will be like the following picture
+
+\begin{center}
+	\noindent \includegraphics*[width=3.96in, height=1.99in]{IMG-03-09}
+\end{center}
+
+
+\end{document}
+

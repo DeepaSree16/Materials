@@ -1,0 +1,477 @@
+
+\documentclass{article} 
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{txfonts}
+\usepackage{mathdots}
+\usepackage[classicReIm]{kpfonts}
+\usepackage{graphicx}
+\usepackage[margin=1.0in]{geometry}
+
+
+
+\begin{document}
+
+
+
+
+\begin{center}
+	\noindent {\Huge \underline{\textbf{Module-1 \\}}}
+	\noindent \\ {\huge  (Getting Started with Angular)}
+\end{center}
+
+\noindent \textbf{}
+
+\noindent \\ \\ {\LARGE \textbf{Module Overview }}
+
+\noindent \\ \\ {\large \textbf{CODING EXERCISE}}
+
+\noindent \\ In this module, you will learn to create a Web Application with Angular4 enabled Web Pages.
+
+\noindent \\ \\ {\large \textbf{OBJECTIVES}}
+
+\noindent \\ By designing the web page, you will be able to learn:
+\begin{itemize}
+	\item Angular4 Program Structure 
+	\item Component using TypeScript
+\end{itemize}
+\newpage
+
+\noindent\begin{center}
+	 {\LARGE \textbf{Angular Introduction}}
+\end{center}
+
+\noindent \textbf{}
+
+\noindent \\ \\ {\large \textbf{Welcome to Angular}}
+
+\noindent \\ Angular, is most widely used JavaScript framework for building interactive web apps. It is designed for Web, Desktop and Mobile platforms development, especially Angular is most popular development framework to build interactive Single-Page Applications (SPAs).
+
+\noindent \\ While, we create apps using HTML, CSS and JavaScript, Angular compels us to know about one more scripting language, Typescript, which is a typed superset of JavaScript.
+
+\noindent 
+
+\noindent \\ {\large \textbf{Gap between JavaScript and server-side development}}
+
+\noindent \\ JavaScript is object-based language and is so popular towards client-side development or client-side validation. By nature, JavaScript is not so strict in type checking and is not object-oriented. So, it is missing many features of object-oriented technologies (as most popular server-side technologies are object-oriented but not object-based) and benefits, as a result, JavaScript could not scale for server-side development and confined it-self to client-side validation. After Node.js runtime development, JavaScript emerged as server-side technology, but unfortunately, as JavaScript code grows, it tends to get messier, making it difficult to maintain and reuse the code, is not robust as it is less-strict in type checking which led to compile-time errors, as it lacks object-oriented features and failed at enterprise level as full-fledged server-side technology. Finally, to fill the gap between JavaScript and server-side development, Typescript was presented, to bridge the gap.
+
+\noindent  
+
+\noindent \\ \textbf{Typescript}: [bridge between JavaScript \& Server-side development]
+
+\noindent \\ Typescript is to build on top of JavaScript with its added new features like strongly typed, object- oriented and compiled as a language. It was designed by Anders Hejlsberg at Microsoft Corporation.
+
+\noindent \\ Typescript is a language and also has set of tools; reason is, browser will not understand Typescript code, but JavaScript. So every time when you run Typescript, internally it is compiled into equivalent JavaScript code by the Typescript compiler tool.
+
+\noindent \\ As Typescript is object-oriented and it also has set of JavaScript supporting libraries and tools, it scaled towards server-side development quickly as coding in Typescript is easier, strict in type checking, thereby, avoids compile-time errors. One should not forget that it is a wrapper around JavaScript and every Typescript program is internally converted into JavaScript code and thereby executed on browser. However, Typescript could fill gap between JavaScript and Server-side development with its added features and tools. Reason to discuss about Typescript is Angular4 was fully coded and developed in Typescript only.
+
+\noindent 
+
+\noindent 
+
+\noindent \\ {\large \textbf{Introduction to Angular4}}
+
+\noindent \\ Angular (commonly referred to as `Angular2+' or `Angular v2and above') is one of the most popular Typescript based opensource front-end web development platform, primarily used to build Single- Page Applications (SPAs) and web apps. Angular platform has been maintained by Google, some tech-savvy community of individuals and corporations. Using Angular4 framework one can build web applications and apps using HTML, CSS and Typescript (which is a superset of JavaScript).
+
+\noindent \\ Angular comes with many built-in features in hand:
+
+\begin{itemize}
+	\item \textbf{Cross platform}- capability to run apps on web, desktop and mobile.
+	\item \textbf{High speed and performance}- lightweight components improves performance
+	\item \textbf{Productivity} -- set of tools to generate templates, compilation and deployment
+	\item \textbf{Animation} - built in support from library modules to develop animation apps.
+	\item \textbf{Http service} -- built in support from library modules to develop http service-based apps.
+\end{itemize}
+ 
+\noindent \\ {\large \textbf{Angular Version Story}}
+
+\noindent Angular was first created at Google. AngularJS or Angular-1 was developed by Misko Hevery in 2009.
+
+\noindent There are 3 major releases of Angular. \\
+
+\begin{tabular}{|p{1.1in}|p{1.1in}|p{1.1in}|p{1.1in}|} \hline 
+\textbf{Release} & \textbf{Name} & \textbf{Coded in} & \textbf{Architecture} \\ \hline 
+\textbf{October 20,\newline 2010} & Angular-1 (or)\newline AngularJS & JavaScript & MVC based \\ \hline 
+\textbf{September 14,\newline 2016} & Angular-2 & Typescript & Service/Controller\newline based \\ \hline 
+\textbf{November 1,\newline 2017} & Angular-4 & Typescript & Service/Controller\newline based \\ \hline 
+\end{tabular}
+
+
+
+\noindent \\ \\ There is no backward compatibility from Angular-2 to AngularJS, which means, AngularJS projects will not run on Angular-2, so entire project must be re-coded. But there is backward compatibility from Angular-4 to Angular-2, which means; already developed Angular-2 projects will run on Angular-4 without any issues.
+
+
+
+\newpage
+
+\noindent {\LARGE \textbf{Setup Angular-4 Environment on Windows O/S}}
+
+
+
+\noindent \\ {\large \textbf{Installation procedure on Windows:}}
+
+\noindent \\ here, we are performing following operations:
+\begin{enumerate}
+	\item \textbf{Node.js and NPM installation }
+	\begin{enumerate}
+		\item  open browser and type the following URL in address bar, as shown below:
+		\begin{center}
+			\noindent \includegraphics*[width=4.83in, height=2.04in]{IMG-01-01}
+		\end{center}
+			\item Then, select windows version and choose .msi installer (either 32 bit or 64 bit).
+			 \begin{center}
+			 	\includegraphics*[width=4.69in, height=2.50in]{IMG-01-02}
+			 	 \includegraphics*[width=4.41in, height=2.88in]{IMG-01-03}  
+			 \end{center}
+		  as per your machine operating system click on 32-bit or 64-bit of windows , then your download will start...!
+		  \item downloaded as shown below.
+		  \item right click on node-v8.11.4.-x64 and choose INSTALL option.
+		  \begin{center}
+		  	\includegraphics*[width=5.70in, height=2.39in]{IMG-01-04}
+		  \end{center}
+	  	\noindent choose \textbf{Next} button
+	  	
+	  	\begin{center}
+	  		\noindent \includegraphics*[width=5.08in, height=2.16in]{IMG-01-05}
+	  	\end{center}
+	  	
+	  	\noindent then, select check box....  
+	  	
+	  	\noindent click Next button{\dots}
+	  	
+	  	\begin{center}
+	  		\noindent \includegraphics*[width=4.13in, height=2.72in]{IMG-01-06}
+	  	\end{center}
+	  	
+	  	\noindent click \textbf{Install} button and to check installation of Node.js \& NPM, do the following:
+	  	
+	  	\noindent click on windows/start button then, type node.js in search box...as shown below.
+	  	
+	  	\begin{center}
+	  		\noindent \includegraphics*[width=5.26in, height=2.96in]{IMG-01-07}
+	  	\end{center}
+	  	
+	  	\noindent then, in the top of the start menu, you can find node.js command line, as shown below
+	  	
+	  	\begin{center}
+	  		\noindent \includegraphics*[width=5.12in, height=2.40in]{IMG-01-08}
+	  	\end{center}
+	  	
+	  	\noindent right click with mouse on "Node.js command prompt", and choose "Run as administrator" as shown below:
+	  	
+	  	\begin{center}
+	  		\noindent \includegraphics*[width=5.12in, height=2.80in]{IMG-01-09}
+	  	\end{center}
+	  	
+	  	\noindent then, you will see Node.js command prompt as shown below:
+	  	
+	  	\begin{center}
+	  		\noindent \includegraphics*[width=5.40in, height=2.64in]{IMG-01-10}
+	  	\end{center}
+	  	
+	  	\noindent now to check node.js is installation, type node -v, as shown below
+	  	
+	  	\begin{center}
+	  		\noindent \includegraphics*[width=5.12in, height=2.56in]{IMG-01-11}
+	  	\end{center} 
+	  	
+	  	\noindent now to check NPM installation, type npm -v, as shown below:
+	  	
+	  	\begin{center}
+	  		\noindent \includegraphics*[width=5.40in, height=2.64in]{IMG-01-12}
+	  	\end{center}
+	  	
+	  	\begin{center}
+	  		\noindent \includegraphics*[width=5.41in, height=2.56in]{IMG-01-13}
+	  	\end{center}
+	  	
+	  	\noindent therefore, as shown in the above screen, it is confirmed that node.js and npm software installed on machine successfully.
+		
+	\end{enumerate}
+	\item \textbf{Installation of Angular CLI}
+	\noindent \\ Now, type the command "npm install -g  @angular/cli", as shown below:
+	
+	\begin{center}
+		\noindent \includegraphics*[width=5.55in, height=3.12in]{IMG-01-14}
+	\end{center}
+	
+	\noindent Finally, you can observe the following screen, as installation of AngularCLI is over.
+	
+	\begin{center}
+		\noindent \includegraphics*[width=5.41in, height=3.04in]{IMG-01-15}
+	\end{center}
+\end{enumerate}
+
+\newpage
+\noindent \\ {\large \textbf{Creating Angular App}}
+
+\noindent \textbf{}
+
+\noindent \\ \textbf{Create an Angular application using Angular CLI}
+
+\noindent \\ Now, move to either D or E or F drive for creating application, as shown below.
+
+\begin{center}
+	\noindent \includegraphics*[width=5.26in, height=2.96in]{IMG-01-16}
+\end{center}
+
+\noindent Initially create a folder "AngularSpace" inside D drive, as shown below:
+
+\begin{center}
+	\noindent \includegraphics*[width=5.26in, height=2.96in]{IMG-01-17}
+\end{center}
+
+\noindent  now, change to folder AngularSpace, using command "cd AngularSpace", as shown below:
+
+\begin{center}
+	\noindent \includegraphics*[width=5.26in, height=1.12in, trim=0.00in 0.64in 0.00in 0.00in]{IMG-01-18}
+\end{center}
+
+\noindent now, you are moved to AngularSpace folder or directory.
+
+\noindent now, for creating new application...type command "ng new $\mathrm{<}$app-name$\mathrm{>}$", as shown here..
+
+\begin{center}
+	\noindent \includegraphics*[width=5.41in, height=2.72in]{IMG-01-19}
+\end{center}
+
+\noindent  Now, application ang-app1...has been created{\dots}
+
+\begin{center}
+	\noindent \includegraphics*[width=4.70in, height=2.64in]{IMG-01-20}
+\end{center}
+
+\noindent now you can observe that "added 1103 packages.." message...it means application structure is created.
+
+\noindent to run application, type command "cd ang-app1", as shown below:
+
+\begin{center}
+	\noindent \includegraphics*[width=5.26in, height=2.58in, trim=0.00in 0.38in 0.00in 0.00in]{IMG-01-21}
+\end{center}
+
+\noindent then, you will see as shown{\dots}
+
+\begin{center}
+	\noindent \includegraphics*[width=5.26in, height=2.49in, trim=0.00in 0.47in 0.00in 0.00in]{IMG-01-22} 
+\end{center}
+
+\noindent Then, type the command "ng serve - -open" to run your application...as shown below:
+
+\begin{center}
+	\noindent \includegraphics*[width=5.12in, height=2.56in, trim=0.00in 0.24in 0.00in 0.00in]{IMG-01-23}
+\end{center}
+
+\begin{center}
+	\noindent \includegraphics*[width=5.12in, height=2.56in, trim=0.00in 0.16in 0.00in 0.00in]{IMG-01-24}
+\end{center}
+
+\noindent 
+
+\noindent Now, open browser and type "localhost:4200" in address bar, as shown below ...so you can see application execution:
+
+\begin{center}
+	\noindent \includegraphics*[width=5.26in, height=2.64in]{IMG-01-25}
+\end{center}
+
+\begin{center}
+	\noindent \includegraphics*[width=5.41in, height=3.04in]{IMG-01-26}
+\end{center}
+
+\noindent 
+\newpage
+\noindent {\LARGE \textbf{Installing Visual Studio Code IDE}}
+
+\begin{center}
+	\noindent \includegraphics*[width=4.83in, height=2.49in, trim=0.00in 0.23in 0.00in 0.00in]{IMG-01-27}\textbf{}
+\end{center}
+
+\noindent now, choose your windows version... either 64bit or 32bit....from User Installer\textbf{}
+
+\noindent then your downloading will start{\dots}and later you can find downloaded software in "Downloads" as below:
+
+\noindent To install Visual Studio Code.... Right click on it...and choose Run as administrator{\dots}.
+
+\noindent as shown below:
+
+\begin{center}
+	\noindent \includegraphics*[width=5.12in, height=2.88in]{IMG-01-28}
+\end{center}
+
+\noindent then you can see:
+
+\begin{center}
+	\noindent \includegraphics*[width=3.44in, height=2.48in, trim=0.48in 0.00in 0.49in 0.00in]{IMG-01-29}
+\end{center}
+
+\begin{center}
+	\noindent   \includegraphics*[width=3.15in, height=2.19in]{IMG-01-30}
+\end{center}
+
+\noindent finally...you can click Finish button...so you can see the editor...as shown below:
+
+\begin{center}
+	\noindent \includegraphics*[width=4.55in, height=2.56in]{IMG-01-31}
+\end{center}
+
+\noindent 
+\newpage
+\noindent \\ {\large \textbf{OPEN ANGULAR APPLICATION INTO VISUAL STUDIO CODE}}
+
+\begin{center}
+	\noindent \includegraphics*[width=4.73in, height=2.65in]{IMG-01-32} 
+\end{center}
+File Menu -$\mathrm{>}$ Open Folder -$\mathrm{>}$ Selector Project
+
+
+
+\begin{center}
+	\noindent \includegraphics*[width=4.69in, height=2.64in]{IMG-01-33}
+\end{center}
+
+
+\newpage
+\noindent \\ {\large \textbf{ANGULAR APPLICATION-STRUCTURE}}
+
+
+
+\noindent \\ Angular Application has well-defined folder structure as depicted in the following screen:
+
+\begin{center}
+	\noindent \includegraphics*[width=5.12in, height=2.88in]{IMG-01-34}
+\end{center}
+\begin{center}
+	\noindent \includegraphics*[width=3.92in, height=3.36in]{IMG-01-35}
+\end{center}
+
+
+\noindent The src folder is the main folder, which internally has a different file structure.
+
+\noindent \textbf{App}
+
+\noindent It contains the files described below. These files are installed by angular-cli by default.
+
+\begin{itemize}
+	\item app.module.ts $\mathrm{-}$ If you open the file, you will see that the code has reference to different libraries, which are imported. Angular-cli has used these default libraries for the import -- angular/core, platform-browser. The names itself explain the usage of the libraries.
+	\item app.component.css $\mathrm{-}$ You can write your css structure over here. Right now, we have added the background color to the div as shown below.
+	\item app.component.html $\mathrm{-}$ The html code will be available in this file. 
+	\item app.component.spec.ts $\mathrm{-}$ These are automatically generated files which contain unit tests for source component.
+	\item app.component.ts $\mathrm{-}$ The class for the component is defined over here. You can do the processing of the html structure in the .ts file. The processing will include activities such as connecting to the database, interacting with other components, routing, services, etc.
+\end{itemize}
+
+
+\noindent \\ {\large \textbf{Assets}}
+
+\noindent You can save your images, js files in this folder.
+
+\noindent 
+
+\noindent {\large \\ \textbf{Environment}}
+
+\noindent \\ This folder has the details for the production or the dev environment. The folder contains two files.
+
+\begin{itemize}
+	\item environment.prod.ts
+	 \item environment.ts
+\end{itemize}
+ 
+\noindent \\ Both the files have details of whether the final file should be compiled in the production environment or the dev environment.
+
+\noindent \\ \textbf{favicon.ico}
+
+\noindent This is a file that is usually found in the root directory of a website.
+
+\noindent \\ \textbf{index.html}
+
+\noindent This is the file which is displayed in the browser.
+
+\noindent \\ \textbf{main.ts}
+
+\noindent main.ts is the file from where we start our project development. It starts with importing the basic module which we need
+
+\noindent \\ \textbf{polyfill.ts}
+
+\noindent This is mainly used for backward compatibility.
+
+\noindent \\ \textbf{styles.css}
+
+\noindent This is the style file required for the project.
+
+\noindent \\ \textbf{test.ts}
+
+\noindent Here, the unit test cases for testing the project will be handled.
+
+
+\noindent \\ \textbf{tsconfig.app.json}
+
+\noindent This is used during compilation, it has the config details that need to be used to run the application.\textbf{}
+
+\noindent \\ \textbf{tsconfig.spec.json}
+
+\noindent This helps maintain the details for testing.
+
+\noindent \\ \textbf{typings.d.ts}
+
+\noindent It is used to manage the TypeScript definition.
+
+\newpage
+
+\noindent {\LARGE \textbf{Installation on Ubuntu}}
+
+\textbf{ }
+
+\noindent Open Terminal
+
+\noindent Type the following command to Switch to Admin
+
+
+  \$ sudo su 
+
+
+  \$ sudo apt-get update 
+
+
+  \$ sudo apt-get install curl 
+
+
+  \$ curl -sL https://deb.nodesource.com/setup\_8.x {\textbar} sudo -E bash -- 
+
+
+  \$ sudo apt-get update 
+
+
+  \$ sudo apt-get install -y nodejs 
+
+
+  \$ sudo apt-get update 
+
+
+  \$ open angulario in browser 
+
+
+  \$ sudo npm install -g @angular/cli  
+
+
+  \$ sudo apt-get update 
+
+
+  \$ ng new ang-app  
+
+
+  \$ cd ang-app  
+
+
+  \$ ng serve --open  
+
+
+  \$ localhost:4200 
+
+ 
+
+\noindent 
+
+
+\end{document}
+

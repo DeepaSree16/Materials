@@ -1,0 +1,202 @@
+
+\documentclass{article}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[english]{babel} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{txfonts}
+\usepackage{mathdots}
+\usepackage[classicReIm]{kpfonts}
+\usepackage{graphicx}
+\usepackage[margin=1.0in]{geometry}
+
+
+
+\begin{document}
+
+\noindent \textbf{DOM (Document Object Model)}
+
+\noindent\\
+ Just to get things straight - DOM stands for~\textit{Document Object Model}~and is an abstraction of a structured text. For web developers, this text is an HTML code, and the DOM is simply called~\textit{HTML DOM}.~\textit{Elements}~of HTML become~\textit{nodes}~in the DOM.
+
+\noindent\\
+ The HTML DOM provides an interface (API) to traverse and modify the nodes. It contains methods like~getElementById~or~removeChild. We usually use JavaScript language to work with the DOM, because{\dots} Well, nobody knows why :).
+
+\noindent\\
+ So, whenever we want to dynamicly change the content of the web page, we modify the DOM:
+
+\noindent\\
+ var item = document.getElementById("myLI");
+
+\noindent item.parentNode.removeChild(item);
+
+\noindent document~is an abstraction of the root node, while~getElementById,~parentNode~and~removeChild~are methods from HTML DOM API.
+
+\noindent 
+
+\noindent 
+
+\noindent \\
+ 
+\noindent \textbf{Virtual DOM}
+
+\noindent 
+\\
+ First of all - the~Virtual DOM~was not invented by React, but React uses it and provides it for free.
+
+\noindent 
+\\
+The~Virtual DOM~is an abstraction of the HTML DOM. It is lightweight and detached from the browser-specific implementation details. Since the DOM itself was already an abstraction, the virtual DOM is, in fact, an abstraction of an abstraction.
+
+\noindent 
+ \\
+ Perhaps it's better to think of the virtual DOM as~React's local and simplified copy of the HTML DOM. It allows React to do its computations within this abstract world and skip the ``real'' DOM operations, often slow and browser-specific.
+
+\noindent 
+\\
+There's no big difference between the ``regular'' DOM and the virtual DOM. This is why the JSX parts of the React code can look almost like pure HTML:
+
+\noindent 
+{\bf }
+
+\noindent 
+{\bf }
+
+\noindent 
+{\bf }
+
+\noindent 
+{\bf }
+
+\noindent 
+\\
+\textbf{How Virtual DOM Works ?}
+
+\noindent 
+\\
+So when there is a update in the virtual DOM, react compares the virtual DOM with a snapshot of the virtual DOM taken right before the update of the virtual DOM.
+
+\noindent 
+\\
+With the help of this comparison React figures out which components in the UI needs to be updated. This process is called diffing. The algorithm that is used for the diffing process is called as the diffing algorithm.
+
+\noindent 
+\\
+Once React knows which components has been updated, then it replaces the original DOM nodes with the updated DOM node.
+
+\noindent 
+\newpage
+\noindent {\Large {\bf Let's understand this with a Example.}}
+
+\noindent 
+{\bf }
+
+\noindent 
+{\bf \includegraphics*[width=6.22in, height=5.14in]{IMG-06-01}}
+
+\noindent 
+{\bf }
+
+\noindent 
+{\bf }
+
+\noindent 
+\\
+Now here when there is update in the UI then react compares the new virtual DOM with the pre-updated virtual DOM and points out that in the second~$\mathrm{<}$div$\mathrm{>}$~the content has been changed so it only updates the content of the second div in the real DOM.
+
+\noindent 
+\\
+This process is fast as only a single node had to change as opposed the whole repainting of the UI.
+
+\noindent 
+\\
+But wait what if the DOM elements are added ?
+
+\noindent 
+{\bf }
+
+\noindent 
+{\bf \includegraphics*[width=6.26in, height=2.68in]{IMG-06-02}}
+
+\noindent 
+{\bf }
+
+\noindent 
+{\bf }
+
+\noindent 
+\\
+In this scenario only a node has been added to the second div so React just adds it to the real DOM.
+
+\noindent 
+\\
+But wait here the element was added at the end of the div element.
+
+\noindent 
+\\
+What if we add an element at the top ?
+
+\noindent 
+{\bf \includegraphics*[width=6.26in, height=2.65in]{IMG-06-03}}
+
+\noindent 
+{\bf }
+
+\noindent 
+{\bf }
+
+\noindent 
+{\bf }
+
+\noindent 
+\\
+here the virtual DOM would repaint the whole second div as when it tries to compares it with the pre-updated virtual DOM then in second div the first child was h1 and now it is h2 so it doesn't just add the new element instead it replaces the whole div element.
+
+\noindent 
+\\
+Imagine that instead of just the two elements inside the second div tag we have 1000's of hierarchical components. It will re-render those 1000's of components which didn't changed.
+
+\noindent 
+\\
+To solve this issue React supports a key attribute. When the children of the React components have keys, React uses the keys to match children in the pre-updated virtual DOM.
+
+\noindent 
+\\
+
+Let's use these keys in our example above and see how it solves our problem.
+
+\noindent 
+{\bf \includegraphics*[width=6.26in, height=2.58in]{IMG-06-04}}
+
+\noindent 
+{\bf }
+
+\noindent 
+{\bf }
+
+\noindent 
+\\
+Here now react diffing algorithm matches the component with previous key~asdda~in the second div and a new element with key~12dsa. So in this scenario react just marks the new element and it is added to the real DOM. This solves our problem of unnecessary re-rendering of unchanged components.
+
+\noindent 
+{\bf }
+\\
+
+\noindent \textbf{Points to Remember}
+
+\begin{enumerate}
+\item \textbf{ }Frequent DOM manipulations are expensive.
+
+\item  Virtual DOM is a virtual representation of DOM in memory.
+
+\item  Virtual DOM is synced with real DOM with ReactDOM library. This process is called Reconciliation.
+
+\item  React compares the Virtual DOM and pre-updated Virtual DOM and only marks the sub-tree of components that are updated. This process is called diffing.
+
+\item  The algorithm behind diffing is called Diffing algorithm.
+
+\item  React uses keys to avoid unnecessary re-renders.
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,196 @@
+
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{txfonts}
+\usepackage{mathdots}
+\usepackage[classicReIm]{kpfonts}
+\usepackage{graphicx}
+\usepackage[margin=1.0in]{geometry}
+
+
+
+\begin{document}
+
+
+
+\begin{center}
+	\noindent {\Huge \underline{\textbf{Module-4}}}
+	\noindent \\ {\huge  (Angular Form)}
+\end{center}
+
+
+\noindent 
+
+\noindent \\ {\LARGE \textbf{Module Overview}}
+
+\noindent 
+
+\noindent \\ {\large \textbf{CODING EXERCISE}}
+
+\noindent 
+
+\noindent \\ In this module, you will learn to design a dynamic web page using Angular4 with features mentioned below:
+
+\noindent 
+
+\begin{enumerate}
+	\item Template Driven 
+	\item Forms Form Validations
+\end{enumerate}
+
+
+\noindent \\ {\large \textbf{OBJECTIVES}}
+
+\noindent 
+
+\noindent \\ By designing the web page, you will be able to learn :
+\begin{enumerate}
+	\item Creating template driven form and passing values to a method in component 
+	\item Performing form validations and printing corresponding messages
+\end{enumerate}
+
+\noindent \\ {\large \textbf{SCRIPTING -CONSTRUCTS}}
+
+\noindent 
+
+\noindent \\ To designing the web page, you will require the following scripting constructs:
+
+\begin{enumerate}
+	\item HTML Form Elements 
+	\item ngForm directive
+	\item ngClick directive
+	\item ngModel directive
+	\item Typescript function
+\end{enumerate}
+
+\newpage
+\noindent {\LARGE \textbf{Angular Form}}
+
+\noindent \textbf{}
+
+\noindent \\ The directives we need to build template driven forms are in the FormsModule so lets import that and add it to our NgModule as an import.  import $\mathrm{\{}$FormsModule$\mathrm{\}}$ from '@angular/forms'; 
+
+\noindent \\ One of the directives pulled in via the FormsModule is called NgForm. This directive has a selector which matches the $\mathrm{<}$form$\mathrm{>}$ tag.
+
+\noindent \\ So just by adding FormsModule to our NgModule imports our template form is already associated wth an instance of the NgForm directive.
+
+\noindent \\ This instance of ngForm is hidden but we can expose it with a local template reference variable attached to the form element, like so: 
+
+  
+
+\noindent \\ $\mathrm{<}$\textbf{form} \#f="ngForm"$\mathrm{>}$ ... $\mathrm{<}$/\textbf{form}$\mathrm{>}$ 
+
+\noindent \\ Now we can use the variable f in our template and it will point to our instance of the ngForm directive.
+
+\noindent 
+
+\noindent \\ In template driven forms we need Angular to create the model form controls for us for each template form control. To do that we need to do two things to each template form control:
+
+\begin{enumerate}
+	\item Add the NgModel directive 
+	\item Add the name attribute.
+\end{enumerate}
+
+\noindent \\ The NgModel directive creates the FormControl instance to manage the template form control and the name attribute tells the NgModel directive what key to store that FormControl under in the parent FormGroup, like so: 
+
+  
+
+\noindent  \\  $\mathrm{<}$\textbf{input} name="foo" ngModel$\mathrm{>}$ 
+
+\noindent \\  After adding ngModel to our template email input control, like so:   
+
+\noindent $\mathrm{<}$\textbf{div} \#f=''ngForm''$\mathrm{>}$
+
+\noindent $\mathrm{<}$\textbf{label}$\mathrm{>}$Email$\mathrm{<}$/\textbf{label}$\mathrm{>}$
+
+\noindent $\mathrm{<}$\textbf{input} type="email" name="email" ngModel$\mathrm{>}$
+
+\noindent $\mathrm{<}$/\textbf{div}$\mathrm{>}$ 
+
+
+
+\noindent \\  So we can output that to screen simply with a pre tag and the json pipe, like so: 
+
+  
+
+\noindent \\  Copy$\mathrm{<}$\textbf{pre}$\mathrm{>}$$\mathrm{\{}$$\mathrm{\{}$f.value {\textbar} json$\mathrm{\}}$$\mathrm{\}}$$\mathrm{<}$/\textbf{pre}$\mathrm{>}$ 
+
+\noindent 
+\newpage
+\noindent {\LARGE \textbf{Form Validation}}
+
+\noindent 
+
+\noindent \\  In the template driven approach we define the validators via directives and HTML5 attributes in our template itself, lets add validators to our form template. 
+
+\noindent \\  All the fields apart from the language were required, so we'll just add the required attribute to those input fields, like so: 
+
+  
+
+\noindent \\  Copy$\mathrm{<}$\textbf{input} type="email" 
+
+class="form-control" 
+
+name="email" [(ngModel)] = "model.email" 
+
+required$\mathrm{>}$ 
+
+\noindent \\  The email field also had a pattern validator, we can add that via an attribute as well, like so:  
+
+\noindent \\  Copy$\mathrm{<}$\textbf{input} type="email" 
+
+\noindent class="form-control" 
+
+\noindent name="email" [(ngModel)] = "model.email" 
+
+\noindent required
+
+\noindent pattern="[$\mathrm{\wedge}$ @]*@[$\mathrm{\wedge}$ @]*"$\mathrm{>}$ 
+
+\noindent 
+
+\noindent \\  The password field also had a min length validator, we can add that via an attribute also, like so: 
+
+ 
+
+\noindent \\  Copy$\mathrm{<}$\textbf{input} type="password" 
+
+\noindent class="form-control" 
+
+\noindent name="password" 
+
+\noindent [(ngModel)]="model.password" 
+
+\noindent required
+
+\noindent minlength="8"$\mathrm{>}$ 
+
+\noindent Validation messages
+
+\noindent \\  As for form validation messages, we can use exactly the same method that we used in model driven forms. As long as we named the local reference variables the same as the form controls in the model driven approach we can use exactly the same HTML in our template driven forms, like so: 
+
+  
+
+\noindent \\  Copy$\mathrm{<}$\textbf{div} class="form-control-feedback"
+
+\noindent *ngIf="email.errors \&\& (email.dirty {\textbar}{\textbar}  email.touched)"$\mathrm{>}$
+
+\noindent $\mathrm{<}$\textbf{p} *ngIf="email.errors.required"$\mathrm{>}$Email is required$\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+\noindent $\mathrm{<}$\textbf{p} *ngIf="email.errors.minlength"$\mathrm{>}$Email must contain at least the @ character$\mathrm{<}$/\textbf{p}$\mathrm{>}$
+
+\noindent $\mathrm{<}$/\textbf{div}$\mathrm{>}$ 
+
+  
+
+  
+
+\noindent 
+
+
+\end{document}
+

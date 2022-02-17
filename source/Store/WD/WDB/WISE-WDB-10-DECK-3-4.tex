@@ -1,0 +1,137 @@
+
+\documentclass{article} 
+
+\usepackage[utf8]{inputenc} 
+\usepackage[english]{babel} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{txfonts}
+\usepackage{mathdots}
+\usepackage[classicReIm]{kpfonts}
+\usepackage{graphicx}
+
+\usepackage[margin=1.0in]{geometry}
+
+
+\begin{document}
+
+
+
+
+
+\noindent 
+{\large \textbf{Three dots in react components{\textbar}Spread operator ({\dots})}}
+\\
+
+\noindent \textbf{What does three dots do?}
+
+\noindent It allows to expand the enumerable properties of an object , that means array expressions or string or object properties are enumerable properties
+
+\noindent Let's see simple example how it expands the enumerable properties
+
+\noindent \includegraphics*[width=6.19in, height=0.87in]{IMG-10-05}
+
+\noindent In the above example, data contains multiple enumerable properties, To add those numbers to other array in between, spread operator placed and results into copying multiple properties to result.
+
+\noindent This helps to pass at least zero arguments i.e. dynamic properties
+
+\noindent \\
+ \textbf{How react components uses three dots?}
+
+
+\noindent In react, by using the three dots syntax we can spread the props easily instead of passing data to the each prop. Let's say we have data like this.
+
+\noindent 
+
+\noindent \includegraphics*[width=6.24in, height=3.47in]{IMG-10-06}
+
+\noindent \textbf{}
+
+\noindent 
+\textbf{Three dots in react hooks example}
+
+\noindent 
+This spread operator can also be used in react hooks to update state object. React state object is initialized with default object properties using useState object useState object returns initial state and function which updates state.
+\\
+\noindent \\
+While doing update the state, spread operator copy the original data with new values. It will only updates the properties which is not changed.
+
+\noindent 
+
+\noindent 
+
+\begin{center}
+	\noindent \includegraphics*[width=6.18in, height=3.50in]{IMG-10-07}
+\end{center}
+
+\noindent \\
+
+
+\noindent 
+\begin{center}
+	
+\noindent \includegraphics*[width=4.26in, height=0.92in]{IMG-10-08}
+\end{center}
+
+\noindent 
+
+\noindent \\
+After Click the Update button the output will be as follows:
+
+\noindent \\
+
+
+\begin{center}
+	\noindent \includegraphics*[width=3.95in, height=0.88in]{IMG-10-09}
+\end{center}
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent 
+\newpage
+\noindent Let's change only name of the person in the entire object as follows:
+
+\noindent 
+
+\begin{center}
+	\noindent \includegraphics*[width=6.22in, height=3.44in]{IMG-10-10}
+\end{center}
+
+\noindent \\
+
+
+
+\begin{flushleft}
+	\noindent \includegraphics*[width=4.00in, height=0.76in]{IMG-10-11}
+\end{flushleft}
+
+
+\noindent 
+\newpage
+\noindent In the above output we get only Name property and rest of others are empty.  To overcome this problem we modify the part of our program using cloning process using dots({\dots}) operator as follows. \\
+
+
+\begin{center}
+	\noindent \includegraphics*[width=6.17in, height=3.63in]{IMG-10-12}
+\end{center}
+
+\noindent 
+
+\noindent 
+
+\noindent \\
+
+
+\begin{flushleft}
+	\noindent \includegraphics*[width=4.17in, height=0.92in]{IMG-10-13}
+\end{flushleft}
+
+
+\end{document}
+

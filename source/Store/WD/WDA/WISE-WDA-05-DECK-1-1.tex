@@ -1,0 +1,800 @@
+
+\documentclass{article} 
+
+\usepackage[utf8]{inputenc} 
+\usepackage[english]{babel} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{txfonts}
+\usepackage{mathdots}
+\usepackage[classicReIm]{kpfonts}
+\usepackage{graphicx}
+\usepackage[margin=1.0in]{geometry}
+
+
+
+\begin{document}
+
+
+
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\begin{center}
+	\noindent {\Huge \textbf{\underbar{Module-5}}}
+
+\noindent \\ {\LARGE \textbf{(Dependency Injection)}}
+\end{center}
+
+\noindent \textbf{}
+
+\noindent \\ \\ {\Large \textbf{Dependency Injection}}
+
+\noindent \\ Dependency Injection (DI) is a core concept of Angular 2+ and allows a class receive dependencies from another class. Most of the time in Angular, dependency injection is done by injecting a service class into a component or module class.
+
+\noindent \\ Here's for example how you would define an injectable service. Pay special attention to the highlighted parts:
+
+\noindent 
+
+\noindent Service: popcorn.service.ts
+
+\noindent import $\mathrm{\{}$ Injectable $\mathrm{\}}$ from '@angular/core';
+
+\noindent @Injectable()
+
+\noindent export class PopcornService $\mathrm{\{}$
+
+\noindent constructor() $\mathrm{\{}$
+
+\noindent console.log("Popcorn has been injected!");
+
+\noindent $\mathrm{\}}$
+
+\noindent cookPopcorn(qty) $\mathrm{\{}$
+
+\noindent console.log(qty, "bags of popcorn cooked!");
+
+\noindent $\mathrm{\}}$
+
+\noindent $\mathrm{\}}$
+
+\noindent 
+
+\noindent \\ And here's how you would inject our Popcorn service it in a component:
+
+\noindent 
+
+\noindent Component: app.component.ts
+
+\noindent \textbf{import} $\mathrm{\{}$ Component $\mathrm{\}}$ from '@angular/core'; 
+
+\noindent \textbf{import} $\mathrm{\{}$ PopcornService $\mathrm{\}}$ from './popcorn.service';
+
+\noindent @Component($\mathrm{\{}$ selector: 'app-root',
+
+\noindent templateUrl: './app.component.html', 
+
+\noindent styleUrls: ['./app.component.css'], 
+
+\noindent providers: [PopcornService]
+
+\noindent $\mathrm{\}}$)
+
+\noindent export class AppComponent $\mathrm{\{}$
+
+\noindent constructor(private popcorn: PopcornService) $\mathrm{\{}$$\mathrm{\}}$
+
+\noindent cookIt(qty) $\mathrm{\{}$ this.popcorn.cookPopcorn(qty);
+
+\noindent $\mathrm{\}}$
+
+\noindent $\mathrm{\}}$
+
+\noindent 
+
+\noindent \\ The cookIt() method in the template calls the cookPopcorn() method in the injected service. Let's make use of our cookIt() method in our template:
+
+\noindent 
+
+\noindent Template: app.component.html
+
+\noindent $\mathrm{<}$\textbf{input} type="number" \#qty placeholder="How many bags?"$\mathrm{>}$
+
+\noindent $\mathrm{<}$\textbf{button} type="button" (click)="cookIt(qty.value)"$\mathrm{>}$ Cook it!
+
+\noindent $\mathrm{<}$/\textbf{button}$\mathrm{>}$
+
+\newpage 
+
+\noindent {\Large \textbf{Routing \& Navigation }}
+
+\noindent 
+
+\noindent \\ When a user enters a web application or website, routing is their means of navigating throughout the application. To change from one view to another, the user clicks on the available links on a page.
+
+\noindent Angular provides a Router to make it easier to define routes for the web applications and to navigate from one view to another view in the application.
+
+\noindent 
+
+\noindent \\ \textbf{Creating Your First Route}
+
+\noindent \\ To implement routing in the web application, you'll be making use of the Angular Routing module. Create a file called app.routing.ts inside the src/app folder.
+
+\noindent To get started with implementing routing, you need to import the RouterModule and Routes from @angular/router.
+
+\noindent 
+
+\noindent \\ import $\mathrm{\{}$ RouterModule, Routes $\mathrm{\}}$ from '@angular/router';
+
+\noindent  
+
+\noindent \\ You'll also need the ModuleWithProviders module for implementing routing.
+
+\noindent import $\mathrm{\{}$ ModuleWithProviders $\mathrm{\}}$ from '@angular/core/src/metadata/ng\_module';
+
+\noindent \\ Create and export a variable called AppRoutes in the app.routing.ts , which would be a collection of all routes inside the Angular application.
+
+\noindent \\ export const AppRoutes: Routes = [];
+
+\noindent \\ There are two ways to create the routing
+
+\noindent \\ module:  RouterModule.forRoot  and  RouterModule.forChild. RouterModule.forRoot is for creating routes for the entire application, and RouterModule.forChild is for creating routes for lazy loaded modules.
+
+\noindent \\ In this tutorial, you'll be using RouterModule.forRoot to create routes for the root application. Create the routing module using RouterModule.forRoot inside the app.routing.ts file.
+
+\noindent \\ export const ROUTING: ModuleWithProviders =
+
+\noindent \\ RouterModule.forRoot(AppRoutes);
+
+\noindent \\ Add a route inside the AppRoutes list to show our CalcComponent.
+
+\noindent \\ $\mathrm{\{}$ path: 'calc', component: CalcComponent $\mathrm{\}}$ 
+
+\noindent \\ Here is how the app.routing.ts file looks:
+
+\noindent \\ import $\mathrm{\{}$ RouterModule, Routes $\mathrm{\}}$ from '@angular/router'; 
+
+\noindent import $\mathrm{\{}$ ModuleWithProviders $\mathrm{\}}$ from '@angular/core/src/metadata/ng\_module';
+
+\noindent import $\mathrm{\{}$ CalcComponent $\mathrm{\}}$ from './calc/calc.component'
+
+\noindent export const AppRoutes: Routes = [
+
+\noindent $\mathrm{\{}$ path: 'calc', component: CalcComponent $\mathrm{\}}$
+
+\noindent ];
+
+\noindent 
+
+\noindent export const ROUTING: ModuleWithProviders = RouterModule.forRoot(AppRoutes);
+
+\noindent \\ As seen in the code, the route which has been added is /calc , which would render the CalcComponent .
+
+\noindent \\ Import the ROUTING constant inside the app.module.ts file.
+
+\noindent import $\mathrm{\{}$ ROUTING $\mathrm{\}}$ from './app.routing'
+
+\noindent Add the ROUTING to the imports section.
+
+\noindent imports: [ 
+
+\noindent BrowserModule, 
+
+\noindent FormsModule, 
+
+\noindent ROUTING
+
+\noindent ],
+
+\noindent \\ Here is how the app.module.ts file looks:
+
+\noindent import $\mathrm{\{}$ BrowserModule $\mathrm{\}}$ from '@angular/platform-browser'; 
+
+\noindent import $\mathrm{\{}$ NgModule $\mathrm{\}}$ from '@angular/core';
+
+\noindent import $\mathrm{\{}$ ROUTING $\mathrm{\}}$ from './app.routing'
+
+\noindent import $\mathrm{\{}$ AppComponent $\mathrm{\}}$ from './app.component'; 
+
+\noindent import $\mathrm{\{}$ CalcComponent $\mathrm{\}}$ from './calc/calc.component' 
+
+\noindent import $\mathrm{\{}$ FormsModule $\mathrm{\}}$ from '@angular/forms';
+
+\noindent import $\mathrm{\{}$ RouterModule $\mathrm{\}}$ from '@angular/router';
+
+\noindent @NgModule($\mathrm{\{}$ declarations: [
+
+\noindent AppComponent, 
+
+\noindent CalcComponent
+
+\noindent ],
+
+\noindent imports: [ 
+
+\noindent BrowserModule, 
+
+\noindent FormsModule, 
+
+\noindent ROUTING
+
+\noindent ],
+
+\noindent providers: [],
+
+\noindent bootstrap: [AppComponent]
+
+\noindent $\mathrm{\}}$)
+
+\noindent export class AppModule $\mathrm{\{}$$\mathrm{\}}$
+
+\noindent \\ Save the above changes and restart the Angular application using ng serve.
+
+\noindent Point your browser to http://localhost:4200/calc and you will have the CalcComponent displayed.
+
+\begin{center}
+	\noindent \includegraphics*[width=4.48in, height=2.13in]{IMG-05-01}
+\end{center}
+\newpage
+\noindent \\ \textbf{Implementing Navigation}
+
+\noindent 
+
+\noindent \\ With the above created route, you'll try to implement navigation. Let's start by creating a main component for our application called HomeComponent. Create a folder called home inside the src/app folder. Inside the home folder, create a file  called home.component.ts Here is how it looks:
+
+\noindent \\ import $\mathrm{\{}$ Component $\mathrm{\}}$ from '@angular/core';
+
+\noindent @Component($\mathrm{\{}$ 
+
+\noindent selector: 'home',
+
+\noindent templateUrl: 'home.component.html'
+
+\noindent $\mathrm{\}}$)
+
+\noindent export class HomeComponent $\mathrm{\{}$
+
+\noindent $\mathrm{\}}$
+
+\noindent \\ Create a template file called home.component.html. Add the following code to it:
+
+\noindent \\ $\mathrm{<}$\textbf{h2}$\mathrm{>}$
+
+\noindent Welcome to Home Page
+
+\noindent $\mathrm{<}$/\textbf{h2}$\mathrm{>}$
+
+\noindent $\mathrm{<}$\textbf{nav}$\mathrm{>}$
+
+\noindent $\mathrm{<}$\textbf{a} routerLink="/calc" routerLinkActive="active"$\mathrm{>}$Go to Calc$\mathrm{<}$/\textbf{a}$\mathrm{>}$
+
+\noindent $\mathrm{<}$/\textbf{nav}$\mathrm{>}$
+
+\noindent 
+
+\noindent \\ As seen in the above code, you have used routeLink for setting up the link navigation. routeLink is imported from the RouterModule.
+
+\noindent 
+
+\noindent \\ Add the HomeComponent to the NgModule in the app.module.ts 
+
+\noindent 
+
+\noindent \\ import $\mathrm{\{}$ BrowserModule $\mathrm{\}}$ from '@angular/platform-browser'; 
+
+\noindent import $\mathrm{\{}$ NgModule $\mathrm{\}}$ from '@angular/core';
+
+\noindent import $\mathrm{\{}$ ROUTING $\mathrm{\}}$ from './app.routing'
+
+\noindent import $\mathrm{\{}$ AppComponent $\mathrm{\}}$ from './app.component'; 
+
+\noindent import $\mathrm{\{}$ CalcComponent $\mathrm{\}}$ from './calc/calc.component';
+
+\noindent import $\mathrm{\{}$ HomeComponent $\mathrm{\}}$ from './home/home.component'; 
+
+\noindent import $\mathrm{\{}$ FormsModule $\mathrm{\}}$ from '@angular/forms';
+
+\noindent import $\mathrm{\{}$ RouterModule $\mathrm{\}}$ from '@angular/router';
+
+\noindent 
+
+\noindent @NgModule($\mathrm{\{}$ declarations: [
+
+\noindent AppComponent, CalcComponent, HomeComponent
+
+\noindent ],
+
+\noindent imports: [ 
+
+\noindent BrowserModule,
+
+\noindent FormsModule, 
+
+\noindent ROUTING
+
+\noindent ],
+
+\noindent providers: [],
+
+\noindent bootstrap: [AppComponent]
+
+\noindent $\mathrm{\}}$)
+
+\noindent export class AppModule $\mathrm{\{}$$\mathrm{\}}$
+
+\noindent 
+\newpage
+\noindent \\ Since you'll be using Angular routing, you need to display the place in our application where the router would display the views. As you have bootstrapped the AppComponent on run time, add the following code to the app.component.html file.
+
+\noindent \\ $\mathrm{<}$router-outlet$\mathrm{>}$$\mathrm{<}$/router-outlet$\mathrm{>}$
+
+\noindent \\ Router outlet tells the Angular router where to display the views. Inside the app.routing.ts file, include the default route to display as the HomeComponent . Here is how the modified code looks:
+
+\noindent \\ $\mathrm{\{}$ path: '', component: HomeComponent $\mathrm{\}}$
+
+\noindent \\ Here is how the app.routing.ts file looks:
+
+\noindent \\ import $\mathrm{\{}$ RouterModule, Routes $\mathrm{\}}$ from '@angular/router'; 
+
+\noindent import $\mathrm{\{}$ ModuleWithProviders $\mathrm{\}}$ from '@angular/core/src/metadata/ng\_module';
+
+\noindent import $\mathrm{\{}$ CalcComponent $\mathrm{\}}$ from './calc/calc.component'; 
+
+\noindent import $\mathrm{\{}$ HomeComponent $\mathrm{\}}$ from './home/home.component';
+
+\noindent 
+
+\noindent export const AppRoutes: Routes = [
+
+\noindent $\mathrm{\{}$ path: '', component: HomeComponent $\mathrm{\}}$,
+
+\noindent $\mathrm{\{}$ path: 'calc', component: CalcComponent $\mathrm{\}}$
+
+\noindent ];
+
+\noindent 
+
+\noindent export const ROUTING: ModuleWithProviders = RouterModule.forRoot(AppRoutes);
+
+\noindent \\ Save the above changes and restart the web application. Point your browser to http://localhost:4200/ and you will have the HomeComponent displayed by default.
+
+\begin{center}
+	\noindent \includegraphics*[width=5.15in, height=3.95in]{IMG-05-02}
+\end{center}
+\newpage
+\noindent \\ Click on the link in the home component and you will be navigated to the calculator component. Now let's add a route to handle undefined routing requests. Whenever the user navigates to a non- existent route, you'll show a message that the route is not found. Add a new component called notfound. Create a folder called notfound inside the src/app. Create a file called notfound.component.ts. Add the following code:
+
+\noindent \\ import $\mathrm{\{}$ Component $\mathrm{\}}$ from '@angular/core';
+
+\noindent @Component($\mathrm{\{}$ selector: 'notfound',
+
+\noindent templateUrl: 'notfound.component.html',
+
+\noindent  
+
+\noindent 
+
+\noindent  
+
+\noindent styleUrls: ['notfound.component.css']
+
+\noindent $\mathrm{\}}$)
+
+\noindent export class NotFoundComponent $\mathrm{\{}$
+
+\noindent 
+
+\noindent $\mathrm{\}}$
+
+\noindent \\ Create a file called notfound.component.html and add the following code:
+
+\noindent \\ $\mathrm{<}$h3$\mathrm{>}$
+
+\noindent \\ Component not found
+
+\noindent \\ $\mathrm{<}$/h3$\mathrm{>}$
+
+\noindent 
+
+\noindent \\ You'll be adding a wild card route to handle non-existent routes. Add the following code to The app.routing.ts file:
+
+\noindent \\ $\mathrm{\{}$ path: '**', component: NotFoundComponent $\mathrm{\}}$
+
+\noindent 
+
+\noindent \\ Here is how the app.routing.ts file looks:
+
+\noindent \\ import $\mathrm{\{}$ RouterModule, Routes $\mathrm{\}}$ from '@angular/router'; 
+
+\noindent import $\mathrm{\{}$ ModuleWithProviders $\mathrm{\}}$ from '@angular/core/src/metadata/ng\_module';
+
+\noindent import $\mathrm{\{}$ CalcComponent $\mathrm{\}}$ from './calc/calc.component'; 
+
+\noindent import $\mathrm{\{}$ HomeComponent $\mathrm{\}}$ from './home/home.component';
+
+\noindent import $\mathrm{\{}$ NotFoundComponent $\mathrm{\}}$ from './notfound/notfound.component';
+
+\noindent 
+
+\noindent export const AppRoutes: Routes = [
+
+\noindent $\mathrm{\{}$ path: '', component: HomeComponent $\mathrm{\}}$,
+
+\noindent $\mathrm{\{}$ path: 'calc', component: CalcComponent $\mathrm{\}}$,
+
+\noindent $\mathrm{\{}$ path: '**', component: NotFoundComponent $\mathrm{\}}$
+
+\noindent ];
+
+\noindent 
+
+\noindent export const ROUTING: ModuleWithProviders = RouterModule.forRoot(AppRoutes);
+
+\noindent \\ Save the above changes and restart the server. Point your browser to http://localhost:4200/abc and you will see the not found exception message.
+
+\begin{center}
+	\noindent  \includegraphics*[width=4.66in, height=1.39in, trim=0.00in 1.38in 0.00in 0.00in]{IMG-05-03}
+\end{center}
+
+\noindent 
+\newpage
+\noindent {\Large \textbf{Angular Services }}
+
+\noindent \\ \textbf{Angular Service:}
+
+\noindent 
+
+\noindent \\ Angular services are singleton objects which get instantiated only once during the lifetime of an application. They contain methods that maintain data throughout the life of an application, i.e.  data does not get refreshed and is available all the time. The main objective of a service is to organize and share business logic, models, or data and functions with different components of an Angular application.
+
+\noindent \\ An example of when to use services would be to transfer data from one controller to another custom service.
+
+\noindent 
+
+\noindent \\ \textbf{Why Should We Use Services in Angular?}
+
+\noindent  
+
+\noindent \\ The separation of concerns is the main reason why Angular services came into existence. An Angular service is a stateless object and provides some very useful functions. These functions can be invoked from any component of Angular, like Controllers, Directives, etc. This helps in dividing the web application into small, different logical units which can be reused.
+
+\noindent \\ For example, your controller is responsible for the flow of data and binding the model to view. An Angular application can have multiple controllers, to fetch data which is required by the entire application. Making an AJAX call to the server from the controller is redundant, as each controller will use similar code to make a call for the same data. In such cases, it's extremely useful to use a service, as we can write a service which contains the code to fetch data from the server and inject the service into the controller. Services will have functions to make a call. We can use these functions of services in the controller and make calls to the server, that way we need not write the same code again and it can be used in components other than controllers as well. Also, controllers no longer have to perform the task of fetching the data, as services take care of this, thus achieving the objective of Separation of Concerns.
+
+\noindent 
+
+\noindent \\ \textbf{Creating a Service}
+
+\noindent 
+
+\noindent \\ To create a service, at the console in the project folder type:
+
+\noindent \\ $\mathrm{>}$ ng g service data  
+
+\noindent \\ Upon running this, your output may look something like:
+
+\begin{center}
+	\noindent \includegraphics*[width=6.24in, height=0.61in]{IMG-05-04}
+\end{center}
+
+\noindent \\ The warning simply means that we have to add it to the providers property of the NgModule decorator in src/app/app.module.ts, so let's do that:
+
+\begin{center}
+	\noindent  \includegraphics*[width=6.25in, height=0.87in]{IMG-05-05}
+\end{center}
+
+\noindent 
+
+\noindent \\ Great. Save it and let's move on.
+
+\noindent 
+\newpage
+\noindent \\ \textbf{Working with the Service File}
+
+\noindent \\ Now that we have created a service, let's take a look at what the Angular CLI created:
+
+\begin{center}
+	\noindent \includegraphics*[width=6.25in, height=0.82in, trim=0.00in 0.00in 0.00in 0.06in]{IMG-05-06}
+\end{center}
+
+\noindent \\ It looks fairly similar to a component, except that it's importing an Injectable as opposed to a Component. The Injectable decorator emits metadata associated with this service, which lets Angular know if it needs to inject other dependencies into this service.
+
+\noindent 
+
+\noindent \\ We will not be injecting any dependencies into our simple example service here, but it is recommended to leave the Injectable decorator for future-proofing and ensuring consistency. But you could get rid of lines 1 and 3 and our service would still work.
+
+\noindent 
+
+\noindent \\ So, ordinarily, at this point, you may connect to a database to return results, but to keep things simple here, let's hardcode our own array and create a simple method:
+
+\begin{center}
+	\noindent \includegraphics*[width=6.26in, height=1.32in, trim=0.00in 0.00in 0.00in 0.05in]{IMG-05-07} 
+\end{center}
+
+\noindent 
+
+\noindent \\ As you can see, we're just creating a simple array and a method called myData() that returns a string.
+
+\noindent \\ So, how do we access these properties and methods from another component? Simple!
+
+\noindent \\ \textbf{Using Services in Components}
+
+\noindent 
+
+\noindent \\ The first step requires importing the service at the top of the component. So, in app.component.ts:
+
+\begin{center}
+	\noindent \includegraphics*[width=6.23in, height=0.19in]{IMG-05-08}
+\end{center}
+
+\noindent \\ Next, within the constructor, we have to import it through dependency injection:
+
+\begin{center}
+	\noindent \includegraphics*[width=6.26in, height=0.63in]{IMG-05-09}
+\end{center}
+
+\noindent \\ Now we can use dataService to access its's associated properties and methods.
+\newpage
+\noindent \\ Underneath the constructor() $\mathrm{\{}$ $\mathrm{\}}$, let's add the ngOnInit() lifecycle hook, which runs when the component loads:
+
+\begin{center}
+	\noindent \includegraphics*[width=6.26in, height=0.75in]{IMG-05-10}
+\end{center}
+
+\noindent \\ First, we're console logging the cars array, and then we're binding someProperty to the myData method that we defined in the service.
+
+\noindent \\ In the template property of the @Component() decorator, add:
+
+\begin{center}
+	\noindent  \includegraphics*[width=6.24in, height=0.88in, trim=0.00in 0.00in 0.00in 0.05in]{IMG-05-11}
+\end{center}
+
+\noindent \\ Now, run ng serve at the console in the project folder, and you should see in your console the array of cars that we defined, along with the string of, "This is my data, man!" that we returned in  the myData() method.
+
+\newpage
+\noindent {\Large \textbf{Authentication with Guard }}
+
+\noindent 
+
+\noindent \\ \textbf{Generate Guard}
+
+\noindent \\ As we are using Angular CLI, we can easily generate Auth Guard in our application. Do you remember how we created components in our previous articles? We can create a Guard in the same way.
+
+\noindent \\ $\mathrm{>}$ ng generate guard auth
+
+\noindent 
+
+\noindent \\ In the above step, we are generating Guard on our root level. Once you run the above command, this will generate two new TypeScript files, as follows.
+
+\begin{center}
+	\noindent \includegraphics*[width=6.26in, height=3.31in]{IMG-05-12} 
+\end{center}
+
+\noindent \\ Let's go to those two files now.
+
+\noindent 
+
+\noindent \\ \textbf{auth.guard.ts}
+
+\noindent \\ import $\mathrm{\{}$ Injectable $\mathrm{\}}$ from '@angular/core';
+
+\noindent import $\mathrm{\{}$ CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot $\mathrm{\}}$ from '@angular/router'; 
+
+\noindent import $\mathrm{\{}$ Observable $\mathrm{\}}$ from 'rxjs/Observable';
+
+\noindent @Injectable()
+
+\noindent  export class AuthGuard implements CanActivate $\mathrm{\{}$ canActivate(
+
+\noindent next: ActivatedRouteSnapshot,
+
+\noindent state: RouterStateSnapshot): Observable$\mathrm{<}$boolean$\mathrm{>}$ {\textbar} Promise$\mathrm{<}$boolean$\mathrm{>}$ {\textbar} boolean $\mathrm{\{}$ 
+
+\noindent return true;
+
+\noindent $\mathrm{\}}$
+
+\noindent $\mathrm{\}}$
+
+ 
+\newpage
+\noindent \\ \textbf{Generate a Login Component and Set it Up}
+
+\noindent \\ Now that we have Guard ready for modification, before we dive into the modificaitn, let's create a component for logging in.
+
+\noindent \\ $\mathrm{>}$ ng g c login
+
+\noindent create src/app/login/login.component.html (24 bytes) 
+
+\noindent create src/app/login/login.component.spec.ts (621 bytes) 
+
+\noindent create src/app/login/login.component.ts (265 bytes) 
+
+\noindent create src/app/login/login.component.css (0 bytes) 
+
+\noindent update src/app/app.module.ts (1331 bytes)
+
+\noindent $\mathrm{>}$
+
+\noindent \\ Now it is time to edit our routes in app.module.ts with the new route for logging in. Please note that it is not a recommended way to create routes in an app.module.ts file. We should create a separate routing module for that route and use it in app.module.ts. I will be sharing how to do that in another article.
+
+\noindent \\ import $\mathrm{\{}$ LoginComponent $\mathrm{\}}$ from './login/login.component'; const myRoots: Routes = [
+
+\noindent $\mathrm{\{}$ path: '', component: HomeComponent, pathMatch: 'full' $\mathrm{\}}$,
+
+\noindent $\mathrm{\{}$ path: 'register', component: RegistrationComponent $\mathrm{\}}$,
+
+\noindent $\mathrm{\{}$ path: 'login', component: LoginComponent$\mathrm{\}}$,
+
+\noindent $\mathrm{\{}$ path: 'home', component: HomeComponent$\mathrm{\}}$]
+
+\noindent @NgModule($\mathrm{\{}$
+
+\noindent declarations: [ 
+
+\noindent AppComponent, 
+
+\noindent HomeComponent, 
+
+\noindent NavComponent, 
+
+\noindent RegistrationComponent, 
+
+\noindent LoginComponent
+
+\noindent ],
+
+\noindent 
+
+\noindent imports: [
+
+\noindent BrowserModule, BrowserAnimationsModule, FormsModule, ReactiveFormsModule, MatButtonModule, MatCardModule, MatInputModule, MatSnackBarModule, MatToolbarModule, RouterModule.forRoot(myRoots)
+
+\noindent ],
+
+\noindent providers: [],
+
+\noindent bootstrap: [AppComponent]
+
+\noindent $\mathrm{\}}$)
+
+ 
+
+\noindent \\ We may also need to edit the nav.component.html file by adding a new button for logging in.
+
+\noindent \\ $\mathrm{<}$mat-toolbar color="primary"$\mathrm{>}$
+
+\noindent $\mathrm{<}$button mat-button routerLink="/"$\mathrm{>}$Home$\mathrm{<}$/button$\mathrm{>}$
+
+\noindent $\mathrm{<}$button mat-button routerLink="/register"$\mathrm{>}$Register$\mathrm{<}$/button$\mathrm{>}$
+
+\noindent $\mathrm{<}$button mat-button routerLink="/login"$\mathrm{>}$Login$\mathrm{<}$/button$\mathrm{>}$
+
+\noindent $\mathrm{<}$/mat-toolbar$\mathrm{>}$
+
+\noindent 
+
+\noindent \\ Now, go to your login.component.html file and add the following markup.
+
+ 
+
+\noindent \\ $\mathrm{<}$mat-card$\mathrm{>}$
+
+\noindent $\mathrm{<}$form [formGroup]="form" (ngSubmit)="login()"$\mathrm{>}$
+
+\noindent $\mathrm{<}$mat-input-container$\mathrm{>}$
+
+\noindent $\mathrm{<}$input matInput type="email" placeholder="Email" formControlName="email" /$\mathrm{>}$
+
+\noindent $\mathrm{<}$/mat-input-container$\mathrm{>}$
+
+\noindent $\mathrm{<}$mat-input-container$\mathrm{>}$
+
+\noindent $\mathrm{<}$input matInput type="password" placeholder="Password" formControlName="password" /$\mathrm{>}$
+
+\noindent $\mathrm{<}$/mat-input-container$\mathrm{>}$
+
+\noindent $\mathrm{<}$button mat-raised-button type="submit" color="primary"$\mathrm{>}$Login$\mathrm{<}$/button$\mathrm{>}$
+
+\noindent $\mathrm{<}$/form$\mathrm{>}$
+
+\noindent $\mathrm{<}$/mat-card$\mathrm{>}$
+
+\noindent \\ As you can see, we are actually calling a login method when the butto is clicked. Before we implement that function, in our login.component.ts file let's create an auth service and edit it as follows.
+
+\noindent \\ import $\mathrm{\{}$ Injectable $\mathrm{\}}$ from '@angular/core'; 
+
+\noindent import $\mathrm{\{}$ Router $\mathrm{\}}$ from '@angular/router'; @Injectable()
+
+\noindent export class AuthService $\mathrm{\{}$ 
+
+\noindent constructor(private myRoute: Router) $\mathrm{\{}$ $\mathrm{\}}$ 
+
+\noindent sendToken(token: string) $\mathrm{\{}$
+
+\noindent localStorage.setItem("LoggedInUser", token)
+
+\noindent $\mathrm{\}}$
+
+\noindent getToken() $\mathrm{\{}$
+
+\noindent return localStorage.getItem("LoggedInUser")
+
+\noindent $\mathrm{\}}$
+
+\noindent isLoggednIn() $\mathrm{\{}$
+
+\noindent return this.getToken() !== null;
+
+\noindent $\mathrm{\}}$
+
+\noindent logout() $\mathrm{\{}$ 
+
+\noindent localStorage.removeItem("LoggedInUser"); 
+
+\noindent this.myRoute.navigate(["login"]);
+
+\noindent $\mathrm{\}}$
+
+\noindent $\mathrm{\}}$
+
+\noindent \\ Now it is time to edit our login.component.ts file.
+
+\noindent \\ import $\mathrm{\{}$ Component, OnInit $\mathrm{\}}$ from '@angular/core'; 
+
+\noindent import $\mathrm{\{}$ FormBuilder, Validators $\mathrm{\}}$ from '@angular/forms'; 
+
+\noindent import $\mathrm{\{}$ Router $\mathrm{\}}$ from '@angular/router';
+
+\noindent import $\mathrm{\{}$ AuthService $\mathrm{\}}$ from '../auth.service'; @Component($\mathrm{\{}$
+
+\noindent selector: 'app-login',
+
+\noindent templateUrl: './login.component.html', styleUrls: ['./login.component.css']
+
+\noindent $\mathrm{\}}$)
+
+\noindent export class LoginComponent implements OnInit $\mathrm{\{}$ form;
+
+\noindent constructor(private fb: FormBuilder, private myRoute: Router,
+
+\noindent private auth: AuthService) $\mathrm{\{}$ this.form = fb.group($\mathrm{\{}$
+
+\noindent email: ['', [Validators.required, Validators.email]], password: ['', Validators.required]
+
+\noindent $\mathrm{\}}$);
+
+\noindent $\mathrm{\}}$
+
+\noindent ngOnInit() $\mathrm{\{}$
+
+\noindent $\mathrm{\}}$
+
+\noindent login() $\mathrm{\{}$
+
+\noindent if (this.form.valid) $\mathrm{\{}$ 
+
+\noindent this.auth.sendToken(this.form.value.email) 
+
+\noindent this.myRoute.navigate(["home"]);
+
+\noindent $\mathrm{\}}$
+
+\noindent $\mathrm{\}}$
+
+\noindent $\mathrm{\}}$
+
+ 
+
+ 
+
+ 
+
+\noindent 
+
+
+\end{document}
+

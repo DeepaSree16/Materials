@@ -1,0 +1,137 @@
+
+\documentclass{article}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[english]{babel} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{txfonts}
+\usepackage{mathdots}
+\usepackage[classicReIm]{kpfonts}
+\usepackage{graphicx}
+\usepackage[margin=1.0in]{geometry}
+
+
+
+\begin{document}
+
+
+\noindent \textbf{useState() in React}
+
+\noindent 
+
+\noindent \\
+It~is a Hook that allows you to maintain the state variables in functional components.  The useState hook is a special function that takes the initial state as an argument and returns an array of two entries.
+
+\noindent 
+
+\noindent 
+
+\noindent \textbf{Declaring state in React}
+
+\noindent \\
+useState~is a named export from~react. To use it, you can write:
+
+\noindent React.useState
+
+\noindent \\
+Or to import it just write~useState:
+
+\noindent \\
+import React, $\mathrm{\{}$ useState $\mathrm{\}}$ from 'react';
+
+\noindent ~
+
+\noindent 
+
+\noindent 
+
+\noindent \\
+\textbf{Syntax:}
+
+\noindent \\
+const [state, setState] = useState(initialstate)
+
+\noindent 
+
+\noindent \\
+\textbf{~}The first element is the initial state and the second one is a function that is used for updating the state.
+
+\noindent 
+
+\noindent \\
+We can also pass a function as an argument if the initial state has to be computed. And the value returned by the function will be used as the initial state.
+
+\noindent \\
+Ex:-
+
+\noindent Const [message,setMessage] = useState(`UI Sessions');
+
+\noindent 
+
+\noindent Const changeName = ()=$\mathrm{>}$$\mathrm{\{}$
+
+\noindent    setMessage(`React Sessions');
+
+\noindent $\mathrm{\}}$
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+
+
+\noindent \\
+Example:-
+
+\noindent 
+
+\begin{center}
+	\noindent \includegraphics*[width=6.25in, height=3.77in]{IMG-10-01}
+\end{center}
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\begin{center}
+	\noindent \includegraphics*[width=6.27in, height=5.00in]{IMG-10-02}
+\end{center}
+
+\noindent 
+\newpage
+\noindent \\
+In the above example it is not rendered the updated output to the browser because a normal function cannot re-render the output to the browser.  Here the useState() will come into the picture and make the changes using useState() as follows.
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\begin{center}
+	\noindent \includegraphics*[width=6.21in, height=3.78in]{IMG-10-03}
+\end{center}
+\noindent \\
+\begin{center}
+	\noindent \includegraphics*[width=6.25in, height=3.90in]{IMG-10-04}
+\end{center}
+\end{document}

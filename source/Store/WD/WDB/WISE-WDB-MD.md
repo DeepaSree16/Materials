@@ -1,0 +1,1 @@
+Reactjs - 36 Hours of In Class training trains the students on the UI Technology (MERN Stack)

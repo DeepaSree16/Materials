@@ -1,0 +1,827 @@
+
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{txfonts}
+\usepackage{mathdots}
+\usepackage[classicReIm]{kpfonts}
+\usepackage{graphicx}
+\usepackage[margin=1.0in]{geometry}
+
+
+
+\begin{document}
+
+
+
+
+\begin{center}
+	\noindent {\Huge \textbf{\underbar{Module-6}}}
+
+\noindent \\ {\huge \textbf{\underbar{(Angular Integration with REST API)}}}
+\end{center}
+
+\noindent \\ \textbf{\underbar{}}
+
+\noindent \\ \\ {\Large \textbf{Module Overview}}
+
+\noindent \underbar{}
+
+\noindent \\  \textbf{CODING EXERCISE}
+
+\noindent \textbf{}
+
+\noindent \\ In this module, you will learn to design a dynamic Single Page Web Application using Angular4 with features mentioned below:
+
+\begin{enumerate}
+	\item REST API Calls    
+\end{enumerate}
+  
+
+\noindent 
+
+\noindent \textbf{OBJECTIVES}
+
+\noindent 
+
+\noindent By designing the Web Application, you will be able to: 
+
+\begin{enumerate}
+	\item How to retrieve data from REST API
+	\item How to send data to REST API 
+\end{enumerate}
+     
+
+\noindent 
+
+\noindent \textbf{SCRIPTING CONSTRUCTS}
+
+\noindent 
+
+\noindent To designing the web page, you will require the following scripting constructs: 
+
+\begin{enumerate}
+	\item HttpClientModule
+	\item HttpClient
+	\item Observables
+\end{enumerate}
+     
+\newpage
+\noindent {\Large \textbf{REST API Calls using HttpClient}}
+
+ 
+
+\noindent \\ In Angular 4.3 the new HttpClientModule has been introduced. This new module is available in package @angular/common/http and a complete re-implementation of the former HttpModule. The new HttpClient service is included in HttpClientModule and can be used to initiate HTTP request  and process responses within your application.
+
+\noindent 
+
+\noindent \\ \textbf{Important Settings:}
+
+\noindent 
+
+\noindent \\ In order to establish the connection between Angular and REST API we need to perform the following settings to avoid the Access-Control-Allow-Origin error. Means while we are running Node Server and Apache Tomcat Server in a browser it does not support. But we can create a proxy and run application using it.
+
+\noindent 
+
+\begin{enumerate}
+	\item Create a file proxy.json inside the root folder of application and type the following text in it.
+	 
+\begin{center}
+		\includegraphics*[width=5.46in, height=2.51in]{IMG-06-01}   
+\end{center}
+	
+
+	
+	
+	\noindent \textbf{proxy.json}
+	
+	\noindent $\mathrm{\{}$
+	
+	\noindent "/": $\mathrm{\{}$"target":"http://localhost:8080", "secure":false
+	
+	\noindent $\mathrm{\}}$
+	
+	\noindent $\mathrm{\}}$
+	
+	\item Modify the package.json file with the following line. \\ "start": "ng serve --proxy-config proxy.json",
+	
+	\item Run the angular project with `npm start' instead of `ng serve' so that proxy.json can be executed.
+	
+\end{enumerate}
+      
+
+\newpage
+\noindent \\ \textbf{Making HttpClient Available in The Project}
+
+\noindent 
+
+\noindent \\ To be able to use the HttpClient service within your components we first need to include the HttpClientModule in the Angular application. Firstly, we need to import HttpClient module in the application's root module in file
+
+\noindent 
+
+\noindent \\ \textit{app.module.ts:}
+
+\noindent 
+
+\noindent \\ import $\mathrm{\{}$ BrowserModule $\mathrm{\}}$ from '@angular/platform-browser'; 
+
+\noindent import $\mathrm{\{}$ NgModule $\mathrm{\}}$ from '@angular/core';
+
+\noindent import $\mathrm{\{}$ HttpClientModule $\mathrm{\}}$ from '@angular/common/http'; 
+
+\noindent import $\mathrm{\{}$ AppComponent $\mathrm{\}}$ from './app.component'; @NgModule($\mathrm{\{}$
+
+\noindent declarations: [ AppComponent
+
+\noindent ],
+
+\noindent imports: [ BrowserModule, HttpClientModule
+
+\noindent ],
+
+\noindent providers: [],
+
+\noindent bootstrap: [AppComponent]
+
+\noindent $\mathrm{\}}$)
+
+\noindent export class AppModule $\mathrm{\{}$ $\mathrm{\}}$
+
+\noindent \\ Once imported you can make use of HttpClient in your components. To make HttpClient available in the component class you need to inject it into the class constructor like you can see in the following:
+
+\noindent \\ import $\mathrm{\{}$ Component, OnInit $\mathrm{\}}$ from '@angular/core';
+
+\noindent import $\mathrm{\{}$ HttpClient $\mathrm{\}}$ from '@angular/common/http';
+
+\noindent @Component($\mathrm{\{}$
+
+\noindent selector: 'app-root',
+
+\noindent templateUrl: './app.component.html', styleUrls: ['./app.component.css']
+
+\noindent $\mathrm{\}}$)
+
+\noindent export class AppComponent $\mathrm{\{}$ title = 'app';
+
+\noindent constructor(private http: HttpClient)$\mathrm{\{}$
+
+\noindent $\mathrm{\}}$
+
+\noindent $\mathrm{\}}$
+
+\noindent 
+
+\noindent \\ HttpClient will use the XMLHttpRequest browser API to execute HTTP request. In order to execute HTTP request of a specific type you can use the following methods which corresponds to HTTP verbs:
+
+ 
+ \begin{itemize}
+ 	\item get
+ 	\item post
+ 	\item put
+ 	\item delete
+ 	\item patch
+ 	\item head
+ \end{itemize}
+     
+\newpage
+
+\noindent \\ \textbf{Using HttpClient To Request Data}
+
+\noindent \\ Let's implement a simple example which uses GitHub's REST API to request user data. Insert the following code in file app.component.ts:
+
+\noindent \\ import $\mathrm{\{}$ Component, OnInit $\mathrm{\}}$ from '@angular/core'; 
+
+\noindent import $\mathrm{\{}$ HttpClient $\mathrm{\}}$ from '@angular/common/http'; @Component($\mathrm{\{}$
+
+\noindent selector: 'app-root',
+
+\noindent templateUrl: './app.component.html', styleUrls: ['./app.component.css']
+
+\noindent $\mathrm{\}}$)
+
+\noindent export class AppComponent implements OnInit $\mathrm{\{}$ title = 'app';
+
+\noindent results = '';
+
+\noindent constructor(private http: HttpClient)$\mathrm{\{}$
+
+\noindent $\mathrm{\}}$
+
+\noindent  
+
+\noindent 
+
+\noindent \\ ngOnInit(): void $\mathrm{\{}$ 
+
+\noindent this.http.get('https://api.github.com/users/seeschweiler').subscribe(data =$\mathrm{>}$ $\mathrm{\{}$
+
+\noindent console.log(data);
+
+\noindent $\mathrm{\}}$);
+
+\noindent $\mathrm{\}}$
+
+\noindent $\mathrm{\}}$
+
+\noindent \\ The output which is displayed in the browser console should look like the following:
+
+\begin{center}
+	\noindent \includegraphics*[width=5.92in, height=3.77in]{IMG-06-02}
+\end{center}
+
+\noindent  
+
+\noindent \\ The results shows that it's possible to directly access the JSON response by subscribing to the Observable which is returned from the get method.
+
+\noindent 
+\newpage
+\noindent \\ \textbf{Typed Response}
+
+\noindent \\ From the console output you can see that the returned JSON object has a lot of properties. If you now try to access one of those properties by using the dot notation you'll get back an error:
+
+\noindent \\ console.log(data.login);
+
+\noindent 
+
+\noindent \\ The error message is saying: ``Property 'login' does not exist on type 'Object'''. As data is of type Object you can not access properties directly. However we're able to cast the response Object to a type which is containing the corresponding properties. Let's define an interface type which is containing some if the properties which are part of the response:
+
+\noindent \\ interface UserResponse $\mathrm{\{}$ login: string;
+
+\noindent bio: string; company: string;
+
+\noindent $\mathrm{\}}$
+
+\noindent \\ Next, let's make use of UserResponse to cast the return type of the get call: 
+
+\noindent  \\ this.http.get$\mathrm{<}$UserResponse$\mathrm{>}$('https://api.github.com/users/seeschweiler').subscribe(data =$\mathrm{>}$ $\mathrm{\{}$
+
+\noindent console.log("User Login: " + data.login); 
+
+\noindent console.log("Bio: " + data.bio); 
+
+\noindent console.log("Company: " + data.company);
+
+\noindent $\mathrm{\}}$);
+
+\noindent \\ Accessing the values by using data.login, data.bio and data.company is possible now. The output in the browser console should no deliver the following result:
+
+\noindent 
+
+\noindent \\ \textbf{Error Handling}
+
+\noindent 
+
+\noindent \\ A HTTP request can fail. Because of a poor network connection or other circumstances which can not be foreseen. Therefore you should always include code which handlers an error situation.
+
+\noindent \\ Adding a second callback method to the subscribe method is the way this is done:
+
+\noindent 
+
+\noindent \\ this.http.get$\mathrm{<}$UserResponse$\mathrm{>}$('https://api.github.com/users/seeschweiler').subscribe( data =$\mathrm{>}$ $\mathrm{\{}$
+
+\noindent console.log("User Login: " + data.login); 
+
+\noindent console.log("Bio: " + data.bio); 
+
+\noindent console.log("Company: " + data.company);
+
+\noindent $\mathrm{\}}$,
+
+\noindent err =$\mathrm{>}$ $\mathrm{\{}$
+
+\noindent console.log("Error occured.")
+
+\noindent $\mathrm{\}}$
+
+\noindent );
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent \\ You can also get more specific information about the error by defining a parameter of type HttpErrorResponse for the error handler function. HttpErrorResponse needs to be imported from @angular/common/http: 
+
+\noindent \\ this.http.get$\mathrm{<}$UserResponse$\mathrm{>}$('https://api.github.com/users/seeschweiler').subscribe(
+
+\noindent data =$\mathrm{>}$ $\mathrm{\{}$
+
+\noindent console.log("User Login: " + data.login); 
+
+\noindent console.log("Bio: " + data.bio); 
+
+\noindent console.log("Company: " + data.company);
+
+\noindent $\mathrm{\}}$,
+
+\noindent (err: HttpErrorResponse) =$\mathrm{>}$ $\mathrm{\{}$
+
+\noindent if (err.error instanceof Error) $\mathrm{\{}$ 
+
+\noindent console.log("Client-side error occured.");
+
+\noindent $\mathrm{\}}$ else $\mathrm{\{}$
+
+\noindent console.log("Server-side error occured.");
+
+\noindent $\mathrm{\}}$
+
+\noindent $\mathrm{\}}$
+
+\noindent );
+
+\newpage
+
+\noindent {\Large \textbf{HttpClient GET Request} }
+
+\noindent \\ \textbf{Angular 4 HttpClient get example}
+
+\noindent 
+
+\noindent \\ Here student service will will calling below Rest Api.
+
+\noindent 
+
+\noindent \\ package com.javagf.api;
+
+\noindent import javax.ws.rs.Consumes; 
+
+\noindent import javax.ws.rs.GET; 
+
+\noindent import javax.ws.rs.Path; 
+
+\noindent import javax.ws.rs.Produces;
+
+\noindent import javax.ws.rs.core.MediaType;
+
+\noindent  
+
+\noindent @Path("/api/") 
+
+\noindent @Consumes(MediaType.APPLICATION\_JSON) @Produces(MediaType.APPLICATION\_JSON) public class StudentApiImpl $\mathrm{\{}$
+
+\noindent @Path("get/student") 
+
+\noindent @GET
+
+\noindent public Response getStudent() $\mathrm{\{}$
+
+\noindent Student s = new Student();
+
+\noindent s.setRoll("s-101");
+
+\noindent s.setName("Pasha"); 
+
+\noindent return s;
+
+\noindent $\mathrm{\}}$
+
+\noindent $\mathrm{\}}$
+
+\noindent 
+
+\noindent \\ \textbf{Student.java}
+
+\noindent \\ publilc clas Student $\mathrm{\{}$
+
+\noindent private String roll; private String name;
+
+\noindent public Student(String roll,String name) $\mathrm{\{}$
+
+\noindent this.roll = roll;
+
+\noindent this.name = name;
+
+\noindent $\mathrm{\}}$
+
+\noindent public void setRoll(String roll) $\mathrm{\{}$ 
+
+\noindent This.roll = roll
+
+\noindent $\mathrm{\}}$
+
+\noindent public String getRoll() $\mathrm{\{}$
+
+\noindent return roll;
+
+\noindent $\mathrm{\}}$
+
+ 
+
+\noindent public void setName(String name) $\mathrm{\{}$
+
+\noindent This.name = name;
+
+\noindent $\mathrm{\}}$
+
+ 
+
+\noindent public String getName() $\mathrm{\{}$
+
+\noindent Return name
+
+\noindent $\mathrm{\}}$
+
+\noindent public String toString() $\mathrm{\{}$
+
+\noindent Return ``roll='' + roll + ``name= '' + name;
+
+\noindent $\mathrm{\}}$
+
+ 
+
+\noindent \\ Angular 4 HttpClient get example , here in this post i will discuss about HttpClient get method and we will get to know that how to get JSON response from Rest Server Api. We will be using Angular HttpClient 4.3 and RxJS 5.4 version.
+\newpage
+\noindent \\ Let's take create service and component class to call Rest Api.
+
+\begin{enumerate}
+	\item student.service.ts   
+	\item student.component.ts   
+\end{enumerate}
+
+\noindent \\ \textbf{student.service.ts}
+
+ 
+
+\noindent \\ import $\mathrm{\{}$ Injectable $\mathrm{\}}$ from '@angular/core';
+
+\noindent import $\mathrm{\{}$ HttpClient$\mathrm{\}}$ from '@angular/common/http';
+
+\noindent import $\mathrm{\{}$ Student $\mathrm{\}}$ from '../customer/student.model';
+
+\noindent import $\mathrm{\{}$ Observable $\mathrm{\}}$ from 'rxjs/Observable';
+
+\noindent @Injectable()
+
+\noindent export class StudentService $\mathrm{\{}$
+
+\noindent BASE\_URL="/api/"
+
+\noindent API\_GET\_STUDENT\_URL = this.BASE\_URL+"get/student";
+
+\noindent constructor(public http: HttpClient) $\mathrm{\{}$ $\mathrm{\}}$
+
+\noindent getStudent(): Observable$\mathrm{<}$any$\mathrm{>}$ $\mathrm{\{}$
+
+\noindent return this.http.get$\mathrm{<}$any$\mathrm{>}$(this.API\_GET\_STUDENT\_URL);
+
+\noindent $\mathrm{\}}$
+
+\noindent $\mathrm{\}}$
+
+ 
+
+\noindent \\ \textbf{student.component.ts}
+
+ 
+
+\noindent \\ import $\mathrm{\{}$ Component $\mathrm{\}}$ from '@angular/core';
+
+\noindent import $\mathrm{\{}$ Observable $\mathrm{\}}$ from 'rxjs/Observable';
+
+\noindent import $\mathrm{\{}$ StudentService $\mathrm{\}}$ from './student.service';
+
+\noindent import $\mathrm{\{}$ Student $\mathrm{\}}$ from '../customer/student.model';
+
+\noindent @Component($\mathrm{\{}$
+
+\noindent selector:'student',
+
+\noindent templateUrl:'./student.html'
+
+\noindent $\mathrm{\}}$)
+
+\noindent export class StudentComponent $\mathrm{\{}$
+
+\noindent public student = new Student();
+
+\noindent constructor(private studentService: StudentService) $\mathrm{\{}$ $\mathrm{\}}$
+
+\noindent ngOnInit() $\mathrm{\{}$
+
+\noindent this.getStudent();
+
+\noindent $\mathrm{\}}$
+
+\noindent  getStudent() $\mathrm{\{}$ this.studentService.getStudent().subscribe(
+
+\noindent (data: any) =$\mathrm{>}$ console.log(data), (err: any) =$\mathrm{>}$ console.log(err),
+
+\noindent () =$\mathrm{>}$ console.log("--------Done "));$\mathrm{\}}$$\mathrm{\}}$ \textbf{}
+
+\newpage
+\noindent \textbf{HttpClient POST Request} 
+
+\noindent 
+
+\noindent \\ Angular 4 HttpClient post example\textbf{}
+
+ 
+
+\noindent \\ \textbf{Here student service will be calling below Rest Api.}
+
+ 
+
+\noindent \\ package com.javagf.api;
+
+\noindent import javax.ws.rs.Consumes; 
+
+\noindent import javax.ws.rs.Path; 
+
+\noindent import javax.ws.rs.POST; 
+
+\noindent import javax.ws.rs.Produces;
+
+\noindent import javax.ws.rs.core.MediaType;
+
+\noindent  import com.javagf.vo.StudentVO;
+
+\noindent @Path("/api/") 
+
+\noindent @Consumes(MediaType.APPLICATION\_JSON) @Produces(MediaType.APPLICATION\_JSON) public class StudentApiImpl $\mathrm{\{}$
+
+\noindent @Path("create/student")
+
+\noindent  @POST
+
+\noindent public Response createCustomer(Student student) $\mathrm{\{}$
+
+\noindent  System.out.println(student);
+
+\noindent return Response.status\eqref{GrindEQ__201_}.entity("created").build();
+
+\noindent $\mathrm{\}}$
+
+\noindent $\mathrm{\}}$
+
+\noindent 
+
+\noindent \\ Angular 4 HttpClient post example , here in this post we will learn how to send some data to create student record on server side.
+
+\noindent \\ We will be using HttpClient class post method along with RxJS Observables.
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent \\ Let's take create service and component class to call Rest Api with student object.
+
+\begin{enumerate}
+	\item   student.component.html   
+	\item   student.service.ts   
+	\item   student.component.ts   
+\end{enumerate}
+
+
+\noindent \\ \textbf{student.component.html}
+
+\noindent 
+
+\noindent \\ $\mathrm{<}$form \#studForm="ngForm" (ngSubmit)="addStudent(studForm.value)"$\mathrm{>}$
+
+\noindent $\mathrm{<}$input type="text" name="roll" ngModel placeholder="Enter  roll "$\mathrm{>}$$\mathrm{<}$br/$\mathrm{>}$
+
+\noindent $\mathrm{<}$input type="text" name="name" ngModel placeholder="Enter name "$\mathrm{>}$$\mathrm{<}$br/$\mathrm{>}$
+
+\noindent $\mathrm{<}$button class="btn btn-primary"$\mathrm{>}$Add$\mathrm{<}$/button$\mathrm{>}$
+
+\noindent $\mathrm{<}$/form$\mathrm{>}$
+
+\noindent  
+
+\noindent 
+\newpage
+\noindent \\ \textbf{student.component.ts}
+
+ 
+
+\noindent \\ import $\mathrm{\{}$ Component $\mathrm{\}}$ from '@angular/core'; 
+
+\noindent import $\mathrm{\{}$ Observable $\mathrm{\}}$ from 'rxjs/Observable'; 
+
+\noindent import $\mathrm{\{}$ StudentService $\mathrm{\}}$ from './student.service';
+
+\noindent import $\mathrm{\{}$ Student $\mathrm{\}}$ from '../customer/student.model';
+
+\noindent @Component($\mathrm{\{}$ selector:'student', templateUrl:'./student.html'
+
+\noindent $\mathrm{\}}$)
+
+\noindent export class StudentComponent $\mathrm{\{}$ student : any;
+
+\noindent constructor(private studentService: StudentService) $\mathrm{\{}$ $\mathrm{\}}$
+
+\noindent ngOnInit() $\mathrm{\{}$
+
+\noindent $\mathrm{\}}$
+
+\noindent addStudent(student) $\mathrm{\{}$ this.studentService.addStudent(student).subscribe(
+
+\noindent (data: Student) =$\mathrm{>}$ console.log(data), (err: any) =$\mathrm{>}$ console.log(err),
+
+\noindent () =$\mathrm{>}$ console.log("--------Done ")
+
+\noindent );$\mathrm{\}}$$\mathrm{\}}$
+
+\noindent \\ \textbf{student.service.ts}
+
+\noindent 
+
+\noindent \\ import $\mathrm{\{}$ Injectable $\mathrm{\}}$ from '@angular/core';
+
+\noindent import $\mathrm{\{}$ HttpClient$\mathrm{\}}$ from '@angular/common/http'; 
+
+\noindent import $\mathrm{\{}$ Observable $\mathrm{\}}$ from 'rxjs/Observable';
+
+\noindent @Injectable()
+
+\noindent export class StudentService $\mathrm{\{}$ BASE\_URL="/api/"
+
+\noindent API\_ADD\_STUDENT\_URL = this.BASE\_URL + "create/student"; constructor(public http: HttpClient) $\mathrm{\{}$ $\mathrm{\}}$
+
+\noindent addStudent(student) $\mathrm{\{}$
+
+\noindent return this.http.post$\mathrm{<}$any$\mathrm{>}$(this.API\_ADD\_STUDENT\_URL,student));
+
+\noindent $\mathrm{\}}$
+
+\noindent $\mathrm{\}}$
+
+\newpage
+
+ 
+
+\noindent {\Large \textbf{HttpClient Query Parameters}} 
+
+\noindent 
+
+\noindent \\ Angular 4 HttpClient Query Parameters
+
+\noindent 
+
+\noindent \\ Angular 4 HttpClient Query Parameters , here in this post we will learn how to send Query Parameters value in Java Rest Api. By the help of HttpParams we can send query param value to the server. 
+
+\noindent \\ Let's take create service and component class to call Rest Api with id query param.
+
+\begin{enumerate}
+	\item   student.component.html   
+	\item   student.service.ts   
+	\item   student.component.ts   
+\end{enumerate}
+
+
+
+
+
+
+
+
+\noindent 
+
+\noindent \\ \textbf{student.component.html}
+
+\noindent 
+
+\noindent \\ $\mathrm{<}$div$\mathrm{>}$
+
+\noindent $\mathrm{<}$input type="text" name="roll"  [(ngModel)]="roll" placeholder="Enter student roll"$\mathrm{>}$
+
+\noindent $\mathrm{<}$button class="btn btn-primary" (click)="getStudentByRoll()"$\mathrm{>}$Get Details$\mathrm{<}$/button$\mathrm{>}$
+
+\noindent $\mathrm{<}$/div$\mathrm{>}$
+
+\noindent 
+
+\noindent 
+
+\noindent \\ \textbf{student.component.ts}
+
+\noindent 
+
+\noindent \\ import $\mathrm{\{}$ Component $\mathrm{\}}$ from '@angular/core'; 
+
+\noindent import $\mathrm{\{}$ Observable $\mathrm{\}}$ from 'rxjs/Observable'; 
+
+\noindent import $\mathrm{\{}$ StudentService $\mathrm{\}}$ from './student.service';
+
+\noindent import $\mathrm{\{}$ Student $\mathrm{\}}$ from '../customer/student.model';
+
+\noindent @Component($\mathrm{\{}$ selector:'student', templateUrl:'./student.html'
+
+\noindent $\mathrm{\}}$)
+
+\noindent export class StudentComponent $\mathrm{\{}$ name: any;
+
+\noindent constructor(private studentService: StudentService) $\mathrm{\{}$ $\mathrm{\}}$ ngOnInit() $\mathrm{\{}$$\mathrm{\}}$
+
+\noindent getStudentByRoll() $\mathrm{\{}$ 
+
+\noindent this.studentService.getStudent(roll).subscribe(
+
+\noindent (data: any) =$\mathrm{>}$ console.log(data), (err: any) =$\mathrm{>}$ console.log(err),
+
+\noindent () =$\mathrm{>}$ console.log("--------Done--------")
+
+\noindent );
+
+\noindent $\mathrm{\}}$
+
+\noindent $\mathrm{\}}$
+
+ 
+
+\noindent \\ \textbf{student.service.ts}
+
+\noindent \textbf{}
+
+\noindent \\ import $\mathrm{\{}$ Injectable $\mathrm{\}}$ from '@angular/core';
+
+\noindent import $\mathrm{\{}$ HttpClient$\mathrm{\}}$ from '@angular/common/http'; 
+
+\noindent import $\mathrm{\{}$ Student $\mathrm{\}}$ from '../customer/student.model'; 
+
+\noindent import $\mathrm{\{}$ Observable $\mathrm{\}}$ from 'rxjs/Observable';
+
+\noindent @Injectable()
+
+\noindent export class StudentService $\mathrm{\{}$ BASE\_URL="/api/"
+
+\noindent API\_GET\_STUDENT\_URL\_PARAMS = this.BASE\_URL + "get/student/info"; 
+
+\noindent public student = new Student();
+
+\noindent constructor(public http: HttpClient) $\mathrm{\{}$ $\mathrm{\}}$ getStudentInfo(roll: string) $\mathrm{\{}$
+
+\noindent const params = roll ? $\mathrm{\{}$ params: new HttpParams().set('roll', roll) $\mathrm{\}}$ : $\mathrm{\{}$$\mathrm{\}}$;
+
+\noindent return this.http.get$\mathrm{<}$any$\mathrm{>}$(this.API\_GET\_STUDENT\_URL\_PARAMS, params);
+
+\noindent $\mathrm{\}}$
+
+\noindent $\mathrm{\}}$
+
+\noindent  
+
+\noindent 
+
+\noindent \\ \textbf{Here student service will be calling below Rest Api.}
+
+\noindent 
+
+\noindent \\ package com.javagf.api;
+
+\noindent import javax.ws.rs.Consumes; 
+
+\noindent import javax.ws.rs.GET; 
+
+\noindent import javax.ws.rs.Path; 
+
+\noindent import javax.ws.rs.Produces;
+
+\noindent import javax.ws.rs.core.MediaType; 
+
+\noindent import com.google.gson.Gson; 
+
+\noindent import com.javagf.vo.StudentVO;
+
+\noindent @Path("/api/") 
+
+\noindent @Consumes(MediaType.APPLICATION\_JSON) @Produces(MediaType.APPLICATION\_JSON) public class StudentApiImpl $\mathrm{\{}$
+
+\noindent @Path("get/student/info") @GET
+
+\noindent public Response getStudentInfo(@QueryParam("roll") String roll) $\mathrm{\{}$
+
+\noindent List $\mathrm{<}$Student$\mathrm{>}$ studentsList = new ArrayList$\mathrm{<}$Student$\mathrm{>}$(); //Assume data is present For(Student : studentsList) $\mathrm{\{}$
+
+\noindent If(student.getName.equalsIgnoreCase(roll)) Return student;
+
+\noindent $\mathrm{\}}$
+
+\noindent Return null;
+
+\noindent $\mathrm{\}}$
+
+\noindent $\mathrm{\}}$
+
+ 
+
+ 
+
+ 
+
+ 
+
+\noindent 
+
+
+\end{document}
+
