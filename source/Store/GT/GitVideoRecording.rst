@@ -1,8 +1,9 @@
-
 ============ ======================== =========================================== 
  **S.No.**    **Topic**                **Video Link**                                                
-============ ======================== =========================================== 
- 1            Gitlab Video Recording   `Gitlab_Video_Recording`_                                          
-============ ======================== =========================================== 
+============ ========================= =========================================== 
+ 1            Gitlab Video Recording 1   `Gitlab_Video_Recording`_                                          
+============ ========================= =========================================== 
+ 2            Gitlab Video Recording 2   `Gitlab_Video_Recording`_                                          
+============ ========================= =========================================== 
 
-.. _Gitlab_Video_Recording: https://talentsprint.zoom.us/rec/play/18Deli5LSrAriOO9BltYRv_8k9bx524lM15CrkfXRGlQhlOEUBw5Z0eVoBECCD046uE_oVXcUNqMdQ-A.qLzfTK6VPZbJdtYK?continueMode=true&_x_zm_rtaid=6uYfLOKYT4ih58ZpeVldRA.1645071220972.c9718195aaa6287e27881cf7d2e15a06&_x_zm_rhtaid=227
+.. _Gitlab_Video_Recording: https://talentsprint.zoom.us/rec/share/xcFsO5xMdidXPIWbYQeMPaGVBSExVTPz0LmZwRZ8IXt5re30KquariDuPQIHlr7C._x4lm63tQR5LoWYz
