@@ -1,0 +1,116 @@
+% Options for packages loaded elsewhere
+
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\usepackage{graphicx}
+\usepackage[margin=1.0in]{geometry}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+  
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\author{}
+\date{}
+
+\begin{document}
+
+{\textbf{Installing ExpressJS}}
+
+{\textbf{}}\strut \\
+
+Open the NodeJS Command Prompt in Admin Mode, then go the project folder
+and type the following command to start the ExpressJS installation:
+
+\hfill    
+
+\textbf{npm install express -\/-save}
+
+\begin{center}
+	 \includegraphics*[width=4.48in, height=2.13in]{IMG-01-01}
+\end{center}
+
+
+After the installation is completed a node\_module folder is created,
+which contains all the libraries and the ExpressJS dependencies are
+added in the package.json file.
+
+\begin{center}
+	\includegraphics*[width=4.48in, height=2.13in]{IMG-01-02}
+\end{center}
+
+In the previous NodeJS project, the code of ExpressJS is added as
+follows:
+
+\begin{center}
+	\includegraphics*[width=4.48in, height=2.13in]{IMG-01-03}
+\end{center}
+
+
+In the above program, line-3, is an API get() method used to receive get
+request from the client.
+
+\hfill    
+
+The app.get() function routes the HTTP GET Requests to the path which is
+being specified with the specified callback functions. Basically, is it
+intended for binding the middleware to your application.
+
+\hfill    
+
+{Syntax:}
+
+\textbf{app.get(}path\textbf{,} callback\textbf{)}
+
+\textbf{}\strut \\
+
+{Parameters:}
+
+\textbf{path}: It is the path for which the middleware function is being
+called.
+
+\textbf{callback}: They can be a middleware function or series/array of
+middleware functions.
+
+\end{document}

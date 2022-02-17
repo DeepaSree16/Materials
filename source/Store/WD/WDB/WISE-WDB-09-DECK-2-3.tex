@@ -1,0 +1,380 @@
+
+\documentclass{article}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[english]{babel} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{txfonts}
+\usepackage{mathdots}
+\usepackage[classicReIm]{kpfonts}
+\usepackage{graphicx}
+\usepackage[margin=1.0in]{geometry}
+
+
+
+\begin{document}
+
+\noindent \textbf{State Management in Class Component}
+
+\noindent 
+
+\noindent \\
+In our previous session, we have discussed how to implement state management using the setState in the Class Component. Now let us discuss about the state management in the functional component.
+
+\noindent 
+
+\noindent \\
+Create a file called \textbf{StateEx.js} in the \textbf{src} folder.
+
+\begin{center}
+	\noindent \includegraphics*[width=4.12in, height=2.45in]{IMG-09-01}
+\end{center}
+
+\noindent 
+
+\noindent \\
+Now write the following code:
+
+\begin{center}
+	\noindent \includegraphics*[width=5.92in, height=4.58in]{IMG-09-02}
+\end{center}
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent \\
+Now call the \textbf{StateEx.js} from the \textbf{App.js}
+
+\begin{center}
+	\noindent \includegraphics*[width=6.26in, height=3.40in]{IMG-09-03}
+\end{center}
+
+\noindent 
+
+\noindent \\
+Now run the application and see the output in the browser.
+
+\begin{center}
+	\noindent \includegraphics*[width=5.25in, height=3.34in]{IMG-09-04}
+\end{center}
+
+\noindent 
+
+\noindent \\
+In the above output, it is not printing the Boolean value. It is printing the name, age and marital Status but not Boolean value.\\
+
+
+\noindent 
+
+\noindent $\mathrm{<}$h1$\mathrm{>}$~$\mathrm{\{}$this.state.maritalStatus$\mathrm{\}}$~$\mathrm{<}$/h1$\mathrm{>}$
+
+\noindent 
+
+\noindent \\
+As we have provided the Boolean value directly in the expression as shown in the above statement. Expressions doesn't support Boolean values, we need convert them into the string type using the ``\textbf{JSON.stringify()''} method, as provided in the below statement.\\
+
+
+\noindent 
+
+\noindent $\mathrm{<}$h1$\mathrm{>}$~$\mathrm{\{}$JSON.stringify(this.state.maritalStatus)$\mathrm{\}}$~$\mathrm{<}$/h1$\mathrm{>}$
+
+\noindent 
+
+\noindent 
+
+\noindent \\
+Modifying the StateEx.js file with the \textbf{``JSON.stringify()''} method as:
+
+\begin{center}
+	\noindent \includegraphics*[width=5.98in, height=4.07in]{IMG-09-05}
+\end{center}
+
+\noindent 
+
+\noindent \\
+You can see the output in the browser.
+
+\begin{center}
+	\noindent \includegraphics*[width=4.06in, height=2.62in]{IMG-09-06}
+\end{center}
+
+\noindent 
+
+\noindent 
+
+\noindent \\
+As you can see, now we are getting the Boolean value.
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent \\
+Now in the above example I want add address, modify the \textbf{StateEx.js}. Here the export is provided directly to the class declaration.
+
+\begin{center}
+	\noindent \includegraphics*[width=5.10in, height=4.60in]{IMG-09-07}
+\end{center}
+
+\noindent 
+
+\noindent \\
+See the output in the browser. It will display nothing, because, we cannot print the object in the react directly.
+
+\noindent 
+
+\begin{center}
+	\noindent \includegraphics*[width=3.83in, height=2.46in]{IMG-09-08}
+\end{center}
+
+\noindent 
+
+\noindent 
+
+\noindent \\
+In order to print the address, we need to provide the individual properties from the address object.
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent \\
+Modify the \textbf{StateEx.js}, to print address values as:
+
+\begin{center}
+	\noindent \includegraphics*[width=6.02in, height=5.33in]{IMG-09-09}
+\end{center}
+
+\noindent 
+\newpage
+\noindent \\
+See the output in the browser.
+
+\begin{center}
+	\noindent \includegraphics*[width=4.82in, height=4.43in]{IMG-09-10}
+\end{center}
+
+\noindent 
+
+\noindent 
+
+\noindent \\
+Now you can see, we are able to print address properties (doorNo and street).
+
+
+\newpage
+\noindent \\
+\textbf{Example2:}
+
+\noindent \\
+We will modify the above StateEx.js, to add the array of employees as:
+
+\begin{center}
+	\noindent \includegraphics*[width=5.99in, height=6.45in]{IMG-09-11}
+\end{center}
+
+\noindent 
+
+\begin{center}
+	\noindent \includegraphics*[width=5.93in, height=4.54in]{IMG-09-12}
+\end{center}
+
+\noindent 
+
+\noindent \\
+The complete StateEx.js is provided in two images/images. Please check the continuity of the code.
+
+\noindent \\
+Here in the above code in line number 32, we have added a method called \textbf{``map()''}, which is used to iterate the employees collection. Just like \textbf{``*ngFor''} in angular and \textbf{``foreach''} in java.
+
+\noindent 
+
+\noindent \\
+As we have provided some bootstrap classes in line number 20, 21 and 23, let us add bootstrap to our application.
+
+\noindent 
+
+\noindent \\
+First go to google and search for \textbf{``bootstrap 4 cdn links''. } And click on the first link.
+
+\begin{center}
+	\noindent \includegraphics*[width=6.26in, height=2.39in]{IMG-09-13}
+\end{center}
+
+\noindent 
+
+\noindent 
+Now copy the \textbf{``CSS''} code:
+
+\begin{center}
+	\noindent \includegraphics*[width=6.24in, height=3.36in]{IMG-09-14}
+\end{center}
+
+\noindent 
+
+\noindent \\
+Either you can select the code and do the manual copy or you can see the copy option provided at the right side top corner of the CSS code.
+
+\noindent 
+
+\noindent \\
+Once the code is copied, paste the code in \textbf{``index.html''}, from the \textbf{public} folder of your project.
+
+\begin{center}
+	\noindent \includegraphics*[width=6.24in, height=3.26in]{IMG-09-15}
+\end{center}
+
+\noindent 
+
+\noindent \\
+If you are not able to paste the code, stop the execution of your project, once again manually copy the \textbf{``CSS''} code from the above website and try one more time.
+
+\noindent 
+
+\noindent \\
+Once you are done with pasting the CDN link of the bootstrap, save the \textbf{index.html} file.
+
+\noindent 
+
+\noindent 
+\textbf{App.js: }Call the \textbf{StateEx.js} from the \textbf{App.js file:}
+
+\begin{center}
+	\noindent \includegraphics*[width=5.40in, height=4.08in]{IMG-09-16}
+\end{center}
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent \\
+Now run the application and see the output in the browser.
+
+\begin{center}
+	\noindent \includegraphics*[width=5.37in, height=2.92in]{IMG-09-10IMG-09-17}
+\end{center}
+
+\noindent 
+
+\noindent \\
+Till now we have used bootstrap to design our output in the browser. But in react, we are having a dedicated ReactStrap, to design the UI. Let us see how to add this ReactStrap in our application.
+
+\noindent 
+
+\noindent \\
+Stop your Application by providing the command in the terminal as: \textbf{``Ctrl + C''.}  Once the application execution is stopped, then let us install the ReactStrap from terminal of the Visual Studio code.
+
+\noindent 
+
+\noindent \\
+\textbf{Go to google and search for ReactStrap.}
+
+\begin{center}
+	\noindent \includegraphics*[width=4.56in, height=2.34in]{IMG-09-18}
+\end{center}
+
+\noindent 
+
+\begin{center}
+	\noindent \includegraphics*[width=4.75in, height=2.53in]{IMG-09-19}
+\end{center}
+
+\noindent 
+
+\noindent \\
+Scroll down the web page you can see the commands for adding the bootstrap and reactstrap.
+
+\begin{center}
+	\noindent \includegraphics*[width=6.13in, height=1.58in]{IMG-09-20}
+\end{center}
+
+\noindent 
+
+\noindent \\
+Open the terminal from the Visual Studio code and provide the commands to install bootstrap and reactstrap. We can add both bootstrap and reactstrap in one command as:
+
+\begin{center}
+	\noindent \includegraphics*[width=6.15in, height=3.21in]{IMG-09-21}
+\end{center}
+
+\noindent 
+
+\noindent \\
+You can see installation is started for both bootstrap and reactstrap. 
+
+\begin{center}
+	\noindent \includegraphics*[width=6.20in, height=2.32in]{IMG-09-22}
+\end{center}
+
+\noindent 
+
+\noindent 
+
+\noindent \\
+Once installation is completed. Run the application as \textbf{``npm start''.}
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent 
+\newpage
+\noindent 
+Open \textbf{``index.js''} file and import the \textbf{bootstrap.min.css} file init.
+
+\begin{center}
+	\noindent \includegraphics*[width=5.40in, height=2.40in]{IMG-09-23}
+\end{center}
+
+\noindent 
+
+\noindent \\
+Now create a file called \textbf{ReactStrapCP.js} in the \textbf{src} folder and write the following code:
+
+\begin{center}
+	\noindent \includegraphics*[width=5.04in, height=3.20in]{IMG-09-24}
+\end{center}
+
+\noindent 
+
+\noindent \\
+Now call the \textbf{``ReactStrapCP.js''} from \textbf{``App.js''} file:
+
+\begin{center}
+	\noindent \includegraphics*[width=4.71in, height=3.21in]{IMG-09-25}
+\end{center}
+
+\noindent 
+
+\noindent \\
+Now run the application and you can see the output in the browser.
+
+\begin{center}
+	\noindent \includegraphics*[width=4.08in, height=2.47in]{IMG-09-26}
+\end{center}
+
+\end{document}

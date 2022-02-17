@@ -1,0 +1,353 @@
+
+\documentclass{article} 
+
+\usepackage[utf8]{inputenc} 
+\usepackage[english]{babel} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{txfonts}
+\usepackage{mathdots}
+\usepackage[classicReIm]{kpfonts}
+\usepackage{graphicx}
+\usepackage[margin=1.0in]{geometry}
+
+
+
+\begin{document}
+
+
+
+\begin{center}
+	\noindent {\Huge \underline{\textbf{Module-2}}}
+	\noindent \\ {\huge  (Working with Components)}
+\end{center}
+
+
+\noindent 
+\\  
+{\Large 
+\noindent \textbf{Module Overview}}
+\\ 
+
+{\normalsize {\large \noindent \textbf{CODING EXERCISE}}}
+\\  
+\noindent 
+
+\noindent In this module, you will learn to design a dynamic web page using Angular4 with features mentioned below:
+
+\noindent 
+
+\begin{enumerate}
+	\item HTML
+	\item Adding Custom Component
+	\item Data Binding
+	\item Two Way Data Binding
+	
+\end{enumerate}
+
+
+\noindent 
+\\ 
+\noindent \textbf{OBJECTIVES}
+\\  
+
+\noindent 
+
+\noindent By designing the web page, you will be able to learn:
+
+\noindent 
+\begin{enumerate}
+	\item To bind the value of HTML controls (input, select, text area) to application data.
+	\item  Data Synchronization between the Model and the View.
+	\item  Several ways of displaying Model data in the view.  
+\end{enumerate}
+  
+
+\noindent 
+\\  
+\noindent \textbf{SCRIPTING CONSTRUCTS}
+
+\noindent 
+
+\noindent To designing the web page, you will require the following scripting constructs: 
+
+\begin{enumerate}
+	\item Interpolation in Angular 
+	\item Angular4 Component using Typescript.
+	\item Typescript Function.   
+	\item HTML Form Elements..
+\end{enumerate}
+
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent 
+\\  
+\newpage
+{\large \noindent \textbf{Creating Custom Component }}
+
+\noindent 
+\\  
+\noindent \textbf{Adding Component to a project}
+
+\noindent \textbf{}
+\\  
+\noindent A component in Angular is a class with a template and decorator.
+
+\noindent 
+\\  
+\noindent \textbf{Template}: - Defines user interface for the component.
+\\
+   
+\noindent \textbf{Class}:  Contains the code that is required for the template.
+\\   
+
+\noindent \textbf{Decorator}: Adds meta data to the class, so that making the class as component in Angular. Components are basically classes that interact with the .html file of the component, which gets displayed on the browser. In every Angular project there is a folder named as app (inside the src folder), is a default component, available in Angular project as in below screen: \\
+ 
+
+\noindent \begin{center}
+	\includegraphics*[width=5.12in, height=2.72in]{IMG-02-01}
+\end{center}
+
+\noindent As shown in above screen, the app component has the following files:
+
+\begin{itemize}
+	\item app.component.css
+	\item app.component.html
+	\item app.component.spec.ts
+	\item app.component.ts
+	\item app.module.ts
+\end{itemize}
+\noindent Every default or new component must be registered or declared within @NgModule decorator, in the app.module.ts file. you can see the app component is also registered as shown
+in the following screen:
+
+	\noindent \includegraphics*[width=5.55in, height=3.12in]{IMG-02-02}
+
+
+\noindent 
+
+\noindent \\  \\ Now, if you want to add your own/custom component follow the steps:
+
+\begin{enumerate}
+	\item open visual studio code editor
+	\item open an existing project into it. (Using Open Folder)
+\end{enumerate}
+
+\noindent 
+    
+
+\noindent Now, the angular project is as below: \\
+
+
+	\noindent \includegraphics*[width=5.26in, height=2.96in]{IMG-02-03}
+
+\noindent \\ To add new component, goto View menu and choose Terminal (or) Integrated Terminal option.
+
+
+	\noindent \includegraphics*[width=5.41in, height=3.04in]{IMG-02-04}
+
+
+\noindent 
+
+\noindent \\ now you can see Terminal opened as below:
+
+	\noindent \includegraphics*[width=5.55in, height=3.12in]{IMG-02-05}
+
+\newpage
+\noindent \\ Make sure that you opened terminal on your working project. now type the following command to add new component to your application.
+
+\noindent \textbf{ng generate component $\boldsymbol{\mathrm{<}}$componentName$\boldsymbol{\mathrm{>}}$}
+
+ (or)
+
+\noindent \textbf{ng g c $\boldsymbol{\mathrm{<}}$componentName$\boldsymbol{\mathrm{>}}$}
+
+\noindent 
+
+\begin{center}
+	\noindent \includegraphics*[width=5.12in, height=3.04in]{IMG-02-06}
+\end{center}
+
+\noindent 
+\newpage
+
+
+\noindent now press enter key then you will see the following{\dots}:
+
+\begin{center}
+	\noindent \includegraphics*[width=5.55in, height=3.12in]{IMG-02-07}
+\end{center}
+
+\noindent 
+
+\noindent \\ now close visual studio code and re-open the same...so you will find that your new component \textbf{employ} added in \textbf{app} folder.
+
+\begin{center}
+	\noindent \includegraphics*[width=5.12in, height=2.73in, trim=0.00in 0.15in 0.00in 0.00in]{IMG-02-08}
+\end{center}
+
+\noindent  
+\newpage
+\noindent you can also check that the employ component is declared within app.module.ts file..as shown below:
+
+\begin{center}
+	\noindent \includegraphics*[width=5.26in, height=2.96in]{IMG-02-09}
+\end{center}
+
+\noindent  
+
+\noindent  
+
+\noindent 
+
+ 
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent \textbf{}
+\\  
+\newpage
+
+{\Large \noindent \textbf{Data Binding }}
+\\  
+\noindent \textbf{}
+
+{\large \noindent \textbf{Data Binding \& Types}}
+
+\noindent 
+\\  
+\noindent Data binding is one of the most powerful and important features in a software development language.
+
+\noindent 
+\\  
+\noindent In AngularJS, it is the automatic and instantaneous synchronization between model and view (different layers of Angular.JS).
+
+\noindent 
+\\  
+\noindent Consider the situation where we need to transfer the data from the component(model) to the view or vice versa.
+
+\noindent 
+\\  
+\noindent Note: For simplicity, we have created the component data-bind only once and cleared the file content before moving on to the next data binding type.
+
+\noindent 
+
+\noindent It was easy enough to understand that data binding coordinated the communication between a component class and the template that it's associated with, but to me seemed like a blanket term for a handful of different types of binding, which I wasn't too keen on.
+\\  
+\noindent 
+\\  
+\noindent I then found out there was 4 different types of Data Binding in Angular:
+
+\begin{itemize}
+	\item Interpolation Binding 
+	\item Property Binding
+	\item Event Binding 
+	\item Two-Way Binding 
+\end{itemize}
+
+
+\noindent 
+\\  
+{\large \noindent \\ \\ \textbf{Interpolation Binding}}
+
+\noindent 
+\\  
+\noindent Interpolation Binding is more than likely the first type of binding people will come across. You use Interpolation Binding to take expressions and change them into text which can be used within HTML element tags and attribute values. All you have to do is place the expression in the double-curly braces as shown here.
+
+\noindent 
+
+\noindent \\ $\mathrm{<}$p$\mathrm{>}$The person's name is $\mathrm{\{}$$\mathrm{\{}$person.name$\mathrm{\}}$$\mathrm{\}}$. $\mathrm{<}$ /p$\mathrm{>}$
+
+\noindent \\ So, say the Name Property has a value of Pasha, this would evaluate to{\dots}
+
+\noindent 
+
+\noindent The person's name is Pasha.
+
+\noindent 
+
+\noindent \\ The text that is placed between the double curly braces is usually a Property on the Component associated with the Template. So what happens is Angular looks at the Component, finds the Property, gets the value and replaces the expression in the double-curly braces with a stringified version of that value.
+
+\noindent 
+
+\noindent Alternatively, we can place a Template Expression inside the double-curly braces as shown here.
+
+\noindent 
+
+\noindent \\ $\mathrm{<}$p$\mathrm{>}$4 + 4 = $\mathrm{\{}$$\mathrm{\{}$4+4$\mathrm{\}}$$\mathrm{\}}$ $\mathrm{<}$/p$\mathrm{>}$
+
+\noindent 
+
+\noindent \\ Would evaluate to{\dots}
+
+\noindent 4 + 4 = 8
+
+\noindent 
+\\  
+\newpage
+{\large \noindent \\ \\ \textbf{Property Binding}}
+
+\noindent Property Binding allows us to set the value of a property on an HTML element to the value of a template expression. Here I'm setting the src value on an IMG-02-0 element to the IMG-02-0Url attribute on a product object and then setting the title value from the same product object.
+
+\noindent \\ $\mathrm{<}$img [src]='product.IMG-02-0Url' [title]='product.productName'/$\mathrm{>}$
+
+\noindent \\ Property Binding can also be performed using Interpolation Binding.
+
+\noindent 
+\\  
+{\large \noindent \\ \\ \textbf{Event Binding}}
+
+\noindent Event Binding allows our component to listen to events triggered by user actions in the view. The event is enclosed in parenthesis followed by the method that needs to be called when that event is triggered. Here I'm using the click event on a Button but it could be any of the common Global Event Handlers.
+
+\noindent \\ $\mathrm{<}$button (click)='updateProduct ()'$\mathrm{>}$ Update
+
+ $\mathrm{<}$/button$\mathrm{>}$
+
+\noindent \\ When the button is clicked the updateProduct method is called on the Component and it does its thing.
+
+\noindent 
+
+\noindent \textbf{}
+\\  
+
+{\normalsize {\Large {\large \noindent \textbf{Two-Way Binding}}}}
+
+\noindent Two-way binding is where the value of a Property on the Component is displayed in say an input element and the change to the element updates the property on the Component. Here I've defined a simple text box that is bound to a property on my Component called firstName using the ngModel directive.
+
+\noindent 
+
+\noindent \\ $\mathrm{<}$input type="text" [(ngModel)] = 'firstName' /$\mathrm{>}$
+
+\noindent \\ The square brackets indicate Property Binding and the parenthesis indicate Event Binding to send a notification of the user entered data back to the property. This is the code in the Component.
+
+\noindent 
+
+\noindent \\ export class PersonComponent $\mathrm{\{}$firstName: string = 'Danny';
+
+\noindent $\mathrm{\}}$
+
+\noindent 
+
+\noindent \\ One last thing you need to do is import the FormsModule into the Module that our Component lives within.
+
+\noindent imports: [ BrowserModule, FormsModule, HttpModule]
+
+\noindent If you haven't imported the FormsModule, the following error or similar will be visible in the Browsers Console, \textbf{``Can't bind to `ngModel' since it isn't a known property of `input'''.}
+
+
+\end{document}
+

@@ -1,0 +1,109 @@
+
+\documentclass{article}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[english]{babel} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{txfonts}
+\usepackage{mathdots}
+\usepackage[classicReIm]{kpfonts}
+\usepackage{graphicx}
+\usepackage[margin=1.0in]{geometry}
+
+
+
+\begin{document}
+
+\noindent \textbf{ReactJS {\textbar} Refs}
+
+\noindent 
+
+\noindent \\
+Refs are a function provided by React to access the DOM element and the React element that you might have created on your own. They are used in cases where we want to change the value of a child component, without making use of props and all. They also provide us with good functionality as we can use callbacks with them.~
+
+\noindent 
+
+\noindent 
+\\
+Generally, the use of refs should be considered only when the required interaction cannot be achieved using the mechanisms of~state~and~props.
+
+\noindent 
+\\
+However, there are a couple of cases where using a ref is appropriate. One of which is when integrating with third-party DOM libraries. Also, deep interactions such as handling text selections or managing media playback behavior also require the use of refs on the corresponding elements. You can check out our~React reference guide~to learn more.
+
+\noindent 
+
+\noindent 
+
+\noindent \\
+\textbf{Using Refs in Class Component}
+
+\noindent \textbf{}
+
+\noindent \textbf{}
+
+\noindent \\
+\textbf{Example:~}~
+
+\noindent 
+
+\begin{center}
+	\noindent \includegraphics*[width=6.23in, height=3.88in]{IMG-10-14}
+\end{center}
+
+\begin{center}
+	\noindent \includegraphics*[width=6.19in, height=4.56in]{IMG-10-15}
+\end{center}
+
+\noindent 
+
+
+\newpage
+\noindent \\
+\textbf{Refs using in Function Components}
+
+\noindent 
+
+\noindent \\
+useRef(initialValue)~is a built-in React hook that accepts one argument as the initial value and returns a~\textit{reference}~(aka~\textit{ref}). A reference is an object having a special property~current.
+
+\noindent 
+
+\noindent 
+
+\begin{center}
+	\noindent \includegraphics*[width=6.20in, height=4.06in]{IMG-10-16}
+\end{center}
+
+\noindent 
+
+\noindent 
+
+\begin{center}
+	\noindent \includegraphics*[width=6.23in, height=5.44in]{IMG-10-17}
+\end{center}
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent \\\\
+
+\noindent \textbf{Summing up}
+
+\noindent \\
+The~useRef~Hook lets us create mutable variables inside functional components. There are three main key points that you should keep in mind when using the~useRef~Hook:
+
+\begin{enumerate}
+\item  A ref created with~useRef~will be created only when the component has been mounted and preserved for the full lifecycle.
+
+\item  Refs can be used for accessing DOM nodes or React elements, and for storing mutable variables (like with instance variables in class components).
+
+\item  Updating a ref is a side effect so it should be done only inside a~useEffect~(or~useLayoutEffect) or inside an event handler.
+\end{enumerate}
+
+
+\end{document}

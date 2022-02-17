@@ -1,0 +1,310 @@
+
+\documentclass{article}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[english]{babel} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{txfonts}
+\usepackage{mathdots}
+\usepackage[classicReIm]{kpfonts}
+\usepackage{graphicx}
+\usepackage[margin=1.0in]{geometry}
+
+
+
+\begin{document}
+
+
+
+
+\noindent \textbf{Index.js}
+
+\noindent\\
+ This is a javascript file correponding to the index.html file. It consists of javascript code for index.html file. The main important part of this file is the following line of code.
+
+\noindent\\
+ \textbf{ReactDOM.render($\boldsymbol{\mathrm{<}}$App/$\boldsymbol{\mathrm{>}}$, document.getElementById(`root'));}
+\noindent\\
+ \textbf{About the ReactJS Project Structure} \textbf{}
+
+\noindent 
+
+\noindent\\
+ Expand the project folders public and src you can see couple of files already provided.
+
+\noindent 
+
+\begin{center}
+	\noindent \includegraphics*[width=6.09in, height=3.30in]{IMG-07-09}
+\end{center}
+
+\noindent 
+
+\noindent\\
+ In these mainly we use App.js, index.js and index.html, all css files are used for decorating your project.
+
+\noindent 
+
+\noindent\\
+ \textbf{package.json}
+
+\noindent
+ package.json contains list of all node dependencies which are required for the React Project.
+
+\noindent  
+
+\noindent\\
+ \textbf{Index.html}
+
+\noindent
+ Index.html belongs to \textbf{Public} folder. When the application starts this is the first page that is loaded. This provides the kick start to our project. This is the only html file in our project as we are using the JSX. It contains the div tag $\mathrm{<}$div id=\textbf{``root''$\boldsymbol{\mathrm{>}}$ $\boldsymbol{\mathrm{<}}$/div$\boldsymbol{\mathrm{>}}$, }where all the application components are loaded into this div.
+
+\noindent 
+
+\noindent\\
+ The index.css has to be imported into the index.js file using the import statement.
+
+\noindent 
+
+\noindent\\
+ \textbf{Index.css}
+
+\noindent
+ This index.css file corresponds the index.html file for providing the decoration to the html.
+
+\noindent \textbf{}
+
+\noindent\\
+ \textbf{App.js}
+
+\noindent
+ App.js from src folder is the main component in the react which acts as a container for all the other components in React. The App.css has to be imported into the App.js file using the import statement.
+
+\noindent 
+
+\noindent\\
+ \textbf{App.css}
+
+\noindent
+ This file corresponding to the App.js file for decorating the App.js file.
+\newpage
+\noindent
+
+\noindent \textbf{\underbar{React Components}}\underbar{}
+
+\noindent\\
+ In react we can create two types of components, either functional component or class component.
+
+\noindent 
+
+\noindent\\
+ \textbf{Functional Component}
+
+\noindent
+ A functional component is a normal function which takes props and return JSX. These components does not have state or life cycle methods. These components are easier to read, debug and do the testing. These components provide better performance and reusability. 
+
+\noindent 
+
+\noindent\\
+ \textbf{Class Component}
+
+\noindent
+ A class component is provided with more feature in React Components. It acts like a functional component which receives props. The class component must start with an upper case letter. This component has to include the ``\textbf{extends React.Component''} statement which inherits the React.Component. This component also requires render method which return HTML. 
+
+\noindent 
+
+\noindent\\
+ Open App.js, here you can see the App component is a functional component. After the functional component is defined, at the end we are returning that component using the export. If we do not export the component. This App.js component cannot be imported in another components like index.html file. Remove the export statement and run the project. You can see the error.
+
+\noindent 
+
+\begin{center}
+	\noindent \includegraphics*[width=5.57in, height=3.69in]{IMG-07-10}
+\end{center}
+
+\noindent 
+
+\noindent 
+
+\noindent\\
+ In the below images/image you can see the demo for how the class component is defined.
+
+\noindent 
+
+\begin{center}
+	\noindent \includegraphics*[width=4.33in, height=1.15in]{IMG-07-11}
+\end{center}
+
+\noindent\\
+ \textbf{Example1: }Open App.js and modify the code as:
+
+\begin{center}
+	\noindent \includegraphics*[width=3.24in, height=2.19in]{IMG-07-12}
+\end{center}
+
+\noindent 
+
+\noindent\\
+ Save and run the application you can see the output in the browse.
+
+\noindent 
+
+\begin{center}
+	\noindent \includegraphics*[width=2.07in, height=1.22in]{IMG-07-13}
+\end{center}
+
+\noindent 
+
+\noindent\\
+ \textbf{Example2:}
+
+\noindent\\
+ In the above example we have provided only one element ``$\mathrm{<}$h1$\mathrm{>}$'' in the return. If we want to return more than one element, enclose these elements within the ``$\mathrm{<}$div$\mathrm{>}$'' tag. If not it will simply raise error.
+
+\begin{center}
+	\noindent \includegraphics*[width=3.27in, height=2.64in]{IMG-07-14}
+\end{center}
+
+\noindent 
+\newpage
+\noindent Save and run the application you can see the output in the browse.
+
+\begin{center}
+	\noindent \includegraphics*[width=2.71in, height=1.81in]{IMG-07-15}
+\end{center}
+
+\noindent\\
+ \textbf{Example3:}
+
+\noindent\\
+ Let us convert the above example using the class component. First we need to import React from react component, then add the render method, within that write your code:
+
+\begin{center}
+	\noindent \includegraphics*[width=3.98in, height=2.64in]{IMG-07-16}
+\end{center}
+
+\noindent 
+
+\noindent\\
+ Save and run the application you can see the output in the browse.
+
+\begin{center}
+	\noindent \includegraphics*[width=2.81in, height=1.30in]{IMG-07-17}
+\end{center}
+
+\noindent 
+
+\noindent 
+\newpage
+\noindent\\
+ \textbf{Example4:}
+
+\noindent\\
+ Add a new File Header.js in the src folder as: Click on src folder, from the provided shortcuts click on new File, provide the name as \textbf{Header.js}, then press Enter.
+
+\noindent 
+
+\begin{center}
+	\noindent \includegraphics*[width=3.14in, height=2.55in]{IMG-07-18}  \includegraphics*[width=2.93in, height=2.54in]{IMG-07-19}
+\end{center}
+
+\noindent 
+
+\noindent\\
+ You can see a new \textbf{Header.js} file is created.
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent\\
+ Now open the \textbf{Header.js} and write the following code inside the \textbf{Header.js} file:
+
+\begin{center}
+	\noindent \includegraphics*[width=4.10in, height=2.57in]{IMG-07-20}
+\end{center}
+
+\noindent 
+\newpage
+\noindent\\
+ Same as above create one more file in the src folder as \textbf{Footer.js} and write the following code:
+
+\begin{center}
+	\noindent \includegraphics*[width=4.17in, height=2.63in]{IMG-07-21}
+\end{center}
+
+\noindent 
+
+\noindent\\
+ Modify the above example App.js by adding the $\mathrm{<}$div$\mathrm{>}$ tag, here export default is provided at the class declaration, so we no need to explicitly export the App component.
+
+\begin{center}
+	\noindent \includegraphics*[width=4.08in, height=3.30in]{IMG-07-22}
+\end{center}
+
+\noindent 
+\newpage
+\noindent\\
+ Check the output in the browser.
+
+\begin{center}
+	\noindent \includegraphics*[width=2.61in, height=1.69in]{IMG-07-23}
+\end{center}
+
+\noindent 
+
+\noindent\\
+ \textbf{Example5:}
+
+\noindent\\
+ Let us do the same example using the function component. In the previous example as you see, we have used the class component. Let's replace it with function component.
+
+\noindent 
+
+\noindent\\
+ \textbf{Header.js}
+
+\begin{center}
+	\noindent \includegraphics*[width=4.04in, height=2.96in]{IMG-07-24}
+\end{center}
+
+\noindent 
+\newpage
+\noindent\\
+ \textbf{Footer.js}
+
+\begin{center}
+	\noindent \includegraphics*[width=4.31in, height=3.04in]{IMG-07-25}
+\end{center}
+
+\noindent 
+
+\noindent 
+
+\noindent\\
+ \textbf{App.js}
+
+\begin{center}
+	\noindent \includegraphics*[width=3.90in, height=3.54in]{IMG-07-26}
+\end{center}
+
+\noindent 
+\newpage
+\noindent\\
+ Save it and Run it, you can see the output in the browser.
+
+\begin{center}
+	\noindent \includegraphics*[width=3.96in, height=2.81in]{IMG-07-27}
+\end{center}
+
+\noindent 
+
+\noindent\\
+ Done.
+
+\end{document}

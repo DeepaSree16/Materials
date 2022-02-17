@@ -1,0 +1,153 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\usepackage{graphicx}
+\usepackage[margin=1.0in]{geometry}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\author{}
+\date{}
+
+\begin{document}
+
+{\textbf{Creating NodeJS Project}}
+
+{\textbf{}}\strut \\
+
+Demo "Connection Meetup" Node app
+
+\hfill    
+
+\textbf{Step-1:}
+
+Go to NodeJS Command Prompt and create a folder called ``nodejs''.
+
+md nodejs
+
+\hfill    
+
+\textbf{Step-2:}
+
+Go inside the project and create another folder app
+
+cd nodejs
+
+md app
+
+\hfill    
+
+\textbf{Step-3:}
+
+Now open the NodeJS project folder inside the Visual Studio Code (IDE).
+
+\hfill    
+
+\textbf{Step-4:}
+
+Open Terminal from Visual Studio Code as (View{~ }Terminal), then type
+the following command to install package.json file.
+
+\hfill    
+
+npm init
+
+\begin{center}
+	\includegraphics*[width=4.48in, height=2.13in]{IMG-01-04}
+\end{center}
+\begin{center}
+	\includegraphics*[width=4.48in, height=2.13in]{IMG-01-05}
+\end{center}
+\begin{center}
+	\includegraphics*[width=4.48in, height=2.13in]{IMG-01-06}
+\end{center}
+
+{\textbf{Code Explanation:}}
+
+{\textbf{}}\strut \\
+
+\begin{itemize}
+\tightlist
+\item
+  As a first step in the program, we need to import http using
+  require()→ Line 1
+\item
+  This http variable contains a function called create Server. This is
+  all you need to do to create an http server.
+\item
+  Line 2, 3, 4, 5:~This function is a call-back → We use the response
+  variable that's passed in to the call-back to write the head and pass
+  in the content type and we end that response with connection meetups.
+  → This function returns an object that we are going to put in to our
+  server variable and this object is going to have another function
+  called ``listen'' →
+\item
+  Line 7:~the minute that we call listen that's when our server is going
+  to start running as we listen to this port. You can choose any port.
+\item
+  By default, HTTP uses port80 but ideally you should specify a port.
+\item
+  You can then run your server by going to your terminal and typing:
+\item
+  node node/app.js
+\end{itemize}
+
+\begin{center}
+	\includegraphics*[width=4.48in, height=2.13in]{IMG-01-07}
+\end{center}
+
+
+{\textbf{Note:}}{~}
+
+In the above output HTML tags are not affected because content-type is
+set to ``plain''.{~ }It has to be replaced with ``html'' as follows.
+
+\begin{center}
+	\includegraphics*[width=4.48in, height=2.13in]{IMG-01-08}
+\end{center}
+
+
+\end{document}

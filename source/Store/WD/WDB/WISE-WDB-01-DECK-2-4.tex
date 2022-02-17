@@ -1,0 +1,166 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\usepackage[margin=1.0in]{geometry}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\author{}
+\date{}
+
+\begin{document}
+
+{\textbf{Getting Started}}
+
+{\textbf{Introduction to NodeJS:}}
+
+Node.js is an open-source, cross-platform, back-end JavaScript runtime
+environment that runs on the V8 engine and executes JavaScript code
+outside a web browser.
+
+As an asynchronous event-driven JavaScript runtime, Node.js is designed
+to build scalable network applications.
+
+\hfill 
+
+{\textbf{ECMAScript (ES6):}}
+
+NodeJS is built against modern versions of V8 which is Google's
+open-source high-performance JavaScript and Web Assembly engine, written
+in C++. It is used in Chrome and in Node.js, among others. It implements
+ECMAScript and Web Assembly, and runs on Windows 7 or later, macOS
+10.12+, and Linux systems that use x64, IA-32, ARM, or MIPS processors.
+V8 can run standalone, or can be embedded into any C++ application
+
+\hfill
+
+All ECMAScript 2015 (ES6) features are split into three groups for
+shipping, staged, and in progress features:
+
+\begin{itemize}
+\tightlist
+\item
+  All shipping features, which V8 considers stable, are turned on by
+  default on Node.js and do NOT require any kind of runtime flag.
+\end{itemize}
+
+\hfill
+
+\begin{itemize}
+\tightlist
+\item
+  Staged features, which are almost-completed features that are not
+  considered stable by the V8 team, require a runtime flag: -\/-harmony.
+\end{itemize}
+
+\hfill
+
+\begin{itemize}
+\tightlist
+\item
+  In progress features can be activated individually by their respective
+  harmony flag, although this is highly discouraged unless for testing
+  purposes. Note: these flags are exposed by V8 and will potentially
+  change without any deprecation notice.
+\end{itemize}
+
+\hfill    
+
+{\textbf{Why NodeJS:}}
+
+\begin{itemize}
+\tightlist
+\item
+  It is runtime application
+\item
+  Useful for Server-side application development
+\end{itemize}
+
+\hfill    
+
+{\textbf{Why ExpressJS}}\textbf{:}
+
+\begin{itemize}
+\tightlist
+\item
+  It adds server methods to NodeJS
+\item
+  It supports routing mechanism
+\item
+  Easily creates APIs
+\item
+  Middleware Friendly
+\end{itemize}
+
+\hfill    
+ 
+\newpage
+{\textbf{Development Environment}}
+
+
+
+{\textbf{NodeJS}}
+
+The Official Website:{~}
+
+https://nodejs.org/en/
+
+
+
+Download:{~}
+
+https://nodejs.org/dist/v14.17.5/node-v14.17.5-x64.msi
+
+\hfill    
+
+
+{\textbf{Visual Studio Code (IDE)}}
+
+The Official Website:{~}
+
+https://code.visualstudio.com/download
+
+\end{document}

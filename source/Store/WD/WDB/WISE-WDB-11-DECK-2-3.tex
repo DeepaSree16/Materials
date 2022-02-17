@@ -1,0 +1,190 @@
+
+\documentclass{article}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[english]{babel} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{txfonts}
+\usepackage{mathdots}
+\usepackage[classicReIm]{kpfonts}
+\usepackage{graphicx}
+\usepackage[margin=1.0in]{geometry}
+
+
+
+\begin{document}
+
+\noindent \textbf{Introduction to Redux}
+
+\noindent 
+\\
+Redux~is a lightweight state management tool for JavaScript applications, released in 2015 and created by Dan Abramov and Andrew Clark.
+
+\noindent 
+\\
+Redux is the most popular state management solution, helping you write apps that behave in the same way, are easy to test, and can run the same in different environments (client, server, native). One of the key ways Redux does this is by making use of a redux store, such that the entire application is handled by one state object.
+
+\noindent 
+\\
+According to its official documentation, Redux was founded on three core principles:
+
+
+
+\begin{itemize}
+	\item The state of your whole application is stored in an object tree within a single store.
+	\item Ensure the application state is read-only and requires changes to be made by emitting a descriptive action.
+	\item To specify how the state tree is transformed by actions, you write pure reducer functions.
+\end{itemize}
+
+\noindent
+
+
+
+
+
+
+
+\noindent 
+\\
+With the entire state of your application centralized in one location, each component has direct access to the state (at least without sending props to child components, or callback functions to parent components).
+
+\noindent \textbf{}
+
+\noindent 
+\\
+\textbf{Benefits and limitations of Redux}
+
+
+\noindent \\
+State transfer:~State is stored together in a single place called the `store.' While you don't need to store all the state variables in the `store,' it's especially important to when state is being shared by multiple components or in a more complex architecture.
+
+\noindent 
+\\
+As your application grows larger, it can be increasingly difficult to identify the source of the state variables, which is why a `store' is useful. It also allows you to call state data from any component easily.\\
+
+
+
+\noindent \textbf{Predictability}:~Redux is ``a predictable state container for JavaScript apps.'' Because reducers are pure functions, the same result will always be produced when a state and action are passed in. Furthermore, the slices of state are defined for you, making the data flow more predictable. \\
+
+
+
+\noindent \textbf{Maintainability}:~Redux provides a strict structure for how the code and state should be managed, which makes the architecture easy to replicate and scale for somebody who has previous experience with Redux.\\
+
+
+
+
+\noindent Ease of testing and debugging:~Redux makes it easy to test and debug your code since it offers powerful tools such as Redux DevTools in which you can time travel to debug, track your changes, and much more to streamline your development process.\\
+
+
+\noindent 
+
+\noindent While Redux is something that every developer should consider utilizing when developing their application, it's not for everyone. Setting up the Redux architecture for your application can be a difficult and seemingly unnecessary process when you're working with a small application. It may be unnecessary overhead to use Redux unless you're scaling a large application.
+
+\noindent 
+
+\noindent 
+
+\noindent 
+\\
+\textbf{Benefits and limitations of Redux}\\
+
+
+
+
+\noindent \textbf{State transfe}r:~State is stored together in a single place called the `store.' While you don't need to store all the state variables in the `store,' it's especially important to when state is being shared by multiple components or in a more complex architecture.
+
+\newpage
+
+\noindent As your application grows larger, it can be increasingly difficult to identify the source of the state variables, which is why a `store' is useful. It also allows you to call state data from any component easily.\\
+
+
+\noindent \textbf{Predictability}:~Redux is ``a predictable state container for JavaScript apps.'' Because reducers are pure functions, the same result will always be produced when a state and action are passed in. Furthermore, the slices of state are defined for you, making the data flow more predictable.\\
+
+
+
+\noindent \textbf{Maintainability}:~Redux provides a strict structure for how the code and state should be managed, which makes the architecture easy to replicate and scale for somebody who has previous experience with Redux.\\
+
+
+
+\noindent Ease of testing and debugging:~Redux makes it easy to test and debug your code since it offers powerful tools such as Redux DevTools in which you can time travel to debug, track your changes, and much more to streamline your development process.
+
+\noindent 
+\\
+\noindent While Redux is something that every developer should consider utilizing when developing their application, it's not for everyone. Setting up the Redux architecture for your application can be a difficult and seemingly unnecessary process when you're working with a small application. It may be unnecessary overhead to use Redux unless you're scaling a large application.
+
+\noindent 
+\\
+\textbf{Main concepts of Redux}
+
+\noindent 
+\\
+Naturally, using an external solution for state management means being familiar with a few rules in the development process. Redux introduces~actions,~action creators,~reducers, and~stores. Ultimately, these concepts are used to create a simple state management architecture.
+
+\noindent 
+
+\begin{center}
+	\noindent \includegraphics*[width=6.25in, height=4.64in]{IMG-11-01}
+\end{center}
+
+\noindent 
+
+\noindent 
+\\
+\textbf{Action}
+
+\noindent 
+
+\noindent Action is static information about the event that initiates a state change. When you update your state with Redux, you always start with an action. Actions are in the form of Javascript objects, containing a~type~and an optional~payload.
+
+\noindent 
+\\
+\textbf{Action creators}
+
+\noindent 
+
+\noindent These are simple functions that help you create actions. They are functions that return action objects, and then, the returned object is sent to various reducers in the application.
+
+\noindent 
+\\
+\textbf{Reducer}
+
+\noindent A reducer is a pure function that takes care of inputting changes to its state by returning a new state. The reducer will take in the previous state and action as parameters and return the application state. As your app grows, your single reducer will be split off into smaller reducers that manage certain parts of the state tree.
+
+\noindent 
+\\
+\textbf{Redux store}
+
+\noindent The Redux store is the application state stored as objects. Whenever the store is updated, it will update the React components subscribed to it. You will have to create stores with Redux. The store has the responsibility of storing, reading, and updating state.
+
+\noindent 
+\\
+\textbf{Getting started with Redux}
+
+\noindent Although Redux is used with other JavaScript libraries like~Angular or Vue.js, it's most commonly used for React projects. Let's take a look at a basic implementation of React-Redux.
+
+\noindent 
+
+\noindent 
+
+\begin{center}
+	\noindent \includegraphics*[width=6.25in, height=1.74in]{IMG-11-02}
+\end{center}
+
+\noindent 
+
+\noindent 
+
+\begin{center}
+	\noindent \includegraphics*[width=4.96in, height=5.45in]{IMG-11-03}
+\end{center}
+
+\noindent 
+
+\noindent 
+
+\begin{center}
+	\noindent \includegraphics*[width=6.19in, height=3.20in]{IMG-11-04}
+\end{center}
+
+\end{document}

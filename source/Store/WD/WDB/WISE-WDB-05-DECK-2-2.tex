@@ -1,0 +1,510 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\usepackage{graphicx}
+\usepackage[margin=1.0in]{geometry}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\author{}
+\date{}
+
+\begin{document}
+
+{\textbf{Development CRUD API in NodeJS}}
+
+{\textbf{}}\strut \\
+
+2) Download the following "node modules" to implement server (node
+server).
+
+{~ ~ }=\textgreater{} express
+
+{~ ~ }=\textgreater{} mongodb@2.2.32
+
+{~ ~ }=\textgreater{} cors
+
+{~ ~ }=\textgreater{} body-parser
+
+\hfill    
+
+{~ ~ }- "express" module helps to develop the "rest apis"
+
+{~ ~ }- "mongodb@2.2.32" module helps to interact with "mongodb
+database".
+
+{~ ~ }- "cors" module enable the communication between "ports".
+
+{~ ~ }- "body-parser" module helps to read the "client data".
+
+{~}
+
+{~ ~ }\textgreater{} npm install express mongodb@2.2.232 cors
+body-parser -\/-save
+
+\hfill    
+
+3) Develop the "restapi" by using "NodeJS".
+
+\hfill    
+
+
+{\textbf{CRUD}}
+
+\begin{center}
+	\includegraphics*[width=4.48in, height=2.13in]{IMG-05-01}
+\end{center}
+
+\hfill    
+\newpage
+{\textbf{Step-4}}
+
+{~~ }Start the mongo server
+
+{~~ }\textgreater{} mongod
+
+{~ ~}
+
+\hfill    
+
+\begin{center}
+	\includegraphics*[width=4.48in, height=2.13in]{IMG-05-02}
+\end{center}
+
+
+\hfill    
+
+{\textbf{server.js}}
+
+Create a file server.js and write the following code:
+
+//node starts the execution from server.js file
+
+//this file acting as main server file
+
+//this file used to collabrate the modules
+
+//@login{~ }@register{~ }@update{~ ~ }@delete
+
+\hfill    
+
+//import express module
+
+let express = require("express");
+
+//import body-parser module
+
+let bodyparser = require("body-parser");
+
+//import cors module
+
+let cors = require("cors");
+
+//create the rest object
+
+let app = express();
+
+//enable the ports communication
+
+app.use(cors());
+
+//set the JSON as MIME Type
+
+app.use(bodyparser.json());
+
+//read the json
+
+app.use(bodyparser.urlencoded(\{extended:false\}));
+
+//use login module
+
+app.use("/login",require("./login/login"));
+
+//use register module
+
+app.use("/register",require("./register/register"));
+
+\hfill    
+
+
+
+//use register module
+
+app.use("/update",require("./update/update"));
+
+//use register module
+
+app.use("/delete",require("./delete/delete"));
+
+\hfill    
+
+//use fetch module
+
+app.use("/fetch",require("./fetch/fetch"));
+
+\hfill    
+
+//assign the port no
+
+app.listen(8080);
+
+console.log("server listening the port no.8080");
+
+\hfill    
+
+\newpage
+{\textbf{fetch.js}}
+
+//this file acting as module (fetch)
+
+//login module accepts the{~ }from angular
+
+//login module fetch from "mongodb" database
+
+\hfill    
+
+
+
+let mongodb = require("mongodb");
+
+let talentsprint = mongodb.MongoClient; {~}
+
+\hfill    
+
+let login{~ }=
+require("express").Router().get("/",(req,res)=\textgreater\{
+
+{~ ~ ~ ~
+}talentsprint.connect("mongodb://localhost:27017/crud",(err,db)=\textgreater\{
+
+{~ ~ ~ ~ ~ ~ }if(err)\{
+
+{~ ~ ~ ~ ~ ~ ~ ~ }throw err;
+
+{~ ~ ~ ~ ~ ~ }\}
+
+{~ ~ ~ ~ ~ ~ }else\{
+
+{~ ~ ~ ~ ~ ~ ~ ~
+}db.collection("employee").find(\{\}).toArray((err,array)=\textgreater\{
+
+{~ ~ ~ ~ ~ ~ ~ ~ ~ ~ }if(err) throw err;
+
+{~ ~ ~ ~ ~ ~ ~ ~ ~ ~ }else\{
+
+{~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ }if(array.length\textgreater0)\{
+
+{~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ }res.send(array); {~ ~ ~ ~ ~ ~ ~ ~ ~ ~}
+
+{~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ }\} else \{
+
+{~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ }res.send(\{message:"Record Not
+Found..."\});
+
+{~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ }\}
+
+{~ ~ ~ ~ ~ ~ ~ ~ ~ ~ }\}
+
+{~ ~ ~ ~ ~ ~ ~ ~ }\});
+
+{~ ~ ~ ~ ~ ~ }\}
+
+{~ ~ ~ ~ }\});
+
+\});
+
+module.exports = login;
+
+\hfill    
+
+\newpage
+{\textbf{login.js}}
+
+{\textbf{}}\strut \\
+
+//this file acting as module (login)
+
+//login module accepts the loginId\&password from angular
+
+//login module compares with "mongodb" database
+
+\hfill    
+
+let mongodb = require("mongodb");
+
+let talentsprint = mongodb.MongoClient; {~}
+
+\hfill    
+
+let login{~ }=
+require("express").Router().get("/:loginId/:password",(req,res)=\textgreater\{
+
+{~ ~ ~ ~
+}talentsprint.connect("mongodb://localhost:27017/crud",(err,db)=\textgreater\{
+
+{~ ~ ~ ~ ~ ~ }if(err)\{
+
+{~ ~ ~ ~ ~ ~ ~ ~ }throw err;
+
+{~ ~ ~ ~ ~ ~ }\}
+
+{~ ~ ~ ~ ~ ~ }else\{
+
+{~ ~ ~ ~ ~ ~ ~ ~
+}db.collection("employee").findOne(\{"loginId":req.params.loginId,"password":req.params.password\},{~}
+
+{~ ~ ~ ~ ~ ~ ~ ~ }(err, result) =\textgreater{} \{
+
+{~ ~ ~ ~ ~ ~ ~ ~ ~ ~ }if (err) \{
+
+{~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ }throw err;
+
+{~ ~ ~ ~ ~ ~ ~ ~ ~ ~ }\}
+
+{~ ~ ~ ~ ~ ~ ~ ~ ~ ~ }else\{
+
+{~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ }res.send(result); {~ ~ ~ ~ ~ ~ ~ ~ ~ ~}
+
+{~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ }\}
+
+{~ ~ ~ ~ ~ ~ ~ ~ }\});
+
+{~ ~ ~ ~ ~ ~ }\}
+
+{~ ~ ~ ~ }\});
+
+\});
+
+module.exports = login;
+
+\hfill    
+\newpage
+
+{\textbf{register.js}}
+
+Create a file register.js and write the following code:
+
+//this file acting as module (register)
+
+//register module accepts the name, salary, loginId \& password from
+angular
+
+//register module persist the data "mongodb" database
+
+\hfill    
+
+let mongodb = require("mongodb");
+
+let talentsprint = mongodb.MongoClient;
+
+\hfill    
+
+let register{~ }=
+require("express").Router().post("/",(req,res)=\textgreater\{
+
+{~ ~ ~ ~
+}talentsprint.connect("mongodb://localhost:27017/crud",(err,db)=\textgreater{}
+
+{~ ~ ~ ~ }\{
+
+{~ ~ ~ ~ ~ ~ }if(err)
+
+{~ ~ ~ ~ ~ ~ ~ ~ }throw err;
+
+{~ ~ ~ ~ ~ ~ }else\{
+
+{~ ~ ~ ~ ~ ~ ~ ~
+}db.collection("employee").insertOne(\{"name":req.body.name,"salary":req.body.salary,"loginId":req.body.loginId,"password":req.body.password\},
+
+{~ ~ ~ ~ ~ ~ ~ ~ }(err, result)=\textgreater{} \{
+
+{~ ~ ~ ~ ~ ~ ~ ~ ~ ~ }if (err) throw err;
+
+{~ ~ ~ ~ ~ ~ ~ ~ ~ ~ }res.send(\{message:"1 document inserted"\});
+
+{~ ~ ~ ~ ~ ~ ~ ~ ~ ~ }db.close();
+
+{~ ~ ~ ~ ~ ~ ~ ~ ~ }\});
+
+{~ ~ ~ ~ ~ ~ ~ ~ }\}
+
+{~ ~ ~ ~ ~ ~ }\});
+
+{~ ~ ~ ~ ~ ~ }\});
+
+module.exports = register;
+
+
+\hfill    
+
+\newpage
+{\textbf{update.js}}
+
+Create a file update.js and write the following code
+
+//this file acting as module (update)
+
+//update module accepts the id, name, loginId \& password from angular
+
+//update module compares id in "mongodb" database and update the row
+
+\hfill    
+
+let mongodb = require("mongodb");
+
+let talentsprint = mongodb.MongoClient;
+
+\hfill    
+
+let update{~ }=
+require("express").Router().put("/",(req,res)=\textgreater\{
+
+{~ ~ ~ ~
+}talentsprint.connect("mongodb://localhost:27017/crud",(err,db)=\textgreater{}
+
+{~ ~ ~ ~ }\{
+
+{~ ~ ~ ~ ~ ~ }if(err)
+
+{~ ~ ~ ~ ~ ~ ~ ~ }throw err;
+
+{~ ~ ~ ~ ~ ~ }else\{ {~ ~ ~ ~ ~ ~ ~ ~}
+
+var newvalues = \{ \$set: \{name:req.body.name, salary:req.body.salary\}
+\};
+
+{~ ~ ~ ~ ~ ~ ~ ~
+}db.collection("employee").updateOne(\{loginId:req.body.loginId\},newvalues,
+(err, result)=\textgreater{} \{
+
+{~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ }if (err){~}
+
+{~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ }throw err;
+
+{~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ }else
+
+{~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ }res.send(\{message:"1 document updated"\});
+
+{~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ }db.close();
+
+{~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ }\});
+
+{~ ~ ~ ~ ~ ~ ~ ~ ~ ~ }\}
+
+{~ ~ ~ ~ ~ ~ ~ ~ }\});
+
+{~ ~ ~ ~ ~ ~ ~ }\});
+
+\hfill    
+
+module.exports = update;
+
+\hfill    
+\newpage
+
+{\textbf{delete.js}}
+
+Create a file delete.js and write the following code
+
+//this file acting as module (delete)
+
+//delete module accepts the id from angular
+
+//delete module compares id with "mongodb" database
+
+//delete module delete the matching record
+
+\hfill    
+
+let mongodb = require("mongodb");
+
+let talentsprint = mongodb.MongoClient;
+
+\hfill    
+
+let del{~ }=
+require("express").Router().delete("/",(req,res)=\textgreater\{
+
+{~ ~ ~ ~
+}talentsprint.connect("mongodb://localhost:27017/miniproject",(err,db)=\textgreater{}
+
+{~ ~ ~ ~ }\{
+
+{~ ~ ~ ~ ~ ~ }if(err)
+
+{~ ~ ~ ~ ~ ~ ~ ~ }throw err;
+
+{~ ~ ~ ~ ~ ~ }else\{
+
+{~ ~ ~ ~ ~ ~ ~ ~
+}db.collection("employee").deleteOne(\{loginId:req.body.loginId\}, (err,
+result)=\textgreater{} \{
+
+{~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ }if (err){~}
+
+{~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ }throw err;
+
+{~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ }else
+
+{~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ }res.send(\{message:"1 document deleted"\});
+
+{~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ }db.close();
+
+{~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ }\});
+
+{~ ~ ~ ~ ~ ~ ~ ~ ~ ~ }\}
+
+{~ ~ ~ ~ ~ ~ ~ ~ }\});
+
+{~ ~ ~ ~ ~ ~ ~ ~ }\});
+
+\hfill    
+
+module.exports = del;
+
+\hfill    
+
+\end{document}

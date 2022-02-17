@@ -1,0 +1,195 @@
+
+\documentclass{article}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[english]{babel} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{txfonts}
+\usepackage{mathdots}
+\usepackage[classicReIm]{kpfonts}
+\usepackage{graphicx}
+\usepackage[margin=1.0in]{geometry}
+
+
+
+\begin{document}
+
+\noindent 
+As we have discussed props in your last session. We know that using the props we are able to distribute the value over multiple components. But we cannot change the props value in the other components. And by default props are functional parameters and are immutable, means the values for the props are not changeable. We can only pass the information from one component to another component.
+
+\noindent 
+
+\noindent \\
+\textbf{State Management  }
+
+\noindent \\
+State is used for managing the Data in React. React components have an inbuilt state object. Means when you are building a React Application, you already have state management library installed in your application. We don't need to explicitly install it using (npm install or yarn add). It integrates with all react packages on npm.
+
+\noindent 
+
+\noindent \\
+The state is encapsulated data where you store assets that are persistent between component renderings. The state is just a word in the JavaScript data structure, we can change the state of the component by simply interacting with the application. That is state is changeable and can be used only within the component. We can use the state in both functional and class component. Using ``this'' keyword we can assess the state in the class component and in functional we use useState Hook.
+
+\noindent 
+
+\noindent \\
+\textbf{Example1: }implementing state management in class component.
+
+\noindent \\
+Create a new component ``Message.js'' under src folder, and write the code as:
+
+\begin{center}
+	\noindent \includegraphics*[width=5.43in, height=4.19in]{IMG-09-27}
+\end{center}
+
+\noindent 
+
+\noindent \\
+Adding the constructor to the Message class and calling the super (parent class constructor) from it.
+
+\noindent 
+\newpage
+\noindent 
+Now let us call this Message component from the App.js file
+
+\noindent 
+
+
+\begin{center}
+	\noindent \includegraphics*[width=3.54in, height=2.75in]{IMG-09-28}
+\end{center}
+
+\noindent 
+
+\noindent 
+You can see the output in the browser
+
+\begin{center}
+	\noindent \includegraphics*[width=2.51in, height=1.20in]{IMG-09-29}
+\end{center}
+
+\noindent 
+
+\noindent 
+Add a method \textbf{changeMessage} in the \textbf{Message.js} component and provide a button for changing the state of the component, once the button is clicked.
+
+\begin{center}
+	\noindent \includegraphics*[width=5.85in, height=3.90in]{IMG-09-30}
+\end{center}
+
+\noindent 
+
+\noindent \\
+You can see the output in the browser
+
+\begin{center}
+	\noindent \includegraphics*[width=2.57in, height=1.67in]{IMG-09-31} \includegraphics*[width=3.56in, height=1.71in]{IMG-09-32}
+\end{center}
+
+\noindent 
+
+\noindent \\
+Click on the ``\textbf{Select Angular}'' button.    You can see the state of the component is changed.
+
+\noindent 
+
+\noindent \\
+\textbf{Note:}
+
+\noindent \\
+Why we are using setState in the above example. Why can't we do directly without using the setState? Let us see in the next example, if we are not using setState.
+
+\noindent 
+
+\noindent \\
+\textbf{Example2:}
+
+\noindent \\
+Create a new component ``Counter.js'' under src folder, and write the code as:
+
+\begin{center}
+	\noindent \includegraphics*[width=6.22in, height=4.54in]{IMG-09-33}
+\end{center}
+
+\noindent 
+
+\noindent \\
+You can see in the above program, we are not using the setState, simply incrementing the count variable.
+
+\noindent 
+
+\noindent \\
+Here we are fetching the value from state, but we are not setting the value to state.
+
+
+\begin{center}
+	\noindent \includegraphics*[width=3.38in, height=2.59in]{IMG-09-34}
+\end{center}
+
+\noindent 
+
+\noindent \\
+Save and run the program. You can see the output in the browser.
+
+\begin{center}
+	\noindent \includegraphics*[width=3.31in, height=2.63in]{IMG-09-35} 
+\end{center}
+
+\noindent 
+
+\noindent 
+
+\noindent \\
+Now click on the increment button for multiple times you can see the values are printed in the console, but the counters value is not getting incremented from zero (0).
+
+\noindent 
+
+\begin{center}
+	\noindent \includegraphics*[width=1.67in, height=2.44in]{IMG-09-36}    \includegraphics*[width=1.77in, height=2.45in]{IMG-09-37}    \includegraphics*[width=1.82in, height=2.47in]{IMG-09-38}
+\end{center}
+
+\noindent 
+
+\noindent \\
+You just press the increment button for multiple time, the counters value will not be changed, but in the console, you can see the updated value.
+
+\noindent \\
+In order to update the counters value, add the setState method and increment count value by 1 in the \textbf{Counter.js} component as:
+
+\begin{center}
+	\noindent \includegraphics*[width=5.89in, height=4.62in]{IMG-09-39}
+\end{center}
+
+\noindent 
+\newpage
+\noindent 
+Save and Run the program, you can see the output in the browser.
+
+\begin{center}
+	\noindent \includegraphics*[width=4.51in, height=3.68in]{IMG-09-40}
+\end{center}
+
+\noindent 
+
+\noindent 
+
+\noindent \\
+Click on the increment button for multiple times, you can see the value is getting changed at counters and as well as in the console also.
+
+\noindent 
+
+\begin{center}
+	\noindent \includegraphics*[width=1.92in, height=2.43in]{IMG-09-41}     
+\includegraphics*[width=1.79in, height=2.46in]{IMG-09-42}     
+\includegraphics*[width=1.80in, height=2.46in]{IMG-09-43}
+
+\end{center}
+\noindent 
+
+\noindent 
+
+\noindent \\
+Done
+
+\end{document}
