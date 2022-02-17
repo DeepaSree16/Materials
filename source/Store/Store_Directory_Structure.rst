@@ -150,6 +150,8 @@ STORE
    
    * IO [IoT]
 
+   * GT [GIT]
+
 
 Artefact Naming Scheme
 ++++++++++++++++++++++
