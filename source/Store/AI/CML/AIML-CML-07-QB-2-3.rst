@@ -79,7 +79,7 @@ Trigram: This is a, is a sample, a sample text, sample text given, text given fo
 the assignment.
 .
 
-**Question 4 **
+**Question 4**
 
 Which of the following tags correctly corresponds to the word 'bicycle' for the given sentence, “I
 like to ride my bicycle”?
