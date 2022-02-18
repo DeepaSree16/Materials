@@ -69,7 +69,7 @@ This question is discussed inEigenfaces Preview video during the timeframe 12:00
 
 From the following confusion matrix,  if true positives are 100 and false negatives are 200, then the recall is
 
-.. image:: https://cdn.extras.talentsprint.com/CentralRepo/AIML_Images/AIML_11_Confusionmatrix.png
+.. image:: https://cdn.extras.talentsprint.com/CentralRepo/AIML_Images/AIML_11_confusionmatrix.png
 
 Hint: Precision = TP/ (TP+FP); Recall = TP/ (TP+FN); F1 Score = 2PR / P+R
 
