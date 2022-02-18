@@ -14,7 +14,7 @@ UNIT-3 Week-15 Weekly Test Question & Answers
          \end{bmatrix}
 
 
-A.
+1.
 
 .. math::
 
@@ -22,7 +22,7 @@ A.
            1 & 2 \\
            3 & 1
          \end{bmatrix}
-B.
+2.
 
 .. math::
 
@@ -30,7 +30,7 @@ B.
            9 & 9 \\
            9 & 9
          \end{bmatrix} 
-C.
+3.
 
 .. math::
 
@@ -38,7 +38,7 @@ C.
            8 & 9 \\
            6 & 5
          \end{bmatrix}  
-D. 
+4. 
 
 .. math::
 
@@ -47,7 +47,7 @@ D.
            6 & 3
          \end{bmatrix}   
 
-Answer: C
+Answer: 3
 
 
 **Question 2**
