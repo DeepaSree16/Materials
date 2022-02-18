@@ -55,7 +55,7 @@ B.minima
 
 C.randomness
 
-D. All of the above
+D.All of the above
 
 **Answer: B**
 
