@@ -1,6 +1,14 @@
 Central Repo Updates
 ==================================================
 
+**Feb 22, 2022**
+
+1. Store Directory updates: 
+
+   * WISE WEB module contents added to Store (Chandra)
+   * FSD - Videos added (Ashok)
+   * AIML - Questions banks added (Amulya)
+
 **Feb 15, 2022**
 
 1. Store Directory updates: 
