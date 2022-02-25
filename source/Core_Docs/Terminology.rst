@@ -166,4 +166,5 @@ Course Name Codes
 :FSDJ: Full Stack Developer - Java: TalentSprint 
 :PEGA: Certified System Architects Program: TalentSprint 
 :CDSE: Certified Data Science Engineer: TalentSprint
+:RC: Reference Courses
 
