@@ -128,6 +128,10 @@ STORE
 	 - SupportVectorMachines
 	 - EnsembleMethods
 	 - GradientDescent
+         - ML Avatars
+         - Webscraping
+         - Demystifying ML
+         - Deeper Look at ML
 	 
       + **DLN** DeepLearning
 	 - DeepLearningArchitectures
