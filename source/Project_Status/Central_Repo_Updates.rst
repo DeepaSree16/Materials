@@ -1,6 +1,23 @@
 Central Repo Updates
 ==================================================
 
+**Mar 01, 2022**
+
+1. Store Directory updates: 
+
+   * FSD - Videos added (Ashok and Ganapathi)
+   * AIML- Slides added (Amulya)
+   * IoT - 50% conversion of files to latex done
+   * FSD - 
+
+   Overall content pushed to Store Directory:
+   WISE - Complete
+   AIML - Complete
+   CDS - Complete
+   DLFA - Question banks to be added
+   FSD JAVA - 80% Video links done and uploaded. PPT and PDF files under conversion to latex (5% done).
+
+
 **Feb 22, 2022**
 
 1. Store Directory updates: 
