@@ -11,11 +11,12 @@ Central Repo Updates
    * FSD - 
 
    Overall content pushed to Store Directory:
-   WISE - Complete
-   AIML - Complete
-   CDS - Complete
-   DLFA - Question banks to be added
-   FSD JAVA - 80% Video links done and uploaded. PPT and PDF files under conversion to latex (5% done).
+
+   - WISE - Complete
+   - AIML - Complete
+   - CDS - Complete
+   - DLFA - Question banks to be added
+   - FSD JAVA - 80% Video links done and uploaded. PPT and PDF files under conversion to latex (5% done).
 
 
 **Feb 22, 2022**
