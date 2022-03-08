@@ -1,0 +1,173 @@
+\mode<presentation>
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\def\inserttotalframenumber{200}
+\usepackage{caption}
+\usefonttheme[onlymath]{serif}
+\captionsetup[figure]{labelformat=empty}
+\usepackage{amssymb}
+
+
+%COLORTheme-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\definecolor{tsgreen}{RGB}{0,157,75}% green
+\definecolor{tsorange}{RGB}{241,101,34}% orange
+\definecolor{tsblue}{RGB}{52,103,153}%dark blue
+\definecolor{tslightblue}{RGB}{145,182,219}%light blue
+
+\setbeamercolor{structure}{fg=tsgreen}
+\setbeamercolor{normal text}{fg=black}
+\setbeamercolor{frametitle}{fg=white,bg=tsorange}
+\setbeamercolor{Added}{fg=tsorange,bg=tsgreen}
+\setbeamercolor{final}{fg=tsorange}
+\setbeamercolor{title}{fg=tsorange}
+\setbeamercolor{standout color}{fg=white,bg=tsorange}
+
+%innertheme--------------------------------------------------------------------------------------------------------------------------------------------------------------------------   
+  
+\setbeamerfont{institute}{size = \footnotesize}
+\setbeamerfont{title}{series=\bfseries,size={\fontsize{26}{29}}} 
+\setbeamerfont{subtitle}{size = \large}
+\setbeamerfont{author}{size = \normalsize}
+\setbeamerfont{date}{size = \footnotesize}
+\setbeamerfont{frametitle}{series=\bfseries,size={\fontsize{22}{22}}}
+\setbeamerfont{parent A}{size={\fontsize{26}{26}}}
+
+
+               \setbeamertemplate{title page}
+   {
+
+%% setting the above deffinitions
+
+\begin{minipage}[c][\textheight][c]{\textwidth}
+\vspace{2ex}
+
+\centering
+
+{\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle} 
+
+\vspace{1ex}
+
+{\usebeamerfont{subtitle}\usebeamercolor[fg]{black}\insertsubtitle}
+
+\vspace{2ex}
+
+{\usebeamerfont{author}\usebeamercolor[fg]{black}\insertauthor}
+
+\vspace{2ex}
+
+{\usebeamerfont{institute}\usebeamercolor[fg]{black}\insertinstitute}
+
+\end{minipage}
+}
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+  
+%centerpage****************************************************************************************************************
+
+                  \defbeamertemplate{final page}{text}[1]
+   {
+         \begin{minipage}[c][\textheight][c]{\textwidth}
+                  \centering
+                  \usebeamerfont{title}\usebeamercolor[fg]{final}#1
+         \end{minipage}
+   }
+                  \newcommand{\centerpage}[1]
+   {
+                  \setbeamertemplate{final page}[text]{#1}
+                  \usebeamertemplate{final page}
+   }
+%command\1*****************************************************************************************************************
+ \newcommand{\1}
+{
+\setbeamertemplate{background}
+{
+\includegraphics[width=\paperwidth,height=\paperheight]{FastAPI_Images/background.png}
+\tikz[overlay] \fill[fill opacity=0.90,fill=white] (0,0) rectangle (-\paperwidth,\paperheight);
+}
+}
+
+%****************************************************************************************************************
+
+
+\newlength{\beamer@height}
+\usebeamerfont{frametitle} 
+\setlength{\beamer@height}{2.5\baselineskip}
+
+\setbeamertemplate{frametitle}
+{
+\begin{beamercolorbox}[wd=\paperwidth,ht=1.9cm,dp=0ex,left]{frametitle}
+
+\begin{minipage}[c][0.9\beamer@height][c]{15cm}
+\vspace{-1.5cm}
+{\usebeamerfont{frametitle}\insertframetitle\par}
+\end{minipage}
+\end{beamercolorbox}
+}
+ %..............................Frame Title box
+
+
+
+%outertheme---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\setbeamercolor{section in head/foot}{fg=white, bg=tsblue}
+\setbeamertemplate{footline} 
+{\begin{beamercolorbox}[ht=0.4cm,wd=\paperwidth]{section in head/foot} 
+\hspace*{3.5ex}\insertshorttitle \hfill \insertframenumber{}\hspace*{2ex}
+\vspace{1ex}
+\end{beamercolorbox}}  %..............page number
+
+\addtobeamertemplate{frametitle}{}{%
+\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north east,xshift=7.3pt,yshift=7.5pt] at (current page.north east) {\includegraphics[height=0.5cm]{FastAPI_Images/logo_bottom_right.png}};
+\end{tikzpicture}}  %.......................logo
+
+
+%*******************************************************************************************************
+
+% Progressbar
+\makeatletter
+\def\progressbar@progressbar{} % the progress bar
+\newcount\progressbar@tmpcounta% auxiliary counter
+\newcount\progressbar@tmpcountb% auxiliary counter
+\newdimen\progressbar@pbht %progressbar height
+\newdimen\progressbar@pbwd %progressbar width
+\newdimen\progressbar@tmpdim % auxiliary dimension
+
+\progressbar@pbwd=\paperwidth
+\progressbar@pbht=2pt
+
+\def\progressbar@progressbar{%
+
+\progressbar@tmpcounta=\insertframenumber
+\progressbar@tmpcountb=\inserttotalframenumber
+\progressbar@tmpdim=0.1\progressbar@pbwd
+\multiply\progressbar@tmpdim by \progressbar@tmpcounta
+\divide\progressbar@tmpdim by \progressbar@tmpcountb
+\progressbar@tmpdim=10\progressbar@tmpdim
+
+  \begin{tikzpicture}[very thick]
+
+  \shade[draw=tsgreen,top color=tsgreen,bottom color=tsgreen,middle color=tsgreen] %
+    (0pt, 0pt) rectangle ++ (\progressbar@tmpdim, \progressbar@pbht);
+
+  \end{tikzpicture}%
+ }
+
+\addtobeamertemplate{frametitle}{}
+{%
+\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north,xshift=0cm,yshift=-1.8cm] at (current page.north){
+  \begin{beamercolorbox}[wd=\paperwidth,ht=1pt,dp=1pt]{}%
+    \progressbar@progressbar%
+  \end{beamercolorbox}%
+};
+\end{tikzpicture}
+\vspace{-1ex}}%
+\makeatother
+
+
+%-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\beamertemplatenavigationsymbolsempty
+
+
+\mode<all>
