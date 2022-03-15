@@ -1,0 +1,240 @@
+%\tolerance=10000
+%\documentclass[prl,twocoloumn,preprintnumbers,amssymb,pla]{revtex4}
+\documentclass[prl,twocolumn,showpacs,preprintnumbers,superscriptaddress]{revtex4}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{dcolumn}
+%\linespread{1.7}
+\usepackage{bm}
+%\usepackage{eps2pdf}
+\usepackage{graphics}
+\usepackage{pdfpages}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage[demo]{graphicx} % omit 'demo' for real document
+%\usepackage{times}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{subfig}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{float}
+\documentclass{article}
+\usepackage{amsmath,systeme}
+\usepackage{tikz}
+
+\sysalign{r,r}
+
+% \textheight = 8.5 in
+% \topmargin = 0.3 in
+
+%\textwidth = 6.5 in
+% \textheight = 8.5 in
+%\oddsidemargin = 0.0 in
+%\evensidemargin = 0.0 in
+
+%\headheight = 0.0 in
+%\headsep = 0.0 in
+%\parskip = 0.2in
+%\parindent = 0.0in
+
+% \newcommand{\ket}[1]{\left|#1\right\rangle}
+% \newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\ketbra}[2]{| #1 \rangle \langle #2 |}
+\newcommand{\proj}[1]{| #1 \rangle \langle #1 |}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\op}[1]{ \hat{\sigma}_{#1} }
+\def\tred{\textcolor{red}}
+\def\tgre{\textcolor{green}}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+
+\begin{document}
+\begin{widetext}
+\\
+\\
+\\
+
+\begin{wrapfigure}
+\centering
+%\includegraphics[\textwidth]{TS_IISc.png}
+\end{wrapfigure}
+\begin{figure}[h!]
+ \begin{right}
+  \hfill\includegraphics[\textwidth, right]{TS_IISc.png}
+ \end{right}
+\end{figure}
+\noindent\textbf{Study the given below statements on vanishing gradient and answer the first question.}
+\\
+\\
+\\
+$i.$ Vanishing gradients aren't exclusive to RNNs. They also happen in deep Feedforward Neural Networks.
+\\
+\\
+$ii.$ Vanishing gradients are exclusive to RNNs. They do not occur in deep Feedforward Neural Networks.
+\\
+\\
+$iii.$ Proper initialization of the weight matrices can reduce the effect of vanishing gradients. So can regularization.
+\\
+\\
+$iv.$ A more preferred solution to overcome vanishing gradient is to use ReLU activation function instead of hyperbolic tangent or sigmoid activation functions. The ReLU's derivative is 1 for values larger than zero. Because multiplying 1 by itself several times still gives 1, this basically addresses the vanishing gradient problem.
+%The ReLU derivative is a constant of either 0 or 1, so it isn’t as likely to suffer from vanishing gradients.
+\\
+\\
+\\
+\textbf{1. Which of the above statement(s) is/are true?}
+\\
+\\
+\\
+\noindent A. $i.$ only
+\\
+\\
+B. $i.$, $iii.$ and $iv.$
+\\
+\\
+C. $ii.$, $iii.$ and $iv.$
+\\
+\\
+D. $ii.$ only
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\\
+\\
+\textbf{Study the given below statements on Backpropagation Through Time and answer the second question.}
+\\
+\\
+\\
+$i.$ Backpropagation Through Time, or BPTT, is the application of the Backpropagation training algorithm to recurrent neural network applied to sequence data like a time series.
+\\
+\\
+$ii.$ Conceptually, BPTT works by unrolling all input timesteps, then calculates and accumulates errors across each timestep, network is then rolled back up and the weights are updated.
+\\
+\\
+$iii.$ BPTT can be computationally expensive as the number of timesteps increases.
+\\
+\\
+\\
+\textbf{2. Which of the above statement(s) is/are true?}
+\\
+\\
+\\
+\noindent A. $i.$ and $ii.$ only
+\\
+\\
+B. $ii.$ and $iii.$ only 
+\\
+\\
+C. $i.$, $ii.$ and $iii.$
+\\
+\\
+D. $ii.$ only
+\\
+\\
+\\
+\textbf{Answer: C}
+\\
+\\
+\\
+\\
+\textbf{Study the given below statements on Generative Pre-Training (GPT) and answer the third question.}
+\\
+\\
+\\
+$i.$ GPT is a supervised approach for Language understanding. It uses unsupervised pre-training, supervised fine-tuning and also uses Byte Pair Tokenizer.
+\\
+\\
+$ii.$ GPT is an unsupervised approach for Language understanding. It uses supervised pre-training, unsupervised fine-tuning and also uses Byte Pair Tokenizer.
+\\
+\\
+$iii.$ GPT is an semi-supervised approach for Language understanding. It uses unsupervised pre-training, supervised fine-tuning and also uses Byte Pair Tokenizer.
+\\
+\\
+$iv.$ GPT is an semi-supervised approach for Language understanding. It uses supervised pre-training, unupervised fine-tuning and also uses word2vec embedding.
+\\
+\\
+\\
+\textbf{3. Which of the above statement(s) is/are true?}
+\\
+\\
+\\
+\noindent A. $i.$
+\\
+\\
+B. $ii.$
+\\
+\\
+C. $iii.$
+\\
+\\
+D. $iv.$
+\\
+\\
+\\
+\textbf{Answer: C}
+\\
+\\
+\\
+\textbf{4. BERT is able to process text "bidirectionally", has access to both past and future tokens at learning time, and masking in BERT doesn't just mask one token. Instead, it randomly chooses k\% of the input tokens and masks those.}
+\\
+\\
+\\
+A. True
+\\
+\\
+B. False
+\\
+\\
+\\
+\textbf{Answer: A}
+\\
+\\
+\\
+\\
+\textbf{5. Gradient clipping is one solution to handle:}
+\\
+\\
+\\
+A. Exploding gradient problem
+\\
+\\
+B. Vanishing gradient problem
+\\
+\\
+C. Both A and B
+\\
+\\
+D. None of the above
+\\
+\\
+\\
+\textbf{Answer: A}
+\\
+\\
+\\
+\\
+\\
+\\
+\end{widetext}
+\end{document}

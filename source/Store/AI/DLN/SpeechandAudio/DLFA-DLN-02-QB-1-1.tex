@@ -1,0 +1,209 @@
+%\tolerance=10000
+%\documentclass[prl,twocoloumn,preprintnumbers,amssymb,pla]{revtex4}
+\documentclass[prl,twocolumn,showpacs,preprintnumbers,superscriptaddress]{revtex4}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{dcolumn}
+%\linespread{1.7}
+\usepackage{bm}
+%\usepackage{eps2pdf}
+\usepackage{graphics}
+\usepackage{pdfpages}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage[demo]{graphicx} % omit 'demo' for real document
+%\usepackage{times}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{subfig}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{float}
+\documentclass{article}
+\usepackage{amsmath,systeme}
+\usepackage{tikz}
+
+\sysalign{r,r}
+
+% \textheight = 8.5 in
+% \topmargin = 0.3 in
+
+%\textwidth = 6.5 in
+% \textheight = 8.5 in
+%\oddsidemargin = 0.0 in
+%\evensidemargin = 0.0 in
+
+%\headheight = 0.0 in
+%\headsep = 0.0 in
+%\parskip = 0.2in
+%\parindent = 0.0in
+
+% \newcommand{\ket}[1]{\left|#1\right\rangle}
+% \newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\ketbra}[2]{| #1 \rangle \langle #2 |}
+\newcommand{\proj}[1]{| #1 \rangle \langle #1 |}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\op}[1]{ \hat{\sigma}_{#1} }
+\def\tred{\textcolor{red}}
+\def\tgre{\textcolor{green}}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+
+\begin{document}
+\begin{widetext}
+\\
+\\
+\\
+
+\begin{wrapfigure}
+\centering
+%\includegraphics[\textwidth]{TS_IISc.png}
+\end{wrapfigure}
+\begin{figure}[h!]
+ \begin{right}
+  \hfill\includegraphics[\textwidth, right]{TS_IISc.png}
+ \end{right}
+\end{figure}
+%\noindent\textbf{1. Which is the metric used to evaluate the performance of Text to Speech Synthesis?}
+\noindent\textbf{1. In which of the following acoustic models, do we use the non-RNN Acoustic Model?}
+\\
+\\
+\\
+%A. Robust Acoustic Model.
+A. HMM based acoustic feature generation
+\\
+\\
+B. Neural network based fast acoustic model
+\\
+\\
+C. Neural network based robust acoustic model
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\\
+\\
+\textbf{2. In Statistical Parametric Speech Synthesis, speech is generated from stored exemplars rather than from probability distribution of the acoustic features, given the linguistic specification.}
+\\
+\\
+\\
+\noindent A. False
+\\
+\\
+B. True 
+\\
+\\
+\\
+\textbf{Answer: A}
+\\
+\\
+\\
+\\
+\textbf{3. Which of the following acoustic models are NOT examples of Autoregression model?}
+\\
+\\
+\\
+A. Deep Voice 3
+\\
+\\
+B. FastSpeech 
+\\
+\\
+C. Glow-TTS 
+\\
+\\
+D. Tacotron
+\\
+\\
+E. A, B, C and D
+\\
+\\
+F. Only A and D
+\\
+\\
+G. Only B and C
+\\
+\\
+\\
+\textbf{Answer: G}
+\\
+\\
+\\
+\\
+\textbf{4. What are the Key components in Text to Speech Synthesis (TTS)?}
+\\
+\\
+\\
+A. Text Front-end.
+\\
+\\
+B. Acoustic model.
+\\
+\\
+C. Waveform generator or Vocoder.
+\\
+\\
+D. Only A and B.
+\\
+\\
+E. Only B and C.
+\\
+\\
+F. A, B and C.
+\\
+\\
+\\
+\textbf{Answer: F}
+\\
+\\
+\\
+\\
+\textbf{5. Which of the following is/are true for Concatenative Synthesis?}
+\\
+\\
+\\
+A. It is based on concatenating together small units to produce an utterance.
+\\
+\\
+B. It is done using a time-domain joining algorithm.
+\\
+\\
+C. Requires a large database of speech.
+\\
+\\
+D. It is not really possible to do voice adaption.
+\\
+\\
+E. All of the above.
+\\
+\\
+\\
+\textbf{Answer: E}
+\\
+\\
+\\
+\\
+\\
+\\
+\end{widetext}
+\end{document}

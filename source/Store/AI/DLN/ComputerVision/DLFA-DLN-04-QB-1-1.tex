@@ -1,0 +1,305 @@
+%\tolerance=10000
+%\documentclass[prl,twocoloumn,preprintnumbers,amssymb,pla]{revtex4}
+\documentclass[prl,twocolumn,showpacs,preprintnumbers,superscriptaddress]{revtex4}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{dcolumn}
+%\linespread{1.7}
+\usepackage{bm}
+%\usepackage{eps2pdf}
+\usepackage{graphics}
+\usepackage{pdfpages}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage[demo]{graphicx} % omit 'demo' for real document
+%\usepackage{times}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{subfig}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{float}
+\documentclass{article}
+\usepackage{amsmath,systeme}
+\usepackage{tikz}
+
+\sysalign{r,r}
+
+% \textheight = 8.5 in
+% \topmargin = 0.3 in
+
+%\textwidth = 6.5 in
+% \textheight = 8.5 in
+%\oddsidemargin = 0.0 in
+%\evensidemargin = 0.0 in
+
+%\headheight = 0.0 in
+%\headsep = 0.0 in
+%\parskip = 0.2in
+%\parindent = 0.0in
+
+% \newcommand{\ket}[1]{\left|#1\right\rangle}
+% \newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\ketbra}[2]{| #1 \rangle \langle #2 |}
+\newcommand{\proj}[1]{| #1 \rangle \langle #1 |}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\op}[1]{ \hat{\sigma}_{#1} }
+\def\tred{\textcolor{red}}
+\def\tgre{\textcolor{green}}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+
+\begin{document}
+\begin{widetext}
+\\
+\\
+\\
+
+\begin{wrapfigure}
+\centering
+%\includegraphics[\textwidth]{TS_IISc.png}
+\end{wrapfigure}
+\begin{figure}[h!]
+ \begin{right}
+  \hfill\includegraphics[\textwidth, right]{TS_IISc.png}
+ \end{right}
+\end{figure}
+%\noindent\textbf{1. Which is the metric used to evaluate the performance of Text to Speech Synthesis?}
+\noindent\textbf{Study the given below statements with respect to the architecture of image captioning model and answer the first question.}
+%What improvements does YOLO V3 have over YOLO V2
+\\
+\\
+\\
+$i.$ The decoder extracts out important features from the image and the encoder takes those features as inputs and uses them to generate the caption.
+\\
+\\
+%$ii.$ The image captioning model consists of an encoder and a decoder. 
+%\\
+%\\
+$ii.$ The encoder extracts out important features from the image and the decoder takes those features as inputs and uses them to generate the caption.
+\\
+\\
+$iii.$ The encoder is a language model that takes in current word and image features as an input and outputs the next word.
+\\
+\\
+$iv.$ The attention mechanism in image captioning attends to a portion of the image before generating the next word.
+\\
+\\
+\\
+\\
+\textbf{1. Which of the statement(s) given above is/are not true?}
+\\
+\\
+\\
+A. $ii.$ and $iii.$ only
+\\
+\\
+B. $iii.$ and $iv.$ only
+\\
+\\
+C. $i.$ and $iii.$ only
+\\
+\\
+D. $i.$ and $iv.$ only
+\\
+\\
+\\
+\textbf{Answer: D}
+\\
+\\
+\\
+\\
+\textbf{2. In image captioning, the words are generated sequentially to complete the caption, using the extracted features from the image. For the purpose of sequentially generating the captions, at the decoder, Convolutional Neural Networks are popularly used.}
+\\
+\\
+\\
+A. True.
+\\
+\\
+\\
+B. False.
+\\
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\\
+\\
+%\noindent\textbf{Study the given below statements with respect to the the object detection algorithm YOLO V3 and answer the third question.}
+%\\
+%\\
+%\\
+%$i.$ The model YOLO V3 does multi scale predictions and not just multiscale training which allows predicting smaller objects in initial layers and larger objects in final layers and each box prediction has its own classification vector.
+%\\
+%\\
+%\\
+%$ii.$ The model YOLO V3 does just multi scale predictions and not multiscale training which allows predicting larger objects in initial layers and smaller objects in final layers and each box prediction has its own classification vector.
+%\\
+%%\\
+%\\
+%$iii.$ The model YOLO V3 does not do multi scale predictions but only does multiscale training which allows predicting larger objects in initial layers and smaller objects in final layers and each box prediction has its own classification vector.
+%\\
+%\\
+%\\
+%$iv.$ The model YOLO V3 does multi scale predictions and not just multiscale training which allows predicting larger objects in initial layers and smaller objects in final layers and each box prediction has its own classification vector.
+%\\
+%\\
+%\\
+%$v.$ The model YOLO V3 does multi scale predictions and not just multiscale training which allows predicting larger objects in initial layers and smaller objects in final layers and each box prediction has its own classification vector.
+%$v.$ Darknet-53 is a convolutional neural network that acts as a backbone for the YOLO V3 object detection approach.
+%\\
+%\\
+%\\
+%$vi.$ Darknet-19 is a convolutional neural network that acts as a backbone for the YOLO V3 object detection approach.
+\textbf{3. Which of the following statement(s) is/are true regarding Intersection over Union?}
+\\
+\\
+\\
+A. Intersection over union (IoU) is known to be a good metric for measuring overlap between two bounding boxes or masks.
+\\
+\\
+\\
+B. The lower the IoU, the worse the prediction result.
+\\
+\\
+\\
+C. An Intersection over Union score greater than a selected threshold (generally 0.5) is considered a "good" prediction. 
+\\
+\\
+\\
+D. The IOU of two boxes can have any values between 0 and 1.
+\\
+\\
+\\
+E. All of the above.
+\\
+\\
+\\
+%\textbf{3. Which statement(s) given above show improvement(s) of the object detection algorithm YOLO V3 over YOLO V2?}
+%\\
+%\\
+%\\
+%A. $iv.$ and $v.$
+%\\
+%\\
+%\\
+%B. $ii.$ and $v.$
+%\\
+%\\
+%\\
+%C. $iv.$ and $vi.$
+%\\
+%\\
+%\\
+%D. $iii.$ and $v.$
+%\\
+%\\
+%\\
+%E. $ii.$ and $vi.$
+%\\
+%\\
+%\\
+\textbf{Answer: E}
+\\
+\\
+\\
+\\
+%\textbf{4. Select the correct statement from the following in order of increasing number of parameters?}
+%\noindent\textbf{Study the given below statements with respect to the the non maximum suppression in YOLO object detection algorithm and answer the third question.}
+%\\
+%\\
+%\\
+%$i.$ All the bounding box predictions are sorted according to 
+%their objectness scores in descending order.
+%\\
+%\\
+%$ii.$ All the bounding box predictions are sorted according to 
+%their objectness scores in ascending order.
+%\\
+%\\
+%$iii.$ Given a Bounding Box prediction, all Bounding Boxes with a lower objectness score and belonging to the same class having an IOU above 
+%a user specified threshold are removed from the prediction set. 
+%\\
+%\\
+%$iv.$ Given a Bounding Box prediction, all Bounding Boxes with a higher objectness score and belonging to the same class having an IOU below 
+%a user specified threshold are removed from the prediction set.
+%\\
+%\\
+%\\
+%\\
+%and what is the type of the neural network used for image segmentation?}
+\textbf{4. Non max suppression is a technique used mainly in object detection that aims at selecting the best bounding box out of a set of overlapping boxes.}
+\\
+\\
+\\
+A. True
+\\
+\\
+B. False
+\\
+\\
+\\
+\textbf{Answer: A}
+\\
+\\
+\\
+\\
+%\textbf{5. In YOLO V1, which loss function determines whether there are objects in the prediction frame.}
+\textbf{5. Given the following figure, calculate the IoU (Intersection over Union) between the two bounding boxes. Hint: The Intersection over Union can be computed by dividing the intersection area by the union area of the two bounding boxes}
+\\
+\\
+\begin{figure}[H]
+\begin{center}
+    \includegraphics[width=0.75\textwidth,centering]{IoU.png}
+\end{center}
+    %\caption{}
+\end{figure}
+\\
+\\
+\\
+\noindent A. 16.037 \%
+%A. Classification loss
+\\
+\\
+B. 12.142 \%
+%B. Confidence loss
+\\
+\\
+C. 13.821 \%
+\\
+\\
+D. None of the above
+\\
+%C. Box regression loss
+\\
+\\
+\\
+\textbf{Answer: C}
+\\
+\\
+\\
+\\
+\\
+\\
+\end{widetext}
+\end{document}

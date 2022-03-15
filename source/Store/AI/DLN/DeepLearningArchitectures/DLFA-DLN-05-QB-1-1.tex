@@ -1,0 +1,221 @@
+%\tolerance=10000
+%\documentclass[prl,twocoloumn,preprintnumbers,amssymb,pla]{revtex4}
+\documentclass[prl,twocolumn,showpacs,preprintnumbers,superscriptaddress]{revtex4}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{dcolumn}
+%\linespread{1.7}
+\usepackage{bm}
+%\usepackage{eps2pdf}
+\usepackage{graphics}
+\usepackage{pdfpages}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage[demo]{graphicx} % omit 'demo' for real document
+%\usepackage{times}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{subfig}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{float}
+\documentclass{article}
+\usepackage{amsmath,systeme}
+\usepackage{tikz}
+
+\sysalign{r,r}
+
+% \textheight = 8.5 in
+% \topmargin = 0.3 in
+
+%\textwidth = 6.5 in
+% \textheight = 8.5 in
+%\oddsidemargin = 0.0 in
+%\evensidemargin = 0.0 in
+
+%\headheight = 0.0 in
+%\headsep = 0.0 in
+%\parskip = 0.2in
+%\parindent = 0.0in
+
+% \newcommand{\ket}[1]{\left|#1\right\rangle}
+% \newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\ketbra}[2]{| #1 \rangle \langle #2 |}
+\newcommand{\proj}[1]{| #1 \rangle \langle #1 |}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\op}[1]{ \hat{\sigma}_{#1} }
+\def\tred{\textcolor{red}}
+\def\tgre{\textcolor{green}}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+
+\begin{document}
+\begin{widetext}
+\\
+\\
+\\
+
+\begin{wrapfigure}
+\centering
+%\includegraphics[\textwidth]{TS_IISc.png}
+\end{wrapfigure}
+\begin{figure}[h!]
+ \begin{right}
+  \hfill\includegraphics[\textwidth, right]{TS_IISc.png}
+ \end{right}
+\end{figure}
+\noindent\textbf{1. Which of the following are the model architectures of Word2Vec to produce a distributed representation of words?}
+\\
+\\
+\\
+A. N-Gram.
+\\
+\\
+B. Continuous bag-of-words (CBOW).
+\\
+\\
+C. Skip-gram.
+\\
+\\
+D. Both A and B
+\\
+\\
+E. Both B and C
+\\
+\\
+F. Both A and C
+\\
+\\
+\\
+\textbf{Answer: E}
+\\
+\\
+\\
+\\
+\textbf{2. Given the following cost function of L2 Regularization which is used in deep networks:}
+\begin{equation}
+    E^{\prime} = E + \sum_{l} \lambda ||W^{l}|| ^2 \nonumber{}
+\end{equation}
+where $\lambda$ is a regularization parameter. Select the following false statement.
+\\
+\\
+\\
+\noindent A. Selecting a high value of $\lambda$ may result in underfitting of the deep network.
+\\
+\\
+B. Selecting a low value of $\lambda$ may result in overfitting of the deep network. 
+\\
+\\
+C. Selecting a high value of $\lambda$ may result in overfitting of the deep network.
+\\
+\\
+D. Selecting a low value of $\lambda$ may result in underfitting of the deep network.
+\\
+\\
+E. Only A and B
+\\
+\\
+F. Only C and D
+\\
+\\
+\\
+\textbf{Answer: E}
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+%\textbf{3. Which of the following statement is TRUE for the Word embedding library, Word2Vec?}
+\textbf{3. Which of the following statement is TRUE regarding the Skip-gram model model?}
+\\
+\\
+\\
+%A. In the Skip-gram model, we take in the target word as our input and try to predict the context words.
+A. The Skip-gram model architecture usually tries to achieve the reverse of what the CBOW model does. It tries to predict the source context words (surrounding words) given a target word (the center word).
+\\
+\\
+B. There is no activation function on the hidden layer neurons, but the output neurons use softmax activation function.
+\\
+\\
+C. There is an activation function on the hidden layer neurons, but the output neurons do not use any activation function.
+\\
+\\
+D. There is an activation function on the hidden layer neurons, and the output neurons use softmax activation function.
+\\
+\\
+E. Only A and D
+\\
+\\
+F. Only A and C
+\\
+\\
+G. Only A and B
+\\
+\\
+\\
+\textbf{Answer: G}
+\\
+\\
+\\
+\textbf{4. Batch normalization is a popular and effective technique to reduce overfitting of deep networks. Which of the following statements are TRUE regarding batch normalization?}
+\\
+\\
+\\
+A. At every mini batch of learning of a particular hidden layer, take the output activation from the hidden layer first, and then remove the mean and normalize the variance (make the mean 0 and the variance 1).
+\\
+\\
+B. At every mini batch of learning of a particular hidden layer, take the output activation from the hidden layer first, and then normalize the mean  and remove the variance (make the mean 1 and the variance 0).
+\\
+\\
+C. At every mini batch of learning of a particular hidden layer, remove the mean  and normalize the variance from the hidden layer first, (make the mean 0 and the variance 1), and then take the output activation.
+\\
+\\
+D. At every mini batch of learning of a particular hidden layer, normalize the mean and remove the variance from the hidden layer first, (make the mean 1 and the variance 0), and then take the output activation.
+\\
+\\
+\\
+\textbf{Answer: A}
+\\
+\\
+\\
+\\
+\textbf{5. In the Skip-gram model, the distributed representations of context (or surrounding words) are combined to predict the word in the middle.}
+\\
+\\
+\\
+A. True.
+\\
+\\
+B. False.
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\\
+\\
+\\
+\\
+\end{widetext}
+\end{document}

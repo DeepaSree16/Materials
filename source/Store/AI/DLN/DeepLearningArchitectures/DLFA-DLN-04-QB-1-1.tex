@@ -1,0 +1,245 @@
+%\tolerance=10000
+%\documentclass[prl,twocoloumn,preprintnumbers,amssymb,pla]{revtex4}
+\documentclass[prl,twocolumn,showpacs,preprintnumbers,superscriptaddress]{revtex4}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{dcolumn}
+%\linespread{1.7}
+\usepackage{bm}
+%\usepackage{eps2pdf}
+\usepackage{graphics}
+\usepackage{pdfpages}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage[demo]{graphicx} % omit 'demo' for real document
+%\usepackage{times}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{subfig}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{float}
+\documentclass{article}
+\usepackage{amsmath,systeme}
+\usepackage{tikz}
+
+\sysalign{r,r}
+
+% \textheight = 8.5 in
+% \topmargin = 0.3 in
+
+%\textwidth = 6.5 in
+% \textheight = 8.5 in
+%\oddsidemargin = 0.0 in
+%\evensidemargin = 0.0 in
+
+%\headheight = 0.0 in
+%\headsep = 0.0 in
+%\parskip = 0.2in
+%\parindent = 0.0in
+
+% \newcommand{\ket}[1]{\left|#1\right\rangle}
+% \newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\ketbra}[2]{| #1 \rangle \langle #2 |}
+\newcommand{\proj}[1]{| #1 \rangle \langle #1 |}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\op}[1]{ \hat{\sigma}_{#1} }
+\def\tred{\textcolor{red}}
+\def\tgre{\textcolor{green}}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+
+\begin{document}
+\begin{widetext}
+\\
+\\
+\\
+
+\begin{wrapfigure}
+\centering
+%\includegraphics[\textwidth]{TS_IISc.png}
+\end{wrapfigure}
+\begin{figure}[h!]
+ \begin{right}
+  \hfill\includegraphics[\textwidth, right]{TS_IISc.png}
+ \end{right}
+\end{figure}
+\noindent\textbf{1. Which of the following hurdles of RNNs were overcome by LSTMs?}
+\\
+\\
+\\
+A. Vanishing gradient problem.
+\\
+\\
+B. Exploding gradient problem.
+\\
+\\
+C. Both A and B
+\\
+\\
+D. None of the above
+\\
+\\
+\\
+\textbf{Answer: C}
+\\
+\\
+\\
+\\
+\textbf{2. Match the different gates in an LSTM with its corresponding function as given below:}
+\begin{figure}[H]
+\begin{center}
+    \includegraphics[width=1.25\textwidth,centering]{lstm-func.pdf}
+\end{center}
+    %\caption{}
+\end{figure}
+\\
+\\
+\\
+\noindent A. 1 $\rightarrow$ 1, 2 $\rightarrow$ 3, 3 $\rightarrow$ 2
+\\
+\\
+B. 1 $\rightarrow$ 3, 2 $\rightarrow$ 2, 3 $\rightarrow$ 1
+\\
+\\
+C. 1 $\rightarrow$ 3, 2 $\rightarrow$ 1, 3 $\rightarrow$ 2
+\\
+\\
+D. 1 $\rightarrow$ 2, 2 $\rightarrow$ 1, 3 $\rightarrow$ 3
+\\
+\\
+\\
+\textbf{Answer: C}
+\\
+\\
+\\
+\\
+\textbf{3. In an LSTM, Which one the following represents the equations of the output gate?}
+\\
+\\
+\\
+A. $o_{t} = \sigma(W_{o} \cdot [h_{t}, x_{t}] + b_{o})$
+\\
+\\
+B. $o_{t} = \sigma(W_{o} \cdot [h_{t}, x_{t - 1}] + b_{o})$
+\\
+\\
+C. $o_{t} = \sigma(W_{o} \cdot [h_{t - 1}, x_{t - 1}] + b_{o})$
+\\
+\\
+D. $o_{t} = \sigma(W_{o} \cdot [h_{t - 1}, x_{t}] + b_{o})$
+%, h_{t} = o_{t} * tanh(C_{t})$
+\\
+\\
+Where:
+\\
+\\
+%1. $C_{t}$ represents candidate for cell state at timestamp $(t)$
+\\
+\\
+1. $h_{t-1} \rightarrow $ represents the previous \textbf{lstm} block at timestamp $(t - 1)$
+\\
+\\
+2. $x_{t} \rightarrow $ input at current timestamp $t$
+%\\
+%\\
+%3. $o_{t} \rightarrow $ represents output gate
+\\
+\\
+3. $b \rightarrow $ represents bias function
+%$b_{x} \rightarrow $ represents biases for the respective gates($x$)
+\\
+\\
+4. $W \rightarrow $ represents weight matrix %for the respective gate neurons
+%$W_{x} \rightarrow $ represents weights for the respective gate($x$) neurons
+\\
+\\
+5. $\sigma \rightarrow$ sigmoid function
+\\
+\\
+\\
+\textbf{Answer: D}
+\\
+\\
+\\
+\textbf{4. Which of the following statements are TRUE regarding vanishing and exploding gradients problems.}
+%\textbf{4. In an LSTM, the candidate memory cell makes use of which of the following activation function?}
+%\textbf{4. How many inputs are present in one LSTM unit at each time step?}
+\\
+\\
+\\
+%A. Vanishing Gradient problem arises using Sigmoid or Tanh as the activation functions when the number of hidden layers increases. When the hidden layers increases the partial derivative terms starts becoming smaller and smaller. The derivative of an activation function in a given layer becomes the product of derivatives of activation functions in the path from the final layer to the current layer in the backward way - from output layer to input layer. So when this happens the update of weights becomes slower and sometimes even stops.
+A. In deep neural networks, exploding gradients are a problem where large error gradients accumulate as the backpropagation algorithm advances from the output layer towards the input layer and result in very large updates to neural network model weights during training. This has the effect of your model being unstable and unable to learn from your training data.
+\\
+\\
+B. In deep neural networks, as the backpropagation algorithm advances from the output layer towards the input layer, the gradients often get smaller and smaller and approach zero which eventually leaves the weights of the initial or lower layers nearly unchanged. As a result, the gradient descent never converges to the optimum. This is known as the vanishing gradients problem.
+\\
+\\
+C. Certain activation functions, like the logistic function (sigmoid), have a very huge difference between the variance of their inputs and the outputs and so can give rise to the vanishing gradient problem in deep neural networks.
+\\
+\\
+D. All of the above
+\\
+\\
+\\
+\textbf{Answer: D}
+\\
+\\
+\\
+\\
+\textbf{5. Which of the following statements are TRUE?}
+%\textbf{5. Why is an RNN (Recurrent Neural Network) used for translation of English to French?}
+\\
+\\
+\\
+A. There is no cell state in an RNN. The state $h_{t}$ is directly
+computed from the previous state $h_{t-1}$ and the current input
+$x_{t}$ each linearly transformed via the respective weight matrices
+$U$ and $W$.
+\\
+\\
+B. There is no modulation or control in an RNN and through gates, but in an LSTM, we have an input gate, an output gate and a forget gate.
+\\
+\\
+C. There is no modulation or control in an LSTM through gates, but in an RNN, we have an input gate, an output gate and a forget gate.
+\\
+\\
+D. There is no hidden state in an LSTM. The state $h_{t}$ is directly
+computed from the previous state $h_{t-1}$ and the current input
+$x_{t}$ each linearly transformed via the respective weight matrices
+$U$ and $W$.
+\\
+\\
+E. Only A and B
+\\
+\\
+F. Only C and D
+\\
+\\
+\\
+\textbf{Answer: E}
+\\
+\\
+\\
+\\
+\\
+\end{widetext}
+\end{document}

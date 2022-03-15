@@ -1,0 +1,213 @@
+%\tolerance=10000
+%\documentclass[prl,twocoloumn,preprintnumbers,amssymb,pla]{revtex4}
+\documentclass[prl,twocolumn,showpacs,preprintnumbers,superscriptaddress]{revtex4}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{dcolumn}
+%\linespread{1.7}
+\usepackage{bm}
+%\usepackage{eps2pdf}
+\usepackage{graphics}
+\usepackage{pdfpages}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage[demo]{graphicx} % omit 'demo' for real document
+%\usepackage{times}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{subfig}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{float}
+\documentclass{article}
+\usepackage{amsmath,systeme}
+\usepackage{tikz}
+
+\sysalign{r,r}
+
+% \textheight = 8.5 in
+% \topmargin = 0.3 in
+
+%\textwidth = 6.5 in
+% \textheight = 8.5 in
+%\oddsidemargin = 0.0 in
+%\evensidemargin = 0.0 in
+
+%\headheight = 0.0 in
+%\headsep = 0.0 in
+%\parskip = 0.2in
+%\parindent = 0.0in
+
+% \newcommand{\ket}[1]{\left|#1\right\rangle}
+% \newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\ketbra}[2]{| #1 \rangle \langle #2 |}
+\newcommand{\proj}[1]{| #1 \rangle \langle #1 |}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\op}[1]{ \hat{\sigma}_{#1} }
+\def\tred{\textcolor{red}}
+\def\tgre{\textcolor{green}}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+
+\begin{document}
+\begin{widetext}
+\\
+\\
+\\
+
+\begin{wrapfigure}
+\centering
+%\includegraphics[\textwidth]{TS_IISc.png}
+\end{wrapfigure}
+\begin{figure}[h!]
+ \begin{right}
+  \hfill\includegraphics[\textwidth, right]{TS_IISc.png}
+ \end{right}
+\end{figure}
+\noindent\textbf{1. Which of the following is the task of predicting what word comes next?}
+\\
+\\
+\\
+A. Neural Machine Translation.
+\\
+\\
+B. Language Modeling.
+\\
+\\
+C. Hidden Markov Model.
+\\
+\\
+D. Automatic Speech Recognition
+\\
+\\
+E. All of the above
+\\
+\\
+F. None of the above
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\\
+\\
+\textbf{2. Word Error Rate (WER) is a common metric for measuring speech-to-text accuracy of automatic speech recognition (ASR) systems. Calculate the WER between the following two sentences:}
+\\
+\\
+PREDICTION: The cat sat on the mat
+\\
+\\
+TARGET: The cat sat on the hat
+\\
+\\
+\\
+\noindent A. 33.33%
+\\
+\\
+B. 66.67% 
+\\
+\\
+C. 8.33%
+\\
+\\
+D. 16.67%.
+\\
+\\
+\\
+\textbf{Answer: D}
+\\
+\\
+\\
+\\
+\textbf{3. Which of the following are error metrics commonly used in Automatic Speech Recognition (ASR) other than Word error rate (WER)?}
+\\
+\\
+\\
+A. Character error rate (CER)
+\\
+\\
+B. Letter error rate (LER)
+\\
+\\
+C. Word information loss (WIR)
+\\
+\\
+D. Matched error rate (MER)
+\\
+\\
+E. All of the above
+\\
+\\
+\\
+\textbf{Answer: E}
+\\
+\\
+\\
+\\
+\textbf{4. Which is the biggest difference between a GRU (Gated Recurrent Units) and an LSTM?}
+\\
+\\
+\\
+A. The biggest difference is that GRU is quicker to compute and has fewer parameters.
+\\
+\\
+B. The biggest difference is that GRU is quicker to compute and has more parameters.
+\\
+\\
+C. The biggest difference is that GRU is slower to compute and has fewer parameters.
+\\
+\\
+D. The biggest difference is that GRU is slower to compute and has more parameters.
+\\
+\\
+\\
+\textbf{Answer: A}
+\\
+\\
+\\
+\\
+\textbf{5. Which of the following is true for gradient clipping, a technique to prevent exploding gradients in very deep networks, usually in recurrent neural networks?}
+\\
+\\
+\\
+A. If the norm of the gradient is lesser than some threshold, scale it down before applying SGD update.
+\\
+\\
+B. If the norm of the gradient is less than some threshold, scale it up before applying SGD update.
+\\
+\\
+C. If the norm of the gradient is greater than some threshold, scale it down before applying SGD update.
+\\
+\\
+D. If the norm of the gradient is greater than some threshold, scale it up before applying SGD update.
+\\
+\\
+\\
+\textbf{Answer: C}
+\\
+\\
+\\
+\\
+\\
+\\
+\end{widetext}
+\end{document}

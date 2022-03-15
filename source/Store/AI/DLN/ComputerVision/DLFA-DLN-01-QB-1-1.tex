@@ -1,0 +1,252 @@
+%\tolerance=10000
+%\documentclass[prl,twocoloumn,preprintnumbers,amssymb,pla]{revtex4}
+\documentclass[prl,twocolumn,showpacs,preprintnumbers,superscriptaddress]{revtex4}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{dcolumn}
+%\linespread{1.7}
+\usepackage{bm}
+%\usepackage{eps2pdf}
+\usepackage{graphics}
+\usepackage{pdfpages}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage[demo]{graphicx} % omit 'demo' for real document
+%\usepackage{times}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{subfig}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{float}
+\documentclass{article}
+\usepackage{amsmath,systeme}
+\usepackage{tikz}
+
+\sysalign{r,r}
+
+% \textheight = 8.5 in
+% \topmargin = 0.3 in
+
+%\textwidth = 6.5 in
+% \textheight = 8.5 in
+%\oddsidemargin = 0.0 in
+%\evensidemargin = 0.0 in
+
+%\headheight = 0.0 in
+%\headsep = 0.0 in
+%\parskip = 0.2in
+%\parindent = 0.0in
+
+% \newcommand{\ket}[1]{\left|#1\right\rangle}
+% \newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\ketbra}[2]{| #1 \rangle \langle #2 |}
+\newcommand{\proj}[1]{| #1 \rangle \langle #1 |}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\op}[1]{ \hat{\sigma}_{#1} }
+\def\tred{\textcolor{red}}
+\def\tgre{\textcolor{green}}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+
+\begin{document}
+\begin{widetext}
+\\
+\\
+\\
+
+\begin{wrapfigure}
+\centering
+%\includegraphics[\textwidth]{TS_IISc.png}
+\end{wrapfigure}
+\begin{figure}[h!]
+ \begin{right}
+  \hfill\includegraphics[\textwidth, right]{TS_IISc.png}
+ \end{right}
+\end{figure}
+%\noindent\textbf{1. Which is the metric used to evaluate the performance of Text to Speech Synthesis?}
+\noindent\textbf{1. Atrous convolution used in UNET model is also known as:}
+\\
+\\
+\\
+%A. Robust Acoustic Model.
+A. Up Convolution
+\\
+\\
+B. Transposed Convolution 
+\\
+\\
+C. Dilated Convolution
+\\
+\\
+D. Down Convolution
+\\
+\\
+\\
+\textbf{Answer: C}
+\\
+\\
+\\
+\\
+\textbf{2. What is the loss function while training the SimCLR?}
+\\
+\\
+\\
+\noindent A. Contrastive Loss Function
+\\
+\\
+B. Pixel Wise Cross Entropy Loss 
+\\
+\\
+C. Mean Square Error Loss
+\\
+\\
+D. Binary Cross Entropy
+\\
+\\
+\\
+\textbf{Answer: A}
+\\
+\\
+\\
+\\
+\textbf{3. State which of the following statement is FALSE while using UNET neural network?}
+\\
+\\
+\\
+A. $2 \times 2$ Max pooling layer decreases spatial feature resolution by $2$ in each dimension and $2 \times 2$ upconvolution layer increases the spatial feature resolution by $2$ in each dimension. \\
+\\
+B. $2 \times 2$ Max pooling layer increases spatial feature resolution by $2$ in each dimension and $2 \times 2$ upconvolution layer decreases the spatial feature resolution by $2$ in each dimension.
+\\
+\\
+C. U-Net is a convolutional neural network that is designed for performing semantic segmentation.
+%A. While using UNET for performing Image Segmentation, upsampling of the image is done prior to downsampling.
+%\\
+%\\
+%B. While using UNET for performing Image Segmentation, downsampling of the image is done prior to upsampling.
+%\\
+%\\
+%A. Upsampling of the image with a stride of $\frac{1}{2}$ means increasing the size/resolution of the input image by $2$. 
+%\\
+%\\
+%D. Downsampling of the image with a stride of $\frac{1}{2}$ means increasing the size/resolution of the input image by 2. 
+%\\
+%\\
+%B. Upsampling of the image with a stride of $2$ means increasing the size/resolution of the input image by $2$.
+%\\
+%\\
+%C. Upsampling of the image with a stride of $\frac{1}{2}$ means decreasing the size/resolution of the input image by $2$. 
+%\\
+%\\
+%D. Upsampling of the image with a stride of $2$ means decreasing the size/resolution of the input image by $2$. 
+%\\
+%\\
+%F. Downsampling with a stride of $2$ means increasing the size/resolution of the input image by 2.
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\\
+\\
+%\textbf{3. SimCLR is an example of which of the following machine learning algorithms?}
+%\\
+%\\
+%\\
+%A. Unsupervised Learning
+%\\
+%\\
+%B. Self Supervised Learning 
+%\\
+%\\
+%C. Unsupervised Learning 
+%\\
+%\\
+%D. Reinforcement Learning
+%\\
+%\\
+%\\
+%\textbf{Answer: B}
+%\\
+%\\
+%\\
+%\\
+\textbf{4. What of the following statement(s) is/are TRUE regarding image segmentation?}
+%and what is the type of the neural network used for image segmentation?}
+\\
+\\
+\\
+A. Main idea of image segmentation is to treat all the pixels jointly and get a segmentation map as output.
+%and a fully convolutional neural network with fully connected layers is used for image segmentation.
+%\\
+%\\
+%B. Main idea of image segmentation is to treat all the pixels jointly and get a segmentation map as output and a fully convolutional neural network with no fully connected layers is used for image segmentation.
+\\
+\\
+B. Main idea image segmentation is to treat all the pixels independently and get a segmentation map as output.
+%and a fully convolutional neural network with fully connected layers is used for image segmentation.
+%\\
+%\\
+%D. Main idea image segmentation is to treat all the pixels independently and get a segmentation map as output and a fully convolutional neural network with no fully connected layers is used for image segmentation.
+\\
+\\
+C. Image segmentation is  used to locate objects and boundaries (lines, curves, etc.) in images.
+\\
+\\
+D. A and C
+\\
+\\
+E. B and C
+\\
+\\
+\\
+\textbf{Answer: D}
+\\
+\\
+\\
+\\
+\textbf{5. The mathematical equivalence of skip connection in residual block in the architecture of ResNet model is:}
+\\
+\\
+\\
+A. Summation
+\\
+\\
+B. Convolution
+\\
+\\
+C. Identity function
+\\
+\\
+D. None of the above
+\\
+\\
+\\
+\textbf{Answer: C}
+\\
+\\
+\\
+\\
+\\
+\\
+\end{widetext}
+\end{document}

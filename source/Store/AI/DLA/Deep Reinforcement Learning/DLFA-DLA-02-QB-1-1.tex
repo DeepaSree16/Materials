@@ -1,0 +1,216 @@
+%\tolerance=10000
+%\documentclass[prl,twocoloumn,preprintnumbers,amssymb,pla]{revtex4}
+\documentclass[prl,twocolumn,showpacs,preprintnumbers,superscriptaddress]{revtex4}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{dcolumn}
+%\linespread{1.7}
+\usepackage{bm}
+%\usepackage{eps2pdf}
+\usepackage{graphics}
+\usepackage{pdfpages}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage[demo]{graphicx} % omit 'demo' for real document
+%\usepackage{times}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{subfig}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{float}
+\documentclass{article}
+\usepackage{amsmath,systeme}
+\usepackage{tikz}
+
+\sysalign{r,r}
+
+% \textheight = 8.5 in
+% \topmargin = 0.3 in
+
+%\textwidth = 6.5 in
+% \textheight = 8.5 in
+%\oddsidemargin = 0.0 in
+%\evensidemargin = 0.0 in
+
+%\headheight = 0.0 in
+%\headsep = 0.0 in
+%\parskip = 0.2in
+%\parindent = 0.0in
+
+% \newcommand{\ket}[1]{\left|#1\right\rangle}
+% \newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\ketbra}[2]{| #1 \rangle \langle #2 |}
+\newcommand{\proj}[1]{| #1 \rangle \langle #1 |}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\op}[1]{ \hat{\sigma}_{#1} }
+\def\tred{\textcolor{red}}
+\def\tgre{\textcolor{green}}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+
+\begin{document}
+\begin{widetext}
+\\
+\\
+\\
+
+\begin{wrapfigure}
+\centering
+%\includegraphics[\textwidth]{TS_IISc.png}
+\end{wrapfigure}
+\begin{figure}[h!]
+ \begin{right}
+  \hfill\includegraphics[\textwidth, right]{TS_IISc.png}
+ \end{right}
+\end{figure}
+%\noindent \textbf{1. Match the following TensorflowLite Model Optimization techniques with ther functions.}
+%\\
+%\\
+%\\
+%\begin{figure}[H]
+%\begin{center}
+%    \includegraphics[width=1.25\textwidth,centering]{cloud_model.pdf}
+%\end{center}
+%    %\caption{}
+%\end{figure}
+\noindent\textbf{1. State which of the following statement(s) is true}%The objective of $Q$ Learning is to optimize a value function suited to a given problem/environment.}
+\\
+\\
+\\
+$i.$ $Q$ Learning comes under Value-based learning algorithms in reinforcement learning. 
+\\
+\\
+$ii.$ The $Q$-function (the state-action value function) of a policy $\pi$, $Q^{\pi}(s,a)$ measures the expected return or discounted sum of rewards obtained from state  by taking action  first and following policy  thereafter.
+\\
+\\
+\\
+A. $i.$ only
+\\
+\\
+B. $ii.$ only
+\\
+\\
+C. Both $i.$ and $ii.$
+\\
+\\
+D. Neither $i.$ nor $ii.$
+\\
+\\
+\\
+\textbf{Answer: C}
+\\
+\\
+\\
+\\
+\textbf{2. Given that the state value function of a policy $\pi$ is $V^\pi: X \xrightarrow \mathbb{R}$}
+\\
+\\
+\\
+State whether the following statement is true or false?
+\\
+\\
+\\
+Value of a state $x$ under policy $\pi$ is expected returns if the agent starts from state $x$ and chooses actions according to policy $\pi$, which can be mathematically described as $V^{\pi}(x) = \mathbb{E_{\pi}}[R_{t}|x_{t} = x]$
+\\
+\\
+\\
+A. True
+\\
+\\
+B. False
+\\
+\\
+\\
+\textbf{Answer: A}
+\\
+\\
+\\
+\\
+\textbf{3. The Bellman equation shows up everywhere in the Reinforcement Learning literature, being one of the central elements of many Reinforcement Learning algorithms. In summary, we can say that the Bellman equation decomposes the value function into:} 
+%Which of the following statement(s) is/are TRUE regarding Q Learning:}
+\\
+\\
+\\
+A. The immediate reward
+\\
+\\
+B. The discounted future values
+\\
+\\
+C. Both A and B
+\\
+\\
+D. Neither A nor B
+\\
+\\
+\\
+\textbf{Answer: C}
+\\
+\\
+\\
+\\
+\textbf{4. Deep Q-Network uses Experience replay, which allows the agent to learn from earlier memories can speed up learning and break undesirable temporal correlations.}
+\\
+\\
+\\ $\epsilon$
+A. True
+\\
+\\
+B. False
+\\
+\\
+\\
+\\
+\textbf{Answer: A}
+\\
+\\
+\\
+\\
+\textbf{5. Which of the following statement about a Deep Q-Network $DQN$ is not true?}
+\\
+\\
+\\
+A. Training a $DQN$ involves estimating $Q$-values by updating the weights of the neural network.
+\\
+\\
+B. A $DQN$ combines $Q$-learning and deep neural networks.
+\\
+\\
+C. $Q$-learning is a value based reinforcement learning algorithm.
+\\
+\\
+D. $Q$-learning is a policy based reinforcement learning algorithm.
+\\
+\\
+\\
+\textbf{Answer: D}
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\end{widetext}
+\end{document} 

@@ -1,0 +1,282 @@
+%\tolerance=10000
+%\documentclass[prl,twocoloumn,preprintnumbers,amssymb,pla]{revtex4}
+\documentclass[prl,twocolumn,showpacs,preprintnumbers,superscriptaddress]{revtex4}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{dcolumn}
+%\linespread{1.7}
+\usepackage{bm}
+%\usepackage{eps2pdf}
+\usepackage{graphics}
+\usepackage{pdfpages}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage[demo]{graphicx} % omit 'demo' for real document
+%\usepackage{times}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{subfig}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{float}
+\documentclass{article}
+\usepackage{amsmath,systeme}
+\usepackage{tikz}
+
+\sysalign{r,r}
+
+% \textheight = 8.5 in
+% \topmargin = 0.3 in
+
+%\textwidth = 6.5 in
+% \textheight = 8.5 in
+%\oddsidemargin = 0.0 in
+%\evensidemargin = 0.0 in
+
+%\headheight = 0.0 in
+%\headsep = 0.0 in
+%\parskip = 0.2in
+%\parindent = 0.0in
+
+% \newcommand{\ket}[1]{\left|#1\right\rangle}
+% \newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\ketbra}[2]{| #1 \rangle \langle #2 |}
+\newcommand{\proj}[1]{| #1 \rangle \langle #1 |}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\op}[1]{ \hat{\sigma}_{#1} }
+\def\tred{\textcolor{red}}
+\def\tgre{\textcolor{green}}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+
+\begin{document}
+\begin{widetext}
+\\
+\\
+\\
+
+\begin{wrapfigure}
+\centering
+%\includegraphics[\textwidth]{TS_IISc.png}
+\end{wrapfigure}
+\begin{figure}[h!]
+ \begin{right}
+  \hfill\includegraphics[\textwidth, right]{TS_IISc.png}
+ \end{right}
+\end{figure}
+\noindent\textbf{1. The CAP theorem states that for a distributed data system, out of the three properties of Consistency, Availability and network Partition tolerance:}
+\\
+\\
+\\
+A. Some systems can provide all three of the properties simultaneously.
+\\
+\\
+B. Consistency is provided by all systems, along with either Availability or Partition tolerance.
+\\
+\\
+C. Systems can provide no more than two of the three properties.
+\\
+\\
+D. All of the above.
+\\
+\\
+\\
+\textbf{Answer: C}
+\\
+\\
+\\
+\\
+%\textbf{2. Identify the correct choices for the given scenarios:}
+%\\
+%\
+%\\
+%\\
+%S1: ACID consistency cannot be maintained across partitions -
+%partition recovery will need to restore ACID consistency and maintaining invariants during partitions might be impossible, thus the need for careful thought about which operations to disallow and how to restore invariants during 
+%recovery. 
+%\\
+%\\
+%S2: When the focus is availability, both sides of a partition should 
+%still use atomic operations
+%\\
+%\\
+%S3: In general, running ACID transactions on each side of a partition 
+%makes recovery easier and enables a framework for compensating 
+%transactions that can be used for recovery from a partition.
+%\\
+%\\
+%S4. Weaker definitions of correctness are viable across partitions via 
+%compensation during partition recovery.
+%\\
+%\\
+%\noindent A. S1: Durability, S2: Isolation, S3: Atomicity, S4: Consistency
+%\\%
+%\\
+%B. S1: Durability, S2: Isolation, S3: Atomicity, S4: Consistency 
+%\\
+%\\
+%C. S1: Consistency, S2: Atomicity, S3: Durability, S4: Isolation
+%\\
+%\\
+%D. S1: Durability, S2: Isolation, S3: Atomicity, S4: Consistency
+%\\
+%\\
+%\\
+%\textbf{Answer: C}
+\textbf{Study the given below statements and answer the second question.}
+\\
+\\
+\\
+$i$. Single-site databases offer ACID with consistency and partition tolerance, but not availability
+\\
+\\
+$ii$. The consistency in ACID is a stronger form of consistency than in CAP
+\\
+\\
+$iii$. BASE tries to keep data systems inconsistent
+\\
+\\
+$iv$. BASE prioritizes Availablity and Partition tolerance over consistency
+\\
+\\
+\\
+\textbf{2. Identify the correct choices for ACID and BASE:}
+\\
+\\
+\\
+A. $i$ and $iii$
+\\
+\\
+B. $ii$ and $iv$
+\\
+\\
+C. $i$ and $iii$
+\\
+\\
+D. $i$ and $iv$
+\\
+\\
+\\
+\textbf{Answer: D}
+\\
+\\
+\\
+\\
+\textbf{3. Which protocol does Cassandra use to discover location and state information?}
+\\
+\\
+\\
+A. Gossip protocol
+\\
+\\
+B. Key-value protocol
+\\
+\\
+C. Redundancy protocol
+\\
+\\
+D. Publish-subscribe protocol
+\\
+\\
+\\
+\textbf{Answer: A}
+\\
+\\
+\\
+\\
+\textbf{4. Amazon's Dynamo is an example of a columnar store.}
+\\
+\\
+\\
+A. True
+\\
+\\
+B. False
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\\
+\textbf{Solution:} It is an example of Key-Value store.
+\\
+\\
+\\
+\\
+\newpage
+\noindent \textbf{5. Match the Cloud Models with their classification as given below:}
+\\
+\\
+%\begin{figure}[H]
+%\begin{center}
+%    \includegraphics[width=1.25\textwidth,centering]{cloud_model.pdf}
+%\end{center}
+%    %\caption{}
+%\end{figure}
+\textbf{Cloud Model}
+\\
+\\
+1. Infrastructure as a Service
+\\
+\\
+2. Platform as a Service
+\\
+\\
+3. Software as a Service
+\\
+\\
+
+\noindent \textbf{Service}
+\\
+\\
+1. Allows users to design and deploy applications, controls application design through platform APIs, but not underlying OS or infrastructure.
+\\
+\\
+2. Configure and use an existing application that is provided, but not underlying its design or the infrastructure.
+\\
+\\
+3. Offers fundamental computing capabilities like processing, storage and networking, controls guest OS and above, but not underlying host OS and hardware.
+\\
+\\
+\\
+\noindent A. 1 $\rightarrow$ 1, 2 $\rightarrow$ 3, 3 $\rightarrow$ 2
+\\
+\\
+B. 1 $\rightarrow$ 3, 2 $\rightarrow$ 2, 3 $\rightarrow$ 1
+\\
+\\
+C. 1 $\rightarrow$ 3, 2 $\rightarrow$ 1, 3 $\rightarrow$ 2
+\\
+\\
+D. 1 $\rightarrow$ 2, 2 $\rightarrow$ 3, 3 $\rightarrow$ 1
+\\
+\\
+\\
+\textbf{Answer: C}
+\\
+\\
+\\
+\\
+\\
+\\
+\end{widetext}
+\end{document}

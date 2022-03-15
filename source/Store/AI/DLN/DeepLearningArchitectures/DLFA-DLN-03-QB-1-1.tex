@@ -1,0 +1,288 @@
+%\tolerance=10000
+%\documentclass[prl,twocoloumn,preprintnumbers,amssymb,pla]{revtex4}
+\documentclass[prl,twocolumn,showpacs,preprintnumbers,superscriptaddress]{revtex4}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{dcolumn}
+%\linespread{1.7}
+\usepackage{bm}
+%\usepackage{eps2pdf}
+\usepackage{graphics}
+\usepackage{pdfpages}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage[demo]{graphicx} % omit 'demo' for real document
+%\usepackage{times}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{subfig}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{float}
+\documentclass{article}
+\usepackage{amsmath,systeme}
+\usepackage{tikz}
+
+\sysalign{r,r}
+
+% \textheight = 8.5 in
+% \topmargin = 0.3 in
+
+%\textwidth = 6.5 in
+% \textheight = 8.5 in
+%\oddsidemargin = 0.0 in
+%\evensidemargin = 0.0 in
+
+%\headheight = 0.0 in
+%\headsep = 0.0 in
+%\parskip = 0.2in
+%\parindent = 0.0in
+
+% \newcommand{\ket}[1]{\left|#1\right\rangle}
+% \newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\ketbra}[2]{| #1 \rangle \langle #2 |}
+\newcommand{\proj}[1]{| #1 \rangle \langle #1 |}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\op}[1]{ \hat{\sigma}_{#1} }
+\def\tred{\textcolor{red}}
+\def\tgre{\textcolor{green}}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+
+\begin{document}
+\begin{widetext}
+\\
+\\
+\\
+
+\begin{wrapfigure}
+\centering
+%\includegraphics[\textwidth]{TS_IISc.png}
+\end{wrapfigure}
+\begin{figure}[h!]
+ \begin{right}
+  \hfill\includegraphics[\textwidth, right]{TS_IISc.png}
+ \end{right}
+\end{figure}
+\noindent\textbf{1. Suppose we give a 7 $\times$ 7 size image as an input to a convolutional layer in a convolutional neural network. If we use a stride of 1, and the size of filter to be equal to 3 $\times$ 3, what should be the zero padding (P) to be used in the convolutional layer for the output size to also be equal to 7 $\times$ 7?}
+\\
+\\
+\\
+A. P = 0
+\\
+\\
+B. P = 1
+\\
+\\
+C. P = 2
+\\
+\\
+D. None of the above.
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\\
+\\
+\textbf{2. Consider the figure below:}
+\begin{figure}[H]
+\begin{center}
+    \includegraphics[width=0.85\textwidth,centering]{conv2D.pdf}
+\end{center}
+    %\caption{}
+\end{figure}
+\noindent Input image is of shape ($i_{H}$, $i_{W}$, $i_{C}$) = (10, 10, 1). There are five 4 $\times$ 4 $\times$ 1 convolutional filters (generally the third dimension in the filters is not mentioned as it is assumed that it is equal to the number of channels in the input for 2D convolution)
+with padding = 0 and a stride of (2, 2) is used.
+What is the output shape ($o_{H}$, $o_{W}$, $o_{C}$) after performing the convolution step in the above figure? 
+%Write your answer in the following format: ?
+\\
+\\
+\\
+A. $o_{H}$, $o_{W}$, $o_{C}$ = (4, 4, 5)
+\\
+\\
+B. $o_{H}$, $o_{W}$, $o_{C}$ = (5, 4, 4)
+\\
+\\
+C. $o_{H}$, $o_{W}$, $o_{C}$ = (5, 5, 5)
+\\
+\\
+D. $o_{H}$, $o_{W}$, $o_{C}$ = (5, 5, 4)
+\\
+\\
+\\
+\textbf{Answer: A}
+\\
+\\
+\\
+\\
+\textbf{3. Which one the following optimization algorithms keeps an exponentially decaying average of past gradients, similar to momentum?}
+\\
+\\
+\\
+A. RMSProp
+\\
+\\
+B. SGD or Stochastic Gradient Descent
+\\
+\\
+C. Adagrad
+\\
+\\
+D. ADAM
+%\textbf{3. Which of the following is true for most CNN architectures?}
+%\\
+%\\
+%\\
+%A. Size of input (height and width) decreases, while depth increases.
+%\\
+%\\
+%B. Multiple convolutional layers are followed by the pooling layers.
+%\\
+%\\
+%C. Back propagation can be applied when using pooling layers.
+%\\
+%\\
+%D. Fully connected layers in the first few layer.
+%\\
+%\\
+%E. Only A and B
+%\\
+\\
+%F. Only A, B and C
+%\\
+%\\
+%G. Only B, C and D
+\\
+\\
+\\
+\textbf{Answer: D}
+\\
+\\
+\\
+\\
+%\textbf{4. Which of the following statement(s) is/are true for the Stochastic Gradient Descent algorithm?}
+%\\
+%\\
+%\\
+%1. It computes the gradient using the entire dataset.
+%\\
+%\\
+%2. It takes time to converge because the volume of data is huge, and weights update slowly.
+%\\
+%\\
+%3. It computes the gradient using a single sample.
+%\\
+%\\
+%4. It converges much faster than the batch gradient because it updates weight more frequently.
+%\\
+%\\
+%\\
+%A) Only 1 and 2
+%\\
+%\\
+%B) Only 1 and 4
+%\\
+%\\
+%C) Only 3 and 4
+%\\
+%\\
+%D) Only 2 and 3
+\textbf{4. Which of the following is true for the Stochastic Gradient Descent algorithm?}
+\\
+\\
+\\
+A. It accumulates gradients from the beginning of the training
+\\
+\\
+B. The learning rate decays by a constant value after every update
+\\
+\\
+C. Once chosen, the learning rate remains constant for the entire training
+\\
+\\
+D. None of the above
+\\
+\\
+\\
+\textbf{Answer: C}
+\\
+\\
+\\
+\\
+\textbf{5. What is the output of the following convolution operation? Assume there is no padding and stride = 1}
+\\
+\\
+\[ 
+\begin{bmatrix}    1 & 2 & 3 \\     4 & 5 & 6 \\ 7 & 8 & 9  \\ \end{bmatrix} \ast  
+\begin{bmatrix}    1 & 2 \\ 3 & 4  \\ \end{bmatrix} \]
+\\
+\\
+\\
+A. \begin{bmatrix}    30 & 47 \\     67 & 77  \\ \end{bmatrix}
+\\
+\\
+\\
+B. \begin{bmatrix}    37 & 47 \\     67 & 77  \\ \end{bmatrix}
+\\
+\\
+\\
+C. \begin{bmatrix}    37 & 40 \\     67 & 77  \\ \end{bmatrix}
+\\
+\\
+\\
+D. \begin{bmatrix}    37 & 47 \\     67 & 70  \\ \end{bmatrix}
+\\
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\\
+\\
+%Given the following input image $A$ in the form of a matrix and a kernel $B$. What is the output $C$ of the following convolution operation?
+%$C = A \ast B$}
+%\begin{tikzpicture}
+%\draw[step=1cm,black,very thin] %(0,0) grid (5,5);
+%\node {a}; & \node {X}; & \node %{g}; \\
+%\node {a}; & \node {X}; & \node %{g}; \\
+%;
+%\end{tikzpicture}
+
+%\begin{tikzpicture}
+%\tikzstyle{every node}=[draw]
+%\pgfsetmatrixcolumnsep{1mm}
+%\pgfmatrix{rectangle}{center}{mymatrix}
+%{\pgfusepath{}}{\pgfpointorigin}{\let\&=\pgfmatrixnextcell}
+%{
+%\node {1}; \&[-1mm] \node{2}; %\&[-1mm] \node {3}; \\
+%\node {4}; \& \node{5}; \& \node %{6}; \\
+%\node {7}; \& \node{8}; \& \node %{9}; \\
+%} \&[5mm] \node{2}
+%
+%\end{tikzpicture}
+
+
+\end{widetext}
+\end{document}

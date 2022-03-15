@@ -1,0 +1,244 @@
+%\tolerance=10000
+%\documentclass[prl,twocoloumn,preprintnumbers,amssymb,pla]{revtex4}
+\documentclass[prl,twocolumn,showpacs,preprintnumbers,superscriptaddress]{revtex4}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{dcolumn}
+%\linespread{1.7}
+\usepackage{bm}
+%\usepackage{eps2pdf}
+\usepackage{graphics}
+\usepackage{pdfpages}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage[demo]{graphicx} % omit 'demo' for real document
+%\usepackage{times}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{subfig}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{float}
+\documentclass{article}
+\usepackage{amsmath,systeme}
+\usepackage{tikz}
+\usepackage{amssymb}
+
+\sysalign{r,r}
+
+% \textheight = 8.5 in
+% \topmargin = 0.3 in
+
+%\textwidth = 6.5 in
+% \textheight = 8.5 in
+%\oddsidemargin = 0.0 in
+%\evensidemargin = 0.0 in
+
+%\headheight = 0.0 in
+%\headsep = 0.0 in
+%\parskip = 0.2in
+%\parindent = 0.0in
+
+% \newcommand{\ket}[1]{\left|#1\right\rangle}
+% \newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\ketbra}[2]{| #1 \rangle \langle #2 |}
+\newcommand{\proj}[1]{| #1 \rangle \langle #1 |}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\op}[1]{ \hat{\sigma}_{#1} }
+\def\tred{\textcolor{red}}
+\def\tgre{\textcolor{green}}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+
+\begin{document}
+\begin{widetext}
+\\
+\\
+\\
+
+\begin{wrapfigure}
+\centering
+%\includegraphics[\textwidth]{TS_IISc.png}
+\end{wrapfigure}
+\begin{figure}[h!]
+ \begin{right}
+  \hfill\includegraphics[\textwidth, right]{TS_IISc.png}
+ \end{right}
+\end{figure}
+%\noindent\textbf{1. Which is the metric used to evaluate the performance of Text to Speech Synthesis?}
+\noindent\textbf{Study the given below statements and answer the first question.}
+%\textbf{5. Why is an RNN (Recurrent Neural Network) used for translation of English to French?}
+\\
+\\
+\\
+$i.$ There is no cell state in an RNN. The state $h_{t}$ is directly
+computed from the previous state $h_{t-1}$ and the current input
+$x_{t}$ each linearly transformed via the respective weight matrices
+$U$ and $W$.
+\\
+\\
+$ii.$ There is no modulation or control in an RNN through gates, but in an LSTM, we have an input gate, an output gate and a forget gate.
+\\
+\\
+$iii.$ There is no modulation or control in an LSTM through gates, but in an RNN, we have an input gate, an output gate and a forget gate.
+\\
+\\
+$iv.$ There is no hidden state in an LSTM. The state $h_{t}$ is directly
+computed from the previous state $h_{t-1}$ and the current input
+$x_{t}$ each linearly transformed via the respective weight matrices
+$U$ and $W$.
+\\
+\\
+$v.$ The GRU is like a long short-term memory with a forget gate, but has fewer parameters than LSTM, as it lacks an output gate.
+\\
+\\
+\textbf{1. Which of the statement(s) given above is/are true?}
+\\
+\\
+A. Only $i.$ and $ii.$
+\\
+\\
+B. Only $iii.$ and $iv.$
+\\
+\\
+C. Only $i.$, $ii.$, and $v$. 
+\\
+\\
+D. Only $ii.$, $iv.$, and $v$.
+\\
+\\
+\\
+\textbf{Answer: C}
+\\
+%\\Study the given below statements with respect to the GloVe model for word representation and answer the second question.
+\\
+\\
+\textbf{2. CNNs for text are not useful to handle key-phrases and they typically focus on last few words in a sequence.}
+\\
+\\
+\\
+A. True
+\\
+%$ii.$ GloVe is an unsupervised learning algorithm for obtaining text representations for words.
+\\
+B. False
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\\
+\\
+\noindent\textbf{3. Consider the sentence: "There was heavy rain." Calculate the probability of the given sentence using 4-gram model?}
+\\
+\\
+\\
+A. $P('There')P('was'|'There')P('heavy'|'There\  was')P('rain'|'There\  was\  heavy')$
+\\
+\\
+\\
+B. $P('There')P('was')P('heavy')P('rain')$
+\\
+\\
+\\
+C. $P('There')P('was'|'There')P('heavy'|was')P('rain'|heavy')$
+\\
+\\
+\\
+D. $P('There')P('There'|'was')P('There\  was'|'heavy')P('There\  was\  heavy'|'rain')$  
+\\
+\\
+\\
+\\\textbf{Answer: A}
+\\
+\\
+\\
+\\
+\textbf{Study the given below statements and answer the fourth question.}
+\\
+\\
+\\
+$i.$ Perplexity is a metric for evaluating language models.
+\\
+\\
+$ii.$ The perplexity of a language model is the multiplicative inverse of the probability assigned to the test set by the language model, normalized by the number of words in the test set.
+\\
+\\
+$iii.$ The higher the perplexity, the better is the performance of the model.
+\\
+\\
+$iv.$ The lower the perplexity, the better is the performance of the model.
+\\
+\\
+\\
+\\
+\textbf{4. Which of the above statement(s) about perplexity of a sentence is true?}
+\\
+\\
+\\
+A. $iii.$ only 
+\\
+\\
+B. $iv.$ only
+\\
+\\
+C. $i.$, $ii.$ and $iii.$ only
+\\
+\\
+D. $i.$, $ii.$ and $iv.$ only
+\\
+\\
+\\
+\textbf{Answer: D}
+\\
+\\
+\\
+\\
+\textbf{5. Consider the task of recognizing the digits
+in English $(zero, one, two, \dots, nine)$, given that (both in some training set and in some test set) each of the 10 digits occurs with equal probability $P = \frac{1}{10}$. The perplexity of this mini-language is considering a unigram model is:}
+\\
+\\
+\\
+A. 0.1
+\\
+\\
+\\
+B. 10 
+\\
+\\
+\\
+C. 5 
+\\
+\\
+\\
+D. 3.33
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\\
+\\
+\\
+\end{widetext}
+\end{document}

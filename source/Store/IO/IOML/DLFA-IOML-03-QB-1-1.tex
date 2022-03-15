@@ -1,0 +1,236 @@
+%\tolerance=10000
+%\documentclass[prl,twocoloumn,preprintnumbers,amssymb,pla]{revtex4}
+\documentclass[prl,twocolumn,showpacs,preprintnumbers,superscriptaddress]{revtex4}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{dcolumn}
+%\linespread{1.7}
+\usepackage{bm}
+%\usepackage{eps2pdf}
+\usepackage{graphics}
+\usepackage{pdfpages}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage[demo]{graphicx} % omit 'demo' for real document
+%\usepackage{times}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{subfig}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{float}
+\documentclass{article}
+\usepackage{amsmath,systeme}
+\usepackage{tikz}
+
+\sysalign{r,r}
+
+% \textheight = 8.5 in
+% \topmargin = 0.3 in
+
+%\textwidth = 6.5 in
+% \textheight = 8.5 in
+%\oddsidemargin = 0.0 in
+%\evensidemargin = 0.0 in
+
+%\headheight = 0.0 in
+%\headsep = 0.0 in
+%\parskip = 0.2in
+%\parindent = 0.0in
+
+% \newcommand{\ket}[1]{\left|#1\right\rangle}
+% \newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\ketbra}[2]{| #1 \rangle \langle #2 |}
+\newcommand{\proj}[1]{| #1 \rangle \langle #1 |}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\op}[1]{ \hat{\sigma}_{#1} }
+\def\tred{\textcolor{red}}
+\def\tgre{\textcolor{green}}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+
+\begin{document}
+\begin{widetext}
+\\
+\\
+\\
+
+\begin{wrapfigure}
+\centering
+%\includegraphics[\textwidth]{TS_IISc.png}
+\end{wrapfigure}
+\begin{figure}[h!]
+ \begin{right}
+  \hfill\includegraphics[\textwidth, right]{TS_IISc.png}
+ \end{right}
+\end{figure}
+%\noindent \textbf{1. Match the following TensorflowLite Model Optimization techniques with ther functions.}
+%\\
+%\\
+%\\
+%\begin{figure}[H]
+%\begin{center}
+%    \includegraphics[width=1.25\textwidth,centering]{cloud_model.pdf}
+%\end{center}
+%    %\caption{}
+%\end{figure}
+\textbf{1. TensorFlow Lite is a set of tools that enables on-device machine learning by helping developers run their models on:}
+\\
+\\
+A. Mobile systems
+\\
+\\
+B. Embedded systems
+\\
+\\
+C. IoT devices
+\\
+\\
+D. All of the above
+\\
+\\
+\\
+\textbf{Answer: D}
+\\
+\\
+\\
+\\
+\textbf{Study the given below statements and answer the second question.}
+\\
+\\
+\\
+$i$. Microcontrollers are typically small, high-powered computing devices that are embedded within hardware that requires basic computation.
+\\
+\\
+$ii$. Microcontrollers are typically small, low-powered computing devices that are embedded within hardware that requires basic computation.
+\\
+\\
+$iii$. Microcontrollers are typically large, low-powered computing devices that are embedded within hardware that requires basic computation.
+\\
+\\
+$iv$. Microcontrollers are typically large, low-powered computing devices that are not embedded within hardware that requires basic computation.
+\\
+\\
+$v.$ Microcontrollers provide a low-cost compute platform to deploy intelligent IoT applications using machine learning at scale, but have
+extremely limited on-chip memory and compute capability.
+\\
+\\
+\\
+\textbf{2. Which of the statements given above is true?}
+\\
+\\
+\\
+A. $i$ and $v$
+\\
+\\
+B. $ii$ and $v$
+\\
+\\
+C. $iii$ and $v$
+\\
+\\
+D. $iv$ and $v$
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\\
+\\
+\textbf{3. By bringing machine learning to tiny microcontrollers, we can boost the intelligence of billions of devices that we use in our lives, including household appliances and Internet of Things devices, without relying on expensive hardware or reliable internet connections, which is often subject to bandwidth and power constraints and results in high latency.}
+\\
+\\
+\\
+A. True
+\\
+\\
+B. False
+\\
+\\
+\\
+\textbf{Answer: A}
+\\
+\\
+\\
+\\
+\textbf{4. An Inertial Measurement Unit (IMU) is a device that can measure and report specific gravity and angular rate of an object to which it is attached. An IMU typically consists of:}
+\\
+\\
+\\
+A. Gyroscopes
+\\
+\\
+B. Accelerometers
+\\
+\\
+C. Magnetometers 
+\\
+\\
+D. All of the above
+\\
+\\
+\\
+\textbf{Answer: D}
+\\
+\\
+\\
+\\
+\textbf{Study the given below statements and answer the fifth question.}
+\\
+\\
+\\
+$i$. Depth-wise separable convolutional neural networks are computationally cheaper because of fewer computations which makes them suitable for IoT Devices/Mobile Systems/Simple Audio Recognition Models.
+\\
+\\
+$ii$. In depth-wise operation, convolution is applied to a single channel at a time unlike standard CNNs in which it is done for all the $M$ channels.
+\\
+\\
+\\
+\textbf{5. Which of the statements given above is true?}
+\\
+\\
+\\
+A. $i$ only
+\\
+\\
+B. $ii$ only
+\\
+\\
+C. $i$ and $ii$
+\\
+\\
+D. Neither $i$ nor $ii$
+\\
+\\
+\\
+\textbf{Answer: C}
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\end{widetext}
+\end{document} 

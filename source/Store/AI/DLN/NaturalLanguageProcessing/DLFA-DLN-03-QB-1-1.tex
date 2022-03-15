@@ -1,0 +1,245 @@
+%\tolerance=10000
+%\documentclass[prl,twocoloumn,preprintnumbers,amssymb,pla]{revtex4}
+\documentclass[prl,twocolumn,showpacs,preprintnumbers,superscriptaddress]{revtex4}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{dcolumn}
+%\linespread{1.7}
+\usepackage{bm}
+%\usepackage{eps2pdf}
+\usepackage{graphics}
+\usepackage{pdfpages}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage[demo]{graphicx} % omit 'demo' for real document
+%\usepackage{times}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{subfig}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{float}
+\documentclass{article}
+\usepackage{amsmath,systeme}
+\usepackage{tikz}
+
+\sysalign{r,r}
+
+% \textheight = 8.5 in
+% \topmargin = 0.3 in
+
+%\textwidth = 6.5 in
+% \textheight = 8.5 in
+%\oddsidemargin = 0.0 in
+%\evensidemargin = 0.0 in
+
+%\headheight = 0.0 in
+%\headsep = 0.0 in
+%\parskip = 0.2in
+%\parindent = 0.0in
+
+% \newcommand{\ket}[1]{\left|#1\right\rangle}
+% \newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\ketbra}[2]{| #1 \rangle \langle #2 |}
+\newcommand{\proj}[1]{| #1 \rangle \langle #1 |}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\op}[1]{ \hat{\sigma}_{#1} }
+\def\tred{\textcolor{red}}
+\def\tgre{\textcolor{green}}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+
+\begin{document}
+\begin{widetext}
+\\
+\\
+\\
+
+\begin{wrapfigure}
+\centering
+%\includegraphics[\textwidth]{TS_IISc.png}
+\end{wrapfigure}
+\begin{figure}[h!]
+ \begin{right}
+  \hfill\includegraphics[\textwidth, right]{TS_IISc.png}
+ \end{right}
+\end{figure}
+\noindent\textbf{1. Which of the following is the task of predicting what word comes next in a sentence?}
+\\
+\\
+\\
+A. Neural Machine Translation.
+\\
+\\
+B. Language Modeling.
+\\
+\\
+C. Both A and B
+\\
+\\
+D. None of the above
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\\
+\\
+\textbf{Study the given below statements on self-attention and answer the second question.}
+\\
+\\
+\\
+$i.$ Self-attention ignores sequential nature of input.
+\\
+\\
+$ii.$ Improves neural machine translation performance.
+\\
+\\
+$iii.$ It can be parallelized.
+\\
+\\
+%$iv.$ It can be used in other architectures for other tasks.
+\\
+\textbf{2. Which is a problem while using self-attention mechanism?}
+\\
+\\
+\\
+\noindent A. $iii.$ only
+\\
+\\
+B. $i.$ only 
+\\
+\\
+C. $i.$, $ii.$ only
+\\
+\\
+D. $ii.$ and $iii.$ only
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\\
+\\
+\textbf{3. Given the sentence - "A branch of ICICI bank is present on the river bank of Godavari". Will the word2vec embedding of the word 'bank' be same for both the instances in the given sentence?} 
+
+%"Cinnamon comes from the bark of the Cinnamon tree", should the embeddings of the word "Cinnamon" be the same?}
+\\
+\\
+\\
+A. Yes
+\\
+\\
+B. No
+\\
+\\
+\\
+\\
+\textbf{Answer: A}
+\\
+\\
+\\
+\\
+%\textbf{Study the following statements regarding positional encoding and answer the fourth question.}
+%\\
+%\\
+%\\
+%$i.$ Absolute position of the word in the sentence does not matter and it is not useful for longer sequences.
+%\\
+%\\
+%$ii.$ Absolute position does matter and it is not useful for longer %sequences.
+%\\
+%\\
+%$iii.$ Absolute position does not matter and it is useful for longer sequences.
+%\\
+%\\
+%$iv.$ Absolute position does matter and it is not useful for longer %sequences.
+%\\
+%\\
+%\\
+%\textbf{4. Which of the following statement is true regarding positional encoding}
+%\\
+%\\
+%\\
+%A. $iv.$
+%\\
+%\\
+%B. $i.$
+%\\
+%\\
+%C. $ii.$
+%\\
+%\\
+%D. $iii.$
+%\\
+%\\
+%\\
+%\textbf{Answer: D}
+\textbf{4. Suppose that the input representation matrix $X \in \mathbb{R}^{n \times d}$  contains the  $d$-dimensional embeddings for  $n$  tokens of a sequence. The positional encoding outputs  $X + P$  using a positional embedding matrix  $P \in \mathbb{R}^{n \times d}$  of the same shape, whose element on the  $i^{th}$  row and the  $(2j)^{th}$  or the  $(2j+1)^{th}$  column is:}
+\\
+\\
+\\
+A. $p_{i, 2j} = sin(\frac{i}{10000^{2j/d}})$, $p_{i, 2{j+1}} = cos(\frac{i}{10000^{2j/d}})$
+\\
+\\
+B. $p_{i, 2j} = cos(\frac{i}{10000^{2j/d}})$, $p_{i, 2{j+1}} = sin(\frac{i}{10000^{2j/d}})$
+\\
+\\
+C. $p_{i, 2j} = sin(\frac{i}{10000^{2j/d}})$, $p_{i, 2{j+1}} = sin(\frac{i}{10000^{2j/d}})$
+\\
+\\
+D. $p_{i, 2j} = cos(\frac{i}{10000^{2j/d}})$, $p_{i, 2{j+1}} = cos(\frac{i}{10000^{2j/d}})$
+\\
+\\
+\\
+\textbf{Answer: A}
+\\
+\\
+\\
+\\
+\textbf{5. Given the sentence "this is good, this is bad", what is the vocabulary size?}
+\\
+\\
+\\
+A. 5
+\\
+\\
+B. 4
+\\
+\\
+C. 6
+\\
+\\
+D. 3
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\\
+\\
+\\
+\\
+\end{widetext}
+\end{document}

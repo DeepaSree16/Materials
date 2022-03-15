@@ -1,0 +1,235 @@
+%\tolerance=10000
+%\documentclass[prl,twocoloumn,preprintnumbers,amssymb,pla]{revtex4}
+\documentclass[prl,twocolumn,showpacs,preprintnumbers,superscriptaddress]{revtex4}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{dcolumn}
+%\linespread{1.7}
+\usepackage{bm}
+%\usepackage{eps2pdf}
+\usepackage{graphics}
+\usepackage{pdfpages}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage[demo]{graphicx} % omit 'demo' for real document
+%\usepackage{times}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{subfig}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{float}
+\documentclass{article}
+\usepackage{amsmath,systeme}
+\usepackage{tikz}
+
+\sysalign{r,r}
+
+% \textheight = 8.5 in
+% \topmargin = 0.3 in
+
+%\textwidth = 6.5 in
+% \textheight = 8.5 in
+%\oddsidemargin = 0.0 in
+%\evensidemargin = 0.0 in
+
+%\headheight = 0.0 in
+%\headsep = 0.0 in
+%\parskip = 0.2in
+%\parindent = 0.0in
+
+% \newcommand{\ket}[1]{\left|#1\right\rangle}
+% \newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\ketbra}[2]{| #1 \rangle \langle #2 |}
+\newcommand{\proj}[1]{| #1 \rangle \langle #1 |}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\op}[1]{ \hat{\sigma}_{#1} }
+\def\tred{\textcolor{red}}
+\def\tgre{\textcolor{green}}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+
+\begin{document}
+\begin{widetext}
+\\
+\\
+\\
+
+\begin{wrapfigure}
+\centering
+%\includegraphics[\textwidth]{TS_IISc.png}
+\end{wrapfigure}
+\begin{figure}[h!]
+ \begin{right}
+  \hfill\includegraphics[\textwidth, right]{TS_IISc.png}
+ \end{right}
+\end{figure}
+%\noindent\textbf{1. Which is the metric used to evaluate the performance of Text to Speech Synthesis?}
+\noindent\textbf{1. What is the size of the output image after an input image of size $327 \times 327$ is passed through a convolution layer of 48 filters of size $21 \times 21$, with no zero padding and stride of 3, followed by another convolution layer of 64 filters of size $3 \times 3$ with zero padding 1 and stride of 1?}. 
+%What will be the volume of the final image?}
+\\
+\\
+\\
+A. $103 \times 103 \times 48$
+\\
+\\
+B. $103 \times 103 \times 64$ 
+\\
+\\
+C. $327 \times 327 \times 64$
+\\
+\\
+D. $327 \times 327 \times 48$
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\\
+\\
+\textbf{2. What is the output of the following matrix after applying average pooling operation, $2 \times 2$, and stride = 2?}
+\\
+\\
+\[ 
+\begin{bmatrix}    5 & 7 & 9 & 8 \\     3 & 1 & 2 & 3\\ 4 & 9 & 5 & 7 \\ 8 & 3 & 8 & 6 \\ \end{bmatrix}
+%\begin{bmatrix}    1 & 2 & 3 \\     4 & 5 & 6 \\ 7 & 8 & 9  \\ \end{bmatrix} \ast  
+%\begin{bmatrix}    1 & 2 \\ 3 & 4  \\ \end{bmatrix} 
+\]
+\\
+\\
+\\
+A. \begin{bmatrix}    4 & 6 \\  5 & 8  \\ \end{bmatrix}
+\\
+\\
+\\
+B. \begin{bmatrix}    4.5 & 6 \\  3 & 7.5  \\ \end{bmatrix}
+\\
+\\
+\\
+C. \begin{bmatrix}    4 & 5.5 \\  6 & 6.5  \\ \end{bmatrix}
+\\
+\\
+\\
+D. \begin{bmatrix}    5.5 & 7 \\  2 & 8  \\ \end{bmatrix}
+\\
+\\
+\\
+\\
+\textbf{Answer: C}
+\\
+\\
+\\
+\\
+\textbf{3. Consider a layer of a convolutional neural network with the following weight matrix and bias vector:
+\\
+\[ 
+W = \begin{bmatrix}    \phantom{-} 0.4 & \phantom{-} 0.1 & \phantom{-} 0.1 \\     -0.5 & \phantom{-} 0.9 & \phantom{-} 0.4 \\ -0.8 & \phantom{-} 0.5 & \phantom{-} 0.1 \\ -0.6 & \phantom{-} 0.8 & -0.7  \\ \end{bmatrix} \ b = \begin{bmatrix}   \phantom{-} 0.1 \\ -0.1 \\ -0.2 \\ \phantom{-} 0.1 \end{bmatrix} \]
+\\
+The input to this layer is:
+\\
+\[
+x = \begin{bmatrix}    \phantom{-} 0.4 \\ -1.0 \\ \phantom{-} 0.1 \end{bmatrix} \]
+\\
+If the activation function used is ReLU, what is the output $y$ of the layer?}
+\\
+\\
+\\
+A. $y$ = \begin{bmatrix}    \phantom{-} 0.17 \\ -1.16 \\ -1.01 \\ -1.01 \end{bmatrix} 
+\\
+\\
+\\
+B. $y$ = \begin{bmatrix}    \phantom{-} 0.17 \\ 0 \\ 0 \\ 0 \end{bmatrix}
+\\
+\\
+\\
+C. $y$ = \begin{bmatrix}    \phantom{-} 0.07 \\ -1.06 \\ -0.81 \\ -1.11 \end{bmatrix}
+\\
+\\
+\\
+D. $y$ = \begin{bmatrix}    \phantom{-} 0.07 \\ 0 \\ 0 \\ 0 \end{bmatrix}
+\\
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\\
+\\
+%\textbf{4. Select the correct statement from the following in order of increasing number of parameters?}
+%and what is the type of the neural network used for image segmentation?}
+\textbf{4. Select the false statement from the following:}
+\\
+\\
+\\
+A. Most of the trainable parameters are in the convolutional layers in a CNN such as VGG-16.
+%$\underline{\hspace{3cm}}$ VGGNet16 $<$ LeNet $<$ AlexNet $<$ ResNet150
+\\
+\\
+B. The total number of trainable parameters in VGG-16 is approximately 138 million.
+%AlexNet $<$ VGGNet16 $<$ LeNet $<$ ResNet150
+\\
+\\
+C. Activation Function ReLU was first to be used in AlexNet to overcome the Vanishing Gradient (VG) problem.
+%LeNet $<$ VGGNet16 $<$ AlexNet $<$ ResNet150
+\\
+\\
+D. The gap between the pixel level information of an image and it's high level interpretation is popularly known as semantic gap.
+%ResNet-152 gave the best Image Classifiation Results at 3.57%
+%AlexNet $<$ ResNet150 $<$ LeNet $<$ VGGNet16 \\
+\\
+%E. 
+%LeNet $<$ AlexNet $<$ VGGNet16 $<$ ResNet150
+\\
+\\
+\\
+\textbf{Answer: A}
+\\
+\\
+\\
+\\
+\textbf{5. A filter of size $7 \times 7$ is applied to an image of size $7 \times 7$, with stride of 1. What should be the zero padding (P) used in the convolutional layer in order for the volume of the final image to preserve the size spatially?}
+\\
+\\
+\\
+A. Zero padding (P) = 3
+\\
+\\
+B. Zero padding (P) = 2
+\\
+\\
+C. Zero padding (P) = 1
+\\
+\\
+D. None of the above
+\\
+\\
+\\
+\textbf{Answer: A}
+\\
+\\
+\\
+\\
+\\
+\\
+\end{widetext}
+\end{document}

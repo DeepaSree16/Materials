@@ -1,0 +1,247 @@
+%\tolerance=10000
+%\documentclass[prl,twocoloumn,preprintnumbers,amssymb,pla]{revtex4}
+\documentclass[prl,twocolumn,showpacs,preprintnumbers,superscriptaddress]{revtex4}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{dcolumn}
+%\linespread{1.7}
+\usepackage{bm}
+%\usepackage{eps2pdf}
+\usepackage{graphics}
+\usepackage{pdfpages}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage[demo]{graphicx} % omit 'demo' for real document
+%\usepackage{times}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{subfig}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{float}
+\documentclass{article}
+\usepackage{amsmath,systeme}
+
+\sysalign{r,r}
+
+% \textheight = 8.5 in
+% \topmargin = 0.3 in
+
+%\textwidth = 6.5 in
+% \textheight = 8.5 in
+%\oddsidemargin = 0.0 in
+%\evensidemargin = 0.0 in
+
+%\headheight = 0.0 in
+%\headsep = 0.0 in
+%\parskip = 0.2in
+%\parindent = 0.0in
+
+% \newcommand{\ket}[1]{\left|#1\right\rangle}
+% \newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\ketbra}[2]{| #1 \rangle \langle #2 |}
+\newcommand{\proj}[1]{| #1 \rangle \langle #1 |}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\op}[1]{ \hat{\sigma}_{#1} }
+\def\tred{\textcolor{red}}
+\def\tgre{\textcolor{green}}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+
+\begin{document}
+\begin{widetext}
+\\
+\\
+\\
+
+\begin{wrapfigure}
+\centering
+%\includegraphics[\textwidth]{TS_IISc.png}
+\end{wrapfigure}
+\begin{figure}[h!]
+ \begin{right}
+  \hfill\includegraphics[\textwidth, right]{TS_IISc.png}
+ \end{right}
+\end{figure}
+\\
+\\
+\\
+\noindent\textbf{1. What is back propagation in neural networks?}
+\\
+\\
+\\
+A. It is another name given to the curvy function in the perceptron.
+\\
+\\
+B. It is the transmission of error back through the network to adjust the inputs.
+\\
+\\
+C. It is the transmission of gradient of the error back through the network to allow weights to be adjusted so that the network can learn.
+\\
+\\
+D. None of the above.
+\\
+\\
+\\
+\textbf{Answer: C}
+\\
+\\
+\\
+\\
+\textbf{2. Which one of the following options is a way to prevent overfitting?}
+\\
+\\
+\\
+A. Regularization
+\\
+\\
+B. Dropout
+\\
+\\
+C. Early Stopping
+\\
+\\
+D. Only A and B
+\\
+\\
+E. A, B and C
+\\
+\\
+\\
+\textbf{Answer: E}
+\\
+\\
+\\
+\\
+\textbf{3. Let us say you develop a deep learning model using neural networks. What do we mean when we say that the model is overfitting?}
+\\
+\\
+\\
+A. If the model performs very well on the training data and the same model gives a poor performance on the test data.
+\\
+\\
+B. If the model performs very well on the test data and the same model gives a poor performance on the training data.
+\\
+\\
+C. None of the above.
+\\
+\\
+\\
+\textbf{Answer: A}
+\\
+\\
+\textbf{4. Back-propagation, also called “backpropagation,” or simply “backprop,” is an algorithm for calculating the gradient of a loss function with respect to variables of a model. Compute the gradients with respect to the variables 
+%$x$, $y$ and $z$
+$\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z}$. \\ \\
+Hint: Use the chain rule of Calculus.}
+\\
+\begin{figure}[H]
+\begin{center}
+    \includegraphics[width=1.0\textwidth,centering]{chain.png}
+\end{center}
+    %\caption{}
+\end{figure}
+\\
+\noindent{A. $\frac{\partial f}{\partial x} = 4, \frac{\partial f}{\partial y} = -4, \frac{\partial f}{\partial z} = 3$}
+\\
+\\
+B. $\frac{\partial f}{\partial x} = -4, \frac{\partial f}{\partial y} = 4, \frac{\partial f}{\partial z} = 3$
+\\
+\\
+C. $\frac{\partial f}{\partial x} = -4, \frac{\partial f}{\partial y} = -4, \frac{\partial f}{\partial z} = 3$
+\\
+\\
+D. $\frac{\partial f}{\partial x} = -4, \frac{\partial f}{\partial y} = -4, \frac{\partial f}{\partial z} = -3$
+\\
+\\
+\\
+\textbf{Answer: C. $\frac{\partial f}{\partial x} = -4, \frac{\partial f}{\partial y} = -4, \frac{\partial f}{\partial z} = 3$}
+\\
+\\
+\\
+\textbf{Solution:} 
+\begin{figure}[H]
+\begin{center}
+    \includegraphics[width=0.5\textwidth,centering]{chainrule_explained.png}
+\end{center}
+    %\caption{}
+\end{figure}
+\\
+Use the chain rule of calculus as follows:\\ \\
+$\frac{\partial f}{\partial x} = \frac{\partial q}{\partial x}\frac{\partial f}{\partial q}$
+\\
+\\
+and
+\\
+\\
+$\frac{\partial f}{\partial y} = \frac{\partial q}{\partial y}\frac{\partial f}{\partial q}$
+\\
+\\
+Given $q = x + y$
+\\
+\\
+We have $\frac{\partial q}{\partial x} = 1$
+\\
+\\
+and $\frac{\partial q}{\partial y} = 1$
+\\
+\\
+Now $\frac{\partial f}{\partial q} = -4$
+\\
+\\
+So we get $\frac{\partial f}{\partial x} = \frac{\partial q}{\partial x}\frac{\partial f}{\partial q} = -4 * 1 = -4$
+\\
+\\
+and
+$\frac{\partial f}{\partial y} = \frac{\partial q}{\partial y}\frac{\partial f}{\partial q} = -4 * 1 = -4$
+\\
+\\
+and
+$f = (x + y) * z$
+\\
+\\
+$\frac{\partial f}{\partial z} = (x + y) = 3$
+\\
+\\
+\\
+\textbf{5. Layers between the input and output layers in a neural network are known as:}
+\\
+\\
+\\
+A. Multi Layers
+\\
+\\
+B. Resultant Layers
+\\
+\\
+C. Hidden Layers
+\\
+\\
+D. None of the above
+\\
+\\
+\\
+\textbf{Answer: C}
+\\
+\\
+\\
+\end{widetext}
+\end{document}

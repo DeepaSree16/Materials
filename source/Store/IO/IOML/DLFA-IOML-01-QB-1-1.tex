@@ -1,0 +1,274 @@
+%\tolerance=10000
+%\documentclass[prl,twocoloumn,preprintnumbers,amssymb,pla]{revtex4}
+\documentclass[prl,twocolumn,showpacs,preprintnumbers,superscriptaddress]{revtex4}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{dcolumn}
+%\linespread{1.7}
+\usepackage{bm}
+%\usepackage{eps2pdf}
+\usepackage{graphics}
+\usepackage{pdfpages}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage[demo]{graphicx} % omit 'demo' for real document
+%\usepackage{times}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{subfig}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{float}
+\documentclass{article}
+\usepackage{amsmath,systeme}
+\usepackage{tikz}
+
+\sysalign{r,r}
+
+% \textheight = 8.5 in
+% \topmargin = 0.3 in
+
+%\textwidth = 6.5 in
+% \textheight = 8.5 in
+%\oddsidemargin = 0.0 in
+%\evensidemargin = 0.0 in
+
+%\headheight = 0.0 in
+%\headsep = 0.0 in
+%\parskip = 0.2in
+%\parindent = 0.0in
+
+% \newcommand{\ket}[1]{\left|#1\right\rangle}
+% \newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\ketbra}[2]{| #1 \rangle \langle #2 |}
+\newcommand{\proj}[1]{| #1 \rangle \langle #1 |}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\op}[1]{ \hat{\sigma}_{#1} }
+\def\tred{\textcolor{red}}
+\def\tgre{\textcolor{green}}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+
+\begin{document}
+\begin{widetext}
+\\
+\\
+\\
+
+\begin{wrapfigure}
+\centering
+%\includegraphics[\textwidth]{TS_IISc.png}
+\end{wrapfigure}
+\begin{figure}[h!]
+ \begin{right}
+  \hfill\includegraphics[\textwidth, right]{TS_IISc.png}
+ \end{right}
+\end{figure}
+\noindent\textbf{1. What is the representation of the following sparse matrix in the Compressed Sparse Row format? You can use zero-based indices.}
+\\
+\[ 
+\begin{bmatrix}    0 & 0 & 0 & 0 \\     5 & 8 & 0 & 0 \\ 0 & 0 & 3 & 0 \\ 0 & 6 & 0 & 0  \\ \end{bmatrix} \]
+%\ b = \begin{bmatrix}   \phantom{-} 0.1 \\ -0.1 \\ -0.2 \\ \phantom{-} 0.1 \end{bmatrix} \]
+\\
+\\
+A. 
+\\ \\
+Bounds (Col) = \begin{bmatrix}    0 & 0 & 2 & 3 & 4 \end{bmatrix}
+\\ \\
+Index (Row) & = \begin{bmatrix}    0 & 1 & 2 & 1 \end{bmatrix}
+\\ \\
+Value & & & & & & & & & & = \begin{bmatrix}    5 & 8 & 3 & 6 \end{bmatrix}
+\\
+\\
+\\
+B. 
+\\
+\\
+Bounds (Row) = \begin{bmatrix}    0 & 0 & 2 & 3 & 4 \end{bmatrix}
+\\ \\
+Index (Col) & & & & = \begin{bmatrix}    0 & 1 & 2 & 1 \end{bmatrix}
+\\ \\
+Value & & & & & & & & & & & & = \begin{bmatrix}    5 & 8 & 3 & 6 \end{bmatrix}
+\\
+\\
+\\
+C. 
+\\
+\\
+Bounds (Col) = \begin{bmatrix}    0 & 0 & 2 & 3 & 4 \end{bmatrix}
+\\ \\
+Index (Row) & = \begin{bmatrix}    0 & 1 & 2 & 1 \end{bmatrix}
+\\ \\
+Value & & & & & & & & & & = \begin{bmatrix}    5 & 8 & 6 & 3 \end{bmatrix}
+\\
+\\
+\\
+D. 
+\\
+\\
+Bounds (Row) = \begin{bmatrix}    0 & 0 & 2 & 3 & 4 \end{bmatrix}
+\\ \\
+Index (Col) & & & & = \begin{bmatrix}    0 & 1 & 2 & 1 \end{bmatrix}
+\\ \\
+Value & & & & & & & & & & & & = \begin{bmatrix}    5 & 8 & 6 & 3 \end{bmatrix}
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\\
+\\
+\textbf{Study the given below statements and answer the second question.}
+\\
+\\
+\\
+$i$. GPUs have superior processor-to-memory bandwidth, greater (FLOPs) using fewer watts of electricity per computational operation.
+\\
+\\
+$ii$. The CPU is composed of just few cores with lots of cache memory that 
+can handle a few software threads at a time as they are optimized for serial operations.
+\\
+\\
+$iii$. GPUs are optimized for taking huge batches of data and 
+performing the same operation over and over very quickly as they are optimized for parallel operations.
+\\
+\\
+$iv$. The CPU has a high latency tolerance and a deep pipelines.
+\\
+\\
+$v.$ The GPUs have a low latency tolerance and shallow pipelines.
+\\
+\\
+\\
+\textbf{2. Identify the correct choices for CPU and GPUs:}
+\\
+\\
+\\
+A. $iv$ and $v$
+\\
+\\
+B. $i$, $ii$, and $iii$
+\\
+\\
+C. $ii$, $iii$, $iv$ and $v$
+\\
+\\
+%E. $i$ and $iv$
+%\\
+%\\
+D. $i$, $ii$, $iii$, $iv$, $i$ and $v$
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\\
+\\
+\textbf{3. The activation function Rectified Linear Unit (ReLU) introduces sparsity in the hidden layers.}
+\\
+\\
+\\
+A. True
+\\
+\\
+B. False
+\\
+\\
+\\
+\textbf{Answer: A}
+\\
+\\
+\\
+\\
+\textbf{4. Which of the following in the three stage deep compression pipeline in a large neural network removes the redundant connections, keeping only the most informative connections?}
+\\
+\\
+\\
+A. Quantization
+\\
+\\
+B. Huffman Encoding
+\\
+\\
+C. Pruning
+\\
+\\
+D. None of the above
+\\
+\\
+\\
+\textbf{Answer: C}
+\\
+\\
+\\
+\\
+\textbf{Study the given below statements and answer the fifth question.}
+\\
+\\
+\\
+$i$. FPGA is not suited for very high-volume mass production, while ASIC is suited for very high-volume mass production. 
+\\
+\\
+$ii$. FPGA is less energy efficient, requires more power for same function which ASIC can achieve at lower power, while ASIC is much more power efficient than FPGAs. Power consumption of ASICs can be very minutely
+controlled and optimized.
+\\
+\\
+$iii$. Analog designs are possible with FPGAs, while ASICs cannot have complete analog circuitry.
+\\
+\\
+$iv$. FPGA is not suited for very high-volume mass production, while ASIC is suited for very high-volume mass production..
+\\
+\\
+\\
+\textbf{5. Identify the incorrect choices for CPU and GPUs:}
+\\
+\\
+\\
+A. $i$ and $ii$
+\\
+\\
+B. $i$, $ii$, and $iii$
+\\
+\\
+C. $ii$, $iii$ and $iv$ 
+\\
+\\
+%E. $i$ and $iv$
+%\\
+%\\
+D. $iii$ only
+\\
+\\
+\\
+\textbf{Answer: D}
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\end{widetext}
+\end{document}

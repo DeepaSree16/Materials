@@ -1,0 +1,220 @@
+%\tolerance=10000
+%\documentclass[prl,twocoloumn,preprintnumbers,amssymb,pla]{revtex4}
+\documentclass[prl,twocolumn,showpacs,preprintnumbers,superscriptaddress]{revtex4}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{dcolumn}
+%\linespread{1.7}
+\usepackage{bm}
+%\usepackage{eps2pdf}
+\usepackage{graphics}
+\usepackage{pdfpages}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage[demo]{graphicx} % omit 'demo' for real document
+%\usepackage{times}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{subfig}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{float}
+\documentclass{article}
+\usepackage{amsmath,systeme}
+
+\sysalign{r,r}
+
+% \textheight = 8.5 in
+% \topmargin = 0.3 in
+
+%\textwidth = 6.5 in
+% \textheight = 8.5 in
+%\oddsidemargin = 0.0 in
+%\evensidemargin = 0.0 in
+
+%\headheight = 0.0 in
+%\headsep = 0.0 in
+%\parskip = 0.2in
+%\parindent = 0.0in
+
+% \newcommand{\ket}[1]{\left|#1\right\rangle}
+% \newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\ketbra}[2]{| #1 \rangle \langle #2 |}
+\newcommand{\proj}[1]{| #1 \rangle \langle #1 |}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\op}[1]{ \hat{\sigma}_{#1} }
+\def\tred{\textcolor{red}}
+\def\tgre{\textcolor{green}}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+
+\begin{document}
+\begin{widetext}
+\\
+\\
+\\
+
+\begin{wrapfigure}
+\centering
+%\includegraphics[\textwidth]{TS_IISc.png}
+\end{wrapfigure}
+\begin{figure}[h!]
+ \begin{right}
+  \hfill\includegraphics[\textwidth, right]{TS_IISc.png}
+ \end{right}
+\end{figure}
+\\
+\\
+\\
+\noindent\textbf{1. Which of the following is are activation functions used in neural networks?}
+\\
+\\
+\\
+\noindent A. The Standard Logistic Sigmoid Function $\sigma(x) = \frac{1}{1 + e^{-x}}$.
+\\
+\\
+B. ReLU or Rectified Linear Unit. 
+\\
+\\
+C. Hyperbolic Tan or Tanh(x).
+\\
+\\
+D. Leaky ReLU.
+\\
+\\
+E. All of the above ( A, B, C and D)
+\\
+\\
+\\
+%\\
+\textbf{Answer: E}
+\\
+\\
+\\
+\\
+%\textbf{Solution:}
+%\\
+%\\
+%\\
+%\\
+\textbf{2. Gradient Descent is an iterative optimization algorithm used in machine learning to find the best results (minima of a curve). One Epoch is when an ENTIRE dataset is passed forward and backward through the neural network only ONCE. Assume we have 2000 training examples that we are going to use, and we divide a given dataset of 2000 examples into batches of 500. How many iterations will it take to complete 2 epochs using the gradient descent algorithm on our dataset of 2000 training examples?}
+\\
+\\
+\\
+\noindent A. 1 
+\\
+\\
+B. 4
+\\
+\\
+C. 8
+\\
+\\
+D. 2
+\\
+\\
+\\
+\textbf{Answer: C}
+\\
+\\
+\\
+\\
+\textbf{3. The Standard Logistic Function is a common S-shaped curve (sigmoid curve) with equation as follows:}
+\\
+\\
+\begin{equation}
+    \sigma(x) = \frac{1}{1 + e^{-x}} {} \nonumber
+\end{equation}
+\\
+\\
+The derivative of the Logistic Function $\sigma(x)$ with respect to $x$ is:
+\\
+\\
+\noindent A. $\sigma'(x) = \sigma(x)(1 - \sigma(x))$
+\\
+\\
+B.\  $\sigma'(x) = \sigma(x)(1 + \sigma(x))$
+\\
+\\
+C.\  $\sigma'(x) = \sigma(x)(\sigma(x) - 1)$
+\\
+\\
+D.\  $\sigma'(x) = \sigma(x)(-1 - \sigma(x))$
+\\
+\\
+\\
+%\\
+\textbf{Answer: A}
+\\
+\\
+\\
+\\
+\textbf{4. The mean squared error is the default loss function to be used for the logistic regression (classification) problems.}
+\\
+\\
+\\
+\noindent A. True.
+\\
+\\
+B. False.
+\\
+\\
+\\
+%\\
+\textbf{Answer: B}
+%\\
+%\\
+%\textbf{Solution:} Gaussian Mixture Models are examples of Generative Models of data and they require the data to be normally distributed.
+\\
+\\
+\\
+\\
+\textbf{5. Which of the following statements are true for sigmoid and softmax functions?}
+\\
+\\
+\\
+A. In the logistic regression model, sigmoid function is used to get probability score for binary classification while softmax function is used for multi class classification problems in neural networks.
+\\
+\\
+B. The softmax function used for multi class classification, turns a vector of $K$ real values into a vector of $K$ real values lying between 0 and 1 that sum to 1.
+\\
+\\
+C. In the logistic regression model, softmax function is used to get probability score for binary classification while sigmoid function is used for multi class classification problems in neural networks.
+\\
+\\
+D. Only A and B
+%D. The sum of output values is equal to one for softmax function
+\\
+\\
+E. Only B and C
+\\
+\\
+\\
+\textbf{Answer: D}
+\\
+\\
+%\textbf{Solution:} Vector Space Models cannot handle Synonymy (Words with the same meaning) and Polysemy (Words with different meaning).
+\\
+\\
+\\
+\\
+\end{widetext}
+\end{document}

@@ -1,0 +1,298 @@
+%\tolerance=10000
+%\documentclass[prl,twocoloumn,preprintnumbers,amssymb,pla]{revtex4}
+\documentclass[prl,twocolumn,showpacs,preprintnumbers,superscriptaddress]{revtex4}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{dcolumn}
+%\linespread{1.7}
+\usepackage{bm}
+%\usepackage{eps2pdf}
+\usepackage{graphics}
+\usepackage{pdfpages}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage[demo]{graphicx} % omit 'demo' for real document
+%\usepackage{times}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{subfig}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{float}
+\documentclass{article}
+\usepackage{amsmath,systeme}
+\usepackage{tikz}
+\usepackage{amssymb}
+
+\sysalign{r,r}
+
+% \textheight = 8.5 in
+% \topmargin = 0.3 in
+
+%\textwidth = 6.5 in
+% \textheight = 8.5 in
+%\oddsidemargin = 0.0 in
+%\evensidemargin = 0.0 in
+
+%\headheight = 0.0 in
+%\headsep = 0.0 in
+%\parskip = 0.2in
+%\parindent = 0.0in
+
+% \newcommand{\ket}[1]{\left|#1\right\rangle}
+% \newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\ketbra}[2]{| #1 \rangle \langle #2 |}
+\newcommand{\proj}[1]{| #1 \rangle \langle #1 |}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\op}[1]{ \hat{\sigma}_{#1} }
+\def\tred{\textcolor{red}}
+\def\tgre{\textcolor{green}}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+
+\begin{document}
+\begin{widetext}
+\\
+\\
+\\
+
+\begin{wrapfigure}
+\centering
+%\includegraphics[\textwidth]{TS_IISc.png}
+\end{wrapfigure}
+\begin{figure}[h!]
+ \begin{right}
+  \hfill\includegraphics[\textwidth, right]{TS_IISc.png}
+ \end{right}
+\end{figure}
+%\noindent\textbf{1. Which is the metric used to evaluate the performance of Text to Speech Synthesis?}
+\noindent\textbf{1. Which of the following are not model architectures of Word2Vec to produce a distributed representation of words?}
+\\
+\\
+\\
+A. GloVe
+\\
+\\
+B. Continuous bag-of-words (CBOW)
+\\
+\\
+C. Skip-gram
+\\
+\\
+D. FastText
+\\
+\\
+E. Both A and D
+\\
+\\
+F. Both B and C
+\\
+\\
+G. Both A and C
+\\
+\\
+\\
+\textbf{Answer: E}
+\\
+\\
+\\
+\\
+\noindent\textbf{Study the given below statements with respect to the GloVe model for word representation and answer the second question.}
+\\
+\\
+\\
+$i.$ GloVe is an unsupervised learning algorithm for obtaining vector representations for words.
+\\
+%$ii.$ GloVe is an unsupervised learning algorithm for obtaining text representations for words.
+\\
+$ii.$ In GloVe, training is performed on aggregated global word-word co-occurrence statistics from a corpus, and the resulting representations showcase interesting linear substructures of the word vector space.
+\\
+\\
+$iii.$ GloVe is a supervised learning algorithm for obtaining vector representations for words.
+%$v.$ GloVe is a supervised learning algorithm for obtaining text representations for words.
+\\
+\\
+\\
+\\
+\textbf{2. Which of the statement(s) given above is/are not true?}
+\\
+\\
+\\
+A. $i.$ and $ii.$ only
+\\
+\\
+B. $ii.$ and $iii.$ only
+\\
+\\
+C. $iii.$ only
+\\
+\\
+D. $i.$ and $iii.$ only
+\\
+\\
+\\
+\textbf{Answer: C}
+\\
+\\
+\\
+\\
+\noindent\textbf{Study the given below statements with respect to the one-hot vector word representation and answer the third question.}
+\\
+\\
+\\
+$i.$ While using one-hot vector word representation, we get a very large dimensional dense vector representation.
+\\
+\\
+\\
+$ii.$ One hot word representations do not capture the semantic meaning of the word.
+%While using one-hot vector word representation, the distance between two vector representations of two similar words is equal to the distance between the distance two vector representation of two dissimilar words is same
+%word vectors of related words are as further away as the word vectors of unrelated words.
+\\
+\\
+\\
+$iii.$ When the vocabulary size is large, the one-hot vector representation of every word is a large dimensional sparse vector
+%While using one-hot vector word representation for a very large corpus, we get a very large dimensional sparse vector representation. 
+%$iv.$ While using one-hot vector word representation, we get a document corpus containing $m$ documents represented by a very sparse $|\nu| \times m$ matrix, $X$.
+\\
+\\
+\\
+$iv.$ While using one-hot vector word representation, each word is treated as independent of the other words.  
+\\
+\\
+\\
+\\
+\textbf{3. What are the limitations of one-hot vector word representation?}
+\\
+\\
+\\
+A. $ii.$, $iii.$ and $iv.$ only
+\\
+\\
+B. $i.$ and $iv.$ only
+\\
+\\
+C. $ii.$ and $iii.$ only
+\\
+\\
+D. $i.$, $ii.$ and $iii.$ only
+\\
+\\
+\\
+\textbf{Answer: A}
+\\
+\\
+\\
+\\
+\textbf{4. The softmax function takes as input a vector $z$ of $K$ real numbers and normalizes it into a probability distribution consisting of $K$ probabilities proportional to the exponents of the input numbers. Given the following array of three real values. 
+\[
+x = \begin{bmatrix}    3 \\ 4 \\ 1 \end{bmatrix} \]
+\\
+Convert the given input values into a probability distribution using the softmax function.}
+\\
+\\
+\\
+A. \begin{bmatrix}    0.035 \\ 0.705 \\ 0.260 \end{bmatrix}
+\\
+\\
+\\
+B. \begin{bmatrix}    0.260 \\ 0.035 \\ 0.705 \end{bmatrix} 
+\\
+\\
+\\
+C. \begin{bmatrix}    0.705 \\ 0.260 \\ 0.035 \end{bmatrix} 
+\\
+\\
+\\
+D. \begin{bmatrix}    0.260  \\ 0.705  \\ 0.035  \end{bmatrix}
+\\
+\\
+\\
+\textbf{Answer: D}
+\\
+\\
+The softmax formula is as follows:
+$\sigma(\vec{z})_{i} = \frac {e^{z_{i}}}{\Sigma_{j=1}^K {e^{z_{j}}}}$
+\\
+\\
+\\
+\\
+\textbf{5. Given a word-document matrix $X \in \mathbb{R}^{|\nu| \times m}$, how do we get dense word vector representations?}
+\\
+\\
+\\
+\noindent A. Factorize the word-document matrix $X \in \mathbb{R}^{|\nu| \times m}$ as a product of two matrices A and B:
+\\
+\\
+$X   \approxeq  AB\ \ \  (A \in \mathbb{R}^{d \times m}, B \in \mathbb{R}^{|\nu| \times m} )$
+\\
+\\
+and by solving the optimization problem: $\min\limits_{A, B} \Vert X - AB \Vert^2$
+\\
+\\
+\\
+B. Factorize the word-document matrix $X \in \mathbb{R}^{|\nu| \times m}$ as a product of two matrices A and B:
+\\
+\\
+$X   \approxeq  AB\ \ \  (A \in \mathbb{R}^{|\nu| \times m}, B \in \mathbb{R}^{d \times m} )$
+\\
+\\
+and by solving the optimization problem: $\min\limits_{A, B} \Vert X - AB \Vert^2$
+\\
+\\
+\\
+C. Factorize the word-document matrix $X \in \mathbb{R}^{|\nu| \times m}$ as a product of two matrices A and B:
+\\
+\\
+$X   \approxeq  AB\ \ \  (A \in \mathbb{R}^{|\nu| \times m}, B \in ^{d \times m} )$
+\\
+\\
+and by solving the optimization problem: $\max\limits_{A, B} \Vert X - AB \Vert^2$
+\\
+\\
+\\
+D. Factorize the word-document matrix $X \in \mathbb{R}^{|\nu| \times m}$ as a product of two matrices A and B:
+\\
+\\
+$X   \approxeq  AB\ \ \  (A \in \mathbb{R}^{d \times m}, B \in ^{|\nu| \times m} )$
+\\
+\\
+and by solving the optimization problem: $\max\limits_{A, B} \Vert X - AB \Vert^2$
+\\
+\\
+\\
+where:
+\\
+1. $m$ is the number of documents in the word-document matrix $X$
+\\
+2. $\nu$ is the vocabulary size or the cardinality in the word-document matrix $X$
+%C. Box regression loss
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\\
+\\
+\\
+\\
+\end{widetext}
+\end{document}
