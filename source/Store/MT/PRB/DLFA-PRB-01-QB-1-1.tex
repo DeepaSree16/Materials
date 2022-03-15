@@ -1,0 +1,278 @@
+%\tolerance=10000
+%\documentclass[prl,twocoloumn,preprintnumbers,amssymb,pla]{revtex4}
+\documentclass[prl,twocolumn,showpacs,preprintnumbers,superscriptaddress]{revtex4}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{dcolumn}
+%\linespread{1.7}
+\usepackage{bm}
+%\usepackage{eps2pdf}
+\usepackage{graphics}
+\usepackage{pdfpages}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage[demo]{graphicx} % omit 'demo' for real document
+%\usepackage{times}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{subfig}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{float}
+\documentclass{article}
+\usepackage{amsmath,systeme}
+
+\sysalign{r,r}
+
+% \textheight = 8.5 in
+% \topmargin = 0.3 in
+
+%\textwidth = 6.5 in
+% \textheight = 8.5 in
+%\oddsidemargin = 0.0 in
+%\evensidemargin = 0.0 in
+
+%\headheight = 0.0 in
+%\headsep = 0.0 in
+%\parskip = 0.2in
+%\parindent = 0.0in
+
+% \newcommand{\ket}[1]{\left|#1\right\rangle}
+% \newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\ketbra}[2]{| #1 \rangle \langle #2 |}
+\newcommand{\proj}[1]{| #1 \rangle \langle #1 |}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\op}[1]{ \hat{\sigma}_{#1} }
+\def\tred{\textcolor{red}}
+\def\tgre{\textcolor{green}}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+
+\begin{document}
+\begin{widetext}
+\\
+\\
+\\
+
+\begin{wrapfigure}
+\centering
+%\includegraphics[\textwidth]{TS_IISc.png}
+\end{wrapfigure}
+\begin{figure}[h!]
+ \begin{right}
+  \hfill\includegraphics[\textwidth, right]{TS_IISc.png}
+ \end{right}
+\end{figure}
+\\
+\\
+\\
+\\
+\\
+\noindent\textbf{1. If A and B are two events such that $P(A) = \frac{3}{8}$, $P(B) = \frac{5}{8}$ and $P(A\cup B) = \frac{3}{4}$, then $P(B|A) = $?}
+\\
+\\
+\\
+A. $\frac{2}{3}$
+\\
+\\
+B. $\frac{3}{5}$
+\\
+\\
+C. $\frac{4}{5}$
+\\
+\\
+D. $\frac{1}{5}$
+\\
+\\
+\\
+\textbf{Answer: A}
+\\
+\\
+\textbf{Solution}:
+The general probability addition rule for the union of two events states that:
+\\
+\begin{equation}
+    P(A\cup B) = P(A) + P(B) - P(A\cap B) {}\nonumber
+\end{equation}
+Given: $P(A) = \frac{3}{8}$, $P(B) = \frac{5}{8}$ and $P(A\cup B) = \frac{3}{4}$, we have $P(A\cap B) = \frac{1}{4}$
+\\
+\\
+The probability that events $A$ and $B$ both occur is equal to the probability that event $A$ occurs times the probability that event $B$ occurs, given that $A$ has already happened.
+\begin{equation}
+    P(B|A) = \frac{P(A\cap B)}{P(A)} {}\nonumber
+\end{equation}
+We have $P(A\cap B) = \frac{1}{4}$ and $P(A) = \frac{3}{8}$, so we have from the above equation: $P(B|A) = \frac{2}{3}$
+\\
+\\
+\\
+\textbf{2. An urn contains 5 red balls and 2 green balls. Two balls are drawn one after the other without replacement. What is the probability that the second ball is red?}
+\\
+\\
+\\
+A. $\frac{10}{21}$\\
+\\
+B. $\frac{5}{21}$\\
+\\
+C. $\frac{2}{21}$\\
+\\
+D. $\frac{5}{7}$
+\\
+\\
+\\
+\textbf{Answer: D}
+\\
+\\
+\textbf{Solution}:
+The sample space is $\Omega = \{rr, rg, gr, gg\}$.
+\\
+\\
+Let $R_{1}$ be the event ‘the first ball is red’, $G_{1}$ = ‘first ball is green’, $R_{2}$ = ‘second ball is red’, $G_{2}$ = ‘second ball is green’. We are asked to find $P(R_{2})$.
+\\
+\\
+The fast way to compute this is just like $P(S_{2})$ in the card example above. Every ball is equally likely to be the second ball. Since 5 out of 7 balls are red, $P(R_{2})$ = $\frac{5}{7}$.
+Let’s compute this same value using the law of total probability. First, we’ll find the conditional probabilities. This is a simple counting exercise.
+\\
+\\
+$P(R2|R1) = \frac{4}{6}$, $P(R2|G1) = \frac{5}{6}$.
+\\
+\\
+Since $R_{1}$ and $G_{1}$ partition $\Omega$ the law of total probability says:
+\begin{equation}
+    P(R_{2}) = P(R_{2}|R_{1})P(R_{1}) + P(R_{2}|G_{1})P(G_{1}) {}\nonumber
+\end{equation}
+\begin{equation}
+    P(R_{2}) = \frac{4}{6}\cdot \frac{5}{7} + \frac{5}{6}\cdot \frac{2}{7} = \frac{30}{42} = \frac{5}{7} {}\nonumber
+\end{equation}
+\\
+\\
+\\
+\textbf{3. You roll two fair dice. Find the probability that the first die is a 4 given that the sum is 7.}
+\\
+\\
+\\
+A. $\frac{5}{36}$\\
+\\
+B. $\frac{1}{6}$\\
+\\
+C. $\frac{1}{5}$\\
+\\
+D. $\frac{1}{36}$
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\textbf{Solution}:
+Let A denote the event that the first die shows $4$ and $B$ denote the event that the sum of the dice is 7.
+Notice that for any number the first die shows, there is only one number the second die can show to make
+the sum 7 (e.g. if the first die shows 5 then the second die must show 2 to make the sum 7). There are six ways in which we can get a 7. They are {(1, 6), (6, 1), (2, 5), (5, 2), (4, 3), (3, 4)}, so the probability of getting a 7 is $\frac{6}{36}.$
+\\
+\\
+So $P(B) = \frac{6}{36}$ 
+\\
+\\
+Now, if the first die shows 4 there is only one way to make the sum of both dice equal 7 which means $P(A\cap B) = \frac{1}{36}$
+\\
+\\
+Therefore, the probability that the first die shows 4 given that the sum is 7 is:
+\begin{equation}
+P(A|B) = \frac{P(A\cap B)}{P(B)} = \frac{1/36}{1/6} = \frac{1}{6} {}\nonumber
+\end{equation}
+\\
+\\
+\\
+\newpage
+\\
+\noindent\textbf{4. Determine the mean of the random variable X having the following probability distribution.}
+\\
+\\
+%\begin{table}[H]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+%\hline \parbox{.5in}{\ \\$X = x$\\ \ \\} & \parbox{.35in}{\ \\$1$\\ \ \\} &\parbox{1.in}{\ \\$2$\\ \ \\}&\parbox{1.in}{\ \\$3$\\ \ \\}  \\
+\hline \Large$X = x$  & \Large$1$ & \Large$2$ &  \Large$3$  & \Large$4$ & \Large$5$ & \Large$6$ & \Large$7$ & \Large$8$ & \Large$9$ & \Large$10$\\
+\hline \Large$P(x)$  & \Large$0.15$ & \Large$0.10$ &  \Large$0.10$ & \Large$0.06$ & \Large$0.08$ & \Large$0.01$ & \Large$0.05$ & \Large$0.02$ & \Large$0.30$ & \Large$0.2$\\
+\hline
+\end{tabular} 
+\end{center}
+%\end{table}
+\\
+%\begin{tabular}{c|c|c|c}
+%$x$ & 1 & 2 & 3\\ \hline 
+%\\[-1em]
+%$f(x)$ & 1 & 2 & 3
+%\end{tabular}
+\\
+\\
+
+%\\
+\noindent A. $6.56$\\
+\\
+B. $50.38$\\
+\\
+C. $7.09$\\
+\\
+D. None of the above
+\\
+\\
+\\
+\textbf{Answer: A}
+\\
+\\
+\textbf{Solution}:
+The mean of the random variable $X$ = $E(X)$ $=$ $\sum xP_{X}(x)$.
+\begin{equation}
+    = (1 * 0.15) + (2 * 0.1) + (3 * 0.1) + (4 * 0.06) + (5 * 0.08) + (6 * 0.01) + (7 * 0.05) + (8 * 0.02) + (9 * 0.3) + (10 * 0.2) {}\nonumber
+\end{equation}
+\begin{equation}
+    = 6.56{}\nonumber
+\end{equation}
+\\
+\\
+\\
+\textbf{5. Let X be a binomial random variable with parameters (12, 0.5). Where $n = 12$ and $p = 0.5.$ Find the variance and the standard deviation of X.}
+\\
+\\
+\\
+\noindent A. Variance $Var(X) = \sqrt{3}$, Standard deviation $\sigma_{X} = 3$\\
+\\
+B. Variance $Var(X) = \sqrt{3}$, Standard deviation $\sigma_{X} = \sqrt{3}$\\
+\\
+C. Variance $Var(X) = 3$, Standard deviation $\sigma_{X} = 9$\\
+\\
+D. Variance $Var(X) = 3$, Standard deviation $\sigma_{X} = \sqrt{3}$
+\\
+\\
+\\
+\textbf{Answer: D}
+\\
+\\
+\textbf{Solution}:
+Variance $Var(X) = npq = np(1 - p) = 6(1 - 0.5) = 3.$
+\\
+\\
+The standard deviation is $\sigma_{X} = \sqrt{npq} = \sqrt{3}$
+\\
+\\
+\\
+\end{widetext}
+\end{document}

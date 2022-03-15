@@ -1,0 +1,789 @@
+%\tolerance=10000
+%\documentclass[prl,twocoloumn,preprintnumbers,amssymb,pla]{revtex4}
+\documentclass[prl,twocolumn,showpacs,preprintnumbers,superscriptaddress]{revtex4}
+\documentcla%\tolerance=10000
+%\documentclass[prl,twocoloumn,preprintnumbers,amssymb,pla]{revtex4}
+\documentclass[prl,twocolumn,showpacs,preprintnumbers,superscriptaddress]{revtex4}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{dcolumn}
+%\linespread{1.7}
+\usepackage{bm}
+%\usepackage{eps2pdf}
+\usepackage{graphics}
+\usepackage{pdfpages}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage[demo]{graphicx} % omit 'demo' for real document
+%\usepackage{times}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{subfig}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{float}
+\documentclass{article}
+\usepackage{amsmath,systeme}
+
+\sysalign{r,r}
+
+% \textheight = 8.5 in
+% \topmargin = 0.3 in
+
+%\textwidth = 6.5 in
+% \textheight = 8.5 in
+%\oddsidemargin = 0.0 in
+%\evensidemargin = 0.0 in
+
+%\headheight = 0.0 in
+%\headsep = 0.0 in
+%\parskip = 0.2in
+%\parindent = 0.0in
+
+% \newcommand{\ket}[1]{\left|#1\right\rangle}
+% \newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\ketbra}[2]{| #1 \rangle \langle #2 |}
+\newcommand{\proj}[1]{| #1 \rangle \langle #1 |}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\op}[1]{ \hat{\sigma}_{#1} }
+\def\tred{\textcolor{red}}
+\def\tgre{\textcolor{green}}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+
+\begin{document}
+\begin{widetext}
+\\
+\\
+\\
+
+\begin{wrapfigure}
+\centering
+%\includegraphics[\textwidth]{TS_IISc.png}
+\end{wrapfigure}
+\begin{figure}[h!]
+ \begin{right}
+  \hfill\includegraphics[\textwidth, right]{TS_IISc.png}
+ \end{right}
+\end{figure}
+\\
+\\
+\\
+\noindent\textbf{1.} Find the local minima and maxima of the function $f(x) = x^3 - 3x^2 + 1.$.
+\\
+\\
+\noindent A. local mimima = - 2 and local maxima = 0\\
+\\
+B. local mimima = 0 and local maxima = 2\\
+\\
+C. local mimima = 2 and local maxima = 0\\
+\\
+D. local mimima = 0 and local maxima = - 2
+\\
+\\
+\\
+\textbf{Answer: C}
+\\
+\\
+\textbf{Solution:}
+Finding the derivative of $f(x)$ we get, $f'(x) = 3x^2 - 6x$. Solving the equation $f'(x)$ = 0 that is, $3x^2 - 6x= 0$, we find the critical points at
+$x = 0$ and $x = 2$. Now, evaluating the function at these points, we find:
+\\
+\\
+%$f(-2) = 104$
+%\\
+%\\
+%$f(8) = - 396$
+%\\
+%\\
+We also note that $f''(x) < 0$ at $x = 0$ which means there is a local maxima at $x = 0$
+\\
+\\
+Similarly, $f''(x) > 0$ at $x = 2$ which means there is a local minima at $x = 2$
+%It follows that (-2, 104) is the global maximum point and (8, -396) is the global minimum point.
+\\
+\\
+\\
+\\
+\textbf{2.} Given the function $f(x1,x2) = x_{1}^2 - x_{2}^2 - x_{1}x_{2}$?
+\\
+\\
+\noindent A. $f(x)$ can never be convex for any values of $a$ and $b$\\
+\\
+B. $f(x)$ is convex for all negative values of $a$ and $b$\\
+\\
+C. $f(x)$ is convex for only positive values of $a$\\
+\\
+D. $f(x)$ is convex for all values of $b$ and does not depend on $a$
+\\
+\\
+\\
+\textbf{Answer: C}
+\\
+\\
+\textbf{Solution:}
+For a twice-differentiable function like the given function $f(x) = ax^2 + bx + c$, we need to check if the second derivative, $f''(x)$, is positive or not. If the second derivative, $f''(x) > 0$ then the graph is convex (or concave upward); if the second
+derivative is negative, then the graph is concave (or concave downward). Points at which
+concavity changes, are called inflection points.
+\\
+\\
+So we have $f'(x) = 2ax + b$
+\\
+\\
+Equating $f'(x) = 0$ or $2ax + b = 0$ $\Longrightarrow x = -\frac{b}{2a}$ 
+and we also have $f''(x) = 2a$
+\\
+\\
+For $f''(x) > 0$, we must have $a$ to be greater than $0$. 
+\\
+\\
+\\
+\\
+\textbf{3.} A given cost function is of the form $J(\theta) = \theta^2 - \theta + 2$, where $\theta_{t}$ is the value of $\theta$ at $t^{th}$ iteration. What is the  update rule  for steepest gradient descent optimization at step $t + 1$? Consider $\alpha = 0.01$ to be the constant step size.
+\\
+\\
+\noindent A. $\theta_{t + 1} = 0.98\theta_{t} + 0.01$\\
+\\
+B. $\theta_{t + 1} = \theta_{t} + 0.01(2\theta_{t})$\\
+\\
+C. $\theta_{t + 1} = -\theta_{t} + 1$\\
+\\
+D. $\theta_{t + 1} = 0.99\theta_{t} + 0.01$
+\\
+\\
+\\
+\textbf{Answer: A}
+\\
+\\
+\textbf{Solution:}
+Use the following equation:
+\begin{equation}
+    \theta_{t + 1} = \theta_{t} - \alpha \nabla J(\theta_{t}) {}\nonumber
+\end{equation}
+\\
+Since we have gradient descent in one dimension, the above equation reduces to:
+\begin{equation}
+    \theta_{t + 1} = \theta_{t} - \alpha \frac{d J(\theta_{t})}{d\theta_{t}} {}\nonumber
+\end{equation}
+\\
+Differentiating $J(\theta_{t})$ with respect to $\theta_{t}$, and putting $\alpha = 0.01$, we get:
+\\
+\begin{equation}
+    \theta_{t + 1} = \theta_{t} - \alpha \frac{d}{d\theta_{t}}(\theta_{t}^2 - \theta_{t} + 2) {}\nonumber
+\end{equation}
+So we get:
+\begin{equation}
+    \theta_{t + 1} = \theta_{t} - 0.01 (2\theta_{t} - 1) = 0.98\theta_{t} + 0.01 {}\nonumber
+\end{equation}
+\\
+\\
+\\
+\\
+\textbf{4.} Let $f(x,y,z) = (x^3 + y^3 + z^3 - x^2y^2z^2)$.
+%Let $f(x,y,z) = xye^{(x^2 + z^2 - 5)}$. 
+Calculate the gradient of $f$ at the point $(1, 2, 1)^T$. The choices are as follows:
+\\
+\\
+\\
+A. $(5, - 8, 1)^T$
+\\
+\\
+\\
+B. $(- 5, 8, - 5)^T$
+\\
+\\
+\\
+C. $(5, - 8, 5)^T$
+\\
+\\
+\\
+D. $(- 5, 8, - 1)^T$
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\textbf{Solution:}
+The gradient vector in three-dimensions is similar to the two-dimensional case. To calculate the gradient of $f$ at the point $(1, 3, - 2)^T$ we just need to calculate the three partial derivatives of $f(x, y, z)$.
+\begin{equation}
+    \nabla f(x, y, z)^T = \Big(\frac {\partial f}{\partial x}, \frac {\partial f}{\partial y}, \frac {\partial f}{\partial z}\Big)^T = \Big((3x^2 - 2 xy^2z^2), (3y^2 - 2 x^2yz^2), (3z^2 - 2 x^2y^2z)\Big)^T {}\nonumber
+\end{equation}
+\begin{equation}
+    \nabla f(1, 2, 1)^T = \Big((3 (1)^2 - 2(1)(2)^2(1)^2, (3 (2)^2 - 2(1)^2(2)(1)^2, (3 (1)^2 - 2(1)^2(2)^2(1)\Big)^T = (- 5, 8, - 5)^T {}\nonumber
+\end{equation}
+%\textbf{4.} Given the following function. 
+%\begin{equation}
+%    f(x,y) = 100(y - x^2)^2 + (1 - x)^2 {}\nonumber
+%    \end{equation}
+%Compute the gradient of $f(x, y)$ at (1, 2).
+%\\
+%\\
+%\\
+%\noindent A. $\begin{bmatrix}   200y - 200x^2 \\ \\ 400x^3 - 400xy + 2x - 2 \end{bmatrix}$  %\\
+%\\
+%\\
+%B. $\begin{bmatrix}   400x^3 - 400xy + 2x - 2 \\ \\ 200y - 200x^2 \end{bmatrix} $ \\
+%\\
+%\\
+%C. $\begin{bmatrix}   200(y - x^2) + 2(1 - x) \\ \\ 100(1 - x^2)  \end{bmatrix} $ \\
+%\\
+%\\
+%D. $\begin{bmatrix}   100(1 - x^2) \\ \\ 200(y - x^2) + 2(1 - x) \end{bmatrix} $
+%\\
+%\\
+%\\
+%\textbf{Answer: B}
+%\\
+%\\
+%\textbf{Solution:}
+%Gradient of the function $f(x, y) = 100(y - x^2)^2 + (1 - x)^2$ is calculated as follows:
+%\begin{equation}
+%    \nabla f(x, y) = {\Large \begin{bmatrix}    {\frac{\partial}{\partial x}}[100(y - x^2)^2 + (1 - x)^2] \\ \\ {\frac{\partial}{\partial y}}[100(y - x^2)^2 + (1 - x)^2]  \end{bmatrix}} {}\nonumber
+%\end{equation}
+%Or
+%\begin{equation}
+%    \nabla f(x, y) = {\Large \begin{bmatrix}    400x^3 - 400xy + 2x - 2 \\ \\ 200y - 200x^2  \end{bmatrix}} {}\nonumber
+%\end{equation}
+\\
+\\
+\\
+\\
+%\newpage
+\noindent\textbf{5.} Given two vectors such that $u, v \in \mathsbb{R}^d$. Define a vector $w$ expressed in terms of $u$ and $v$ such that $w(\alpha)$ = $u - \alpha v$, where $\alpha$ is an arbitrary number or a scalar. 
+%The Euclidean Norm of $w$
+Find for what value of $\alpha$ the Euclidean Norm of $w(\alpha)$ is minimized? 
+%state the minimum value.
+%$(||w||)$ is:
+%X = { \begin{bmatrix}    2 \\ %\\ 5 \\ \\ -3 \end{bmatrix}}
+%\\
+%%\\
+%\%\
+%The norm of of $f(t)$ is:
+\\
+\\
+\\
+%A. $||w|| = \sqrt{||u||^2 + 2tuv + ||v||^2}$
+A. $\alpha^* = {\HUGE \frac{u^Tv}{||u||^2}}$
+\\
+\\
+\\
+%B. $||w|| = \sqrt{||u||^2 + 2tv^Tu^T + ||v||^2}$
+B. $\alpha^* = {\frac{||u - v||}^2{||u||^2}}$
+\\
+\\
+\\
+%C. $||w|| = \sqrt{||u||^2 - 2tuv + ||v||^2}$
+C. $\alpha^* = - {\frac{v^Tu}{||v||^2}}$
+\\
+\\
+\\
+%D. $||w|| = \sqrt{||u||^2 - 2tv^Tu + ||v||^2}$
+D. $\alpha^* = {\frac{v^Tu}{||v||^2}}$
+\\
+\\
+\\
+\textbf{Answer: D}
+\\
+\\
+\textbf{Solution:}\ 
+%The magnitude of a vector is called $length$ or $norm$ of a vector.
+\\
+\\
+%A vector $X$ with $n$ elements has length:
+%\begin{equation}
+%    ||X|| = \sqrt{x_{1}^2 + %x_{1}^2 + x_{2}^2 + x_{3}^2 + %\cdots + x_{n}^2} {}\nonumber
+%\end{equation}
+For a given vector $w$, we have the Euclidean Norm as $||w|| = \sqrt{w^Tw}$ or $||w||^2 = w^Tw$
+\\
+\\
+Given $w$ = $u - \alpha v$, we have:
+\begin{equation}
+    ||w(\alpha)||^2 = {(u - \alpha v)}^T{(u - \alpha v)} = \sum_{i=1}^d (u_{i} - \alpha v_{i})^2 {}\nonumber
+\end{equation}
+\begin{equation}
+    ||w(\alpha)||^2 = {(u^Tu - 2\alpha v^Tu + \alpha^2v^Tv)} {}\nonumber
+\end{equation}
+\begin{equation}
+    ||w(\alpha)||^2 = ||u||^2 - 2\alpha v^Tu + \alpha^2||v||^2 %{}\nonumber
+\end{equation}
+\\
+Now define a function as follows:
+\begin{equation}
+    f(\alpha) = ||w(\alpha)||^2 = ||(u - \alpha v)||^2 = \sum_{i=1}^d (u_{i} - \alpha v_{i})^2 = ||u||^2 - 2\alpha v^Tu + \alpha^2||v||^2
+\end{equation}
+\\
+\\
+For the Euclidean Norm of $w(\alpha)$ to be minimized, we must have $f''(\alpha) \ge 0$ for all $\alpha$
+\\
+\\
+So differentiating eq (1) above with respect to $\alpha$, and equating to $0$ we have:
+\begin{equation}
+    f'(\alpha) = - 2 v^Tu + 2\alpha||v||^2 = 0
+\end{equation}
+or
+\begin{equation}
+    \alpha = \frac {v^Tu}{||v||^2}
+\end{equation}
+\\
+And we also have $f''(\alpha) = 2||v||^2 > 0$, which means that there is a minima at $\alpha = \frac {v^Tu}{||v||^2}$
+\\
+\\
+\textbf{Note:} And the minimized Euclidean Norm or optimal value of $w(\alpha)$ at $\alpha = \frac {v^Tu}{||v||^2}$ is $||u||^2 - \frac{(v^Tu)^2}{||v||^2}$
+\\
+\\
+\\
+\end{widetext}
+\end{document}ss{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{dcolumn}
+%\linespread{1.7}
+\usepackage{bm}
+%\usepackage{eps2pdf}
+\usepackage{graphics}
+\usepackage{pdfpages}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage[demo]{graphicx} % omit 'demo' for real document
+%\usepackage{times}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{subfig}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{float}
+\documentclass{article}
+\usepackage{amsmath,systeme}
+
+\sysalign{r,r}
+
+% \textheight = 8.5 in
+% \topmargin = 0.3 in
+
+%\textwidth = 6.5 in
+% \textheight = 8.5 in
+%\oddsidemargin = 0.0 in
+%\evensidemargin = 0.0 in
+
+%\headheight = 0.0 in
+%\headsep = 0.0 in
+%\parskip = 0.2in
+%\parindent = 0.0in
+
+% \newcommand{\ket}[1]{\left|#1\right\rangle}
+% \newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\ketbra}[2]{| #1 \rangle \langle #2 |}
+\newcommand{\proj}[1]{| #1 \rangle \langle #1 |}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\op}[1]{ \hat{\sigma}_{#1} }
+\def\tred{\textcolor{red}}
+\def\tgre{\textcolor{green}}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+
+\begin{document}
+\begin{widetext}
+\\
+\\
+\\
+
+\begin{wrapfigure}
+\centering
+%\includegraphics[\textwidth]{TS_IISc.png}
+\end{wrapfigure}
+\begin{figure}[h!]
+ \begin{right}
+  \hfill\includegraphics[\textwidth, right]{TS_IISc.png}
+ \end{right}
+\end{figure}
+\\
+\\
+\\
+\noindent\textbf{Let the random variable $X$ denote the time a person waits for an elevator to arrive. Suppose the longest one would need to wait for the elevator is 2 minutes, so that the possible values of $X$ (in minutes) are given by the interval $[0,2]$. A possible PDF for $X$ is given by:}
+\\
+\begin{align*}
+    f(x) = \Bigg\{\begin{matrix}
+x,&\  for\  0 \le x \le 1 \\
+2 - x,&\  for\  1 < x \le 2 \\
+0,&\  otherwise
+\end{matrix}
+\end{align*}
+\\
+\\
+Given the $PDF$ above, answer questions 1 to 3 below.
+\\
+\\
+\\
+\textbf{1.} What is the expected value of $X$
+\\
+\\
+\noindent A. $\frac{1}{3}$\\
+\\
+B. $\frac{2}{3}$\\
+\\
+C. $1$\\
+\\
+D. $\frac{3}{4}$
+\\
+\\
+\\
+\textbf{Answer: C}
+\\
+\\
+\textbf{Solution:}
+If $X$ is a continuous random variable with $PDF$ $f(x)$, then the expected value (or mean) of $X$ is given by
+\begin{equation}
+    \mu = \mu_{X} = E[X] = \int_{-\infty}^{\infty} x\cdot f(x) \,dx {}\nonumber
+\end{equation}
+\\
+Applying the definition given in eq (28) above to our problem, we compute the expected value of $X$:
+\begin{equation}
+    E[X] = \int_{0}^{1} x\cdot x  \,dx + \int_{1}^{2} x\cdot (2 - x)  \,dx = \int_{0}^{1} x^2  \,dx + \int_{1}^{2} (2x - x^2)  \,dx = \frac{1}{3} + \frac{2}{3} = 1 {}\nonumber
+\end{equation}
+\\
+\\
+\\
+\textbf{2.} What is the variance of $X$
+\\
+\\
+\noindent A. $1$\\
+\\
+B. $\frac{1}{6}$\\
+\\
+C. $\frac{7}{6}$\\
+\\
+D. $\frac{3}{4}$
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\textbf{Solution:}
+Now we calculate the variance and standard deviation of $X$, by first finding the expected value of $X^2$.
+\begin{equation}
+    E[X^2] = \int_{0}^{1} x^2\cdot x  \,dx + \int_{1}^{2} x^2\cdot (2 - x)  \,dx = \int_{0}^{1} x^3  \,dx + \int_{1}^{2} (2x^2 - x^3)  \,dx = \frac{1}{4} + \frac{11}{12} = \frac{7}{6} {}\nonumber
+\end{equation}
+\\
+Thus we have
+\begin{equation}
+    Var(X) = E[X^2] - \mu^2 = \frac{7}{6} - 1 = \frac{1}{6} {}\nonumber
+\end{equation}
+\\
+\\
+\\
+\\
+\textbf{3.} What is the standard deviation of $X$
+\\
+\\
+\noindent A. $\frac{1}{\sqrt{6}}$\\
+\\
+B. $\sqrt{6}$\\
+\\
+C. $6$\\
+\\
+D. $\frac{1}{6}$
+\\
+\\
+\\
+\textbf{Answer: A}
+\\
+\\
+\textbf{Solution:}
+$SD(X) = \sqrt{Var(x)} = \frac{1}{\sqrt{6}}$ 
+\\
+\\
+\\
+\textbf{4.} Given a matrix $X_{m \times n}$. What are the properties of the co-variance matrix of $X$?
+\\
+\\
+\noindent A. It is symmetric\\
+\\
+B. It is positive semi definite\\
+\\
+C. Its main diagonal contains variances\\
+\\
+D. All of the above
+\\
+\\
+\\
+\textbf{Answer: D}
+\\
+\\
+\textbf{Solution:}
+In probability theory and statistics, a co-variance matrix (also known as auto co-variance matrix, dispersion matrix, variance matrix, or variance co-variance matrix) is a square matrix giving the co-variance between each pair of elements of a given random vector. Any co-variance matrix is symmetric and positive semi-definite and its main diagonal contains variances (i.e., the co-variance of each element with itself).
+\\
+\newpage
+\noindent\textbf{5.} Let $X$ and $Y$ be two discrete random variables with joint probability mass functions $p_{XY}(1, 2) = p_{XY}(3, 4) = \frac{1}{2}$. What is the co-variance matrix of the following matrix of $X$ and $Y$?
+\\
+\\
+A. \Sigma(X, Y) = \begin{bmatrix}
+    1 & 1 \\
+    1 & 1 \\
+          
+\end{bmatrix}
+\\
+\\
+\\
+B.\  \Sigma(X, Y) = \begin{bmatrix}
+    2 & 2 \\
+    2 & 2 \\
+          
+\end{bmatrix}
+\\
+\\
+\\
+C.\  \Sigma(X, Y) = \begin{bmatrix}
+    2 & 2.5 \\
+    2.5 & 3 \\
+          
+\end{bmatrix}
+\\
+\\
+\\
+D.\  \Sigma(X, Y) = \begin{bmatrix}
+    1 & 2 \\
+    3 & 4 \\
+          
+\end{bmatrix}
+\\
+\\
+\\
+\textbf{Answer: A}
+\\
+\\
+\textbf{Solution:}\ 
+$Marginal PMFs are calculated as follows:$
+\\
+\\
+p_{X}(1) = \Sigma_{y}\ p_{XY}(1, y) = \frac{1}{2}
+\\
+\\
+$Similarly$,\  p_{X}(3) =  \frac{1}{2}
+\\
+\\
+p_{Y}(2) = \Sigma_{x}\ p_{XY}(x, 2) = \frac{1}{2}
+\\
+\\
+p_{Y}(4) = \frac{1}{2}
+\\
+\\
+\textbf{$Expectation$}:
+\\
+\\
+E[X] = \frac{1}{2} \times 1 + \frac{1}{2} \times 3 = 2
+\\
+\\
+E[Y] = \frac{1}{2} \times 2 + \frac{1}{2} \times 4 = 3
+\\
+\\
+E[X^2] = \frac{1}{2} \times 1^2 + \frac{1}{2} \times 3^2 = 5
+\\
+\\
+E[Y^2] = \frac{1}{2} \times 2^2 + \frac{1}{2} \times 4^2 = 10
+\\
+\\
+\textbf{$Variance$}:
+\\
+\\
+Var[X] = E[X^2] - (E[X])^2 = 5 - 2^2 = 5 - 4 = 1
+\\
+\\
+Var[Y] = E[Y^2] - (E[Y])^2 = 10 - 3^2 = 10 - 9 = 1
+\\
+\\
+\textbf{$Co-variance$:}
+\\
+\\
+\begin{equation}
+    Cov[X, Y] = E[\{X - E(X)\}\{Y - E(Y)\}] {}\nonumber
+%\end{equation}
+%\\
+%\begin{equation}
+    = E[X\cdot \{Y - E[Y]\} - E[X]\cdot \{Y - E[Y]\}] {}\nonumber
+\end{equation}
+%\begin{equation}
+%    = E[\{X\cdot Y - X\cdot E(X)\}\{Y - E(Y)\}]  {}\nonumber
+%\end{equation}
+\begin{equation}
+    = E[X\cdot Y - X\cdot E[Y] - E[X]\cdot Y + E[X]\cdot [Y] {}\nonumber
+\end{equation}
+\begin{equation}
+    = E[X\cdot Y - E[X]\cdot E(Y) - E[X]\cdot E[Y] + E[X]\cdot [Y] {}\nonumber
+\end{equation}
+\begin{equation}
+    = E[X\cdot Y] - E[X]\cdot  E(Y) - E[X]\cdot E[Y] + E[X]\cdot [Y] {}\nonumber
+\end{equation}
+\begin{equation}
+    = E[X\cdot Y] - E[X]\cdot  E[Y]  {}\nonumber
+\end{equation}
+Now we calculate $E[X\cdot Y]$ as follows:
+\\
+\begin{equation}
+    E[X\cdot Y] = \Sigma_{x} \Sigma_{y} xy f_{XY}(x, y) = (1 \times 2)\times \frac{1}{2} + (3 \times 4)\times \frac{1}{2} = 7 {}\nonumber
+\end{equation}
+\begin{equation}
+    Cov[X, Y] = 7 - 2\times 3 = 7 - 6 = 1 {}\nonumber
+\end{equation}
+%or rearranging, we get
+%\begin{equation}
+%    Cov[X, Y] = \frac{1}{2}(1 \times 2 - 2 \times 3) + \frac{1}{2}(3 \times 4 - 2 \times 3) = 1 {}\nonumber
+%\end{equation}
+\\
+\\
+So: \Sigma(X, Y) = \begin{bmatrix}
+    1 & 1 \\
+    1 & 1 \\
+          
+\end{bmatrix}
+\\
+\\
+\\
+%\noindent\textbf{5.} What is the co-variance matrix of the following matrix $A$?
+%\\
+%\\
+%\[
+%A = \begin{bmatrix}
+%    1 & 2 \\
+%    3 & 4 \\
+%          
+%\end{bmatrix}
+%\]
+%\noindent A. CoVAR(A) = %\begin{bmatrix}
+%    2 & 2 \\
+%    2 & 2 \\
+%          
+%\end{bmatrix}
+%\\
+%\\
+%\\
+%B. CoVAR(A) = \begin{bmatrix}
+%    1 & 3 \\
+%    2 & 4 \\
+%          
+%\end{bmatrix}
+%\\
+%\\
+%\\
+%C. CoVAR(A) = \begin{bmatrix}
+%    2 & 1 \\
+%    4 & 3 \\
+%          
+%\end{bmatrix}
+%\\
+%\\
+%\\
+%D. CoVAR(A) = \begin{bmatrix}
+%    4 & 3 \\
+%    2 & 1 \\
+%          
+%\end{bmatrix}
+%\\
+%\\
+%\\
+%\\
+%\textbf{Answer: A}
+%\\
+%\\
+%\textbf{Solution}:
+%Suppose that you want to find the co-variance of the following set:
+%\\
+%\\
+%$X = 1, 3\  (mean = \hat x = 2)$
+%\\
+%\\
+%$Y = 2, 4\  (mean = \hat y = 3)$
+%\\
+%\\
+%Here, you have to use the following co-variance equation that is:
+%The formula for computing the co-variance of the variables X and Y is
+%\begin{equation}
+%    COV(X, Y) = \frac{\sum_{i = 1}^{n} (X_{i} - \hat x)(Y_{i} - \hat y)}{n - 1} {}\nonumber
+%\end{equation}  
+%\\
+%with $\hat x$ and $\hat y$ denoting the means of $X$ and $Y$, respectively.
+%\\
+%\\
+%where $n = 5$ for this example.
+%\\
+%\\
+%So we have
+%\begin{equation}
+%    COV(X, Y) = COV(Y, X) = \frac{(1 - 2)(2 - 3) + (3 - 2)(4 - 3)}{2 - 1} = 2 {}\nonumber
+%\end{equation}
+%\\
+%For each variate $X_{j}$ , $j = 1, 2, 3, \dots , p$, define its sample variance as:
+%\\
+%\begin{equation}
+%    S = \frac{1}{n - 1}\sum_{i = 1}^{n} (X_{i} - \hat x)^2 {}\nonumber
+%\end{equation}
+%\\
+%So we have
+%\begin{equation}
+%    S = \frac{(1 - 2)^2 + (3 - 2)^2}{2 - 1} = 2 {}\nonumber
+%\end{equation}
+%\\
+%Similarly we have each variate %$Y_{j}$
+%\begin{equation}
+%    S = \frac{(2 - 3)^2 + (4 - 3)^2}{2 - 1} = 2 {}\nonumber
+%\end{equation}
+%\\
+%\\
+%\\
+%So we have the co-variance matrix of A as follows:
+%\\
+%\\
+%$cov_{x,y} = \left[ %\begin{array}{cc}
+%cov_{x,x} & cov_{x,y} \\
+%cov_{y,x} & cov_{y,y} \\
+%\end{array} \right]
+%= \left[ \begin{array}{cc}
+%\sigma^2_{x} & \sigma_{xy} \\
+%\sigma_{yx} & \sigma^2_{y} \\
+%\end{array} \right]$
+%= \begin{bmatrix}
+%    2 & 2 \\
+%    2 & 2 \\
+%          
+%\end{bmatrix}
+\\
+\\
+\\
+\end{widetext}
+\end{document}

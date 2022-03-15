@@ -1,0 +1,438 @@
+%\tolerance=10000
+%\documentclass[prl,twocoloumn,preprintnumbers,amssymb,pla]{revtex4}
+\documentclass[prl,twocolumn,showpacs,preprintnumbers,superscriptaddress]{revtex4}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{dcolumn}
+%\linespread{1.7}
+\usepackage{bm}
+%\usepackage{eps2pdf}
+\usepackage{graphics}
+\usepackage{pdfpages}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage[demo]{graphicx} % omit 'demo' for real document
+%\usepackage{times}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{subfig}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{float}
+\documentclass{article}
+\usepackage{amsmath,systeme}
+
+\sysalign{r,r}
+
+% \textheight = 8.5 in
+% \topmargin = 0.3 in
+
+%\textwidth = 6.5 in
+% \textheight = 8.5 in
+%\oddsidemargin = 0.0 in
+%\evensidemargin = 0.0 in
+
+%\headheight = 0.0 in
+%\headsep = 0.0 in
+%\parskip = 0.2in
+%\parindent = 0.0in
+
+% \newcommand{\ket}[1]{\left|#1\right\rangle}
+% \newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\ketbra}[2]{| #1 \rangle \langle #2 |}
+\newcommand{\proj}[1]{| #1 \rangle \langle #1 |}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\op}[1]{ \hat{\sigma}_{#1} }
+\def\tred{\textcolor{red}}
+\def\tgre{\textcolor{green}}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+
+\begin{document}
+\begin{widetext}
+\\
+\\
+\\
+
+\begin{wrapfigure}
+\centering
+%\includegraphics[\textwidth]{TS_IISc.png}
+\end{wrapfigure}
+\begin{figure}[h!]
+ \begin{right}
+  \hfill\includegraphics[\textwidth, right]{TS_IISc.png}
+ \end{right}
+\end{figure}
+\\
+\\
+\\
+\noindent\textbf{Let the random variable $X$ denote the time a person waits for an elevator to arrive. Suppose the longest one would need to wait for the elevator is 2 minutes, so that the possible values of $X$ (in minutes) are given by the interval $[0,2]$. A possible PDF for $X$ is given by:}
+\\
+\begin{align*}
+    f(x) = \Bigg\{\begin{matrix}
+x,&\  for\  0 \le x \le 1 \\
+2 - x,&\  for\  1 < x \le 2 \\
+0,&\  otherwise
+\end{matrix}
+\end{align*}
+\\
+\\
+Given the $PDF$ above, answer questions 1 to 3 below.
+\\
+\\
+\\
+\textbf{1.} What is the expected value of $X$
+\\
+\\
+\noindent A. $\frac{1}{3}$\\
+\\
+B. $\frac{2}{3}$\\
+\\
+C. $1$\\
+\\
+D. $\frac{3}{4}$
+\\
+\\
+\\
+\textbf{Answer: C}
+\\
+\\
+\textbf{Solution:}
+If $X$ is a continuous random variable with $PDF$ $f(x)$, then the expected value (or mean) of $X$ is given by
+\begin{equation}
+    \mu = \mu_{X} = E[X] = \int_{-\infty}^{\infty} x\cdot f(x) \,dx {}\nonumber
+\end{equation}
+\\
+Applying the definition given in eq (28) above to our problem, we compute the expected value of $X$:
+\begin{equation}
+    E[X] = \int_{0}^{1} x\cdot x  \,dx + \int_{1}^{2} x\cdot (2 - x)  \,dx = \int_{0}^{1} x^2  \,dx + \int_{1}^{2} (2x - x^2)  \,dx = \frac{1}{3} + \frac{2}{3} = 1 {}\nonumber
+\end{equation}
+\\
+\\
+\\
+\textbf{2.} What is the variance of $X$
+\\
+\\
+\noindent A. $1$\\
+\\
+B. $\frac{1}{6}$\\
+\\
+C. $\frac{7}{6}$\\
+\\
+D. $\frac{3}{4}$
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\textbf{Solution:}
+Now we calculate the variance and standard deviation of $X$, by first finding the expected value of $X^2$.
+\begin{equation}
+    E[X^2] = \int_{0}^{1} x^2\cdot x  \,dx + \int_{1}^{2} x^2\cdot (2 - x)  \,dx = \int_{0}^{1} x^3  \,dx + \int_{1}^{2} (2x^2 - x^3)  \,dx = \frac{1}{4} + \frac{11}{12} = \frac{7}{6} {}\nonumber
+\end{equation}
+\\
+Thus we have
+\begin{equation}
+    Var(X) = E[X^2] - \mu^2 = \frac{7}{6} - 1 = \frac{1}{6} {}\nonumber
+\end{equation}
+\\
+\\
+\\
+\\
+\textbf{3.} What is the standard deviation of $X$
+\\
+\\
+\noindent A. $\frac{1}{\sqrt{6}}$\\
+\\
+B. $\sqrt{6}$\\
+\\
+C. $6$\\
+\\
+D. $\frac{1}{6}$
+\\
+\\
+\\
+\textbf{Answer: A}
+\\
+\\
+\textbf{Solution:}
+$SD(X) = \sqrt{Var(x)} = \frac{1}{\sqrt{6}}$ 
+\\
+\\
+\\
+\textbf{4.} Given a matrix $X_{m \times n}$. What are the properties of the co-variance matrix of $X$?
+\\
+\\
+\noindent A. It is symmetric\\
+\\
+B. It is positive semi definite\\
+\\
+C. Its main diagonal contains variances\\
+\\
+D. All of the above
+\\
+\\
+\\
+\textbf{Answer: D}
+\\
+\\
+\textbf{Solution:}
+In probability theory and statistics, a co-variance matrix (also known as auto co-variance matrix, dispersion matrix, variance matrix, or variance co-variance matrix) is a square matrix giving the co-variance between each pair of elements of a given random vector. Any co-variance matrix is symmetric and positive semi-definite and its main diagonal contains variances (i.e., the co-variance of each element with itself).
+\\
+\newpage
+\noindent\textbf{5.} Let $X$ and $Y$ be two discrete random variables with joint probability mass functions $p_{XY}(1, 2) = p_{XY}(3, 4) = \frac{1}{2}$. What is the co-variance matrix of the following matrix of $X$ and $Y$?
+\\
+\\
+A. \Sigma(X, Y) = \begin{bmatrix}
+    1 & 1 \\
+    1 & 1 \\
+          
+\end{bmatrix}
+\\
+\\
+\\
+B.\  \Sigma(X, Y) = \begin{bmatrix}
+    2 & 2 \\
+    2 & 2 \\
+          
+\end{bmatrix}
+\\
+\\
+\\
+C.\  \Sigma(X, Y) = \begin{bmatrix}
+    2 & 2.5 \\
+    2.5 & 3 \\
+          
+\end{bmatrix}
+\\
+\\
+\\
+D.\  \Sigma(X, Y) = \begin{bmatrix}
+    1 & 2 \\
+    3 & 4 \\
+          
+\end{bmatrix}
+\\
+\\
+\\
+\textbf{Answer: A}
+\\
+\\
+\textbf{Solution:}\ 
+$Marginal PMFs are calculated as follows:$
+\\
+\\
+p_{X}(1) = \Sigma_{y}\ p_{XY}(1, y) = \frac{1}{2}
+\\
+\\
+$Similarly$,\  p_{X}(3) =  \frac{1}{2}
+\\
+\\
+p_{Y}(2) = \Sigma_{x}\ p_{XY}(x, 2) = \frac{1}{2}
+\\
+\\
+p_{Y}(4) = \frac{1}{2}
+\\
+\\
+\textbf{$Expectation$}:
+\\
+\\
+E[X] = \frac{1}{2} \times 1 + \frac{1}{2} \times 3 = 2
+\\
+\\
+E[Y] = \frac{1}{2} \times 2 + \frac{1}{2} \times 4 = 3
+\\
+\\
+E[X^2] = \frac{1}{2} \times 1^2 + \frac{1}{2} \times 3^2 = 5
+\\
+\\
+E[Y^2] = \frac{1}{2} \times 2^2 + \frac{1}{2} \times 4^2 = 10
+\\
+\\
+\textbf{$Variance$}:
+\\
+\\
+Var[X] = E[X^2] - (E[X])^2 = 5 - 2^2 = 5 - 4 = 1
+\\
+\\
+Var[Y] = E[Y^2] - (E[Y])^2 = 10 - 3^2 = 10 - 9 = 1
+\\
+\\
+\textbf{$Co-variance$:}
+\\
+\\
+\begin{equation}
+    Cov[X, Y] = E[\{X - E(X)\}\{Y - E(Y)\}] {}\nonumber
+%\end{equation}
+%\\
+%\begin{equation}
+    = E[X\cdot \{Y - E[Y]\} - E[X]\cdot \{Y - E[Y]\}] {}\nonumber
+\end{equation}
+%\begin{equation}
+%    = E[\{X\cdot Y - X\cdot E(X)\}\{Y - E(Y)\}]  {}\nonumber
+%\end{equation}
+\begin{equation}
+    = E[X\cdot Y - X\cdot E[Y] - E[X]\cdot Y + E[X]\cdot [Y] {}\nonumber
+\end{equation}
+\begin{equation}
+    = E[X\cdot Y - E[X]\cdot E(Y) - E[X]\cdot E[Y] + E[X]\cdot [Y] {}\nonumber
+\end{equation}
+\begin{equation}
+    = E[X\cdot Y] - E[X]\cdot  E(Y) - E[X]\cdot E[Y] + E[X]\cdot [Y] {}\nonumber
+\end{equation}
+\begin{equation}
+    = E[X\cdot Y] - E[X]\cdot  E[Y]  {}\nonumber
+\end{equation}
+Now we calculate $E[X\cdot Y]$ as follows:
+\\
+\begin{equation}
+    E[X\cdot Y] = \Sigma_{x} \Sigma_{y} xy f_{XY}(x, y) = (1 \times 2)\times \frac{1}{2} + (3 \times 4)\times \frac{1}{2} = 7 {}\nonumber
+\end{equation}
+\begin{equation}
+    Cov[X, Y] = 7 - 2\times 3 = 7 - 6 = 1 {}\nonumber
+\end{equation}
+%or rearranging, we get
+%\begin{equation}
+%    Cov[X, Y] = \frac{1}{2}(1 \times 2 - 2 \times 3) + \frac{1}{2}(3 \times 4 - 2 \times 3) = 1 {}\nonumber
+%\end{equation}
+\\
+\\
+So: \Sigma(X, Y) = \begin{bmatrix}
+    1 & 1 \\
+    1 & 1 \\
+          
+\end{bmatrix}
+\\
+\\
+\\
+%\noindent\textbf{5.} What is the co-variance matrix of the following matrix $A$?
+%\\
+%\\
+%\[
+%A = \begin{bmatrix}
+%    1 & 2 \\
+%    3 & 4 \\
+%          
+%\end{bmatrix}
+%\]
+%\noindent A. CoVAR(A) = %\begin{bmatrix}
+%    2 & 2 \\
+%    2 & 2 \\
+%          
+%\end{bmatrix}
+%\\
+%\\
+%\\
+%B. CoVAR(A) = \begin{bmatrix}
+%    1 & 3 \\
+%    2 & 4 \\
+%          
+%\end{bmatrix}
+%\\
+%\\
+%\\
+%C. CoVAR(A) = \begin{bmatrix}
+%    2 & 1 \\
+%    4 & 3 \\
+%          
+%\end{bmatrix}
+%\\
+%\\
+%\\
+%D. CoVAR(A) = \begin{bmatrix}
+%    4 & 3 \\
+%    2 & 1 \\
+%          
+%\end{bmatrix}
+%\\
+%\\
+%\\
+%\\
+%\textbf{Answer: A}
+%\\
+%\\
+%\textbf{Solution}:
+%Suppose that you want to find the co-variance of the following set:
+%\\
+%\\
+%$X = 1, 3\  (mean = \hat x = 2)$
+%\\
+%\\
+%$Y = 2, 4\  (mean = \hat y = 3)$
+%\\
+%\\
+%Here, you have to use the following co-variance equation that is:
+%The formula for computing the co-variance of the variables X and Y is
+%\begin{equation}
+%    COV(X, Y) = \frac{\sum_{i = 1}^{n} (X_{i} - \hat x)(Y_{i} - \hat y)}{n - 1} {}\nonumber
+%\end{equation}  
+%\\
+%with $\hat x$ and $\hat y$ denoting the means of $X$ and $Y$, respectively.
+%\\
+%\\
+%where $n = 5$ for this example.
+%\\
+%\\
+%So we have
+%\begin{equation}
+%    COV(X, Y) = COV(Y, X) = \frac{(1 - 2)(2 - 3) + (3 - 2)(4 - 3)}{2 - 1} = 2 {}\nonumber
+%\end{equation}
+%\\
+%For each variate $X_{j}$ , $j = 1, 2, 3, \dots , p$, define its sample variance as:
+%\\
+%\begin{equation}
+%    S = \frac{1}{n - 1}\sum_{i = 1}^{n} (X_{i} - \hat x)^2 {}\nonumber
+%\end{equation}
+%\\
+%So we have
+%\begin{equation}
+%    S = \frac{(1 - 2)^2 + (3 - 2)^2}{2 - 1} = 2 {}\nonumber
+%\end{equation}
+%\\
+%Similarly we have each variate %$Y_{j}$
+%\begin{equation}
+%    S = \frac{(2 - 3)^2 + (4 - 3)^2}{2 - 1} = 2 {}\nonumber
+%\end{equation}
+%\\
+%\\
+%\\
+%So we have the co-variance matrix of A as follows:
+%\\
+%\\
+%$cov_{x,y} = \left[ %\begin{array}{cc}
+%cov_{x,x} & cov_{x,y} \\
+%cov_{y,x} & cov_{y,y} \\
+%\end{array} \right]
+%= \left[ \begin{array}{cc}
+%\sigma^2_{x} & \sigma_{xy} \\
+%\sigma_{yx} & \sigma^2_{y} \\
+%\end{array} \right]$
+%= \begin{bmatrix}
+%    2 & 2 \\
+%    2 & 2 \\
+%          
+%\end{bmatrix}
+\\
+\\
+\\
+\end{widetext}
+\end{document}

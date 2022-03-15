@@ -1,0 +1,251 @@
+%\tolerance=10000
+%\documentclass[prl,twocoloumn,preprintnumbers,amssymb,pla]{revtex4}
+\documentclass[prl,twocolumn,showpacs,preprintnumbers,superscriptaddress]{revtex4}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{dcolumn}
+%\linespread{1.7}
+\usepackage{bm}
+%\usepackage{eps2pdf}
+\usepackage{graphics}
+\usepackage{pdfpages}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage[demo]{graphicx} % omit 'demo' for real document
+%\usepackage{times}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{subfig}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{float}
+\documentclass{article}
+\usepackage{amsmath,systeme}
+
+\sysalign{r,r}
+
+% \textheight = 8.5 in
+% \topmargin = 0.3 in
+
+%\textwidth = 6.5 in
+% \textheight = 8.5 in
+%\oddsidemargin = 0.0 in
+%\evensidemargin = 0.0 in
+
+%\headheight = 0.0 in
+%\headsep = 0.0 in
+%\parskip = 0.2in
+%\parindent = 0.0in
+
+% \newcommand{\ket}[1]{\left|#1\right\rangle}
+% \newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\ketbra}[2]{| #1 \rangle \langle #2 |}
+\newcommand{\proj}[1]{| #1 \rangle \langle #1 |}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\op}[1]{ \hat{\sigma}_{#1} }
+\def\tred{\textcolor{red}}
+\def\tgre{\textcolor{green}}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+
+\begin{document}
+\begin{widetext}
+\\
+\\
+\\
+
+\begin{wrapfigure}
+\centering
+%\includegraphics[\textwidth]{TS_IISc.png}
+\end{wrapfigure}
+\begin{figure}[h!]
+ \begin{right}
+  \hfill\includegraphics[\textwidth, right]{TS_IISc.png}
+ \end{right}
+\end{figure}
+\\
+\\
+\\
+\noindent\textbf{1. The stages in a Visualization Process are:}
+\\
+\\
+\\
+\noindent A. Display hardware and software
+\\
+\\
+\\
+B. Collection and storage of data
+\\
+\\
+\\
+C. Preprocessing for transforming data into an understandable form
+\\
+\\
+\\
+D. All the above
+\\
+\\
+\\
+\textbf{Answer: D}
+\\
+\\
+\textbf{Solution: The four stages in a Visualization Process are:}
+\\
+\\
+1. Collection and storage of data
+\\
+2. Preprocessing for transforming data into an understandable form
+\\
+3. Display hardware and software
+\\
+4. Human perceptual and cognitive 
+system.
+\\
+\\
+\\
+\\
+\textbf{2. When is the need to visualize data?}
+\\
+\\
+\\
+\noindent A. To augment human capabilities\\
+\\
+\\
+B. To replace human capabilities\\
+\\
+\\
+C. When humans need details, but are unclear what questions to ask\\
+\\
+\\
+D. Both A and C
+\\
+\\
+\\
+\textbf{Answer: D}
+\\
+\\
+\textbf{Solution:} The need to visualize data arises when:
+\\
+\\
+1. There is a need to augment (not replace) human capabilities
+\\
+2. No automatic solution exists, and humans needs details but unclear what questions to ask
+\\
+\\
+\\
+\\
+\\
+\textbf{3. Which of the following Data Visualization Technique can be used for Effective Visualization of Multi-dimensional data?}
+\\
+\\
+\\
+\\
+\noindent A. Reingold-Tilford Layout\\
+\\
+\\
+B. Scatterplot Matrix\\
+\\
+\\
+C. Pie Chart\\
+\\
+\\
+D. Hyperbolic Trees
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\textbf{Solution:}
+Scatterplot Matrix is a Data Visualization Technique can be used for Effective Visualization of Multi-dimensional data.
+\\
+\\
+\\
+\\
+\textbf{4. Which of the following is intended for the visualization of hierarchical data in the form of nested rectangles?}  
+\\
+\\
+\\
+A. Bar Chart
+\\
+\\
+\\
+B. Parallel Coordinates
+\\
+\\
+\\
+C. Treemap Chart
+\\
+\\
+\\
+D. None of the above
+\\
+\\
+\\
+\textbf{Answer: C}
+\\
+\\
+\textbf{Solution:}
+Treemap Chart is intended for the visualization of hierarchical data in the form of nested rectangles. . 
+\\
+\\
+\\
+\\
+\newpage
+\noindent\textbf{5. What are the successful application of Treemaps?}
+\\
+\\
+\\
+\noindent A. Use visual properties properly
+\\
+\\
+\\
+B.  Provide excellent interactivity
+\\
+\\
+\\
+C. Make appearance more usable
+\\
+\\
+\\
+D. All the above
+\\
+\\
+\\
+\textbf{Answer: D}
+\\
+\\
+\textbf{Solution:}\ 
+The following are the successful applications of Treemaps:
+\\
+\\
+1. Make appearance more usable
+\\
+2. Use visual properties properly
+\\
+3. When exact numbers aren't very important
+\\
+4. Provide excellent interactivity 
+\\
+\\
+\\
+\end{widetext}
+\end{document}

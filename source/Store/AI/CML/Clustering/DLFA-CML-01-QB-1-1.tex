@@ -1,0 +1,227 @@
+%\tolerance=10000
+%\documentclass[prl,twocoloumn,preprintnumbers,amssymb,pla]{revtex4}
+\documentclass[prl,twocolumn,showpacs,preprintnumbers,superscriptaddress]{revtex4}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{dcolumn}
+%\linespread{1.7}
+\usepackage{bm}
+%\usepackage{eps2pdf}
+\usepackage{graphics}
+\usepackage{pdfpages}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage[demo]{graphicx} % omit 'demo' for real document
+%\usepackage{times}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{subfig}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{float}
+\documentclass{article}
+\usepackage{amsmath,systeme}
+
+\sysalign{r,r}
+
+% \textheight = 8.5 in
+% \topmargin = 0.3 in
+
+%\textwidth = 6.5 in
+% \textheight = 8.5 in
+%\oddsidemargin = 0.0 in
+%\evensidemargin = 0.0 in
+
+%\headheight = 0.0 in
+%\headsep = 0.0 in
+%\parskip = 0.2in
+%\parindent = 0.0in
+
+% \newcommand{\ket}[1]{\left|#1\right\rangle}
+% \newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\ketbra}[2]{| #1 \rangle \langle #2 |}
+\newcommand{\proj}[1]{| #1 \rangle \langle #1 |}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\op}[1]{ \hat{\sigma}_{#1} }
+\def\tred{\textcolor{red}}
+\def\tgre{\textcolor{green}}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+
+\begin{document}
+\begin{widetext}
+\\
+\\
+\\
+
+\begin{wrapfigure}
+\centering
+%\includegraphics[\textwidth]{TS_IISc.png}
+\end{wrapfigure}
+\begin{figure}[h!]
+ \begin{right}
+  \hfill\includegraphics[\textwidth, right]{TS_IISc.png}
+ \end{right}
+\end{figure}
+\\
+\\
+\\
+\noindent\textbf{1. Which of the following statement(s) is/are true about Topic Models?}
+\\
+\\
+\\
+\noindent A. Topic models attempt to discover hidden themes in document corpora.
+\\
+\\
+B. Themes can be used for labelling documents. 
+\\
+\\
+C. Topic Models require supervision.
+\\
+\\
+D. A, B and C
+\\
+\\
+E. Only A and B
+\\
+\\
+F. Only C
+\\
+\\
+\\
+\textbf{Answer: E}
+\\
+\\
+\textbf{Solution:} The first two statements are true, but Topic Models do not require supervision.
+\\
+\\
+\\
+\\
+\textbf{2. Apart from text processing, where else do we find the Applications of Probabilistic Topic models?}
+%Principal Component Analysis, or PCA, is a dimensionality-reduction method that is often used to reduce the dimensionality of large data sets, by transforming a large set of variables into a smaller one that still contains most of the information in the large set.}
+\\
+\\
+\\
+\noindent A. Images
+\\
+\\
+B. Videos
+\\
+\\
+C. Software Engineering
+\\
+\\
+D. Music
+\\
+\\
+E. Only A and B
+\\
+\\
+F. A, B, C and D
+\\
+\\
+\\
+\textbf{Answer: F}
+\\
+\\
+\\
+\\
+\textbf{3. Latent Dirichlet Allocation (LDA) is a particularly popular method for fitting a topic model. It treats each document as a mixture of topics, and each topic as a mixture of words, where $\theta_{d}$ is topic distribution vector for document $d$ and $\beta_{1}$, $\beta_{2}$, $\ $ $\ldots$ $\ $, $\beta_{k}$ are word distribution for the topics ${1}, {2}, \  \ldots , \  {k}$. Which of the following statement(s) is/are true about Latent Dirichlet Allocation?}
+\\
+\\
+\\
+\noindent A. Each document is drawn from a mixture of probability distributions, $\theta$, over topics.
+\\
+\\
+B. Each topic is a distribution over words in the vocabulary.
+\\
+\\
+C. We sample a topic assignment $z$ from  $\theta$ and then a word is sampled from
+the corresponding topic $\beta_{z}$.
+%of a word and we draw a word from the word distribution for the corresponding topic. %in a document. %to the word from $\theta$ and then a word is sampled from the corresponding topic $\beta_{z}$
+\\
+\\
+D. Only B and C
+\\
+\\
+E. Only A and C
+\\
+\\
+F. A, B and C
+\\
+\\
+\\
+\textbf{Answer: F}
+\\
+\\
+\\
+\\
+\textbf{4. Which of the following statement(s) is/are false from the choices as given below:}
+\\
+\\
+\\
+\noindent A. Gaussian Mixture Models are examples of Generative Models of data.
+%and K-Means Clustering Models are examples of Discriminative Models of data.
+\\
+%The dataset on which PCA technique is to be used must be normalized.
+\\
+B. Gaussian Mixture Models are examples of Discriminative Models of data.
+%and K-Means Clustering Models are examples of Generative Models of data.
+\\
+\\
+C. Gaussian Mixture Models do not require the data to be normally distributed.
+\\
+\\
+D. Only B and C 
+\\
+\\
+E. Only A and C 
+\\
+\\
+F. None of the above
+\\
+\\
+\\
+\textbf{Answer: D}
+\\
+\\
+\textbf{Solution:} Gaussian Mixture Models are examples of Generative Models of data and they require the data to be normally distributed.
+\\
+\\
+\\
+\\
+\textbf{5. Vector Space Models can handle Synonymy (Words with the same meaning) and Polysemy (Words with different meaning)}
+\\
+\\
+\\
+A. True
+\\
+\\
+B. False
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\textbf{Solution:} Vector Space Models cannot handle Synonymy (Words with the same meaning) and Polysemy (Words with different meaning).
+\end{widetext}
+\end{document}

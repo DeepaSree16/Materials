@@ -1,0 +1,401 @@
+%\tolerance=10000
+%\documentclass[prl,twocoloumn,preprintnumbers,amssymb,pla]{revtex4}
+\documentclass[prl,twocolumn,showpacs,preprintnumbers,superscriptaddress]{revtex4}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{dcolumn}
+%\linespread{1.7}
+\usepackage{bm}
+%\usepackage{eps2pdf}
+\usepackage{graphics}
+\usepackage{pdfpages}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage[demo]{graphicx} % omit 'demo' for real document
+%\usepackage{times}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{subfig}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{float}
+\documentclass{article}
+\usepackage{amsmath,systeme}
+
+\sysalign{r,r}
+
+% \textheight = 8.5 in
+% \topmargin = 0.3 in
+
+%\textwidth = 6.5 in
+% \textheight = 8.5 in
+%\oddsidemargin = 0.0 in
+%\evensidemargin = 0.0 in
+
+%\headheight = 0.0 in
+%\headsep = 0.0 in
+%\parskip = 0.2in
+%\parindent = 0.0in
+
+% \newcommand{\ket}[1]{\left|#1\right\rangle}
+% \newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\ketbra}[2]{| #1 \rangle \langle #2 |}
+\newcommand{\proj}[1]{| #1 \rangle \langle #1 |}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\op}[1]{ \hat{\sigma}_{#1} }
+\def\tred{\textcolor{red}}
+\def\tgre{\textcolor{green}}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+
+\begin{document}
+\begin{widetext}
+\\
+\\
+\\
+
+\begin{wrapfigure}
+\centering
+%\includegraphics[\textwidth]{TS_IISc.png}
+\end{wrapfigure}
+\begin{figure}[h!]
+ \begin{right}
+  \hfill\includegraphics[\textwidth, right]{TS_IISc.png}
+ \end{right}
+\end{figure}
+\\
+\\
+\\
+\noindent\textbf{1.} Compute the Hessian matrix of the quadratic form: $f(x_{1},x_{2}) = x_{1}^2 - x_{2}^2 - x_{1}x_{2}$.
+\\
+\\
+\noindent A. \begin{bmatrix}
+    -2           & \phantom{-}1 \\       
+    \phantom{-}1 &           -2
+\end{bmatrix}
+\\
+\\
+\\
+B. \begin{bmatrix}
+    \phantom{-}2           & -1 \\       
+    -1 &           \phantom{-}2
+\end{bmatrix}
+\\
+\\
+\\
+C. \begin{bmatrix}
+    \phantom{-}2           & -1 \\       
+    -1 &           -2
+\end{bmatrix}
+\\
+\\
+\\
+D. \begin{bmatrix}
+    -2           & -1 \\       
+    -1 &           \phantom{-}2
+\end{bmatrix}
+\\
+\\
+\\
+\textbf{Answer: C}
+\\
+\\
+\textbf{Solution:} The form of the Hessian in two variables $x_{1}$ and $x_{2}$ is
+\begin{bmatrix}
+    {\Large{\frac{\partial^2 f}{\partial x_{1}^2} & \frac{\partial^2 f}{\partial x_{1}\partial x_{2}} \\       
+    \frac{\partial^2 f}{\partial x_{2}\partial x_{1}} & \frac{\partial^2 f}{\partial x_{2}^2}}}
+\end{bmatrix}
+\\
+We compute the first order partial derivatives as follows:
+\\
+%and found that
+$\frac{\partial f}{\partial x_{1}} =  2x_{1} - x_{2}$,
+$\frac{\partial f}{\partial x_{2}} = - 2x_{2} - x_{1}$
+\\
+\\
+Hence we get:
+\\
+$\frac{\partial^2 f}{\partial x_{1}^2} = 2, \frac{\partial^2 f}{\partial x_{1}\partial x_{2}} = - 1, \frac{\partial^2 f}{\partial x_{2}\partial x_{1}} =  - 1, \frac{\partial^2 f}{\partial x_{2}^2} = - 2$
+\\
+\\
+Using the values calculated above, the Hessian Matrix is
+\begin{bmatrix}
+    \phantom{-}2           & -1 \\       
+    -1 &           -2
+\end{bmatrix}
+\\
+\\
+\\
+\\
+\textbf{2.} Given the function $f(x_{1},x_{2}) = -x_{1} + x_{2} + \frac{x_{1}^2}{2} - x_{1}x_{2} + \frac{x_{2}^2}{2}$. What can be said about the function $f(x_{1},x_{2})$?
+\\
+\\
+\noindent A. $f(x_{1},x_{2})$ is convex.\\
+\\
+B. $-f(x_{1},x_{2})$ is convex.\\
+\\
+C. A and B\\
+\\
+D. None of the above.
+\\
+\\
+\\
+\textbf{Answer: A}
+\\
+\\
+\textbf{Solution:}
+We compute the Hessian of $f(x)$. 
+\\
+\\
+$\frac{\partial f}{\partial x_{1}} =  -1 + x_{1} - x_{2}$
+\\
+\\
+$\frac{\partial f}{\partial x_{2}} = 1 - x_{1} + x_{2}$
+\\
+\\
+Hence we get:
+\\
+\\
+$\frac{\partial^2 f}{\partial x_{1}^2} = 1, 
+\\
+\\
+\frac{\partial^2 f}{\partial x_{1}\partial x_{2}} = - 1,
+\\
+\\
+\frac{\partial^2 f}{\partial x_{2}\partial x_{1}} =  - 1,
+\\
+\\
+\frac{\partial^2 f}{\partial x_{2}^2} = 1$
+\\
+\\
+\\
+Using the values calculated above, the Hessian Matrix is
+\begin{bmatrix}
+    \phantom{-}1           & -1 \\       
+    -1 &           \phantom{-}1
+\end{bmatrix}
+\\
+\\
+\\
+The eigenvalues of the Hessian come out to be $0$ and $2$. Hence the Hessian is positive semi-definite (eigenvalues are $\ge 0$). And so the function $f(x_{1},x_{2}) = -x_{1} + x_{2} + \frac{x_{1}^2}{2} - x_{1}x_{2} + \frac{x_{2}^2}{2}$ is convex.
+\\
+\\
+Now for $-f(x_{1},x_{2}) = x_{1} - x_{2} - \frac{x_{1}^2}{2} + x_{1}x_{2} - \frac{x_{2}^2}{2}$, we have the Hessian Matrix is
+\begin{bmatrix}
+    -1           & \phantom{-}1 \\       
+    \phantom{-}1 &           -1
+\end{bmatrix}
+The eigenvalues of this Hessian come out to be $0$ and $-2$. Since the eigenvalues are $\le 0$, the function $-f(x_{1},x_{2})$ is NOT convex.
+\\
+\\
+\\
+\\
+\textbf{3.} Find the KKT point $(x^*, y^*, \mu^*)$ for the following constrained optimization problem
+\\
+\begin{equation*}
+\begin{aligned}
+& {\text{minimize}}
+& & F(x, y) = 2y + x \\
+& \text{subject to}
+& & g(x, y) \equiv y^2 + xy - 1 = 0 \\
+%\; i = 1, \ldots, m.
+%& \text{and}
+%& & h_2(x, y, z) \equiv x + z = 1, \\
+\end{aligned}
+\end{equation*}
+\\
+%\begin{align*}
+%  \text{minimize} && 2y + x \\
+%  \text{subject to}  && y^2 + %xy - 1 = 0 
+%\end{align*}
+The Lagrangian of the problem is \\
+\begin{equation}
+    L(x, y, \mu) = 2y + x + \mu (y^2 + xy - 1) {}\nonumber
+\end{equation}
+%Find $(x^*, y^*, \mu^*)$ such that the KKT point where the function $F(x, y) = 2y + x$ 
+%Use Lagrange multipliers to find the maximum value of the function $F(x, y) = 2y + x$ subject to the constraint $g(x, y) = y^2 + xy - 1 = 0$.
+\\
+\\
+\noindent A. $(0, 2, -1)$\\
+\\
+B. $(0, -1, 1)$\\
+\\
+C. $(0, -1, -1)$\\
+\\
+D. $(0, 1, 1)$
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\textbf{Solution:}
+First write the problem in the standard form required for the application of the KKT theory:
+\\
+\\
+Set $L(x, y, \mu) = F(x, y) + \mu g(x, y)$. 
+Then if $x^*$, $y^*$ are local minimum $\Longleftrightarrow$ there exists a unique $\mu^*$
+s.t.:
+\begin{equation}
+   \frac{\partial L}{\partial x} = 1 + \mu y = 0
+\end{equation} 
+\begin{equation}
+   \frac{\partial L}{\partial y} = 2 + 2\mu y + \mu x = 0
+\end{equation}
+\begin{equation}
+    y^2 + xy - 1 = 0
+\end{equation} 
+\\
+Setting all these three equations equal to zero, we see from the third equation that
+$y \ne 0$, and from the first equation that $\mu = \frac {-1}{y}$.\\
+\\
+From the first equation, we have $1 + \mu y = 0$. Use this in the
+second equation
+\begin{equation}
+    \frac{\partial L}{\partial y} = 2(1 + \mu y) + \mu x 
+\end{equation}
+or
+\begin{equation}
+    \mu x = 0
+\end{equation}
+So either we have $x = 0$ or $\mu = 0$
+\\
+\\
+Now $\mu \ne 0$, because from eq (1), we have $\mu = \frac {-1}{y}$ and if $\mu = 0$, then $y = \infty$
+\\
+\\
+%$\frac {-x}{y} = 0$
+%implying that $x = 0$. 
+From the third
+equation, we obtain $y = \pm 1$.
+\\
+\\
+Put $(0, -1)$ in $2y + x$ to get value of $F(x, y) = -2$
+\\
+\\
+Put $(0, 1)$ in $2y + x$ to get $F(x, y) = 2$.
+\\
+\\
+So $F(x, y)$ has minimum value = $-2$ at KKT points $x^* = 0,\  y^* = -1,\  \mu^* = 1$
+\\
+\\
+\\
+\\
+\textbf{4.} The Principle of Least Squares is one of the popular methods for finding a curve fitting a given data. Say inputs and corresponding target values are $\{x_{1},x_{2}, \cdots \  x_{n}\}$ and  $\{y_{1}, y_{2}, \cdots, \  y_{n}\}$ respectively. The corresponding predictions are $\{p_{1}, p_{2}, \cdots, \  p_{n}\}$. What does Least Squares Estimation minimize?  
+\\
+\\
+\\
+A. $\sum_{i=1}^n(y_{i} - p_{i})^2$
+\\
+\\
+\\
+B. $\sum_{i=1}^n(y_{i} - p_{i})$
+\\
+\\
+\\
+C. $\sum_{i=1}^n(|y_{i} - p_{i}|)$
+\\
+\\
+\\
+D. None of these
+\\
+\\
+\\
+\textbf{Answer: A}
+\\
+\\
+\textbf{Solution:}
+In the least squares method the unknown parameters are estimated by minimizing the sum of the squared deviations between the data and the model. 
+\\
+\\
+\\
+\\
+%\newpage
+\noindent\textbf{5.} A line of best fit is a straight line that is the best approximation of the given set of data. A more accurate way of finding the line of best fit is the least square method. Given the equation of line of best fit for a set of ordered pairs $(x_{1},y_{1})$, $ (x_{2},y_{2}), \cdots (x_{n},y_{n})$ is $y = mx + c$, which of the following formula gives the slope of the line of best fit?
+\\
+\\
+\\
+\noindent A. $m = \frac{\sum_{i=1}^n x_{i}^2 \  - \  n(\bar x)^2}{\sum_{i=1}^n x_{i}y_{i} \  -  \ n\bar x\bar y}$, where $\bar x = \frac{\sum_{i=1}^nx_{i}}{n}$ and $\bar y = \frac{\sum_{i=1}^ny_{i}}{n}$
+\\
+\\
+\\
+B. $m = \frac{\sum_{i=1}^n x_{i}y_{i} \  - \  n\bar x\bar y}{\sum_{i=1}^n x_{i}^2 \  - \  n(\bar x)^2}$, where $\bar x = \frac{\sum_{i=1}^nx_{i}}{n}$ and $\bar y = \frac{\sum_{i=1}^ny_{i}}{n}$
+\\
+\\
+\\
+C. Both $A$ and $B$
+\\
+\\
+\\
+D. None of the above
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\textbf{Solution:}\ 
+Use least-squares regression to fit a straight line $y = mx + c$ by computing the slope $m$ as follows:
+\\
+\\
+Fitting a straight line $y = mx + c$ to a set of data set $(x_{1},y_{1})$, $ (x_{2},y_{2}), \cdots (x_{n},y_{n})$ (paired data points).
+\\
+\\
+Error for the $i^th$ data point is:
+\begin{equation}
+    e_{i} = y_{i} - mx_{i} - c
+\end{equation}
+\\
+\\
+Minimize the Minimize the sum of squares of individual errors  (deviation) to get a best-fit line (to find $m$ and $c$).
+\begin{equation}
+    S_{r} = \sum_{i=1}^n e_{i}^2 = \sum_{i=1}^n (y_{i} - mx_{i} - c)^2
+\end{equation}
+\\
+Determine the unknowns $m$ and $c$ by minimizing $S_{r}$.
+\\
+\\
+To do this set the derivatives of $S_{r}$ with respect to $m$ and $c$ to zero.
+\begin{equation}
+    \frac{\partial S_{r}}{\partial c} = -2\sum_{i=1}^n (y_{i} - mx_{i} - c) = 0 \Rightarrow nc + (\sum x_{i})m = \sum y_{i}
+\end{equation}
+\begin{equation}
+    \frac{\partial S_{r}}{\partial m} = -2\sum_{i=1}^n (y_{i} - mx_{i} - c)x_{i} = 0 \Rightarrow (\sum x_{i})c + (\sum x_{i}^2)m = \sum x_{i} y_{i}
+\end{equation}
+Solving $m$ and $c$ from equations (8) and (9), we get
+$m = \frac{\sum_{i=1}^n x_{i}y_{i} \  - \  n\bar x\bar y}{\sum_{i=1}^n x_{i}^2 \  - \  n(\bar x)^2}$, where $\bar x = \frac{\sum_{i=1}^nx_{i}}{n}$ and $\bar y = \frac{\sum_{i=1}^ny_{i}}{n}$
+%Step 3: Calculate Slope $m$:
+%\begin{equation}
+%    m = \frac{n\sum x_{i}y_{i} - \sum x_{i} \sum y_{i}}{n\sum x_{i}^2 - (\sum x_{i})^2} = \frac{5 \times 263 - 26 \times 41}{5 \times 168 - 26 \times 26} = 1.1583
+%\end{equation}
+%Step 4: Calculate Intercept $c$:
+%\begin{equation}
+%    c = \frac{\sum y_{i} -m\sum x_{i}}{n} = \frac{41 - 1.5183 \times 26 }{5} = 0.305
+%\end{equation}
+%Step 5: Assemble the equation of a line:
+%\begin{equation}
+%   y = mx + c =  y = 1.5183x + 0.305
+%\end{equation}
+\\
+\\
+\\
+\end{widetext}
+\end{document}

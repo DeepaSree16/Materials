@@ -1,0 +1,413 @@
+%\tolerance=10000
+%\documentclass[prl,twocoloumn,preprintnumbers,amssymb,pla]{revtex4}
+\documentclass[prl,twocolumn,showpacs,preprintnumbers,superscriptaddress]{revtex4}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{dcolumn}
+%\linespread{1.7}
+\usepackage{bm}
+%\usepackage{eps2pdf}
+\usepackage{graphics}
+\usepackage{pdfpages}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage[demo]{graphicx} % omit 'demo' for real document
+%\usepackage{times}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{subfig}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{float}
+\documentclass{article}
+\usepackage{amsmath,systeme}
+
+\sysalign{r,r}
+
+% \textheight = 8.5 in
+% \topmargin = 0.3 in
+
+%\textwidth = 6.5 in
+% \textheight = 8.5 in
+%\oddsidemargin = 0.0 in
+%\evensidemargin = 0.0 in
+
+%\headheight = 0.0 in
+%\headsep = 0.0 in
+%\parskip = 0.2in
+%\parindent = 0.0in
+
+% \newcommand{\ket}[1]{\left|#1\right\rangle}
+% \newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\ketbra}[2]{| #1 \rangle \langle #2 |}
+\newcommand{\proj}[1]{| #1 \rangle \langle #1 |}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\op}[1]{ \hat{\sigma}_{#1} }
+\def\tred{\textcolor{red}}
+\def\tgre{\textcolor{green}}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+
+\begin{document}
+\begin{widetext}
+\\
+\\
+\\
+
+\begin{wrapfigure}
+\centering
+%\includegraphics[\textwidth]{TS_IISc.png}
+\end{wrapfigure}
+\begin{figure}[h!]
+ \begin{right}
+  \hfill\includegraphics[\textwidth, right]{TS_IISc.png}
+ \end{right}
+\end{figure}
+\\
+\\
+\\
+\noindent\textbf{1. When can we say two nonzero vectors are orthogonal?}
+\\
+\\
+A. When their dot product is zero
+\\
+\\
+B. When their cross product is zero
+\\
+\\
+C. When their sum is zero
+\\
+\\
+D. None of the above
+\\
+\\
+\\
+\textbf{Answer: A}
+\\
+\\
+\textbf{Solution}:
+Two nonzero vectors are perpendicular, or orthogonal, if and only if their dot product is equal to zero.
+%\textbf{1. Find the eigenvalues of following matrix:}
+%\[
+%A = \begin{bmatrix}    17 & 8  \\     8 & 17    \\ \end{bmatrix}
+%\]
+%\\
+%\\
+%A. $-25, 9$\\
+%\\
+%B. $5, 3$\\
+%\\
+%C. $25, -9$\\
+%\\
+%D. $25, 9$
+%\\
+%\\
+%\\
+%\textbf{Answer: D}
+%\\
+%\\
+%\textbf{Solution}:
+%To find out the eigenvalues of matrix $A$, we write the characteristic equation as follows:
+%
+%\[
+%\begin{vmatrix}    A - \lambda \cdot I \end{vmatrix} = \begin{vmatrix} \begin{bmatrix}    17 & %8 \\     8 & 17   \\ \end{bmatrix} - \begin{bmatrix}    \lambda & 0 \\     0 & \lambda  \\ %\end{bmatrix}\end{vmatrix} = 0
+%\]
+%\\
+%\[
+%\begin{vmatrix}   \begin{bmatrix}    17 - \lambda & 8  \\     8 & 17 - \lambda  \\ %\end{bmatrix}\end{vmatrix} = 0
+%\]
+%\\
+%\\
+%Solving we get $(17 - \lambda)(17 - \lambda) - 64 = 0$
+%\\
+%\\
+%So the eigenvalues are $\lambda_{1} = 25$ and $\lambda_{2} = 9$
+\\
+\\
+\\
+%\textbf{2. Find the eigenvectors of following matrix:}
+%\[
+%A = \begin{bmatrix}    2 & -1 \\     -1 & 2   \\ \end{bmatrix}
+%\]
+%\\
+%\\
+%A. $\begin{bmatrix}   \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\ -\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \end{bmatrix}$\\
+%\\
+%\\
+%B. $\begin{bmatrix}   \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \end{bmatrix}$\\
+%\\
+%\\
+%C. $\begin{bmatrix}   \frac{1}{2} & \frac{1}{2} \\ \frac{1}{2} & \frac{1}{2} \end{bmatrix}$\\
+%\\
+%\\
+%D. $\begin{bmatrix}   \frac{1}{2} & \frac{1}{2} \\ \frac{1}{2} & -\frac{1}{2} \end{bmatrix}$\\
+%\\
+%\\
+%\\
+%\textbf{Answer: A}
+%\\
+%\\
+%\textbf{Solution}
+%Calculating as above, the two eigenvalues of matrix $A$ are $\lambda_{1} = 3$ and $\lambda_{2} = 1$
+%\\
+%\\
+%Let us find the eigenvector associated first with $\lambda_{1} = 3$
+%\\
+%\\
+%We have $A \cdot v_{1} = \lambda_{1} \cdot \ u_{1}$ or $(A - \lambda_{1}) \cdot \ u_{1} = 0$
+%\\
+%\[ or
+%\begin{bmatrix}    2 - 3 & -1 \\     -1 & 2 - 3   \\ \end{bmatrix} \begin{bmatrix}    u_{1,1} \\     u_{1,2}  \\ \end{bmatrix}= \begin{bmatrix}    0 \\     0  \\ \end{bmatrix}
+%\]
+%\\
+%\\
+%We have: $-u_{1,1} - u_{1,2} = 0$ or $u_{1,1} = - u_{1,2}$
+%\\
+%\\
+%Normalizing, we get the following eigenvector associated with eigenvalue $\lambda_{1} = 3$ as:
+%\\
+%\[
+%\begin{bmatrix}    u_{1,1} \\     u_{1,2}  \\ \end{bmatrix}= \begin{bmatrix}    %\frac{1}{\sqrt{2}} \\     -\frac{1}{\sqrt{2}}  \\ \end{bmatrix}
+%\]
+%\\
+%\\
+%Now let us find the eigenvector associated first with $\lambda_{2} = 1$
+%\\
+%So we have $A \cdot u_{2} = \lambda_{2} \cdot \ u_{2}$ or $(A - \lambda_{2}) \cdot \ u_{2} = 0$
+%\\
+%\[
+%\begin{bmatrix}    2 - 1 & -1 \\     -1 & 2 - 1   \\ \end{bmatrix} \begin{bmatrix}    u_{2,1} \\     u_{2,2}  \\ \end{bmatrix}= \begin{bmatrix}    0 \\     0  \\ \end{bmatrix}
+%\]
+%\\
+%We have: $u_{2,1} - u_{2,2} = 0$ or $u_{2,1} =  u_{2,2}$
+%\\
+%\\
+%Normalizing, we get the following eigenvector associated with eigenvalue $\lambda_{2} = 1$ as:
+%\[
+%\begin{bmatrix}    u_{2,1} \\     u_{2,2}  \\ \end{bmatrix}= \begin{bmatrix}    \frac{1}{\sqrt{2}} \\     \frac{1}{\sqrt{2}}  \\ \end{bmatrix}
+%\]
+%\textbf{2. Which of the following triangular matrices is NOT invertible?}
+%\\
+%\\
+%1. \begin{bmatrix}    1 & 5 & 3 & 4 \\     0 & 2 & 1 & 6 \\ 0 & 0 & 3 & 5  \\ 0 & 0 & 0 & 1 \end{bmatrix}
+%\\
+%\\
+%\\
+%2. \begin{bmatrix}    1 & 5 & 3 & 4 \\     0 & 0 & 1 & 6 \\ 0 & 0 & 2 & 5  \\ 0 & 0 & 0 & 1 \end{bmatrix}
+%\\
+%\\
+%\\
+%3. \begin{bmatrix}    1 & 0 & 0 & 0 \\     5 & 2 & 0 & 0 \\ 3 & 1 & 3 & 0  \\ 4 & 6 & 5 & 1 \end{bmatrix}
+%\\
+%\\
+%\\
+%4. \begin{bmatrix}    1 & 0 & 0 & 0 \\     5 & 2 & 0 & 0 \\ 3 & 1 & 0 & 0  \\ 4 & 6 & 5 & 1 \end{bmatrix}
+%\\
+%\\
+%\\
+%A. 1 Only
+%\\
+%\\
+%B. 3 Only
+%\\
+%\\
+%C. 2 Only
+%\\
+%\\
+%D. Both 2 and 4 
+%\\
+%\\
+%\\
+%\newpage
+%\textbf{Answer: D}
+%\\
+%\\
+%\textbf{Solution:} 
+% A triangular matrix is invertible if and only if all diagonal entries are nonzero.
+\textbf{2. Given the following matrix A. What can be deduced about it?}
+\\
+\\
+\[ A = 
+\begin{bmatrix}    0 & 5 & 3 \\     -5 & 0 & -8 \\ -3 & 8 & 0  \\ \end{bmatrix} \]
+%\[ B = 
+%\begin{bmatrix}    0 & -2 & 45 \\     2 & 0 & 4 \\ -45 & -4 & 0 \\ \end{bmatrix} \]
+A. $A$ is a symmetric matrix
+\\
+\\
+B. $A$ is a skew-symmetric matrix
+\\
+\\
+C. $A$ is an orthogonal matrix
+\\
+\\
+D. None of the above
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\textbf{Solution:} 
+ A matrix is skew-symmetric if and only $A$ = -$A^T$.
+\\
+\\
+\\
+\textbf{3. The determinant of the following matrix is:}
+\[
+A = \begin{bmatrix}    2 & 3 & -1 \\     4 & -3 & -1 \\ 1 & -3 & 3  \\ \end{bmatrix}
+\]
+\\
+\\
+A. $54$
+\\
+\\
+B. $27$
+\\
+\\
+C. $-54$
+\\
+\\
+D. $81$
+\\
+\\
+\\
+%\newpage
+\textbf{Answer: C}
+\\
+\\
+\textbf{Solution:} 
+The determinant of the matrix is: $|A| = 2([-3 * 3] - [-1 * -3]) - 3*([4 * 3] - 1 * [-1 * 1]) - 1 * ([4 * -3] - [-3 * 1]) = -54$
+\\
+\\
+\\
+%\textbf{4. What is the formula for computing the Singular Value Decomposition of a matrix of size $m \times n$?}
+%\\
+%\\
+%A. $U_{m \times m}\Sigma_{m \times n} V^T_{n \times n}$
+%\\
+%\\
+%B. $V_{m \times m}\Sigma_{m \times n} U^T_{n \times n}$
+%\\
+%\\
+%C. $U_{n \times n}\Sigma_{m \times n} V^T_{m \times m}$
+%\\
+%\\
+%D. $V_{n \times n}\Sigma_{m \times m} U^T_{m \times m}$
+%\\
+%\\
+%\\
+%\textbf{Answer: A}
+%\\
+%\\
+%\textbf{Solution:} 
+%The SVD theorem states: $A_{m \times n} = U_{m \times m}\Sigma_{m \times n} V^T_{n \times n}$
+\textbf{4. What is the resultant matrix when an upper triangular matrix of size $m \times m$ and a lower triangular matrix of size $m \times m$ are multiplied?}
+\\
+\\
+A. A lower triangular matrix of size $m \times m$
+\\
+\\
+B. A diagonal matrix of size $m \times m$
+\\
+\\
+C. An upper triangular matrix of size $m \times m$
+\\
+\\
+D. A full matrix of size $m \times m$
+\\
+\\
+\\
+\textbf{Answer: D}
+\\
+\\
+\textbf{Solution:} 
+%The SVD theorem states: $A_{m \times n} = U_{m \times m}\Sigma_{m \times n} V^T_{n \times n}$
+\\
+\\
+\\
+\textbf{5. What is the inverse of the following matrix?}
+\\
+%\[
+%\begin{bmatrix}    2 & 3 & -1 \\     4 & -3 & -1 \\ 1 & -3 & 3     \\ \end{bmatrix}
+%\]
+\[ A= 
+\begin{bmatrix}    2 & 3 \\     5 & 7 \\ \end{bmatrix}
+\]
+\\
+\\
+%A. $\begin{bmatrix}   \frac{13}{54} & -\frac{7}{54} & \frac{1}{27} \\ \frac{2}{9} & \frac{1}{9} & \frac{1}{9} \\ \frac{1}{6} & -\frac{1}{6} & \frac{1}{3} \end{bmatrix}$\\
+A. $\begin{bmatrix}   7 & -5 \\ -3 & 2 \end{bmatrix}$\\
+\\
+\\
+%B. $\begin{bmatrix}    \frac{2}{9} & \frac{1}{9} & \frac{1}{9} \\     \frac{13}{54} & -\frac{7}{54} & \frac{1}{27} \\ \frac{1}{6} & -\frac{1}{6} & \frac{1}{3}   \end{bmatrix}$
+B. $\begin{bmatrix}   -7 & 3 \\ 5 & -2 \end{bmatrix}$\\
+\\
+\\
+C. $\begin{bmatrix}   7 & -3 \\ -5 & 2 \end{bmatrix}$\\
+%C. $\begin{bmatrix}   \frac{1}{6} & -\frac{1}{6} & \frac{1}{3} \\     \frac{13}{54} & -\frac{7}{54} & \frac{1}{27} \\ \frac{2}{9} & \frac{1}{9} & \frac{1}{9}   \end{bmatrix}$\\
+\\
+\\
+D. Does not exist\\
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\textbf{Solution:}
+First, find the determinant of $2 \times  2$ $A$ Matrix and then find it’s minor, cofactors and adjoint and insert the results in the Inverse Matrix formula given below:
+\begin{equation}
+A^{-1}=\frac{1}{|A|} Adj(A) {}\nonumber
+\end{equation}
+\\
+\[
+\begin{vmatrix}    A \end{vmatrix} =\begin{vmatrix}    2 & 3 \\     5 & 7  \\  \end{vmatrix} = 14 - 15 = -1 \neq 0 
+\]
+\\
+Therefore $A$ is non-singular
+\\
+\\
+Therefore, the system has the unique solution $X=A^{-1}B$
+\\
+\\
+We have the determinant of $1 \times  1$ minor matrices as follows:
+\\
+$A_{11} = 7$,\\
+$A_{12} = -5$,\\
+$A_{21} = -3$,\\
+$A_{22} = 2$,\\
+
+\\
+Therefore, we now have
+\[
+adj(A) = \begin{bmatrix}    A_{11} & A_{21}  \\     A_{12} & A_{22}  \\ \end{bmatrix} = \begin{bmatrix}    7 & -3 \\   -5 & 2 \\  \end{bmatrix}
+\]
+\\
+\\
+And
+\[
+A^{-1} =   \frac{adj(A)}{\begin{vmatrix} A \end{vmatrix}} = -\frac{1}{1} \begin{bmatrix}   7 & -3 \\     -5 & 2 \\  \end{bmatrix} = \begin{bmatrix}    -7 & 3 \\     5 & -2   \\ \end{bmatrix}
+\]
+\\
+\\
+\\
+\end{widetext}
+\end{document}

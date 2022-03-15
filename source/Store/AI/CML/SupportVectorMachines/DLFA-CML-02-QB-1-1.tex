@@ -1,0 +1,214 @@
+%\tolerance=10000
+%\documentclass[prl,twocoloumn,preprintnumbers,amssymb,pla]{revtex4}
+\documentclass[prl,twocolumn,showpacs,preprintnumbers,superscriptaddress]{revtex4}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{dcolumn}
+%\linespread{1.7}
+\usepackage{bm}
+%\usepackage{eps2pdf}
+\usepackage{graphics}
+\usepackage{pdfpages}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage[demo]{graphicx} % omit 'demo' for real document
+%\usepackage{times}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{subfig}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{float}
+\documentclass{article}
+\usepackage{amsmath,systeme}
+
+\sysalign{r,r}
+
+% \textheight = 8.5 in
+% \topmargin = 0.3 in
+
+%\textwidth = 6.5 in
+% \textheight = 8.5 in
+%\oddsidemargin = 0.0 in
+%\evensidemargin = 0.0 in
+
+%\headheight = 0.0 in
+%\headsep = 0.0 in
+%\parskip = 0.2in
+%\parindent = 0.0in
+
+% \newcommand{\ket}[1]{\left|#1\right\rangle}
+% \newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\ketbra}[2]{| #1 \rangle \langle #2 |}
+\newcommand{\proj}[1]{| #1 \rangle \langle #1 |}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\op}[1]{ \hat{\sigma}_{#1} }
+\def\tred{\textcolor{red}}
+\def\tgre{\textcolor{green}}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+
+\begin{document}
+\begin{widetext}
+\\
+\\
+\\
+
+\begin{wrapfigure}
+\centering
+%\includegraphics[\textwidth]{TS_IISc.png}
+\end{wrapfigure}
+\begin{figure}[h!]
+ \begin{right}
+  \hfill\includegraphics[\textwidth, right]{TS_IISc.png}
+ \end{right}
+\end{figure}
+\\
+\\
+\\
+\noindent\textbf{1. What are the measures used to evaluate a classification problem?}
+\\
+\\
+\\
+\noindent A. Accuracy
+\\
+\\
+\\
+B. Precision
+\\
+\\
+\\
+C. Recall
+\\
+\\
+\\
+D. F1 Score
+\\
+\\
+\\
+E. All of the above
+\\
+\\
+\\
+\textbf{Answer: E}
+\\
+\\
+\textbf{Solution:} All the measures above are used to evaluate a classification problem.
+\\
+\\
+\\
+\\
+\textbf{2. Consider a Support Vector Machine model in two dimensions. In general, the equation for the hyperplane is $w^T x + b = 0$, where where $x$ is the input vector, $w$ is the coefficient and normal vector to the hyperplane, and $b$ is also the coefficient of the hyperplane (also known as the bias). Given $x$ is a vector  $[x_{1}, x_{2}]$.  If for example $w = [1,2]^T$ and $b = 3$ then what is the equation of the hyperplane?}
+\\
+\\
+\\
+\noindent A. $2x_{1} - x_{2} + 3 = 0$
+\\
+\\
+B. $2x_{1} + x_{2} + 3 = 0$
+\\
+\\
+C. $x_{1} - 2x_{2} + 3 = 0$\
+\\
+\\
+D. $x_{1} + 2x_{2} + 3 = 0$
+\\
+\\
+\\
+\textbf{Answer: D}
+\\
+\\
+\textbf{Solution:} The equation for the hyperplane is $w^T x + b = 0$, where where $x$ is the input vector, $w$ is a vector of weights, and $b$ is the bias.
+\\
+\\
+So we get the equation of the hyperplane as follows:
+\\
+\\
+$[1,2]^T$ + $\begin{bmatrix}   {x_{1}}  \\ {x_{2}}\end{bmatrix}$ + 3 = 0 = $x_{1} + 2x_{2} + 3 = 0$
+\\
+\\
+\textbf{3. In the Support Vector Machines model, what are support vectors?}
+\\
+\\
+\\
+\noindent A. The vectors that support all predictor variables in SVM model
+\\
+\\
+B. The outlier vectors in SVM
+\\
+\\
+C. The data points closest to the separating hyperplane
+\\
+\\
+D. All  of the above
+\\
+\\
+\\
+\textbf{Answer: C}
+\\
+\\
+\\
+\\
+\textbf{4. Which of the following metrics can be used for evaluating regression models?}
+\\
+\\
+\\
+\noindent A. P-Value
+\\
+\\
+B. RMSE
+\\
+\\
+C. Beta Coefficients
+\\
+\\
+D. All of the above
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\\
+\\
+\textbf{5. Choose all options which are true.}
+\\
+\\
+\\
+\noindent A. SVM with Kernel function is same as a linear SVM in a suitably defined feature space
+\\
+\\
+B. The Kernel trick can be applied to linear SVMs only on specific datasets
+\\
+\\
+C. Training an SVM with Kernel functions requires solving a quadratic programming problem
+\\
+\\
+D. Kernel function value is always positive
+\\
+\\
+\\
+\textbf{Answer: A and C}
+\\
+\\
+\\
+\end{widetext}
+\end{document}

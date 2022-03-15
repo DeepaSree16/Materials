@@ -1,0 +1,235 @@
+%\tolerance=10000
+%\documentclass[prl,twocoloumn,preprintnumbers,amssymb,pla]{revtex4}
+\documentclass[prl,twocolumn,showpacs,preprintnumbers,superscriptaddress]{revtex4}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{dcolumn}
+%\linespread{1.7}
+\usepackage{bm}
+%\usepackage{eps2pdf}
+\usepackage{graphics}
+\usepackage{pdfpages}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage[demo]{graphicx} % omit 'demo' for real document
+%\usepackage{times}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{subfig}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{float}
+\documentclass{article}
+\usepackage{amsmath,systeme}
+
+\sysalign{r,r}
+
+% \textheight = 8.5 in
+% \topmargin = 0.3 in
+
+%\textwidth = 6.5 in
+% \textheight = 8.5 in
+%\oddsidemargin = 0.0 in
+%\evensidemargin = 0.0 in
+
+%\headheight = 0.0 in
+%\headsep = 0.0 in
+%\parskip = 0.2in
+%\parindent = 0.0in
+
+% \newcommand{\ket}[1]{\left|#1\right\rangle}
+% \newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\ketbra}[2]{| #1 \rangle \langle #2 |}
+\newcommand{\proj}[1]{| #1 \rangle \langle #1 |}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\op}[1]{ \hat{\sigma}_{#1} }
+\def\tred{\textcolor{red}}
+\def\tgre{\textcolor{green}}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+
+\begin{document}
+\begin{widetext}
+\\
+\\
+\\
+
+\begin{wrapfigure}
+\centering
+%\includegraphics[\textwidth]{TS_IISc.png}
+\end{wrapfigure}
+\begin{figure}[h!]
+ \begin{right}
+  \hfill\includegraphics[\textwidth, right]{TS_IISc.png}
+ \end{right}
+\end{figure}
+\\
+\\
+\\
+\noindent\textbf{1. Which of the following statement is true about Principal Component Analysis (PCA)?}
+\\
+\\
+\\
+\noindent A. PCA is a Supervised Learning algorithm that computes non-linear transformation  of the input features for  dimensionality reduction.
+\\
+\\
+\\
+B. PCA is an Unsupervised Learning algorithm that computes linear transformation  of the input features for  dimensionality reduction.
+\\
+\\
+\\
+C. PCA is a Supervised Learning algorithm that computes linear transformation  of the input features for \\dimensionality reduction.
+\\
+\\
+\\
+D. PCA is an Unsupervised Learning algorithm that computes non-linear transformation  of the input features for dimensionality reduction.
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\\
+\\
+\\
+\textbf{2. Given a dataset $X_{3 \times 2}$ = 
+\begin{bmatrix}    1 & 2 \\     3 & 4 \\ 5 & 6 \\ \end{bmatrix}, the  covariance matrix of $X$ is given as follows:
+\\
+\[ Var[X] = 
+\begin{bmatrix}    4 & 4 \\     4 & 4 \\ \end{bmatrix} \]
+\\
+From the covariance matrix, find out the first principal component (eigenvector along which the variance of the data is the highest) for the dataset $X$.}
+%Principal Component Analysis, or PCA, is a dimensionality-reduction method that is often used to reduce the dimensionality of large data sets, by transforming a large set of variables into a smaller one that still contains most of the information in the large set.}
+\\
+\\
+\\
+\noindent A. \begin{bmatrix}    \phantom{-}1 \\     -1 \\ \end{bmatrix}
+\\
+\\
+\\
+B. \begin{bmatrix}    -0.7071 \\     -0.7071 \\ \end{bmatrix}
+\\
+\\
+\\
+C. \begin{bmatrix}    -1 \\     \phantom{-}1 \\ \end{bmatrix}
+\\
+\\
+\\
+D. \begin{bmatrix}    0.7071 \\     0.7071 \\ \end{bmatrix}
+\\
+\\
+\\
+\\
+\textbf{Answer: D}
+\\
+\\
+\\
+\\
+\textbf{3. When applying PCA, in order to decide which eigenvector(s) of the covariance matrix (which is a $p \times p$ matrix, where $p$ is the number of features in a given dataset and where each element represents the covariance between two features in the dataset), can be dropped without losing too much information while performing dimensionality reduction:}
+\\
+\\
+\\
+\noindent A. The eigenvectors corresponding to some of the top few eigenvalues computed from the covariance matrix, bear the least information about the distribution of the data; those are the ones can be dropped.
+\\
+\\
+B. The eigenvectors corresponding to some of the least few eigenvalues computed from the covariance matrix, bear the highest information about the distribution of the data; those are the ones can be dropped.
+\\
+\\
+C. The eigenvectors corresponding to some of the top few eigenvalues computed from the covariance matrix, bear the highest information about the distribution of the data; those are the ones can be dropped.
+\\
+\\
+D. The eigenvectors corresponding to some of the least few eigenvalues computed from the covariance matrix, bear the least information about the distribution of the data; those are the ones can be dropped.
+\\
+\\
+\\
+\textbf{Answer: D}
+\\
+\\
+\\
+\\
+\textbf{4. PCA helps to identify the correlation and dependencies among the features in a data set, and an important step in performing PCA is to compute a covariance matrix, which is a $p \times p$ matrix, where $p$ is the number of features in a given dataset and where each element represents the covariance between two features in the dataset. Given this information, which of the following statement(s) is/are true while trying to apply PCA?}
+\\
+\\
+\\
+\noindent A. Finding the directions of maximum variance in high-dimensional data and project it onto a smaller dimensional subspace while retaining most of the information.
+\\
+%The dataset on which PCA technique is to be used must be normalized.
+\\
+B. The principal components are the eigenvectors of a covariance matrix, and they are orthogonal.
+\\
+\\
+C. The principal components are the eigenvalues of a covariance matrix, and they are orthogonal.
+\\
+\\
+D. A, B and C
+\\
+\\
+E. Only A and B
+\\
+\\
+F. Only A and C
+\\
+\\
+\\
+\textbf{Answer: E}
+\\
+\\
+\\
+\\
+\textbf{5. In Support Vector Machines, the problem of finding a separating hyperplane with the maximum margin (the optimal hyper plane) is a constrained
+optimization problem?}
+\\
+\\
+\\
+A. True
+\\
+\\
+B. False
+\\
+\\
+\\
+\textbf{Answer: A}
+%\textbf{5. Computing the covariance matrix (which is a $p \times p$ matrix, where each element represents the covariance between two features in the dataset) is an important step while performing PCA. Which of the following statement(s) is/are false for a covariance matrix?}
+%\\
+%\\
+%\\
+%\noindent A. Diagonal	entries	in the covariance matrix give	variance	along	each	dimension/feature.
+%\\
+%\\
+%B.  By finding the eigenvalues and eigenvectors of the covariance matrix, we find that the eigenvectors with the largest eigenvalues correspond to the dimensions that have the strongest correlation in the dataset.
+%\\
+%\\
+%C. Computing	the	eigenvectors	of	the	covariance	matrix	gives	us	the	optimal	(linear) basis for explaining	the	variance in	the	data.
+%\\
+%\\
+%D. All of the above.
+%\\
+%\\
+%E. None of the above.
+%\\
+%\\
+%\\
+%\textbf{Answer: E}
+%\\
+%\\
+%\\
+\end{widetext}
+\end{document}
