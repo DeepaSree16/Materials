@@ -1,0 +1,143 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[top=25.4mm, bottom=25.4mm, left=19.1mm, right=19.1mm]{geometry}
+
+
+\usepackage[latin2]{inputenc}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{ulem}
+\usepackage{amsmath}
+\usepackage[document]{ragged2e}
+
+\setlength{\parindent}{4em}
+\setlength{\parskip}{1em}
+\usepackage{hyperref}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LO]{\textbf{\small IoT and Smart Analytics}\\
+\text{\small A Program by IIITH and TalentSprint}}
+
+\usepackage{xcolor}
+\usepackage{lipsum}
+
+\rhead{\begin{picture}(0,0) \put(-250,-2){\includegraphics[width=9cm]{EXP_08_Images/ts-iisc-logo-pr.png}} \end{picture}}
+\cfoot{\thepage}
+
+
+\begin{document}
+
+\begin{center}
+
+\textbf{\large \\EXPERIMENT 22 }\\[6pt]
+\text{Introduction to RSSI in BLE}
+\end{center}
+
+\textbf{\large LEARNING OBJECTIVES:}\\[3pt]
+At the end of this experiment, participants will be able to:\vspace{-6mm}\begin{enumerate}
+\setlength\itemsep{-0.3em}
+\item Implement a basic indoor positioning system on BLE using ESP32.  \\
+\end{enumerate}
+
+\textbf{\large APPARATUS REQUIRED:}\\
+\vspace{-3mm}
+\begin{enumerate}
+ \setlength\itemsep{-0.3em}
+\item ESP32 Module-2pcs \\
+\item Micro USB cable-1pcs\\
+\item DC-DC Power Module
+\end{enumerate}
+
+\begin{justify}
+\textbf{\large THEORY}\\[3pt]
+\textbf{RSSI: }  RSSI stands for Received Signal Strength Indicator. It is the strength of the beacon's signal as seen on the receiving device, for example, a smartphone. The signal strength depends on distance and Broadcasting Power value. At maximum Broadcasting Power (+4 dBm) the \noindent RSSI ranges from -26 (a few inches) to -100 (40-50 m distance).\par
+\noindent RSSI is used to approximate the distance between the device and the beacon using another value defined by the iBeacon standard: Measured Power (see below).\par
+\noindent Due to external factors influencing radio waves-such as absorption, interference, or diffraction-RSSI tends to fluctuate. The further away the device is from the beacon, the more unstable the RSSI becomes.\par
+\noindent \textbf{Measured Power: } Measured Power is a factory-calibrated, read-only constant that indicates, what's the expected RSSI at a distance of 1 meter to the beacon. Combined with RSSI, it allows you to estimate the distance between the device and the beacon.\par
+
+\noindent \textbf{Distance calculation using RSSI}\\
+\textbf{Distance} = 10 \wedge $((Measured Power-RSSI)/(10 * N))$ \\
+
+Where,  N is a constant depends on the Environmental factor, ranging from 2-4.\\
+
+\noindent Use the same code from the previous experiment for the BLE\_server. The code for BLE\_scan will also be the same except for a few changes. The final code for BLE\_scan is shown below.\\ [3cm]
+\end{justify}
+
+\textbf{\large Code :}\\[3pt]
+
+
+ \textcolor{blue}{//
+   Based on Neil Kolban example for\href{https://github.com/nkolban/esp32-snippets/blob/master/cpp_utils/tests/BLE\%20Tests/SampleScan.cpp}{IDF}: 
+   Ported to Arduino ESP32 by Evandro Copercini}
+
+\noindent \#include $<$BLEDevice.h$>$\\
+\#include $<$BLEUtils.h$>$\\
+\#include $<$BLEScan.h$>$\\
+\#include $<$BLEAdvertisedDevice.h$>$\\[8pt]
+
+int scanTime = 15;  \textcolor{blue}{//In seconds}\\
+BLEScan$*$ pBLEScan;\\
+
+class  MyAdvertisedDeviceCallbacks: public  BLEAdvertisedDeviceCallbacks\\
+\{\\
+    void onResult(BLEAdvertisedDevice  advertisedDevice)\\
+    \{\\
+Serial.printf("Advertised Device: \%s", advertisedDevice.toString().c\_str());\\
+      Serial.print(" RSSI: ");\\
+      Serial.println(advertisedDevice.getRSSI());\\
+   \}\\
+\};\\[15pt]
+
+void setup() \{\\
+  Serial.begin(115200);\\
+  Serial.println("Scanning...");\\[10pt]
+
+  BLEDevice::init("");\\
+  pBLEScan = BLEDevice::getScan(); \textcolor{blue}{ //create new scan}\\
+  pBLEScan -$>$ setAdvertisedDeviceCallbacks(new MyAdvertisedDeviceCallbacks());\\
+  pBLEScan -$>$ setActiveScan(true); \textcolor{blue}{ //active scan uses more power, but get results faster}\\
+  pBLEScan -$>$ setInterval(100);\\
+  pBLEScan -$>$ setWindow(99);   \textcolor{blue}{// less or equal setInterval value}\\
+\}\\[15pt]
+
+void loop() \{\\
+   \textcolor{blue}{// put your main code here, to run repeatedly:}\\
+  BLEScanResults foundDevices = pBLEScan -$>$ start(scanTime, false);\\
+  Serial.print("Devices found: ");\\
+  Serial.println(foundDevices.getCount());\\
+  Serial.println("Scan done!");\\
+  pBLEScan -$>$ clearResults();  \textcolor{blue}{ // delete results fromBLEScan buffer to release memory}\\
+  delay(2000);\\
+\}\\[15pt]
+  
+\noindent \textbf{Note:} In this code, we have just added one command to know the RSSI in the callback function. This is the only change from the scanner code of the previous experiment.
+
+\vspace{4cm}
+\begin{justify}
+\noindent \textbf{\large PROCEDURE}\\[6pt]
+\textbf{A) Setting BLE Server in one ESP32 and Scanning with other.}
+\vspace{-3mm}
+\begin{enumerate}
+\setlength\itemsep{-0.3em}
+\item Upload the codes to two different ESP32 modules just like the previous experiment.
+\item Place the server ESP32 approximately 1m away in a clear line of sight (no obstacles in between) from the scanner ESP32. Connect the scanner ESP32 to your PC and see the RSSI values. Take the mean of at least 20 RSSI readings. This will be the measured power for this experiment.
+\item Now, place the ESP32 server approximately 2m away in a clear line of sight (no obstacles in between) from the ESP32 scanner. 
+\item To calculate the suitable value of N, use the given formula by trying different values of N(2,3,4). Use the value of N that gives the best result to you in the following steps.
+\item Till now, we have obtained the values of measured power and N. We can use these values from now onwards to calculate the distance of the ESP32 server from the scanner ESP32.
+\item Write a code to calculate distance using the formula mentioned above and add it to the BLE\_scan code such that it should also print the distance along with RSSI.  
+\item Move your ESP32 server to different locations and try to see the calculated distance. 
+\item Connect a buzzer to scanner ESP32 and then write a program to turn ON the buzzer whenever the ESP32 server goes beyond 5m distance from the ESP32 scanner.
+\item If you were able to implement all the steps till now, then you have successfully implemented a BLE-based indoor positioning system. This is the basic idea behind the baby tracker system and related products.
+\end{enumerate}
+
+
+\textbf{\large REFERENCES:}
+\vspace{-6mm}
+\begin{enumerate}
+\setlength\itemsep{-0.3em}
+\item \href{https://www.arduino.cc/reference/en/libraries/esp32-ble-arduino/}{ESP32 BLE Arduino}
+\item \href{https://iotandelectronics.wordpress.com/2016/10/07/how-to-calculate-distance-from-the-rssi-value-of-the-ble-beacon/}{Distance Calculation Using BLE}
+\end{enumerate}
+\end{justify}
+\end{document}
