@@ -152,6 +152,7 @@ Artefact Codes
 :CS: Case Study
 :CRC: Class Recording
 :DA: Dataset
+:EXT: Experiment
 
 Course Name Codes
 -----------------
