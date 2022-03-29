@@ -1,0 +1,332 @@
+\documentclass[aspectratio=169,14pt,usenames,dvipsnames]{beamer}
+\usetheme{TalentSprint}
+\usepackage[utf8]{inputenc}
+\usepackage{graphics}
+\usepackage{ragged2e}
+\usepackage{amsfonts}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{tcolorbox}
+\usepackage{setspace}
+\usepackage{lmodern}
+\usepackage{blindtext}
+\usepackage{lipsum}
+%\usepackage[a4paper, total={10in, 12in}]{geometry}
+
+\definecolor{swe}{rgb}{0.19, 0.73, 0.56}
+\definecolor{lblue}{RGB}{190,200,198}
+\title[Generalization and Specialization of Objects]{Generalization and
+Specialization of Objects}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+%\newcommand\Fontvi{\fontsize}{8}{8.2}\selectfont
+\begin{document}
+{\1
+\begin{frame} \vspace{35pt}
+
+\subtitle{TalentSprint}
+\maketitle
+\end{frame}
+}
+
+\begin{frame}{Learning Objectives}
+At the end of this video you should able to:
+\begin{itemize}
+\item Identify relationship between objects.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Inheritance}
+\begin{lstlisting}
+class Player \{\\
+\tab private String name;\\
+\tab public String getName() \{\\
+\tab \tab return name;\\
+\tab \}\\
+\tab public void setName(String name) \{\\
+\tab \tab this.name = name;\\
+\tab \}\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Inheritance}
+\begin{lstlisting}
+class Batsman extends Player \{\\
+\tab private int runsScored;\\
+\tab private int ballsFaced;\\
+\tab + Getter and Setter Methods\\
+\tab public float calcStrikeRate() \{\\
+\tab \tab String outputString = new DecimalFormat("\#.\#\#")\\
+\tab \tab .format\\
+\tab \tab \tab (((float)runsScored/(float)ballsFaced)* 100);\\
+\tab \tab return Float.parseFloat(outputString);\\
+\tab \}\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Inheritance}
+\begin{lstlisting}
+class Bowler extends Player \{\\
+\tab private int ballsBowled;\\
+\tab private int wickets;\\
+\tab + Getter and Setter Methods\\
+\tab public float calcStrikeRate() \{\\
+\tab \tab String outputString = new DecimalFormat("\#.\#\#")\\
+\tab \tab .format\\
+\tab \tab \tab (((float)ballsBowled/(float)wickets)* 100);\\
+\tab \tab return Float.parseFloat(outputString);\\
+\tab \}\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Inheritance}
+\begin{lstlisting}
+\textbf{Batsman batsman = new Batsman();}\\
+\textbf{batsman.setName("Virat Kohli");}\\
+\textbf{batsman.setRunsScored(79);}\\
+\textbf{batsman.setBallsFaced(47);}\\
+\vspace{0.5em}
+System.out.println(batsman.getName()); --$>$ Virat Kohli\\
+System.out.println(batsman.getRunsScored()); --$>$ 79 \\
+System.out.println(batsman.getBallsFaced()); --$>$ 47 \\
+System.out.println(batsman.calcStrikeRate()); --$>$ 168.09 \\
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}{Inheritance}
+\begin{lstlisting}
+\textbf{Bowler bowler = new Bowler();}\\
+\textbf{bowler.setName("R Ashwin");}\\
+\textbf{bowler.setBallsBowled(60);}\\
+\textbf{bowler.setWickets(2);}\\
+\vspace{0.5em}
+System.out.println(bowler.getName());--$>$ R Ashwin\\
+System.out.println(bowler.getBallsBowled());--$>$60\\
+System.out.println(bowler.getWickets()); --$>$ 2\\
+System.out.println(bowler.calcStrikeRate()); --$>$ 30.00\\
+\end{lstlisting}
+\end{frame}
+
+
+
+\begin{frame}{super}
+\begin{lstlisting}
+class Player \{\\
+\tab private String name;\\
+\tab Player(String name) \{\\
+\tab \tab this.name = name;\\
+\tab \}\\
+\tab public String getName() \{\\
+\tab \tab return name;\\
+\tab \}\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}{super}
+\begin{lstlisting}
+class Batsman extends Player \{\\
+\tab private int runsScored;\\
+\tab private int ballsFaced;\\
+\tab public Batsman(String name, int runsScored, int ballsFaced) \{\\
+\tab \tab super(name);\\
+\tab \tab this.runsScored = runsScored;\\
+\tab \tab this.ballsFaced = ballsFaced;\\
+\tab \}\\
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}{super}
+\begin{lstlisting}
+\tab + Getter Methods\\
+\tab public float calcStrikeRate() \{\\
+\tab \tab String outputString = new DecimalFormat("\#.\#\#")\\
+\tab \tab .format\\
+\tab \tab \tab (((float)runsScored/(float)ballsFaced)* 100);\\
+\tab \tab return Float.parseFloat(outputString);\\
+\tab \}\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}{super}
+\begin{lstlisting}
+class Bowler extends Player \{\\
+\tab private int ballsBowled;\\
+\tab private int wickets;\\
+\tab public Bowler(String name, int ballsBowled, int wickets) \{\\
+\tab \tab super(name);\\
+\tab \tab this.ballsBowled = ballsBowled;\\
+\tab \tab this.wickets = wickets;\\
+\tab \}\\
+\tab + Getter Methods\\
+\end{lstlisting}
+\end{frame}
+
+
+
+\begin{frame}{super}
+\begin{lstlisting}
+\tab public float calcStrikeRate() \{\\
+\tab \tab String outputString = new DecimalFormat("\#.\#\#")\\
+\tab \tab .format\\
+\tab \tab \tab (((float)ballsBowled/(float)wickets)* 100);\\
+\tab \tab return Float.parseFloat(outputString);\\
+\tab \}\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{super}
+\begin{lstlisting}
+\textbf{Batsman batsman = new Batsman("Virat Kohli", 79, 47);}\\
+\vspace{1em}
+System.out.println(batsman.getName()); --$>$ Virat Kohli\\
+System.out.println(batsman.getRunsScorec()); --$>$ 79\\
+System.out.println(batsman.getBallsFaced()); --$>$ 47\\
+System.out.println(batsman.calcStrikeRate()); --$>$ 168.09\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{super}
+\begin{lstlisting}
+\textbf{Bowler bowler = new Bowler("R Ashwin", 60, 2);}\\
+\vspace{1em}
+System.out.println(bowler.getName()); --$>$ R Ashwin\\
+System.out.println(bowler.getBallsBowled();--$>$ 60\\
+System.out.println(bowler.getWickets()); --$>$ 2\\
+System.out.println(bowler.calcStrikeRate()); --$>$ 30.00\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Abstract}
+\begin{lstlisting}
+abstract class Player \{\\
+\tab private String name;\\
+\tab public Player(String name) \{\\
+\tab \tab this.name = name;\\
+\tab \}\\
+\tab public String getName() \{\\
+\tab \tab return name;\\
+\tab \}\\
+\tab abstract public float calcStrikeRate();\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Abstract}
+\begin{lstlisting}
+class Batsman extends Player \{\\
+\tab private int runsScored;\\
+\tab private int ballsFaced;\\
+\tab public Batsman(String name, int runsScored, int ballsFaced) \{\\
+\tab \tab super(name);\\
+\tab \tab this.runsScored = runsScored;\\
+\tab \tab this.ballsFaced = ballsFaced;\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Abstract}
+\begin{lstlisting}
+\tab + Getter Methods\\
+\tab public float calcStrikeRate() \{\\
+\tab \tab String outputString = new DecimalFormat("\#.\#\#")\\
+\tab \tab .format\\
+\tab \tab \tab (((float)runsScored/(float)ballsFaced)* 100);\\
+\tab \tab return Float.parseFloat(outputString);\\
+\tab \}\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Abstract}
+\begin{lstlisting}
+class Bowler extends Player \{\\
+\tab private int ballsBowled;\\
+\tab private int wickets;\\
+\tab public Bowler(String name, int ballsBowled, int wickets) \{\\
+\tab \tab super(name);
+\tab \tab this.ballsBowled = ballsBowled;\\
+\tab \tab this.wickets = wickets;\\
+\tab \}\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Abstract}
+\begin{lstlisting}
+\tab + Getter Methods\\
+\tab public float calcStrikeRate() \{\\
+\tab \tab String outputString = new DecimalFormat("\#.\#\#")\\
+\tab \tab .format\\
+\tab \tab \tab (((float)ballsBowled/(float)wickets)* 100);\\
+\tab \tab return Float.parseFloat(outputString);\\
+\tab \}\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Abstract}
+\begin{lstlisting}
+\textbf{Batsman batsman = new Batsman("Virat Kohli", 79, 47);}\\
+\vspace{1em}
+System.out.println(batsman.getName()); --$>$ Virat Kohli\\
+System.out.println(batsman.getRunsScored()); --$>$ 79\\
+System.out.println(batsman.getBallsFaced()); --$>$ 47\\
+System.out.println(batsman.calcStrikeRate()); --$>$ 169.08\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Abstract}
+\begin{lstlisting}
+\textbf{Bowler bowler = new Bowler("R Ashwin", 60, 2);}\\
+\vspace{1em}
+System.out.println(bowler.getName()); --$>$ R Ashwin\\
+System.out.println(bowler.getBallsBowled();--$>$ 60\\
+System.out.println(bowler.getWickets()); --$>$ 2\\
+System.out.println(bowler.calcStrikeRate()); --$>$ 30.00\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Abstract}
+\begin{lstlisting}
+public interface Shape \{\\
+\tab float area();\\
+\}\\
+\vspace{1em}
+\textbf{Note: By default the methods in the interface are public
+and abstract}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Abstract}
+\begin{lstlisting}
+class Square implements Shape\{\\
+\tab private int length;\\
+\tab private int breadth;\\
+\tab public Square(int length, int breadth) \{\\
+\tab \tab this.length = length;\\
+\tab \tab this.breadth = breadth;\\
+\tab \}\\
+\tab public float area() \{\\
+\tab \tab return(length * breadth);\\
+\tab \}\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Abstract}
+\begin{lstlisting}
+\textbf{Shape square = new Square(8, 12);}\\
+\vspace{1em}
+System.out.println(square.area());--$>$96.00
+\end{lstlisting}
+\end{frame}
+\end{document}

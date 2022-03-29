@@ -1,0 +1,175 @@
+\documentclass[aspectratio=169,14pt,usenames,dvipsnames]{beamer}
+\usetheme{TalentSprint}
+\usepackage[utf8]{inputenc}
+\usepackage{graphics}
+\usepackage{ragged2e}
+\usepackage{amsfonts}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{tcolorbox}
+\usepackage{setspace}
+\usepackage{lmodern}
+\definecolor{swe}{rgb}{0.19, 0.73, 0.56}
+\definecolor{lgreen}{RGB}{190,200,198}
+\title[Conditional Statement-If]{Conditional Statement-If}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\begin{document}
+
+{\1
+\begin{frame} \vspace{35pt}
+
+\subtitle{TalentSprint}
+\maketitle
+\end{frame}
+}
+
+
+\begin{frame}{Learning Objectives}
+At the end of this video you should able to:
+\begin{itemize}
+\item Understand the need of conditional statements.
+\item Understand the Types of conditional statements.
+\item Use Conditional Statement- If
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Structured Programming Theorem}
+
+\begin{block}{Sequential execution:}
+\tab \tab Executes block of code in a sequence.
+\end{block}
+\end{frame}
+
+\begin{frame}{Structured Programming Theorem}
+\begin{block}{Sequential execution:}
+\tab \tab Executes block of code in a sequence.
+\begin{block}{Sequential execution:}
+\tab \tab Executes block of code,based on the decision.
+\end{block}
+\end{block}
+\end{frame}
+
+\begin{frame}{Structured Programming Theorem}
+\begin{block}{Sequential execution:}
+\tab \tab Executes block of code in a sequence.
+\begin{block}{Sequential execution:}
+\tab \tab Executes block of code,based on the decision.
+\begin{block}{Sequential execution:}
+\tab \tab Executes block of code repeatedly , for required number \tab \tab of times.
+\end{block}
+\end{block}
+\end{block}
+\end{frame}
+
+\begin{frame}{Conditional Statement}
+\begin{itemize}
+    \item Controls the flow of program execution.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Conditional Statement}
+\begin{itemize}
+    \item Controls the flow of program execution.
+    \item Types of Conditional Statements:
+    \begin{itemize}
+        \item if
+        \item if else
+        \item nested if
+        \item if else ladder
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Syntax-if}
+\begin{lstlisting}
+if (boolean\_expression)\{\\
+\tab statement;\\
+\tab statement;\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Syntax-if}
+\begin{lstlisting}
+if (boolean\_expression)\{\\
+\tab statement;\\
+\tab statement;\\
+\}\\
+\end{lstlisting}\\
+Statement(s) in 'if' block executes only if boolean\_expression is 'true'.
+\end{frame}
+
+\begin{frame}{Problem Statement}
+Given the purchase amount , calculate amount to be paid after discount.\\
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Discount} & \textbf{Range} \\
+\hline
+25\% & min 1000\\
+\hline
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}{Solution}
+\begin{lstlisting}
+int p\_amt = 15000;\\
+intd\_amt = 0;\\
+if (p\_amt $>$= 10000) \{\\
+\tab d\_amt = (p\_amt * 25) / 100;\\
+\}\\
+System.out.println(p\_amt - d\_amt);\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Problem Statement}
+Accept a number and display its absolute value.
+\end{frame}
+
+\begin{frame}{Problem Statement}
+Accept a number and display its absolute value.
+\begin{block}{Absolute value of a number is the distance of the number on the number line from zero.}
+\end{block}
+\end{frame}
+
+\begin{frame}{Solution}
+\begin{lstlisting}
+int num = -27;\\
+if (num $<$ 0) \{\\
+\tab num = -num;\\
+\}\\
+System.out.println(num);\\
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}{Problem Statement}
+Given two integer values,print their sum .If the sum is even, double the sum.
+\end{frame}
+
+\begin{frame}{solution}
+\begin{lstlisting}
+int n1 = 15;\\
+int n2 = 30;\\
+int sum\_nums = n1 + n2;\\
+if (sum\_nums \% 2 == 0) \{\\
+\tab sum\_nums *=2;\\
+\}\\
+System.out.println(sum\_nums);
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Summary}
+\begin{itemize}
+    \item Conditional statements control the flow of
+execution of the program.
+\item The expression returns either true or false.
+\item The block of code in if executes only when
+if condition returns true.
+\end{itemize}
+\end{frame}
+\end{document}

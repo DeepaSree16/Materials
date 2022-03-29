@@ -1,0 +1,112 @@
+\documentclass[aspectratio=169,14pt,usenames,dvipsnames]{beamer}
+\usetheme{TalentSprint}
+\usepackage[utf8]{inputenc}
+\usepackage{graphics}
+\usepackage{ragged2e}
+\usepackage{amsfonts}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{tcolorbox}
+\usepackage{setspace}
+\usepackage{lmodern}
+\definecolor{swe}{rgb}{0.19, 0.73, 0.56}
+\definecolor{lblue}{RGB}{190,200,198}
+\title[String Split methods]{String Split methods}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+{\1
+\begin{frame} \vspace{35pt}
+
+\subtitle{TalentSprint}
+\maketitle
+\end{frame}
+}
+
+\begin{frame}{Learning Objectives}
+At the end of this video you should able to:
+\begin{itemize}
+\item learn String split methods.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{split() Method}
+This method splits the string based on the given
+regular expression or delimiter, and returns the
+tokens in the form of array.
+\end{frame}
+
+\begin{frame}{String split Methods}
+\textbf{\textcolor{red}{String[]} \textcolor{blue}{split(String regex)}}\\
+Returns String tokens based on the regexp\\
+\vspace{1em}
+\textbf{\textcolor{red}{String[]} \textcolor{blue}{split(String regex,int limit)}}\\
+Splitting this string around matches of the given regular
+expression.
+\end{frame}
+
+
+
+\begin{frame}{String split Methods}
+\textbf{parameters:}\\
+regex – the delimiting regular expression.\\
+\vspace{1em}
+limit – the result threshold which means how many strings
+to be returned.
+\end{frame}
+
+
+
+\begin{frame}{Examples:1}
+\textbf{split the word based on the space}\\
+\begin{lstlisting}
+public class SplitExample1 \{\\
+\tab public static void main(String args[]) \{\\
+\tab \tab String str1 = "Welcome to "+ "split method in Java";\\
+\tab \tab String[] words = str1.split(" ");\\
+\tab \tab \tab \tab \tab // splits the string based on space\\
+\tab \tab  for (String w : words) \{\\
+\tab \tab \tab \tab System.out.println(w);\\
+\tab \tab \tab  \}\\
+\tab \tab \}\\
+\tab \}\\
+\end{lstlisting}
+\end{frame}
+
+
+
+\begin{frame}{Examples:2}
+\textbf{split() method with regex and length}\\
+\begin{lstlisting}
+public class SplitExample2 \{\\
+public static void main(String args[]) \{\\
+String str1 = "welcome to Java Strings split method";\\
+System.out.println ("returning words:");\\
+for(String w:str1.split ("s",0))\{\\
+System.out.println (w);\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Examples:2}
+\begin{lstlisting}
+System.out.println ("returning words:");\\
+for(String w:str1.split ("s",1)) \{\\
+System.out.println (w);\\
+\}\\
+System.out.println ("returning words:");\\
+for(String w:str1.split ("s",2)) \{\\
+System.out.println(w);\\
+\}\\
+\}\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Summary}
+\begin{itemize}
+    \item Learning String split methods wiht overloading form.
+\end{itemize}
+\end{frame}
+\end{document}

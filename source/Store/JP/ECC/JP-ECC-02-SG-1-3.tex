@@ -1,0 +1,142 @@
+\documentclass[aspectratio=169,14pt,usenames,dvipsnames]{beamer}
+\usetheme{TalentSprint}
+\usepackage[utf8]{inputenc}
+\usepackage{graphics}
+\usepackage{ragged2e}
+\usepackage{amsfonts}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{tcolorbox}
+\usepackage{setspace}
+\usepackage{lmodern}
+\definecolor{swe}{rgb}{0.19, 0.73, 0.56}
+\definecolor{lblue}{RGB}{190,200,198}
+\title[Looping Statements - while]{Looping Statements - while}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\begin{document}
+
+{\1
+\begin{frame} \vspace{35pt}
+
+\subtitle{TalentSprint}
+\maketitle
+\end{frame}
+}
+
+
+\begin{frame}{Learning Objectives}
+At the end of this video you should able to:
+\begin{itemize}
+\item Understand the need for looping
+statements.
+\item Understand and use while loop.
+\item Write programs using while.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Repetition}
+The process of repeating a set of instructions
+for specific number of times.
+\end{frame}
+
+\begin{frame}{Repetition}
+The process of repeating a set of instructions
+for specific number of times.
+\begin{block}{Types of looping statements:}
+\begin{itemize}
+    \item while
+    \item do while
+    \item for 
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{While}
+\begin{itemize}
+    \item Control flow statement.
+    \item Executes code repeatedly based on boolean
+condition.
+    \item Pre-test loop.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Syntax}
+\begin{lstlisting}
+while (boolean\_expression) \{ \\
+\tab statement;\\
+\tab statement;\\
+\}\\
+\end{lstlisting}\\
+The statement(s) with in the loop will execute
+until the boolean expression is false
+\end{frame}
+
+
+
+\begin{frame}{Problem Statement}
+Print first 10 natural numbers.
+\end{frame}
+
+\begin{frame}{Syntax-if}
+\begin{lstlisting}
+int n = 1;\\
+while (n $<$= 10) \{\\
+\tab System.out.println(n);\\
+\tab n++;\\
+\}\\
+\end{lstlisting}\\
+\end{frame}
+
+\begin{frame}{Problem Statement}
+Print the sum of even numbers with in the
+given range.
+\end{frame}
+
+\begin{frame}{Solution}
+\begin{lstlisting}
+int start = 20;\\
+int limit = 40;\\
+int sum\_of\_evens = 0;\\
+while (start $<$= limit) \{\\
+\tab if (start \% 2 == 0) \{\\
+\tab \tab sum\_of\_evens += start;\\
+\tab  \}\\
+\tab start++;\\
+\}\\
+System.out.println(sum\_of\_evens)\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Problem Statement}
+Print sum of the digits of a given number.
+\end{frame}
+
+
+\begin{frame}{Solution}
+\begin{lstlisting}
+int num = 2345;\\
+sum = 0;\\
+while (num $>$ 0) \{\\
+\tab rem = num \% 10;\\
+\tab sum += rem;\\
+\tab num /=10;\\
+\}\\
+System.out.println(sum);\\
+\end{lstlisting}
+\end{frame}
+
+
+
+\begin{frame}{Summary}
+\begin{itemize}
+    \item Three types of looping statements are
+while, do while and for.
+\item Looping statements are used to execute
+block of statement(s) repeatedly for
+required number of times.
+\item while loop is a pre-test loop..
+\end{itemize}
+\end{frame}
+\end{document}

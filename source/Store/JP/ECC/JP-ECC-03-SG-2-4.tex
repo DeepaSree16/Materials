@@ -1,0 +1,184 @@
+\documentclass[aspectratio=169,14pt,usenames,dvipsnames]{beamer}
+\usetheme{TalentSprint}
+\usepackage[utf8]{inputenc}
+\usepackage{graphics}
+\usepackage{ragged2e}
+\usepackage{amsfonts}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{tcolorbox}
+\usepackage{setspace}
+\usepackage{lmodern}
+\definecolor{swe}{rgb}{0.19, 0.73, 0.56}
+\definecolor{lblue}{RGB}{190,200,198}
+\title[Conditional Statement-if else ladder]{Conditional Statement-if else ladder}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\begin{document}
+
+{\1
+\begin{frame} \vspace{35pt}
+
+\subtitle{TalentSprint}
+\maketitle
+\end{frame}
+}
+
+
+\begin{frame}{Learning Objectives}
+At the end of this video you should able to:
+\begin{itemize}
+\item understand and use if else ladder.
+\item write programs using if else ladder.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{If else ladder}
+\begin{itemize}
+    \item Is a multipath decision control structure.
+    \item Executes only one block of statement(s).
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Syntax}
+\begin{lstlisting}
+if (A\_boolean\_expression) \{\\
+\tab statement\_A;\\
+\} else if (B\_boolean\_expression) \{\\
+\tab statement\_B;\\
+\} else if (C\_boolean\_expression) \{\\
+\tab statement\_C;\\
+\} else \{\\
+\tab statement\_D;\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+
+
+\begin{frame}{problem Statement}
+Find the grade of a student based on the
+average mark of his/her semester.
+\end{frame}
+
+\begin{frame}{problem Statement}
+Find the grade of a student based on the
+average mark of his/her semester.
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline 
+\textbf{Average Marks} & \textbf{Grade}\\
+\hline
+$>$= 60 & A\\
+\hline
+$>$= 45 and $<$ 60 & B\\
+\hline
+$>$= 30 & C\\
+\hline
+Otherwise & Fail\\
+\hline
+\end{tabular}
+\end{center}
+\end{frame}
+    
+
+
+\begin{frame}{Solution}
+\begin{lstlisting}
+int avgmarks = 55;\\
+if (avgmarks $>$= 60) \{\\
+\tab System.out.println("Grade A");\\
+\} else if (avgmarks $>$= 45) \{\\
+\tab System.out.println("Grade B");\\
+\} else if (avgmarks $>$= 30) \{\\
+\tab System.out.println("Grade C");\\
+\} else \{\\
+\tab System.out.println("Fail");\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Problem Statement}
+Given the purchased amount, calculate
+amount to pay after discount.\\
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline 
+\textbf{Average Marks} & \textbf{Grade}\\
+\hline
+$>$= 60 & A\\
+\hline
+$>$= 45 and $<$ 60 & B\\
+\hline
+$>$= 30 & C\\
+\hline
+Otherwise & Fail\\
+\hline
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}{Solution}
+\begin{lstlisting}
+int avgmarks = 55;\\
+if (avgmarks $>$= 60) \{\\
+\tab System.out.println("Grade A");\\
+\} else if (avgmarks $>$= 45) \{\\
+\tab System.out.println("Grade B");\\
+\} else if (avgmarks $>$= 30) \{\\
+\tab System.out.println("Grade C");\\
+\} else \{\\
+\tab System.out.println("Fail");\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Problem statement}
+Given the purchased amount, calculate
+amount to pay after discount.
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline 
+\textbf{Discount} & \textbf{Range}\\
+\hline
+10\% & lessthan 15000\\
+\hline
+20\% & between 15000 to 20000\\
+\hline
+30\% & greaterthan 20000\\
+\hline
+\end{tabular} 
+\end{center}
+\end{frame}
+
+\begin{frame}{Solution}
+\begin{lstlisting}
+int p\_amt = 18500;\\
+int d\_amt = 0;\\
+if (p\_amt $<$$ 15000) \{\\
+\tab d\_amt = (p\_amt * 10) / 100;\\
+\} else if (p\_amt $>$= 15000 \&\& p\_amt $<$= 20000) \{\\
+\tab d\_amt = (p\_amt * 20) / 100;\\
+\} else \{\\
+\tab d\_amt = ((p\_amt * 30) / 100;\\
+\}\\
+System.out.println(p\_amt - d\_amt);\\
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}{Summary}
+\begin{itemize}
+    \item if else is used to execute one amoung
+multiple options.
+\item if any of the conditions is true then the
+corresponding block of code will execute.
+\item if none are true else block code will execute.
+
+\end{itemize}
+\end{frame}
+\end{document}
+

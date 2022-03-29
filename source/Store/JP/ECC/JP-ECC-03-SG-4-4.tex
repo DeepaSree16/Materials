@@ -1,0 +1,143 @@
+\documentclass[aspectratio=169,14pt,usenames,dvipsnames]{beamer}
+\usetheme{TalentSprint}
+\usepackage[utf8]{inputenc}
+\usepackage{graphics}
+\usepackage{ragged2e}
+\usepackage{amsfonts}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{tcolorbox}
+\usepackage{setspace}
+\usepackage{lmodern}
+%\definecolor{swe}{rgb}{0.19, 0.73, 0.56}
+%\definecolor{lblue}{RGB}{190,200,198}
+\title[Conditional Statement-Switch-case ]{Conditional Statement-Switch-case}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+{\1
+\begin{frame} \vspace{35pt}
+
+\subtitle{TalentSprint}
+\maketitle
+\end{frame}
+}
+
+\begin{frame}{Learning Objectives}
+At the end of this video you should able to:
+\begin{itemize}
+\item understand and use switch case statement.
+\item write programs using switch case.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Switch..Case}
+Transfers control to one of the several
+statements, depending on the value.
+\end{frame}
+
+
+
+\begin{frame}{Syntax}
+\begin{lstlisting}
+switch (variable) \{\\
+\tab case value\_1:\\
+\tab \tab statement;\\
+\tab \tab break;\\
+\tab case value\_n:\\
+\tab \tab statement;\\
+\tab \tab break;\\
+\tab default:\\
+\tab \tab statement;
+\}\\
+break will move the control out from the switch
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Problem statement}
+Accept the day of the week and display the day,
+assumes that day 1 is Sunday.\\
+1 --$>$ Sunday\\
+2 --$>$ Monday\\
+.....\\
+7 --$>$ Saturday\\
+\end{frame}
+
+\begin{frame}{Solution}
+
+\begin{lstlisting}
+int day = 3;\\
+switch(day) \{\\
+\tab case 1: S.o.pln("Sunday");\\
+\tab \tab break;\\
+\tab case 2: S.o.pln("Monday");\\
+\tab \tab break;\\
+\tab case 3: S.o.pln("Tuesday");\\
+\tab \tab break;\\
+\tab case 4: S.o.pln("Wednesday");\\
+\tab \tab break;\\
+\tab case 5: S.o.pln("Thursday");\\
+\tab \tab break;\\
+\tab case 6: S.o.pln("Friday");\\
+\tab \tab break;\\
+\tab case 7: S.o.pln("Saturday");\\
+\tab \tab break;\\
+\tab default: S.o.pln("Invalid option");\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Problem Statement}
+Create a simple calculator for addition,
+substraction, multiplication and division.
+\end{frame}
+
+\begin{frame}{Solution}
+\begin{lstlisting}
+int num1 = 20;\\
+int num2 = 40;\\
+char operator = ‘*’;\\
+switch(operator) \{\\
+\tab case ‘+’: S.o.pln(num1 + num2);\\
+\tab \tab break;\\
+\tab case ‘-’: S.o.pln(num1 - num2);\\
+\tab \tab break;\\
+\tab case ‘*’: S.o.pln(num1 * num2);\\
+\tab \tab break;\\
+\tab case ‘/’: S.o.pln(num1 / num2);\\
+\tab \tab break;\\
+\tab default: S.o.pln("Invalid operator");\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Problem statement}
+Check the character is vowel or consonant
+using switch.
+\end{frame}
+
+\begin{frame}{Solution}
+\begin{lstlisting}
+switch (ch) \{\\
+\tab case ‘a’:\\
+\tab case ‘e’:\\
+\tab case ‘i’:\\
+\tab case ‘o’:\\
+\tab case ‘u’: S.o.pln("Vowel");\\
+\tab \tab \tab break;\\
+\tab default: S.o.pln("Consonant");\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}{Summary}
+\begin{itemize}
+    \item Transfers control to one of the several
+statements.
+\item if none of the case value matches, default
+block will execute.
+\end{itemize}
+\end{frame}
+\end{document}

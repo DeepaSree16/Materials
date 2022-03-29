@@ -1,0 +1,134 @@
+\documentclass[aspectratio=169,14pt,usenames,dvipsnames]{beamer}
+\usetheme{TalentSprint}
+\usepackage[utf8]{inputenc}
+\usepackage{graphics}
+\usepackage{ragged2e}
+\usepackage{amsfonts}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{tcolorbox}
+\usepackage{setspace}
+\usepackage{lmodern}
+\definecolor{swe}{rgb}{0.19, 0.73, 0.56}
+\definecolor{lblue}{RGB}{190,200,198}
+\title[Procedural programs using static methods]{Procedural programs using static methods}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+{\1
+\begin{frame} \vspace{35pt}
+
+\subtitle{TalentSprint}
+\maketitle
+\end{frame}
+}
+
+\begin{frame}{Learning Objectives}
+At the end of this video you should able to:
+\begin{itemize}
+\item divide problem statement into smaller units.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Problem Statement}
+Print sum of all three digit palindromes, which
+contains all even digits.
+\end{frame}
+
+
+
+\begin{frame}{Solution}
+
+\begin{block}{Methods Used}\\
+\begin{itemize}
+    \item getReverse(int)
+    \item boolean isPalindrome(int)
+    \item boolean isEven(int)
+    \item boolean isAll3DigitsEven(int)
+    \item int sumOfAll3DEvenPalindromes()
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Solution}
+\begin{lstlisting}
+int getReverse(int num) \{\\
+\tab int revNum = 0;\\
+\tab while (num $>$ 0) \{\\
+\tab \tab int rem = num \% 10;\\
+\tab \tab revNum = revNum * 10 + rem;\\
+\tab \tab num /= 10;
+\tab \}\\
+\tab return revNum;\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Solution}
+\begin{lstlisting}
+boolean isPalindrome(int n) \{\\
+\tab return (n == getReverse(n));\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Solution}
+
+\begin{lstlisting}
+boolean isEven(int n) \{\\
+\tab return (n \% 2 == 0);\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Solution}
+\begin{lstlisting}
+boolean isAll3DigitsEven(int num) \{\\
+\tab while (num $>$ 0) \{\\
+\tab \tab int rem = num \% 10;\\
+\tab \tab if (!isEven(rem))\\
+\tab \tab \tab return false;\\
+\tab \tab num /= 10;\\
+\tab \}\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Solution}
+\begin{lstlisting}
+int sumOfAll3DEvenPalindromes() \{\\
+\tab int sum = 0;\\
+\tab for (int i = 201; i $<$= 899; i++) \{\\
+\tab \tab if (isPalindrome(i) \&\&\\
+\tab \tab \tab \tab isAll3DigitsEven(i))\\
+\tab \tab \tab sum += i;\\
+\tab \}\\
+\tab return sum;\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Solution - main method}
+\begin{lstlisting}
+public class SumOfEvenDigsPal \{\\
+\tab public static void main(String[] args) \{\\
+\tab \tab int sum = sumOfAll3DEvenPalindromes();\\
+\tab \tab System.out.println(sum);\\
+\tab \}\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Summary}
+Four different forms of methods are:\\
+\begin{itemize}
+    \item Method is a block of code which can be
+used to perform specific task.
+\item modularizing the code will increase the
+readability.
+\item each method can be implemented and
+tested separately.
+\end{itemize}
+\end{frame}
+\end{document}
+

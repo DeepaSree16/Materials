@@ -1,0 +1,676 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+\usepackage{unicode-math}
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+	\usepackage[]{microtype}
+	\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+	\IfFileExists{parskip.sty}{%
+		\usepackage{parskip}
+	}{% else
+		\setlength{\parindent}{0pt}
+		\setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+	\KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+	hidelinks,
+	pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+\usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\author{}
+\date{}
+\usepackage{multirow}
+\usepackage[inline]{enumitem}
+\usepackage[margin=1.0in]{geometry}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\includegraphics[width=5.21667in, height=0.38819in]{image1.png}}
+\lhead{ Reasoning: linear Arrangements }
+\lfoot{www.talentsprint.com }
+\rfoot{\thepage}
+\begin{document}
+	
+ 
+
+\begin{center}
+	{\Large \textbf{Linear Arrangements \\}}
+\end{center}
+
+{\large \textbf{ Part 2 - Advanced \\}}
+1. Study the following information carefully and complete the arrangement
+Six lectures are scheduled in \includegraphics[width=0.60555in,height=0.32083in]{image2.png}a week starting from Monday and ending on Sunday of the
+same week. Computer Science is not on Tuesday or Saturday. Psychology is immediately
+after Organisational Behaviour. Statistics is not on Friday and there is one day gap between
+Statistics and Research Methods. One day prior to the schedule of Economics there is no
+lecture (as that day is the off day and Monday is not the ’off’ day).\\
+
+2. \textbf{Directions (I-V):} Study the given information and answer the following questions.\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+There are 12 friends A, B, C, D, E, F, G, H, I, J, K, L in a party sitting in two rows facing each
+other such that the person in 1st row faces south and person in 2nd row faces north and vice
+versa. Each person likes one of the color among green, red, yellow, blue, brown, black,
+orange, violet, white, pink. Further information is as follows:\\
+I. Violet color is liked by 3 persons and all the remaining colors are liked by one person
+each.\\
+II. J does not like violet.\\
+III. F likes black and is 3rd to the right of E.\\
+IV. B does not like pink or yellow and sits opposite to the person who likes black.\\
+V. A likes white and is 3rd from left end in the 2nd row, opposite to G.
+VI. E sits between H and A.\\
+VII. H is on the left side of A and likes red.\\
+VIII. The person who likes pink does not sit at corners.\\
+IX. L likes green and sits in the 1st row opposite to the person who likes violet.\\
+X. C and E like violet and sit opposite to each other.\\
+XI. K likes brown and sits opposite to the person who likes red.\\
+XII. I likes orange and sits at one of the corners of 1st row.\\
+
+I. Who is sitting on the immediate right of F?\\
+1) D \hspace{2mm}2) I \hspace{2mm}3) J \hspace{2mm}4) B \hspace{2mm}5) None of these\\
+
+II. Who amongst the following is not sitting in the 2nd row?\\
+1) A \hspace{2mm}2) E \hspace{2mm}3) J \hspace{2mm}4) B \hspace{2mm}5) F\\
+
+III. Who is sitting opposite to the person who likes black?\\
+1) L \hspace{2mm}2) J \hspace{2mm}3) I \hspace{2mm}4) G \hspace{2mm}5) None of these\\
+
+IV. Which of the following statements is false?\\
+1) G likes pink \hspace{2mm}2) K is sitting in the 1st row
+\hspace{2mm}3) D likes violet \hspace{2mm}4) L is on the immediate right of B
+\hspace{2mm}5) J is sitting opposite to the person who likes black\\
+
+V. Who among the following is not sitting at the corner?\\
+1) J \hspace{2mm}2) D \hspace{2mm}3) I \hspace{2mm}4) H \hspace{2mm}5) K\\
+
+3. Study the following information carefully and complete the arrangement\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+Eight children a, b, c, d, e, f, g, h are going to enact as eight different planets, Mercury,
+Venus, Earth, Mars, Jupiter, Saturn, Uranus and Neptune in a school play. They are
+standing in straight column and are facing the north direction. The position are numbered 1-
+8 from front end. The teacher has made the following rules for the play.
+The one who acts Saturn stands just behind G.
+One who acts as Mars is standing 6 places behind the who acts as Earth.
+The one who plays the role of Neptune is standing at an even number position and is an
+immediate neighbour of A and F.\\
+A and B are at a gap of 4 positions.
+B acts as Saturn or Uranus.
+One who acts as Mercury stands 3 places behind G.
+One who acts as Mercury stand behind one who acts as Uranus.
+D acts as Venus.
+H stands just behind E.
+One who acts as Jupiter is not the neighbour of one who acts as Venus.
+E does not act as the Saturn.\\
+
+4. Study the following information carefully and complete the arrangement.\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+Ten students namely viz Jaidev, Jaya, Jeeva, Janaki, Jyothi, Jaspal, Jamuna, Jagadish,
+Jayanthi and Jasmine of ten different colleges but not necessarily in the same order have
+exam on five different days starting from Monday to Friday of the same week. Each student
+have exam at two different time slots, i.e 09.00 AM or 11.00 A.M The number of people who
+have exam between Jamuna and Janaki is same as the number of people who have exam
+between Jeeva and Jagadish. Only two people have exam between Jaspal and Jasmine.
+Neither Jyothi nor Jamuna does not have exam on Friday.Jayanthi has exam on Tuesday at
+09.00 A.M. Jagadish does not have exam at 11.00 AM. Janaki does not have exam on any one
+of the days after Jyothi. Jayanthi does not have exam on any of the days before
+Jamuna.Jaspal does not have exam on any of the days after Jagadish. Jaya has exam
+immediately before Jayanthi.The one who has exam at 09.00 A.M. immediately before
+Jasmine. Janaki has exam immediately after the day of one who has exam on Monday.
+Jaspal does not have exam at 11.00 A.M. Only three people have exam between Jamuna and
+Jyothi.\\
+
+5. Nilesh, Sneha, Mohan, Sushil, Teena, Aman, Varun and Vikas are sitting in a straight line
+but not \includegraphics[width=0.60555in,height=0.32083in]{image2.png}necessarily in the same order. Some of them are facing south while the remaining
+are facing north. Sneha and Aman face opposite directions and Aman sits fourth to the right
+of Sneha. Varun sits second to the left of Teena. The immediate neighbor of Sushil face same
+direction as Sushil. Nilesh sits second to the left of Aman. The Immediate neighbour of
+Nilesh faces the same direction as Varun. Vikas is not an immediate neighbour of Varun.
+Both are immediate neighbours of Sneha face opposite directions. One of the immediate
+neighbour of Vikas faces north. Teena is not third from the right end if we face north.
+Mohan is at the fourth position with respect to Nilesh. Vikas is not facing south. Both the
+immediate neighbours of Varun face same direction. Varun is third to the right of Sneha.
+Mohan is not facing north.\\
+
+6. \textbf{Directions (I-II):} These questions are based on the following data.\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+Pranav is working in Maharashtra state electricity as an assistant engineer. He is going to
+the inspection of the towers in those areas. Signals among eight towers- P, Q, R, S, T, U, V
+and W are transmitted in the following manner. P, Q, R, S, T, U, V and W are arranged in a
+straight line facing North but not necessarily in the same order. Q is placed third to the left
+of T. V is placed fifth to the right of Q but neither placed at any of the extreme ends. Two
+way transmission is possible between P and Q, Q and S, S and U, R and P, T and R, T and V.
+U does not arrange at an extreme end.One way transmission is possible from R to Q, S to T,
+V to U. R and S towers are immediately neighbors of each other but neither of them is an
+immediate neighbor of tower V. Only one tower is placed between R and P, who is not an
+immediate neighbor of T\\
+
+I. For which of the following pairs of towers, signals can be transmitted between them, in
+both ways i.e, from the first tower to the second tower and from second tower to the first
+such that in each case the signals passes through all other towers exactly one?\\
+1) V, P \hspace{2mm}2) P, Q \hspace{2mm}3) V, U \hspace{2mm}4) U, P \hspace{2mm}5) None of these\\
+
+II. How many different routes can the signal be transmitted from S to R and R to S passing
+through others tower exactly once?\\
+1) 6 \hspace{2mm}2) 7 \hspace{2mm}3) 5 \hspace{2mm}4) 4 \hspace{2mm}5) None of these\\
+
+7. Eight persons – A, B, C, D, E, F, F, G and H are sitting in a straight line facing North (not
+necessarily \includegraphics[width=0.60555in,height=0.32083in]{image2.png}in the same order). They have different ages – 12, 18, 27, 32, 34, 49, 55 and 63 (not
+necessarily in the same order).
+B is sitting second to left of one having age 49 years. Two persons are sitting between B and
+D. One who is 32 years old is sitting second to right of D. One person is sitting between the
+persons having ages 32 and 18 years. A is sitting second to left of E. A is sitting somewhere
+to the left of D. The one who is 63 years old is sitting to immediate left of B. Difference
+between the ages of B and G is 7 years. Both are not sitting together. One who is 27 years old
+is sitting somewhere left of A. C is 6 years younger to D. The one who is 55 years old and H
+are immediate neighbors. Same number of persons are sitting between H and one having
+age 34 years and between F and one having age 55 years\\
+
+8. There are seven people A, B, C, D, E, F, and G. They all were born on different years viz.\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+1947, 1952, 1960, 1968, 1982, 1990 and 1997 but not necessarily in same order. But the date
+and month of birth of all these persons are same. Calculation is done with respect to the
+present year 2017 and assuming months and date to be same. G’s age is in multiple of 5 .
+The difference of age between A and D is double the difference of age between B and C. C
+was born in even number of year. D is younger than A. G does not the oldest person. The
+age of F is exactly double the age of one of them\\
+
+9. \textbf{Directions (I-V):} Study the following information carefully to answer the given question:\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+Eight persons A, B, C, D, E, F, G and H are sitting in a straight line and facing north
+direction. They earn different salary, i.e. 7000, 8000, 10000, 12000, 15000, 25000, 30000 and
+32000, but not necessarily in the same order. The person who earns the highest sits at one of
+the ends. Three persons are sitting between the one who earns 32000 and F. The number of
+persons to the left of B is same as to the right of C. B is an immediate neighbor of the one
+who earns the highest. E’s salary is sum of the salary of G and D also E sits at the corner. E
+doesn’t earn the highest. B earns the least. Both D’s neighbours salaries difference is at least
+3000. D earns more than G. A, the one who earns 30000, is 2nd to the left of D. At least two
+persons earn less than C.\\
+I. Who among the following earn the highest?\\
+1) C \hspace{2mm}2) H \hspace{2mm}3) D \hspace{2mm}4) A \hspace{2mm}5) F\\
+
+II. How many persons are sitting to the right of F?\\
+1) 0 \hspace{2mm}2) 1 \hspace{2mm}3) 2 \hspace{2mm}4) 3 \hspace{2mm}5) 4\\
+
+III. Who among the following sits to the immediate left of the one who earns the least?\\
+1) H 2) The one who earns 30000
+\hspace{2mm}3) The one who earns 32000 \hspace{2mm}4) A
+\hspace{2mm}5) Both (1) and (3)\\
+
+IV. Which of the following combination is correct?\\
+1) G-10000 \hspace{2mm}2) A-25000 \hspace{2mm}3) D-32000 \hspace{2mm}4) C-8000 \hspace{2mm}5) None is true\\
+
+V. Which of the following is true regarding D?\\
+1) D earns 12000
+\hspace{2mm}2) The one who earns the least is an immediate neighbor of D
+\hspace{2mm}3) F and C are neighbours of D
+\hspace{2mm}4) D earns less than C
+\hspace{2mm}5) None is true\\
+
+10. \textbf{Directions (I-V):} Study the information given below and answer the questions based on it.\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+6 cars M, N, O, P, Q and R are parked in a straight line not necessarily in the same order.
+Distance between each car is successive multiple of 3 but not necessarily in the order. The
+distance between car N and car O is 36m and no car is parked between them. The distance
+between car M and car O is 102m. Car R is 99m to the right of car N. Only one car is parked
+between car O and car R. Car M is parked to the immediate left to car P. The distance
+between car M and car P is 12m more than the distance between car P and car N. The
+distance between R and M is more than 60m. The distance between car P and car Q is 93m.
+If car Q moves 20m to the north then takes a left turn and moves 50m then again takes a left
+turn and moves for 10m and stops at point Z. Car A is 16m to the west of point Z. Car A
+moves 66m towards west and stops at point Y\\
+I. In which of the following direction is point Z with respect to car N?\\
+A) South-east \hspace{2mm}B) North-east \hspace{2mm}C) North-west
+\hspace{2mm}D) South-west \hspace{2mm}E) North\\
+
+II. What is the distance between car P and car R?\\
+A) 132m \hspace{2mm}B) 112m \hspace{2mm}C) 126m \hspace{2mm}D) 144m \hspace{2mm}E) 99m\\
+
+III. Point Y is in which of the following direction and distance with respect to car M?\\
+A) 10m, South \hspace{2mm}B) 10m, North \hspace{2mm}C) 20m, South
+\hspace{2mm}D) 20m, North \hspace{2mm}E) 10m, North west\\
+
+IV. What is the distance between point Z and Point Y?\\
+A) 82m \hspace{2mm}B) 88m \hspace{2mm}C) 84m \hspace{2mm}D) 76m \hspace{2mm}E) 66m\\
+
+V. What is the maximum distance between two cars?\\
+A) 171m \hspace{2mm}B) 175n \hspace{2mm}C) 165m \hspace{2mm}D) 163m \hspace{2mm}E) 172m\\
+
+11. Eight persons belong to different cities viz— Pune, Haridwar, Kanpur, Jaipur, Patna,
+Mumbai, \includegraphics[width=0.60555in,height=0.32083in]{image2.png} Rohtak and Hisar are sitting in two parallel rows containing four people each, in
+such way that there is an equal distance between adjacent persons. In row- M, N, O and P
+are seated and all of them are facing South. In row-2 A, B, C and D are seated and all of
+them are facing North. Therefore in the given arrangement each member seated in a row
+faces another member of the other row. (All the information given above does not
+necessarily represent the order of seating as in the final arrangement.) B does not sit at any
+of the extreme end of the line. The one who belongs to Hisar does not face the one who
+belongs to Haridwar. N faces the one who belongs to Patna. The one who faces P sits to the
+immediate right of A. The one who belongs to Pune faces the person who belongs to
+Mumbai. O does not belong to Mumbai. M does not belong to Jaipur. M does not face the
+one who belongs to Hisar. Only one person sits between O and the one who belongs to
+Jaipur. One of the immediate neighbour of the one who belongs to Jaipur faces the one who
+belongs to Kanpur. C sits second to the left of the one who belongs to Hisar. O is an
+immediate neighbour of the one who faces the one who belongs to Hisar.\\
+
+12. Study the following information to answer the given questions.\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+There are twelve seats in two parallel rows having five people each. There is an equal
+distance between adjacent persons. In row 1, A, B, C, D and E facing south and in row 2, U,
+V, W, X and Y are facing north. One seat is vacant in each row. Therefore, in the given
+seating arrangement, each member seated in a row faces another member of the other row.
+All of them like different colours like Black, White, Cyan, Indigo, Pink, Beige, Blue, Brown,
+Red and Green.
+Y likes neither Brown nor Red. W and V are not immediate neighbours. D is immediate
+nieghbour of A and C. One of the vacant seats is fourth to the right of E. C does not like
+Black colour. There is only one seat between the persons who like Green and Cyan. V either
+likes Black or Blue. The one who likes Brown is sitting fourth to the left of U. B and E are not
+immediate neighbours. The one who likes Cyan is sitting diagonally opposite to the person
+who likes Indigo. There are only two persons sitting between those who like pink and
+White. Either A or B likes Pink. D either likes Beige or Brown. The one who likes Red is
+sitting opposite A. the person sitting opposite to the one who likes White is also sitting
+immediately next to a vacant seat.\\
+
+13. Study the following information to answer the given questions.\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+Ten persons Rajan, Amit, Ravi, Manish, Pankaj, Sudhir, Praveen, Sumit, Gaurav and Asish
+are sitting in two parallel rows having five persons in each row in such a way that there is
+an equal distance between the adjacent persons. The persons sitting in row 1 are facing
+South and the persons sitting in row 2 are facing North. Each of them have a different
+hobby, viz, Reading, Net Surfing, Cycling, Acting, Dancing, Cooking, Painting, Shopping,
+Swimming and Walking but not necessarily in the same order. Only one person sits between
+Amit and the one whose hobby is Swimming. Asish faces the one who sits third to the left of
+the one whose hobby is Reading. Walking is not Ravi's hobby. Rajan faces Manish's
+neighbor. Only two persons sit between Praveen and the one whose hobby is Reading. Only
+two persons sit between Rajan and Sumit. Ravi faces the one whose hobby is Cooking. The
+one whose hobby is netsurfing sits second to the left of the one whose hobby is Cooking.
+Manish faces South and he is opposite the one who sits third to the left of the one whose
+hobby is Dancing. The one whose hobby is Shopping faces Pankaj. The one whose hobby is
+painting is sitting second to the immediate right of Gaurav. Amit's neighbor faces Praveen.
+The one who faces the person whose hobby is Swimming sits third to the right of the one
+whose hobby is Cycling.\\
+
+14. Study the following information to answer the given questions.\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+Eight friends A, B, C, D, E, F, G and H went to a party and has different food items: chips,
+chocolate, pasta, pizza, chowmein, fries, burger and cake not necessarily in the same order
+They are seated in a linear fashion with four of them facing South and the other four facing
+North The arrangement is based on the following rules:
+One who had the burger and D are at the two ends of line They face the opposite
+directions
+There is a gap of 3 people between the one who had chocolate and the one who had pasta
+F had cake and is fourth to the right of D Neighbours of F face the same direction
+One who had chips is a neighbour of both C and the one who had burger
+B is second to the left of the one who had chocolate
+B did not have a burger
+H and G are neighbours and they face the same direction
+G neither had a chocolate nor chips
+One who had fries is 2nd to the right of the one who had chowmein
+One who had pizza is 2nd to the left of G
+E faces south and did not have a burger
+F and H face the same direction\\
+
+15. Study the following information carefully to answer the given questions\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+Ten persons M, N, O, P, Q, R, S, T, U and V are seated in a row but not necessarily in the
+same order. Some of them are facing North while some of them are facing South. Each of
+them likes different colour viz— Red, Green, Yellow, Blue, Black, White, Pink, Brown,
+Purple and Orange but not necessarily in the same order.
+Only one person sits between the one who likes White colour and the one who likes Pink
+colour. N sits third to the right of O, who likes White colour. Only one person sits between
+O and the one who likes Brown colour. T sits third to the left of O and he likes Red colour. P
+and U do not face same directions. T and U face same direction. V sits immediate left of T. N
+and Q face same direction. V faces opposite directions to N. V and T face same direction. S is
+not an immediate neighbour of O. The one who likes Yellow colour faces South. M sits
+fourth to the right of the one who likes Brown colour. M is not an immediate neighbour of
+the one who likes Black colour. The one who likes Green colour sits fourth to the left of M
+and he is an immediate neighbour of P. N likes Black colour and faces North. N sits one of
+the end of the row. R sits exactly in the middle of O and S. The one who likes Pink colour
+sits second to the right of the one who likes Blue colour. U, who likes Orange colour sits
+fourth to the left of P.\\
+
+16. \textbf{Directions (I-V):} Answer the questions on the basis of the information given below.\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+There are 8 children – A, B, C, D, E, F, G and H who live on different floors of a 8-floor
+building numbered 1 to 8 not necessarily in the same order. They are in different class – 3, 5,
+6 and 10 such that 2 children in same class. Children who are in same class live on even-odd
+floors. Example: If B is in class 10 with H, then if B lives on 6th floor then H lives on any odd
+floors – 1/3/5/7 and not 2/4/8. B and G are in same class. One of the children in class 3 lives
+on 5th floor. The one who lives on 3rd floor is in even numbered class. The one who lives on
+7th floor and C are in same class. A is in class 6 and lives on 4th floor. 2 children live
+between E and A. D is in 10th class. One child lives between E and G, both of which are in
+odd numbered classes. 2 children live between one of the children in class 10 and F. F lives
+below this child. Both children in class 10 live above C.\\
+
+I. Which of the following pair is in same class?\\
+A) B, F \hspace{2mm}B) D, F \hspace{2mm}C) E, H \hspace{2mm}D) A, D \hspace{2mm}E) None of these\\
+
+II. Who lives on 8th floor?\\
+A) E \hspace{2mm}B) One of the children in class 6
+\hspace{2mm}C) One of the children in class 10 \hspace{2mm}D) H
+\hspace{2mm}E) One of the children in class 3\\
+
+III. How many children live between D and F?\\
+A) 2 \hspace{2mm}B) 1 \hspace{2mm}C) None \hspace{2mm}D) 4 \hspace{2mm}E) Cannot be determined\\
+
+IV. Who lives just above G?\\
+A) C \hspace{2mm}B) A \hspace{2mm}C) D \hspace{2mm}D) H \hspace{2mm}E) B\\
+
+V. Which of the following combination of floor number – child – class is correct?\\
+A) 1 – C – 5 \hspace{2mm}B) 6 – B – 10 \hspace{2mm}C) 5 – D – 3
+\hspace{2mm}D) 3 – F – 10 \hspace{2mm}E) 2 – C – 6\\
+
+17. \textbf{Directions:} Study the following information to answer the given questions.\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+Eight persons BARRY ALLEN, KILLER FROST, FIRESTORM, BLACK CANARY, CAPTION
+COLD, CISCO ROMAN, IRIS WEST and JOE WEST stay on an eight storey building such
+that the lower most floor is numbered as 1 and so on. They own different company wrist
+watch namely Sonata, Titan, Fastrack, Timex, Maxima, Rolax, Casio and Citizen not
+necessarily in the same order.\\
+\begin{itemize}
+\item Sum of BARRY ALLEN's and CAPTION COLD's floor number is equal to CISCO
+ROMAN's floor number
+\item Persons liking Casio and Maxima stay at a gap of 4 floors.
+\item FIRESTORM likes Casio or Citizen
+\item JOE WEST does not like Maxima.
+\item There is a gap of 3 floors between the persons who like Rolax and Titan
+\item Not more than 2 persons stay below JOE WEST's floor
+\item Persons liking Casio and Sonata stay at a gap of 1 floor.
+\item The one who likes Timex stays below JOE WEST's floor.
+\item CAPTION COLD stays at a gap of 1 floor from BLACK CANARY
+\item There is a gap of 4 floors between the one who likes Timex and FIRESTORM
+\item FIRESTORM and BLACK CANARY stay on consecutive floors
+\item The one who likes Rolax stays above CISCO ROMAN.
+\item KILLER FROST and the one who likes Casio stay on consecutive floors.\\
+\end{itemize}
+
+18. \textbf{Directions (I-V):} Study the following information carefully to answer the given questions:\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+Eight houses A1, A2, A3, A4, A5, A6, A7 and A8 are situated across a street not necessarily in
+the same order. The houses are facing north. They have different house numbers viz - B-101,
+B-102, B-103, B-104, B-105, B-106, B-107 and B-108 but not necessarily in the same order. The
+arrangement is based on the following rules.\\
+\begin{itemize}
+\item A8 is second to the right of the house no. B-102.
+\item There are five house between the house no B-103 and house no. B-108.
+\item House no. B-102 is to the immediate left of the house no. B-103.
+
+\item There are two houses between A7 and the house no. B-101. A7 is not house no. B-101, B-
+102, or B-103.
+
+\item House no B-107 and B-105 are immediate neighbour of A7.
+\item A4 is third to the left of the house no. B-107.
+\item A3 has the house no. B-104 to its immediate left.
+\item There are two houses between the house no. B-108 and A1.
+\item A5 is fourth to the right of A6.
+\end{itemize}
+
+I. Which of the following houses are situated in a consecutive manner?\\
+a) A2, A4, A6 \hspace{2mm}b) A8, A6, A7 \hspace{2mm}c) A1, A7, A5 \hspace{2mm}d) A6, A1, A7 \hspace{2mm}e) A3, A5, A4\\
+
+II. If A2 is related to house no. B-103 and A4 is related to house no. B-101 then which of the
+following house no. is related to A1?\\
+a) House no. B-102 \hspace{2mm}b) House no. B-106 \hspace{2mm}c) House no. B-107
+\hspace{2mm}d) House no. B-104 \hspace{2mm}e) House no. B-105\\
+
+III. Which of the two houses are exactly in the middle of the street?\\
+a) A6, A7 \hspace{2mm}b) A1, A7 \hspace{2mm}c) A6, A1 \hspace{2mm}d) A8, A6 \hspace{2mm}e) A1, A3\\
+
+IV. Which of the following is the immediate neighbour of the house no. B-104 and house no.
+B-108?\\
+a) A2 \hspace{2mm}b) A3 \hspace{2mm}c) A1 \hspace{2mm}d) A6 \hspace{2mm}e) A4\\
+
+V. Which of the following is the correct combination of house: house no.?\\
+a) A2 : B-106 \hspace{2mm}b) A8 : B-105 \hspace{2mm}c) A1 : B-101
+\hspace{2mm}d) A3 : B-107 \hspace{2mm}e) A6 : B-106\\
+
+19. Eight friends G, H, I, J, K, L, A and B live in a nine-floored apartment where the floors are
+ \includegraphics[width=0.60555in,height=0.32083in]{image2.png}numbered 1 to 9 from ground to top. Each of them plays a different game from among
+cricket, badminton, tennis, golf, shooting, kho-kho, football and rugby. Each floor has one
+flat and one of the flats in the building is vacant. The person who plays badminton is the
+only person who lives between A and G. Only one person lives between H and G. B plays
+kho-kho. L lives immediately below the vacant flat. One of the two people who live between
+A and B plays golf. H lives on the floor immediately below B. The person who lives
+immediately above the vacant flat plays football. J lives on an odd numbered floor
+immediately below L. The person who plays tennis stays on an even numbered floor and
+the person who plays shooting lives immediately above J. A lives on an even numbered
+floor immediately above I. The person who plays cricket lives on an odd numbered floor,
+above the fourth floor.\\
+
+20. \textbf{Directions:} Study the following information carefully and answer the questions given
+below:\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+Ten persons viz, E, F, K, L, N, P, R, T, V and W are sitting in two rows with five persons in
+each row. The persons in row one (R – 1) are facing north and the persons in row two (R -2)
+are facing south. Each persons in row one faces a person from the other row. All of them like
+a different books viz, Flood of fire, Family life, The marvels, Playing it my way,
+Hangwoman, The lives of others, Carrer of Evil, Odysseus Abroad, Ancestral Affairs and
+Seahorse, but not necessarily in the same order.
+The people who like Hangwoman and The lives of others sits opposite each other. P sits
+opposite E, who likes ‘Flood of fire’. W is not facing south but sits third to the left of R, who
+likes’ Family life’. The one who likes ‘Family life’ sits opposite the one who likes ‘Odysseus
+Abroad. There is only one person between F and K. N sits at one of the extreme ends of the
+row and likes ‘The lives of others’. The one who likes ‘Odysseus Abroad’ is on the
+immediate right of L, who does not like ‘Seahorse’ but faces the one who likes Seahorse.
+The persons who like ‘The Marvels’ and ‘Playing it my way’ respectively are not facing
+south. K likes ‘Carrer of Evil’. The one who likes ‘The Marvels’ sits opposite the one who is
+on the immediate right of F. V does not like ‘Seahorse’. N sits opposite the one who sits
+second to the left of the one who likes ‘The Marvels’.\\
+
+i. Who among the following likes ‘Seahorse’?\\
+1) P \hspace{2mm}2) R \hspace{2mm}3) F \hspace{2mm}4) W \hspace{2mm}5) T\\
+
+ii. F likes which of the following books?\\
+1) V – Family life \hspace{2mm}2) The Marvels \hspace{2mm}3) Seahorse
+\hspace{2mm}4) Odysseus Abroad \hspace{2mm}5) Carrer of Evil\\
+
+iii. Which of the following is matched correctly?\\
+1) V –Playing it my way \hspace{2mm}2) P – Family life \hspace{2mm}3) T – Ancerstral
+Affairs
+\hspace{2mm}4) K – Flood of fire \hspace{2mm}5) N – Hang woman\\
+
+iv. Four of the following five are alike in some way, find out the odd one?\\
+1) K \hspace{2mm}2) F \hspace{2mm}3) T \hspace{2mm}4) R \hspace{2mm}5) V\\
+
+21. \textbf{Direction:}
+There are nine people namely, A,B,C,D,E,F,G,H and I who sit in a row facing in
+North \includegraphics[width=0.60555in,height=0.32083in]{image2.png} and South directions. They like different colors among Orange, Red, Pink and Blue.
+At least two people like the same color and not more than three people like the same color.
+All the people who like Pink have one of the neighbours as the one who likes Red. A sits
+second to the right of F and they both face in the same direction. F and G face in the same
+direction but opposite to that of H. E’s immediate neighbours are I and C. The two people
+who like Orange is the only pair sitting together liking the same color and none of them is F.
+H sits third to the left of the one who likes Pink. D sits somewhere between B, who is at one
+of the ends, and A. C sits at 3rd position from right end and likes Blue which is same as that
+of the person sitting at extreme right. H and G sit together and none of them likes Pink. D
+faces in a direction opposite to that of A. B and E like the same color, are the only ones who
+like this color, and also face in opposite directions. C’s neighbours face in the same direction
+but opposite to that of C. The one who likes Pink sits at the middle facing in the South
+direction.\\
+
+22. \textbf{Directions (i - v):} A certain number of people sitting in the linear row facing north direction,
+only 3 \includegraphics[width=0.60555in,height=0.32083in]{image2.png}people sit between A \& R. Only 4 people sit between K \& W. Only 5 people sit
+between R \& K. T sits 3rd to the right of W. Only 6 people sit between R \& Y. Not more than
+3 people sit between K \& Y. More than 4 people sit between T \& Y. Q sits 3rd to the right of
+Y. No one sits between Q \& W. J sits eighth to the left of K. Not more than 3 persons sit
+between A \& J.\\
+
+I. How many people are sitting in the linear row?\\
+a) 19 \hspace{2mm}b) 20 \hspace{2mm}c) 21 \hspace{2mm}d) 22 \hspace{2mm}e) none of these\\
+
+II. How many people sit betweeen A and J?\\
+a) 7 \hspace{2mm}b) 3 \hspace{2mm}c) 10 \hspace{2mm}d) 1 \hspace{2mm}e) none of these\\
+
+III. If three people sit between W \& H, then which of the following statement is
+definitely true?\\
+a) 3 people sit between T and H. \hspace{2mm}b) More than 6 people sit between Q \& H.
+\hspace{2mm}c) W sits 4th to the right of H. d) More than 5 people sit between Y and H.
+\hspace{2mm}e)None of these\\
+
+IV. How many people sit between Y and W?\\
+a) 16 \hspace{2mm}b) 3 \hspace{2mm}c) 10 \hspace{2mm}d) 8 \hspace{2mm}e) none of these\\
+
+V. How many people sit to the left of K?\\
+a) 10 \hspace{2mm}b) 8 \hspace{2mm}c) 16 \hspace{2mm}d) 13 \hspace{2mm}e) none of these\\
+
+23. There are some persons who are sitting in a row and facing North. The distance between
+each of them \includegraphics[width=0.60555in,height=0.32083in]{image2.png}is equal. The number of persons who sit on the left side of E is one less than the
+number of persons who sit on the right side of the E. There are more than two persons
+between Q and T who sits to the left of W. Q sits on the left side of the X. F does not sit on
+the extreme ends. There are four persons between P and V. There are two persons between
+R and W. Neither N nor M is the neighbour of X. There are four persons between W and Z
+who do not sit to the left of E. There are only two persons who sit to the left of X. There is
+one person between E and P. E is not the immediate neighbour of X. P is the immediate
+neighbour of X.\\
+
+I. How many seats are there between W and T?\\
+1) One \hspace{2mm}2) Two \hspace{2mm}3) Three \hspace{2mm}4) None \hspace{2mm}5) Can’t say\\
+
+II. If the distance between V and E is 12 meters, find out the distance between F and W?\\
+1) 16 meters \hspace{2mm}2) 18 meters \hspace{2mm}3) 20 meters \hspace{2mm}4) 15 meters \hspace{2mm}5) None of these\\
+
+III. How many persons are there in that row?\\
+1) Ten \hspace{2mm}2) Twelve \hspace{2mm}3) Fourteen \hspace{2mm}4) More than Fourteen \hspace{2mm}5) Thirteen\\
+
+IV. Who among the following sits third to the right of T?\\
+1) N \hspace{2mm}2) M \hspace{2mm}3) F \hspace{2mm}4) Either 1) or 2) \hspace{2mm}5) None of these\\
+
+24. Directions(I-IV): Study the following information carefully to answer the given questions.\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+Complex Assignment or Linear Arrangement.\\
+\begin{itemize}
+\item Ten Stationery items Pencil, Books, Notes, Pens, Sharpeners, Chalk, Stickers, Gum, Scale,
+Covers are placed in 10 boxes numbered 1, 2, 3, 4, 5, 6, 7, 8, 9 and 10 are placed adjacent to
+one another in two different rows of 5 boxes each.\\
+\item Boxes with odd numbers are situated opposite to the boxes with even numbers and no
+two boxes with even number and no two boxes with odd numbers are adjacent to each
+other. No two boxes have consecutive numbers.\\
+\item Box no 8 is occupied by books and it is to the extreme left of one end of the row.
+\item Box 4 and 6 are not in the row of box no 8 and any of the boxes numbered 4, 6, and 3 are
+not in the middle of the row.
+\item Gums are placed in Box no 5.and that box is not situated in the row where box no 6 is
+situated.
+\item Notes are placed in an odd numbered box and placed in a row where Books are situated
+but both are not adjacent to each other.\\
+\item Sharpener's and Chalk’s box are adjacent to box no 6 and Chalk’s box is not adjacent to
+box no 4.\\
+\item Pencil’s \& Cover’s box are placed in the same row. Pen’s box is even numbered but not 10 and diagonally opposite to box no 1 which contains stickers.\\
+\item Box no 6 is second from the one of the end of the row. Stickers’ box is neither opposite to
+Sharpness's box nor adjacent to it.\\
+\end{itemize}
+
+I. Covers are kept in which number box?\\
+a) 4 \hspace{2mm}b) 6 \hspace{2mm}c) 2 \hspace{2mm}d) 3 \hspace{2mm}e) Can’t be determined\\
+
+II. The number 9 box is placed opposite to which box and contains which stationery?\\
+a) 5, Chalk \hspace{2mm}b) 6, Covers \hspace{2mm}c) 2, Pens \hspace{2mm}d) 10, scale \hspace{2mm}e) None of these\\
+
+III. If pencil is placed in the box numbered 4 then which box is placed opposite to the box which
+contains Covers?\hspace{2mm}
+a) Pencils \hspace{2mm}b) Covers \hspace{2mm}c) Stickers \hspace{2mm}d) Note \hspace{2mm}e) None of these\\
+
+IV. which of the following is exactly opposite of the box which contains Pen?\\
+a) Scale \hspace{2mm}b) Books \hspace{2mm}\hspace{2mm}c) chalk \hspace{2mm}d) Notes \hspace{2mm}e) None of these\\
+
+25. 8 persons A, C, D, K, P, Q, R and S are sitting in a straight line facing north direction. The
+ages (in \includegraphics[width=0.60555in,height=0.32083in]{image2.png}years) of these persons are 20, 25, 28, 30, 34 and 42 and few of them having the same
+age. Distance between each of the adjacent persons is equal. No two adjacent persons are of
+same age.\\
+\begin{itemize}
+\item A sits second to the left of one of the persons whose age is a multiple of 5.\\
+\item Ages of A and R are equal. The difference between the ages of S and R is at most 13
+years.\\
+\item P sits third to the right of A and P is the only one who is 25 years old.\\
+\item At least 3 persons sit between D and K and difference in their ages is 12 years.\\
+\item R sits to the immediate right of the person, who is 34 years old.\\
+\item Neither Q nor S is 34 years old. Four persons sit between P and D.\\
+\item At least 3 persons sit between C and Q.\\
+\item Sum of the ages of D and Q is 70 years. K doesn’t sit to the right of P. R sits to the
+right of K\\
+\end{itemize}
+
+Answers\\
+1. -\\
+2. I. J \hspace{2mm}II. B \hspace{2mm}III. None of these
+\hspace{2mm}IV. J is sitting opposite to the person who likes black \hspace{2mm}V. D\\
+3. -\\
+4. -\\
+5. -\\
+6. I. None of these \hspace{2mm}II. 5\\
+7. –\\
+8. –\\
+9. I. H \hspace{2mm}II. 3 \hspace{2mm}III. Both (1) and (3) \hspace{2mm}IV. G-10000
+\hspace{2mm}V. F and C are neighbours of D\\
+10. I. North-east \hspace{2mm}II. 126m \hspace{2mm}III. 10m, North \hspace{2mm}IV. 82m \hspace{2mm}V. 165m\\
+11. –\\
+12. –\\
+13. –\\
+14. –\\
+15. -\\
+16. I. D, F \hspace{2mm}II. One of the children in class 3 \hspace{2mm}III. 2 \hspace{2mm}IV. D \hspace{2mm}V. 3 – F – 10\\
+17. -\\
+18. I. A6, A1, A7 \hspace{2mm}II. House no. B-104 \hspace{2mm}III. A6, A1 \hspace{2mm}IV. A3 \hspace{2mm}V. A6 : B-106\\
+19. –\\
+20. i. 5 \hspace{2mm}ii. 4 \hspace{2mm}iii. 1 \hspace{2mm}iv. 3\\
+21. –\\
+22. –\\
+23. I) 33m \hspace{2mm}II) 88m \hspace{2mm}III) C \hspace{2mm}IV) B,D\\
+24. I) Can’t be determined \hspace{2mm}II) 10, Scale \hspace{2mm}III) Note \hspace{2mm}IV) Chalk\\
+25. --\\
+%\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+%\hspace{2mm}
+
+\end{document}

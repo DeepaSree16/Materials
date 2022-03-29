@@ -1,0 +1,125 @@
+\documentclass[aspectratio=169,14pt,usenames,dvipsnames]{beamer}
+\usetheme{TalentSprint}
+\usepackage[utf8]{inputenc}
+\usepackage{graphics}
+\usepackage{ragged2e}
+\usepackage{amsfonts}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{tcolorbox}
+\usepackage{setspace}
+\usepackage{lmodern}
+\definecolor{swe}{rgb}{0.19, 0.73, 0.56}
+\definecolor{lblue}{RGB}{190,200,198}
+\title[String Comparison methods]{String Comparison methods}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+{\1
+\begin{frame} \vspace{35pt}
+
+\subtitle{TalentSprint}
+\maketitle
+\end{frame}
+}
+
+\begin{frame}{Learning Objectives}
+At the end of this video you should able to:
+\begin{itemize}
+\item learn Comparing String methods.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{String Comparing Methods}
+\textbf{\textcolor{red}{boolean} \textcolor{blue}{equals(String)}}\\
+Compare two strings which return \textcolor{red}{true} in case both are equal else return \textcolor{red}{false}\\
+\vspace{1em}
+\textbf{\textcolor{red}{boolean} \textcolor{blue}{equalsIgnoreCase(String)}}\\
+Compare two strings irrespective of the case which return \textcolor{red}{true} in case both are equal else return \textcolor{red}{false}
+\end{frame}
+
+
+\begin{frame}{String Comparing Methods}
+\textbf{\textcolor{red}{int} \textcolor{blue}{compareTo(String)}}\\
+Case-sensitive comparision;Returens value of \textcolor{red}{Zero} means equality otherwise, inequality\\
+\vspace{1em}
+\textbf{\textcolor{red}{int} \textcolor{blue}{compareToIgnoreCase(String)}}\\
+Case-insensitive comparision
+\end{frame}
+
+\begin{frame}{Examples}
+\textbf{\textcolor{blue}{boolean equals(String)}}\\
+String s1="Sachin";\\
+String s2="SACHIN";\\
+String s3=new String("Sachin");\\
+String s4="Saurav";\\
+boolean result1 = s1.equals(s2); //false\\
+boolean result2 = s1.equals(s3); //true\\
+boolean result3 = s1.equals(s4); //false\\
+
+\end{frame}
+
+
+
+\begin{frame}{Examples}
+String s1="Sachin";\\
+String s2="Sachin";\\
+String s3=new String("Sachin");\\
+System.out.println(s1 == s2); //true\\
+System.out.println(s1 == s3); //false\\
+\vspace{1em}
+\color{red}Write code with the above examples, compile and execute
+\end{frame}
+
+
+
+\begin{frame}{Example}
+\textbf{boolean equalsIgnoreCase(String)}\\
+\begin{lstlisting}
+String s1="Sachin";\\
+String s2="SACHIN";\\
+String s3=new String("Sachin");\\
+boolean result1 = s1.equalsIgnoreCase(s2); //true\\
+boolean result2 = s1.equalsIgnoreCase(s3); //false\\
+\vspace{1em}
+\color{red}Write code with the above examples, compile and execute the program
+\end{lstlisting}
+\end{frame}
+
+
+
+\begin{frame}{Examples}
+\textbf{int compareTo(String)}\\
+\begin{lstlisting}
+String s1="Sachin";\\
+String s2="Sachin";\\
+String s3="Ratan";\\
+int result1 = s1.compareTo(s2);//0\\
+int result2 = s1.compareTo(s3);//1(because s1$>$s3)\\
+int result3 = s1compareTo(s1);//-1(because s3 $<$$ s1 )\\
+\vspace{1em}
+\color{red}Write code with the above examples, compile and execute the program
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Examples}
+\textbf{int compareToIgnoreCase(String)}\\
+\begin{lstlisting}
+String s1="Sachin";\\
+String s2="Sachin";\\
+String s3="Ratan";\\
+int result1 = s1.compareToIgnoreCase(s2);//0\\
+int result2 = s1.compareToIgnoreCase(s3);//0\\
+int result3 = s1compareToIgnoreCase(s1);//-1(because s3 $<$ s1 )\\
+\vspace{1em}
+\color{red}Write code with the above examples, compile and execute the program
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Summary}
+\begin{itemize}
+    \item Learning String comparing methods.
+\end{itemize}
+\end{frame}
+\end{document}

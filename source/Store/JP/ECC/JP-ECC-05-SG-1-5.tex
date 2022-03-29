@@ -1,0 +1,162 @@
+\documentclass[aspectratio=169,14pt,usenames,dvipsnames]{beamer}
+\usetheme{TalentSprint}
+\usepackage[utf8]{inputenc}
+\usepackage{graphics}
+\usepackage{ragged2e}
+\usepackage{amsfonts}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{tcolorbox}
+\usepackage{setspace}
+\usepackage{lmodern}
+\definecolor{swe}{rgb}{0.19, 0.73, 0.56}
+\definecolor{lgreen}{RGB}{190,200,198}
+\title[Introduction to methods]{Introduction to methods}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\begin{document}
+
+{\1
+\begin{frame} \vspace{35pt}
+
+\subtitle{TalentSprint}
+\maketitle
+\end{frame}
+}
+
+
+\begin{frame}{Learning Objectives}
+At the end of this video you should able to:
+\begin{itemize}
+\item Understand the need of modularization of
+the program.
+\item Write and use the user-defined methods.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{modularization}
+Breaking down a large program into smaller
+pieces of code.
+\end{frame}
+
+\begin{frame}{modularization}
+Breaking down a large program into smaller
+pieces of code.
+\begin{block}{Advantages:}
+\begin{itemize}
+    \item Easier to Debug
+    \item Reusable code
+    \item Readability 
+    \item Reliability
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Method}
+A method is a piece of code that performs a
+particular task.
+\end{frame}
+
+\begin{frame}{Method Signature}
+\begin{block}{General form of methods:}\\
+\begin{lstlisting}
+modifier returnType\\
+\tab \tab nameOfMethod(parameter List) \{\\
+\tab method body\\
+\}
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+\begin{frame}{Key Points}
+\begin{block}{modifiers:}such as public, private, static and others you will learn later.
+\end{block}
+\begin{block}{return type:}
+the data type of the value returned by the method, or void if the method does not return a value.
+\end{block}
+\begin{block}{method name:}
+The rules for variable names apply to method names as well.
+\end{block}
+\begin{block}{parameter list:}
+Input values passed to the method enclosed by parentheses.
+\end{block}
+\begin{block}{method body:}
+The method’s code, the actual
+task to be performed by the method.
+\end{block}
+\end{frame}
+
+
+\begin{frame}{Problem Statement}
+Define a method which returns the greatest
+number among three numbers.
+\end{frame}
+
+\begin{frame}{Syntax-if}
+\begin{lstlisting}
+public static int getGreatest\\
+\tab \tab \tab \tab (int a, int b, int c) \{\\
+\tab int max = a;\\
+\tab if (b $>$ max)\\
+\tab \tab max $=$ b;\\
+\tab if (c $>$ max)\\
+\tab \tab max $=$ c;\\
+\tab return max;\\
+\}\\
+\end{lstlisting}\\
+\end{frame}
+
+\begin{frame}{Problem Statement}
+Define a method which returns the sum of all
+even numbers from 1 to given limit.
+\end{frame}
+
+\begin{frame}{Solution}
+\begin{lstlisting}
+public static int evenSum(int limit) \{\\
+\tab int sum = 0;\\
+\tab for (int n = 1; n$<$= limit; n++) \{\\
+\tab \tab  if (n \% 2 == 0) \{\\
+\tab \tab \tab sum+= n;\\
+\tab \tab  \}\\
+\tab  \}\\
+\tab return sum;\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Problem Statement}
+Define a method to check if the given number is
+prime. Return true if number is prime, else
+return false.
+\end{frame}
+
+
+\begin{frame}{Solution}
+\begin{lstlisting}
+public static int isPrime(int limit) \{\\
+\tab if (num == 1)\\
+\tab \tab return false;\\
+\tab for (int i = 2; i$<$= num / 2; i++) \{\\
+\tab \tab  if (n \% i == 0)\\
+\tab \tab \tab return false;\\
+\tab  \}\\
+\tab return true;\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+
+
+\begin{frame}{Summary}
+\begin{itemize}
+    \item Method is a block of code which can be
+used to perform specific tasks.
+\item Modularizing the code will increase
+readability.
+\item Each method can be implemented and
+tested separately.
+\end{itemize}
+\end{frame}
+\end{document}

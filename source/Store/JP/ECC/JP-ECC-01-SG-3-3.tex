@@ -1,0 +1,225 @@
+\documentclass[aspectratio=169,14pt,usenames,dvipsnames]{beamer}
+\usetheme{TalentSprint}
+\usepackage[utf8]{inputenc}
+\usepackage{graphics}
+\usepackage{ragged2e}
+\usepackage{amsfonts}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{tcolorbox}
+\usepackage{setspace}
+\usepackage{lmodern}
+\definecolor{swe}{rgb}{0.19, 0.73, 0.56}
+\definecolor{lgreen}{RGB}{190,200,198}
+\title[Variable and Data Types]{Variable and Data Types}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\begin{document}
+
+{\1
+\begin{frame} \vspace{35pt}
+
+\subtitle{TalentSprint}
+\maketitle
+\end{frame}
+}
+
+
+\begin{frame}{Learning Objectives}
+At the end of this video you should able to:
+\begin{itemize}
+\item Learn what is a variable
+\item Learn different data types in Java
+\item Learn how to declare and initialize variable;
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Variable}
+\begin{block}{variable}
+A variable is the name of memory location where the data is stored.
+\end{block}
+\end{frame}
+
+
+\begin{frame}{Variable Naming Convention}
+\textbf{Key Points}
+\begin{itemize}
+\item Variable names can have alpha-numerics.
+\item Variable names should start with either alphabet or underscore $($\_$)$
+\item Variable names should not contain any special character except under-score $($\_$)$,including white space.
+\item If variable name contains more than one word every first Character from second word should be in uppercase or seperate words with underscore $($\_$)$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Naming Convention Example}
+\begin{columns}
+\column{0.5\textwidth}
+\textbf{valid variable names}
+\begin{itemize}
+\item name
+\item number$5$
+\item \_number
+\item firstName
+\item first\_name
+\end{itemize}
+
+\column{0.5\textwidth}
+\textbf{Invalid variable names}
+\begin{itemize}
+\item $@$name
+\item first$-$Name
+\item $5$number
+
+\item first name
+\item number\$
+\end{itemize}
+
+\end{columns}
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{frame}{Data Types}
+Data types represent the set of different values that can be stored in the variable
+\end{frame}
+
+
+
+
+\begin{frame}{Types of Data Types}
+\begin{columns}
+\column{0.3\textwidth}
+\textbf{Primitive Types}
+\begin{itemize}
+\item Integer
+\begin{itemize}
+\item byte
+\item short
+\item int
+\item long
+\end{itemize}
+
+\item Floating Point
+\begin{itemize}
+\item float
+\item double
+\end{itemize}
+\end{itemize}
+
+\column{0.3\textwidth}
+\textbf{Primitive Types}
+\begin{itemize}
+\item Character
+\begin{itemize}
+\item char
+\end{itemize}
+\item Boolean
+\begin{itemize}
+\item boolean
+\end{itemize}
+\end{itemize}
+
+\column{0.4\textwidth}
+\textbf{Non-Primitive Types}
+\begin{itemize}
+\item String
+\item Array
+\end{itemize}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}{Syntax}
+\textbf{Declaration$:$}\\
+datatype variable\_name$;$
+\end{frame}
+
+\begin{frame}{Syntax}
+\textbf{Declaration$:$}\\
+
+\begin{lstlisting}
+datatype variable\_name$;$\\
+\tab int number $;$
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Syntax}
+\textbf{Declaration$:$}\\
+\begin{lstlisting}
+datatype variable\_name$;$\\
+\tab int number $;$
+\end{lstlisting}\\
+\textbf{Initialization$:$}\\
+datatype variable\_name$=$value$;$
+\end{frame}
+
+
+\begin{frame}{syntax}
+\textbf{Declaration$:$}\\
+\begin{lstlisting}
+datatype variable name;\\
+\tab int number ;
+\end{lstlisting}\\
+\textbf{Initialization$:$}\\
+\begin{lstlisting}
+datatype variable\_name = value ;\\
+\tab int number = 50; \\
+\tab float salary = 5000.of;\\
+\tab boolean flag = false;\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{problem statement}
+Declare and initialize two variables of type interger and print their values.
+\end{frame}
+\begin{frame}{Solution}
+\begin{lstlisting}
+class DataTypesDemo\{\\
+\tab public static void main(string[] args)\{\\
+\tab \tab int num1 = 10;\\
+\tab \tab int num2 = 15;\\
+\tab \tab system.out.println("num1 = " + num1);\\
+\tab \tab  system.out.println("num2 = " + num2);\\
+ \tab   \}\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Problem Statement}
+Declare and initialize variable of type int , float,double and print their values.
+\end{frame}
+
+\begin{frame}{Solution}
+\begin{lstlisting}
+class PrintData\{\\
+\tab public static void main(String[] args)\{\\
+\tab \tab int num = 10;\\
+\tab \tab float fValue = 15f;\\
+\tab \tab double dValues = 100.0;\\
+\tab \tab system.out.println("Integer value = " + num);\\
+\tab \tab system.out.println("Float value = " + fValue);\\
+\tab \tab system.out.println("Double value = " + dValue);\\
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}{Summary}
+\begin{itemize}
+    \item A variable should be declared and initialized before using it in the program.
+    \item There are 8 primitive data types in Java.
+    \item Float values should have post fix 'f'.
+    
+\end{itemize}
+\end{frame}
+
+\end{document}

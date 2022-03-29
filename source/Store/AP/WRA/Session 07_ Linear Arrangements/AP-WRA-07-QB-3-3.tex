@@ -1,0 +1,315 @@
+
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+\usepackage{unicode-math}
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+	\usepackage[]{microtype}
+	\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+	\IfFileExists{parskip.sty}{%
+		\usepackage{parskip}
+	}{% else
+		\setlength{\parindent}{0pt}
+		\setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+	\KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+	hidelinks,
+	pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+\usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\author{}
+\date{}
+\usepackage{multirow}
+\usepackage[inline]{enumitem}
+\usepackage[margin=1.0in]{geometry}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\includegraphics[width=5.21667in, height=0.38819in]{image1.png}}
+\lhead{ Reasoning: Linear Arrangements }
+\lfoot{www.talentsprint.com }
+\rfoot{\thepage}
+\begin{document}
+	
+ 
+
+\begin{center}
+	{\Large \textbf{Linear Arrangements \\}}
+\end{center}
+
+{\large \textbf{ Additional Examples \\}}
+
+1. Six boys are sitting in a row. Jose and Manu are sitting adjacent to Raju. Uday has Gopi and
+Ram as his \includegraphics[width=0.60555in,height=0.32083in]{image2.png}adjacent. Gopi is not next to either Jose or Manu. Ram is not sitting next to
+Manu.\\
+Who are/is sitting adjacent to Jose\\
+1) Raju and Uday \hspace{2mm}2) Raju and Manu
+\hspace{2mm}3) Raju and Ram \hspace{2mm}4) Only Raju\\
+
+2. Twelve friends A, B, C, D, E, F, G, H, I, J, K and L are sitting in a row facing east. J sits third
+to the left \includegraphics[width=0.60555in,height=0.32083in]{image2.png}of E, who sits sixth to the right of A. G sits fourth to the right of L, who is not an
+immediate neighbor of C. B sits fifth from the right end and H sits second to the left of D. E
+is not an immediate neighbor of I or F, but sits second to the right of B. There are two friends
+between C and K. K is not an immediate neighbor of J.\\
+
+3. Ten executives A, B, C, D, E, F, G, H, I and J stay in flats in two rows opposite each other.
+One row has \includegraphics[width=0.60555in,height=0.32083in]{image2.png}5 flats facing North and the other row has 5 flats facing south. F’s flat is second
+to the right of J’s flat, which is exactly opposite of C’s flat facing North. D’s flat is on the
+immediate left of J’s flat and A’s flat on the immediate left of C’s flat. B’s flat is on the right
+of C’s flat. I and E have flats at the two ends of the same row. Flats of E and H are opposite
+each other.\\
+
+I. Which of the following is correct position of G’s flat?\\
+a) Facing north \hspace{2mm}b) left of F \hspace{2mm}c) left of J \hspace{2mm}d) opposite to C\\
+
+II. Who stays opposite to B?\\
+a) A \hspace{2mm}b) D \hspace{2mm}c) C \hspace{2mm}d) F\\
+
+III. Which of the following statements is definitely true?\\
+a) J’s Flat is facing North \hspace{2mm}b) G and A have flats opposite each other.
+\hspace{2mm}c) B’s flat is tot the right of E’s flat. \hspace{2mm}D) G’s flat is to the left of J’s flat
+\hspace{2mm}e) None of these\\
+
+IV. Which of the following groups of persons have flats in the same row?\\
+a) ACG \hspace{2mm}b) GIE \hspace{2mm}c) GJF \hspace{2mm}d) FAJ \hspace{2mm}e) None of these\\
+
+V. Which of the following pairs of executives stay in the flats at the end of a row?\\
+a) FD \hspace{2mm}b) HD \hspace{2mm}c) HG \hspace{2mm}d) GD \hspace{2mm}e) None\\
+
+4. \textbf{Directions (I-II):} Study the following information & answer the questions.\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+7 persons S, T, U, V, W, X & Y are seated in a straight line but not necessarily in the same
+order, some of them are facing north while some are facing south. Only 3 persons sits
+between U & V. Neither U nor V is standing at the any extreme end of the line. X sits 2nd to
+the right of U. Y sits 3rd to the right of X. Neither S nor Y is an immediate neighbour of V. T
+sits 2nd to the right of S. Both immediate neighbour of X face opposite direction (ie, if one
+neighbour faces north other will face south & vice versa) V faces a direction opposite to that
+of T. Both persons standing at the extreme ends face the same directions as that of X.\\
+I. What is the position of U with respect to T?\\
+
+II. Four of the following five are alike in a certain way based on the given arrangement &
+hence they form a group. Which of the following does not belong to the group?\\
+a) W \hspace{2mm}b) T \hspace{2mm}c) V \hspace{2mm}d) X \hspace{2mm}e) Y\\
+
+5. Seven different boxes L, M, N, O, P, Q and R of different colours viz., Green, Red, Blue,
+Yellow, Purple, \includegraphics[width=0.60555in,height=0.32083in]{image2.png}Pink and Orange are arranged one above the other. The box at the bottom of
+arrangement is numbered 1, the above box is numbered 2 and so on. M is immediately
+above P. More than two boxes are above the Green box. The Yellow box is immediately
+below L. Only one box is between the Green box and Q. R is immediately above the Pink
+box. Only one box is between M and the Red box. Only two boxes are between the Red and
+the Orange box. Only two boxes are between the Yellow box and the Green box. The blue
+box is neither at the top nor at the bottom of the arrangement. M is above Red box. N is
+immediately above Q. Neither N nor R is a Yellow box. R is not a Green box.\\
+
+6. \textbf{Directions (I-IV):} Answer the questions on the basis of the information given below.\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+There are 8 children – A, B, C, D, E, F, G and H who live on different floors of a 8-floor
+building numbered 1 to 8 not necessarily in the same order. They have different chocolates –
+11, 16, 19, 25, 34, 41, 46 and 50 again not necessarily in the same order.\\
+The one who lives on 6th floor has 25 chocolates. One child lives between F and the one
+having 25 chocolates. G lives below F on an even numbered floor. G does not have 25
+chocolates. The one having 46 chocolates lives just above G. Two children live between F
+and H. H lives below F. The total of number of chocolates with D and H is a multiple of 4.
+Two children live between A and the one having 41 chocolates. A lives above G. The one
+having 41 chocolates live above A. B has 34 chocolates. The one having 11 chocolates lives
+just above the one having 16 chocolates. 1 child lives between C and E. The difference
+between the number of chocolates with E and G is 6\\
+
+I. How many children live above E?\\
+A) 1 \hspace{2mm}B) 2 \hspace{2mm}C) 4 \hspace{2mm}D) None \hspace{2mm}E) 5\\
+
+II. Who has 41 chocolates?\\
+A) C \hspace{2mm}B) E \hspace{2mm}C) F \hspace{2mm}D) H \hspace{2mm}E) B\\
+
+III. Who lives on third floor?\\
+A) A \hspace{2mm}B) B \hspace{2mm}C) C \hspace{2mm}D) D \hspace{2mm}E) E\\
+
+IV. Which of the following is correct with respect to the arrangement?\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+A) 2 children live between B and one having 25 chocolates\\
+B) F lives on floor above A\\
+C) A lives just below D\\
+D) H has maximum chocolates\\
+E) None of these is correct\\
+
+V. What is the sum of chocolates with B and D?\\
+A) 80 \hspace{2mm}B) 83 \hspace{2mm}C) 76 \hspace{2mm}D) 96 \hspace{2mm}E) 84\\
+
+7. \textbf{Directions:} Answer the questions on the basis of the information given below\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+Eight person P, Q, R, S,T, U, V, & W are sitting in a straight line facing north. their ages are
+12, 14, 18, 26, 29, 35, 42, 67. The one who is 12 years old is 4th to the left of the eldest person
+who is sitting at the end. The sum of ages of S and Q is equal to P. S is not the youngest
+person. S and W are neighbor of Q. R's age is not an even number and he is older than W
+and younger than U. only 3 person are sitting between S and U. Only 2 person are sitting
+between Q and T, who is 29 year old. P is not the neighbor of U. R is not sitting to the left of
+Q.\\
+
+8. Answer the questions on the basis of the information given below\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+Seven friends H, I, J, L, Z, Y and A are born in seven different months of the same year. No
+two persons born in a same month. The months are January, March, April, July, September,
+October and December. All the information above is not necessarily in the same order A
+was born in a month which has 30 days. Only one person born between A and Z. L was
+born one of the month after September. Number of person born between L and Z is same as
+Y and J. Z is elder than Y. I didn't born in a month which has even number days. H is not
+younger than Y. L is not a youngest person in friends. H doesn't born in a month which has
+odd number days.\\
+
+9. Answer the questions on the basis of the information given below\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+A, B, C, D, E, F and H are sitting in a straight line but not necessarily in the same order. Two
+of them are facing south. C sits second to the right of E. A sits second to the left of F, who
+sits third to the left of H. H is facing south. B sits third to the right of C, who is third from
+left. E and B face opposite directions.\\
+
+10. \textbf{Directions (I-V):} Study the information carefully and answer the questions given below.\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+Eight persons from different cities, viz. Jaipur, Delhi, Goa, Kolkata, Indore, Jodhpur,
+Mumbai and Bangalore, are sitting in two parallel rows containing four persons each, in
+such a way that there is an equal distance between adjacent persons. In row 1, T, U, V and
+W are sitting and all of them are facing north. In row 2, P, Q, R and S are sitting and all of
+them are facing south. Therefore, in the given seating arrangement each member sitting in a
+row faces another member of the other row. (All the information given above does not
+necessarily represent the order of seating as in the final arrangement.)\\
+\begin{itemize}
+\item The person from Indore faces the one who is on the immediate left of V. V is neither
+from Delhi nor from Goa.
+\item An immediate neighbour of P faces the person from Jaipur. The person from Jodhpur
+faces the person who is on the left of the person from Delhi.
+\item There is only one person sitting between the persons from Delhi and Mumbai but that
+person is not T. The persons from Delhi and Goa are not sitting at the extreme ends.
+\item Q sits on the immediate left of the person from Indore. Persons from Kolkata and
+Jodhpur are immediate neighbours. R and U are not sitting at any of the ends.
+\item W faces the one who is sitting on the immediate right of the person from Jodhpur. P is
+not from Jodhpur or Kolkata.
+\end{itemize}
+
+I. Who amongst the following is from Bangalore?\\
+a) P \hspace{2mm}b) V \hspace{2mm}c) Q \hspace{2mm}d) W \hspace{2mm}e) cannot be determined\\
+
+II. Which of the following statements is false regarding W?\\
+a) W is from mumbai\\
+b) W is sitting at one of the extreme end\\
+c) W is on immediate left from person from goa\\
+d) W is sitting opposite the person form jodhpur\\
+e) All are true\\
+
+III. Four of the following five are alike in a certain way based on the given seating
+arrangement and thus form a group. Which is the one that does not belong to that
+group?\\
+a) R \hspace{2mm}b) T \hspace{2mm}c) P \hspace{2mm}d) U \hspace{2mm}e) W\\
+
+IV. from which of the following City?\\
+a) mumbai \hspace{2mm}b) Jaipur \hspace{2mm}c) kolkata \hspace{2mm}d) jodhpur \hspace{2mm}e) none of these\\
+
+V. Who is sitting between S and the person from Indore?\\
+a) the person who is from goa. \hspace{2mm}b) Q \hspace{2mm}c) W
+\hspace{2mm}d) the person who faces the one who is from goa \hspace{2mm}e) none of these\\
+
+11. Eight person from different cities, viz jaipur, Mumbai, Pune, delhi, Kanpur, Goa, Ranchi and
+Indore, are \includegraphics[width=0.60555in,height=0.32083in]{image2.png}sitting in two parallel rows containing four person each in such a way that there
+is an equal distance between adjacent persons. In row 1, P, Q, R and S are sitting and all of
+them are facing north. In row 2 A,B,C,D are sitting and all of them are facing south. The
+person From Kanpur faces the one who sits immediate left of R. r is neither from mumbai
+nor from pune. An immediate neighbour of A faces the person who is from jaipur. The
+person from Goa faces the person who sits on the left of the person from mumbai. There is
+only one person sitting between the person from mumbai and ranchi But That person is not
+R. the person lfrom mumbai and pune are not sitting at the extreme ends. B sits on the
+immediate left of the person from kanpur. The person from delhi and Goa are immediate
+neighbours. C and Q are not sitting at any of the ends. S faces the one who is sitting on the
+immediate right of the person from goa. A is not from Goa or delhi. P does not face the one
+who is from Goa?\\
+
+12. Ten people are sitting in two parallel rows containing five people each, in such a way that
+there is equal \includegraphics[width=0.60555in,height=0.32083in]{image2.png}distance b/w adjacent persons. in row-1 J,K,L,M and N are seated( not
+necessarily in the same order) and all of them are facing north. In row-2 V,W,X,Y and Z are
+seated ( not necessarily in the same order)and all of them are facing south. Therefore in the
+given seating arrangement each member seated in a row faces another member of the other
+row.\\
+K sits exactly in middle of the row. The one who faces K is an immediate neighbor of Z. V
+sits to the immediate left of Z. only one person sits b/w V and X. The one who faces X sits to
+immediate right of M. only one person sits b/w M and J. W does not sit at an extreme end of
+the line. The one who faces W sits to the immediate left of N?\\
+
+13. \textbf{Directions:} Study the following information carefully and answer the questions given
+below:\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+Eight persons Q, R, P, L, Z, H, J and B are sitting in a row facing north. Each one of them
+students in different standard from 1 to 8. All the above information is not necessarily in the
+same order. Their ages are directly proportional to their standards.
+Note: The one who students in the standard 8 is the eldest, while the one who studies in the
+standard 1 is the youngest in the group.
+Q is elder than P and R. R is younger than P. Three persons sit between Q and the one who
+studies in 6th standard. Less than two persons sits between Q and R. Number of persons sits
+to the left of P is same as the number of persons sits right of the one who studies in 8th
+standard. P does not sit at any of the extreme end. Q sits at one of the extreme end. The one
+who studies in 1st standard sits fourth to the left of B. B studies in 3rd standard. Sum of the
+standards of L and H will be equal to the standard of J. H sits immediate right of L. Z and J
+is not an immediate neighbor of Q. The one who studies in 2nd standard sits third to the
+right of R.\\
+
+I. R studies in which of the following standard?\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+a) 5 \hspace{2mm}b) 7 \hspace{2mm}c) 4 \hspace{2mm}d) 1 \hspace{2mm}e) None of these\\
+%\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+%\hspace{2mm}
+
+\end{document}

@@ -1,0 +1,149 @@
+\documentclass[aspectratio=169,14pt,usenames,dvipsnames]{beamer}
+\usetheme{TalentSprint}
+\usepackage[utf8]{inputenc}
+\usepackage{graphics}
+\usepackage{ragged2e}
+\usepackage{amsfonts}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{tcolorbox}
+\usepackage{setspace}
+\usepackage{lmodern}
+\definecolor{swe}{rgb}{0.19, 0.73, 0.56}
+\definecolor{lblue}{RGB}{190,200,198}
+\title[Nested Loop]{Nested Loop}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\begin{document}
+
+{\1
+\begin{frame} \vspace{35pt}
+
+\subtitle{TalentSprint}
+\maketitle
+\end{frame}
+}
+
+
+\begin{frame}{Learning Objectives}
+At the end of this video you should able to:
+\begin{itemize}
+\item understand and use nested loop statement.
+\item understand how nested loop statement
+works.
+\item write programs using nested loops
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Nested Loop}
+\begin{itemize}
+    \item A loop within a loop.
+    \item A inner loop within the body of an outer
+loop.
+\item An inner loop will execute only if the outer
+loop is true.
+\item After termination of inner loop, the control
+goes to outer loop
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Syntax}
+\begin{lstlisting}
+for (init; bool\_expression; increment) \{\\
+\tab statement\_out;\\
+\tab while (boolean\_expression\_in) \{\\
+\tab \tab statement\_in;\\
+\tab \tab statement\_in;\\
+\tab \}\\
+\tab statement\_out;\\
+\}\\
+\end{lstlisting}
+Note: We can use one loop (of any kind) inside
+another loop (of any kind)
+\end{frame}
+
+
+
+\begin{frame}{problem Statement}
+print all three digit palindromes.
+\end{frame}
+
+\begin{frame}{solution}
+\begin{lstlisting}
+for (int num = 100; num $<$= 999; num++) \{\\
+\tab int n= num;\\
+\tab int rev\_n = 0\\
+\tab while (n $>$ 0) \{\\
+\tab \tab int d = n \% 10;\\
+\tab \tab rev\_n =(rev\_n * 10 ) +d;\\
+\tab \tab n /=10;\\
+\tab \}\\
+\tab if (num == rev\_n) \{\\
+\tab \tab System.out.println(num);\\
+\tab \}\\
+\}\\
+\end{lstlisting}
+\end{frame}
+\begin{frame}{Problem statement}
+Print the below pattern as shown:\\
+\begin{lstlisting}
+1\\
+1 2\\
+1 2 3\\
+1 2 3 4\\
+1 2 3 4 5\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Solution}
+\begin{lstlisting}
+int n = 5;\\
+for (int i = 1; i $<$= n; i++) \{\\
+\tab for (int j = 1; j $<$ i; j++) \{\\
+\tab \tab System.out.print(j + " ");\\
+\tab \}\\
+\tab System.out.println();\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Problem Statement}
+Print the below pattern as shown:\\
+
+\hspace{5em} 1\\
+\hspace{4em} 1\hspace{0.2em} 2\\
+\hspace{3em} 1\hspace{0.2em} 2 \hspace{0.2em}3\\
+\hspace{2em} 1\hspace{0.2em} 2\hspace{0.2em} 3\hspace{0.2em} 4\\
+\hspace{1em} 1\hspace{0.2em} 2\hspace{0.2em} 3\hspace{0.2em} 4\hspace{0.2em} 5\\
+\end{frame}
+
+\begin{frame}{Solution}
+\begin{lstlisting}
+int n = 5;\\
+for (int i=1;i $<$= n;i++)\{\\
+\tab for (int k = n; k $>$ i; k- -) \{\\
+\tab \tab System.out.print(" ");\\
+\tab \}\\
+\tab for (int j = 1; j $<$= i; j++) \{\\
+\tab \tab System.out.print(j + " ");\\
+\tab \}\\
+\tab System.out.println();\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}{Summary}
+\begin{itemize}
+    \item A loop inside an another loop is known as
+nested loop.
+\item After termination of an inner loop, the
+control goes to outer loop.
+\item We can have any type of loop inside
+another loop of any type.
+\end{itemize}
+\end{frame}
+\end{document}

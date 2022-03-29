@@ -1,0 +1,235 @@
+\documentclass[aspectratio=169,14pt,usenames,dvipsnames]{beamer}
+\usetheme{TalentSprint}
+\usepackage[utf8]{inputenc}
+\usepackage{graphics}
+\usepackage{ragged2e}
+\usepackage{amsfonts}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{tcolorbox}
+\usepackage{setspace}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\definecolor{swe}{rgb}{0.19, 0.73, 0.56}
+\definecolor{lblue}{RGB}{190,200,198}
+\title[Reading and Writing Data]{Reading and Writing Data}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+{\1
+\begin{frame} \vspace{35pt}
+
+\subtitle{TalentSprint}
+\maketitle
+\end{frame}
+}
+
+\begin{frame}{Learning Objectives}
+At the end of this video you should able to:
+\begin{itemize}
+\item Read contents of a file.
+\item Write into a file.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{IO Hierarchy}
+\begin{center}
+\resizebox{0.4\textwidth}{!}{
+\includegraphics{Images/rea_and_writing.png}
+}
+\end{center}
+\end{frame}
+
+\begin{frame}{To read(Binary)}
+\textbf{FileInputStream fis = new FileInputStream(String);}\\
+\vspace{1em}\\
+\textbf{Note : String represents the address of a file.}\\
+\tab \tab \tab \tab \textcolor{blue}{(or)}\\
+\textbf{FileInputStream fis = new FileInputStream(File);}\\
+\vspace{1em}
+\textbf{Note: File represents the file object.}\\
+\end{frame}
+
+
+\begin{frame}{To read(Binary) ..}
+\textbf{int n = fis.read();}\\
+\textbf{Reads a character and returns an ASCII value.}\\
+\vspace{1em}\\
+\textbf{fis.close();}\\
+\textbf{Close the opened resource.}\\
+\vspace{1em}\\
+\textbf{Note: Both the above methods throws}\\
+\textbf{IOException.}\\
+\end{frame}
+
+
+\begin{frame}{To write(Binary)}
+\textbf{FileOutputStream fos = new FileOutputStream(String);}\\
+\tab \tab \tab \tab \textcolor{blue}{(or)}\\
+\textbf{FileOutputStream fos = new FileOutputStream(File);}
+\tab \tab \tab \tab \textcolor{blue}{(or)}\\
+\textbf{FileOutputStream fos = new}\\
+\textbf{FileOutputStream(String,boolean);}\\
+\vspace{1em}\\
+\textbf{Note: boolean true append content to the file.}
+\end{frame}
+
+
+\begin{frame}{To write(Binary) . . .}
+\textbf{fos.write(n);}\\
+\textbf{Write the specified byte to the file and ’n’}\\
+\textbf{represents byte.}\\
+\vspace{1em}
+\textbf{fos.close();}\\
+\textbf{Close the opened resource.}\\
+\vspace{1em}
+\textbf{Note: Both the above methods throws}\\
+\textbf{IOException.}\\
+\end{frame}  
+
+
+\begin{frame}{To read(Character)}
+\textbf{FileReader fr = new FileReader(file);}\\
+\textbf{Note: file represents object of type File.}\\
+\end{frame}
+
+\begin{frame}{To read(Character)}
+\textbf{FileReader fr = new FileReader(file);}\\
+\textbf{Note: file represents object of type File.}\\
+\vspace{1em}
+\textbf{BufferedReader br = new BufferedReader(fr));}\\
+\textbf{Note: One can read char by char or line by line.}\\
+\end{frame}
+
+\begin{frame}{To read(Character)}
+\textbf{FileReader fr = new FileReader(file);}\\
+\textbf{Note: file represents object of type File.}\\
+\vspace{1em}
+\textbf{BufferedReader br = new BufferedReader(fr));}\\
+\textbf{Note: One can read char by char or line by line.}\\
+\vspace{1em}
+\textbf{int n = br.read();}\\
+\textbf{Note: Read the character and returns the ASCII value.}\\
+\end{frame}
+
+\begin{frame}{To read(Character)}
+\textbf{String s = br.readLine();}\\
+\textbf{Note: Reads the entire line and retuns the string.}\\
+\vspace{1em}
+\textbf{Note: Both the read methods throws IOException.}\\
+\end{frame}
+
+\begin{frame}{To write(Character)}
+\textbf{FileWriter fw = new FileWriter(file);}\\
+\textbf{Note: file represents object of type File.}\\
+\end{frame}
+
+\begin{frame}{To write(Character)}
+\textbf{FileWriter fw = new FileWriter(file);}\\
+\textbf{Note: file represents object of type File.}\\
+\vspace{1em}
+\textbf{BufferedWriter bw = new BufferedWriter(fw);}\\
+\textbf{Note: One can write byte or string to a file.}\\
+\end{frame}
+
+\begin{frame}{To write(Character)}
+\textbf{FileWriter fw = new FileWriter(file);}\\
+\textbf{Note: file represents object of type File.}\\
+\vspace{1em}
+\textbf{BufferedWriter bw = new BufferedWriter(fw);}\\
+\textbf{Note: One can write byte or string to a file.}\\
+\vspace{1em}
+\textbf{bw.write(String);}\\
+\textbf{Note: Write the string to a file.}\\
+\end{frame}
+
+\begin{frame}{To write(Character)}
+\textbf{FileWriter fw = new FileWriter(file);}\\
+\textbf{Note: file represents object of type File.}\\
+\vspace{1em}
+\textbf{BufferedWriter bw = new BufferedWriter(fw);}\\
+\textbf{Note: One can write byte or string to a file.}\\
+\vspace{1em}
+\textbf{bw.write(String);}\\
+\textbf{Note: Write the string to a file.}\\
+\vspace{1em}
+\textbf{Note: Write method throws IOException.}\\
+\end{frame}
+
+
+\begin{frame}{To Read and Write Objects}
+\textbf{To write and read objects of a class from a file,
+the respective class must implement interface
+Serializable.}
+\end{frame}
+
+\begin{frame}{To read(Object)}
+\textbf{FileInputStream fis = new FileInputStream(String)};\\
+\textbf{Note: String represents the File object.}\\
+\end{frame}
+
+\begin{frame}{To read(Object)}
+\textbf{FileInputStream fis = new FileInputStream(String)};\\
+\textbf{Note: String represents the File object.}\\
+\vspace{1em}
+\textbf{ObjectInputStream ois = new ObjectInputStream(fis);}
+\end{frame}
+
+\begin{frame}{To read(Object)}
+\textbf{FileInputStream fis = new FileInputStream(String)};\\
+\textbf{Note: String represents the File object.}\\
+\vspace{1em}
+\textbf{ObjectInputStream ois = new ObjectInputStream(fis);}\\
+\vspace{1em}
+\textbf{ClassName obj = (ClassName)ois.readObject();}\\
+\textbf{Note: Reads object from file and returns it.}\\
+\end{frame}
+
+\begin{frame}{To read(Object)}
+\textbf{FileInputStream fis = new FileInputStream(String)};\\
+\textbf{Note: String represents the File object.}\\
+\vspace{1em}
+\textbf{ObjectInputStream ois = new ObjectInputStream(fis);}\\
+\vspace{1em}
+\textbf{ClassName obj = (ClassName)ois.readObject();}\\
+\textbf{Note: Reads object from file and returns it.}\\
+\vspace{1em}
+\textbf{ois.close();}\\
+\textbf{Note: To close the resource.}\\
+\end{frame}
+
+\begin{frame}{To write(Object)}
+\textbf{FileOutputStream fos = new FileOutputStream(String);}\\
+\textbf{Note: String represents the File object.}\\
+\vspace{1em}
+\textbf{ObjectOutputStream oos = new}\\
+\textbf{ObjectOutputStream(fos);}\\
+\end{frame}
+
+\begin{frame}{To write(Object)}
+\textbf{FileOutputStream fos = new FileOutputStream(String);}\\
+\textbf{Note: String represents the File object.}\\
+\vspace{1em}
+\textbf{ObjectOutputStream oos = new}\\
+\textbf{ObjectOutputStream(fos);}\\
+\vspace{1em}
+\textbf{oos.writeObject(object);}\\
+\textbf{Note: Object is of type Serializable.}\\
+\end{frame}
+
+\begin{frame}{To write(Object)}
+\textbf{FileOutputStream fos = new FileOutputStream(String);}\\
+\textbf{Note: String represents the File object.}\\
+\vspace{1em}
+\textbf{ObjectOutputStream oos = new}\\
+\textbf{ObjectOutputStream(fos);}\\
+\vspace{1em}
+\textbf{oos.writeObject(object);}\\
+\textbf{Note: Object is of type Serializable.}\\
+\vspace{1em}
+    \textbf{ois.close();}\\
+\textbf{Note: To close the resource.}\\
+\end{frame}
+\end{document}

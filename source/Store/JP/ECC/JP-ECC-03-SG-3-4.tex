@@ -1,0 +1,137 @@
+\documentclass[aspectratio=169,14pt,usenames,dvipsnames]{beamer}
+\usetheme{TalentSprint}
+\usepackage[utf8]{inputenc}
+\usepackage{graphics}
+\usepackage{ragged2e}
+\usepackage{amsfonts}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{tcolorbox}
+\usepackage{setspace}
+\usepackage{lmodern}
+\definecolor{swe}{rgb}{0.19, 0.73, 0.56}
+\definecolor{lblue}{RGB}{190,200,198}
+\title[Conditional Statement-Nested If ]{Conditional Statement-Nested If}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\begin{document}
+
+{\1
+\begin{frame} \vspace{35pt}
+
+\subtitle{TalentSprint}
+\maketitle
+\end{frame}
+}
+
+
+\begin{frame}{Learning Objectives}
+At the end of this video you should able to:
+\begin{itemize}
+\item understand and use nested if.
+\item write programs using nested if.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Nested if}
+An if statement within an another if is
+termed as nested if.
+\end{frame}
+
+
+
+\begin{frame}{Syntax}
+\begin{lstlisting}
+if (A\_boolean\_expression) \{//outer if\\
+\tab if(B\_boolean\_expression) \{//inner if\\
+\tab \tab statement 1;\\
+\tab \} else \{\\
+\tab \tab statement 2;\\
+\tab \}\\
+\} else \{\\
+\tab statement 3;\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Problem statement}
+Count the number of digits in a given positive
+number.\\
+Note: the input value must not exceed 4 digits
+\end{frame}
+
+    
+
+
+\begin{frame}{Solution}
+\begin{lstlisting}
+if (num $>$ 0 \&\& num $<$ 10000) \{\\
+\tab if (num $<$ 10)\\
+\tab \tab S.o.pln("Single digit number");\\
+\tab else if (num $<$ 100)\\
+\tab \tab S.o.pln("Two digit number");\\
+\tab else if (num $<$ 1000)\\
+\tab \tab S.o.pln("Three digit number");\\
+\tab else\\
+\tab \tab S.o.pln("Four digit number");\\
+\} else \{\\
+\tab S.o.pln("Not a Valid Input");\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Problem Statement}
+Given a person’s age and gender, check
+whether the person is eligible for marriage.\\
+M ---$>$ Male, age $>$= 24\\
+F ---$>$ Female, age $>$= 20\\
+\end{frame}
+
+\begin{frame}{Solution}
+\begin{lstlisting}
+if (gender == ’M’) \{\\
+\tab if (age $>$= 24)\\
+\tab \tab printf("Eligible");\\
+\tab else\\
+\tab \tab printf("Not Eligible");\\
+\} else \{\\
+\tab if (age $>$= 20)\\
+\tab \tab  printf("Eligible");\\
+\tab else\\
+\tab \tab printf("Not Eligible");\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Problem statement}
+Given three sides of a triangle, Identify the
+triangle is an equilateral, isosceles or scalene.
+\end{frame}
+
+\begin{frame}{Solution}
+\begin{lstlisting}
+if (a + b $>$ c \&\& a + c $>$ b \&\& b + c $>$ a) \{\\
+\tab if (a == b \&\& a == c) \{\\
+\tab \tab System.out.println("Equilateral Triangle");\\
+\tab \} else if (a == b $||$ b == c $||$ a == c) \{\\
+\tab \tab System.out.println("Isosceles Triangle");\\
+\tab \} else \{\\
+\tab \tab System.out.println("Scalene Triangle");\\
+\tab \}\\
+\} else \{\\
+\tab System.out.println("Invalid Data");\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}{Summary}
+\begin{itemize}
+    \item An if statement within an another if is
+termed as nested if.
+\item the inner if is executed only if, outer if
+expression is true.
+\end{itemize}
+\end{frame}
+\end{document}
