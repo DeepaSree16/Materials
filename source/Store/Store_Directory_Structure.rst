@@ -156,7 +156,7 @@ STORE
       + **FPO** FinancePortfolio
    
    * IO [IoT]
-      + **IOML** IoTandMachineLearning
+      + **IML** IoTandMachineLearning
 
    * GT [GIT]
 
