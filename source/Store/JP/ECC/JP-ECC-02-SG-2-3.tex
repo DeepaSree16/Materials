@@ -1,0 +1,109 @@
+\documentclass[aspectratio=169,14pt,usenames,dvipsnames]{beamer}
+\usetheme{TalentSprint}
+\usepackage[utf8]{inputenc}
+\usepackage{graphics}
+\usepackage{ragged2e}
+\usepackage{amsfonts}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{tcolorbox}
+\usepackage{setspace}
+\usepackage{lmodern}
+\definecolor{swe}{rgb}{0.19, 0.73, 0.56}
+\definecolor{lblue}{RGB}{190,200,198}
+\title[Looping Statements - do while]{Looping Statements - do while}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\begin{document}
+
+{\1
+\begin{frame} \vspace{35pt}
+
+\subtitle{TalentSprint}
+\maketitle
+\end{frame}
+}
+
+
+\begin{frame}{Learning Objectives}
+At the end of this video you should able to:
+\begin{itemize}
+\item Understand the need for looping
+statements.
+\item Understand and use do while loop.
+\item Write programs using do while.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{do...while}
+\begin{itemize}
+    \item Executes code repeatedly based on boolean
+condition.
+    \item Executes the body of the loop atleast once.
+    \item exit control loop. 
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Syntax}
+\begin{lstlisting}
+do  \{ \\
+\tab statement;\\
+\tab statement;\\
+\}while (boolean\_expression);\\
+\end{lstlisting}\\
+
+\end{frame}
+
+
+
+\begin{frame}{Problem Statement}
+Add the natural numbers from 1 until the sum
+reaches 100.
+\end{frame}
+
+\begin{frame}{Syntax-if}
+\begin{lstlisting}
+int n = 1;\\
+int sum = 0;\\
+do \{\\
+\tab sum += n;\\
+\tab n++;\\
+\} while (sum $<$ 100);\\
+System.out.println(sum);\\
+\end{lstlisting}\\
+\end{frame}
+
+\begin{frame}{Problem Statement}
+Given any four digit number, print the sum of
+numbers, formed by deleting the right most
+digit till end
+Ex: n = 3456 result is 3838 (3456 + 345 + 34 +
+3)
+\end{frame}
+
+\begin{frame}{Solution}
+\begin{lstlisting}
+int sum = 4528;\\
+int sum = 0;\\
+
+do \{\\
+\tab sum += num;\\
+\tab num /= 10\\
+\} while (num $>$ 0);\\
+System.out.println(sum);\\
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}{Summary}
+\begin{itemize}
+    \item do while is an exit control loop.
+\item The statements in do while will execute
+atleast once.
+
+\end{itemize}
+\end{frame}
+\end{document}

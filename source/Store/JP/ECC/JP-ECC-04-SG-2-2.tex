@@ -1,0 +1,108 @@
+\documentclass[aspectratio=169,14pt,usenames,dvipsnames]{beamer}
+\usetheme{TalentSprint}
+\usepackage[utf8]{inputenc}
+\usepackage{graphics}
+\usepackage{ragged2e}
+\usepackage{amsfonts}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{tcolorbox}
+\usepackage{setspace}
+\usepackage{lmodern}
+\definecolor{swe}{rgb}{0.19, 0.73, 0.56}
+\definecolor{lblue}{RGB}{190,200,198}
+\title[Break and Continue Statement]{Break and Continue Statement}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\begin{document}
+
+{\1
+\begin{frame} \vspace{35pt}
+
+\subtitle{TalentSprint}
+\maketitle
+\end{frame}
+}
+
+
+\begin{frame}{Learning Objectives}
+At the end of this video you should able to:
+\begin{itemize}
+\item understand and use break statement.
+\item understand and use continue statement.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{break statement}
+\begin{itemize}
+    \item Terminate the loop immediately when it is
+encountered.
+    \item Also used in switch case.
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Problem Statement}
+Add the sum of natural number from 1 until
+the sum reaches to 100.
+\end{frame}
+
+
+
+\begin{frame}{Solution}
+\begin{lstlisting}
+int n = 1 \\
+int sum = 0;\\
+while (true)\{\\
+\tab sum += n;\\
+\tab n++;\\
+\tab if (sum $>$ 100) \{\\
+\tab \tab break;\\
+\tab \}\\
+\}\\
+System.out.println(sum);
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Control statement}
+\begin{itemize}
+    \item will not execute the statements specified in
+the loop after the continue statement.
+    \item passes control to the next iteration of any
+looping statements.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Problem Statement}
+Print sum of all natural numbers between 1 to
+100 excluding the numbers which are
+multiples of 5.
+\end{frame}
+
+\begin{frame}{Solution}
+\begin{lstlisting}
+int start = 1;\\
+int limit = 100;\\
+int sum = 0;\\
+for (int n=start;n $<$= limit;n++)\{\\
+\tab if (num \% 5 == 0) \{\\
+\tab \tab continue;\\
+\tab \}\\
+\tab sum +=n;\\
+\}\\
+System.out.println(sum);\\
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}{Summary}
+\begin{itemize}
+    \item break will terminate the loop.
+\item continue will skip the statements specified
+with in the loop and passed control to the
+next iteration.
+\end{itemize}
+\end{frame}
+\end{document}

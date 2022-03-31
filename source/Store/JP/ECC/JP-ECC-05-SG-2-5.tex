@@ -1,0 +1,123 @@
+\documentclass[aspectratio=169,14pt,usenames,dvipsnames]{beamer}
+\usetheme{TalentSprint}
+\usepackage[utf8]{inputenc}
+\usepackage{graphics}
+\usepackage{ragged2e}
+\usepackage{amsfonts}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{tcolorbox}
+\usepackage{setspace}
+\usepackage{lmodern}
+%\definecolor{swe}{rgb}{0.19, 0.73, 0.56}
+%\definecolor{lblue}{RGB}{190,200,198}
+\title[Different Forms of methods]{Different Forms of methods}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+{\1
+\begin{frame} \vspace{35pt}
+
+\subtitle{TalentSprint}
+\maketitle
+\end{frame}
+}
+
+\begin{frame}{Learning Objectives}
+At the end of this video you should able to:
+\begin{itemize}
+\item understand and write different forms of
+methods
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Forms of Methods}
+\begin{itemize}
+    \item without arguments and return type
+    \item with arguments and without return type
+    \item without arguments and with return type
+    \item with arguments and return type
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Method-I}
+without arguments and return type\\
+\begin{block}{Example}\\
+\textbf{Method to print the address}\\
+\begin{lstlisting}
+public void printAddress() \{\\
+\tab S.o.pln("House/Flat No: 6-53/4-A");\\
+\tab S.o.pln("Road No: 03");\\
+\tab S.o.pln("MP Colony, New Delhi");\\
+\tab S.o.pln("Pin Code: 110005");\\
+\}\\
+\end{lstlisting}
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Method - II}
+with arguments without return type
+\begin{block}{Example}\\
+\textbf{print even numbers in the range}\\
+\begin{lstlisting}
+public void printEvens(int s\_val, int e\_val) \{\\
+\tab int n = s\_val;\\
+\tab while (n $<$= e\_val) \{\\
+\tab \tab if (n \% 2 == 0) \{\\
+\tab \tab \tab System.out.println(n);\\
+\tab \tab \}\\
+\tab \tab n++;\\
+\tab \}\\
+\}\\
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+\begin{frame}{Method - III}
+without arguments with return type
+\begin{block}{Example}\\
+\textbf{return the sum of first ten natural numbers}\\
+\begin{lstlisting}
+public int sumOfFirst10() \{\\
+\tab int sum\_n = 0;\\
+\tab for (int n = 1; n $<$= 10; n++) \{\\
+\tab \tab sum\_n += n;\\
+\tab \}\\
+\tab return sum\_n;\\
+\}\\
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+\begin{frame}{Method - IV}
+with arguments and return type
+\begin{block}{Example}\\
+\textbf{return sum of digits of given number}\\
+\begin{lstlisting}
+public int sumOfDigits(int num) \{\\
+\tab int sum\_d = 0;\\
+\tab while (num $>$$ 0) \{\\
+\tab \tab sum\_d = num \% 10;\\
+\tab \tab num /= 10;\\
+\tab \}\\
+\tab return sum\_d;\\
+\}\\
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+\begin{frame}{Summary}
+Four different forms of methods are:\\
+\begin{itemize}
+    \item without arguments and return type.
+
+\item with arguments and without return type.
+\item without arguments and with return type
+\item with arguments and return type
+\end{itemize}
+\end{frame}
+\end{document}

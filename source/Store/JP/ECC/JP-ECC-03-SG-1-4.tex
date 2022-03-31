@@ -1,0 +1,168 @@
+\documentclass[aspectratio=169,14pt,usenames,dvipsnames]{beamer}
+\usetheme{TalentSprint}
+\usepackage[utf8]{inputenc}
+\usepackage{graphics}
+\usepackage{ragged2e}
+\usepackage{amsfonts}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{tcolorbox}
+\usepackage{setspace}
+\usepackage{lmodern}
+\definecolor{swe}{rgb}{0.19, 0.73, 0.56}
+\definecolor{lblue}{RGB}{190,200,198}
+\title[Introduction to an Arrays]{Introduction to an Arrays}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+{\1
+\begin{frame} \vspace{35pt}
+
+\subtitle{TalentSprint}
+\maketitle
+\end{frame}
+}
+
+\begin{frame}{Learning Objectives}
+At the end of this video you should able to:
+\begin{itemize}
+\item understand need of array.
+\item know types arrays
+\item declare and initialize an array
+\item access the Array elements
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Array}
+\begin{itemize}
+\item array is collection of heterogeneous values
+\item array has limited in size
+\item array size can’t increase or decrease at run time
+\item Index starts with ’0’ and ends at ’size-1’ location
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Types of Arrays}
+
+\begin{itemize}
+    \item Single Dimensional Array
+    \item Multi Dimensional Array
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Declaration}
+\textbf{Single dimension array can declared as follows:}
+\begin{lstlisting}
+datatype[] variable\_name;\\
+datatype []variable\_name;\\
+datatype variable\_name[];\\
+\vspace{0.8em}
+int[] stud\_id;\\
+int stud\_id[];\\
+int []stud\_id;\\
+\end{lstlisting}
+\textcolor{red}{Note:} Here variable acts like a reference, does not have memory of its own.
+\end{frame}
+
+\begin{frame}{Definition}
+\textbf{datatype variableName = new dataype[size];}\\
+\vspace{0.5em}
+\textcolor{blue}{datatype:} type of value to be define\\
+\vspace{0.5em}
+\textcolor{blue}{variableName:} identifier to store the value\\
+\vspace{0.5em}
+\textcolor{blue}{new:} used to allocate dynamic memory allocation for variable\\
+\vspace{0.5em}
+\textcolor{blue}{Size:} Number of elements to store in a variable\\
+\vspace{0.8em}
+\textcolor{red}{Note:} Allocates variable memory physically in the
+memory location with address.
+\end{frame}
+
+\begin{frame}{Initialization}
+\begin{center}
+\begin{lstlisting}
+\testbf int[] marks = new int[5];\\ 
+\vspace{0.8em}
+int marks[0] = 10;\\
+int marks[1] = 20;\\
+int marks[2] = 30;\\
+int marks[3] = 40;\\
+int marks[4] = 50;\\
+\end{lstlisting}
+\end{center}
+\end{frame}
+
+\begin{frame}{Initialization}
+\begin{center}
+\textbf{marks  ==$>$}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+     10 & 20 & 30 & 40 & 50 \\
+\hline
+    0 & 1 & 2 & 3 & 4\\
+\hline
+\end{tabular}\\
+\vspace{0.8em}
+\textbf{(or)}\\
+\vspace{0.8em}
+\textbf{int [] marks = {10, 20, 30, 40, 50};}
+\end{center}
+\end{frame}
+
+\begin{frame}{Problem Statement}
+Write a program to store 5 values into an array and
+display.
+\end{frame}
+
+\begin{frame}{Solution}
+\begin{lstlisting}
+int num[] = \{45, 78, 89, 34, 58\};\\
+\tab for (int i = 0; i < 5; i++)\\
+\tab \tab S.O.P(num[i]);\\
+\end{lstlisting}
+\vspace{0.8em}
+\textcolor{red}{Note:} Instead of constant value to repeat the loop, in Java \textcolor{blue}{‘length’} keyword can be used with array to repeat from ‘0th’ index to ’size-1’ location.
+\end{frame}
+
+\begin{frame}{Problem Statement}
+Write a program to count even numbers in a given array.
+\end{frame}
+
+\begin{frame}{Solution}
+\begin{lstlisting}
+int num[] = \{45, 78, 89, 34, 58, 56, 23, 36\};\\
+int count = 0;\\
+for (int i = 0; i $<$ num.length; i++) \{\\
+\tab if( num [i] \% 2 == 0)\\
+\tab count++;\\
+\}\\
+S.O.P(count);\\
+\end{lstlisting}
+\vspace{0.8em}
+\textbf{Write code, compile and execute the program}
+\end{frame}
+
+\begin{frame}{With other datatypes}
+\textbf{Array can be implemented similarly with other datatypes
+also as follows.}\\
+\vspace{0.8em}
+\begin{lstlisting}
+float age[] = \{34.5, 35.78, 89.4, 23.5\};\\
+char grades[] = \{’A’, ’B’, ’C’, ’D’\};\\
+String names[] = \{"James", "Warner", "Turner"\};\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Summary}
+\begin{itemize}
+    \item Understood purpose of array in program.
+\item Declaration and Defining of single dimensional array.
+\item Understood Purpose of using \textcolor{blue}{length} with array.
+\item Understood arrays with other datatypes as well.
+\end{itemize}
+\end{frame}
+\end{document}

@@ -1,0 +1,180 @@
+
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+\usepackage{unicode-math}
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+	\usepackage[]{microtype}
+	\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+	\IfFileExists{parskip.sty}{%
+		\usepackage{parskip}
+	}{% else
+		\setlength{\parindent}{0pt}
+		\setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+	\KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+	hidelinks,
+	pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+\usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\author{}
+\date{}
+\usepackage{multirow}
+\usepackage[inline]{enumitem}
+\usepackage[margin=1.0in]{geometry}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\includegraphics[width=5.21667in, height=0.38819in]{image1.png}}
+\lhead{ Reasoning: Ranking/Ordering }
+\lfoot{www.talentsprint.com }
+\rfoot{\thepage}
+\begin{document}
+	
+ 
+
+\begin{center}
+	{\Large \textbf{Ranking/Ordering \\}}
+\end{center}
+
+{\large \textbf{Part 1 - Basic  \\}}
+
+\textbf{Model 1: Total Number of Persons in a Row - Basic}\\
+1. Rahul ranked ninth from the top and thirty eighth from the bottom in a class. How many students are \includegraphics[width=0.60555in,height=0.32083in]{image2.png}there in the class?\\
+1) 45 \hspace{2mm} 2) 46 \hspace{2mm}3) 47 \hspace{2mm}4) 48 \hspace{2mm}5) None of these\\
+
+2. In a row of children, Neeta is 15th from the left end of the row. If she is shifted towards the right end of \includegraphics[width=0.60555in,height=0.32083in]{image2.png}the row by four places, she becomes 8th from the right end. How many children are there in the row? [May 17, 2016 @ 36m 56s]\\
+1) 27 \hspace{2mm}2) 26 \hspace{2mm}3) 28 \hspace{2mm}4) 24 \hspace{2mm}5) None of these\\
+
+3. In a class of boys Piyush ranked twelth from the top and thirty sixth from the bottom among those  \includegraphics[width=0.60555in,height=0.32083in]{image2.png}who passed an examination. Four boys did not participate in the competition and nine failed in it. How many boys were there in the class?\\
+1) 40 \hspace{2mm}2) 44 \hspace{2mm}3) 50 \hspace{2mm}4) 60 \hspace{2mm}5) 58\\
+
+4. A class of boys stands in a single line. One boy is nineteenth in order from both the ends.\\
+How many boys are there in the class?\\
+1) 27 \hspace{2mm}2) 37 \hspace{2mm}3) 38 \hspace{2mm}4) 39 \hspace{2mm}5) None of these\\
+
+5. In a row of boys, Jeevan is seventh from the start and eleventh from the end. In another row of boys, \includegraphics[width=0.60555in,height=0.32083in]{image2.png}Vikas is tenth from the start and twelfth from the end. How many boys are there in both the rows together? [May 17, 2014 @ 32m 40s]\\
+1) 36 \hspace{2mm}2) 37 \hspace{2mm}3) 39
+\hspace{2mm}4) Cannot be determined \hspace{2mm}5) None of these\\
+
+\textbf{Model 2: Position of a Person from One End of the Row}\\
+6. In a class of 36 students Ravi’s rank from the top is 12. Radhika ranks three places above Ravi. What is \includegraphics[width=0.60555in,height=0.32083in]{image2.png}Radhika’s rank from the bottom?\\
+1) 27 \hspace{2mm}2) 28 \hspace{2mm}3) 26 \hspace{2mm}4) 29 \hspace{2mm}5) None of these\\
+
+7. In a class of 40 children, Sunetra’s rank is eight from the top. Sujit is five ranks below Sunetra. What is \includegraphics[width=0.60555in,height=0.32083in]{image2.png}Sujit’s rank from the bottom?\\
+1) 27 \hspace{2mm}2) 29 \hspace{2mm}3) 28 \hspace{2mm}4) 26 \hspace{2mm}5) None of these\\
+
+8. In a row of 21 girls, when Monika was shifted by four places towards the right, she became 12th from the \includegraphics[width=0.60555in,height=0.32083in]{image2.png}left end. What was her earlier position from the right end of the row?[March 14, 2015 @ 51m 37s]\\
+1) 9th \hspace{2mm}2) 10th \hspace{2mm}3) 11th \hspace{2mm}4) 12th \hspace{2mm}5) 14th\\
+
+\textbf{Model 3: Total Number of Persons in a Row - Complex}\\
+9. P is 14th from the left end and Q is 7th from the right end in a row of boys. What is the number of boys \includegraphics[width=0.60555in,height=0.32083in]{image2.png}in the row, if there are 4 boys between P and Q?\\
+1) 25 \hspace{2mm}2) 23 \hspace{2mm}3) 21 \hspace{2mm}4) 19 \hspace{2mm}5) 20\\
+
+10. In a row of boys, A is fifteenth from the left and B is fourth from the right. There are three boys between \includegraphics[width=0.60555in,height=0.32083in]{image2.png}A and B. How many boys are there in the row? [May 17, 2014 @ 52m 50s]\\
+1) 9 \hspace{2mm}2) 10 \hspace{2mm}3) 14 \hspace{2mm}4) 22 \hspace{2mm}5) 18\\
+
+11. Rohit is seventeenth from the left end of a row of 29 boys and Karan is seventeenth from the right end in \includegraphics[width=0.60555in,height=0.32083in]{image2.png}the same row. How many boys are there between them in the row?\\
+1) 3 \hspace{2mm}2) 5 \hspace{2mm}3) 6 \hspace{2mm}4) Data inadequate \hspace{2mm}5) None of these\\
+
+\textbf{Model 4: Interchange of Positions}\\
+12. In a row of boys, Deepak is 7th from the left and Madhu is 12th from the right. If they interchange their \includegraphics[width=0.60555in,height=0.32083in]{image2.png}positions, Deepak becomes 22nd from the left. What is the total number of
+boys in the row?\\
+1) 19 \hspace{2mm}2) 31 \hspace{2mm}3) 33 \hspace{2mm}4) Cannot be determined \hspace{2mm}5) None of these\\
+
+13. George is fifth from the left and Peter is twelfth from the right in a row of children. If they interchange \includegraphics[width=0.60555in,height=0.32083in]{image2.png}their positions, George becomes tenth from the left end. How many children are there in the row? [August 09, 2014 @ 1h 30m 40s]\\
+1) 21 \hspace{2mm}2) 22 \hspace{2mm}3) 23 \hspace{2mm}4) 24 \hspace{2mm}5) None of these\\
+
+14. Amit is eleventh from the left and Deepak is thirty-first from the right end of the row. When they \includegraphics[width=0.60555in,height=0.32083in]{image2.png}interchange their positions, Amit becomes thirty-first from the left end of the row. What is the total number of persons in the row?\\
+1) 52 \hspace{2mm}2) 63 \hspace{2mm}3) 61 \hspace{2mm}4) 45 \hspace{2mm}5) None of these\\
+
+\textbf{Model 5: Particular Position in an Order of Persons 15.}\\ 
+Among B, F, J, K and W, each having a different weight, F is heavier than only J. B is heavier than F and \includegraphics[width=0.60555in,height=0.32083in]{image2.png}W but not as heavy as K. Who among them is the third heaviest?\\
+1) B \hspace{2mm}2) F \hspace{2mm}3) J \hspace{2mm}4) W \hspace{2mm}5) None of these\\
+
+16. Pune is bigger than Jhansi, Sitapur is bigger than Chittor. Raigarh is not as big as Jhansi, but is bigger \includegraphics[width=0.60555in,height=0.32083in]{image2.png}than Sitapur. Which is the second biggest?\\
+1) Pune \hspace{2mm}2) Jhansi \hspace{2mm}3) Sitapur \hspace{2mm}4) Chittor \hspace{2mm}5) None of these\\
+
+17. Ashish is heavier than Govind. Mohit is lighter than Jack. Pawan is heavier than Jack but lighter than \includegraphics[width=0.60555in,height=0.32083in]{image2.png}Govind. Who among them is the third heaviest?\\
+1) Govind \hspace{2mm}2) Jack \hspace{2mm}3) Pawan \hspace{2mm}4) Ashish \hspace{2mm}5) Mohit\\
+
+\textbf{Model 6: Extreme Position in an Order of Persons}\\
+18. Rohan is taller than Anand but shorter than Seema. Krishna is taller than Pushpa but shorter than \includegraphics[width=0.60555in,height=0.32083in]{image2.png}Anand. Dhiraj is taller than Krishna but shorter than Seema. Who among them is the
+tallest?\\
+1) Rohan \hspace{2mm}2) Seema \hspace{2mm}3) Krishna
+\hspace{2mm}4) Cannot be determined \hspace{2mm}5) None of these\\
+
+19. Among P, Q, R, S and T, each having a different weight, R is heavier than S but lighter than T. P is \includegraphics[width=0.60555in,height=0.32083in]{image2.png}lighter than S. Who among them is the heaviest? [May 17, 2016 @ 15m 40s]\\
+1) T \hspace{2mm}2) Q \hspace{2mm}3) T or Q \hspace{2mm}4) Data Inadequate \hspace{2mm}5) None of these\\
+
+20. Among five boys, Vineet is taller than Manick, but not as tall as Ravi. Jacob is taller than Dilip but \includegraphics[width=0.60555in,height=0.32083in]{image2.png}shorter than Manick. Who is the tallest in their group?\\
+1) Ravi \hspace{2mm}2) Manick \hspace{2mm}3) Vineet
+\hspace{2mm}4) Cannot be determined \hspace{2mm}5) None of these\\
+
+\textbf{Answers}\\
+\begin{tabular}{ c c c c c c c c c c c c c c c c}
+1 - 2 &2 - 2 &3 - 4 &4 - 2 &5 - 5 &6 - 2 &7 - 3 &8 - 5 &9 - 1 &10 - 4\\
+11 - 1 &12 - 3 &13 - 1 &14 - 3 &15 - 4 &16 - 2 &17 - 3 &18 - 2 &19 - 3 &20 - 1\\
+\end{tabular}
+
+\textbf{Note:} The date and time mentioned against some questions refer to the doubts clarification
+session on Reasoning Ability in which the question was solved.
+
+\end{document}

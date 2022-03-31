@@ -1,0 +1,148 @@
+\documentclass[aspectratio=169,14pt,usenames,dvipsnames]{beamer}
+\usetheme{TalentSprint}
+\usepackage[utf8]{inputenc}
+\usepackage{graphics}
+\usepackage{ragged2e}
+\usepackage{amsfonts}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{tcolorbox}
+\usepackage{setspace}
+\usepackage{lmodern}
+\definecolor{swe}{rgb}{0.19, 0.73, 0.56}
+\definecolor{lblue}{RGB}{190,200,198}
+\title[Working with Objects]{Working with Objects}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+{\1
+\begin{frame} \vspace{35pt}
+
+\subtitle{TalentSprint}
+\maketitle
+\end{frame}
+}
+
+\begin{frame}{Learning Objectives}
+At the end of this video you should able to:
+\begin{itemize}
+\item Design objects.
+\item Manipulating object data.
+\end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}{Class}
+\begin{columns}
+\column{0.5\textwidth}
+class ClassName \{\\
+Data\\
++\\
+Operations\\
+\}\\
+
+\column{0.5\textwidth}
+class Batsman \{\\
+\tab int runsScored;\\
+\tab int ballsFaced;\\
+\tab float getStrikeRate() \{\\
+\tab \tab return(runsScored / ballsFaced);\\
+\tab \}\\
+\}\\
+\end{columns}
+\end{frame}
+
+
+\begin{frame}{Accessing members}
+\textbf{Batsman batsman = new Batsman();}\\
+\vspace{1em}
+\textbf{batsman.runsScored = 36;}\\
+\textbf{batsman.ballsFaced = 55;}\\
+\vspace{3em}
+System.out.println(batsman.getStrikeRate());--$>$0.65
+\end{frame}
+
+
+\begin{frame}{Constructors}
+\begin{lstlisting}
+class Batsman \{\\
+\tab int runsScored;\\
+\tab int ballsFaced;\\
+Batsman() \{\\
+\tab \}\\
+\tab Batsman(int runsScored, int ballsFaced) \{\\
+\tab \tab this.runsScored = runsScored;\\
+\tab \tab this.ballsFaced = ballsFaced;\\
+\tab \}\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Constructors}
+\begin{lstlisting}
+\textbf{Batsman batsman = new Batsman();}\\
+\textbf{batsman.runsScored = 55;}\\
+\textbf{batsman.ballsFaced = 60;}\\
+\vspace{1em}
+System.out.println(\\
+\tab batsman.getStrikeRate()); --$>$ 0.91\\
+\vspace{1em}
+\textbf{Batsman batsman = new Bastsman(32, 44);}\\
+\vspace{0.5em}
+System.out.println(\\
+\tab batsman.geteStrikeRate()); --$>$ 0.72\\
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}{Access Modifiers}
+\begin{lstlisting}
+class Batsman \{\\
+\tab private int runsScored;\\
+\tab private int ballsFaced;\\
+\tab public int getRunsScored() \{\\
+\tab \tab return runsScored;\\
+\tab \}\\
+\tab public void setRunsScored(int runsScored) \{\\
+\tab \tab this.runsScored = runsScored;\\
+\tab \}\\
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}{Access Modifiers}
+\begin{lstlisting}
+\tab public int getBallsFaced() \{\\
+\tab \tab return ballsFaced;\\
+\tab \}\\
+\tab public void setBallsFaced(int ballsFaced) \{\\
+\tab \tab this.ballsFaced = ballsFaced;\\
+\tab \}\\
+\tab public float getStrikeRate() \{\\
+\tab \tab return(runsScored / ballsFaced);\\
+\tab \}\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+
+
+
+\begin{frame}{Access Modifier..}
+\begin{lstlisting}
+\textbf{Batsman batsman = new Batsman();}\\
+\vspace{0.5em}
+\textbf{batsman.setRunsScored(45);}\\
+\textbf{batsman.setBallsFaced(55);}\\
+\vspace{0.5em}
+System.out.println(batsman.getRunsScored);--$>$ 45\\
+\vspace{0.5em}
+System.out.println(batsman.getBallsFaced);--$>$ 55\\
+\vspace{0.5em}
+System.out.println(batsman.getStrikeRate());--$>$ 0.81\\
+\end{lstlisting}
+\end{frame}
+\end{document}

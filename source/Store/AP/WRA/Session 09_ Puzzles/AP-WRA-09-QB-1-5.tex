@@ -1,0 +1,574 @@
+
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+\usepackage{unicode-math}
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+	\usepackage[]{microtype}
+	\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+	\IfFileExists{parskip.sty}{%
+		\usepackage{parskip}
+	}{% else
+		\setlength{\parindent}{0pt}
+		\setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+	\KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+	hidelinks,
+	pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+\usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\author{}
+\date{}
+\usepackage{multirow}
+\usepackage[inline]{enumitem}
+\usepackage[margin=1.0in]{geometry}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\includegraphics[width=5.21667in, height=0.38819in]{image1.png}}
+\lhead{ Reasoning: Date/Day/Month/Time-based }
+\lfoot{www.talentsprint.com }
+\rfoot{\thepage}
+\begin{document}
+	
+ 
+
+\begin{center}
+	{\Large \textbf{Date/Day/Month/Time-based \\}}
+\end{center}
+
+1. Four friends A, B, C, D were going to giving the different competitive exams viz: CAT, IBPS
+PO, CDS \includegraphics[width=0.60555in,height=0.32083in]{image2.png}and CSAT (not necessarily in the same order). on the same day but in different
+cities viz: Dehradun, Delhi, Dispur, Dhanbad but not necessarily in the same order, at
+different time which were 9am, 12pm, 10am and 11am (not necessarily in the same order).\\
+\begin{itemize}
+    \item D's exam was just after the exam of CAT which was just after the exam which was given in Dehradun.
+\item CSAT exam was given at least two hours later than B's exam.
+\item CDS exam was given just after the exam which was given in Dhanbad, who had an
+exam just after A.
+\item The definite information which was given about three people among four one was C
+and the one who has given the exam in Delhi and the one who has given the exam at
+11am.
+\end{itemize}
+
+
+2. Four people were being interviewed for the same job, on the same day but in different
+rooms (R1, R2, R3 \includegraphics[width=0.60555in,height=0.32083in]{image2.png}and R4), at different time and by different interviewers.\\
+Determine which candidate was interviewed by whom, at which time and in which room\\
+
+I. Teena’s appointment was just after Mr. Sharma’s, which was just after that of the person
+in room R2.\\
+
+II. Mr. Narurkar’s appointment was at least two hours later than Bimal’s.\\
+
+III. Mr. Joshi’s appointment was just after the person who had an interview in room R4,
+who had an appointment just after Chirag.\\
+
+IV. Three of the four people were: (1) Deepak, (2) the one with interview in room R1, and
+(3) the one who was interviewed at 1 p.m.\\
+
+V. Interview times were – 11 a.m., 12 noon, 1 p.m., and 2 p.m.\\
+
+VI. Sharma, Narurkar, Joshi and Zaidi were interviewers and Teena, Bimal, Chirag and Deepak were the interviewees.\\
+
+3. Eight persons M, N, O, P, Q, R, S and T are attending the office meeting on four different
+months like \includegraphics[width=0.60555in,height=0.32083in]{image2.png}January, May, June and August. The office meeting was conducted on 18th and
+23rd of the month. All the given information is not necessarily in the same order. Two
+persons attend the office meeting between T and Q. N and R are attending the office
+meeting before P. As many persons attend the office meeting between M and N is same as
+between R and S. Q attends the office meeting before T. Two persons attend the office
+meeting between S and the one who attends the office meeting immediately after T. As
+many persons attend the office meeting between R and Q is same as between N and P. R
+and M do not attend the office meeting on same month. Q doesn’t attend the office meeting
+on even numbered date. At least two persons attend the office meeting after M. R and T do
+not attend the office meeting on same month. O doesn’t attend the office meeting on 23rd of
+any month.\\
+
+4. \textbf{Direction:} Read the following information carefully and answer the questions given below.\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+Seven people A, B, C, D, E, F and G are going to tour for seven different places in seven
+different days in the week. The week days started from Monday to Sunday. The places are
+namely Baku, Rabat,Nassau, Astana, Thimphu, Paris and Asmara. All the information is not
+necessary to be in the same order.
+A is going to Baku. Only two people are going between A and the person who is going to
+Nassau. C is going to tour on Tuesday.Only one people is going to tour between B and A,
+who is going to tour neither on Monday nor on Saturday. The person who is going to Rabat
+is going to tour one of the day before the person who is going to Nassau.Only one person is
+going to tour between the person who is going to Rabat and E, who is not going to Nassau.B
+is going to either Paris or Asmara.E is not going to tour any day before the person who is
+going to Rabat.Only one person is going to tour between G and D. G is neither going to
+Nassau nor going to Rabat. F is not going to tour any day after G. Only two people are
+going to tour between G and the person who is going to Thimphu, who is not B. Neither G
+nor E is from Paris. Only two people are going to tour between the people who are going to
+Paris and the person who is going to Astana.The person who is going to Asmara is going to
+tour one of the day after the person who is going to Astana. The person who is going to
+Asmara is not going to tour on Saturday.\\
+
+5. \textbf{Directions (I-V):} Study the following information carefully and answer the questions given
+below:\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+Aman, Bhavesh, Chandan, Diwakar, Vansh, Firoz and Gaurav are working in different
+shops, viz Stationery, Grocery, Toys, Shoes, Clothes, Big Bazaar and Watch. They go to work
+on a different days of a week from Monday to Sunday. Chandan works neither in Clothes
+shop nor in the Watch shop but he goes on Wednesday. Vansh works in the Shoes shop but
+not on Monday. The one who goes on Friday works in the Toys shop. The one who works in
+Big Bazaar goes on Tuesday. Diwakar goes on Saturday, but does not work in the Clothes
+shop. Gaurav works in the Grocery shop. Firoz goes to work on Thursday. Bhavesh does not
+go to work in Big Bazaar.\\
+
+I. The person who works in the Shoes shop goes on which of the following days?\\
+a) Wednesday \hspace{2mm}b) Sunday \hspace{2mm}c) Tuesday \hspace{2mm}d) Monday \hspace{2mm}e) None of these\\
+
+II. Firoz works in which of the following shops?\\
+a) Clothes \hspace{2mm}b) Stationery \hspace{2mm}c) Grocery
+\hspace{2mm}d) None of these \hspace{2mm}e) Can’t be determined\\
+
+III. The person who goes on Wednesday works in which of the following shops?\\
+a) Grocery \hspace{2mm}b) Watch \hspace{2mm}c) Shoes \hspace{2mm}d) Stationery \hspace{2mm}e) None of these\\
+
+IV. Who among the following works in the Watch shop?\\
+a) Firoz \hspace{2mm}b) Aman \hspace{2mm}c) Diwakar \hspace{2mm}d) Chandan \hspace{2mm}e) None of these\\
+
+V. Who among the following works on Monday?\\
+a) Gaurav \hspace{2mm}b) Diwakar \hspace{2mm}c) Vansh \hspace{2mm}d) Aman \hspace{2mm}e) None of these\\
+
+6. \textbf{Directions (I-IV):} Study the following information carefully and answer the questions given
+below:\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+There are seven persons A, B, C, D, E, F and G. Each of them in different professions viz—
+Doctor, Engineer, Manager, Clerk, Professor, Judge and Businessman but not necessarily in
+the same order. They are going to visit Taj Mahal on seven different days of a week. The
+week starts from Monday and ends on Sunday. The Professor is going to visit on Thursday.
+Only one person is going to visit between the Professor and E. The Doctor is going to visit
+immediately after E. Only three persons are going to visit between C and the Doctor. Only
+two people are going to visit between C and the Judge. G is going to visit before the Judge
+but after Thursday. More than two persons are going to visit between G and the Manager. B
+is going to visit immediately before F. D is going to visit immediately before the Engineer.
+The Businessman is not going to visit on Tuesday.\\
+
+I. Which of the following statement is/are true about D?\\
+a) D is going to visit immediately after the Businessman\\
+b) D is the Engineer\\
+c) The Doctor is going to visit on Sunday\\
+d) Both 1) and 3)\\
+e) None of these\\
+
+II. As per the given arrangement G is related to the Businessman and A is related to the
+Engineer in a certain way. In the same way E is related to\\
+a) Manager \hspace{2mm}b) Professor \hspace{2mm}c) Clerk
+\hspace{2mm}d) Can’t be determined \hspace{2mm}e) None of these\\
+
+III. Four of the following five are alike in a certain way and so form a group. Which one does
+not belong to that group?\\
+a) B – Tuesday \hspace{2mm}b) D – Monday \hspace{2mm}c) G – Sunday
+\hspace{2mm}d) E – Friday \hspace{2mm}e) E – Saturday\\
+
+IV. Who amongst the following is the Doctor?\\
+a) E \hspace{2mm}b) D \hspace{2mm}c) B \hspace{2mm}d) G \hspace{2mm}e) None of these\\
+
+7. \textbf{Directions (I-V):} Study the following information carefully and answer the questions given\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+below. Seven persons P, Q, R, S, T, U and V were born in seven different months (of the
+same year), viz, January, February, March, April, June September and October but not
+necessarily in the same order. Each of them likes a different subject, viz Physics, Chemistry,
+Biology, Maths History, Civics, and Geography but not necessarily in the same order R was
+born neither in the month which has 28 days nor in the month which has 30 days. Only
+three persons were born between the months in which the one who likes Maths and R were
+born respectively. T was born immediately before the month in which the person who likes
+Maths was born. T was not born in the month which has less than 30 days. P was born
+immediately before the month in which the one who likes Biology was born. P was not born
+in the month which has less than 31 days. Only two persons were born between the months
+in which the one who likes Biology and V were born respectively. The one who likes Physics
+was born in the month which has 31 days but not in January. V likes neither Physics nor
+Civics. Q was born in a month immediately before the month in which the one who likes
+Civics was born. The one who likes Chemistry was born after the month in which the one
+who likes Civics was born. U was born in February. The one who likes History was born
+before U. Note: Assume the months to be in consecutive order.\\
+
+I. Which of the following represents the persons who were born in March and September
+respectively?\\
+1) P, S \hspace{2mm}2) R, T \hspace{2mm}3) R, Q \hspace{2mm}4) T, Q \hspace{2mm}5) None of these\\
+
+II. How many persons were born between the months in which U and T were born?\\
+1) Two \hspace{2mm}2) More than three \hspace{2mm}3) Three \hspace{2mm}4) One \hspace{2mm}5) None\\
+
+III. Which of the following statements is/are not true?\\
+1) P was born immediately after the month in which the one who likes Geography was
+born
+\hspace{2mm}2) T was born in march \hspace{2mm}3) S likes Maths
+\hspace{2mm}4) Both 2 and 3 \hspace{2mm}5) None of these\\
+
+IV. Four of the following five are alike in a certain way and so form a group. Which is the one
+that does not belong to that group?\\
+1) V, T \hspace{2mm}2) R, T \hspace{2mm}3) P, S \hspace{2mm}4) P, U \hspace{2mm}5) Q, U\\
+
+V. Which of the following statements is true?\\
+1) Q was born in the month which has 31 days\\
+2) S was born immediately before the month in which Q was born\\
+3) The one who likes Biology was born immediately after the month in which P was born\\
+4) V likes Biology\\
+5) None of these\\
+
+8. Study the following information carefully and answer the questions given below:\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+There are eight persons A, B, C, D, E, F, G and H, who are planning to take a leave in the
+month of March, June, August and November . In each month, they will take a leave on 6th
+or 11th of the given month. Only one person will take a leave on these given dates. E will
+take a leave in the month which has less than 31 days. Three persons will take a leave
+between E and C. Two persons will take a leave between C and G. Three persons will take a
+leave between G and D. Two persons will take a leave between D and A. Three persons will
+take a leave between A and F. Two persons will take a leave between F and B. H will not
+take leave in the November month.\\
+
+9. \textbf{Directions (I-IV):} Study the following information carefully and answer the questions given below:\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}Seven persons A, B, C, D, E, F and G are going to visit seven different countries viz -
+Malaysia, France, England, Australia, Canada, China, and Japan but not necessarily in the
+same order. Each of them is going to visit on seven different days of a week. The week starts
+from Monday and ends on Sunday. The one who is going to visit Canada, is not going to
+visit on Monday. F is going to visit immediately before C. Only three persons are going to
+visit between A and E. G is not going to visit France. A is going to visit immediately before
+the one who is going to visit France. G is going to visit before the one who is going to visit
+Japan. Only two persons are going to visit between G and the one who is going to visit
+Australia. G is going to visit immediately before the one who is going to visit Malaysia.
+Only four persons are going to visit between B and the one who is going to visit Malaysia.
+Only two persons are going to visit between B and the one who is going to visit China. The
+one who is going to visit China, is going to visit on Thursday.\\
+
+I. Which of the following countries does G visit?\\
+a) Japan \hspace{2mm}b) China \hspace{2mm}c) Canada \hspace{2mm}d) England \hspace{2mm}e) None of these\\
+
+II. Which of the following statements is/are true?\\
+a) G is going to visit on Thursday \hspace{2mm}b) D is going to visit China
+\hspace{2mm}c) B is going to visit after C \hspace{2mm}d) All are true
+\hspace{2mm}e) None of these\\
+
+III. Four of the following five are alike in a certain way and so form a group. Which one
+does not belong to that group?\\
+a) B – Australia \hspace{2mm}b) A – China \hspace{2mm}c) E – Japan
+\hspace{2mm}d) G – Malaysia \hspace{2mm}e) C – Canada\\
+
+IV. How many persons is going to visit between F and the one who is going to visit Malaysia?\\
+a) Two \hspace{2mm}b) One \hspace{2mm}c) None \hspace{2mm}d) Three \hspace{2mm}e) Three\\
+
+10. Study the following information carefully and answer the questions given below:\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+Seven persons P, O, N, M, L, K and J were born in seven different months namely February,
+March, April, June, September, October and November (of the same year) but not
+necessarily in the same order. Each of them has different weight viz. 39, 49, 42, 33, 55, 17 and
+23, but not necessarily in the same order. The one whose weight is 42 kg was not born in the
+month which has less than thirty days. Both J and N were born in one of the months after
+the month in which the person whose weight is 39 kg was born. The one who is the third
+heaviest of them all was not born in the month which has 31 days. Only three persons were
+born between the one whose weight is 42 kg and the one whose weight is 23 kg. Only two
+persons were born between J and the one whose weight is 33 kg. N is not the lightest. K was
+not born in the month which has thirty days. J was born immediately before N. M was born
+immediately after the one whose weight is 33 kg. P was born immediately before the one
+who is the second heaviest. Only one person was born between K and the person whose
+weight is 39 kg. Only two persons were born between M and L.\\
+
+11. Solve the below Arrangement There are ten persons namely J, K, L, M, N, O, P, Q, R and S.\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+They play jalikattu on five different days starting from Monday to Friday of the same week.
+Each person plays jalikattu at two different time slots, i.e. 11:59 AM or 10:30 P.M. The
+number of persons who plays jalikattu between P and M is same as the number of persons
+who play jalikattu between L and Q. Only two people play jalikattu between O and S.
+Neither N nor P plays jalikattu on Friday. R has plays jalikattu on Tuesday at 11:59 A.M. Q
+does not plays jalikattu at 10:30 P.M. M does not plays jalikattu on any one of the days after
+N. R does not plays jalikattu on any of the days before P. O does not plays jalikattu on any
+of the days after Q. K plays jalikattu immediately before R. M plays jalikattu immediately
+after the day of the one who plays jalikattu on Monday. O does not plays jalikattu at 10:30
+P.M. Only three people play jalikattu between P and N.\\
+
+12. \textbf{Directions (I-IV):} Study the information and answer the below questions\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+Seven people,
+namely K, L, M, N, O, P \& Q have to attend a concert. But not necessarily in the same order
+on seven different months namely January, February, April, May, June, September, and
+November. Each of them also likes a different movie namely X-men, Transformers, Frozen,
+Minions, Shrek, Tangled and Rio, but not necessarily in the same order. M will attend a
+concert in a 31-day month. Only two people will attend a concert between M and the one
+who likes Frozen. The one who likes Frozen will attend a concert on one of the months after
+M. Only two people will attend a concert between the one who likes Frozen and the one
+who likes Transformers. The one who like Transformers will attend the concert in a month
+which has 31 days. K will attend a concert immediately after M. Only three person will
+attend a concert between K and the one who likes tangled. Only one person will attend a
+concert between the one who likes Tangled and L. Only two people will attend a concert
+between L and the one who like Rio. The one who likes X-man will attend a concert
+immediately before the one who likes Shrek. Only one person will attend a concert between
+the one likes Shrek and P. Only three people will attend a concert between Q and O. Q will
+not attend a concert in a month which has 30 days.\\
+
+I. Who amongst the following likes X –men?\\
+1) M \hspace{2mm}2) K \hspace{2mm}3) O \hspace{2mm}4) L \hspace{2mm}5) Q\\
+
+II. How many people will attend a concert after M?\\
+1) More than three \hspace{2mm}2) One \hspace{2mm}3) None \hspace{2mm}4) Two \hspace{2mm}5) Three\\
+
+III. Who amongst the following likes Minions?\\
+1) M \hspace{2mm}2) L \hspace{2mm}3) P \hspace{2mm}4) K \hspace{2mm}5) other those given options\\
+
+IV. Which of the month in which K will attend a concert?\\
+1) Sept \hspace{2mm}2) June \hspace{2mm}3) Nov \hspace{2mm}4) April \hspace{2mm}5) Can’t be determined\\
+
+13. \textbf{Directions (I-V):} Study the information given below and answer the questions based on it.\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+There are 12 professors – A, B, C, D, E, F, G, H, I, J, K and L. They have conferences in
+different months –January, March, April, June, July, and August. The conferences are on
+dates 12th or 17th of a given month. Each conference is attended by some number of people.
+If the month contains odd number of days then number of people attending the conference
+is odd. Like, the conference in March (31 days) was attended by odd number of people and
+conference in April (30 days) was attended by even number of people. A had conference on
+12th April. I’s conference was after A. I’s conference was attended by 42 people and he had
+conference on 17th of a month. There was one conference between the conference of I and
+the conference of J. The number of people attending J’s conference was 25 less than the
+number of people who attended I’s conference. There were 3 conferences between F’s
+conference and the conference attended by 56 people. F’s conference is not in January. F’s
+conference had before the conference attended by 56 people. There were 3 conferences
+between E’s conference and the conference attended by 56 people. The number of people
+who attended K’s conference was greater than the number of people who attended B’s
+conference but less than the number of people who attended A’s conference. The number of
+people who attended K’s conference was a multiple of 7. C and D had conference in same
+month but not June. There was one conference between the conference of D and the
+conference of B. B’s conference had odd number of people. The number of people of B’s
+conference had more than J’s conference but less than 20. B’s conference is not in August.
+The total number of people who attended the conferences of C and D was 58. Conference of
+G and the conference attended by 28 people were in same month. K’s conference was before
+L. The number of people who attended the conference of E was lesser than the number of
+people who attended the conference of J by 4. The one who had conference in March had
+less number of people attending it than E but more than 10. The total number of people who
+attended the conferences of K and L was 24. The number of people attended D’s conference
+is 9 times of the number of people attended L’s conference\\
+
+I. What is the total number of people who attended the conferences of E and J?\\
+A) 23 \hspace{2mm}B) 30 \hspace{2mm}C) 34 \hspace{2mm}D) 27 \hspace{2mm}E) 37\\
+
+II. If G’s conference has more people than I’s conference but less than 50, then what can be
+possible number of people who attended G’s conference?\\
+A) 43 \hspace{2mm}B) 45 \hspace{2mm}C) 47 \hspace{2mm}D) 46 \hspace{2mm}E) 49\\
+
+III. Which of the following is true with respect to given arrangement?\\
+A) There are 2 conferences between I and L\\
+B) K and J have conferences in the same month.\\
+C) B’s conference attended by 21 people\\
+D) J’s conference attended by more than 25 people\\
+E) None is true\\
+
+IV. Which of the following pair had conferences in January?\\
+A) F and B \hspace{2mm}B) K and J \hspace{2mm}C) C and D \hspace{2mm}D) A and B \hspace{2mm}E) H and I\\
+
+V. H has conference in which of the following month?\\
+A) April \hspace{2mm}B) June \hspace{2mm}C) January \hspace{2mm}D) July \hspace{2mm}E) August\\
+
+14. \textbf{Directions (I-V):} Study the following information carefully to answer the given questions\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+The festival of an institute was organized from 14th to 21st December. 14th December was
+Wednesday. During that period six functions were organized, viz Swimming, Singing, Quiz,
+Dancing, Sports and Drama. Only one function is organized on each day according to
+further information\\
+\begin{itemize}
+    \item Drama was not organized on the 21st December.
+\item Quiz was organized on the previous day of Singing.
+\item Sports was organized neither on Wednesday nor on Saturday.
+\item No function was organized on Thursday and Sunday. Dancing was organized on
+Monday.
+\item There was a gap of two day’s between Singing and Sports
+\end{itemize}
+
+I. The festival started with which of the following functions?\\
+a) Quiz \hspace{2mm}b) Singing \hspace{2mm}c) Drama \hspace{2mm}d) Sports \hspace{2mm}e) None of these\\
+
+II. Which of the following pairs of functions was organized on Wednesday?\\
+a) Drama, Sports \hspace{2mm}b) Drama, Quiz \hspace{2mm}c) Can’t be determined
+\hspace{2mm}d) Drama, Swimming \hspace{2mm}e) None of these\\
+
+III. A gap of how many days was there between Quiz and Swimming?\\
+a) Five \hspace{2mm}b) Four \hspace{2mm}c) Three \hspace{2mm}d) Two \hspace{2mm}e) None of these\\
+
+IV. On which day Dancing was organized?\\
+a) Monday \hspace{2mm}b) Thursday \hspace{2mm}c) Saturday
+\hspace{2mm}d) Wednesday \hspace{2mm}e) None of these\\
+
+V. Which of the following functions exactly precedes Dancing?\\
+a) Sports \hspace{2mm}b) Drama \hspace{2mm}c) Quiz \hspace{2mm}d) Swimming \hspace{2mm}e) None of these\\
+
+15. \textbf{Directions:} Eight members of a family were A, B, C, D, E, F, G and H. They attended their
+office \includegraphics[width=0.60555in,height=0.32083in]{image2.png}conferences in the months of January, March, April and May on either 10th or 21st of
+the month. Only one person attended the conference on each day and each of them attended
+the conference only once. The male members attended the conference on the odd valued
+date and the female members attended the conferences on even value date. Each person was
+related to A in some manner wife, mother, father, son, daughter, brother and sister not
+necessarily in the same order.\\
+\begin{itemize}
+    \item A’s sister attended the conference just after B
+\item B and D attended conferences at a gap of 3 persons
+\item A attended the conference just before his wife
+\item G attended the conference in May
+\item E was a male member of the family
+\item A’s father and mother attended the conferences at a gap of 2 persons
+\item A’s daughter attended the conference just after A’s son
+\item H and A’s father attended conferences on consecutive turns but not in the same month
+\item F was not the first to attend the conference and was not A’s daughter
+\end{itemize}
+
+16. Eight persons R S T U V W X Y are going to inaugurate different events on different dates
+11th and \includegraphics[width=0.60555in,height=0.32083in]{image2.png}28th of different months viz September, October, November and December. Only
+one person going for inauguration between S and U and both of them are going on odd date
+of month. T goes in a month having 30 days but before U. W goes immediately before R but
+in same month. Three persons goes in between R and V. More than 3 persons goes between
+X and Y. X goes before Y. More than one person goes between S and Y.\\
+
+17. Six lectures are scheduled in a week starting from Monday and ending on Sunday of the
+same week. \includegraphics[width=0.60555in,height=0.32083in]{image2.png}Computer Science is not on Tuesday or Saturday. Psychology is immediately
+after Organisational Behaviour. Statistics is not on Friday and there is one day gap between
+Statistics and Research Methods. One day prior to the schedule of Economics there is no
+lecture (as that day is the off day and Monday is not the ’off’ day).\\
+
+18. Ten students namely viz Jaidev, Jaya, Jeeva, Janaki, Jyothi, Jaspal, Jamuna, Jagadish,
+Jayanthi and \includegraphics[width=0.60555in,height=0.32083in]{image2.png}Jasmine of ten different colleges but not necessarily in the same order have
+exam on five different days starting from Monday to Friday of the same week. Each student
+have exam at two different time slots, i.e 09.00 AM or 11.00 A.M The number of people who
+have exam between Jamuna and Janaki is same as the number of people who have exam
+between Jeeva and Jagadish. Only two people have exam between Jaspal and Jasmine.
+Neither Jyothi nor Jamuna does not have exam on Friday.Jayanthi has exam on Tuesday at
+09.00 A.M. Jagadish does not have exam at 11.00 AM. Janaki does not have exam on any one
+of the days after Jyothi. Jayanthi does not have exam on any of the days before
+Jamuna.Jaspal does not have exam on any of the days after Jagadish. Jaya has exam
+immediately before Jayanthi.The one who has exam at 09.00 A.M. immediately before
+Jasmine. Janaki has exam immediately after the day of one who has exam on Monday.
+Jaspal does not have exam at 11.00 A.M. Only three people have exam between Jamuna and
+Jyothi.\\
+
+19. Study the following information carefully and answer the given questions.\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+Six teachers A, B,
+C, D, E and F takes a class for different subjects in their school. Each of them take class of
+different subjects: Science, English, Math, Computer, History and Hindi, not in same order
+starting from Monday up to Sunday. There is a holiday in between when no class is
+scheduled.\\
+\begin{itemize}
+    \item Holiday is not on Monday or Saturday
+\item D takes class on Sunday and Science is scheduled on Wednesday
+\item There is two days gap between Holiday and E’s class,
+\item A takes class after E and B takes class before Holiday
+\item There is two days gap between Computer and Math class
+\item Hindi is scheduled on the next day of C's class
+\item D does not take English
+\item History is not taken by E But it is scheduled before English class.
+\item Computer is scheduled before holiday and E did not take class on Monday.
+\item English is not taken by A or B.
+\end{itemize}
+
+20. \textbf{Directions:} Study the following information carefully and answer the questions given
+below:\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+There are seven bollywood actors named Aamir Khan, Akshay Kumar, Ajay Devgan,
+Shahid kapoor, Hrithik Roshan, Salman Khan, and Shah Rukh Khan. They are born in a
+different month of the same year from January to July, but not necessarily in the same order.
+No two people are born in the same month. They also acted in different movies among
+Dilwale, Sultan, Dangal, Rustom, Drishyam, Krrish and Dhoom.
+Akshay Kumar has his birthday in a month which has 30 days. The ones who have their
+birthday in the month immediately preceding \& succeeding that of Akshay Kumar’s acted
+in Drishyam and Krrish respectively. Ajay Devgan has his birthday in the month just before
+that of Akshay Kumar. Salman Khan has his birthday in a month that has more than 30
+days. Dangal is not acted by Salman Khan or Shahid Kapoor. Hrithik Roshan acted in
+Sultan. There is only one person’s birthday between Hrithik roshan and the one who acted
+in Dilwale. The persons who acted in Rustom or Dhoom do not have birthdays in successive
+months. Akshay kumar not acted in Rustom or Dhoom. There are three person’s birthday
+between Aamir Khan and the one who acted in Dangal. Aamir Khan is not born in
+February. The one who acted in Dhoom has his birthday before the one who acted in
+Rustom.\\
+
+21. \textbf{Directions(I-V):} Study the following information carefully and answer the questions given
+below:\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+Six plays A, B, C, D, E and F are to be staged starting from Monday and ending on Sunday
+with one of the days being an off day, not necessarily in the same order, Each of the plays
+has different time duration: 1⁄2 hour, 1 hour, 1 1⁄2 hours, 2 hours, 2 1⁄2 hours and 3 hours,
+again not necessarily in the same order.
+Sunday is not an off day and a Play of 1⁄2 hour duration is staged on that day. Play A is
+staged immediately before Play E. There are two plays staged between Play F which is for 3
+hours and Play C which is for 1 1⁄2 hours. The off day is after the staging of Play E and there
+are two days between the off day and Play A. Play D which is for 2 hours is not staged on
+Monday. The play staged immediately before the off day is of 3 hours. Play A is for less than
+2 1⁄2 hours.\\
+
+I. What is the time duration of Play B?\\
+a) 2 1⁄2 hours \hspace{2mm}b) 2 hours \hspace{2mm}c) 1 hour
+\hspace{2mm}d) 1⁄2 hour \hspace{2mm}e) None of these\\
+
+II. Which day is the off day?\\
+a) Tuesday \hspace{2mm}b) Monday \hspace{2mm}c) Friday
+\hspace{2mm}d) Saturday \hspace{2mm}e) Cannot be determined\\
+
+III. How many plays are staged before the off day?\\
+a) Two \hspace{2mm}b) One \hspace{2mm}c) Five \hspace{2mm}d) Three \hspace{2mm}e) None of these\\
+
+IV. On which day is Play D staged?\\
+a) Wednesday \hspace{2mm}b) Saturday \hspace{2mm}c) Tuesday
+\hspace{2mm}d) Friday \hspace{2mm}e) Cannot be determined\\
+
+V. Which of the following combinations of Play - Day - Time Duration is correct ?\\
+a) E - Wednesday - 2 hours \hspace{2mm}b) A - Tuesday – 1 hour
+\hspace{2mm}c) C - Thursday - 1 1⁄2 hours \hspace{2mm}d) F - Tuesday - 3 hours
+\hspace{2mm}e) None is correct\\
+%\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+%\hspace{2mm}
+
+\end{document}

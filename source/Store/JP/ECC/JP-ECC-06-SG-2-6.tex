@@ -1,0 +1,162 @@
+\documentclass[aspectratio=169,14pt,usenames,dvipsnames]{beamer}
+\usetheme{TalentSprint}
+\usepackage[utf8]{inputenc}
+\usepackage{graphics}
+\usepackage{ragged2e}
+\usepackage{amsfonts}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{tcolorbox}
+\usepackage{setspace}
+\usepackage{lmodern}
+\definecolor{swe}{rgb}{0.19, 0.73, 0.56}
+\definecolor{lblue}{RGB}{190,200,198}
+\title[Commonly use String methods]{Commonly use String methods}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+{\1
+\begin{frame} \vspace{35pt}
+
+\subtitle{TalentSprint}
+\maketitle
+\end{frame}
+}
+
+\begin{frame}{Learning Objectives}
+At the end of this video you should able to:
+\begin{itemize}
+\item learn Immutable String class.
+\item learn commonly use String methods.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Immutable Class}
+\begin{block}{Immutable}\\
+\vspace{0.8em}
+An Immutable object is a kind of object whose state
+cannot be modified after it is created.
+\end{block}
+\end{frame}
+
+\begin{frame}{Immutable Class}
+\begin{block}{Immutable}\\
+An Immutable object is a kind of object whose state
+cannot be modified after it is created.
+\end{block}
+\vspace{0.8em}
+\begin{block}{Immutable Object }\\
+If an object is known to be immutable, the object
+reference can be shared.
+\end{block}
+\end{frame}
+
+\begin{frame}{Immutable Class}
+\begin{block}{Immutable}\\
+An Immutable object is a kind of object whose state
+cannot be modified after it is created.
+\end{block}
+\begin{block}{Immutable Object }\\
+If an object is known to be immutable, the object
+reference can be shared.
+\end{block}
+\begin{block}{\textcolor{blue}{Example}}\\
+Boolean, Byte, Character, Double, Float, Integer, Long,
+Short, and String are immutable classes in Java,
+\end{block}
+\end{frame}
+
+
+\begin{frame}{String is Immutable Class}
+\begin{lstlisting}
+String str1 = "Hellow";\\
+String str2 = str1";\\
+\vspace{1em}
+String str1 + "World"; (OR)\\
+String str1.concat("World");\\
+\vspace{1em}
+str1 = str1.concat("World");\\
+\end{lstlisting}
+\end{frame}
+
+
+
+\begin{frame}{Operations on String}
+\textbf{\textcolor{red}{int}} \textbf{\textcolor{blue}{length()}} \\
+Returns No. of characters in a String\\
+\vspace{1em}
+\textbf{\textcolor{red}{string}} \textbf{\textcolor{blue}{trim()}} \\
+Remove leading and trailing spaces for a String\\
+\vspace{1em}
+\textbf{\textcolor{red}{String}} \textbf{\textcolor{blue}{concat(String)}} \\
+Join two strings and return it\\
+\end{frame}
+
+
+\begin{frame}{Operations on String}
+\textbf{\textcolor{red}{boolean}} \textbf{\textcolor{blue}{startsWith(String prefix)}} \\
+Join two strings and return it\\
+\vspace{1em}
+\textbf{\textcolor{red}{boolean}} \textbf{\textcolor{blue}{endsWith(String suffix)}} \\
+Returns true if String ends with given suffix\\
+\end{frame}
+
+
+\begin{frame}{Example}
+\begin{block}{int length()}
+\begin{lstlisting}
+String name = "Praveen Kumar";\\
+int len = name.length();\\
+\end{lstlisting}
+\end{block}
+\begin{block}{String trim()}
+\begin{lstlisting}
+String name = " Praveen Kumar ";\\
+String str1 = name.trim();\\
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+\begin{frame}{Example}
+\begin{block}{String concat(String)}
+\begin{lstlisting}
+String FirstName = "Praveen";\\
+String LastName = " Kumar";\\
+String str2 = FirstName.concat(LastName);\\
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{block}{boolean startsWith(String prefix)}\\
+\begin{lstlisting}\\
+String Str3 = new String("Welcome to Talentsprint.com");\\
+boolean result1 = Str3.startsWith("Welcome");\\
+boolean result2 = Str3.startsWith("Hellow");\\
+boolean result3 = Str3.startsWith("Telentsprint",11);\\
+\end{lstlisting}
+\end{block}
+
+\end{frame}
+\begin{frame}{Examples}
+\begin{block}{boolean endsWith(String suffix)}\\
+\begin{lstlisting}\\
+String Str4 = new String("This is really wonderful image!!");\\
+boolean result4 = str4.endsWith("image!!");\\
+boolean result5 = str4.endsWith("really");\\
+\end{lstlisting}
+\end{block}
+\vspace{0.5em}
+\color{red} Write code with the above examples, compile and execute
+the program.
+\end{frame}
+
+
+\begin{frame}{Summary}
+\begin{itemize}
+    \item Learning Immutable String class.
+\item Learning commonly using String methods.
+\end{itemize}
+\end{frame}
+\end{document}

@@ -1,0 +1,98 @@
+\documentclass[aspectratio=169,14pt,usenames,dvipsnames]{beamer}
+\usetheme{TalentSprint}
+\usepackage[utf8]{inputenc}
+\usepackage{graphics}
+\usepackage{ragged2e}
+\usepackage{amsfonts}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{tcolorbox}
+\usepackage{setspace}
+\usepackage{lmodern}
+\definecolor{swe}{rgb}{0.19, 0.73, 0.56}
+\definecolor{lblue}{RGB}{190,200,198}
+\title[Looping Statements - for]{Looping Statements - for}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\begin{document}
+
+{\1
+\begin{frame} \vspace{35pt}
+
+\subtitle{TalentSprint}
+\maketitle
+\end{frame}
+}
+
+
+\begin{frame}{Learning Objectives}
+At the end of this video you should able to:
+\begin{itemize}
+\item Understand how for loop works.
+\item Write porgrams using for loop.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{for}
+Allows to efficiently write a loop that needs to
+execute a specific number of times.
+\end{frame}
+
+
+
+\begin{frame}{Syntax}
+\begin{lstlisting}
+for (init; boolean\_expression; inc/dec)  \{ \\
+\tab statement;\\
+\tab statement;\\
+\}\\
+\end{lstlisting}\\
+Note:The statements in the loop will execute
+until the expression becomes false.
+\end{frame}
+
+
+
+\begin{frame}{Problem Statement}
+Print the multiplication table for an given
+number till 10.
+\end{frame}
+
+\begin{frame}{Solution}
+\begin{lstlisting}
+int n = 6;\\
+for (int i=1;i $<$ 10; i++) \{\\
+\tab int r= n* i;\\
+\tab System.out.println(n + " * " + i + " = " + r);\\
+
+\end{lstlisting}\\
+\end{frame}
+
+\begin{frame}{Problem Statement}
+Print the sum of factors of the given number
+\end{frame}
+
+\begin{frame}{Solution}
+\begin{lstlisting}
+int num = 280;\\
+int sum\_fact = num + 1;\\
+for (int f=2;f $<$ num / 2;f++)\{\\
+\tab if (num \% f == 0) \{\\
+\tab \tab sum\_fact += f;\\
+\tab \}\\
+\}\\
+System.out.println(sum\_fact);
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}{Summary}
+\begin{itemize}
+    \item for loop is used when you want to execute
+the block of code fixed number of times.
+\item The initialization statement will execute
+only once.
+\end{itemize}
+\end{frame}
+\end{document}

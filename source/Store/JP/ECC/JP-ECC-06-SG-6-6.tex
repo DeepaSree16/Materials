@@ -1,0 +1,125 @@
+\documentclass[aspectratio=169,14pt,usenames,dvipsnames]{beamer}
+\usetheme{TalentSprint}
+\usepackage[utf8]{inputenc}
+\usepackage{graphics}
+\usepackage{ragged2e}
+\usepackage{amsfonts}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{tcolorbox}
+\usepackage{setspace}
+\usepackage{lmodern}
+\definecolor{swe}{rgb}{0.19, 0.73, 0.56}
+\definecolor{lblue}{RGB}{190,200,198}
+\title[String - substring method]{String - substring method}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+{\1
+\begin{frame} \vspace{35pt}
+
+\subtitle{TalentSprint}
+\maketitle
+\end{frame}
+}
+
+\begin{frame}{Learning Objectives}
+At the end of this video you should able to:
+\begin{itemize}
+\item understand substring method.
+\item implement program using substring.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{substring}
+“Hello World”\\
+“World” → is a sub-string of “Hello World”\\
+\end{frame}
+
+
+\begin{frame}{substring}
+“Hello World”\\
+“World” → is a sub-string of “Hello World”\\
+\vspace{1em}
+“India is a greatest country in the world.”\\
+“greatest country” → is also a sub-string of the above
+string\\
+\end{frame}
+
+
+\begin{frame}{substring methods}
+Returns a new string that is a part of the string.\\
+\vspace{1em}
+\textbf{Types of substring methods}
+\begin{center}
+    String substring (int startIndex)\\
+\tab \tab \hspace{1.2em}  String substring (int startIndex, int endIndex)\\
+\end{center}
+\end{frame}
+
+
+\begin{frame}{substring (int startIndex)}
+\tab \tab S t r i n g s t r = " H ell o World " ;\\
+\tab \tab S t r i n g s u b s t r = s t r . s u b s t r i n g ( 6 ) ;\\
+\vspace{1.5em}
+\tab \tab \tab \tab \tab substr contains “World”
+\end{frame}
+
+
+\begin{frame}{Problem Statement}
+Define a string and print the second half of the string
+using substring method.
+\end{frame}  
+
+
+\begin{frame}{Solution}
+\begin{lstlisting}
+class DataTypesDemo \{\\
+\tab public static void main ( String [ ] args ) \{\\
+\tab \tab i n t a = 1 0;\\
+\tab \tab String str = " Hello World ! " ;\\
+\tab \tab System .out.println( " Sub String : " + str .\\
+\tab substring ( ( str.length( ) / 2 ) ) ) ;\\
+\tab \}\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Problem Statement}
+Write program to display the given name in the below
+pattern.\\
+\textbf{Example:}\\
+Name: TALENT\\
+Output:\\
+T\\
+TA\\
+TAL\\
+TALE\\
+TALEN\\
+TALENT\\
+\end{frame}
+
+\begin{frame}{Solution}
+\begin{lstlisting}
+class DataTypesDemo \{\\
+\tab public static void main ( String [ ]args ) \{\\
+\tab \tab String str= "TALENT" ;\\
+\tab \tab for(int i=1 ; i <= str.length( );i++)\\
+\tab \tab \tab System.out.println(str.substring(0,i));\\
+\tab \}\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}{Summary}
+\begin{itemize}
+    \item String has two substring methods.
+    \item substring (int index), returns substring of the string
+from the given index position till the end.
+\item substring (int statrIndex, int endIndex), returns
+substring of the string from startIndex to endIndex.
+\end{itemize}
+\end{frame}
+\end{document}

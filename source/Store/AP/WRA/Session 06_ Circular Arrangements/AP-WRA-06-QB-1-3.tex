@@ -1,0 +1,298 @@
+
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+\usepackage{unicode-math}
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+	\usepackage[]{microtype}
+	\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+	\IfFileExists{parskip.sty}{%
+		\usepackage{parskip}
+	}{% else
+		\setlength{\parindent}{0pt}
+		\setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+	\KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+	hidelinks,
+	pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+\usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\author{}
+\date{}
+\usepackage{multirow}
+\usepackage[inline]{enumitem}
+\usepackage[margin=1.0in]{geometry}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\includegraphics[width=5.21667in, height=0.38819in]{image1.png}}
+\lhead{ Reasoning: Circular Arrangements }
+\lfoot{www.talentsprint.com }
+\rfoot{\thepage}
+\begin{document}
+	
+ 
+
+\begin{center}
+	{\Large \textbf{Circular Arrangements \\}}
+\end{center}
+
+{\large \textbf{ Part 1 - Basic \\}}
+
+
+\textbf{Model 1: Simple Arrangement}\\
+
+\textbf{Directions (1-6):} Study the following information to answer the given questions:\\
+A, B, C, D, E, F, G and H are sitting around a circle facing, the centre. H is fourth to the left of B
+and second to the right of F. A is third to the left of C, who is not an immediate neighbor of F.G
+is second to the left of A. D is second to the right of E.\\
+
+1. Who is on the immediate right of F?\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+1) H \hspace{2mm}2) A \hspace{2mm}3) G
+\hspace{2mm}4) Data inadequate \hspace{2mm}5) None of these\\
+
+2. Who is third to the left of A?\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+1) C \hspace{2mm}2) F \hspace{2mm}3) B
+\hspace{2mm}4) Data inadequate \hspace{2mm}5) None of these\\
+
+3. In which of the following pairs is the first person sitting on the immediate left of the second
+person?\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+1) EH \hspace{2mm}2) CE \hspace{2mm}3) AF \hspace{2mm}4) DB \hspace{2mm}5) None of these\\
+
+4. Which of the following pairs represents the immediate neighbors of E?\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+1) DH \hspace{2mm}2) HC \hspace{2mm}3) CA
+\hspace{2mm}4) Data inadequate \hspace{2mm}5) None of these\\
+
+5. Who is on the immediate right of H?\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+1) E \hspace{2mm}2) C \hspace{2mm}3) H
+\hspace{2mm}4)Data inadequate \hspace{2mm}5) None of these\\
+
+6. Who is on the immediate right of B?\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+1) D \hspace{2mm}2) E \hspace{2mm}3) F
+\hspace{2mm}4) Data inadequate \hspace{2mm}5) None of these\\
+
+Directions (7-11): Study the following information to answer the given questions:\\
+A, B, C, D, E, F, G and H are sitting around a circle facing the centre. B is third to the right of F
+and third to the left of H. C is fourth to the left of A, who is not an immediate neighbor of F or B.
+E is not an immediate neighbor of B. G is second to the right of D\\
+
+7. Who is to the immediate left of B?\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+1) D \hspace{2mm}2) G \hspace{2mm}3) D or G
+\hspace{2mm}4) Data inadequate \hspace{2mm}5) None of these\\
+
+8. Who is to the immediate right of H?\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+1) A \hspace{2mm}2) E \hspace{2mm}3) F
+\hspace{2mm}4) Data inadequate \hspace{2mm}5) None of these\\
+
+9. Which of the following pairs represents the immediate neighbors of F?\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+1) CH \hspace{2mm}2) ED \hspace{2mm}3) HD \hspace{2mm}4) CE \hspace{2mm}5) None of these\\
+
+10. In which of the following pairs is the first person sitting to the immediate right of the second
+person?\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+1) BG \hspace{2mm}2) GA \hspace{2mm}3) AH \hspace{2mm}4) HE \hspace{2mm}5) CF\\
+
+11. Who is third to the left of E?\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+1) A \hspace{2mm}2) C \hspace{2mm}3) G
+\hspace{2mm}4) Data inadequate \hspace{2mm}5) None of these\\
+
+\textbf{Directions (12-16):} Study the following information to answer the given questions:\\
+Eight friends A, B, C, D, E, F, G and H are sitting around a circle facing the centre. E is third to
+the left of G, who is on the immediate right of B, who is third to the left of A. H is second to the
+right of F, who is not an immediate neighbor of E. D is not an immediate neighbor of B.
+[April 30, 2016 @ 1h 06m 15s]\\
+
+12. Who is second to the right of B?\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+1) F \hspace{2mm}2) A \hspace{2mm}3) H \hspace{2mm}4) D \hspace{2mm}5) None of these\\
+
+13. Which of the following pairs has the first person on the immediate left of the second person?\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+1) GB \hspace{2mm}2) HA \hspace{2mm}3) CE \hspace{2mm}4) HD \hspace{2mm}5) None of these\\
+
+14. Which of the following is the correct position of B with respect to D?\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+1) Second to the right \hspace{2mm}2) Second to the left \hspace{2mm}3) Third to the right
+\hspace{2mm}4) Third to the left \hspace{2mm}5) None of these\\
+
+15. Who sits between A and D?\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+1) F \hspace{2mm}2) E \hspace{2mm}3) G \hspace{2mm}4) B \hspace{2mm}5) H\\
+
+16. What is Es position with respect to C?\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+1) On the immediate right \hspace{2mm}2) On the immediate left \hspace{2mm}3) Second to the right
+\hspace{2mm}4) Cannot be determined \hspace{2mm}5) None of these\\
+
+\textbf{Model 2:} Complex Arrangement\\
+
+\textbf{Directions (17-23):} Study the following information to answer the given questions:\\
+A, B, C,
+D, E, F, G and H are sitting around a circular table, facing the centre. Each of them has a
+different profession, viz doctor, engineer, architect, pilot, banker, teacher, businessman and
+politician.\\
+The politician sits third to the right of G. C is an immediate neighbour of G. The architect sits
+second to the right of C. B sits third to the right of H. H is neither a politician nor an architect.\\
+Only one person sits between C and the teacher. A and F are immediate neighbours of each
+other. Neither A nor F is a politician. The doctor sits second to the right of A. Two people sit
+between D and the engineer. D is not a politician. The pilot is not an immediate neighbour of
+the politician. The banker sits second to the left of A.\\
+17. Who amongst the following is a businessman?\\
+1) A \hspace{2mm}2) H \hspace{2mm}3) C \hspace{2mm}4) F \hspace{2mm}5) D\\
+
+18. What is the position of F with respect to the politician?\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+1) Immediate right \hspace{2mm}2) Third to the left \hspace{2mm}3) Second to the right
+\hspace{2mm}4) Fourth to the left \hspace{2mm}5) Second to the left\\
+
+19. Who sit(s) exactly between the teacher and the engineer?\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+1) C and H \hspace{2mm}2) Only the politician \hspace{2mm}3) Only the doctor
+\hspace{2mm}4) C and B \hspace{2mm}5) The architect and the banker\\
+
+20. Which of the following is true with respect to the given seating arrangement?\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+1) D is an immediate neighbour of G.\\
+2) G is a banker.\\
+3) The banker and the teacher are immediate neighbours of each other.\\
+4) The pilot sits exactly between the architect and the businessman.\\
+5) The doctor sits second to the right of the businessman.\\
+
+21. What is the profession of G?\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+1) Businessman \hspace{2mm}2) Pilot \hspace{2mm}3) Banker \hspace{2mm}4) Teacher \hspace{2mm}5) Architect\\
+
+22. Four of the following five are alike in a certain way based on the given seating
+arrangement and thus \includegraphics[width=0.60555in,height=0.32083in]{image2.png}form a group. Which is the one that does not belong to that group?\\
+1) G-Doctor \hspace{2mm}2) E-Architect \hspace{2mm}3) H-Businessman
+\hspace{2mm}4) E- Politician \hspace{2mm}5) D- Pilot\\
+
+23. What is the profession of E?\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+1) Businessman \hspace{2mm}2) Architect \hspace{2mm}3) Banker \hspace{2mm}4) Politician \hspace{2mm}5) Engineer\\
+
+\textbf{Directions (24-30):} Study the following information and answer the questions given below:\\
+Eight friends A, B, C, D, E, F, G and H are sitting around a circular table not necessarily in the
+same order. Three of them are facing outward while five are facing towards the centre. There
+are equal number of males and females in the group.
+C is facing the centre. E is sitting third to the right of C. F is sitting third to the left of E. Three
+persons are sitting between F and B. The immediate neighbours of B are females. G is sitting
+third to the right of F. D is sitting third to the right of A. A is not an immediate neighbour of E.
+Neighbours of E are males .The immediate neighbours of Dare are females and face outside.\\
+The one sitting third to the left of B is a male. No female is an immediate neighbour of G.
+[November 01, 2014 @ 1h 27m 10s]\\
+
+24. Who is sitting second to the right of E?\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+1) C \hspace{2mm}2) B \hspace{2mm}3) G \hspace{2mm}4) H \hspace{2mm}5) None of these\\
+
+25. How many persons are sitting between H and C when counted from the left side of H?\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+1) One \hspace{2mm}2) Two \hspace{2mm}3) Three \hspace{2mm}4) Four \hspace{2mm}5) More than four\\
+
+26. Which of the following statements is true regarding H?\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+1) The one who is second d to the right of H is a female.\\
+2) H is facing the centre.\\
+3) H is a male.\\
+4) The immediate neighbours of H are facing outside.\\
+5) None is true.\\
+
+27. What is D’s position with respect to G?\\
+\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+1) Third to the left \hspace{2mm}2) Third to the right \hspace{2mm}3) Second to the left
+\hspace{2mm}4) Second to the right \hspace{2mm}5) None of these\\
+
+\textbf{Directions (28-29):}Four of the following five are alike in a certain way based on their seating
+positions in the above arrangement and hence form a group. Which of the following does not
+belong to the group?\\
+
+28. 1) BE \hspace{2mm}2) CG \hspace{2mm}3) GA \hspace{2mm}4) DH \hspace{2mm}5) AF\\
+
+29. 1) B \hspace{2mm}2) F \hspace{2mm}3) G \hspace{2mm}4) A \hspace{2mm}5) D\\
+
+30. If all the friends are asked to sit in an alphabetical order starting from A in an anti clockwise
+direction, \includegraphics[width=0.60555in,height=0.32083in]{image2.png}the positions of how many will remain unchanged (excluding A)?\\
+1) Four \hspace{2mm}2) Three \hspace{2mm}3) Two \hspace{2mm}4) One \hspace{2mm}5) None\\
+
+Answers
+\begin{tabular}{c c c c c c c c c c c c }
+1 - 2 &2 - 3 &3 - 4& 4 - 2& 5 - 1& 6 - 5& 7 - 1& 8 - 2& 9 - 4& 10 - 5\\
+11 - 3 &12 - 1& 13 - 4 &14 - 3 &15 - 5& 16 - 2 &17 - 1 &18 - 3& 19 - 3 &20 - 5\\
+21 - 2 &22 - 4 &23 - 4 &24 - 3 &25 - 2 &26 - 1 &27 -2 &28 - 3 &29 - 4 &30 - 4\\
+\end{tabular}
+
+
+\textbf{Note:} The date and time mentioned against some questions refer to the doubts clarification
+session on Reasoning Ability in which the question was solved.
+%\includegraphics[width=0.60555in,height=0.32083in]{image2.png}
+%\hspace{2mm}
+
+\end{document}

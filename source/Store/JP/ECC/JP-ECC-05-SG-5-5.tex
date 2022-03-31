@@ -1,0 +1,111 @@
+\documentclass[aspectratio=169,14pt,usenames,dvipsnames]{beamer}
+\usetheme{TalentSprint}
+\usepackage[utf8]{inputenc}
+\usepackage{graphics}
+\usepackage{ragged2e}
+\usepackage{amsfonts}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{tcolorbox}
+\usepackage{setspace}
+\usepackage{lmodern}
+\definecolor{swe}{rgb}{0.19, 0.73, 0.56}
+\definecolor{lblue}{RGB}{190,200,198}
+\title[for-each Loop]{for-each Loop}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+{\1
+\begin{frame} \vspace{35pt}
+
+\subtitle{TalentSprint}
+\maketitle
+\end{frame}
+}
+
+\begin{frame}{Learning Objectives}
+At the end of this video you should able to:
+\begin{itemize}
+\item understand purpose of using for-each loop.
+\item learn limitations of for-each loop.
+\item undaertand printing array elements using for-each
+loop
+\end{itemize}
+\end{frame}
+
+\begin{frame}{for-each}
+\begin{itemize}
+\item When we work with iteration over the arrays Java
+provided \textcolor{blue}{for-each} loop.
+\item It is mainly used to traverse array elements.
+\item Less error prone code.
+\item Improved readability.
+\item Less number of variables to clean up.
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Can’t use in the following cases}
+
+\begin{itemize}
+    \item To remove elements as you traverse arrays
+    \item To modify the current index in an array
+    \item To iterate over multiple arrays
+\end{itemize}
+\end{frame}
+
+\begin{frame}{General form}
+\begin{lstlisting}
+for(data\_type variable : array) \{\\
+\tab //Statments;\\
+\tab //Statments;\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Problem Statement}
+Write a program to print list of array values using for-each
+loop.
+\end{frame}
+
+\begin{frame}{Solution}
+\begin{center}
+\begin{lstlisting}
+int []numbers = \{10, 20, 30, 40, 50\};\\
+for (int x : numbers) \{\\
+\tab System.out.print(x);\\
+\}\\
+\end{lstlisting}
+\end{center}
+\vspace{0.8em}
+\textbf{Here Array value read from same datatype one by one and
+printing at console.}
+\end{frame}
+
+\begin{frame}{Problem Statement}
+wirte a program to print String array values using for-each
+loop.
+\end{frame}
+
+
+\begin{frame}{Solution}
+\begin{lstlisting}
+String emp\_names[] = \{ "James","King","Blake","Jone","Murray" \};\\
+for (String name : emp\_names) \{\\
+\tab System.out.print(name);\\
+\}\\
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}{Summary}
+\begin{itemize}
+    \item Understood when to use for-each loop in program.
+\item Understood pritning the elements from starting to till
+size-1 locaiton from the array.
+\end{itemize}
+\end{frame}
+\end{document}
+

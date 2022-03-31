@@ -1,0 +1,219 @@
+\documentclass[aspectratio=169,14pt,usenames,dvipsnames]{beamer}
+\usetheme{TalentSprint}
+\usepackage[utf8]{inputenc}
+\usepackage{graphics}
+\usepackage{ragged2e}
+\usepackage{amsfonts}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{tcolorbox}
+\usepackage{setspace}
+\usepackage{lmodern}
+\definecolor{swe}{rgb}{0.19, 0.73, 0.56}
+\definecolor{lgreen}{RGB}{190,200,198}
+\title[Arithmetic and Relational Operators]{Arithmetic and Relational Operators}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\begin{document}
+
+{\1
+\begin{frame} \vspace{35pt}
+
+\subtitle{TalentSprint}
+\maketitle
+\end{frame}
+}
+
+
+\begin{frame}{Learning Objectives}
+At the end of this video you should able to:
+\begin{itemize}
+\item Understand the type of Operators.
+\item Differentiate between = and == operator.
+\item Perform Operations on Variables
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Operator}
+A symbol that represents an Operation.
+\begin{block}{Example}
+sum $=$ num$1$\ $+$ num$2$\\
+$"="$ and $"+"$ are Operators
+\end{block}
+\end{frame}
+
+
+\begin{frame}{Arithmetic Operators}
+Let a $=$ 25 and b $=$ 10\\
+
+\begin{tabular}{|c|c|c|}
+\hline 
+\textbf{Operator} & \textbf{Meaning} & \textbf{Example}\\
+
+\hline
+$+$ & Addition & a$+$b$==>$ 35\\
+\hline
+$-$ & Subtraction & a$-$b$==>$ 15\\
+\hline
+$*$ & Multiplication & a$*$b$==>$ 250\\
+\hline
+$/$ & Division & a$/$b $==>$2\\
+\hline
+$\%$ & Module & a$\%$b $==>$5\\
+\hline
+\end{tabular}
+\end{frame}
+
+\begin{frame}{Problem Statement}
+\begin{lstlisting}
+num = 245;\\
+u\_digit = num \% 10;\\
+h\_digit = num / 100;\\
+num /= 10;\\
+t\digit = num \% 10;\\
+sum u\_digit + t\_digit + h\_digit;\\
+system.out.println(sum);\\
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}{Relational Operators}
+Let a $ = $ 25 and b $ = $ 12
+\begin{tabular}{|c|c|c|}
+\hline 
+\textbf{Operator} & \textbf{Meaning} & \textbf{Example}\\
+\hline
+$>$ & Greater than & a $>$ 10==$>$ true\\
+\hline
+ $>$= & Greater than or equal to & a$>$= 25  ==$>$  true\\
+\hline
+$<$ & Less than & b $<$ a==$>$ true\\
+ \hline
+$<$= & Less than or equal to & a$<$= 25  ==$>$  true\\
+ \hline
+== & Equals & b == 10==$>$true\\
+\hline
+!= & Not Equals & b!=12 ==$>$ false\\
+\hline
+\end{tabular}
+\end{frame}
+
+\begin{frame}{Unary Operators}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Operator} & \textbf{Meaning} \\
+\hline
+++ & Increment / Unary Plus\\
+\hline
+- - & Decrements / Unary Minus\\
+\hline
+\end{tabular}
+\end{frame}
+
+\begin{frame}{Unary Operators}
+\begin{columns}
+\column{0.5\textwidth}\\
+\begin{block}{X $=$ 3}
+z $=$ ++x
+
+\end{block}
+\column{0.5\textwidth}
+==$>$ z is 4,x is 4
+
+\end{columns}
+\end{frame}
+
+\begin{frame}{Unary Operators}
+\begin{columns}
+\column{0.5\textwidth}\\
+\begin{block}{X $=$ 3}
+z $=$ ++x\\
+z $=$ x++\\
+\end{block}
+\column{0.5\textwidth}
+==$>$ z is 4,x is 4\\
+==$>$ z is 3,x is 4\\
+\end{columns}
+\end{frame}
+
+\begin{frame}{Unary Operators}
+\begin{columns}
+\column{0.5\textwidth}\\
+\begin{block}{X $=$ 3}
+z $=$ ++x\\
+z $=$ x++\\
+z $=$ x- -\\
+\end{block}
+\column{0.5\textwidth}
+==$>$ z is 4,x is 4\\
+==$>$ z is 3,x is 4\\
+==$>$ z is 3,x is 2\\
+\end{columns}
+\end{frame}
+
+\begin{frame}{Unary Operators}
+\begin{columns}
+\column{0.5\textwidth}\\
+\begin{block}{X $=$ 3}
+z $=$ ++x\\
+z $=$ x++\\
+z $=$ x- -\\
+z $=4$ - -x
+\end{block}
+\column{0.5\textwidth}
+==$>$ z is 4,x is 4\\
+==$>$ z is 3,x is 4\\
+==$>$ z is 3,x is 2\\
+==$>$ z is 2,x is 2\\
+\end{columns}
+\end{frame}
+
+\begin{frame}{Unary Operators}
+\begin{columns}
+\column{0.5\textwidth}\\
+\begin{block}{X $=$ 3}
+z $=$ ++x\\
+z $=$ x++\\
+z $=$ x- -\\
+z $=4$ - -x
+\end{block}
+\column{0.5\textwidth}
+==$>$ z is 4,x is 4\\
+==$>$ z is 3,x is 4\\
+==$>$ z is 3,x is 2\\
+==$>$ z is 2,x is 2\\
+\end{columns}
+\color{red}x++ and x- - ==$>$ Post Increment / Decrement\\
+\color{red}++x and - -x ==$>$ Post Increment / Decrement\\
+\end{frame}
+
+
+\begin{frame}{Problem Statement}
+Given the purchase amount, calculate the
+amount to be paid after discount. Discount is
+10 percent on purchase amount.
+\end{frame}
+
+\begin{frame}{Solution}
+\begin{lstlisting}
+amt\_purchsd = 20000;\\
+discount\_amt = (amt\_purchsd * 10) / 100;\\
+System.out.println(amt\_purchsd -\\
+discount\_amt);\\
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Summary}
+\begin{itemize}
+    \item Arithmetic Operators are used to perform
+arithmetic operations.
+\item Relational Operators are used to check the
+relation between two values and result to
+true or false.
+\item “=” is an assignment operator, used to
+assign the value.
+\item “==” is a comparision operator, used to
+compare the values.
+\end{itemize}
+\end{frame}
+\end{document}
