@@ -99,23 +99,41 @@ STORE
             - 1 (.rst) {CDN links}
       + **WRA** ReasoningAbility
          - Session \0\1\_Coding and Decoding
-            - 1 (.rst) {CDN links}
+            - Images
+               - 2 (.png)
+            - 3 (.tex) {3 QB}
          - Session \0\2\_Ranking
-            - 1 (.rst) {CDN links}
+            - Images
+               - 2 (.png)
+            - 2 (.tex) {2 QB}
          - Session \0\3\_Element Series
-            - 1 (.rst) {CDN links}
+            - Images
+               - 2 (.png)
+            - 2 (.tex) {2 QB}
          - Session \0\4\_Directions
-            - 1 (.rst) {CDN links}
+            - Images
+               - 2 (.png)
+            - 3 (.tex) {3 QB}
          - Session \0\5\_Alphabet
-            - 1 (.rst) {CDN links}
+            - Images
+               - 2 (.png)
+            - 2 (.tex) {2 QB}
          - Session \0\6\_Circular Arrangements
-            - 1 (.rst) {CDN links}
+            - Images
+               - 2 (.png)
+            - 3 (.tex) {3 QB}
          - Session \0\7\_Linear Arrangements
-            - 1 (.rst) {CDN links}
+            - Images
+               - 2 (.png)
+            - 3 (.tex) {3 QB}
          - Session \0\8\_Complex Assignments
-            - 1 (.rst) {CDN links}
+            - Images
+               - 2 (.png)
+            - 3 (.tex) {3 QB}
          - Session \0\9\_Puzzles
-            - 1 (.rst) {CDN links}
+            - Images
+               - 2 (.png)
+            - 5 (.tex) {5 QB}
          - Session \1\0\_Blood Relations
             - 1 (.rst) {CDN links}
          - Session \1\1\_Coded Inequalities
@@ -134,7 +152,7 @@ STORE
             - 1 (.rst) {CDN links}
          - Session \1\8\_Data Sufficiency
             - 1 (.rst) {CDN links}
-         - Session \1\9\_critical Reasoning
+         - Session \1\9\_Critical Reasoning
             - 1 (.rst) {CDN links}
          - Session \2\0\_Cubes
             - 1 (.rst) {CDN links}
@@ -161,6 +179,65 @@ STORE
          - Session \3\1\_Venn Diagrams
             - 1 (.rst) {CDN links}
       + **WQA** QuantitativeAbility
+         - Session \0\0\_Speed Maths
+            - 1 (.rst) {CDN links}
+         - Session \0\3\_Number System
+            - 1 (.rst) {CDN links}
+            - 4 (.tex) {3 QB, 1 SG}
+         - Session \0\4\_LCM HCF
+            - 1 (.rst) {CDN links}
+            - 3 (.tex) {3 QB}
+         - Session \0\7\_Averages
+            - 1 (.rst) {CDN links}
+            - 3 (.tex) {3 QB}
+         - Session \0\8\_Percentages
+            - Images
+               - 3 (.png)
+            - 1 (.rst) {CDN links}
+            - 4 (.tex) {3 QB, 1 SG}
+         - Session \0\9\_Profit&Loss
+            - Images
+               - 3 (.png)
+            - 1 (.rst) {CDN links}
+            - 4 (.tex) {3 QB, 1 SG}
+         - Session \1\0\_Simple Interest & Compound Interest
+            - Images
+               - 2 (.png)
+            - 1 (.rst) {CDN links}
+            - 3 (.tex) {3 QB}
+         - Session \1\1\_Ratio & Proportion
+            - Images
+               - 2 (.png)
+            - 1 (.rst) {CDN links}
+            - 4 (.tex) {3 QB, 1 SG}
+         - Session \1\2\_Alligations & Mixtures
+            - 1 (.rst) {CDN links}
+         - Session \1\3\_Ages
+            - 1 (.rst) {CDN links}
+         - Session \1\4\_Partnership
+            - 1 (.rst) {CDN links}
+         - Session \1\5\_Time & Work
+            - 1 (.rst) {CDN links}
+         - Session \1\6\_Time & Distance
+            - 1 (.rst) {CDN links}
+         - Session \1\7\_Calendars
+            - 1 (.rst) {CDN links}
+         - Session \1\8\_Clocks
+            - 1 (.rst) {CDN links}
+         - Session \1\9\_Data Interpretation
+            - 1 (.rst) {CDN links}
+         - Session \2\0\_Set Theory
+            - 1 (.rst) {CDN links}
+         - Session \2\1\_Caselets
+            - 1 (.rst) {CDN links}
+         - Session \2\2\_Data Sufficiency
+            - 1 (.rst) {CDN links}
+         - Session \2\3\_Mensuration
+            - 1 (.rst) {CDN links}
+         - Session \2\4\_Permutation and Combinations
+            - 1 (.rst) {CDN links}
+         - Session \2\5\_Probability
+            - 1 (.rst) {CDN links}
 
    * PY [PYTHON PROGRAMMING]
       + **PES** PythonEssentials
