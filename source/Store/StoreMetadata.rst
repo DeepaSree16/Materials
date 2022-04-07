@@ -249,11 +249,27 @@ STORE
 
    * MT [MATHS]
       + **MES** MathEssentials
+         - 1 (.rst) {CDN links}
       + **MBA** MathBasics
+         - 1 (.rst) {CDN links}
       + **STA** Statistics
-      + **PRB** Probability 
+         - CDS
+            - 2 (.rst) {2 QB}
+            - 1 (.ipynb) {1 AS}
+            - 1 (.pdf) {1 SG}
+      + **PRB** Probability
+         - 2 (.rst) {2 QB}
+         - 12 (.ipynb) {7 AS, 2 AN, 1 CS, 1 MP, 1 SMP}
+         - 2 (.tex) {2 QB}
+         - 1 (.pdf) {1 WB} 
       + **LIN** LinearAlgebra
+         - 12 (.ipynb) {6 AS, 4 AN, 1 MP, 1 SMP}
+         - 3 (.tex) {2 QB, 1 WB}
+         - 1 (.pdf) {1 WB}
       + **CAL** Calculus
+         - 3 (.rst) {3 QB}
+         - 5 (.ipynb) {2 AS, 1 AN, 1 MP, 1 SMP}
+         - 2 (.tex) {2 WB}
 
    * DS [DATA SCIENCE]
       + **CDP** ComputationalDataScienceInPractice
