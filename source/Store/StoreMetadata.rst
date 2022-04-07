@@ -318,6 +318,44 @@ STORE
    
    * IO [IoT]
       + **IML** IoTandMachineLearning
+         - 3 (.tex) {3 QB}
+         - 3 (.ipynb) {3 AS}
+      + 18 (.tex) {18 EXT}
+      + IoT\_Images
+         - EXP\_00\_Images
+            - 38 (.png)
+         - EXP\_06\_Images
+            - 7 (.png)
+         - EXP\_07\_Images
+            - 4 (.png)
+         - EXP\_08\_Images
+            - 6 (.png)
+         - EXP\_09\_Images
+            - 7 (.png)
+         - EXP\_10\_Images
+            - 4 (.png)
+         - EXP\_11\_Images
+            - 6 (.png)
+         - EXP\_14\_Images
+            - 1 (.png)
+         - EXP\_15\_Images
+            - 2 (.png)
+         - EXP\_16\_Images
+            - 5 (.png)
+         - EXP\_18\_Images
+            - 4 (.png)
+         - EXP\_19\_Images
+            - 2 (.png)
+         - EXP\_20\_Images
+            - 2 (.png)
+         - EXP\_21\_Images
+            - 4 (.png)
+         - EXP\_23\_Images
+            - 2 (.png)
+         - EXP\_24\_Images
+            - 7 (.png)
+         - EXP\_25\_Images
+            - 14 (.png)
 
    * GT [GIT]
 
