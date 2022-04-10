@@ -276,28 +276,95 @@ STORE
 
    * AI [ARTIFICIAL INTELLIGENCE]
       + **CML** ClassicalMachineLearning
+         - 34 (.rst) {33 QB, 1 PVLinks}
          - LinearRegression
+            + 10 (.ipynb) {4 AS, 1 MP, 3 SMP, 2 AN}
+            + 1 (.tex) {1 DECK}
+            + Images
+               - 11 (.png) 
          - LinearClassifier
-	 - LogisticRegression
-	 - PrinciplesofML
+            + 4 (.ipynb) {2 AS, 2 AN}
+            + 1 (.tex) {1 DECK}
+            + Images
+               - 18 (.png)
+         - LogisticRegression
+            + 4 (.ipynb) {1 AS, 1 MP, 1 SMP, 1 AN}
+            + 1 (.tex) {1 DECK}
+            + Images
+               - 6 (.png)
+         - PrinciplesofML
+            + 2 (.ipynb) {1 AS, 1 AN}
+            + 1 (.tex) {1 DECK}
+            + Images
+               - 15 (.png)
          - k-NearestNeighbours
-	 - DataVisualization
-	 - PrincipalComponentAnalysis
-	 - DecisionTree
-	 - Clustering
-	 - PerformanceMetrics
-	 - SupportVectorMachines
-	 - EnsembleMethods
-	 - GradientDescent
+            + 4 (.ipynb) {1 AS, 1 SMP, 2 AN}
+            + 1 (.tex) {1 DECK}
+            + Images
+               - 14 (.png)
+         - DataVisualization
+            + 2 (.ipynb) {2 AS}
+         - PrincipalComponentAnalysis
+            + 9 (.ipynb) {4 AS, 5 AN}
+            + 1 (.tex) {1 QB}
+            + Images
+               - 20 (.png)
+               - 3 (.jpg)
+         - DecisionTree
+            + 5 (.ipynb) {2 AS, 3 AN}
+            + 2 (.tex) {2 DECK}
+            + Images
+               - 13 (.png)
+            - DT\_OF\_Images
+               - 19 (.png)
+         - Clustering
+            + 6 (.ipynb) {4 AS, 1 MP, 1 SMP}
+            + 1 (.tex) {1 QB}
+         - PerformanceMetrics
+            + 2 (.ipynb) {2 AS}
+         - SupportVectorMachines
+            + 14 (.ipynb) {6 AS, 1 MP, 3 SMP, 4 AN}
+            + 4 (.tex) {2 QB, 2 DECK}
+            + Images
+               - 49 (.png) 
+            + SVM\_NonLinear\_Images
+               - 12 (.png)
+         - EnsembleMethods
+            + 15 (.ipynb) {6 AS, 2 MP, 4 SMP, 3 AN}
+            + 1 (.tex) {1 DECK}
+            + Images
+               - 17 (.png)
+         - GradientDescent
+            + 5 (.ipynb) {4 AS, 1 AN}
+            + 1 (.tex) {1 QB}
          - ML Avatars
+            - 1 (.tex) {1 DECK}
+            - Images
+               - 27 (.png)
          - Webscraping
+            - 1 (.tex) {1 DECK}
+            - Images
+               - 8 (.png)
          - Demystifying ML
+            - 2 (.tex) {2 DECK}
+            - Images
+               - 20 (.png)
          - Deeper Look at ML
+            - 1 (.tex) {1 DECK}
+            - Images
+               - 15 (.png)
          - Features and Dimensions
+            - 1(.tex) {1 DECK}
+            - Images
+               - 19 (.png)
          - Overfitting and Generalization
+            - 1 (.tex) {1 DECK}
+            - Images
+               - 27 (.png)
+               - 1 (.xlsx)
 	 
       + **DLN** DeepLearning
-	 - DeepLearningArchitectures
+         - DeepLearningArchitectures
          - SpeechandAudio
          - ComputerVision
          - NaturalLanguageProcessing
