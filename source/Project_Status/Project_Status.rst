@@ -19,8 +19,8 @@ Project Status
 +        +             + recent previous cohort) into respective Program folders +                           +
 +        +             + in Repo directory                                       +                           +
 +--------+-------------+---------------------------------------------------------+---------------------------+
-+ 6      + 1 Mar 2022  + Push content from existing Individual Program           +   In progress             +
-+        +             + repositories into the respective content module folders +                           + 
++ 6      + 1 Mar 2022  + Push content from existing Individual Program           +   90% Done [FSD, ADSMI   +
++        +             + repositories into the respective content module folders +   in progress]            + 
 +        +             + of the Store directory. Process to be followed: Commit  +                           +        
 +        +             + content additions from individual repository and send   +                           +     
 +        +             + merge request to Surobhi                                +                           +
