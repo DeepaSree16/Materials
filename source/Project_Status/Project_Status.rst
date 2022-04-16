@@ -25,7 +25,7 @@ Project Status
 +        +             + content additions from individual repository and send   +                           +     
 +        +             + merge request to Surobhi                                +                           +
 +--------+-------------+---------------------------------------------------------+---------------------------+
-+ 7      + 20 Apr 2022 + Develop complete documentation, add metadata            +                           +
++ 7      + 20 Apr 2022 + Develop complete documentation, add metadata            +   In progress             +
 +--------+-------------+---------------------------------------------------------+---------------------------+
 
 
