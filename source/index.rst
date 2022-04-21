@@ -10,6 +10,8 @@ Welcome to the TS Central Repository's documentation!
   :width: 200
 
 .. toctree::
+   Repo<Repo/About_Repo>
+   Store<Store/Store_Directory_Structure>
    details
    benefits
    principles
