@@ -1,0 +1,296 @@
+%\tolerance=10000
+%\documentclass[prl,twocoloumn,preprintnumbers,amssymb,pla]{revtex4}
+\documentclass[prl,twocolumn,showpacs,preprintnumbers,superscriptaddress]{revtex4}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{dcolumn}
+%\linespread{1.7}
+\usepackage{bm}
+%\usepackage{eps2pdf}
+\usepackage{graphics}
+\usepackage{pdfpages}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage[demo]{graphicx} % omit 'demo' for real document
+%\usepackage{times}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{subfig}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{float}
+\documentclass{article}
+\usepackage{amsmath,systeme}
+
+\sysalign{r,r}
+
+% \textheight = 8.5 in
+% \topmargin = 0.3 in
+
+%\textwidth = 6.5 in
+% \textheight = 8.5 in
+%\oddsidemargin = 0.0 in
+%\evensidemargin = 0.0 in
+
+%\headheight = 0.0 in
+%\headsep = 0.0 in
+%\parskip = 0.2in
+%\parindent = 0.0in
+
+% \newcommand{\ket}[1]{\left|#1\right\rangle}
+% \newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\ketbra}[2]{| #1 \rangle \langle #2 |}
+\newcommand{\proj}[1]{| #1 \rangle \langle #1 |}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\op}[1]{ \hat{\sigma}_{#1} }
+\def\tred{\textcolor{red}}
+\def\tgre{\textcolor{green}}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+
+\begin{document}
+\begin{widetext}
+\\
+\\
+\\
+
+\begin{wrapfigure}
+\centering
+%\includegraphics[\textwidth]{TS_IISc.png}
+\end{wrapfigure}
+\begin{figure}[h!]
+ \begin{right}
+  \hfill\includegraphics[\textwidth, right]{TS_IISc.png}
+ \end{right}
+\end{figure}
+\\
+\\
+\\
+\noindent\textbf{1. Based on the logical plan of the Spark architecture, select which of the following
+indicate the characteristics of a narrow dependency (N) vs a wide dependency
+(W):}
+\\
+\\
+(i) Each input partition is used by exactly one output partition
+\\
+\\
+(ii) Also called full dependency
+\\
+\\
+(iii) Each output partition depends on parts of one or more input partition
+\\
+\\
+(iv) It forces a shuffle across Workers
+\\
+\\
+\textbf{Options:}
+\\
+\\
+\noindent A. (i)-W, (ii)-N, (iii)-W, (iv)-N
+\\
+\\
+\\
+B. (i)-N, (ii)-N, (iii)-W, (iv)-W
+\\
+\\
+\\
+C. P(i)-N, (ii)-W, (iii)-N, (iv)-W
+\\
+\\
+\\
+D. (i)-W, (ii)-W, (iii)-N, (iv)-N
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\textbf{Solution}
+\\
+\\
+\begin{figure}[H]
+\begin{center}
+    \includegraphics[width=9.5cm, height=7cm]{DLFA_Img1.png}
+\end{center}
+    %\caption{}
+\end{figure}
+\\
+\\
+\\
+\newpage
+\noindent\textbf{2. Which of the following is FALSE w.r.t. the Spark Architecture:}
+\\
+\\
+\\
+\textbf{Options:}
+\\
+\\
+\noindent A. Driver interfaces with SparkContext
+\\
+\\
+\\
+B. Spark is designed to run on a cluster of machines
+\\
+\\
+\\
+C. Logical Plan Converts dataflow into specific tasks for execution and tasks are executed within Workers/Executors
+\\
+\\
+\\
+D. Physical Plan Converts application to a dataflow of dependencies
+\\
+\\
+\\
+E. Both C and D
+\\
+\\
+\textbf{Answer: E}
+\\
+\\
+\textbf{Solution}
+\\
+\\
+Statements C and D are FALSE w.r.t Spark Architecture. Statements A and B are TRUE. The Spark Architecture is as follows:
+\\
+\\
+1. Spark is designed to run on a cluster of machines
+\\
+2. Driver interfaces with SparkContext
+\\
+3. Logical Plan Converts application to a dataflow of dependencies
+\\
+4. Physical Plan Converts dataflow into specific tasks for execution and the tasks are executed within Workers/Executors.
+\\
+\\
+\\
+\noindent\textbf{3. Select the correct terms, to fill in the blanks in the following statements:}
+\\
+\\
+(i) ----------- Returns an entry for all keys in first RDD
+\\
+(ii) -----------  Only keys in both RDDs are joined and returned
+\\
+(iii) ------------  Returns an entry for all keys in other RDD
+\\
+\\
+\\
+\textbf{Options:}
+\\
+\\
+\noindent A. (i) Right Outer Join (ii) Left Outer Join (iii) Inner Join (Default Spark Join)
+\\
+\\
+\\
+B. (i) Inner Join (Default Spark Join) (ii) Right Outer Join (iii) Left Outer Join
+\\
+\\
+\\
+C. (i) Right Outer Join (ii) Inner Join (Default Spark Join) (iii) Left Outer Join
+\\
+\\
+\\
+D. (i) Left Outer Join (ii) Inner Join (Default Spark Join) (iii) Right Outer Join
+\\
+\\
+\textbf{Answer: D}
+\\
+\\
+\textbf{Solution}
+\\
+\\
+In Inner Join, only keys in both RDDs are joined and returned.
+\\
+Left Outer Join returns an entry for all keys in first RDD.
+\\
+Right Outer Join returns an entry for all keys in other RDD.
+\\
+\\
+\\
+\noindent\textbf{4. Which of the following is TRUE w.r.t. the Partitioners:}
+\\
+\\
+\textbf{Options:}
+\\
+\\
+\noindent A. All RDD transformations have an option to pass number of output partitions
+\\
+\\
+\\
+B. Spark tracks partitioner used to generate an RDD and uses this to optimize operations
+\\
+\\
+\\
+C. Partitioners are used to optimize future operations
+\\
+\\
+\\
+D. Transformations such as Map followed by a Join retain partitioner
+\\
+\\
+\\
+E. Both B and C
+\\
+\\
+\\
+F. Both A and D
+\\
+\\
+\\
+\textbf{Answer: E}
+\\
+\\
+\textbf{Solution}
+Statements A and D are wrong w.r.t. the Partitioners. A partitioner option may or may not be present. Map following a Join can unset Hash partitioner, not retail it. Statements
+B and C are true w.r.t. the Partitioners
+\\
+\\
+\\
+\noindent\textbf{5. Which of the following is not an example of Grouping Transforms on a Pair RDD:}
+\\
+\\
+\textbf{Options:}
+\\
+\\
+\noindent A. sampleByKey
+\\
+\\
+\\
+B. groupBykey
+\\
+\\
+\\
+C. cogroup
+\\
+\\
+\\
+D. subtract
+\\
+\\
+\textbf{Answer: A}
+\\
+\\
+\textbf{Solution}
+sampleByKey is an example of an operation based on Stratified Sampling. The remaining three ( groupBykey, cogroup and subtract ) are all examples of Grouping Transforms on a Pair RDD.
+\\
+\\
+\\
+\end{widetext}
+\end{document}

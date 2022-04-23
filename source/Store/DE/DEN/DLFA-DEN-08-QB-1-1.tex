@@ -1,0 +1,327 @@
+%\tolerance=10000
+%\documentclass[prl,twocoloumn,preprintnumbers,amssymb,pla]{revtex4}
+\documentclass[prl,twocolumn,showpacs,preprintnumbers,superscriptaddress]{revtex4}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{dcolumn}
+%\linespread{1.7}
+\usepackage{bm}
+%\usepackage{eps2pdf}
+\usepackage{graphics}
+\usepackage{pdfpages}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage[demo]{graphicx} % omit 'demo' for real document
+%\usepackage{times}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{subfig}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{float}
+\documentclass{article}
+\usepackage{amsmath,systeme}
+
+\sysalign{r,r}
+
+% \textheight = 8.5 in
+% \topmargin = 0.3 in
+
+%\textwidth = 6.5 in
+% \textheight = 8.5 in
+%\oddsidemargin = 0.0 in
+%\evensidemargin = 0.0 in
+
+%\headheight = 0.0 in
+%\headsep = 0.0 in
+%\parskip = 0.2in
+%\parindent = 0.0in
+
+% \newcommand{\ket}[1]{\left|#1\right\rangle}
+% \newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\ketbra}[2]{| #1 \rangle \langle #2 |}
+\newcommand{\proj}[1]{| #1 \rangle \langle #1 |}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\op}[1]{ \hat{\sigma}_{#1} }
+\def\tred{\textcolor{red}}
+\def\tgre{\textcolor{green}}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+
+\begin{document}
+\begin{widetext}
+\\
+\\
+\\
+\begin{wrapfigure}
+\centering
+%\includegraphics[\textwidth]{TS_IISc.png}
+\end{wrapfigure}
+\begin{figure}[h!]
+ \begin{right}
+  \hfill\includegraphics[\textwidth, right]{TS_IISc.png}
+ \end{right}
+\end{figure}
+\\
+\\
+\\
+\noindent\textbf{1. Suppose I am writing a program for a fixed problem size such that 80\% of the program is parallelized. What speedup can I expect using 10 processors?
+}
+\\
+\\
+Hint: You can use Amdahl’s law for speedup as follows:
+\\
+\\
+Speedup = $\frac{1}{s +  \frac{(1 - s)}{p}}$
+\\
+\\
+Where
+\\
+$s$ is serial fraction of application (cannot be parallelized)
+\\
+\(1 - s\) is fraction of application that can be parallelized
+\\
+$p$ is number of processors
+\\
+\\
+\textbf{Options:}
+\\
+\\
+\noindent A. 1.21
+\\
+\\
+\\
+B. 3.57
+\\
+\\
+\\
+C. 1.25
+\\
+\\
+\\
+D. 5
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\\
+\\
+\textbf{2. Select the False statement w.r.t. RDD persistence:}
+\\
+\\
+\\
+\noindent A. Dependent RDDs may be recomputed for each action\\
+\\
+\\
+B. Persisting RDDs will guarantee its reuse without recompute\\
+\\
+\\
+C. Recompute will happen if node fails or on LRU (least recently used) eviction\\
+\\
+\\
+D. We can explicitly call persist on an RDD
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\\
+\textbf{Solution:}
+\\
+\\
+Here, p = 0.8
+\\
+So 1 - s = 0.2
+\\
+p = 10
+\\
+\\
+Substituting the above values in the formula Speedup = $\frac{1}{s +  \frac{(1 - s)}{p}}$, we get:
+\\
+\\
+= 1 / [ 0.2 + (0.8 / 10 )]
+\\
+= 1 / [0.2 + 0.08]
+\\
+= 1 / 0.28
+\\
+= 3.57
+\\
+\\
+\\
+\textbf{2. Select the FALSE statement w.r.t. Spark RDDs:}
+\\
+\\
+\\
+\noindent A. Can be used for read and modify operations as they are mutable
+\\
+\\
+\\
+B. Consist of a collection of homogeneous objects
+\\
+\\
+\\
+C. Data is loaded on partitions on different workers
+\\
+\\
+\\
+D. Transformations create another RDD and Actions return a value
+\\
+\\
+\\
+\textbf{Answer: A}
+\\
+\\
+\\
+\textbf{Solution}
+\\
+\\
+Statements B, C and D are True. Statement A is False. The correct statement is Spark
+RDDs can be used for read-only operations as they are immutable.
+\\
+\\
+\\
+\textbf{3. Select the correct sequence of steps that shows how a Web Crawl and Search task is performed:}
+\\
+\\
+\\
+(a) lookup PageRank of all matching URLs
+\\
+\\
+(b) Suggest similar searches (co-occurrence)
+\\
+\\
+(c) join top n pages with URL and title
+\\
+\\
+(d) lookup of keyword in inverted index, find common URLs for keywords
+\\
+\\
+(e) sort and Select top n PageRank URLs
+\\
+\\
+(f) return result to user
+\\
+\\
+\textbf{Options:}
+\\
+\\
+\noindent A. (a), (b), (c), (d), (e), (f)
+\\
+\\
+\\
+B. (d), (a), (e), (c), (f), (b)
+\\
+\\
+\\
+C. (a), (b), (e), (d), (c), (f)
+\\
+\\
+\\
+D. (b), (a), (c), (e), (d), (f)
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\\
+\textbf{4. Match the following tasks of the Data Analysis Lifecycle with their respective components :
+}
+\begin{figure}[H]
+\begin{center}
+        \includegraphics[width=12.5cm,height=4.5cm]{DLFA_Img2.png}
+\end{center}
+\end{figure}
+\\
+\\
+\noindent\textbf{Options:}
+\\
+\\
+\noindent A. (i) - (a), (ii) - (b), (iii) - (c)
+\\
+\\
+\\
+B. (i) - (b), (ii) - (a), (iii) - (c)
+\\
+\\
+\\
+C. (i) - (c), (ii) - (a), (iii) - (b)
+\\
+\\
+\\
+D. (i) - (c), (ii) - (b), (iii) - (a)
+\\
+\\
+\\
+\textbf{Answer: C}
+\\
+\\
+\\
+\textbf{5. Select the TRUE statement(s):}
+\\
+\\
+\\
+\noindent A. Big Data platforms are intended for “Strong Scaling”
+\\
+\\
+\\
+B. Strong scaling is concerned with how the performance varies with the number of processors for a fixed total problem size
+\\
+\\
+\\
+C. Weak Scaling is concerned with how the performance varies with the number of processors for a fixed problem size per processor
+\\
+\\
+\\
+D. Both B and C
+\\
+\\
+\\
+E. Only A
+\\
+\\
+\\
+\textbf{Answer: B and C}
+\\
+\\
+\\
+\textbf{Solution}
+\\
+\\
+Statements B and C are correctly given.
+\\
+\\
+Strong Scaling: How the performance varies with the number of processors for a fixed total problem size
+\\
+\\
+Weak Scaling: How the performance varies with the number of processors for a fixed problem size per processor
+\\
+\\
+A is incorrect as Big Data platforms are intended for “Weak Scaling”
+\\
+\\
+\\
+\end{widetext}
+\end{document}

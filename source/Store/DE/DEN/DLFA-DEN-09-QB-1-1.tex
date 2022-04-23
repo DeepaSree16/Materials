@@ -1,0 +1,253 @@
+%\tolerance=10000
+%\documentclass[prl,twocoloumn,preprintnumbers,amssymb,pla]{revtex4}
+\documentclass[prl,twocolumn,showpacs,preprintnumbers,superscriptaddress]{revtex4}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{dcolumn}
+%\linespread{1.7}
+\usepackage{bm}
+%\usepackage{eps2pdf}
+\usepackage{graphics}
+\usepackage{pdfpages}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage[demo]{graphicx} % omit 'demo' for real document
+%\usepackage{times}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{subfig}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{float}
+\documentclass{article}
+\usepackage{amsmath,systeme}
+
+\sysalign{r,r}
+
+% \textheight = 8.5 in
+% \topmargin = 0.3 in
+
+%\textwidth = 6.5 in
+% \textheight = 8.5 in
+%\oddsidemargin = 0.0 in
+%\evensidemargin = 0.0 in
+
+%\headheight = 0.0 in
+%\headsep = 0.0 in
+%\parskip = 0.2in
+%\parindent = 0.0in
+
+% \newcommand{\ket}[1]{\left|#1\right\rangle}
+% \newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\ketbra}[2]{| #1 \rangle \langle #2 |}
+\newcommand{\proj}[1]{| #1 \rangle \langle #1 |}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\op}[1]{ \hat{\sigma}_{#1} }
+\def\tred{\textcolor{red}}
+\def\tgre{\textcolor{green}}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+
+\begin{document}
+\begin{widetext}
+\\
+\\
+\\
+
+\begin{wrapfigure}
+\centering
+%\includegraphics[\textwidth]{TS_IISc.png}
+\end{wrapfigure}
+\begin{figure}[h!]
+ \begin{right}
+  \hfill\includegraphics[\textwidth, right]{TS_IISc.png}
+ \end{right}
+\end{figure}
+\\
+\\
+\\
+\noindent\textbf{1. If RDD1 = \{mango, mango, orange, apple, strawberry\} and RDD2 = \{mango, apple, banana\}, then match the following RDD transformations with their correct outputs:
+}
+\begin{figure}[H]
+\begin{center}
+    \includegraphics[width=1.0\textwidth,centering]{RDDTransform.pdf}
+\end{center}
+    %\caption{}
+\end{figure}
+\noindent A. $(i) - (c), (ii) - (d), (iii) - (a), (iv) - (b)$ 
+\\
+\\
+\\
+B. $(i) - (a), (ii) - (b), (iii) - (d), (iv) - (c)$
+\\
+\\
+\\
+C. $(i) - (d), (ii) - (b), (iii) - (c), (iv) - (a)$
+\\
+\\
+\\
+D. $(i) - (a), (ii) - (c), (iii) - (d), (iv) - (b)$
+\\
+\\
+\\
+\textbf{Answer: C}
+\\
+\\
+\\
+\\
+\textbf{2. Select the False statement w.r.t. RDD persistence:}
+\\
+\\
+\\
+\noindent A. Dependent RDDs may be recomputed for each action\\
+\\
+\\
+B. Persisting RDDs will guarantee its reuse without recompute\\
+\\
+\\
+C. Recompute will happen if node fails or on LRU (least recently used) eviction\\
+\\
+\\
+D. We can explicitly call persist on an RDD
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\\
+\\
+\newpage
+\textbf{3. Select the correct output for ‘pink’ after the following aggregation transformation is performed on a pair RDD:}
+\\
+\\
+\\
+\\
+rdd.mapValues(lambda x: (x, 1)).reduceByKey(lambda x, y: (x[0] + y[0], x[1] + y[1])) 
+\begin{figure}[H]
+\begin{center}
+    \includegraphics[width=1.0\textwidth,centering]{key-value.pdf}
+\end{center}
+    %\caption{}
+\end{figure}
+\\
+\\
+\\
+\noindent A. (1, 5)\\
+\\
+\\
+B. (1, 5)\\
+\\
+\\
+C. (1, 1)\\
+\\
+\\
+D. (3, 2)
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\\
+\\
+\textbf{4. Select the correct sequence of steps for the combineByKey transformation operation:}  
+\\
+\\
+\\
+$(i)$ mergeCombiners: Function used to combine accumulator values for the same key from multiple partitions 
+\\
+\\
+$(ii)$ createCombiner: Function called the first time a key is seen on each partition. Initializes the accumulator value for that key 
+\\
+\\
+$(iii)$ mergeValue: Function called for each subsequent value for a key on a partition. Merges value with current accumulator’s value 
+\\
+\\
+\\
+A. $(i), (ii), (iii)$
+\\
+\\
+\\
+B. $(iii), (i), (ii)$
+\\
+\\
+\\
+C. $(i), (iii), (ii)$
+\\
+\\
+\\
+D. $(ii), (iii), (i)$
+\\
+\\
+\\
+\textbf{Answer: D}
+\\
+\\
+\\
+\\
+\newpage
+\noindent\textbf{5. Select the statement(s) that correctly describe(s) the characteristics of Lineage Graph:}
+\\
+\\
+\\
+$(i)$ Helps lazily materialize RDD 
+\\
+\\
+$(ii)$ Does not keep track of operations used to derive an RDD
+\\
+\\
+$(iii)$ Helps recover RDD or their partitions that are lost 
+\\
+\\
+$(iv)$ Keeps track of operations used to derive an RDD 
+\\
+\\
+$(v)$ Does not help recover RDD or their partitions that are lost 
+\\
+\\
+\\
+\noindent A. Only $(i)$ 
+\\
+\\
+\\
+B.  Only $(i)$, $(iii)$ and $(iv)$ 
+\\
+\\
+\\
+C. Only $(i)$, $(ii)$ and $(iv)$
+\\
+\\
+\\
+D. Only $(i)$, $(iii)$ and $(v)$
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\textbf{Solution:}\ 
+Statement (i), (iii) and (iv) describe the characteristics of Lineage Graph. Statements (ii) and (v) are incorrect.
+\\
+\\
+\\
+\end{widetext}
+\end{document}
