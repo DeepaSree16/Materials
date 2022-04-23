@@ -1,0 +1,216 @@
+%\tolerance=10000
+%\documentclass[prl,twocoloumn,preprintnumbers,amssymb,pla]{revtex4}
+\documentclass[prl,twocolumn,showpacs,preprintnumbers,superscriptaddress]{revtex4}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{dcolumn}
+%\linespread{1.7}
+\usepackage{bm}
+%\usepackage{eps2pdf}
+\usepackage{graphics}
+\usepackage{pdfpages}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage[demo]{graphicx} % omit 'demo' for real document
+%\usepackage{times}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{subfig}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{float}
+\documentclass{article}
+\usepackage{amsmath,systeme}
+
+\sysalign{r,r}
+
+% \textheight = 8.5 in
+% \topmargin = 0.3 in
+
+%\textwidth = 6.5 in
+% \textheight = 8.5 in
+%\oddsidemargin = 0.0 in
+%\evensidemargin = 0.0 in
+
+%\headheight = 0.0 in
+%\headsep = 0.0 in
+%\parskip = 0.2in
+%\parindent = 0.0in
+
+% \newcommand{\ket}[1]{\left|#1\right\rangle}
+% \newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\ketbra}[2]{| #1 \rangle \langle #2 |}
+\newcommand{\proj}[1]{| #1 \rangle \langle #1 |}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\op}[1]{ \hat{\sigma}_{#1} }
+\def\tred{\textcolor{red}}
+\def\tgre{\textcolor{green}}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+
+\begin{document}
+\begin{widetext}
+\\
+\\
+\\
+
+\begin{wrapfigure}
+\centering
+%\includegraphics[\textwidth]{TS_IISc.png}
+\end{wrapfigure}
+\begin{figure}[h!]
+ \begin{right}
+  \hfill\includegraphics[\textwidth, right]{TS_IISc.png}
+ \end{right}
+\end{figure}
+\\
+\\
+\\
+\noindent\textbf{1. A learning paradigm in which the model learns to do a task given training data and
+training labels and is evaluated with test data and test labels is called:}
+\\
+\\
+\textbf{Options:}
+\\
+\\
+\noindent A. Supervised Learning
+\\
+\\
+\\
+B. Unsupervised Learning
+\\
+\\
+\\
+C. Reinforcement Learning
+\\
+\\
+\\
+D. None of the above
+\\
+\\
+\\
+\textbf{Answer: A}
+\\
+\\
+\\
+\noindent\textbf{2. Let the class labels be denoted by \{1, -1\} and features be denoted by $x$. Suppose we have $P(Y = 1| X = x) = 0.6$ and $P(Y = -1|X = x) = 0.4$. The output of the
+Bayes Classifier, $f(x)$, is then}
+\\
+\\
+\textbf{Options:}
+\\
+\\
+\noindent A. $f(x) = 1$
+\\
+\\
+\\
+B. $f(x) = -1$
+\\
+\\
+\\
+C. Nothing can be said
+\\
+\\
+\\
+\textbf{Answer: A}
+\\
+\\
+\\
+\noindent\textbf{3. Consider the Naive Bayes model (NB) discussed in the class. Which one is not true}
+\\
+\\
+\textbf{Options:}
+\\
+\\
+\noindent A. NB can be used as a classifier
+\\
+\\
+\\
+B. NB assumes that features are independent
+\\
+\\
+\\
+C. NB is useful for text classification
+\\
+\\
+\\
+D. Learning NB does not require GPUs in practical settings
+\\
+\\
+\\
+\textbf{Answer: D}
+\\
+\\
+\\
+\noindent\textbf{4. Chess is an example of which of the following paradigms of machine learning?}
+\\
+\\
+\textbf{Options:}
+\\
+\\
+\noindent A. Supervised Learning
+\\
+\\
+\\
+B. Reinforcement Learning
+\\
+\\
+\\
+C. Unsupervised Learning
+\\
+\\
+\\
+D. All of the above
+\\
+\\
+\\
+E. None of the above
+\\
+\\
+\\
+\textbf{Answer: B}
+\\
+\\
+\\
+\noindent\textbf{5. Bag of Words is -----------------}
+\\
+\\
+\textbf{Options:}
+\\
+\\
+\noindent A. An algorithm to classify text data
+\\
+\\
+\\
+B. A Data structure that represents a word
+\\
+\\
+\\
+C. A Data structure that represents text
+\\
+\\
+\\
+\textbf{Answer: C}
+\\
+\\
+\\
+\end{widetext}
+\end{document}
