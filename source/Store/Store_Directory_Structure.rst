@@ -155,6 +155,7 @@ STORE
    * BA [BUSINESS ANALYTICS]
       + **TSM** TimeSeriesModels
       + **FPO** FinancePortfolio
+      + **ARM** AssociativeRuleMining
    
    * IO [IoT]
       + **IML** IoTandMachineLearning
