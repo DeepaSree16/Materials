@@ -134,6 +134,7 @@ STORE
          - Deeper Look at ML
          - Features and Dimensions
          - Overfitting and Generalization
+         - MultipleAlgorithms
 	 
       + **DLN** DeepLearning
 	 - DeepLearningArchitectures
