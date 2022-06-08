@@ -39,6 +39,35 @@ The TS Central Repository provides a centralized content storage and management 
 - It contains the following directories: 
       * The 'Repo' is the logical organization of the program-wise content
       * The 'Store' is the physical organization of the content files from all programs
-      * The 'CoreDocs' is meant for meta-documents -- that is documents about the repository itself -- and general documents
+      * The 'Core Docs' is meant for meta-documents -- that is documents about the repository itself -- and general documents
       * The 'Project Status' shows the Central Repository creation and maintenance updates and upcoming content requirements
+
+**********
+Core Docs
+**********
+It contains the following documents of importance:
+
+Core documents, Course Design, Module Design, Program Design, Session Design, Terminology, Repo Layout
+
+**********
+Repo
+**********
+It contains the program wise platform links in:
+
+Program LMS Links
+
+**********
+Store
+**********
+It contains information on the Store directory and all content files across programs in topic wise sub-directories:
+
+Store Directory Structure, AI (Artificial Intelligence), AN (Android), CP (Professional C Programming), JP (Java Programming), WD (Web Development), TE (Testing), DN (DotNet), BC (Business Communication), AP (Aptitude), PY (Python Programming), MT (Maths), DS (Data Science), DE (Data Engineering), BA (Business Analytics), IO (IoT), GT (Git)
+
+***************
+Project Status
+***************
+It contains Central Repository Updates in the form of Presentations, Tables and Task Lists:
+
+TS Central Repo Presentation, TCCR Content Tasks List, Project Status
+
 
