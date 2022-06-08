@@ -37,9 +37,8 @@ The TS Central Repository provides a centralized content storage and management 
 - This repository is focused on courses and modules 
 
 - It contains the following directories: 
-      * the REPO is the logical organization of the program-wise content
-      * the STORE is the physical organization of the content files from all programs
-      * the CoreDocs is meant for meta-documents -- that is documents about
-the repository itself -- and general documents
-      * the 
+      * The 'Repo' is the logical organization of the program-wise content
+      * The 'Store' is the physical organization of the content files from all programs
+      * The 'CoreDocs' is meant for meta-documents -- that is documents about the repository itself -- and general documents
+      * The 'Project Status' shows the Central Repository creation and maintenance updates and upcoming content requirements
 
