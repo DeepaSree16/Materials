@@ -45,7 +45,7 @@ The TS Central Repository provides a centralized content storage and management 
 **********
 Core Docs
 **********
-It contains the following documents of importance:
+It contains the following documents of core importance for the Central Repository creation, design documents, file nomenclature system, layout, terminology (and abbreviations) etc.:
 
    - Core documents
    - Course Design
