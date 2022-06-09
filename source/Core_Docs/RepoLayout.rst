@@ -9,7 +9,7 @@ Except when explicitly specified, the contents are copyrighted intellectual
 property of TalentSprint Private Limited.
 
 Metadata
---------
+++++++++
 
 :Description: Structure and Layout of the Content Repository
 
