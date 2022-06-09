@@ -10,6 +10,7 @@ Welcome to the TS Central Repository's documentation!
   :width: 200
 
 .. toctree::
+   Core Docs<Core_Docs/Core_documents>
    Repo<Repo/About_Repo>
    Store<Store/Store_Directory_Structure>
    details
