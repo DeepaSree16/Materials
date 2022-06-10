@@ -59,7 +59,7 @@ It contains the following documents of core importance for the Central Repositor
 **********
 Repo
 **********
-It contains the program wise platform links in:
+It contains the program wise platform links and the content index:
 
    - Program LMS Links
    - Content Index
