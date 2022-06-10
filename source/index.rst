@@ -62,6 +62,7 @@ Repo
 It contains the program wise platform links in:
 
    - Program LMS Links
+   - Content Index
 
 **********
 Store
