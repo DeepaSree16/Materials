@@ -6,11 +6,11 @@ Content Index
 +--------------+----------------------------------------------------------------------------------------------------------+
 |                              Executive Programs (XP)                                                                    |
 +--------------+----------------------------------------------------------------------------------------------------------+
-| CDS          | https://docs.google.com/spreadsheets/d/1RaWr1-l5KR_8sDUxslum_v-cT0N09hqgetvLRS4KBi0/edit?usp=sharing     |
+| CDS          | `CDS_Content_Index`_                                                                                     |
 +--------------+----------------------------------------------------------------------------------------------------------+
-| AIML         |                                                                                                          |
+| AIML         | `AIML_Content_Index`_                                                                                    |
 +--------------+----------------------------------------------------------------------------------------------------------+
-| DLFA         |                                                                                                          |
+| DLFA         | `DLFA_Content_Index`_                                                                                    |
 +--------------+----------------------------------------------------------------------------------------------------------+
 | ADSMI        |                                                                                                          |
 +--------------+----------------------------------------------------------------------------------------------------------+
@@ -23,3 +23,7 @@ Content Index
 | WE           |                                                                                                          |
 +--------------+----------------------------------------------------------------------------------------------------------+
 
+.. _CDS_Content_Index: https://docs.google.com/spreadsheets/d/1RaWr1-l5KR_8sDUxslum_v-cT0N09hqgetvLRS4KBi0/edit?usp=sharing
+.. _AIML_Content_Index: https://docs.google.com/spreadsheets/d/1eq3DjbHgy3xz_u3bhQcbmxi1IuONirIbS6AzCz_YNjw/edit?usp=sharing
+.. _DLFA_Content_Index: https://docs.google.com/spreadsheets/d/1AkO5xa8YCoNxN025B2X3pC3U96fE9zuV9AQxgZsQI7M/edit?usp=sharing
+                        
