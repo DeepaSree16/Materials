@@ -18,7 +18,7 @@ Content Index
 +--------------+----------------------------------------------------------------------------------------------------------+
 |                              Graduate Programs (GP)                                                                     |
 +--------------+----------------------------------------------------------------------------------------------------------+
-| WISE         |                                                                                                          |
+| WISE         | `WISE_Content_Index`_                                                                                    |
 +--------------+----------------------------------------------------------------------------------------------------------+
 | WE           |                                                                                                          |
 +--------------+----------------------------------------------------------------------------------------------------------+
@@ -28,4 +28,4 @@ Content Index
 .. _DLFA_Content_Index: https://docs.google.com/spreadsheets/d/1AkO5xa8YCoNxN025B2X3pC3U96fE9zuV9AQxgZsQI7M/edit?usp=sharing
 .. _ADSMI_Content_Index: https://docs.google.com/spreadsheets/d/1knOUemcBzYgva1ssizAby-pMiXe6LJBIcdVUTSmwjTQ/edit?usp=sharing  
 .. _IoT_Content_Index: https://docs.google.com/spreadsheets/d/1mQQDmHp-CiE2_2DabxcHgQ9ferNe5RtIC3JjPMdcj38/edit?usp=sharing
-                        
+.. _WISE_Content_Index: https://docs.google.com/spreadsheets/d/1h0bHio9Rxf7tYoFTSZNIWD8ep5jGZR975DBPKtOtg5w/edit?usp=sharing
